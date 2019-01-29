@@ -26,7 +26,7 @@ public class LoginPage extends FractalBasePage {
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://automation-demo.originfractal.com";
+		String baseUrl = "https://automation-origin.originfractal.com";
 		goTo(baseUrl);
 		
 	}
@@ -68,7 +68,7 @@ public class LoginPage extends FractalBasePage {
 		}
 
 	public void registerFunction() {
-		String baseUrl = "https://automation-demo.originfractal.com";
+		String baseUrl = "https://automation-origin.originfractal.com";
 		goTo(baseUrl);
 		click(registerButton);
 		elementExist(resigstrationPage);
