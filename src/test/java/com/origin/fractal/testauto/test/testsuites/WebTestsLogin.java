@@ -21,7 +21,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		};
 	}
 
-	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
+	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -48,7 +48,6 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		//TCID_74:Verification of Register link  function 
 		loginSteps.registerFunction();
 		Reporter.writeSummary("TCID_074, Verification of Register link  function, " +  loginSteps.getResult() );
-
 	}
 	
 	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
@@ -62,7 +61,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		
 	}
 	//Added by Manju Priya A on Jan_21_19
-		@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "TCID_71: verification of Forgot Password Page"
+		@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "TCID_71: verification of Forgot Password Page"
 				+ "TCID_73: Verification of Forgot Password function")
 		public void forgotPassword(String row, String strBrowserName) {
 			

@@ -20,7 +20,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -36,13 +36,13 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyComplStatus();
 		Reporter.writeSummary("TCID_039,  whether the coverage percentage is shown with the text completed under Percentage, " +  homeSteps.getResult() );
 	    //TCID_33:The coverage percentage is shown with the text Coverage
-		homeSteps.verifyCoverageText();
+        homeSteps.verifyCoverageText();
 		Reporter.writeSummary("TCID_033,  Verify  The coverage percentage is shown with the text Coverage, " + homeSteps.getResult() );
 		//TCID_41: Verify Continue Text are displayed
 		homeSteps.verifyContinueText();
 		Reporter.writeSummary("TCID_041,  Verify Continue Text are displayed, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_040,  Verify  whether the button Continue is displayed under the heading Learning in Progress, " +  homeSteps.getResult() );
-		homeSteps.clickContinueBtnRetToHome();
+	 	homeSteps.clickContinueBtnRetToHome();
 		//TCID_02: Verify  to My Home page data
 		homeSteps.verifyHomePageData();
 		Reporter.writeSummary("TCID_ 002,  Verify  to My Home page data, " + homeSteps.getResult() );
@@ -55,7 +55,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//TCID_13:Verification of View all page labels
 		homeSteps.verifyViewAllPage(); 
 		Reporter.writeSummary("TCID_013, Verification of View all page labels, " + homeSteps.getResult() );
-		/*Reporter.writeSummary("TCID_035, Verify whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_035, Verify whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
 		//TCID_34:Verify Privacy, Terms and Contact links
 		homeSteps.verifyFooterLinks();
 		Reporter.writeSummary("TCID_034, Verify Privacy Terms and Contact links, " + homeSteps.getResult() );
@@ -66,8 +66,8 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyBellNotification();
 		Reporter.writeSummary("TCID_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_070, Verify whether All the Notifications are getting listed on clicking the All tab, " + homeSteps.getResult() ); 
-		homeSteps.clickLogout();*/
-		
+		homeSteps.clickLogout();
+	
 	}
 
 	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
@@ -125,7 +125,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//TCID_42:The data should be shown under the topic Recently Added when All is clicked
 		homeSteps.verifyAllFilterRcntAdded();
 		Reporter.writeSummary("TCID_042,  Verify The data should be shown under the topic Recently Added when All is clicked, " +   homeSteps.getResult() );
-		Reporter.writeSummary("TCID_042,  Verify whether Content Bundle Course Video and Learning path are shown  under Recently Added when All link is clicked, " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_057,  Verify whether Content Bundle Course Video and Learning path are shown  under Recently Added when All link is clicked, " +   homeSteps.getResult() );
 		//TCID_43:The Bundles should be shown under the topic Recently Added when the link Bundles is clicked
 		homeSteps.verifyBundleFilterRcntAdded();
 		Reporter.writeSummary("TCID_043,  Verify  The Bundles should be shown under the topic Recently Added when the link Bundles is clicked, " + homeSteps.getResult() );
@@ -152,10 +152,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyBundleFilterRecommAdded();
 		Reporter.writeSummary("TCID_048,  Verify The Bundles should be shown under the topic Recommended content when the link Bundles is clicked, " +   homeSteps.getResult() );
 		//TCID_51:The resources should be shown under the topic Recommended content when the link resources is clicked
-	//	homeSteps.verifyResourceFilterRecommAdded();// Data not present
+		homeSteps.verifyResourceFilterRecommAdded();// Data not present
 		Reporter.writeSummary("TCID_051,  Verify The resources should be shown under the topic Recommended content when the link resources is clicked, " +   homeSteps.getResult() );
 		//TCID_49:The LearnPaths should be shown under the topic Recommended content when the link LearnPaths is clicked
-	//	homeSteps.verifyLearnPathFilterRecommAdded(); // Data not present
+		homeSteps.verifyLearnPathFilterRecommAdded(); // Data not present
 		Reporter.writeSummary("TCID_049,  Verify The LearnPaths should be shown under the topic Recommended content when the link LearnPaths is clicked, " +   homeSteps.getResult() );
 		homeSteps.recentlyAddedsectionAttributes();
 		homeSteps.clickLogout();
@@ -180,7 +180,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyLearnPathFilterMostAdded();
 		Reporter.writeSummary("TCID_054,  Verify The LearnPaths should be shown under the topic Most consumed content when the link  LearnPaths is clicked, " + homeSteps.getResult() );
 		//TCID_55:The Courses should be shown under the topic Most consumed content when the link  Courses is clicked
-//		homeSteps.verifyCourseFilterMostAdded(); //Data not present
+		homeSteps.verifyCourseFilterMostAdded(); //Data not present
 		Reporter.writeSummary("TCID_055,  Verify The Courses should be shown under the topic Most consumed content when the link  Courses is clicked, " +  homeSteps.getResult() );
 		//TCID_56:The Resources should be shown under the topic Most consumed content when the link Resources is clicked
 //		homeSteps.verifyResourceFilterMostAdded(); //Data not present
