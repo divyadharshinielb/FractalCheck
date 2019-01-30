@@ -30,16 +30,15 @@ public class LoginPage extends FractalBasePage {
 		goTo(baseUrl);
 		
 	}
-	
 	public void doLogin() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("P@ssw0rd1",tbPassword);
+		enterData("P@ssw0rd",tbPassword);
 		click(btnLogin);
 		wait(5);
 	}
 	public void doLogin1() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("Origin@123",tbPassword);
+		enterData("P@ssw0rd",tbPassword);
 		click(btnLogin);
 	}
 	public void loginPageVerification() {
@@ -52,7 +51,7 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void rememberMe() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("Origin@123",tbPassword);
+		enterData("P@ssw0rd",tbPassword);
 		click(rememberMe);
 		click(btnLogin);
 		click(lblProfile);
@@ -70,6 +69,7 @@ public class LoginPage extends FractalBasePage {
 	public void registerFunction() {
 		String baseUrl = "https://automation-origin.originfractal.com";
 		goTo(baseUrl);
+		wait(5);
 		click(registerButton);
 		elementExist(resigstrationPage);
 	}
