@@ -16,9 +16,8 @@ public abstract class FractalBasePage extends BasePage {
 	private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
 	private By lblMyAccount = By.xpath(".//*[@id='header']/div/*//a[contains(text(),'My Account')]");
 	private By btnCategory = By.xpath(".//*[@id='header']/*//button");
-	private By btnBellIcon = By
-			.xpath(".//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]");
-	private By viewAll = By.xpath(".//*[@id=\"notification-dropdown\"]/div[2]/div[2]/a");
+	private By btnBellIcon = By.xpath(".//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]");
+	private By viewAll = By.xpath(".//*[@id='notification-dropdown']/div[2]/div[2]/a");
 	private By settings = By.xpath(".//a[contains(text(),'Settings')]");
 	private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'CONTINUE')]");
@@ -77,6 +76,7 @@ public abstract class FractalBasePage extends BasePage {
 	}
 
 	public void clickOnViewAll() {
+		wait(5);
 		click(viewAll);
 
 	}
@@ -129,6 +129,7 @@ public abstract class FractalBasePage extends BasePage {
 			click(lblRcntAdded_Courses);
 		}
 		public void clickOnTopArrBtn() {
+			wait(5);
 			click(btnTopArr);
 		}
 		
@@ -192,7 +193,7 @@ public abstract class FractalBasePage extends BasePage {
 		//To verify the category list in the header
 		public boolean verifyAllCategories(String objPath){
 			String[] actArray = {
-				getLabel("lblCategoryAll"),getLabel("lblCategoryPrjMgm"),getLabel("lblCategoryQA"),
+				getLabel("lblCategoryAll"),/*getLabel("lblCategoryPrjMgm"),*/getLabel("lblCategoryQA"),
 				getLabel("lblCategoryHC"),getLabel("lblCategoryID"),getLabel("lblCategoryMrkt"),
 				getLabel("lblCategoryMcrLrn"),getLabel("lblCategory3DAnim"),getLabel("lblCategorySftSkl"),
 				getLabel("lblCategoryStryLine"),getLabel("lblCategoryGD"),getLabel("lblCategoryTech")
@@ -470,6 +471,7 @@ public abstract class FractalBasePage extends BasePage {
 	
 		
 		public void verifyWishListBtn() {
+			wait(5);
 			click(wishListBtn);
 		}
 		
@@ -484,6 +486,7 @@ public abstract class FractalBasePage extends BasePage {
 		
 		}
 		public void verifyCartItemBtn() {
+			wait(5);
 			click(cartItemBtn);
 		}
 
@@ -493,6 +496,7 @@ public abstract class FractalBasePage extends BasePage {
 		public void clickLogout() {
 			wait(5);
 			click(lblProfile);
+			wait(5);
 			click(logOut);
 			
 		}

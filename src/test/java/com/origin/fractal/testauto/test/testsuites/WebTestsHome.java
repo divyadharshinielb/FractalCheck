@@ -10,17 +10,18 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsHome extends FractalBaseWebTest {
 
+
 	@DataProvider
 	public Object[][] browers() {
-		return new Object[][] { 
-		new Object[] { "1", "chrome" } 
-//		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" }
-//			new Object[] { "4", "ie11" }
+		return new Object[][] {
+//			,new Object[] { "1", "chrome" }
+//		 ,new Object[] { "2", "firefox" },
+		 new Object[] { "3", "msedge" } ,
+//		 new Object[] { "4", "ie11" }
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -35,14 +36,15 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//TCID_40:Checking whether the button Continue is displayed under the heading Learning in Progress
 		homeSteps.verifyComplStatus();
 		Reporter.writeSummary("TCID_039,  whether the coverage percentage is shown with the text completed under Percentage, " +  homeSteps.getResult() );
-	    //TCID_33:The coverage percentage is shown with the text Coverage
+      //TCID_33:The coverage percentage is shown with the text Coverage
         homeSteps.verifyCoverageText();
 		Reporter.writeSummary("TCID_033,  Verify  The coverage percentage is shown with the text Coverage, " + homeSteps.getResult() );
 		//TCID_41: Verify Continue Text are displayed
 		homeSteps.verifyContinueText();
 		Reporter.writeSummary("TCID_041,  Verify Continue Text are displayed, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_040,  Verify  whether the button Continue is displayed under the heading Learning in Progress, " +  homeSteps.getResult() );
-	 	homeSteps.clickContinueBtnRetToHome();
+		Reporter.writeSummary("TCID_032,  Verify  whether the button Continue is present for the text Learning in progress,"+ homeSteps.getResult() );
+		homeSteps.clickContinueBtnRetToHome();
 		//TCID_02: Verify  to My Home page data
 		homeSteps.verifyHomePageData();
 		Reporter.writeSummary("TCID_ 002,  Verify  to My Home page data, " + homeSteps.getResult() );
@@ -52,7 +54,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//TCID_10:Verify My Learning page details on clicking from Home Page
 		homeSteps.verifyMyLearningLabeltext();
 		Reporter.writeSummary("TCID_010,  Verify My Learning page details on clicking from Home Page, " + homeSteps.getResult() );
-		//TCID_13:Verification of View all page labels
+    	//TCID_13:Verification of View all page labels
 		homeSteps.verifyViewAllPage(); 
 		Reporter.writeSummary("TCID_013, Verification of View all page labels, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_035, Verify whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
@@ -70,7 +72,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "TC_nnnn Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
 	public void testHomePageVerifyRcntAddedCourseNavigation(String row, String strBrowserName) {
@@ -78,9 +80,9 @@ public class WebTestsHome extends FractalBaseWebTest {
 		login(driver);
 		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.verifyNavTORcntAddedCoursesRtnToHome();
-		//TCID_43: Verify Recently Added courses displayed
-		homeSteps.verifyRcntAdded_CoursesText();
-		Reporter.writeSummary("TCID_043,  Verify  Recently Added courses displayed, " + homeSteps.getResult() );
+		//TCID_31: Verify navigation to Home page
+		homeSteps.verifySubHeaders();
+		Reporter.writeSummary("TCID_031,  Verify navigation to Home page, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of "^" symbol
 		homeSteps.verifyTopArrBtn();
 		Reporter.writeSummary("TCID_015,  Verify the functionality of ^ > < symbol, " + homeSteps.getResult() );
@@ -90,6 +92,9 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//TCID_15: Verify the functionality of "<" symbol
 		homeSteps.verifyPreviousBtn();
    //	Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +  result );
+		//TCID_43: Verify Recently Added courses displayed
+		homeSteps.verifyRcntAdded_CoursesText();
+		Reporter.writeSummary("TCID_043,  Verify  Recently Added courses displayed, " + homeSteps.getResult() );
 		//TCID_80:Verify the function of  Wish list icon
 		homeSteps.verifyWishListBtn();
 		Reporter.writeSummary("TCID_080, Verify the function of  Wish list icon, " +  homeSteps.getResult() );
@@ -102,12 +107,11 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//Verify LogoImage is displayed after logging to app
 		homeSteps.verifyLogoImg();
 		Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());
-		
-		homeSteps.clickLogout();
+		homeSteps.clickLogout(); 
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {
@@ -116,7 +120,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		login(driver);
 
 		HomeSteps homeSteps = new HomeSteps(driver);
-		homeSteps.firstTwoCatalogItemsTitleCompare();
+        homeSteps.firstTwoCatalogItemsTitleCompare();
 		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in Recommended section matches with the first 2 items in the Most recently added section. " +   homeSteps.getResult() );
 		//Verify the function of  Recently Added section attributes 
 		homeSteps.recentlyAddedsectionAttributes();
@@ -135,7 +139,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//TCID_46:The resources should be shown under the topic Recently Added when the link resources is clicked
 		homeSteps.verifyResourceFilterRcntAdded();
 		Reporter.writeSummary("TCID_046,  Verify The resources should be shown under the topic Recently Added when the link resources is clicked, " +   homeSteps.getResult() );
-		//TCID_44:The Learning paths should be shown under the topic Recently Added when the link Learning paths is clicked
+    	//TCID_44:The Learning paths should be shown under the topic Recently Added when the link Learning paths is clicked
 		homeSteps.verifyLearnPathFilterRcntAdded();
 		Reporter.writeSummary("TCID_044,  Verify The Learning paths should be shown under the topic Recently Added when the link Learning paths is clicked, " +   homeSteps.getResult() );
 		//TCID_47:The data should be shown under the topic Recommended content when All is clicked
@@ -144,7 +148,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//TCID_50:The courses should be shown under the topic Recommended content when the link courses is clicked
 		homeSteps.verifyCourseFilterRecommAdded();
 		Reporter.writeSummary("TCID_050,  Verify  The courses should be shown under the topic Recommended content when the link courses is clicked, " +   homeSteps.getResult() );
-		//TCID_48:The Bundles should be shown under the topic Recommended content when the link Bundles is clicked
+		//TCID_58:The Bundles should be shown under the topic Recommended content when the link Bundles is clicked
 		homeSteps.mostPopularCount();
 		Reporter.writeSummary("TCID_058,  Check whether only 4 catalog items are shown under \"Most Popular\" section, " +   homeSteps.getResult() );
 		homeSteps.recentlyCount();
@@ -161,7 +165,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersForKOandMostAdded(String row, String strBrowserName) {

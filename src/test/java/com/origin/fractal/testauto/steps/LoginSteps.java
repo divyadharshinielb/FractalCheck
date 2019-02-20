@@ -112,4 +112,15 @@ public class LoginSteps extends FractalBaseStep {
 		  }
 		
 	}
+	public void verifySearchLink() {
+		result ="Passed";
+		  try {
+		  page.verifySearchLink();
+		  }
+		  catch(Exception e)
+		  {
+		e.printStackTrace();   
+		result="FAILED";
+		  }
+	}
 }

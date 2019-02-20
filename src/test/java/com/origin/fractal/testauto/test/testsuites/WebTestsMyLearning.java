@@ -14,14 +14,14 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] { 
-		new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" } 
+//		new Object[] { "1", "chrome" }
+//		 new Object[] { "2", "firefox" }
+		 new Object[] { "3", "msedge" } 
 //	new Object[] { "4", "ie11" }
 		};
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_1,4,11,12: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_1,4,11,12: "
 			+ "Verify navigation to My Learning page, " + "1: verify COmpletion Status(% Coverage)"
 			+ "4: Verify all links(All, Bundles, Courses, Learning Paths and resources)"
 			+ "11: Verify learning item page is opened when any of the particular course catalog item is clicked"
@@ -53,7 +53,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_16,20,21,22: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_16,20,21,22: "
 			+ "16:Verify course name" + "20:Verify All filter" + "21:Verify Bundle filter" + "22:Verify Course filter")
 	public void testMyLearningPage1(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -86,7 +86,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_25,5,8,14,6,7: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_25,5,8,14,6,7: "
 			+ "25: Verify Tickmark for completed catalog item" + "5: Verify Category dropdown and Grid and List mode"
 			+ "8: Verify Category items" + "14: Verify Rating for completed catalog item"
 			+ "6,7: verify the Grid and List view items and functionality")

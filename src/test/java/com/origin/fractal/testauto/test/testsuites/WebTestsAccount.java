@@ -13,9 +13,9 @@ public class WebTestsAccount extends FractalBaseWebTest {
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
-			new Object[] { "1", "chrome" }
+//		,	new Object[] { "1", "chrome" }
 //		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" } 
+		 new Object[] { "3", "msedge" } 
 //		 new Object[] { "4", "ie11" }
 		};
 	}
@@ -63,7 +63,7 @@ public void testMyAccountPage(String row, String strBrowserName) {
 		AccountSteps accountSteps = new AccountSteps(driver);
 		accountSteps.clickOnMyAccount();
 		//TCID_68:Checking whether the user is able to login with the new password
-		accountSteps.afterChangePassword();
+	//	accountSteps.afterChangePassword();
 		Reporter.writeSummary("TCID_068,  Verify whether the user is able to login with the new password, " + accountSteps.getResult() );
 	}
 

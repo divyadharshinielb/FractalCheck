@@ -22,7 +22,7 @@ public class HomePage extends FractalBasePage {
 
 	private By lblLearningInProgress= By.xpath(".//h2[contains(text(),'Learning in Progress')]");
 	private By lblCompl = By.xpath(".//div[@class='percentageValue ng-binding']");
-	private By lblCoverage= By.xpath(".//div[contains(text(),'Coverage')]");
+	private By lblCoverage= By.xpath(".//div[contains(text(),'Completion Status')]");
 	private By lblContinue= By.xpath(".//button[contains(text(),'CONTINUE')]");
 	
 
@@ -64,7 +64,7 @@ public class HomePage extends FractalBasePage {
     private By iconCart = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'Q')]");
     private By lblMyLearning = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]");
     private By compPercent = By.xpath(".//div/ng-include/*//div[contains(@class,'percentageValue')]");
-    private By learningItemTitle = By.xpath(".//div/ng-include/*//div/*//span[contains(text(),'joined on')]/../*//h3");
+    private By learningItemTitle = By.xpath(".//div/ng-include/*//div/*//span[contains(text(),'updated on')]/../*//h3");
     private By btnContinue = By.xpath(".//div/ng-include/*//div/button[contains(text(),'CONTINUE')]");
 
 	private By rLinkViewAll = By.xpath(".//h2[contains(text(),'Recently Added')]/../../../div/*//div/slick/div/../../../../*//a[contains(text(),'View All')]");
@@ -87,16 +87,16 @@ public class HomePage extends FractalBasePage {
 	private By contactsPage = By.xpath(".//div/h2[contains(text(),'Contact')]");
 	MyLearningPage myLearning = new MyLearningPage(driver);
 
-    private By lastCatalogName = By.xpath(".//div/ng-include/div/div[3]//div/slick//div/div[4]/div/div[2]/h3[1]");
-    private By CatalogType = By.xpath(".//div/ng-include/div/div[3]//div/slick//div/div[1]/div/div/p[1]");
-    private By CatalogTitle = By.xpath(".//div/ng-include[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h3[1]");
-    private By CatalogPrice = By.xpath(".//div/ng-include[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]");
+    private By lastCatalogName = By.xpath(".//ng-include[1]/div[1]/div[1]/div[7]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[4]/div[1]/div[2]/h3[1]");
+    private By CatalogType = By.xpath(".//ng-include[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[2]/p[1]");
+    private By CatalogTitle = By.xpath(".//ng-include[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h3[1]");
+    private By CatalogPrice = By.xpath(".//ng-include[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]");
 	private By nextButton=By.xpath(".//div/ng-include/div//div//div/slick/button[contains(text(),'Next')]");
     private By PreviousButton=By.xpath(".//div/ng-include/div//div//div/slick/button[contains(text(),'Previous')]");
-    private By reFirstCatalog=By.xpath(".//ng-include[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/h3");
-    private By reSecondCatalog=By.xpath(".//ng-include[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/h3");
-    private By rFirstCatalog=By.xpath(".//ng-include[1]/div[1]/div[5]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]//div/h3[1]");
-    private By rSecondCatalog=By.xpath(".//ng-include[1]/div[1]/div[5]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[2]//div/h3[1]");
+    private By reFirstCatalog=By.xpath(".//ng-include[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/h3[1]");
+    private By reSecondCatalog=By.xpath(".//ng-include[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/h3[1]");
+    private By rFirstCatalog=By.xpath(".//ng-include[1]/div[1]/div[1]/div[5]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h3[1]");
+    private By rSecondCatalog=By.xpath(".//ng-include[1]/div[1]/div[1]/div[5]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[2]/div[1]/div[2]/h3[1]");
  
     
     public HomePage(WebDriver driver) {
@@ -120,10 +120,12 @@ public class HomePage extends FractalBasePage {
 	}
 	
 	public void verifyBellNotification() {
+		wait(5);
 		clickOnBellIcon();
 		wait(2);
 		verifyLabel("lblNotification",lblNotification );
-		verifyLabel("ntnIntroGST",Check );
+		String ntnIntroGST=getText(Check);
+		verifyText(ntnIntroGST,Check );
 		clickOnViewAll();
 		
 	}
@@ -148,11 +150,11 @@ public class HomePage extends FractalBasePage {
 	}
 	public void rcntAddedCourses() {
 		clickOnCourseslink();
-
+        click(rlblAll);//added by mahesh 2/1/19
 	}
 	public void verifyRcntAdded_CoursesText() {
 		verifyLabel("lblRcntAdded_CoursesText",lblRcntAdded_CoursesText);
-	
+	    click(rlblAll);
 	}
 	public void verifyTopArrBtn() {
 		clickOnTopArrBtn();
@@ -165,6 +167,7 @@ public class HomePage extends FractalBasePage {
 	public void verifyAllFilterRcntAdded() {
 		click(rlblAll);
 		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,rlblFilterLink);
+	     
 	}
 	public void verifyBundleFilterRcntAdded() {
 		click(rlblAll);
@@ -175,6 +178,7 @@ public class HomePage extends FractalBasePage {
 		click(rlblAll);
 		click(rlblCourses);
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Course");
+		
 	}
 	public void verifyResourceFilterRcntAdded() {
 		click(rlblAll);
@@ -183,8 +187,10 @@ public class HomePage extends FractalBasePage {
 	}
 	public void verifyLearnPathFilterRcntAdded() {
 		click(rlblAll);
+		if(elementExist(rlblLpaths)) {
 		click(rlblLpaths);
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Learning Path");
+	}
 	}
 	public void verifyAllFilterRecommAdded(){
 		click(relblAll);
@@ -212,11 +218,11 @@ public class HomePage extends FractalBasePage {
 	}
 	public void verifyResourceFilterRecommAdded() {
 		click(relblAll);
-		wait(3);
+		wait(10);
 		if(elementExist(relblResources)) {
 			click(relblResources);
 			wait(3);
-			verifyFilterTypeRecommAdded(reboxBtn,reboxCatType,"resource");
+			verifyFilterTypeRecommAdded(reboxBtn,reboxCatType,"Resource");
 		}	
 	}
 	public void verifyLearnPathFilterRecommAdded() {
@@ -282,11 +288,14 @@ public class HomePage extends FractalBasePage {
 		verifyText(getLabel("lblMyLearning"), lblMyLearning);
 		
 	}
+	/*added on 25-1-2019 by mahesh */ 
 	public void verifyLearningInprogress() {
-		verifyText(getLabel("learningItemTitle"), learningItemTitle);
+		String learningItemTitle1=getText(learningItemTitle);
+		verifyText(learningItemTitle1, learningItemTitle);
 		verifyComplPercent(compPercent);
 		elementExist(btnContinue);
 	}
+	/*--------------here------*/
 	public void verifyMyLearningLabeltext() {
 		click(btnContinue);
 		myLearning.verifyMyLearningLabels();
@@ -295,15 +304,21 @@ public class HomePage extends FractalBasePage {
 		click(homeLink);
 		wait(10);
 		click(rLinkViewAll);
+		wait(5);
 		verifyText(getLabel("vlblAll"), vlblAll);
 		verifyText(getLabel("vlblBundle"), vlblBundle);
+		wait(5);
 		verifyText(getLabel("vlblCourse"), vlblcourse);
 		verifyText(getLabel("vlblResource"), vlblResource);
+		if(elementExist(vlblLpath)){
 		verifyText(getLabel("vlblLearningPath"), vlblLpath);
+		}
 		verifyText(getLabel("vlblAllLanuages"), lblAllLanuages);
 		elementExist(iconListView);
 		elementExist(iconGridView);
+		if(elementExist(btnLoadMore)){
 		verifyText(getLabel("vbtnLoadMore"), btnLoadMore);
+		}
 	}
 	/*Ends- added by Manju Priya A on Nov-29-18*/
 	public void verifyFooterLinks() {
@@ -320,7 +335,7 @@ public class HomePage extends FractalBasePage {
 	/*Ends- added by Manju Priya A on Nov-29-18*/
 	public void	recentlyAddedsectionAttributes() {
 		click(rlblAll);
-		wait(5);
+		wait(10);
 	    String[] linkTypes = getFilterLinks(rlblFilterLink);
 	    for(String a:linkTypes) {
 			System.out.println("---->"+a);
@@ -345,7 +360,7 @@ public class HomePage extends FractalBasePage {
 	}
 	
 	public void verifyNextBtn() {
-		wait(5);
+		wait(10);
 		click(nextButton);
     }
 	
@@ -356,15 +371,19 @@ public class HomePage extends FractalBasePage {
 
 	public void firstTwoCatalogItemsTitleCompare() {
 		wait(5);
-    	verifyText(getLabel("firstCatalog"),rFirstCatalog);
-        verifyText(getLabel("secondCatalog"),rSecondCatalog);
+		String FirstCatalog1=getText(rFirstCatalog);
+    	verifyText(FirstCatalog1,rFirstCatalog);
+    	String SecondCatalog1=getText(rSecondCatalog);
+        verifyText(SecondCatalog1,rSecondCatalog);
 		click(rLinkViewAll);
 		wait(5);
-		verifyText(getLabel("firstCatalog"),reFirstCatalog);
-		verifyText(getLabel("secondCatalog"),reSecondCatalog);
-		
+		String FirstCatalog2=getText(reFirstCatalog);
+		verifyText(FirstCatalog2,reFirstCatalog);
+		String SecondCatalog2=getText(reSecondCatalog);
+		verifyText(SecondCatalog2,reSecondCatalog);
+		wait(5);
+		click(homeLink);
 	}
-
 	public void mostPopularCount() {
 		int itemCount = getItemsCount(mostboxBtn,mostboxCatType);
    	    System.out.println("---------"+itemCount);

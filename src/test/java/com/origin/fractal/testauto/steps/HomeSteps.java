@@ -53,7 +53,6 @@ public class HomeSteps extends FractalBaseStep {
 
 	}
 	
-	
 
 	public void verifyComplStatus() {
 		 result ="Passed";

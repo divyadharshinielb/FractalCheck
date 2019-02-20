@@ -22,6 +22,7 @@ public class LoginPage extends FractalBasePage {
 	private By inValid = By.xpath(".//*[contains(text(),'Username/Password is incorrect')]");
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
+	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -69,7 +70,7 @@ public class LoginPage extends FractalBasePage {
 	public void registerFunction() {
 		String baseUrl = "https://automation-origin.originfractal.com";
 		goTo(baseUrl);
-		wait(5);
+		wait(10);
 		click(registerButton);
 		elementExist(resigstrationPage);
 	}
@@ -104,5 +105,8 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 		elementExist(inValid);
 		
+	}
+	public void verifySearchLink() {
+		enterData ("abcdef",searchLink);
 	}
 }
