@@ -36,6 +36,15 @@ public class SettingsPage extends FractalBasePage {
 		btn.click();
 
 	}
+	
+	/****added here by mahesh*06/02/0/19**/
+/* public void verifyMailReceivedToEmail() {
+		String text = read();
+		String textReceived =text;
+		verifyText(textReceived,textReceived);
+	}
+	*/
+/****end**/
 
 
 }

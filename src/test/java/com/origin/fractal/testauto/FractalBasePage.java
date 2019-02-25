@@ -16,9 +16,8 @@ public abstract class FractalBasePage extends BasePage {
 	private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
 	private By lblMyAccount = By.xpath(".//*[@id='header']/div/*//a[contains(text(),'My Account')]");
 	private By btnCategory = By.xpath(".//*[@id='header']/*//button");
-	private By btnBellIcon = By
-			.xpath(".//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]");
-	private By viewAll = By.xpath(".//*[@id=\"notification-dropdown\"]/div[2]/div[2]/a");
+	private By btnBellIcon = By.xpath(".//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]");
+	private By viewAll = By.xpath(".//*[@id='notification-dropdown']/div[2]/div[2]/a");
 	private By settings = By.xpath(".//a[contains(text(),'Settings')]");
 	private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'CONTINUE')]");
@@ -44,6 +43,7 @@ public abstract class FractalBasePage extends BasePage {
     private By cartItemBtn=By.xpath(".//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]");
 	private By logoImg=By.xpath(".//div/ng-include//div/img");    
 	private By logOut=By.xpath(".//a[@class='pointer padding-l-15']");
+	private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
 
 	protected FractalBasePage(WebDriver driver) {
 		this.driver = driver;
@@ -77,6 +77,7 @@ public abstract class FractalBasePage extends BasePage {
 	}
 
 	public void clickOnViewAll() {
+		wait(5);
 		click(viewAll);
 
 	}
@@ -130,6 +131,14 @@ public abstract class FractalBasePage extends BasePage {
 		}
 		public void clickOnTopArrBtn() {
 			click(btnTopArr);
+		}
+		public String[] verifyAllLanguage(String objBox) {
+			System.out.println("Taking all links:");
+			String[] linkTypes = getFilterLinks(objBox);
+			for(String a:linkTypes) {
+				System.out.println("---->"+a);
+		       }
+			return linkTypes;
 		}
 		
 		public boolean verifyAllFilterTypeRcntAdded(String objBox, String objBoxtype, String objFilterLink) {
@@ -192,7 +201,7 @@ public abstract class FractalBasePage extends BasePage {
 		//To verify the category list in the header
 		public boolean verifyAllCategories(String objPath){
 			String[] actArray = {
-				getLabel("lblCategoryAll"),getLabel("lblCategoryPrjMgm"),getLabel("lblCategoryQA"),
+				getLabel("lblCategoryAll"),/*getLabel("lblCategoryPrjMgm"),*/getLabel("lblCategoryQA"),
 				getLabel("lblCategoryHC"),getLabel("lblCategoryID"),getLabel("lblCategoryMrkt"),
 				getLabel("lblCategoryMcrLrn"),getLabel("lblCategory3DAnim"),getLabel("lblCategorySftSkl"),
 				getLabel("lblCategoryStryLine"),getLabel("lblCategoryGD"),getLabel("lblCategoryTech")
@@ -322,6 +331,23 @@ public abstract class FractalBasePage extends BasePage {
 			}
 			return catlogType;
 		}
+		
+		public String[] verifyLastCataloItems(String objpath, String objpathType) {
+			int length = getItemsCount(By.xpath(objpath));
+			String wholeObjPath = "";
+			String actualCatalogName="";
+			String[] catlogName = new String[length];
+		//	click(btnLoadMore);
+			for(int i=1;i<=4;i++) {
+				wholeObjPath = objpath+"["+(length)+objpathType;
+				actualCatalogName=getText(By.xpath(wholeObjPath));
+				wait(2);
+				catlogName[i-1]=actualCatalogName;
+				length--;
+			}
+			return catlogName;
+		}
+		
 		
 	   //*****Recommended***//
 		public boolean verifyAllFilterTypeRecommAdded(String objBox, String objBoxtype, String objFilterLink) {
@@ -493,6 +519,7 @@ public abstract class FractalBasePage extends BasePage {
 		public void clickLogout() {
 			wait(5);
 			click(lblProfile);
+			wait(5);
 			click(logOut);
 			
 		}
@@ -513,5 +540,80 @@ public abstract class FractalBasePage extends BasePage {
 			}while(status);
 			return count;
 		}
-		
+		/***added by mahesh 06/02/19***/
+	/*	public String read() {
+	    	String emailSubject;
+	    	Message emailMessage;
+	    	String textExtract ="";
+	        Properties props = new Properties();
+	        try {
+	            props.load(new FileInputStream(new File("smtp.properties")));
+	            Session session = Session.getDefaultInstance(props, null);
+	            Store store = session.getStore("imaps");
+	            store.connect("smtp.gmail.com", "automation_directuser@originlearning.com", "0R1autoDi6");
+	            Folder inbox = store.getFolder("inbox");
+	            inbox.open(Folder.READ_WRITE);
+	            int messageCount = inbox.getMessageCount();
+	            System.out.println("Total Messages:- " + messageCount);
+	            Message[] messages = inbox.getMessages();
+	            System.out.println("------------------------------");
+	            emailMessage = inbox.getMessage(messageCount);
+		        emailSubject = emailMessage.getSubject();
+		        String textPart = null; 
+		        for (int i = messageCount-1; i >= 0; i--) {
+	                System.out.println("Mail Subject:- " + messages[i].getSubject());
+	         //       System.out.println("Text: " + messages[i].getContent());
+	                String actualSub = messages[i].getSubject();
+	                //String expectedSub = "Reset Password";
+	                String expectedSubFor = "Fwd: Access Enabled";
+	                if(actualSub.equalsIgnoreCase(expectedSubFor)) {
+	                	//System.out.println("Got it--------------------------------------------------------------");
+	                	Object mp = (Object) messages[i].getContent();
+	                	
+		                System.out.println("mp: " + mp);
+	*/	               /* if (mp instanceof String)  
+		                {
+		                    String body = (String)mp;
+		                    
+		                    System.out.println("--------------------------------------------------------------");
+		                    System.out.println("MSG Body : " + body);
+		                    System.out.println("--------------------------------------------------------------");
+		                } */
+	/*	                if(mp instanceof Multipart)  
+		                {  
+		                    Multipart mpp = (Multipart)mp;
+		                    final BodyPart bp = mpp.getBodyPart(0);
+		                    System.out.println("Text: " +bp.getContent().toString());
+		                    textPart = bp.getContent().toString();
+		                }
+     */                   
+                        /*else {
+		                    System.out.println("Inside else");
+		                    Multipart mpp = (Multipart)mp;
+		                    final BodyPart bp = mpp.getBodyPart(0);
+		                    System.out.println("Text: " +bp.getContent().toString());
+		                }*/
+	/*	                break;
+	                }  
+	            }
+		        //
+	       //  System.out.println("--------------------------------------------------------------");
+	            System.out.println(textPart);
+	            String[] arrayData = textPart.split("!");
+	            for (String e : arrayData) {
+					System.out.println(e);
+				}
+	            textExtract = arrayData[1].substring(0,50);
+	*/        /*     System.out.println("-----------------------------Text---------------------------------"+textExtract);
+	            System.out.println("--------------------------------------------------------------");
+	        */   //
+	/*	        inbox.close(true);
+	            store.close();
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return textExtract;
+	    }
+	*/   
+/****************end*************************/
 }

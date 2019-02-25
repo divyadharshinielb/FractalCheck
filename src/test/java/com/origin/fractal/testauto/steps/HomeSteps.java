@@ -53,7 +53,6 @@ public class HomeSteps extends FractalBaseStep {
 
 	}
 	
-	
 
 	public void verifyComplStatus() {
 		 result ="Passed";
@@ -92,7 +91,7 @@ public class HomeSteps extends FractalBaseStep {
 		page.clickContinueBtn();
 		       page.clickOnHome();
 		}
-		   public void verifyNavTORcntAddedCoursesRtnToHome() {
+    public void verifyNavTORcntAddedCoursesRtnToHome() {
 		   	page.rcntAddedCourses(); 
 		   page.clickOnHome();
 		   }
@@ -364,6 +363,12 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	
 	    }
+	   public void verifyEnrolledText() {
+		   page.verifyEnrolledText();
+	   }
+	   public void verifyAllLanguage() {
+	   page.verifyAllLanguage();
+	   }
 	   public void verifyLearningInProgressText() {
 		   result ="Passed";
 		   try {
@@ -446,6 +451,17 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 
+	}
+	public void lastFourCatalogItemsTitleCompare() {
+		result ="Passed";
+		   try {
+				page.lastFourCatalogItemsTitleCompare();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 
 	public void mostPopularCount() {

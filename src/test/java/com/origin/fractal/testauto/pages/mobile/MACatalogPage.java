@@ -61,7 +61,7 @@ public class MACatalogPage extends FractalAppPage {
 			btnFilter = By.xpath("//XCUIElementTypeButton[contains(@name,'filter')]/../XCUIElementTypeButton[4]");
 			btnBack = By.xpath("//XCUIElementTypeButton[contains(@name,'back icon Green')]");
 			btnBuy = By.xpath("//XCUIElementTypeButton[contains(@name,'JOIN')]");//we have no contents for buy
-			categoryText = By.xpath("//XCUIElementTypeButton[contains(@name,'back icon Green')]/../XCUIElementTypeStaticText[1]");
+			categoryText = By.xpath("//XCUIElementTypeStaticText[contains(@name,'Categories')]/../XCUIElementTypeOther[2]/*//XCUIElementTypeCell[1]");
 			categoryFirst = By.xpath("//XCUIElementTypeStaticText[contains(@name,'Categories')]/../XCUIElementTypeOther[2]/*//XCUIElementTypeCell[1]");
 			btnListView = By.xpath(".//XCUIElementTypeButton[contains(@name,'gray List')]/../XCUIElementTypeButton[2]");
 			listView = By.xpath(".//XCUIElementTypeButton[contains(@name,'dark list')]/../XCUIElementTypeButton[2]");
@@ -80,6 +80,7 @@ public class MACatalogPage extends FractalAppPage {
 			resultsText = By.xpath("//XCUIElementTypeStaticText[contains(@name,'Result')]");
 			objPath1 = "//XCUIElementTypeStaticText[contains(@name,'Result')]/../XCUIElementTypeCollectionView/XCUIElementTypeCell[";
 			objPath2 = "]/*//XCUIElementTypeStaticText";
+			/*End of - added by Manju Priya A on Dec-20-18*/
 		}
 	}
 

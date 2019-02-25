@@ -267,8 +267,9 @@ public abstract class  BasePage {
 		int length = getItemsCount(By.xpath(objpath));
 		String[] filterArray= new String[length];
 		for(int i=1;i<=length;i++) {
-			filterArray[i-1] = getText(By.xpath(objpath+"["+i+"]")).toLowerCase();
+			filterArray[i-1] = getText(By.xpath(objpath+"["+i+"]"));
 		}
+		print("------>"+length);
 		return filterArray;
 	}
 	
@@ -474,4 +475,8 @@ public abstract class  BasePage {
 		return value;
 	}
 	/*End of - added By manju priya A on Jan-11-19*/
+	public String getAttributeValuePassword(By objLoc) {
+		String value = driver.findElement(objLoc).getAttribute("value");
+		return value;
+		}
 }
