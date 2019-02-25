@@ -29,19 +29,19 @@ public class LoginPage extends FractalBasePage {
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://automation-origin.originfractal.com";
+		String baseUrl = "https://origin.originfractal.com";
 		goTo(baseUrl);
 		
 	}
 	public void doLogin() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("P@ssw0rd123",tbPassword);
+		enterData("AutoDU@123",tbPassword);
 		click(btnLogin);
 		wait(5);
 	}
 	public void doLogin1() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("P@ssw0rd",tbPassword);
+		enterData("AutoDU@123",tbPassword);
 		click(btnLogin);
 	}
 	public void loginPageVerification() {
@@ -54,18 +54,24 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void rememberMe() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("P@ssw0rd123",tbPassword);
+		enterData("AutoDU@123",tbPassword);
+		wait(10);
 		click(rememberMe);
-		click(btnLogin);
-		wait(5);
+		wait(10);
+		click(btnLogin1);
+		wait(10);
 		click(lblProfile);
+		wait(10);
 		click(logOutButton);
 		wait(5);
 		click(rememberMe);
 		wait(5);
 		click(btnLogin1);
+		wait(10);
 		click(lblProfile);
+		wait(10);
 		click(logOutButton);
+		wait(10);
 		click(btnLogin1);	
 		elementExist(blankPassword);
 		}
@@ -77,7 +83,7 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://automation-origin.originfractal.com";
+		String baseUrl = "https://origin.originfractal.com";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
@@ -95,6 +101,13 @@ public class LoginPage extends FractalBasePage {
 	public void blankUserName() {
 		enterData (userName[0],tbUserName);
 		enterData (passWord[1],tbPassword);
+		click(btnLogin);
+		wait(5);
+		elementExist(blankUserName);
+	}
+	public void mandatoryField() {
+		enterData (userName[0],tbUserName);
+		enterData (passWord[0],tbPassword);
 		click(btnLogin);
 		wait(5);
 		elementExist(blankUserName);

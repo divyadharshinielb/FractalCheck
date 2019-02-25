@@ -137,8 +137,8 @@ public class AccountPage extends FractalBasePage {
 	}
 	public void afterChangePassword() {
 		wait(5);
-		enterData("P@ssw0rd1",changePassword);
-		enterData("P@ssw0rd1",confirmPassword);
+		enterData("AutoDU@123",changePassword);
+		enterData("AutoDU@123",confirmPassword);
 		wait(5);
 		System.out.print(confirmPassword);
 		click(saveButton);
