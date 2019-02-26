@@ -16,9 +16,9 @@ public class WebProductionTests extends FractalBaseWebTest {
 	public Object[][] browers() {
 		return new Object[][] {
 		  new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" } ,
-//		 new Object[] { "4", "ie11" }
+		 , new Object[] { "2", "firefox" }
+		 , new Object[] { "3", "msedge" } ,
+//		, new Object[] { "4", "ie11" }
 		};
 	}
 
@@ -78,17 +78,17 @@ public class WebProductionTests extends FractalBaseWebTest {
 	 Reporter.writeSummary("TCID_061,  Verify  My account page, " +  accountSteps.getResult() );
 	 accountSteps.verifyProfileDetails();
 	 Reporter.writeSummary("TCID_062,  Verify  My Account Profile details, " +  accountSteps.getResult() );
-     //Need confirmation from team 
- /*	 accountSteps.verifyFieldValidation();
+    //Need confirmation from team 
+     accountSteps.verifyFieldValidation();
 	 Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
- */
-	 accountSteps.verifyEmptyProfileValidation();
-	 Reporter.writeSummary("TCID_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );
+
+//	 accountSteps.verifyEmptyProfileValidation();
+//	 Reporter.writeSummary("TCID_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );
 	 accountSteps.verifyAfterCancelValidation();
 	 Reporter.writeSummary("TCID_067,  Verify the changes should not be displayed on clicking Cancel, " +  accountSteps.getResult() );
 	 homeSteps.verifyBellNotification();
 	 Reporter.writeSummary("TCID_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
 	 homeSteps.verifyLogoImg();
 	 Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());
-	 }
+   }
  }

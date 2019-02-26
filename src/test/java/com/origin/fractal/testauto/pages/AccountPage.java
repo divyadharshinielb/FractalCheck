@@ -23,7 +23,7 @@ public class AccountPage extends FractalBasePage {
 	private By btnSave = By.xpath(".//div/form/*//button[contains(text(),'Save')]");
 	private By txtboxNewPass = By.xpath(".//div/form/*//div[contains(text(),'New Password:')]/../div/input");
 	private By txtboxConfirmPass = By.xpath(".//div/form/*//div[contains(text(),'Confirm Password:')]/../div/input");
-	private By btncancel = By.xpath(".//div/form/*//button[contains(text(),'Save')]");
+	private By btncancel = By.xpath(".//div/form/*//button[contains(text(),'Cancel')]");
 
 	private By fNameError = By.id("errFirstName");
 	private By fNameErrorOnlyLetters = By.id("errFirstNameLetters");
@@ -82,8 +82,8 @@ public class AccountPage extends FractalBasePage {
 		verifyValue(getLabel("lblFName"),lblFName);//could not get text
 		verifyValue(getLabel("lblLName"),lblLName);//could not get text
 		wait(10);
-		verifyLabel("newPassword",txtboxNewPass);
-		verifyLabel("confirmPassword",txtboxConfirmPass);
+		verifyText("",txtboxNewPass);	
+		verifyText("",txtboxConfirmPass);
 	}
 	public void verifyFieldValidation() {
 		clear(lblFName);
