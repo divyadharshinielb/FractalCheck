@@ -14,9 +14,9 @@ public class WebTestsSettings extends FractalBaseWebTest {
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] { 
-			new Object[] { "1", "chrome" } 
+//		,	new Object[] { "1", "chrome" } 
 //		, new Object[] { "2", "firefox" } ,
-//		new Object[] { "3", "msedge" } 
+		new Object[] { "3", "msedge" } 
 //			new Object[] { "4", "ie11" }
 		};
 	}
@@ -42,6 +42,10 @@ public class WebTestsSettings extends FractalBaseWebTest {
 		settingsSteps.clickOnSwitch();
 		Reporter.writeSummary("TCID_077,Verify The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable, " +   settingsSteps.getResult() );
 		settingsSteps.clickOnSave();
+		/*****added by Mahesh on 06/02/19***/
+	//	settingsSteps.verifyMailReceivedToEmail();
+		Reporter.writeSummary("TCID_081,Verify The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable, " +   settingsSteps.getResult() );
+		/***end***/
 	}
 }
     

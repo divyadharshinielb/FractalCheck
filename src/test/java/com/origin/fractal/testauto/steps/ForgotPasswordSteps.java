@@ -18,4 +18,5 @@ public class ForgotPasswordSteps extends FractalBaseStep{
 	public void verifyForgotPasswordLabels() {
 		page.verifyForgotPasswordLabels();
 	}
+	
 }

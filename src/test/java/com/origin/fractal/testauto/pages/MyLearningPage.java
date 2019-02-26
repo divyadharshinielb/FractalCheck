@@ -17,8 +17,10 @@ public class MyLearningPage extends FractalBasePage {
 
 	private By lblCompl = By.className("percentageValue_ent");
 	private By clickCatalog = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Valid till:')]");//Updated on Nov-22-18
+	/***added on 02/08/19***/
 	private By lblUpdatedOnInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]");
-	private By lblDescInCat = By.xpath("//*[@id='ngview']/div/ng-include/*//div/*//h3[contains(text(),'Overview')]");
+	/******/
+	private By lblDescInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/*//h3[contains(text(),'Overview')]");
 	private By lblValidTillInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/*//span[contains(text(),'Valid till')]");
 	private By lblDurationInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/*//span[contains(text(),'Duration')]");
 	private String lblFilterLink = ".//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../a";
@@ -76,8 +78,12 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyCatalogDetails() {
+		/**added here 1/30/2019**/
+	//	wait(5);
+	//	click(clickCatalog);
+		/***/
 		verifyPartialLabelText("lblUpdatedOn", lblUpdatedOnInCat);
-		verifyPartialLabelText("lblOverview", lblDescInCat);
+		verifyPartialLabelText("lbloverview", lbloverview);
 		verifyPartialLabelText("lblValidtill", lblValidTillInCat);
 		verifyPartialLabelText("lblDuration", lblDurationInCat);
 	}
@@ -95,19 +101,25 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyBundleFilter() {
 		click(lblAll);
+		wait(5);
 		click(lblBundles);
+		wait(5);
 		verifyFilterType(boxBtn, boxCatType, "bundle");
 	}
 
 	public void verifyCourseFilter() {
 		click(lblAll);
+		wait(5);
 		click(lblCourses);
+		wait(5);
 		verifyFilterType(boxBtn, boxCatType, "course");
 	}
 
 	public void verifyResourceFilter() {
 		click(lblAll);
+		wait(5);
 		click(lblResources);
+		wait(5);
 		verifyFilterType(boxBtn, boxCatType, "resource");
 	}
 
@@ -123,6 +135,7 @@ public class MyLearningPage extends FractalBasePage {
 	}
 	public void verifyListView() {
 		click(lblAll);
+		wait(5);
 		listView();
 	}
 	public void verifyCategory() {
@@ -141,11 +154,13 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyBundleContents() {
 		click(lblBundles);
+		wait(5);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
 	}
 	public void verifyCourseContents() {
 		click(lblCourses);
+		wait(5);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
 	}
