@@ -28,6 +28,19 @@ public class LoginSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
+	//Starts - Added by Mahesh on Feb_06_19
+		public void verifypasswordField() {
+			result ="Passed";
+			try {
+				page.verifypasswordField();
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();   
+				result="FAILED";
+		  }
+		}
+		//end
 
 	public void rememberMe() {
 		result ="Passed";
@@ -111,5 +124,16 @@ public class LoginSteps extends FractalBaseStep {
 		result="FAILED";
 		  }
 		
+	}
+	public void verifySearchLink() {
+		result ="Passed";
+		  try {
+		  page.verifySearchLink();
+		  }
+		  catch(Exception e)
+		  {
+		e.printStackTrace();   
+		result="FAILED";
+		  }
 	}
 }

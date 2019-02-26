@@ -15,14 +15,15 @@ public class AccountPage extends FractalBasePage {
 	private By lblChgPass = By.xpath(".//*[@id='changePassword']");
 	private By lblNewPass = By.xpath(".//*[@id='lblNewPass']");
 	private By lblconfrmPass = By.xpath(".//*[@id='lblConfirmPass']");
-
-	private By lblEmail = By.xpath(".//div/ng-include/*//div/ul/*//div/a[contains(text(),'My Account')]");
+/**addded here**/
+	private By lblEmail = By.xpath(".//div/form/*//div[contains(text(),'Email Address:')]/../div/input");
+/**here**/	
 	private By lblFName = By.xpath(".//div/form/*//div[contains(text(),'First Name:')]/../div/input");
 	private By lblLName = By.xpath(".//div/form/*//div[contains(text(),'Last Name:')]/../div/input");
 	private By btnSave = By.xpath(".//div/form/*//button[contains(text(),'Save')]");
 	private By txtboxNewPass = By.xpath(".//div/form/*//div[contains(text(),'New Password:')]/../div/input");
 	private By txtboxConfirmPass = By.xpath(".//div/form/*//div[contains(text(),'Confirm Password:')]/../div/input");
-	private By btncancel = By.xpath(".//div/form/*//button[contains(text(),'Save')]");
+	private By btncancel = By.xpath(".//div/form/*//button[contains(text(),'Cancel')]");
 
 	private By fNameError = By.id("errFirstName");
 	private By fNameErrorOnlyLetters = By.id("errFirstNameLetters");
@@ -56,7 +57,9 @@ public class AccountPage extends FractalBasePage {
 	
 	public void verifyProfileDetails() {
 		verifyValue(getLabel("lblEmail"),lblEmail);
+		wait(5);
 		verifyValue(getLabel("lblFName"),lblFName);
+		wait(5);
 		verifyValue(getLabel("lblLName"),lblLName);
 	}
 	public void verifyEmptyProfileValidation() {
@@ -75,10 +78,12 @@ public class AccountPage extends FractalBasePage {
 		enterData(getLabel("newPass"), txtboxNewPass);
 		enterData(getLabel("confirmPass"), txtboxConfirmPass);
 		click(btncancel);
+		wait(5);
 		verifyValue(getLabel("lblFName"),lblFName);//could not get text
 		verifyValue(getLabel("lblLName"),lblLName);//could not get text
-		verifyLabel("",txtboxNewPass);
-		verifyLabel("",txtboxConfirmPass);
+		wait(10);
+		verifyText("",txtboxNewPass);	
+		verifyText("",txtboxConfirmPass);
 	}
 	public void verifyFieldValidation() {
 		clear(lblFName);
@@ -112,10 +117,13 @@ public class AccountPage extends FractalBasePage {
 	}
 	
 	public void verifyErrorMessage(){
+		if (elementExist(fNameErrMsg)) {
 		verifyLabel("fNameErrMsg",fNameErrMsg);
 		verifyLabel("lNameErrMsg",lNameErrMsg);
 		verifyLabel("lNewPass",lNewPass);
-	}
+	     }
+		}
+		
 	public void changePassword() {
 		wait(5);
 		enterData("Origin@123",changePassword);
@@ -129,8 +137,8 @@ public class AccountPage extends FractalBasePage {
 	}
 	public void afterChangePassword() {
 		wait(5);
-		enterData("P@ssw0rd1",changePassword);
-		enterData("P@ssw0rd1",confirmPassword);
+		enterData("AutoDU@123",changePassword);
+		enterData("AutoDU@123",confirmPassword);
 		wait(5);
 		System.out.print(confirmPassword);
 		click(saveButton);

@@ -111,7 +111,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		//TCID_6:verify the Grid view items and functionality
 		mLSteps.verifyGridView();
 		Reporter.writeSummary("TCID_006,Verify the Grid view items and functionality, " +  mLSteps.getResult() );
-		//TCID_7:verify the List view items and functionality
+	    //TCID_7:verify the List view items and functionality
 		mLSteps.verifyListView();
 		Reporter.writeSummary("TCID_007,Verify the List view items and functionality, " +  mLSteps.getResult() );
 		//TCID_5: Verify Category drop down and Grid and List mode

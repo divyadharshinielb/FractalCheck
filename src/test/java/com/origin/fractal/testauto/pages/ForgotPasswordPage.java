@@ -17,11 +17,13 @@ public class ForgotPasswordPage extends FractalBasePage{
 	}
 	public void clickForgotPasswordLink() {
 		wait(5);
+		String ForgotPasswordLink=getText(forgotPasswordLink);
+		verifyText(ForgotPasswordLink,forgotPasswordLink);
 		click(getObj(forgotPasswordLink));
 		wait(5);
 	}
 	public void verifyForgotPasswordLabels() {
 		elementExist(txtInputEmail);
-		verifyText("Username", btnSend);
+		verifyText("SEND", btnSend);
 	}
 }

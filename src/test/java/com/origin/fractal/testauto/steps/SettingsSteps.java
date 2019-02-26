@@ -33,6 +33,12 @@ public class SettingsSteps extends FractalBaseStep {
 	public void clickOnSave() {
 		page.clickOnSave();
 	}
+	/****added by mahesh on 06/02/2019**/
+/*	public void verifyMailReceivedToEmail() {
+		page.verifyMailReceivedToEmail();
+	}
+	*/
+/*****end**/
 
 }
 
