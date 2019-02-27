@@ -6,6 +6,8 @@ import com.opencsv.CSVWriter;
 
 public class Reporter {
 	private static CSVWriter repWriter;
+	private static String strBrowserAppOS = "Chrome";
+	private static String strEnv = "Staging";
 	
 	public static void createReport() {
 		
@@ -18,15 +20,18 @@ public class Reporter {
 	
 	private static void writeHeader() {
         //Create record
-        String [] record = "TCID, TEST DESCRIPTION, TEST RESULT".split(",");
+        String [] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT".split(",");
         //Write the record to file
         if (repWriter!= null)
         repWriter.writeNext(record);
 	}
 	
 	public static void writeSummary(String strLine) {
+	String	strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine;
+		
+		
 		// This is report test result
-		String [] record = strLine.split(",");
+		String [] record = strReportWithBrowserEnvDetails.split(",");
 		repWriter.writeNext(record);
 	}
 	
@@ -43,4 +48,8 @@ public class Reporter {
 				e.printStackTrace();
 			}
 		}
+	
+	public static void setBrowserAppOS(String strBrwAppOS) {
+		strBrowserAppOS = strBrwAppOS;
+	}
 }
