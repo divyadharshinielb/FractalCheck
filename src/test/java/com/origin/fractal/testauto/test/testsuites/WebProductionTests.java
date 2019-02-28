@@ -44,8 +44,12 @@ public class WebProductionTests extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_072,  Verify the Remember me function," +  loginSteps.getResult() );
 		loginSteps.registerFunction();
 		Reporter.writeSummary("TCID_074, Verification of Register link  function," +  loginSteps.getResult() );
+	//***added by mahesh***//
+		loginSteps.verifypasswordField();
+		Reporter.writeSummary("TCID_065, Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult());
+	//********//	
 		login(driver);
-		Reporter.writeSummary("TCID_028, Verify the login page with valid username and valid password.," +  loginSteps.getResult() );
+		Reporter.writeSummary("TCID_028, Verify the login page with valid username and valid password.," +  loginSteps.getResult() );    
 	}
 
 	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
@@ -92,6 +96,10 @@ public class WebProductionTests extends FractalBaseWebTest {
 	 homeSteps.verifyBellNotification();
 	 Reporter.writeSummary("TCID_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
 	 homeSteps.verifyLogoImg();
-	 Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());
-   }
+	 Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());  
+	//***added by mahesh**//
+	 accountSteps.afterChangePassword();
+	 Reporter.writeSummary("TCID_068,  Verify whether the user is able to login with the new password, " + accountSteps.getResult() );
+	//*****//
+	}
  }
