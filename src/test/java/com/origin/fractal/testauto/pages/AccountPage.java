@@ -136,7 +136,7 @@ public class AccountPage extends FractalBasePage {
 		click(logOutButton);	
 	}
 	public void afterChangePassword() {
-		wait(5);
+		wait(10);
 		enterData("P@ssw0rd1",changePassword);
 		enterData("P@ssw0rd1",confirmPassword);
 		wait(5);
@@ -149,7 +149,9 @@ public class AccountPage extends FractalBasePage {
 		click(saveButton);
 		wait(5);
 		click(lblProfile);
+		wait(5);
 		click(logOutButton);
+		wait(5);
 	}
 
 }

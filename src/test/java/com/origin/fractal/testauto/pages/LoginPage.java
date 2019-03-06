@@ -28,6 +28,7 @@ public class LoginPage extends FractalBasePage {
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
+		pageName ="LoginPage";
 		// Go to Home Page
 		String baseUrl = "https://origin.originfractal.com";
 		goTo(baseUrl);
@@ -78,6 +79,7 @@ public class LoginPage extends FractalBasePage {
 	//Starts - Added by Mahesh on Feb_06_19
 		public void verifypasswordField() {	
 			String readPass = getAttributeValuePassword(tbPassword);
+			System.out.println("12345"+readPass);
 			verifyText("",readPass);
 		}
 		//Starts - Added by Mahesh on Feb_06_19

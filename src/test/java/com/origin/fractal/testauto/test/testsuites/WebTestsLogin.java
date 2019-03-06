@@ -15,8 +15,8 @@ public class WebTestsLogin extends FractalBaseWebTest {
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
-//			new Object[] { "1", "chrome" }
-//		 , new Object[] { "2", "firefox" }
+//		,	new Object[] { "1", "chrome" }
+//		,  new Object[] { "2", "firefox" }
 		 new Object[] { "3", "msedge" } ,
 //		 new Object[] { "4", "ie11" }
 		};
@@ -34,7 +34,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		loginSteps.verifypasswordField();
 		Reporter.writeSummary("TCID_065, Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult() );
 		/****end**/
-		//TCID_26:Verify the UI of the login page. User name, Password, Remember me fields and Login button are available in the login page.
+	/*	//TCID_26:Verify the UI of the login page. User name, Password, Remember me fields and Login button are available in the login page.
 		loginSteps.loginPageVerification();
 		Reporter.writeSummary("TCID_026, Verify the UI of the login page. User name Password Remember me fields and Login button are available in the login page, " +  loginSteps.getResult() );
 		//TCID_36:Verify the login page with valid user name and blank password
@@ -54,9 +54,9 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		//TCID_74:Verification of Register link  function 
 		loginSteps.registerFunction();
 		Reporter.writeSummary("TCID_074, Verification of Register link  function, " +  loginSteps.getResult() );
-	 }
+	*/ }
 	
-	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLoginInvalid(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -67,7 +67,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		
 	}
 	/***added here**/
-	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLoginSearchLink(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -77,7 +77,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_075, Verify the function of  Search link , " +  loginSteps.getResult() );
 	}
 	//Added by Manju Priya A on Jan_21_19
-		@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "TCID_71: verification of Forgot Password Page"
+		@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "TCID_71: verification of Forgot Password Page"
 				+ "TCID_73: Verification of Forgot Password function")
 		public void forgotPassword(String row, String strBrowserName) {
 				driver = BrowserFactory.getBrowser(strBrowserName);

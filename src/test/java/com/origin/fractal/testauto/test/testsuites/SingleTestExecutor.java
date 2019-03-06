@@ -57,7 +57,7 @@ public class SingleTestExecutor extends FractalBaseWebTest {
 	public Object[][] browers() {
 		return new Object[][] {
 //			new Object[] { "1", "msedge" }, 
-				new Object[] { "2", "chrome" }
+				new Object[] { "2", "safari" }
 //			new Object[] { "3", "firefox" }
 
 		};

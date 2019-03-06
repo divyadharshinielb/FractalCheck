@@ -10,12 +10,12 @@ import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
-public class WebProductionTests extends FractalBaseWebTest {
+public class WebProductionSafariTests extends FractalBaseWebTest {
 
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
-		  new Object[] { "1", "chrome" }
+		  new Object[] { "1", "safari" }
 //		 , new Object[] { "2", "firefox" }
 //		 , new Object[] { "3", "msedge" } 
 //		, new Object[] { "4", "ie11" }
