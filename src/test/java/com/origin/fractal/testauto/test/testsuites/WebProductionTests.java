@@ -15,9 +15,9 @@ public class WebProductionTests extends FractalBaseWebTest {
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
-		  new Object[] { "1", "chrome" }
+//		  new Object[] { "1", "chrome" }
 //		 , new Object[] { "2", "firefox" }
-//		 , new Object[] { "3", "msedge" } 
+		  new Object[] { "3", "msedge" } 
 //		, new Object[] { "4", "ie11" }
 		};
 	}
@@ -28,6 +28,7 @@ public class WebProductionTests extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		Reporter.setBrowserAppOS(strBrowserName);
 		LoginSteps loginSteps = new LoginSteps(driver);
+		HomeSteps homeSteps = new HomeSteps(driver);
 		loginSteps.loginPageVerification();
 		Reporter.writeSummary("TCID_026, Verify the UI of the login page. User name Password Remember me fields and Login button are available in the login page, " +  loginSteps.getResult() );
 		loginSteps.blankUserName();
@@ -50,6 +51,7 @@ public class WebProductionTests extends FractalBaseWebTest {
 	//********//	
 		login(driver);
 		Reporter.writeSummary("TCID_028, Verify the login page with valid username and valid password.," +  loginSteps.getResult() );    
+		homeSteps.clickLogout();
 	}
 
 	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")

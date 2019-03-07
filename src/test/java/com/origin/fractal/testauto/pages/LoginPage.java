@@ -25,7 +25,7 @@ public class LoginPage extends FractalBasePage {
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
-	
+	private By registerLoginBtn=By.xpath("//div[@class='padding-bp-12 text-center padding-t-5']//a[@class='text-D98040'][contains(text(),'LOG IN')]");
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		pageName ="LoginPage";
@@ -78,8 +78,8 @@ public class LoginPage extends FractalBasePage {
 		}
 	//Starts - Added by Mahesh on Feb_06_19
 		public void verifypasswordField() {	
+			wait(5);
 			String readPass = getAttributeValuePassword(tbPassword);
-			System.out.println("12345"+readPass);
 			verifyText("",readPass);
 		}
 		//Starts - Added by Mahesh on Feb_06_19
@@ -90,6 +90,7 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 		click(registerButton);
 		elementExist(resigstrationPage);
+		click(registerLoginBtn);
 	}
 	
 	public void blankPasswordVerification() {

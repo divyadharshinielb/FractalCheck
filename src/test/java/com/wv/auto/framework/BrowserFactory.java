@@ -167,6 +167,7 @@ public class BrowserFactory {
 		return browser;
 
 	}
+	//Added on March_6th_19
 	public static WebDriver getRemoteSafariBrowser() {
 		WebDriver browser = null;
 		
