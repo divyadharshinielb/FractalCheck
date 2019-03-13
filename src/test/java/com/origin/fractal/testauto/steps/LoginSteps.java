@@ -17,6 +17,9 @@ public class LoginSteps extends FractalBaseStep {
 	public void doLogin() {
 		page.doLogin();
 	}
+	public void loginToContentAdmin() {
+		page.loginToContentAdmin();
+	}
 	public void loginPageVerification() {
 		result ="Passed";
 		   try {
