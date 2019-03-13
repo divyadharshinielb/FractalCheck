@@ -21,11 +21,11 @@ public class AppFactory {
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("deviceName", "emulator-5554"); // CVH7N15B05003054 , emulator-5554
-		capabilities.setCapability("platformVersion", "8.0"); // 6.0.1, 8.1.0 , 6.0
-		System.out.println(new File(fratalApkFile).getAbsolutePath());
+		capabilities.setCapability("platformVersion", "8.0"); // 6.0.1, 8.1.0 , 6.0		System.out.println(new File(fratalApkFile).getAbsolutePath());
 		capabilities.setCapability("app", new File(fratalApkFile).getAbsolutePath());
 		capabilities.setCapability("noReset", "true");
 		System.out.println("Capabilities : " +capabilities.toString());
+		System.out.println("-----------------------"+fratalApkFile+"-----------------------");
 //		capabilities.setCapability("automationName", "uiautomator2");
 //		capabilities.setCapability("appPackage", "com.originkonnect.app");
 //		capabilities.setCapability("appActivity", "com.originkonnect.app.Activity.SplashscreenActivity");

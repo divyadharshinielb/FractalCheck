@@ -92,7 +92,7 @@ public class MAMenuOptionsPage extends FractalAppPage {
 		click(btnClose);
 	}
 	public void verifyMenusFunctionality() {
-		verifyChangeInsMenu();
+		//verifyChangeInsMenu();
 		verifyMyLearningMenu();
 		verifycatalogMenu();
 		verifyMyAccMenu();
@@ -105,7 +105,6 @@ public class MAMenuOptionsPage extends FractalAppPage {
 		}else {
 			click(btnMenu);
 		}
-		click(btnMenu);
 		closeMenu();
 		verifyMenuPage("MY ACCOUNT",lblTitle);
 	}

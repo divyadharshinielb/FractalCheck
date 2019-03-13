@@ -1,4 +1,3 @@
-//added by karpagavalli on 16.11.2018
 package com.origin.fractal.testauto.steps;
 
 import org.openqa.selenium.WebDriver;

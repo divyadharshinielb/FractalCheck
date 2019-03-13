@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.FractalUtils;
 
 public class LoginPage extends FractalBasePage {
 
@@ -27,15 +28,21 @@ public class LoginPage extends FractalBasePage {
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://automation-origin.originfractal.com";
+		String baseUrl = "https://dev-origin.originfractal.com";
 		goTo(baseUrl);
 		
 	}
 	public void doLogin() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("P@ssw0rd",tbPassword);
+		enterData("AutoDU@123",tbPassword);
 		click(btnLogin);
 		wait(5);
+	}
+	public void loginToContentAdmin() {
+		enterData("contentadmin@origin.com",tbUserName);
+	    enterData("contentadmin@origin.com",tbPassword);
+	    click(btnLogin);
+	    wait(5);
 	}
 	public void doLogin1() {
 		enterData("automation_directuser@originlearning.com",tbUserName);

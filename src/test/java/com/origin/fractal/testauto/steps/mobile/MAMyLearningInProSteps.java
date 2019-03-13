@@ -563,6 +563,16 @@ public class MAMyLearningInProSteps extends FractalBaseStep{//extends by Jan_16_
 		}
 		
 	}
+	public void verifyGridListView() {
+		result = "Passed";
+		try {
+			page.verifyGridListView();
+		}
+		catch(Exception e){
+			result = "FAILED";
+			e.printStackTrace();
+		}
+	}
 	
 
 }

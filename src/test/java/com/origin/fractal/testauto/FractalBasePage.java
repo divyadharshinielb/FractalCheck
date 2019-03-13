@@ -39,11 +39,14 @@ public abstract class FractalBasePage extends BasePage {
 	private By lblcontents = By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/..");
 	private String lblNavBtn=".//div/h2[contains(text(),'Recently Added')]/../../following-sibling::div/*//div/slick/ul/li[";
 
-	private By wishListBtn=By.xpath(".//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]");
-    private By cartItemBtn=By.xpath(".//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]");
+	private By cartItemBtn=By.xpath(".//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]");
+    private By wishListBtn=By.xpath(".//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]");
 	private By logoImg=By.xpath(".//div/ng-include//div/img");    
 	private By logOut=By.xpath(".//a[@class='pointer padding-l-15']");
-
+	private By goToCart = By.xpath("//button[contains(text(),'GO TO CART')]");
+	private By checkout = By.xpath("//button[contains(@class,'ng-binding')]");
+	private By lblpaytm=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div/div/span/h3[contains(text(),'paytm')]");
+	private By lblpaypal=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div/div/span/h3[contains(text(),'paypal')]");
 	protected FractalBasePage(WebDriver driver) {
 		this.driver = driver;
 		verifier = new FractalVerifier(driver);
@@ -489,7 +492,15 @@ public abstract class FractalBasePage extends BasePage {
 			wait(5);
 			click(cartItemBtn);
 		}
-
+		public void verifyCartItemBtn1() {
+			click(cartItemBtn);
+			click(goToCart);
+			click(checkout);
+			verifyText("Paytm", lblpaytm);
+			verifyText("Paypal", lblpaypal);
+			click(lblpaypal);
+			
+		}
 
 
 
