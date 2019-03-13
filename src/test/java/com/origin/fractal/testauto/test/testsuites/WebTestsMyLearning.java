@@ -18,6 +18,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 //		, new Object[] { "2", "firefox" }
 //		, new Object[] { "3", "msedge" } 
 //	new Object[] { "4", "ie11" }
+//		new Object[] { "4", "safari" }
 		};
 	}
 
@@ -142,8 +143,8 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_017,Verify Labels of Bundles and courses, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
 		//TCID_18:Verify course Details after clicking
-		mLSteps.verifyCourseContents();
-		Reporter.writeSummary("TCID_018,Verify course Details after clicking, " +  mLSteps.getResult() );
+	//	mLSteps.verifyCourseContents();
+	//	Reporter.writeSummary("TCID_018,Verify course Details after clicking, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
 		//TCID_23:verify Launch learning object launch
 		mLSteps.verifyLaunch();

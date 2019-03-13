@@ -44,7 +44,10 @@ public abstract class FractalBasePage extends BasePage {
 	private By logoImg=By.xpath(".//div/ng-include//div/img");    
 	private By logOut=By.xpath(".//a[@class='pointer padding-l-15']");
 	private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
-
+	private By goToCart = By.xpath("//button[contains(text(),'GO TO CART')]");
+	private By checkout = By.xpath("//button[contains(@class,'ng-binding')]");
+	private By lblpaytm=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div/div/span/h3[contains(text(),'paytm')]");
+	private By lblpaypal=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div/div/span/h3[contains(text(),'paypal')]");
 	protected FractalBasePage(WebDriver driver) {
 		this.driver = driver;
 		verifier = new FractalVerifier(driver);
@@ -513,7 +516,15 @@ public abstract class FractalBasePage extends BasePage {
 			click(cartItemBtn);
 		}
 
-
+		public void verifyCartItemBtn1() {
+			click(cartItemBtn);
+			click(goToCart);
+			click(checkout);
+			verifyText("Paytm", lblpaytm);
+			verifyText("Paypal", lblpaypal);
+			click(lblpaypal);
+			
+		}
 
 
 		public void clickLogout() {

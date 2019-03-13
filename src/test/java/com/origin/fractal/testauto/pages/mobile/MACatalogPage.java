@@ -44,6 +44,21 @@ public class MACatalogPage extends FractalAppPage {
 	private By langEnglish = By.id("android:id/text1");
 	private By lblLanguage = By.id("com.originkonnect.app:id/lang");
 	private By btnClear = By.id("com.originkonnect.app:id/clr");
+	//*****mahesh added 20/2/19***//
+	private By lblContentTextCarosal=By.id("com.originkonnect.app:id/bg_image");
+	private By lblContentText=By.id("com.originkonnect.app:id/content");
+	private By lblBackBtn=By.id("com.originkonnect.app:id/back_white");
+	private By lblCatalogText = By.id("com.originkonnect.app:id/catalog_type");
+	private By lblCatalogLogo = By.id("com.originkonnect.app:id/catalog_logo");
+	private By clickDetailedCatalogPage = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.ListView/android.widget.RelativeLayout[1]/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.TextView[1]");
+	  //**here***//
+	//Added by karpagavalli
+	private By freeBtn = By.xpath("(//android.widget.ImageView[@content-desc=\'bundle\'])[2]");
+	private By learningObject = By.xpath("//android.widget.ImageView[@content-desc=\'video\']");
+	private By alertMsg=By.id("com.originkonnect.app:id/textView47");
+	private By okBtn=By.id("com.originkonnect.app:id/ok_btn");
+	private By backCatalog=By.id("com.originkonnect.app:id/back_white");
+			//Added by karpagavalli
 	public MACatalogPage(AppiumDriver<MobileElement> appDriver) {
 		super(appDriver);
 		this.setLocators();
@@ -95,7 +110,24 @@ public class MACatalogPage extends FractalAppPage {
 		verifyText("BUY", getObj(btnBuy));
 		wait (5);
 	}
-	
+	public void verifyContentText() {
+		wait(3);
+		click(lblContentTextCarosal);
+		wait(3);
+		verifyText("Content",getObj(lblContentText));
+		wait(3);
+		click(lblBackBtn);
+	}
+	public void verifyCatalogIconText(){
+		click(lblContentTextCarosal);
+		wait(3);
+		click(clickDetailedCatalogPage);
+		elementExist(lblCatalogLogo);
+		String lblCatalogText1=getText(lblCatalogText);
+		verifyText(lblCatalogText1,lblCatalogText);
+		elementExist(lblCatalogText);
+		
+	}
 	public void verifyPopularCategory() {
 		//wait(5);
 		verifyText(catArray[0], categoryHR);//wait(5);
@@ -198,5 +230,20 @@ public class MACatalogPage extends FractalAppPage {
 			print("FAILED:  ALl filter is not working");
 		}
 	}
+
+	//Added by karpagavalli from here
+		public void verfiyContent() {
+			click(categoryFirst);
+			wait(5);
+			click(freeBtn);
+			wait(5);
+			click(learningObject);
+			elementExist(alertMsg);
+			click(okBtn);
+			click(backCatalog);
+			click(btnBack);
+			
+		}
+		//Added by karpagavalli till here 
 
 }

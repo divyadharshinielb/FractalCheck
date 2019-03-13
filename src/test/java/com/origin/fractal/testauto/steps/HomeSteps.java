@@ -425,7 +425,17 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
     }
-
+    public void verifyCartItemBtn1() {
+     	 result ="Passed";
+  		   try {
+  		     page.verifyCartItemBtn1();
+  		   }
+  		   catch(Exception e)
+  		   {
+  			e.printStackTrace();   
+  			result="FAILED";
+  		   }
+     }
 
 	public void ViewAllRcntAddedBtn() {
 	   	 result ="Passed";

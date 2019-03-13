@@ -38,7 +38,7 @@ public class HomePage extends FractalBasePage {
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
 	private String rboxBtn= ".//h2[contains(text(),'Recently Added')]/../../../div/*//div/slick/div/div/div";
 	private String rboxCatType= "]/*//div/p";
-	private By lblFree= By.xpath(".//h2[contains(text(),'Recently Added')]/../../../div/*//div/slick/div/div/div[1]/*//div/div/span[1]");
+	private By lblFree= By.xpath("//ng-include[1]/div[1]/div[1]/div[2]/div[6]/div[1]/div[1]/div[3]/div[1]/span[1]");
 	private By lblEnrolled=By.xpath(".//h2[contains(text(),'Recently Added')]/../../../div/*//div/slick/div/div/div[1]/*//div/div/span[1]/div/span");
 	private By lblViewAllLang1=By.xpath(".//ng-include[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li");
 	private String lblViewAllLang=".//ng-include[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li";
@@ -63,7 +63,7 @@ public class HomePage extends FractalBasePage {
 
     private By lblCategory = By.xpath("//button[@placeholder='Category']");
     private By txtBoxSearch = By.xpath("//input[@placeholder='Search']");
-    private By iconWishlist = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'')]");
+    private By iconWishlist = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'î€„')]");
     private By iconCart = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'Q')]");
     private By lblMyLearning = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]");
     private By compPercent = By.xpath(".//div/ng-include/*//div[contains(@class,'percentageValue')]");
@@ -79,7 +79,7 @@ public class HomePage extends FractalBasePage {
 	private By vlblcourse = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'courses')]");
 	private By vlblResource = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'resources')]");
 	private By lblAllLanuages = By.xpath(".//div/ng-include/*//div/span[contains(text(),'ALL LANGUAGES')]");
-	private By iconListView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'')]");
+	private By iconListView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'î��')]");
 	private By iconGridView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'R')]");
 	private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
 	private By homeLink = By.xpath(".//div/ng-include/*//div/a/span[contains(text(),'Home')]");
@@ -98,15 +98,15 @@ public class HomePage extends FractalBasePage {
     private By CatalogPrice = By.xpath(".//ng-include[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]");
 	private By nextButton=By.xpath(".//div/ng-include/div//div//div/slick/button[contains(text(),'Next')]");
     private By PreviousButton=By.xpath(".//div/ng-include/div//div//div/slick/button[contains(text(),'Previous')]");
-    private By reFirstCatalog=By.xpath(".//ng-include[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/h3[1]");
-    private By reSecondCatalog=By.xpath(".//ng-include[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/h3[1]");
+    private By reFirstCatalog=By.xpath("//ng-include[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/h3[1]");
+    private By reSecondCatalog=By.xpath("//ng-include[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/h3[1]");
     private By rFirstCatalog=By.xpath(".//ng-include[1]/div[1]/div[1]/div[5]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h3[1]");
     private By rSecondCatalog=By.xpath(".//ng-include[1]/div[1]/div[1]/div[5]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[2]/div[1]/div[2]/h3[1]");
     private By mFirstCatalog=By.xpath("//ng-include[1]/div[1]/div[1]/div[7]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h3[1]");
     private By mSecondCatalog=By.xpath("//ng-include[1]/div[1]/div[1]/div[7]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[2]/div[1]/div[2]/h3[1]");
     private By mThirdCatalog=By.xpath("//ng-include[1]/div[1]/div[1]/div[7]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[3]/div[1]/div[2]/h3[1]");
     private By mFourthCatalog=By.xpath("//ng-include[1]/div[1]/div[1]/div[7]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[4]/div[1]/div[2]/h3[1]");
-    private String reBox1=".//ng-include[1]/div[1]/div[2]/div";
+    private String reBox1="//ng-include[1]/div[1]/div[1]/div[2]/div";
     private String reBox2="]/div[1]/div[1]/div[2]/h3[1]";
     
     public HomePage(WebDriver driver) {
@@ -134,9 +134,11 @@ public class HomePage extends FractalBasePage {
 		clickOnBellIcon();
 		wait(2);
 		verifyLabel("lblNotification",lblNotification );
+		if((elementExist(Check))) {
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check );
 		clickOnViewAll();
+		}
 		
 	}
 	public void verifyLearningInProgressText() {
@@ -382,7 +384,7 @@ public class HomePage extends FractalBasePage {
 	}
 	
 	public void verifyNextBtn() {
-		wait(10);
+		wait(15);
 		click(nextButton);
     }
 	
@@ -418,6 +420,9 @@ public class HomePage extends FractalBasePage {
 		verifyText(MFourthCatalog1,mFourthCatalog);
 		wait(5);
 		click(rLinkViewAll);
+		for(int i=0;i<=1;i++) {
+		click(btnLoadMore);
+		}
 		wait(5);
 		String[] expectedItems=verifyLastCataloItems(reBox1,reBox2);
 		for(int i=0;i<=3;i++) {

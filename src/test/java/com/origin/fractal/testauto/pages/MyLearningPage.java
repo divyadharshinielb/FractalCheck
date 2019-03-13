@@ -16,7 +16,7 @@ public class MyLearningPage extends FractalBasePage {
 
 
 	private By lblCompl = By.className("percentageValue_ent");
-	private By clickCatalog = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Valid till:')]");//Updated on Nov-22-18
+	private By clickCatalog = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Category')]");//Updated on Nov-22-18
 	/***added on 02/08/19***/
 	private By lblUpdatedOnInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]");
 	/******/
@@ -61,7 +61,9 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifySubMenu() {
 
 		verifyLabel("lblAll", lblAll);
+	if(elementExist(lblCourses)) {
 		verifyLabel("lblCourses", lblCourses);
+	}
 		verifyLabel("lblResources", lblResources);
 		verifyLabel("lblBundles", lblBundles);
 	}

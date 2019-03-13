@@ -21,7 +21,7 @@ public class AndroidTest extends FractalBaseAppTest {
 
 	private AppiumDriver<MobileElement> appDriver;
 
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_:Verification of My Account page"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_:Verification of My Account page"
 			+ "61: Verifying whether the user details are displayed correctly in the My Account page"
 			+ "62: Verifying whether the first  and last name accespts space"
 			+ "63: Verifying whether the first  and last name accespts number"
@@ -34,16 +34,17 @@ public class AndroidTest extends FractalBaseAppTest {
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
 		maLoginSteps.doLogin();		
 		// Select Instance Screen
-		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
-		mASIS.selectFractalDemo();
+		//MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+		//mASIS.selectFractal();
 		// What's New Screen MAWhatsNewSteps
-		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
-		wait(5);
-		mAWNS.clickLater();
+		//MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
+		//wait(5);
+		//mAWNS.clickLater();
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+		wait(10);
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnMyAccount();
 		//My Account Screen
@@ -62,7 +63,7 @@ public class AndroidTest extends FractalBaseAppTest {
 		Reporter.writeSummary("TCID_070,Verifying whether the valid  first  and last names are updated successfully, " +  mMyAcc.getResult() );
 		/*Starts - added by Manju Priya A on Jan-22-19*/
 		//Commented because of the Password reset issue
-		/*String[] newPassword = {"abcdegf123#^A","abcdefgh","12345678"};
+		/* String[] newPassword = {"abcdegf123#^A","abcdefgh","12345678"};
 		String[] confirmPassword = {"abcdegf123#^A","abcdefgh","12345678"};
 		mMyAcc.verifyInvalidPassCredentials(newPassword[0], confirmPassword[0]);
 		Reporter.writeSummary("TCID_071,Verifying whether the New password and Confirm password fields accepts more than 8 characters, " +  mMyAcc.getResult() );
@@ -76,7 +77,7 @@ public class AndroidTest extends FractalBaseAppTest {
 		mAMnuSteps.clickOnLogout();
 	}
 	//Done Integration
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_25,26:Verification of Menus page"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_25,26:Verification of Menus page"
 			+ "25: Verify the Menu functionality is working fine"
 			+ "26: Verify that user able to close menu section")
 	public void verifyMenuPage() {
@@ -86,12 +87,12 @@ public class AndroidTest extends FractalBaseAppTest {
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
 		maLoginSteps.doLogin();		
 		// Select Instance Screen
-		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
-		mASIS.selectFractalDemo();
+		//MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+		//mASIS.selectFractal();
 		// What's New Screen MAWhatsNewSteps
-		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
+	/*	MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		wait(5);
-		mAWNS.clickLater();
+		mAWNS.clickLater();*/
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
@@ -103,7 +104,7 @@ public class AndroidTest extends FractalBaseAppTest {
 		Reporter.writeSummary("TCID_077,Verifying whether the user can able to logout successfully on clicking the logout button, " +  mAMnuSteps.getResult() );
 	}
 
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_20,21:Verification of Select client page"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_20,21:Verification of Select client page"
 			+ "20: Verify that assigned clients are listed for user"
 			+ "21: Verify that user able to select their 'Learning site' ")
 	public void verifySelectClientPage() {
@@ -127,13 +128,13 @@ public class AndroidTest extends FractalBaseAppTest {
 		mASIS.verifyFractalDemoSelection();
 		Reporter.writeSummary("TCID_021,Verify that user able to select their 'Learning site', " +  mASIS.getResult() );
 		/*Ends - Dec-13-18*/
-		mAMLS.clickMenu();
+		mAMLS.clickMenu();  
 		mAMnuSteps.clickOnLogout();
 		Reporter.writeSummary("TCID_078,Verifying whether the user can able to logout successfully on clicking the logout button, " +  mAMnuSteps.getResult() );
 		
 	}
 
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_58,59,60:Verification of Notification page"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_58,59,60:Verification of Notification page"
 			+ "58: Verifying whether the assigned content is getting displayed on clicking the notification bell icon"
 			+ "59: Verifying whether all the assigned items are getting displayed on clicking the more button"
 			+ "60: Verifying whether the content is accessible from the notification page")
@@ -145,7 +146,7 @@ public class AndroidTest extends FractalBaseAppTest {
 		maLoginSteps.doLogin();
 		// Select Instance Screen
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
-		mASIS.selectFractal();
+		//mASIS.selectFractal();
 		// What's New Screen MAWhatsNewSteps
 		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		wait(5);
@@ -162,16 +163,17 @@ public class AndroidTest extends FractalBaseAppTest {
 		/*Starts - Dec-12-18*/
 		mAMLS.verifyMoreButton();
 		Reporter.writeSummary("TCID_059,Verifying whether all the assigned items are getting displayed on clicking the more button, " +  mAMLS.getResult() );
-		mAMLS.verifyContentAccess();
+		//mAMLS.verifyContentAccess();
 		Reporter.writeSummary("TCID_060,Verifying whether the content is accessible from the notification page, " +  mASIS.getResult() );
 		/*Ends - Dec-12-18*/
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
+		Reporter.writeSummary("TCID_078,Verifying whether the user can able to logout successfully on clicking the logout button, " +  mAMnuSteps.getResult() );
 	}
 	
 	
 	/*Added by Manju Priya A - Dec-03-18*/
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_42,43,50,45,47:Verification of catalog page"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_42,43,50,45,47:Verification of catalog page"
 			+ "42: Verify Popular categories are listed in the Catalog page"
 			+ "43: Verify what's new contents are listed in the Catalog page"
 			+ "45: Verify the BUY button for the paid catalog item"
@@ -186,11 +188,14 @@ public class AndroidTest extends FractalBaseAppTest {
 		// Select Instance Screen
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		//mASIS.selectFractal();
-		mASIS.selectFractalDemo();
+		//mASIS.selectFractalDemo();
 		// What's New Screen MAWhatsNewSteps
 		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
+		MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
+		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		wait(5);
-		mAWNS.clickLater();
+	/*	mAWNS.clickLater();
 		Reporter.writeSummary("TCID_023,Verify that user able to close  'WHATS NEW' popup, " +  mAWNS.getResult() );
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
@@ -200,20 +205,20 @@ public class AndroidTest extends FractalBaseAppTest {
 		mAMnuSteps.clickOnCategory();
 		// Catalog Screen
 		MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
-		/*Starts - Dec-03-18*/
+		/*Starts - Dec-03-18
 		wait(5);
 		mACatSteps.verifyPopularCategory();
 		Reporter.writeSummary("TCID_042,Verify Popular categories are listed in the Catalog page, " +  mACatSteps.getResult() );
 		mACatSteps.verifyWhatsNewContents();
 		Reporter.writeSummary("TCID_043,Verify what's new contents are listed in the Catalog page, " +  mACatSteps.getResult() );
 		/*Ends - Dec-03-18*/
-		/*Starts - Dec-06-18*/
+		/*Starts - Dec-06-18
 		mACatSteps.verifyFilterExist() ;
 		Reporter.writeSummary("TCID_050,Verify the filter icon is displayed, " +  mACatSteps.getResult() );
 		/*Ends - Dec-06-18*/
-		/*Starts - Dec-10-18*/
+		/*Starts - Dec-10-18
 		mACatSteps.verifyBuyButton();
-		Reporter.writeSummary("TCID_045,Verify the BUY button for the paid catalog item, " +  mACatSteps.getResult() );
+		Reporter.writeSummary("TCID_045,Verify the Buy button for all the Paid contents, " +  mACatSteps.getResult() );*/
 		mACatSteps.verifyCategory();
 		Reporter.writeSummary("TCID_047,Verify the Catalogs are displayed correspond to the selected Category under Popular category, " +  mACatSteps.getResult() );
 		/*Ends - Dec-10-18*/
@@ -221,7 +226,7 @@ public class AndroidTest extends FractalBaseAppTest {
 		mAMnuSteps.clickOnLogout();
 	}
 	/*Added by Manju Priya A - Dec-10-18*/
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_48,49,51,52,53,54,55,56:Verification of catalog page"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_48,49,51,52,53,54,55,56:Verification of catalog page"
 			+ "48: Verify LIST view"
 			+ "49: Verify GRID view"
 			+ "51: Verify bundle filter"
@@ -239,17 +244,15 @@ public class AndroidTest extends FractalBaseAppTest {
 		// Select Instance Screen
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		//mASIS.selectFractal();
-		mASIS.selectFractalDemo();
+		//mASIS.selectFractalDemo();
 		// What's New Screen MAWhatsNewSteps
-		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
+		/*MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		wait(5);
-		mAWNS.clickLater();
+		mAWNS.clickLater();*/
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
-		mAMLS.clickMenu();
 		// Menu Options Screen
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
-		mAMnuSteps.clickOnCategory();
 		// Catalog Screen
 		MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
 		
@@ -258,14 +261,13 @@ public class AndroidTest extends FractalBaseAppTest {
 		mACatSteps.verifyGridView();
 		Reporter.writeSummary("TCID_049,Verify GRID view, " +  mACatSteps.getResult() );
 		/*Ends - Dec-10-18*/
-		
 		/*Starts - Dec-11-18*/
 		mACatSteps.verifyBundleFilter();
 		Reporter.writeSummary("TCID_051,Verify only the bundles are displayed if the Bundle filter is applied, " +  mACatSteps.getResult() );
 		mACatSteps.verifyLpathFilter();
 		Reporter.writeSummary("TCID_053,Verify only the Learning Paths are displayed if the Learning Path filter is applied, " +  mACatSteps.getResult() );
-		mACatSteps.verifyCourseFilter();
-		Reporter.writeSummary("TCID_052,Verify only the courses are displayed if the Courses filter is applied, " +  mACatSteps.getResult() );
+		//mACatSteps.verifyCourseFilter();
+		//Reporter.writeSummary("TCID_052,Verify only the courses are displayed if the Courses filter is applied, " +  mACatSteps.getResult() );
 		mACatSteps.verifyResourceFilter();
 		Reporter.writeSummary("TCID_054,Verify only the Resources are displayed if the Resource filter is applied, " +  mACatSteps.getResult() );
 		/*Ends - Dec-11-18*/
@@ -330,7 +332,7 @@ public class AndroidTest extends FractalBaseAppTest {
 
 	}
 
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_27,28,29,30,31,32,61:"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_27,28,29,30,31,32,61:"
 			+ "Verification of My Learning page"
 			+ "27: Verify whether the user able be  to access the My Learning page"
 			+ "28:Verify whether the user able be  to navigate correctly in both In progress and Completed Tabs."
@@ -348,16 +350,17 @@ public class AndroidTest extends FractalBaseAppTest {
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
 		maLoginSteps.doLogin();
 		// Select Instance Screen
-		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
-		mASIS.validateInstanceSelectionPage();
+		//MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+	//	mASIS.validateInstanceSelectionPage();
 
-		mASIS.swipeInstances();
+	//	mASIS.swipeInstances();
 
-		mASIS.selectFractal();
-		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
+	//	mASIS.selectFractal();
+		/*MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		mAWNS.validateWhatsNewPage();
-		mAWNS.clickLater();
-
+		mAWNS.clickLater();*/
+		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+		mAMnuSteps.clickOnMyLearning();
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		Reporter.writeSummary("TCID_032,Verify the name and type of the Content, " +  mAMLS.getResult() );
 		mAMLS.validateMyLearningTitle();
@@ -376,15 +379,15 @@ public class AndroidTest extends FractalBaseAppTest {
 		mAMLS.verifyListView();
 		Reporter.writeSummary("TCID_029,Verify the Catalog items are displayed in an List View format on clicking the List view icon, " +  mAMLS.getResult() );
 		//mAMLS.searchIcon();
-		//Reporter.writeSummary("TCID_041,Verify the catalog item is displayed on entering any catalog item name in the search field, " +  mAMLS.getResult() );
-		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+		Reporter.writeSummary("TCID_041,Verify the catalog item is displayed on entering any catalog item name in the search field, " +  mAMLS.getResult() );
+		//MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 		wait(5);
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 		
 	}
 	//added by karpagavalli from here
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_62,63,64,65,66,67,36,37,40,42,43,44,48,50,51,55,57,58:"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_62,63,64,65,66,67,36,37,40,42,43,44,48,50,51,55,57,58:"
 			+ "37:Verify only the courses are displayed if the Courses filter is applied;"
 			+ "38:Verify only the Learning Paths are displayed if the Learning Path filter is applied;"
 			+ "39:Verify only the Resources are displayed if the Resource filter is applied;"
@@ -410,17 +413,21 @@ public class AndroidTest extends FractalBaseAppTest {
 
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
 		maLoginSteps.doLogin();
-		// Select Instance Screen
-		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
-		mASIS.validateInstanceSelectionPage();
-		// Menu Options Screen
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 		
-		mASIS.swipeInstances();
-		mASIS.selectFractalDemo();
+		// Select Instance Screen
+		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+		//mASIS.validateInstanceSelectionPage();
+		// Menu Options Screen
+		
+		
+		//mASIS.swipeInstances();
+		//mASIS.selectFractalDemo();
 		//What's New Screen MAWhatsNewSteps
 		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		mAWNS.clickLater();
+		wait(5);
+		mAMnuSteps.clickOnMyLearning();
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		mAMLS.filterICon();
 		Reporter.writeSummary("TCID_035,Verify the filter icon is displayed on My Learning page, " +  mAMLS.getResult() );
@@ -466,12 +473,13 @@ public class AndroidTest extends FractalBaseAppTest {
 	//added by karpagavalli till here
 	
 	//added by mahesh from here
-	@Test(groups = { "LoginPage0" }, enabled = true, description = "Combined mobile test")
+	@Test(groups = { "LoginPage0" }, enabled = false, description = "Combined mobile test")
 	public void LoginPage0() {
 		System.out.println("login0");
 		appDriver = AppFactory.getAndroidApp();
 
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		
 		maLoginSteps.blankPasswordVerification();
 		maLoginSteps.blankUserName();
@@ -484,10 +492,11 @@ public class AndroidTest extends FractalBaseAppTest {
 		Reporter.writeSummary("TCID_002,  Verify user is able to login for origin fractal app with valid user name and password., " +  maLoginSteps.getResult() );
 		
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 		
 	}	
-	@Test(groups = { "login1" }, enabled = true, description = "Combined mobile test")
+	@Test(groups = { "login1" }, enabled = false, description = "Combined mobile test")
 		public void LoginPage1() {
 		System.out.println("login1");
 			appDriver = AppFactory.getAndroidApp();
@@ -515,7 +524,7 @@ public class AndroidTest extends FractalBaseAppTest {
 		
 	    } 
 	//******mahesh20/12/2018************//
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_6, 11: Verification of Forgot password page"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_6, 11: Verification of Forgot password page"
 			+ "TCID_6: Verify forgot password link available on login page"
 			+ "TCID_11: App should throw an error message saying Email id doesn't exist in database"
 			+ "TCID_10: Verify forgot password field is accepting valid email ID"
@@ -567,11 +576,18 @@ public class AndroidTest extends FractalBaseAppTest {
 		maForgotPasswordSteps.verifyNewPassError();
 		Reporter.writeSummary("TCID_018,Verify change password functionality working fine, " +  maForgotPasswordSteps.getResult() );
 		//Ends - Added by Manju Priya A on jan_17_19
+		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+		wait(5);
+		
+		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
+		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+		mAMLS.clickMenu();
+		maLoginSteps.clickYesBtn();
 	}
 		//*****************************//
 	//added by mahesh till here
 		 /*12 -> Added by Manju Priya A - Jan-11-19 -  Completed no issues.....*/
-		@Test(groups = { "pilot" }, enabled = true, description = "TCID_01:Verification of Splash Screen"
+		@Test(groups = { "pilot" }, enabled = false, description = "TCID_01:Verification of Splash Screen"
 		+ "TCID_01: Verify the splash screen after login to the application,")
 		public void verifySplashScreen() {
 		System.out.println("---------------------------------------verifySplashScreen-------------------------------");
@@ -579,10 +595,16 @@ public class AndroidTest extends FractalBaseAppTest {
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
 		maLoginSteps.verifySplashScreen();
 		Reporter.writeSummary("TCID_001, Verifying whether the splash screen appears after launching the app, " +  maLoginSteps.getResult());
+		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+		wait(5);
+		
+		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
+		mAMLS.clickMenu();
+		mAMnuSteps.clickOnLogout();
 		}
 		
 		/*Added by Manju Priya A - Jan_21_19*/
-		@Test(groups = { "pilot" }, enabled = true, description = "TCID_80,81,82:Verification of catalog page"
+		@Test(groups = { "pilot" }, enabled = false, description = "TCID_80,81,82:Verification of catalog page"
 				+ "TCID_80: Verify the voice assitant is available in the Mylearning page on launching the app."
 				+ "TCID_81: Verify to check the display of the alert 'allow Origin Fractal to record audio?' on pressing the voice assistant")
 		public void verifyVoice() {
@@ -593,14 +615,16 @@ public class AndroidTest extends FractalBaseAppTest {
 			maLoginSteps.doLogin();
 			// Select Instance Screen
 			MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
-			//mASIS.selectFractal();
-			mASIS.selectFractalDemo();
+			mASIS.selectFractal();
+			//mASIS.selectFractalDemo();
 			// What's New Screen MAWhatsNewSteps
 			MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
-			wait(5);
-			mAWNS.clickLater();
+			//wait(5);
+			//mAWNS.clickLater();
 			// My Learning Screen
 			MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
+			mAMLS.validateMyLearningTitle();
+		
 			
 			//TCID_80: Verify the voice assitant is available in the Mylearning page on launching the app.
 			mAMLS.verifyVoiceAssitant();
@@ -612,20 +636,59 @@ public class AndroidTest extends FractalBaseAppTest {
 			//TCID_82: Verify the presence of Speaker icon and the Voice assistant icon
 			mAMLS.verifyVoiceAssistLabels();
 			Reporter.writeSummary("TCID_82, Verify the presence of Speaker icon and the Voice assistant icon, " +  mAMLS.getResult());
-			
 			// Menu Options Screen
 			MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 			wait(5);
 			mAMLS.clickMenu();
 			mAMnuSteps.clickOnLogout();
 		}	
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		@Test(groups = { "feb 23rd" }, enabled = true, description = "For LTI Content, When an item is clicked without BUY/ENROLL, "
+				+ "it must display pop-up saying 'Please ENROLL/BUY' instead it displays "
+				+ "'Almost there, contact your learning admin'")
+		public void verifyContent() {
+			print("-------------------------------verifyContent-------------------------");
+			appDriver = AppFactory.getAndroidApp();
+
+			MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+			maLoginSteps.doLogin();
+			// Select Instance Screen
+			MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+			MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
+			MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
+			MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+			//mASIS.selectFractal();
+			//mASIS.selectFractalDemo();
+			// What's New Screen MAWhatsNewSteps
+			//wait(5);
+			//mAWNS.clickLater();
+			// My Learning Screen
+			mACatSteps.verfiyContent();
+			mAMLS.clickMenu();
+			mAMnuSteps.clickOnLogout();
+		}		
+		//added by mahesh 20/2/19***//
+		@Test(groups = { "pilot" }, enabled = true, description = "Feb:01,Need to add catalog type along with the icon in the whole app."
+				+ "Feb:02,Hide the grid and list view status bar when there are no records in the screen."
+				+ "Feb:03,Change the Contents as Content in all details page.")
+		public void contentText() {
+			appDriver = AppFactory.getAndroidApp();
+			MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+			maLoginSteps.doLogin();
+			// Select Instance Screen
+		/*	MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+			mASIS.validateInstanceSelectionPage();
+			// Menu Options Screen
+			MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+			
+			mASIS.swipeInstances();
+			mASIS.selectFractalDemo();
+			MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
+			mAWNS.clickLater();
+		*/	MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
+			mACatSteps.verifyContentText();
+			mACatSteps.verifyCatalogIconText();
+			MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
+			mAMLS.verifyGridListView();
+		//**till here**//
+		}
 }

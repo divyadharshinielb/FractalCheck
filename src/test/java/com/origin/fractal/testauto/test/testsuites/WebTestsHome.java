@@ -14,10 +14,11 @@ public class WebTestsHome extends FractalBaseWebTest {
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
-//			new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-		 new Object[] { "3", "msedge" } 
+		  new Object[] { "1", "chrome" }
+//		 ,new Object[] { "2", "firefox" }
+//		, new Object[] { "3", "msedge" } 
 //		, new Object[] { "4", "ie11" }
+//		,	new Object[] { "4", "safari" }
 		};
 	}
 	
@@ -234,7 +235,7 @@ public class WebTestsHome extends FractalBaseWebTest {
     	Reporter.writeSummary("TCID_085,  Check whether the Enrolled text is displayed in free item , " +  homeSteps.getResult() );
 		homeSteps.verifyAllLanguage();
 		Reporter.writeSummary("TCID_086,  Check whether the All language is present in my learning section, " +  homeSteps.getResult() );
-		homeSteps.lastFourCatalogItemsTitleCompare();
+	//	homeSteps.lastFourCatalogItemsTitleCompare();
 		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
 	}
 }
