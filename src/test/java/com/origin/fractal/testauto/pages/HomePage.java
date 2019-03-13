@@ -63,7 +63,7 @@ public class HomePage extends FractalBasePage {
 
     private By lblCategory = By.xpath("//button[@placeholder='Category']");
     private By txtBoxSearch = By.xpath("//input[@placeholder='Search']");
-    private By iconWishlist = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'')]");
+    private By iconWishlist = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'î€„')]");
     private By iconCart = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'Q')]");
     private By lblMyLearning = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]");
     private By compPercent = By.xpath(".//div/ng-include/*//div[contains(@class,'percentageValue')]");
@@ -79,7 +79,7 @@ public class HomePage extends FractalBasePage {
 	private By vlblcourse = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'courses')]");
 	private By vlblResource = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'resources')]");
 	private By lblAllLanuages = By.xpath(".//div/ng-include/*//div/span[contains(text(),'ALL LANGUAGES')]");
-	private By iconListView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'')]");
+	private By iconListView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'î��')]");
 	private By iconGridView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'R')]");
 	private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
 	private By homeLink = By.xpath(".//div/ng-include/*//div/a/span[contains(text(),'Home')]");
@@ -178,25 +178,33 @@ public class HomePage extends FractalBasePage {
 	}
 
 	public void verifyAllFilterRcntAdded() {
+		wait(3);
 		click(rlblAll);
 		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,rlblFilterLink);
 	}
 	public void verifyBundleFilterRcntAdded() {
+		wait(3);
 		click(rlblAll);
+		wait(3);
 		click(rlblBundles);
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Bundle");
 	}
 	public void verifyCourseFilterRcntAdded() {
+		wait(3);
 		click(rlblAll);
+		wait(3);
 		click(rlblCourses);
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Course");
 	}
 	public void verifyResourceFilterRcntAdded() {
+		wait(3);
 		click(rlblAll);
+		wait(3);
 		click(rlblResources);
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Resource");
 	}
 	public void verifyLearnPathFilterRcntAdded() {
+		wait(3);
 		click(rlblAll);
 		if(elementExist(rlblLpaths)) {
 		click(rlblLpaths);
@@ -204,11 +212,13 @@ public class HomePage extends FractalBasePage {
 	}
 	}
 	public void verifyAllFilterRecommAdded(){
+		wait(3);
 		click(relblAll);
 		wait(3);
 		verifyAllFilterTypeRecommAdded(reboxBtn,reboxCatType,relblFilterLink);
 	}
 	public void verifyBundleFilterRecommAdded() {
+		wait(3);
 		click(relblAll);
 		wait(3);
 		//edited By Karpagavalli from here
@@ -219,6 +229,7 @@ public class HomePage extends FractalBasePage {
 		}
 	}
 	public void verifyCourseFilterRecommAdded() {
+		wait(3);
 		click(relblAll);
 		wait(3);
 		if(elementExist(relblCourses)) {
@@ -228,6 +239,7 @@ public class HomePage extends FractalBasePage {
 		}
 	}
 	public void verifyResourceFilterRecommAdded() {
+		wait(3);
 		click(relblAll);
 		wait(3);
 		if(elementExist(relblResources)) {
@@ -237,6 +249,7 @@ public class HomePage extends FractalBasePage {
 		}	
 	}
 	public void verifyLearnPathFilterRecommAdded() {
+		wait(3);
 		click(relblAll);
 		wait(3);
 		if(elementExist(relblLpaths)) {
@@ -356,6 +369,7 @@ public class HomePage extends FractalBasePage {
 	}
 	/*Ends- added by Manju Priya A on Nov-29-18*/
 	public void	recentlyAddedsectionAttributes() {
+		wait(5);
 		click(rlblAll);
 		wait(5);
 	    String[] linkTypes = getFilterLinks(rlblFilterLink);
