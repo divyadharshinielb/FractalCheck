@@ -13,9 +13,9 @@ public class WebTestsAccount extends FractalBaseWebTest {
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
-//		,	new Object[] { "1", "chrome" }
+		new Object[] { "1", "chrome" }
 //		, new Object[] { "2", "firefox" }
-		 new Object[] { "3", "msedge" } 
+//		 new Object[] { "3", "msedge" } 
 //		 new Object[] { "4", "ie11" }
 		};
 	}
