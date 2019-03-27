@@ -14,6 +14,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import com.wv.auto.framework.utils.Reporter;
+
 public class BrowserFactory {
 	// for windows
 	private static String driversLocation = "C:/webdrivers/";
@@ -21,6 +23,7 @@ public class BrowserFactory {
 	private static String driversLocMac = "/Users/origin";
 	public static WebDriver getBrowser(String strBrowserName) {
 		WebDriver browser = null;
+		Reporter.setBrowserAppOS(strBrowserName);
 		if (strBrowserName.equalsIgnoreCase("firefox")) {
 			browser = getBrowser(BrowserType.FIREFOX);
 			System.out.println("Firefox Browser Opened");

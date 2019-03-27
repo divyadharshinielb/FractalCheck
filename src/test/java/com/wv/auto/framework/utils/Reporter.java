@@ -1,6 +1,7 @@
 package com.wv.auto.framework.utils;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 
 import com.opencsv.CSVWriter;
 
@@ -8,8 +9,8 @@ public class Reporter {
 	private static CSVWriter repWriter;
 	private static CSVWriter repWriterDetail;
 	private static CSVWriter repWriterFailure;
-	private static String strBrowserAppOS = "Chrome";
-	private static String strEnv = "Production";
+	private static String strBrowserAppOS = "FireFox";
+	private static String strEnv = "Automation";
 
 	public static void createReports() {
 		createReport();
@@ -46,7 +47,8 @@ public class Reporter {
 
 	private static void writeHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT".split(",");
+		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME".split(",");
+		TimeManager.setTimeAtEvent();
 		// Write the record to file
 		if (repWriter != null)
 			repWriter.writeNext(record);
@@ -63,13 +65,26 @@ public class Reporter {
 	private static void writeFailureHeader() {
 		// Create record
 		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT".split(",");
+	
 		// Write the record to file
 		if (repWriterFailure != null)
 			repWriterFailure.writeNext(record);
 	}
 
 	public static void writeSummary(String strLine) {
-		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine;
+		String strTimeTaken = "0";
+		String strTime = "0";
+		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeManager.getTimeDiffFromPrevEventInSecs()+","+TimeManager.getCurrentDateTime();
+		TimeManager.setTimeAtEvent();
+		// This is report test result
+		String[] record = strReportWithBrowserEnvDetails.split(",");
+		repWriter.writeNext(record);		
+		if (strLine.endsWith("Failed"))
+			writeFailure(strLine);
+	}
+	
+	public static void writeSummary(String strLine,String TimeTaken,String Time) {
+		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeTaken+","+Time;
 
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
@@ -119,4 +134,6 @@ public class Reporter {
 	public static void setBrowserAppOS(String strBrwAppOS) {
 		strBrowserAppOS = strBrwAppOS;
 	}
+
+	
 }
