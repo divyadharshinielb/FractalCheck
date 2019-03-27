@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.test.testsuites;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.steps.ReportSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
@@ -19,7 +20,7 @@ public class WebTestReportsAdmin extends FractalBaseWebTest{
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Verify whether a group name is present in the reports.")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Verify whether a group name is present in the reports.")
 	
 
 public void WebTestAdminReports(String row, String strBrowserName) {

@@ -9,7 +9,7 @@ public class DataManager {
 		return new Object[][] {
 //			new Object[] { "1", "msedge" }, 
 				new Object[] { "2", "chrome" }
-			,new Object[] { "3", "firefox" }
+//			,new Object[] { "3", "firefox" }
 
 		};
 	}
