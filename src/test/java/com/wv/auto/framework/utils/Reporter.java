@@ -72,14 +72,13 @@ public class Reporter {
 	}
 
 	public static void writeSummary(String strLine) {
-		String strTimeTaken = "0";
-		String strTime = "0";
+
 		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeManager.getTimeDiffFromPrevEventInSecs()+","+TimeManager.getCurrentDateTime();
 		TimeManager.setTimeAtEvent();
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
 		repWriter.writeNext(record);		
-		if (strLine.endsWith("Failed"))
+		if (strLine.contains("FAILED"))
 			writeFailure(strLine);
 	}
 	
