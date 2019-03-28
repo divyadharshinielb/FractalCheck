@@ -15,12 +15,15 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 
+import com.wv.auto.framework.utils.Reporter;
+
 public class BrowserFactory {
 	// for windows
 	private static String driversLocation = "C:/webdrivers/";
 	// for Mac
 	private static String driversLocMac = "/Users/origin";
 	public static WebDriver getBrowser(String strBrowserName) {
+		Reporter.setBrowserAppOS(strBrowserName);
 		WebDriver browser = null;
 		if (strBrowserName.equalsIgnoreCase("firefox")) {
 			browser = getBrowser(BrowserType.FIREFOX);

@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.test.testsuites;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.AccountSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
@@ -10,17 +11,8 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsAccount extends FractalBaseWebTest {
 
-	@DataProvider
-	public Object[][] browers() {
-		return new Object[][] {
-//		,	new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-		 new Object[] { "3", "msedge" } 
-//		 new Object[] { "4", "ie11" }
-		};
-	}
 	
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_61,62,64,63,66,67: "
 			+ "61: Verify  My account page, "
 			+ "62: Verify  My Account Profile details,"
@@ -53,7 +45,7 @@ public void testMyAccountPage(String row, String strBrowserName) {
 	//accountSteps.changePassword();
 	//Reporter.writeSummary("TCID_066,  Verify whether the new password is getting saved on changing and clicking the save button, " + accountSteps.getResult() );
 }
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_68:"
 					+ "68:Checking whether the user is able to login with the new password")
 	public void testMyAccountPage1(String row, String strBrowserName) {

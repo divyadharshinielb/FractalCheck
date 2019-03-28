@@ -2,6 +2,7 @@ package com.origin.fractal.testauto.test.testsuites;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.AccountSteps;
 import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.LoginSteps;
@@ -12,17 +13,8 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebProductionSafariTests extends FractalBaseWebTest {
 
-	@DataProvider
-	public Object[][] browers() {
-		return new Object[][] {
-		  new Object[] { "1", "safari" }
-//		 , new Object[] { "2", "firefox" }
-//		 , new Object[] { "3", "msedge" } 
-//		, new Object[] { "4", "ie11" }
-		};
-	}
 
-	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -52,7 +44,7 @@ public class WebProductionSafariTests extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_028, Verify the login page with valid username and valid password.," +  loginSteps.getResult() );    
 	}
 
-	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testHome(String row, String strBrowserName) {	
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		Reporter.setBrowserAppOS(strBrowserName);
@@ -70,7 +62,7 @@ public class WebProductionSafariTests extends FractalBaseWebTest {
 		homeSteps.verifyFooterLinks();
 		Reporter.writeSummary("TCID_034, Verify Privacy Terms and Contact links," + homeSteps.getResult() );
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_61,62 "
 			+ "61: Verify  My account page,"
 			+ "62: Verify  My Account Profile details, ")
