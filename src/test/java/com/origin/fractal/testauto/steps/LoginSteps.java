@@ -126,4 +126,9 @@ public class LoginSteps extends FractalBaseStep {
 		result="FAILED";
 		  }
 	}
+
+	public void loginAdmin() {
+		page.loginAdmin();
+		
+	}
 }

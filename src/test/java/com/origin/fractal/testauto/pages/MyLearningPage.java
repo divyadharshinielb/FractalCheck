@@ -1,7 +1,9 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.origin.fractal.testauto.FractalBasePage;
 
@@ -47,6 +49,12 @@ public class MyLearningPage extends FractalBasePage {
 	private By lobjCount = By.xpath(".//html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/ng-include[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h3[1]");
 	private By lbloverview = By.xpath("//*[@id='ngview']/div/ng-include/*//div/*//h3[contains(text(),'Overview')]");
 	/*End -added By manju Priya A on Nov-29-18*/
+	//added by karpagavalli for global search count
+		private By searchField=By.xpath(".//input[@placeholder='Search']");
+		private By searchCount=By.xpath(".//h2[@title='global_automation']");
+		private By searchResult1=By.xpath(".//h3[@title='sample Image']");
+		private By searchResult2=By.xpath(".//h3[@title='sample image for automation']");
+		private By searchResult3=By.xpath(".//h3[@title='global_automation image']");
 	public MyLearningPage(WebDriver driver) {
 		super(driver);
 		pageName = "MyLearningPage";
@@ -186,6 +194,16 @@ public class MyLearningPage extends FractalBasePage {
 		verifyPartialLabelText("lbloverview", lbloverview);
 	}
 	/*End - Moved from FractalBasePage by Manju Priya A on Nov-29-18*/
-
+	public void globalSearchCount() {
+		wait(5);
+		WebElement textbox = driver.findElement(searchField);
+		enterData("global_automation",searchField);
+		textbox.sendKeys(Keys.RETURN);
+		verifyText("3 Result(s) for global_automation",searchCount);
+		elementExist(searchResult1);
+		elementExist(searchResult2);
+		elementExist(searchResult3);
+		
+}
 
 }

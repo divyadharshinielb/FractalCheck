@@ -116,4 +116,11 @@ public class LoginPage extends FractalBasePage {
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
 	}
+	//changes by karpagavalli
+		public void loginAdmin() {
+			enterData("contentadmin@origin.com",tbUserName);
+			enterData("contentadmin@origin.com",tbPassword);
+			click(btnLogin);
+		}
+		//changes by karpagavalli till here
 }
