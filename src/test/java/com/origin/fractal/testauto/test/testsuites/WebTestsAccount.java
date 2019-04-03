@@ -11,15 +11,6 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsAccount extends FractalBaseWebTest {
 
-	@DataProvider
-	public Object[][] browers() {
-		return new Object[][] {
-		new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-//		 new Object[] { "3", "msedge" } 
-//		 new Object[] { "4", "ie11" }
-		};
-	}
 	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_61,62,64,63,66,67: "
