@@ -77,7 +77,7 @@ public class Reporter {
 		TimeManager.setTimeAtEvent();
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
-		repWriter.writeNext(record);		
+		repWriter.writeNext(record);	
 		if (strReportWithBrowserEnvDetails.contains("FAILED"))
 			writeFailure(strReportWithBrowserEnvDetails);
 	}
@@ -101,7 +101,7 @@ public class Reporter {
 	public static void writeFailure(String strLine) {
 		// This is report test result
 		String[] record = strLine.split(",");
-		repWriterDetail.writeNext(record);
+		repWriterFailure.writeNext(record);
 	}
 
 	public static void closeReport() {
