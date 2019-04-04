@@ -64,7 +64,7 @@ public class Reporter {
 
 	private static void writeFailureHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT".split(",");
+		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME".split(",");
 	
 		// Write the record to file
 		if (repWriterFailure != null)
@@ -78,8 +78,8 @@ public class Reporter {
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
 		repWriter.writeNext(record);		
-		if (strLine.contains("FAILED"))
-			writeFailure(strLine);
+		if (strReportWithBrowserEnvDetails.contains("FAILED"))
+			writeFailure(strReportWithBrowserEnvDetails);
 	}
 	
 	public static void writeSummary(String strLine,String TimeTaken,String Time) {
