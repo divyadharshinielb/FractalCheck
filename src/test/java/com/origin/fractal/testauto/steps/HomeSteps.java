@@ -499,7 +499,33 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 		
 	}
+	public void searchFieldItemCodeUser() {
+		result ="Passed";
+		   try {
+				page.searchFieldItemCodeUser();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
 
+	public void AccessCatalogItemEnrolledOutside() {
+		page.AccessCatalogItemEnrolledOutside();
+	}
+	public void AccessCatalogItemEnrolledInside() {
+		page.AccessCatalogItemEnrolledInside();
+	}
+	public void AccessCatalogItemEnrollInside(){
+		page.AccessCatalogItemEnrollInside();
+	}
+	public void TimelineCompletionCriteriaOption() {
+		page.TimelineCompletionCriteriaOption();
+	}
+	public void verifyReadMoreLessText() {
+		page.verifyReadMoreLessText();
+	}
 	
 
 }

@@ -573,5 +573,61 @@ public class MAMyLearningInProSteps extends FractalBaseStep{//extends by Jan_16_
 			e.printStackTrace();
 		}
 	}
+	//added by karpagavalli for global search
+		public void globalSearch() {
+			result = "Passed";
+			try {
+				page.globalSearch();
+			}
+			catch(Exception e){
+				result = "FAILED";
+				e.printStackTrace();
+			}
+			
+		}
+		public void countVerify() {
+			result = "Passed";
+			try {
+				page.countVerify();
+			}
+			catch(Exception e){
+				result = "FAILED";
+				e.printStackTrace();
+			}
+			
+		}
+		public void AccessCatalogItemEnrolledOutside() {
+			result = "Passed";
+			try {
+				page.AccessCatalogItemEnrolledOutside();
+			}
+			catch(Exception e){
+				result = "FAILED";
+				e.printStackTrace();
+			}
+			
+		}
+		public void AccessCatalogItemEnrolledInside() {
+			result = "Passed";
+			try {
+				page.AccessCatalogItemEnrolledInside();
+			}
+			catch(Exception e){
+				result = "FAILED";
+				e.printStackTrace();
+			}
+			
+		}
+		public void AccessCatalogItemEnrollInside() {
+			result = "Passed";
+			try {
+				page.AccessCatalogItemEnrollInside();
+			}
+			catch(Exception e){
+				result = "FAILED";
+				e.printStackTrace();
+			}
+		}
+		
 
 }

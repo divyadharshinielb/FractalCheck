@@ -15,11 +15,11 @@ public class WebTestsLogin extends FractalBaseWebTest {
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
-//			new Object[] { "1", "chrome" }
-//		 , new Object[] { "2", "firefox" }
+//		new Object[] { "1", "chrome" }
+		  new Object[] { "2", "firefox" }
 //		 new Object[] { "3", "msedge" } ,
 //		 new Object[] { "4", "ie11" }
-		new Object[] { "4", "safari" }
+	//	new Object[] { "4", "safari" }
 		};
 	}
 
@@ -57,7 +57,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_074, Verification of Register link  function, " +  loginSteps.getResult() );
 	 }
 	
-	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLoginInvalid(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -68,7 +68,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		
 	}
 	/***added here**/
-	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLoginSearchLink(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -78,7 +78,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_075, Verify the function of  Search link , " +  loginSteps.getResult() );
 	}
 	//Added by Manju Priya A on Jan_21_19
-		@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "TCID_71: verification of Forgot Password Page"
+		@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "TCID_71: verification of Forgot Password Page"
 				+ "TCID_73: Verification of Forgot Password function")
 		public void forgotPassword(String row, String strBrowserName) {
 				driver = BrowserFactory.getBrowser(strBrowserName);

@@ -119,6 +119,7 @@ public class MAForgotPasswordPage extends FractalAppPage {
 		clear(tbEmailId);
 		typeIntoElement("manjupriya.a@gmail.com",getObj(tbEmailId));
 		click(getObj(lblSend));
+		wait(5);
 		verifyText("Oops! Email Id is not in the database.",errorWarning);
 		click(okBtn);
 	}
@@ -152,6 +153,7 @@ public class MAForgotPasswordPage extends FractalAppPage {
 	public void verifyOTPReceivedToEmail() {
 //		otp = gm.read();
 		String otpReceived =otp;//have to get OTP from Mahesh/karpagavalli
+		wait(5);
 		verifyOTPReceived(otpReceived);
 	}
 	public void verifyOTPReceived(String otp) {
@@ -164,6 +166,7 @@ public class MAForgotPasswordPage extends FractalAppPage {
 	public void verifyOTPWorkfFine() {
 		String otpReceived =otp;//have to get OTP from Mahesh/karpagavalli
 		clear(fieldEnterOTP);
+		wait(5);
 		typeOTPIntoElement(otpReceived,getObj(fieldEnterOTP));
 		//click(btnConfirm);
 		verifyValidOTP();

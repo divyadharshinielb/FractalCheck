@@ -286,4 +286,5 @@ public void setPlatform(WebDriver driver) {
 				return false;
 			}
 		}
+		
 }

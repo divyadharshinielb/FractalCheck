@@ -4,6 +4,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.steps.HomeSteps;
+import com.origin.fractal.testauto.steps.LoginSteps;
+import com.origin.fractal.testauto.steps.MyLearningSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
@@ -14,8 +16,8 @@ public class WebTestsHome extends FractalBaseWebTest {
 	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
-		  new Object[] { "1", "chrome" }
-//		 ,new Object[] { "2", "firefox" }
+//		 , new Object[] { "1", "chrome" }
+		 new Object[] { "2", "firefox" }
 //		, new Object[] { "3", "msedge" } 
 //		, new Object[] { "4", "ie11" }
 //		,	new Object[] { "4", "safari" }
@@ -238,4 +240,50 @@ public class WebTestsHome extends FractalBaseWebTest {
 	//	homeSteps.lastFourCatalogItemsTitleCompare();
 		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
 	}
+	 //*****New features added for this build 2/2/19****//
+		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
+		public void testHomeItemSearch(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+
+			HomeSteps homeSteps = new HomeSteps(driver);
+			homeSteps.searchFieldItemCodeUser();
+	  /*  	homeSteps.verifyEnrolledText();
+			homeSteps.verifyAllLanguage();
+			homeSteps.lastFourCatalogItemsTitleCompare();
+			
+	*/	}
+		//*****added by mahesh******//
+		@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description = "")
+		public void testAccessTheCatalogpage(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			HomeSteps homeSteps = new HomeSteps(driver);
+			homeSteps.AccessCatalogItemEnrolledOutside();
+			Reporter.writeSummary("TCID_April_1, Checking whether the contents are accessible independently ," +  homeSteps.getResult());
+			homeSteps.AccessCatalogItemEnrolledInside();
+			Reporter.writeSummary("TCID_April_2, Checking whether the contents are accessible inside the bundle that is enrolled," +  homeSteps.getResult());
+			homeSteps.AccessCatalogItemEnrollInside();
+			Reporter.writeSummary("TCID_April_3, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  homeSteps.getResult());
+		}
+		//**************************//
+		@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+		public void testTimeline(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			HomeSteps homeSteps = new HomeSteps(driver);
+		    homeSteps.TimelineCompletionCriteriaOption();
+		    homeSteps.verifyReadMoreLessText();
+		    Reporter.writeSummary("TCID_April_4, Checking whether the read more works fine," +  homeSteps.getResult());
+		}
+		@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true)
+		public void testMyAccountPage(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			LoginSteps loginSteps = new LoginSteps(driver);
+			MyLearningSteps mLSteps = new MyLearningSteps(driver);
+			loginSteps.doLogin();
+			mLSteps.globalSearchCount();
+			Reporter.writeSummary("TCID_April_5, Checking whether the global search works fine," +  mLSteps.getResult());
+			mLSteps.clickLogout();		
+		}
 }

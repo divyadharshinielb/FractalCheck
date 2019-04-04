@@ -50,14 +50,28 @@ public class MACatalogPage extends FractalAppPage {
 	private By lblBackBtn=By.id("com.originkonnect.app:id/back_white");
 	private By lblCatalogText = By.id("com.originkonnect.app:id/catalog_type");
 	private By lblCatalogLogo = By.id("com.originkonnect.app:id/catalog_logo");
-	private By clickDetailedCatalogPage = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.RelativeLayout/android.widget.ListView/android.widget.RelativeLayout[1]/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.TextView[1]");
+	private By clickDetailedCatalogPage = By.xpath("//android.widget.TextView[contains(@resource-id,'com.originkonnect.app:id/textView96') and @instance='8']");
 	  //**here***//
 	//Added by karpagavalli
+	private By cartIcon=By.id("com.originkonnect.app:id/cart");
+	private By checkOut =By.id("com.originkonnect.app:id/checkout_btn");
+	private By payPal= By.xpath("//android.widget.RelativeLayout[contains(@resource-id,'com.originkonnect.app:id/r3') and @instance='12']");
+	private By cancelBtn = By.id("cancelLink");
+	private By retryBtn = By.id("com.originkonnect.app:id/try_again_button");
+	private By gotoCart = By.id("com.originkonnect.app:id/goto_cart_button");
+	private By catalogExplore = By.id("com.originkonnect.app:id/goto_catalog_button");
+	
+	//Added by karpagavalli
+	private By payCourse =By.xpath("//android.widget.TextView[contains(@resource-id,'com.originkonnect.app:id/contentname1') and @instance='12']");
 	private By freeBtn = By.xpath("(//android.widget.ImageView[@content-desc=\'bundle\'])[2]");
+	private By searchBtn =By.id("com.originkonnect.app:id/button2");
 	private By learningObject = By.xpath("//android.widget.ImageView[@content-desc=\'video\']");
 	private By alertMsg=By.id("com.originkonnect.app:id/textView47");
 	private By okBtn=By.id("com.originkonnect.app:id/ok_btn");
 	private By backCatalog=By.id("com.originkonnect.app:id/back_white");
+	private By lblCatalogItemName = By.id("com.originkonnect.app:id/item_type");
+	private By searchICon = By.id("com.originkonnect.app:id/search");
+	private By searchText = By.id("com.originkonnect.app:id/editText6");
 			//Added by karpagavalli
 	public MACatalogPage(AppiumDriver<MobileElement> appDriver) {
 		super(appDriver);
@@ -152,7 +166,7 @@ public class MACatalogPage extends FractalAppPage {
 	}
 	public void verifyCategory(){
 		click(categoryFirst);
-		verifyText("Project Management",categoryText);
+		verifyText("General",categoryText);
 		click(btnBack);
 	}
 	public void verifyListView(){wait(5);
@@ -245,5 +259,46 @@ public class MACatalogPage extends FractalAppPage {
 			
 		}
 		//Added by karpagavalli till here 
+		//Added by karpagavalli from here for retry
+		public void retryBtn() {
+			click(cartIcon);
+			click(checkOut);
+			wait(5);
+			click(payPal);
+			wait(10);
+			click(cancelBtn);
+		}
+		public void tryAgain() {
+			wait(10);
+			click(retryBtn);
+			click(payPal);
+			wait(10);
+			click(cancelBtn);
+			wait(10);
+		}
+		public void gotoCart() {
+			wait(10);
+			click(gotoCart);
+			click(checkOut);
+			wait(10);
+			click(payPal);
+			wait(10);
+			click(cancelBtn);
+		}
+		public void exploreCatalog() {
+			wait(10);
+			click(catalogExplore);
+		}
 
+		public void verifyCatalogItemName() {
+			click(getObj(searchICon));
+			wait(5);
+			typeIntoElement("pay",getObj(searchText));
+			click(searchBtn);
+			wait(5);
+			click(payCourse);
+			String lblCatalogItemName1=getText(lblCatalogItemName);
+			verifyText(lblCatalogItemName1,lblCatalogItemName);
+			
+		}
 }

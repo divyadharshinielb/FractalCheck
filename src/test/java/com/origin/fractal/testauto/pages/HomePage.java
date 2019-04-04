@@ -1,7 +1,9 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
 
@@ -51,6 +53,8 @@ public class HomePage extends FractalBasePage {
 	private String relblFilterLink =".//h2[contains(text(),'Recommended')]/../div/*//a";
 	private String reboxBtn=".//h2[contains(text(),'Recommended')]/../../../div/*//div/slick/div/div/div";
     private String reboxCatType="]/div[1]/div[2]/p[1]";
+    private String reboxBtn1 ="//ng-include[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div";
+    private String reboxCatType1="]/div[2]/div[1]/div[1]/div[1]/h3[1]";
   //for most popular filters//
     private By mostlblAll = By.xpath(".//h2[contains(text(),'Most Popular')]/../div/*//a[contains(text(),'ALL')]");
     private By mostlblCourses = By.xpath(".//h2[contains(text(),'Most Popular')]/../div/*//a/span[contains(text(),'courses')]");
@@ -91,7 +95,11 @@ public class HomePage extends FractalBasePage {
 	private By termsPage = By.xpath(".//div/h2[contains(text(),'Terms & Condition')]");
 	private By contactsPage = By.xpath(".//div/h2[contains(text(),'Contact')]");
 	MyLearningPage myLearning = new MyLearningPage(driver);
-
+    
+	private By CatalogItemBtn= By.xpath("//span[contains(text(),'Catalog Items')]");
+	private By lblReadMore= By.xpath("//span[contains(text(),'Read more')]");
+	private By lblLess= By.xpath("//span[@class='text-orange ngTruncateToggleText']");
+	private By catalogItemFirstClick= By.xpath("//ng-include[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div/div//span[contains(text(),'Category')]");
     private By lastCatalogName = By.xpath(".//ng-include[1]/div[1]/div[1]/div[7]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[4]/div[1]/div[2]/h3[1]");
     private By CatalogType = By.xpath(".//ng-include[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[2]/p[1]");
     private By CatalogTitle = By.xpath(".//ng-include[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h3[1]");
@@ -108,7 +116,23 @@ public class HomePage extends FractalBasePage {
     private By mFourthCatalog=By.xpath("//ng-include[1]/div[1]/div[1]/div[7]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[4]/div[1]/div[2]/h3[1]");
     private String reBox1="//ng-include[1]/div[1]/div[1]/div[2]/div";
     private String reBox2="]/div[1]/div[1]/div[2]/h3[1]";
-    
+    private By globalSearch=By.xpath("//input[@placeholder='Search']");
+    private By lblErrorMsg=By.xpath("//div[contains(@class,'text-danger ng-scope')]");
+    private By searchCatalogItem=By.xpath("//ng-include[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[2]/span[1]");
+    private By reFirstCatalogEnrollText=By.xpath("//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation checking LP')]/../..//span[contains(text(),'ENROLLED')]");
+    private By reSecondCatalogEnrolledText=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking course')]/../..//span[contains(text(),'ENROLLED')]");
+    private By reThirdCatalogEnrolledText=By.xpath("//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking')]/../..//span[contains(text(),'ENROLLED')]");
+    private By reFourthCatalogEnrollText=By.xpath("//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation test bundle1')]/../..//span[contains(text(),'ENROLL')]");
+    private By reFirstCatalog1=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation checking LP')]");
+    private By reSecondCatalog1=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking course')]");
+    private By reThirdCatalog=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking')]");
+    private By reFourthCatalog=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation test bundle1')]");
+    private By lblDetailedPage1=By.xpath(".//div/ng-include/div/*//h3/span[contains(text(),'Contents')]/../../../../div/div[2]/*//h3");
+    private By lblDetailedPage=By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[4]/*//h3");
+    private By lblDetailedPage2=By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[1]/*//h3");
+    private By lblDetailedPage3=By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[3]/*//h3");
+
+
     public HomePage(WebDriver driver) {
 		super(driver);
 		pageName ="HomePage"; 
@@ -449,6 +473,85 @@ public class HomePage extends FractalBasePage {
 	public void recentlyCount() {
 		int itemCount = getItemsCount(reboxBtn,reboxCatType);
    	 System.out.println("---------"+itemCount);
+		
+	}
+	public void searchFieldItemCodeUser() {
+		 click(globalSearch);
+		wait(15);	
+		Actions action=new Actions(driver);
+	    action.sendKeys("auto123").sendKeys(Keys.ENTER).build().perform();
+	    wait(15);
+	   verifyText("No Records Found",lblErrorMsg);
+	   clear(globalSearch);
+	   click(globalSearch);
+	   action.sendKeys("~@$~").sendKeys(Keys.ENTER).build().perform();
+	    wait(15);
+	    if( elementExist(btnLoadMore)){
+	    	click(btnLoadMore);
+	    }
+	    
+	    String[] expectedItems=verifySearchCataloItems(reboxBtn1,reboxCatType1);
+	    for(String a:expectedItems) {
+			System.out.println("---->"+a);
+	    }
+	}
+	public void AccessCatalogItemEnrolledOutside() {
+		click(rLinkViewAll);
+		wait(5);
+		verifyLabel("lblEnrolledText",reSecondCatalogEnrolledText);
+		wait(5);
+		verifyLabel("lblEnrolledText",reThirdCatalogEnrolledText);
+		click(reSecondCatalog1);
+		wait(5);
+	}
+	public void	AccessCatalogItemEnrolledInside() {
+	    click(homeLink);
+		click(rLinkViewAll);
+		click(reThirdCatalog);	
+		wait(10);
+		click(lblDetailedPage);
+		wait(5);
+		click(homeLink);
+	}
+	public void	AccessCatalogItemEnrollInside() {
+		click(rLinkViewAll);
+		wait(5);
+		verifyLabel("lblEnrollText",reFourthCatalogEnrollText);
+		click(reFourthCatalog);
+		wait(5);
+		click(lblDetailedPage1);
+		wait(5);
+		click(homeLink);
+	}
+	public void	TimelineCompletionCriteriaOption() {
+	click(rLinkViewAll);
+	wait(5);
+	verifyLabel("lblEnrolledText",reFirstCatalogEnrollText);
+	click(reFirstCatalog1);
+	wait(5);
+	boolean fname1 = driver.findElement(By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[1]/*//h3")).isEnabled();
+	System.out.print(fname1);
+	wait(5);
+	/*click(lblDetailedPage2);
+	wait(5);*/
+//	click(lblDetailedPage3);
+	boolean fname = driver.findElement(By.xpath("/*//.//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[3]")).isEnabled();
+	System.out.print(fname);
+	verifyText("Just Culture and High Reliability - Retrospect",lblDetailedPage3);
+	wait(5);
+	click(homeLink);
+	
+	}
+	public void verifyReadMoreLessText() {
+		click(rLinkViewAll);
+		wait(5);
+		click(reSecondCatalog1);
+		wait(5);
+		verifyText("Read more",lblReadMore);
+		click(lblReadMore);
+		wait(5);
+		verifyText("Less",lblLess);
+		click(lblLess);	
 		
 	}
 }

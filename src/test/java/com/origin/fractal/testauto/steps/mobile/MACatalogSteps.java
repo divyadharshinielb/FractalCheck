@@ -183,4 +183,53 @@ public class MACatalogSteps extends FractalBaseStep{
 		}
 		
 	}
+
+	//Added by karpagavalli
+		public void retryBtn() {
+			result = "Passed";
+			try {
+				page.retryBtn();
+			}catch(Exception e) {
+				result = "FAILED";
+				e.printStackTrace();
+			}
+		}
+
+		public void tryAgain() {
+			result = "Passed";
+			try {
+				page.tryAgain();
+			}catch(Exception e) {
+				result = "FAILED";
+				e.printStackTrace();
+			}
+			
+		}
+
+		public void gotoCart() {
+			result = "Passed";
+			try {
+				page.gotoCart();
+			}catch(Exception e) {
+				result = "FAILED";
+				e.printStackTrace();
+			}
+		}
+
+		public void exploreCatalog() {
+			result = "Passed";
+			try {
+				page.exploreCatalog();
+			}catch(Exception e) {
+				result = "FAILED";
+				e.printStackTrace();
+			}
+		}
+
+		public void verifyCatalogItemName() {
+			page.verifyCatalogItemName();
+
+			
+		}
+		
 }

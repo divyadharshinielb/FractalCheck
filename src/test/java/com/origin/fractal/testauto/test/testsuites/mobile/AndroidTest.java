@@ -195,33 +195,31 @@ public class AndroidTest extends FractalBaseAppTest {
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		wait(5);
-	/*	mAWNS.clickLater();
+		//mAWNS.clickLater();
 		Reporter.writeSummary("TCID_023,Verify that user able to close  'WHATS NEW' popup, " +  mAWNS.getResult() );
 		// My Learning Screen
-		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
+		wait(5);
 		mAMLS.clickMenu();
 		// Menu Options Screen
-		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 		mAMnuSteps.clickOnCategory();
 		// Catalog Screen
-		MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
-		/*Starts - Dec-03-18
+		//Starts - Dec-03-18
 		wait(5);
 		mACatSteps.verifyPopularCategory();
 		Reporter.writeSummary("TCID_042,Verify Popular categories are listed in the Catalog page, " +  mACatSteps.getResult() );
 		mACatSteps.verifyWhatsNewContents();
 		Reporter.writeSummary("TCID_043,Verify what's new contents are listed in the Catalog page, " +  mACatSteps.getResult() );
 		/*Ends - Dec-03-18*/
-		/*Starts - Dec-06-18
+		//Starts - Dec-06-18
 		mACatSteps.verifyFilterExist() ;
 		Reporter.writeSummary("TCID_050,Verify the filter icon is displayed, " +  mACatSteps.getResult() );
 		/*Ends - Dec-06-18*/
-		/*Starts - Dec-10-18
-		mACatSteps.verifyBuyButton();
+		//Starts - Dec-10-18
+		/*mACatSteps.verifyBuyButton();
 		Reporter.writeSummary("TCID_045,Verify the Buy button for all the Paid contents, " +  mACatSteps.getResult() );*/
 		mACatSteps.verifyCategory();
 		Reporter.writeSummary("TCID_047,Verify the Catalogs are displayed correspond to the selected Category under Popular category, " +  mACatSteps.getResult() );
-		/*Ends - Dec-10-18*/
+		//Ends - Dec-10-18
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 	}
@@ -266,8 +264,8 @@ public class AndroidTest extends FractalBaseAppTest {
 		Reporter.writeSummary("TCID_051,Verify only the bundles are displayed if the Bundle filter is applied, " +  mACatSteps.getResult() );
 		mACatSteps.verifyLpathFilter();
 		Reporter.writeSummary("TCID_053,Verify only the Learning Paths are displayed if the Learning Path filter is applied, " +  mACatSteps.getResult() );
-		//mACatSteps.verifyCourseFilter();
-		//Reporter.writeSummary("TCID_052,Verify only the courses are displayed if the Courses filter is applied, " +  mACatSteps.getResult() );
+		mACatSteps.verifyCourseFilter();
+		Reporter.writeSummary("TCID_052,Verify only the courses are displayed if the Courses filter is applied, " +  mACatSteps.getResult() );
 		mACatSteps.verifyResourceFilter();
 		Reporter.writeSummary("TCID_054,Verify only the Resources are displayed if the Resource filter is applied, " +  mACatSteps.getResult() );
 		/*Ends - Dec-11-18*/
@@ -349,6 +347,7 @@ public class AndroidTest extends FractalBaseAppTest {
 
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
 		maLoginSteps.doLogin();
+		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Select Instance Screen
 		//MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 	//	mASIS.validateInstanceSelectionPage();
@@ -360,8 +359,8 @@ public class AndroidTest extends FractalBaseAppTest {
 		mAWNS.validateWhatsNewPage();
 		mAWNS.clickLater();*/
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+		mAMLS.clickMenu();
 		mAMnuSteps.clickOnMyLearning();
-		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		Reporter.writeSummary("TCID_032,Verify the name and type of the Content, " +  mAMLS.getResult() );
 		mAMLS.validateMyLearningTitle();
 		Reporter.writeSummary("TCID_034,Verify the  content which are completed is displayed in the In Progress Tab, " +  mAMLS.getResult() );
@@ -417,6 +416,7 @@ public class AndroidTest extends FractalBaseAppTest {
 		
 		// Select Instance Screen
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		//mASIS.validateInstanceSelectionPage();
 		// Menu Options Screen
 		
@@ -427,8 +427,8 @@ public class AndroidTest extends FractalBaseAppTest {
 		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		mAWNS.clickLater();
 		wait(5);
+		mAMLS.clickMenu();
 		mAMnuSteps.clickOnMyLearning();
-		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		mAMLS.filterICon();
 		Reporter.writeSummary("TCID_035,Verify the filter icon is displayed on My Learning page, " +  mAMLS.getResult() );
 		mAMLS.allFilter();
@@ -615,7 +615,7 @@ public class AndroidTest extends FractalBaseAppTest {
 			maLoginSteps.doLogin();
 			// Select Instance Screen
 			MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
-			mASIS.selectFractal();
+			//mASIS.selectFractal();
 			//mASIS.selectFractalDemo();
 			// What's New Screen MAWhatsNewSteps
 			MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
@@ -642,7 +642,7 @@ public class AndroidTest extends FractalBaseAppTest {
 			mAMLS.clickMenu();
 			mAMnuSteps.clickOnLogout();
 		}	
-		@Test(groups = { "feb 23rd" }, enabled = true, description = "For LTI Content, When an item is clicked without BUY/ENROLL, "
+		@Test(groups = { "feb 23rd" }, enabled = false, description = "For LTI Content, When an item is clicked without BUY/ENROLL, "
 				+ "it must display pop-up saying 'Please ENROLL/BUY' instead it displays "
 				+ "'Almost there, contact your learning admin'")
 		public void verifyContent() {
@@ -663,11 +663,12 @@ public class AndroidTest extends FractalBaseAppTest {
 			//mAWNS.clickLater();
 			// My Learning Screen
 			mACatSteps.verfiyContent();
+			Reporter.writeSummary("TCID_83, For LTI Content, When an item is clicked without BUY/ENROLL,it must display pop-up saying 'Please ENROLL/BUY' instead it displays, " +  mACatSteps.getResult());
 			mAMLS.clickMenu();
 			mAMnuSteps.clickOnLogout();
 		}		
 		//added by mahesh 20/2/19***//
-		@Test(groups = { "pilot" }, enabled = true, description = "Feb:01,Need to add catalog type along with the icon in the whole app."
+		@Test(groups = { "pilot" }, enabled = false, description = "Feb:01,Need to add catalog type along with the icon in the whole app."
 				+ "Feb:02,Hide the grid and list view status bar when there are no records in the screen."
 				+ "Feb:03,Change the Contents as Content in all details page.")
 		public void contentText() {
@@ -686,9 +687,111 @@ public class AndroidTest extends FractalBaseAppTest {
 			mAWNS.clickLater();
 		*/	MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
 			mACatSteps.verifyContentText();
+			Reporter.writeSummary("TCID_84, Need to add catalog type along with the icon in the whole app," +  mACatSteps.getResult());
 			mACatSteps.verifyCatalogIconText();
+			Reporter.writeSummary("TCID_85, Hide the grid and list view status bar when there are no records in the screen," +  mACatSteps.getResult());
 			MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 			mAMLS.verifyGridListView();
+			Reporter.writeSummary("TCID_86, Change the Contents as Content in all details page," +  mAMLS.getResult());
 		//**till here**//
 		}
+		//added by karpagavalli for global search count 
+				@Test(groups = { "April 6" }, enabled = false, description = "Global search count changes to service level")
+				public void globalSearch() {
+					print("-------------------------------Global search count-------------------------");
+					appDriver = AppFactory.getAndroidApp();
+
+					MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+					maLoginSteps.doLogin();
+					// Select Instance Screen
+					MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+					MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
+					MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
+					MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+					//mASIS.selectFractal();
+					//mASIS.selectFractalDemo();
+					// What's New Screen MAWhatsNewSteps
+					//wait(5);
+					//mAWNS.clickLater();
+					// My Learning Screen
+					mAMLS.globalSearch();
+					Reporter.writeSummary("TCID_87, Checking whether the search count is getting displayed correctly," +  mAMLS.getResult());
+					mAMLS.countVerify();
+					Reporter.writeSummary("TCID_88, Checking whether the search count changes to service level," +  mAMLS.getResult());
+					wait(5);
+					mAMLS.clickMenu();
+					mAMnuSteps.clickOnLogout();
+				}
+				//added by karpagavalli for enroll buy
+						@Test(groups = { "April 6" }, enabled = false, description = "eroll/buy")
+						public void enroll() {
+							print("-------------------------------Enroll buy-------------------------");
+							appDriver = AppFactory.getAndroidApp();
+
+							MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+							maLoginSteps.doLogin();
+							// Select Instance Screen
+							MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+							MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
+							MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
+							MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+						//	mASIS.selectFractal();
+							//mASIS.selectFractalDemo();
+							// What's New Screen MAWhatsNewSteps
+							wait(5);
+							//mAWNS.clickLater();
+							// My Learning Screen
+							mAMLS.AccessCatalogItemEnrolledOutside();
+							Reporter.writeSummary("TCID_89, Checking whether the contents are accessible independently, " +  mAMLS.getResult());
+							mAMLS.AccessCatalogItemEnrolledInside();
+							Reporter.writeSummary("TCID_90, Checking whether the contents are accessible inside the bundle that is enrolled," +  mAMLS.getResult());
+							mAMLS.AccessCatalogItemEnrollInside();
+							Reporter.writeSummary("TCID_91, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  mAMLS.getResult());
+							mAMLS.clickMenu();
+							mAMnuSteps.clickOnLogout();
+						}
+						//added by karpagavalli for retry
+						@Test(groups = { "feb 23rd" }, enabled = false, description = "Try again Option  -Purchase Failure flow")
+						public void retryBtn() {
+							print("-------------------------------Retry Button-------------------------");
+							appDriver = AppFactory.getAndroidApp();
+
+							MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+							maLoginSteps.doLogin();
+							// Select Instance Screen
+							MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+							MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
+							MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
+							MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
+						//	mASIS.selectFractal();
+							//mASIS.selectFractalDemo();
+							// What's New Screen MAWhatsNewSteps
+							//wait(5);
+							//mAWNS.clickLater();
+							// My Learning Screen
+							mACatSteps.retryBtn();
+							Reporter.writeSummary("TCID_92, Checking whether the items are getting added to the cart," +  mAMLS.getResult());
+							mACatSteps.tryAgain();
+							Reporter.writeSummary("TCID_93, Checking whether on clicking the retry button the page gets navigated to checkout page," +  mAMLS.getResult());
+							mACatSteps.gotoCart();
+							Reporter.writeSummary("TCID_94, Checking whether on clicking the go to cart button the page gets navigated to cart page," +  mAMLS.getResult());
+							mACatSteps.exploreCatalog();
+							Reporter.writeSummary("TCID_95, Checking whether on clicking the explore catalog button the page gets navigated to catalog page," +  mAMLS.getResult());
+							wait(10);
+							mAMLS.clickMenu();
+							mAMnuSteps.clickOnLogout();
+						}
+						@Test(groups = { "April-19" }, enabled = true, description = "")	
+						
+						public void verifyCatalogItemName(){
+							appDriver = AppFactory.getAndroidApp();
+							MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+							maLoginSteps.doLogin();
+							MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
+							wait(10);
+							mAWNS.clickLater();
+							MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
+							mACatSteps.verifyCatalogItemName();
+							Reporter.writeSummary("TCID_01,Change in listing the learning objects count with the name in catalog pages., " +  mACatSteps.getResult());
+						}
 }
