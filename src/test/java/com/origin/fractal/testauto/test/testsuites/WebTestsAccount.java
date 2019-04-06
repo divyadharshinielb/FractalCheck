@@ -44,7 +44,7 @@ public void testMyAccountPage(String row, String strBrowserName) {
 	//accountSteps.changePassword();
 	//Reporter.writeSummary("TCID_066,  Verify whether the new password is getting saved on changing and clicking the save button, " + accountSteps.getResult() );
 }
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_68:"
 					+ "68:Checking whether the user is able to login with the new password")
 	public void testMyAccountPage1(String row, String strBrowserName) {
