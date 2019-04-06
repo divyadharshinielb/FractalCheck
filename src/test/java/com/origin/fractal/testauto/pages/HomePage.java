@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
@@ -128,10 +129,12 @@ public class HomePage extends FractalBasePage {
     private By reThirdCatalog=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking')]");
     private By reFourthCatalog=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation test bundle1')]");
     private By lblDetailedPage1=By.xpath(".//div/ng-include/div/*//h3/span[contains(text(),'Contents')]/../../../../div/div[2]/*//h3");
-    private By lblDetailedPage=By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[4]/*//h3");
+    private By lblDetailedPage=By.xpath(".//span[contains(text(),'1 Document, 1 eLearning Object')]");
     private By lblDetailedPage2=By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[1]/*//h3");
     private By lblDetailedPage3=By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[3]/*//h3");
-
+    private By myLearningClick = By.xpath("//*[@id=\'header\']/div/div[2]/div[2]/a/span");
+    private By searchField=By.xpath(".//input[@placeholder='Search']");
+    private By bundleClick=By.xpath("//*[@id=\'ngview\']/div[3]/ng-include/div/div/div[3]/div[2]/div/div/div/div[2]/div/div[1]/div/h3");
 
     public HomePage(WebDriver driver) {
 		super(driver);
@@ -505,10 +508,17 @@ public class HomePage extends FractalBasePage {
 		wait(5);
 	}
 	public void	AccessCatalogItemEnrolledInside() {
-	    click(homeLink);
+		click(myLearningClick);
+		wait(5);
+		WebElement textbox = driver.findElement(searchField);
+		enterData("Automation Checking",searchField);
+		textbox.sendKeys(Keys.RETURN);
+	   /* click(homeLink);
 		click(rLinkViewAll);
+		click(rlblBundles);
 		click(reThirdCatalog);	
-		wait(10);
+		wait(10);*/
+		click(bundleClick);
 		click(lblDetailedPage);
 		wait(5);
 		click(homeLink);

@@ -13,7 +13,7 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsHome extends FractalBaseWebTest {
 	
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -64,7 +64,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			description = "TC_nnnn Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
 	public void testHomePageVerifyRcntAddedCourseNavigation(String row, String strBrowserName) {
@@ -103,7 +103,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {
@@ -113,7 +113,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 		HomeSteps homeSteps = new HomeSteps(driver);
         homeSteps.firstTwoCatalogItemsTitleCompare();
-		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in Recommended section matches with the first 2 items in the Most recently added section. " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in Recommended section matches with the first 2 items in the Most recently added section, " +   homeSteps.getResult() );
 		//Verify the function of  Recently Added section attributes 
 		homeSteps.recentlyAddedsectionAttributes();
 		Reporter.writeSummary("TCID_082,  Verify the function of  Recently Added section attributes , " +   homeSteps.getResult() );
@@ -157,7 +157,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersForKOandMostAdded(String row, String strBrowserName) {
@@ -183,7 +183,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
 		homeSteps.clickLogout();
 	}
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_33:Checking whether the coverage percentage is shown with the text \"Coverage\""
 					+ "TCID_35:All the data should be shown under the heading \"Recently Added\" when \"view all\" button is clicked"
@@ -216,7 +216,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		
 	}
   /*****New features added for this build 2/2/19****/
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,description ="")
 	public void testHome1(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
@@ -230,7 +230,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
 	}
 	 //*****New features added for this build 2/2/19****//
-		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
+		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false,description ="")
 		public void testHomeItemSearch(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			login(driver);
@@ -243,7 +243,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 			
 	*/	}
 		//*****added by mahesh******//
-		@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description = "")
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
 		public void testAccessTheCatalogpage(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			login(driver);
@@ -256,7 +256,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 			Reporter.writeSummary("TCID_April_3, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  homeSteps.getResult());
 		}
 		//**************************//
-		@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false, description = "")
 		public void testTimeline(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			login(driver);
@@ -265,7 +265,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		    homeSteps.verifyReadMoreLessText();
 		    Reporter.writeSummary("TCID_April_4, Checking whether the read more works fine," +  homeSteps.getResult());
 		}
-		@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true)
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false)
 		public void testMyAccountPage(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			LoginSteps loginSteps = new LoginSteps(driver);
