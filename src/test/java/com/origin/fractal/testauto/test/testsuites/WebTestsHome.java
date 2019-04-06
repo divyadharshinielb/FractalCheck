@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.test.testsuites;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
@@ -10,18 +11,8 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsHome extends FractalBaseWebTest {
 
-
-	@DataProvider
-	public Object[][] browers() {
-		return new Object[][] {
-			new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" } 
-//		, new Object[] { "4", "ie11" }
-		};
-	}
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")

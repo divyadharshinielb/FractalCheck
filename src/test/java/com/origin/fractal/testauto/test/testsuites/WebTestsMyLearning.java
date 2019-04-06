@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.test.testsuites;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.MyLearningSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
@@ -11,17 +12,7 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsMyLearning extends FractalBaseWebTest {
 
-	@DataProvider
-	public Object[][] browers() {
-		return new Object[][] { 
-		new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" } 
-//	new Object[] { "4", "ie11" }
-		};
-	}
-
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_1,4,11,12: "
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_1,4,11,12: "
 			+ "Verify navigation to My Learning page, " + "1: verify COmpletion Status(% Coverage)"
 			+ "4: Verify all links(All, Bundles, Courses, Learning Paths and resources)"
 			+ "11: Verify learning item page is opened when any of the particular course catalog item is clicked"

@@ -13,15 +13,6 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebProductionTests extends FractalBaseWebTest {
 
-	@DataProvider
-	public Object[][] browers() {
-		return new Object[][] {
-		  new Object[] { "1", "chrome" }
-		 , new Object[] { "2", "firefox" }
-		 , new Object[] { "3", "msedge" } ,
-//		, new Object[] { "4", "ie11" }
-		};
-	}
 
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {
