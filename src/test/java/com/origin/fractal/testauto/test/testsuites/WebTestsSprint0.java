@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.test.testsuites;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.AccountSteps;
 import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.MyLearningSteps;
@@ -12,15 +13,7 @@ import com.wv.auto.framework.BrowserFactory;
 
 public class WebTestsSprint0 extends FractalBaseWebTest {
 
-	@DataProvider
-	public Object[][] browers() {
-		return new Object[][] { new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" } 
-		};
-	}
-
-	@Test(dataProvider = "browers", groups = {
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = {
 			"Phase1.2" }, enabled = true, description = "TCID_nnn : Verify Settings Page")
 	public void testSettings(String row, String strBrowserName) {
 

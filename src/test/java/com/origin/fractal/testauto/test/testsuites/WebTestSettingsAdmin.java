@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.test.testsuites;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.LoginSteps;
 import com.origin.fractal.testauto.steps.MenuSteps;
@@ -10,17 +11,8 @@ import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 public class WebTestSettingsAdmin extends FractalBaseWebTest{
-	@DataProvider
-	public Object[][] browers() {
-		return new Object[][] {
-			new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" } 
-//		 new Object[] { "4", "ie11" }
-		};
-	}
 	
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "TCID_009:Dynamic payment configurations should appear in the User purchase page.")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "TCID_009:Dynamic payment configurations should appear in the User purchase page.")
 
 public void WebTestSettingsAdminPaymentConfig(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
