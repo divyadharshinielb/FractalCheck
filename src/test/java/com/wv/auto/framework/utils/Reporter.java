@@ -10,7 +10,7 @@ public class Reporter {
 	private static CSVWriter repWriterDetail;
 	private static CSVWriter repWriterFailure;
 	private static String strBrowserAppOS = "FireFox";
-	private static String strEnv = "Production";
+	private static String strEnv = "Automation";
 
 	public static void createReports() {
 		createReport();
@@ -64,7 +64,7 @@ public class Reporter {
 
 	private static void writeFailureHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT".split(",");
+		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME".split(",");
 	
 		// Write the record to file
 		if (repWriterFailure != null)
@@ -77,9 +77,9 @@ public class Reporter {
 		TimeManager.setTimeAtEvent();
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
-		repWriter.writeNext(record);		
-		if (strLine.contains("FAILED"))
-			writeFailure(strLine);
+		repWriter.writeNext(record);	
+		if (strReportWithBrowserEnvDetails.contains("FAILED"))
+			writeFailure(strReportWithBrowserEnvDetails);
 	}
 	
 	public static void writeSummary(String strLine,String TimeTaken,String Time) {
@@ -88,7 +88,7 @@ public class Reporter {
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
 		repWriter.writeNext(record);		
-		if (strLine.contains("FAILED"))
+		if (strLine.endsWith("Failed"))
 			writeFailure(strLine);
 	}
 
@@ -101,7 +101,7 @@ public class Reporter {
 	public static void writeFailure(String strLine) {
 		// This is report test result
 		String[] record = strLine.split(",");
-		repWriterDetail.writeNext(record);
+		repWriterFailure.writeNext(record);
 	}
 
 	public static void closeReport() {
