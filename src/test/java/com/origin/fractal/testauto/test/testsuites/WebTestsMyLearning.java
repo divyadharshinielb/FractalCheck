@@ -13,7 +13,7 @@ import com.wv.auto.framework.utils.Reporter;
 public class WebTestsMyLearning extends FractalBaseWebTest {
 
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_1,4,11,12: "
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_1,4,11,12: "
 			+ "Verify navigation to My Learning page, " + "1: verify COmpletion Status(% Coverage)"
 			+ "4: Verify all links(All, Bundles, Courses, Learning Paths and resources)"
 			+ "11: Verify learning item page is opened when any of the particular course catalog item is clicked"
@@ -78,7 +78,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_25,5,8,14,6,7: "
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_25,5,8,14,6,7: "
 			+ "25: Verify Tickmark for completed catalog item" + "5: Verify Category dropdown and Grid and List mode"
 			+ "8: Verify Category items" + "14: Verify Rating for completed catalog item"
 			+ "6,7: verify the Grid and List view items and functionality")

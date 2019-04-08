@@ -11,7 +11,7 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsAccount extends FractalBaseWebTest {
 	
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_61,62,64,63,66,67: "
 			+ "61: Verify  My account page, "
 			+ "62: Verify  My Account Profile details,"
