@@ -29,19 +29,18 @@ public class ReportPage extends FractalBasePage{
 		wait(5);
 		click(lblUsername);
 		wait(5);
-		enterData("fractaldirectuser",lblUsername);
+		enterData("automation_directuser",lblUsername);
 		wait(5);
 		click(lblHighlight);
-	/*	Actions action=new Actions(driver);
+		Actions action=new Actions(driver);
+	//    action.sendKeys("automation_directuser@originlearning.com").sendKeys(Keys.ENTER).build().perform();
+		wait(5);
+		click(btnGenerate);
+		/*wait(15);	
 	    action.sendKeys("automation_directuser@originlearning.com").sendKeys(Keys.ENTER).build().perform();
 		wait(5);
 		click(btnGenerate);
-	/*	wait(15);	
-		Actions action=new Actions(driver);
-	    action.sendKeys("automation_directuser@originlearning.com").sendKeys(Keys.ENTER).build().perform();
-	*/	wait(5);
-		click(btnGenerate);
-		wait(20);
+		wait(20);*/
 		if(elementExist(lblGroupNameUser)) {
 		String lblGroupNameUser1=getText(lblGroupNameUser);
 		verifyText(lblGroupNameUser1,lblGroupNameUser);
@@ -52,7 +51,7 @@ public class ReportPage extends FractalBasePage{
 		wait(5);
 		click(lblCatalogName);
 		wait(5);
-		enterData("Bundle for Category check",lblCatalogName);
+		/*enterData("Bundle for Category check",lblCatalogName);
 		wait(10);
 		click(lblHighlight);
 		wait(10);
@@ -60,7 +59,7 @@ public class ReportPage extends FractalBasePage{
 		wait(5);
 		if(elementExist(lblGroupNameContent)) {
 		String lblGroupNameContent1=getText(lblGroupNameContent);
-		verifyText(lblGroupNameContent1,lblGroupNameContent);
+		verifyText(lblGroupNameContent1,lblGroupNameContent);*/
 	}
   }
-}
+

@@ -229,20 +229,20 @@ public class WebTestsHome extends FractalBaseWebTest {
 	//	homeSteps.lastFourCatalogItemsTitleCompare();
 		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
 	}
-	 //*****New features added for this build 2/2/19****//
-		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
-		public void testHomeItemSearch(String row, String strBrowserName) {
-			driver = BrowserFactory.getBrowser(strBrowserName);
-			login(driver);
+	//*****This feature will be working only in future as of now it will not work********//
+			@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,description ="")
+			public void testHomeItemSearch(String row, String strBrowserName) {
+				driver = BrowserFactory.getBrowser(strBrowserName);
+				login(driver);
 
-			HomeSteps homeSteps = new HomeSteps(driver);
-			homeSteps.searchFieldItemCodeUser();
-	  /*  	homeSteps.verifyEnrolledText();
-			homeSteps.verifyAllLanguage();
-			homeSteps.lastFourCatalogItemsTitleCompare();
-			
-	*/	}
-		//*****added by mahesh******//
+				HomeSteps homeSteps = new HomeSteps(driver);
+				homeSteps.searchFieldItemCodeUser();
+		  /*  	homeSteps.verifyEnrolledText();
+				homeSteps.verifyAllLanguage();
+				homeSteps.lastFourCatalogItemsTitleCompare();
+				
+		*/	}
+			//*****added by mahesh******//
 		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
 		public void testAccessTheCatalogpage(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
