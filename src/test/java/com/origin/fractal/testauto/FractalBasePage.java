@@ -350,7 +350,23 @@ public abstract class FractalBasePage extends BasePage {
 			}
 			return catlogName;
 		}
-		
+		//****for admin part assert search****//
+		public String[] verifySearchCataloItems(String objpath, String objpathType) {
+			int length = getItemsCount(By.xpath(objpath));
+			String wholeObjPath = "";
+			String actualCatalogName="";
+			String[] catlogName = new String[length];
+		//	click(btnLoadMore);
+			for(int i=1;i<=length;i++) {
+				wholeObjPath = objpath+"["+(i)+objpathType;
+				actualCatalogName=getText(By.xpath(wholeObjPath));
+				wait(2);
+				catlogName[i-1]=actualCatalogName;
+				
+			}
+			return catlogName;
+		}
+		//**********end**********//
 		
 	   //*****Recommended***//
 		public boolean verifyAllFilterTypeRecommAdded(String objBox, String objBoxtype, String objFilterLink) {

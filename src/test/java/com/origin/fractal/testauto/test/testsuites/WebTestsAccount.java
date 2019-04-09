@@ -41,8 +41,8 @@ public void testMyAccountPage(String row, String strBrowserName) {
 	accountSteps.verifyFieldValidation();//63
 	Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
 	//TCID_66:Verify whether the new password is getting saved on changing and clicking the save button
-	//accountSteps.changePassword();
-	//Reporter.writeSummary("TCID_066,  Verify whether the new password is getting saved on changing and clicking the save button, " + accountSteps.getResult() );
+	accountSteps.changePassword();
+	Reporter.writeSummary("TCID_066,  Verify whether the new password is getting saved on changing and clicking the save button, " + accountSteps.getResult() );
 }
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_68:"
@@ -52,9 +52,9 @@ public void testMyAccountPage(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login1(driver);
 		AccountSteps accountSteps = new AccountSteps(driver);
-	//	accountSteps.clickOnMyAccount();
+		accountSteps.clickOnMyAccount();
 		//TCID_68:Checking whether the user is able to login with the new password
-	//	accountSteps.afterChangePassword();
+		accountSteps.afterChangePassword();
 		Reporter.writeSummary("TCID_068,  Verify whether the user is able to login with the new password, " + accountSteps.getResult() );
 	}
 

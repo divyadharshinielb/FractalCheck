@@ -69,19 +69,21 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_075, Verify the function of  Search link , " +  loginSteps.getResult() );
 	}
 	//Added by Manju Priya A on Jan_21_19
-		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "TCID_71: verification of Forgot Password Page"
-				+ "TCID_73: Verification of Forgot Password function")
-		public void forgotPassword(String row, String strBrowserName) {
-				driver = BrowserFactory.getBrowser(strBrowserName);
-				/****added from here***30/1**/
-				LoginSteps loginSteps = new LoginSteps(driver);
-				login(driver);
-				HomeSteps homeSteps = new HomeSteps(driver);
-				ForgotPasswordSteps fpassSteps = new ForgotPasswordSteps(driver);
-				homeSteps.clickLogout();
-				/****/
-			fpassSteps.clickForgotPasswordLink();
-			//TCID_73: Verification of Forgot Password function
-			fpassSteps.verifyForgotPasswordLabels();
-		}
+			@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "TCID_71: verification of Forgot Password Page"
+					+ "TCID_73: Verification of Forgot Password function")
+			public void forgotPassword(String row, String strBrowserName) {
+					driver = BrowserFactory.getBrowser(strBrowserName);
+					/****added from here***30/1**/
+					LoginSteps loginSteps = new LoginSteps(driver);
+					login(driver);
+					HomeSteps homeSteps = new HomeSteps(driver);
+					ForgotPasswordSteps fpassSteps = new ForgotPasswordSteps(driver);
+					homeSteps.clickLogout();
+					/****/
+				fpassSteps.clickForgotPasswordLink();
+				Reporter.writeSummary("TCID_071, verification of Forgot Password Page, " +  fpassSteps.getResult() );
+				//TCID_73: Verification of Forgot Password function
+				fpassSteps.verifyForgotPasswordLabels();
+				Reporter.writeSummary("TCID_073, Verification of Forgot Password function, " +  fpassSteps.getResult() );
+			}
 }

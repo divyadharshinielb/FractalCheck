@@ -5,12 +5,13 @@ import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.HomeSteps;
+import com.origin.fractal.testauto.steps.LoginSteps;
+import com.origin.fractal.testauto.steps.MyLearningSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsHome extends FractalBaseWebTest {
-
 	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
@@ -27,7 +28,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//TCID_40:Checking whether the button Continue is displayed under the heading Learning in Progress
 		homeSteps.verifyComplStatus();
 		Reporter.writeSummary("TCID_039,  whether the coverage percentage is shown with the text completed under Percentage, " +  homeSteps.getResult() );
-      //TCID_33:The coverage percentage is shown with the text Coverage
+        //TCID_33:The coverage percentage is shown with the text Coverage
         homeSteps.verifyCoverageText();
 		Reporter.writeSummary("TCID_033,  Verify  The coverage percentage is shown with the text Coverage, " + homeSteps.getResult() );
 		//TCID_41: Verify Continue Text are displayed
@@ -112,7 +113,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 		HomeSteps homeSteps = new HomeSteps(driver);
         homeSteps.firstTwoCatalogItemsTitleCompare();
-		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in Recommended section matches with the first 2 items in the Most recently added section. " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in Recommended section matches with the first 2 items in the Most recently added section, " +   homeSteps.getResult() );
 		//Verify the function of  Recently Added section attributes 
 		homeSteps.recentlyAddedsectionAttributes();
 		Reporter.writeSummary("TCID_082,  Verify the function of  Recently Added section attributes , " +   homeSteps.getResult() );
@@ -182,7 +183,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
 		homeSteps.clickLogout();
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_33:Checking whether the coverage percentage is shown with the text \"Coverage\""
 					+ "TCID_35:All the data should be shown under the heading \"Recently Added\" when \"view all\" button is clicked"
@@ -225,7 +226,53 @@ public class WebTestsHome extends FractalBaseWebTest {
     	Reporter.writeSummary("TCID_085,  Check whether the Enrolled text is displayed in free item , " +  homeSteps.getResult() );
 		homeSteps.verifyAllLanguage();
 		Reporter.writeSummary("TCID_086,  Check whether the All language is present in my learning section, " +  homeSteps.getResult() );
-		homeSteps.lastFourCatalogItemsTitleCompare();
-		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
+	//	homeSteps.lastFourCatalogItemsTitleCompare();
+//		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
 	}
+	 //*****New features added for this build 2/2/19****//
+		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
+		public void testHomeItemSearch(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+
+			HomeSteps homeSteps = new HomeSteps(driver);
+			homeSteps.searchFieldItemCodeUser();
+	  /*  	homeSteps.verifyEnrolledText();
+			homeSteps.verifyAllLanguage();
+			homeSteps.lastFourCatalogItemsTitleCompare();
+			
+	*/	}
+		//*****added by mahesh******//
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+		public void testAccessTheCatalogpage(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			HomeSteps homeSteps = new HomeSteps(driver);
+			homeSteps.AccessCatalogItemEnrolledOutside();
+			Reporter.writeSummary("TCID_April_1, Checking whether the contents are accessible independently ," +  homeSteps.getResult());
+			homeSteps.AccessCatalogItemEnrolledInside();
+			Reporter.writeSummary("TCID_April_2, Checking whether the contents are accessible inside the bundle that is enrolled," +  homeSteps.getResult());
+			homeSteps.AccessCatalogItemEnrollInside();
+			Reporter.writeSummary("TCID_April_3, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  homeSteps.getResult());
+		}
+		//**************************//
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+		public void testTimeline(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			HomeSteps homeSteps = new HomeSteps(driver);
+		    homeSteps.TimelineCompletionCriteriaOption();
+		    homeSteps.verifyReadMoreLessText();
+		    Reporter.writeSummary("TCID_April_4, Checking whether the read more works fine," +  homeSteps.getResult());
+		}
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true)
+		public void testMyAccountPage(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			LoginSteps loginSteps = new LoginSteps(driver);
+			MyLearningSteps mLSteps = new MyLearningSteps(driver);
+			loginSteps.doLogin();
+			mLSteps.globalSearchCount();
+			Reporter.writeSummary("TCID_April_5, Checking whether the global search works fine," +  mLSteps.getResult());
+			mLSteps.clickLogout();		
+		}
 }

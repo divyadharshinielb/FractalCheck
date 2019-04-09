@@ -81,4 +81,9 @@ public class MyLearningSteps extends FractalBaseStep {
 	public void verifyTopArrowBtn() {
     	page.verifyTopArrowBtn();
     }
+	//Added by Karpagavalli for global search count
+	public void globalSearchCount() {
+		page.globalSearchCount();
+	}
+
 }
