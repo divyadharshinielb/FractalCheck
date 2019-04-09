@@ -230,7 +230,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
 	}
 	 //*****New features added for this build 2/2/19****//
-		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
 		public void testHomeItemSearch(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			login(driver);
