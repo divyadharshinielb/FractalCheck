@@ -84,8 +84,8 @@ public class WebProductionTests extends FractalBaseWebTest {
      accountSteps.verifyFieldValidation();
 	 Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
 
-//	 accountSteps.verifyEmptyProfileValidation();
-//	 Reporter.writeSummary("TCID_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );
+	 accountSteps.verifyEmptyProfileValidation();
+	 Reporter.writeSummary("TCID_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );
 	 accountSteps.verifyAfterCancelValidation();
 	 Reporter.writeSummary("TCID_067,  Verify the changes should not be displayed on clicking Cancel, " +  accountSteps.getResult() );
 	 

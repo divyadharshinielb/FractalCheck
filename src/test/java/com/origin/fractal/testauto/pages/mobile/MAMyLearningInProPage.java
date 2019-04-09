@@ -227,6 +227,8 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	
 	public void verifyInProgress() {
 		wait(3);
+		click(btnMenu);
+		click(linkMyLearning);
 		verifyText("IN PROGRESS", getObj(lblInprogress));
 	}
 	public void clickNotification() {

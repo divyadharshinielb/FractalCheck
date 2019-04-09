@@ -51,6 +51,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_003,  Verify the origin fractal app login page with invalid user name and password., " +  maLoginSteps.getResult() );
 		maLoginSteps.blankUserNamePassword();
 		Reporter.writeSummary("TCID_005,  Verify the origin fractal app login page with blank values for username and password, " +  maLoginSteps.getResult() );
+		wait(5);
 		maLoginSteps.doLogin();
 		Reporter.writeSummary("TCID_002,  Verify user is able to login for origin fractal app with valid user name and password., " +  maLoginSteps.getResult() );
 		
@@ -116,12 +117,12 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_027,Verify whether the user able be  to access the My Learning page, " +  mAMLS.getResult() );
 		mAMLS.verifyInProgress();
 		Reporter.writeSummary("TCID_028,Verify whether the user able be  to navigate correctly in both In progress and Completed Tabs., " +  mAMLS.getResult() );
-		mAMLS.clickCompleted();
-		Reporter.writeSummary("TCID_031,Verify the  content which are not completed is displayed in the In Progress Tab, " +  mAMLS.getResult() );
 		mAMLS.verifyGridView();
 		Reporter.writeSummary("TCID_030,Verify the Catalog items are displayed in an Grid View format on clicking the Grid view icon, " +  mAMLS.getResult() );
 		mAMLS.verifyListView();
 		Reporter.writeSummary("TCID_029,Verify the Catalog items are displayed in an List View format on clicking the List view icon, " +  mAMLS.getResult() );
+		mAMLS.clickCompleted();
+		Reporter.writeSummary("TCID_031,Verify the  content which are not completed is displayed in the In Progress Tab, " +  mAMLS.getResult() );
 		
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 		wait(5);
@@ -163,7 +164,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mMyAcc.verifyFirstLastNameWithNos(firstName[1], lastName[1]);
 		Reporter.writeSummary("TCID_063,Verifying whether the first  and last name accepts number, " +  mMyAcc.getResult() );
 		mMyAcc.verifyFirstLastNameWithSpecialChars(firstName[2], lastName[2]);
-		Reporter.writeSummary("TCID_064,Verifying whether the first  and last name accepts special charecters, " +  mMyAcc.getResult() );
+		Reporter.writeSummary("TCID_064,Verifying whether the first  and last name accepts special characters, " +  mMyAcc.getResult() );
 		/*Starts - added by Manju Priya A on Jan-22-19*/
 		//Commented because of the Password reset issue
 		String[] newPassword = {"abcdegf123#^A","abcdefgh","12345678"};
