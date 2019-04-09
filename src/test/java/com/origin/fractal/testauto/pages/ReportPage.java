@@ -52,15 +52,15 @@ public class ReportPage extends FractalBasePage{
 		wait(5);
 		click(lblCatalogName);
 		wait(5);
-		enterData("Bundle for Category check",lblCatalogName);
+		enterData("Check Bundle Feb 20",lblCatalogName);//Bundle for Category check
 		wait(10);
 		click(lblHighlight);
 		wait(10);
 		click(btnGenerate1);
 		wait(5);
 		if(elementExist(lblGroupNameContent)) {
-		String lblGroupNameContent1=getText(lblGroupNameContent);
-		verifyText(lblGroupNameContent1,lblGroupNameContent);
-	}
+			String lblGroupNameContent1=getText(lblGroupNameContent);
+			verifyText(lblGroupNameContent1,lblGroupNameContent);
+		}
   }
 }

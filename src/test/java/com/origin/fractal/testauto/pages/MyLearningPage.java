@@ -66,10 +66,9 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifySubMenu() {
-
 		verifyLabel("lblAll", lblAll);
-		verifyLabel("lblCourses", lblCourses);
-		verifyLabel("lblResources", lblResources);
+		//verifyLabel("lblCourses", lblCourses);//Commented by Manjupriya A on APril 9th,2019. 
+		//verifyLabel("lblResources", lblResources);
 		verifyLabel("lblBundles", lblBundles);
 	}
 
@@ -111,25 +110,32 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyBundleFilter() {
 		click(lblAll);
 		wait(5);
-		click(lblBundles);
-		wait(5);
-		verifyFilterType(boxBtn, boxCatType, "bundle");
+		if(elementExist(lblBundles)) {
+			click(lblBundles);
+			wait(5);
+			verifyFilterType(boxBtn, boxCatType, "bundle");
+		}
 	}
 
 	public void verifyCourseFilter() {
 		click(lblAll);
 		wait(5);
-		click(lblCourses);
-		wait(5);
-		verifyFilterType(boxBtn, boxCatType, "course");
+		if(elementExist(lblCourses)) {
+			click(lblCourses);
+			wait(5);
+			verifyFilterType(boxBtn, boxCatType, "course");
+		}
 	}
 
 	public void verifyResourceFilter() {
 		click(lblAll);
 		wait(5);
-		click(lblResources);
-		wait(5);
-		verifyFilterType(boxBtn, boxCatType, "resource");
+		if(elementExist(lblResources)) {
+			click(lblResources);
+			wait(5);
+			verifyFilterType(boxBtn, boxCatType, "resource");
+			
+		}
 	}
 
 	public void verifyTickmark() {
@@ -168,10 +174,12 @@ public class MyLearningPage extends FractalBasePage {
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
 	}
 	public void verifyCourseContents() {
-		click(lblCourses);
-		wait(5);
-		click(clickCatalog);
-		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
+		if(elementExist(lblCourses)) {
+			click(lblCourses);
+			wait(5);
+			click(clickCatalog);
+			verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
+		}
 	}
 
 	public void verifyLaunch() {
