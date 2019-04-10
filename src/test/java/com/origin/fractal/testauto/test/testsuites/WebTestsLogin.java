@@ -13,7 +13,6 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsLogin extends FractalBaseWebTest {
 
-
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {
 		
@@ -55,7 +54,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		LoginSteps loginSteps = new LoginSteps(driver);
 		//Verify the login page with valid user name and invalid password
 		loginSteps.inValidPassword();
-		Reporter.writeSummary("TCID_071, Verify the login page with valid user name and invalid password, " +  loginSteps.getResult() );
+		Reporter.writeSummary("TCID_070, Verify the login page with valid user name and invalid password, " +  loginSteps.getResult() );
 		
 	}
 	/***added here**/

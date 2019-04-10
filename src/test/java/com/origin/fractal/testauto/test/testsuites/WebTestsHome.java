@@ -183,7 +183,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
 		homeSteps.clickLogout();
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_33:Checking whether the coverage percentage is shown with the text \"Coverage\""
 					+ "TCID_35:All the data should be shown under the heading \"Recently Added\" when \"view all\" button is clicked"
@@ -207,13 +207,9 @@ public class WebTestsHome extends FractalBaseWebTest {
 					+ "TCID_79:Verify the function of  Cart  icon " + "TCID_80:Verify the function of  Wishlist icon "
 					+ "TCID_3:Verify My Learning page is displayed after logging to app. ")
 	public void testHomePageX(String row, String strBrowserName) {
-
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
-
 	
-	
-		
 	}
   /*****New features added for this build 2/2/19****/
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
@@ -230,7 +226,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 //		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
 	}
 	 //*****New features added for this build 2/2/19****//
-		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
+		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false,description ="")
 		public void testHomeItemSearch(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			login(driver);
