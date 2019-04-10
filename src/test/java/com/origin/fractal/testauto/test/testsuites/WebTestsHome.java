@@ -183,7 +183,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
 		homeSteps.clickLogout();
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_33:Checking whether the coverage percentage is shown with the text \"Coverage\""
 					+ "TCID_35:All the data should be shown under the heading \"Recently Added\" when \"view all\" button is clicked"
@@ -207,12 +207,8 @@ public class WebTestsHome extends FractalBaseWebTest {
 					+ "TCID_79:Verify the function of  Cart  icon " + "TCID_80:Verify the function of  Wishlist icon "
 					+ "TCID_3:Verify My Learning page is displayed after logging to app. ")
 	public void testHomePageX(String row, String strBrowserName) {
-
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
-
-	
-	
 		
 	}
   /*****New features added for this build 2/2/19****/
@@ -256,7 +252,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 			Reporter.writeSummary("TCID_April_3, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  homeSteps.getResult());
 		}
 		//**************************//
-		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false, description = "")
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
 		public void testTimeline(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			login(driver);
@@ -265,7 +261,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		    homeSteps.verifyReadMoreLessText();
 		    Reporter.writeSummary("TCID_April_4, Checking whether the read more works fine," +  homeSteps.getResult());
 		}
-		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false)
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true)
 		public void testMyAccountPage(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			LoginSteps loginSteps = new LoginSteps(driver);
