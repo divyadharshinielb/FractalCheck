@@ -18,7 +18,8 @@ public class MyLearningPage extends FractalBasePage {
 
 
 	private By lblCompl = By.className("percentageValue_ent");
-	private By clickCatalog = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Valid till:')]");//Updated on Nov-22-18
+	private By clickCatalog = By.xpath(".//a[contains(text(),'ALL')]/../../../div[2]/div[1]/*//p[1]");//Updated by Manjupriya A on April-10-19
+	//.//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Valid till:')]
 	private By lblUpdatedOnInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]");
 	private By lblDescInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/*//h3[contains(text(),'Overview')]");
 	private By lblValidTillInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/*//span[contains(text(),'Valid till')]");
@@ -183,7 +184,9 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyLaunch() {
+		wait(5);
 		click(clickCatalog);
+		wait(5);
 		launchCheck(lobjpath1,lobjpath2,lobjName);
 	}
 
