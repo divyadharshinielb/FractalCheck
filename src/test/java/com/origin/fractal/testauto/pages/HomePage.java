@@ -36,7 +36,8 @@ public class HomePage extends FractalBasePage {
 	private By rlblAll = By.xpath(".//h2[contains(text(),'Recently Added')]/../div/*//a[contains(text(),'ALL')]");
 	private By rlblCourses = By.xpath(".//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'courses')]");
 	private By rlblResources = By.xpath(".//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'resources')]");
-	private By rlblBundles = By.xpath(".//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'bundles')]");
+	private By rlblBundles = By.xpath(".//*[@id=\"ngview\"]/div[3]/ng-include/div/div/div[2]/ng-include/div/div[1]/div/a[2]/span");
+	private By recentlyBundles = By.xpath("//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'bundles')]");
 	private By rlblLpaths = By.xpath(".//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'Learning Paths')]");
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
 	private String rboxBtn= ".//h2[contains(text(),'Recently Added')]/../../../div/*//div/slick/div/div/div";
@@ -122,19 +123,20 @@ public class HomePage extends FractalBasePage {
     private By searchCatalogItem=By.xpath("//ng-include[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[2]/span[1]");
     private By reFirstCatalogEnrollText=By.xpath("//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation checking LP')]/../..//span[contains(text(),'ENROLLED')]");
     private By reSecondCatalogEnrolledText=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking course')]/../..//span[contains(text(),'ENROLLED')]");
-    private By reThirdCatalogEnrolledText=By.xpath("//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking')]/../..//span[contains(text(),'ENROLLED')]");
-    private By reFourthCatalogEnrollText=By.xpath("//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation test bundle1')]/../..//span[contains(text(),'ENROLL')]");
+    private By reThirdCatalogEnrolledText=By.xpath("//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation test bundle1')]/../..//span[contains(text(),'ENROLLED')]");
+    private By reFourthCatalogEnrollText=By.xpath("//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking')]/../..//span[contains(text(),'ENROLL')]");
     private By reFirstCatalog1=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation checking LP')]");
     private By reSecondCatalog1=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking course')]");
     private By reThirdCatalog=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking')]");
-    private By reFourthCatalog=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation test bundle1')]");
+    private By reFourthCatalog=By.xpath(".//h3[@title='Automation Checking']");
     private By lblDetailedPage1=By.xpath(".//div/ng-include/div/*//h3/span[contains(text(),'Contents')]/../../../../div/div[2]/*//h3");
     private By lblDetailedPage=By.xpath(".//span[contains(text(),'1 Document, 1 eLearning Object')]");
     private By lblDetailedPage2=By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[1]/*//h3");
     private By lblDetailedPage3=By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[3]/*//h3");
     private By myLearningClick = By.xpath("//*[@id=\'header\']/div/div[2]/div[2]/a/span");
     private By searchField=By.xpath(".//input[@placeholder='Search']");
-    private By bundleClick=By.xpath("//*[@id=\'ngview\']/div[3]/ng-include/div/div/div[3]/div[2]/div/div/div/div[2]/div/div[1]/div/h3");
+    private By bundleClick=By.xpath(".//span[contains(text(),'bundles')]");
+    private By enrolledinside=By.xpath(".//h3[@title='Automation test bundle1']");
 
     public HomePage(WebDriver driver) {
 		super(driver);
@@ -511,14 +513,14 @@ public class HomePage extends FractalBasePage {
 		click(myLearningClick);
 		wait(5);
 		WebElement textbox = driver.findElement(searchField);
-		enterData("Automation Checking",searchField);
+		enterData("Automation test bundle 1",searchField);
 		textbox.sendKeys(Keys.RETURN);
-	   /* click(homeLink);
+		/* click(homeLink);
 		click(rLinkViewAll);
-		click(rlblBundles);
-		click(reThirdCatalog);	
-		wait(10);*/
+		click(reThirdCatalog);	*/
 		click(bundleClick);
+		click(enrolledinside);
+		wait(10);
 		click(lblDetailedPage);
 		wait(5);
 		click(homeLink);
@@ -526,6 +528,7 @@ public class HomePage extends FractalBasePage {
 	public void	AccessCatalogItemEnrollInside() {
 		click(rLinkViewAll);
 		wait(5);
+		//click(recentlyBundles);
 		verifyLabel("lblEnrollText",reFourthCatalogEnrollText);
 		click(reFourthCatalog);
 		wait(5);

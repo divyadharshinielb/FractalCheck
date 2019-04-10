@@ -71,7 +71,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	public void verifyCatalogDetails() {
 		result ="Passed";
 		   try {
-				page.verifyCourseInBundle();
+				page.verifyCatalogDetails();
 		   }
 		   catch(Exception e)
 		   {
