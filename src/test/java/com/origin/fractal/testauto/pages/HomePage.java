@@ -197,6 +197,7 @@ public class HomePage extends FractalBasePage {
 
 	}
 	public void verifyRcntAdded_CoursesText() {
+		wait(5);
 		verifyLabel("lblRcntAdded_CoursesText",lblRcntAdded_CoursesText);
 	
 	}
