@@ -36,7 +36,7 @@ public class HomePage extends FractalBasePage {
 	private By rlblAll = By.xpath(".//h2[contains(text(),'Recently Added')]/../div/*//a[contains(text(),'ALL')]");
 	private By rlblCourses = By.xpath(".//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'courses')]");
 	private By rlblResources = By.xpath(".//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'resources')]");
-	private By rlblBundles = By.xpath(".//*[@id=\"ngview\"]/div[3]/ng-include/div/div/div[2]/ng-include/div/div[1]/div/a[2]/span");
+	private By rlblBundles = By.xpath(".//span[contains(text(),'bundles')]");
 	private By recentlyBundles = By.xpath("//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'bundles')]");
 	private By rlblLpaths = By.xpath(".//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'Learning Paths')]");
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
