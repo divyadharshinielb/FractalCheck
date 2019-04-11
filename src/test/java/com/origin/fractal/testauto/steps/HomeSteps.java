@@ -88,12 +88,30 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void clickContinueBtnRetToHome() {
-		page.clickContinueBtn();
+		result ="Passed";
+		   try {
+			   page.clickContinueBtn();
 		       page.clickOnHome();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+		
 		}
     public void verifyNavTORcntAddedCoursesRtnToHome() {
-		   	page.rcntAddedCourses(); 
-		   page.clickOnHome();
+    	result ="Passed";
+		   try {
+			   page.rcntAddedCourses(); 
+			   page.clickOnHome();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+		   	
 		   }
     public void verifyRcntAdded_CoursesText() {
     	 result ="Passed";
@@ -394,14 +412,39 @@ public class HomeSteps extends FractalBaseStep {
 		   }
     }
     public void verifyLogoImg() {
-    	page.verifyLogoImg();
+    	result ="Passed";
+		   try {
+			   page.verifyLogoImg();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+    	
     }
    /****************************/
     public void verifyNextBtn() {
-    	page.verifyNextBtn();
+    	result ="Passed";
+		   try {
+			   page.verifyNextBtn();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
     }
     public void verifyPreviousBtn() {
-    	page.verifyPreviousBtn();
+    	result ="Passed";
+		   try {
+			   page.verifyPreviousBtn();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
     }
     public void verifyWishListBtn() {
     	 result ="Passed";
@@ -512,19 +555,59 @@ public class HomeSteps extends FractalBaseStep {
 	}
 
 	public void AccessCatalogItemEnrolledOutside() {
-		page.AccessCatalogItemEnrolledOutside();
+		result ="Passed";
+		   try {
+				page.AccessCatalogItemEnrolledOutside();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void AccessCatalogItemEnrolledInside() {
-		page.AccessCatalogItemEnrolledInside();
+		result ="Passed";
+		   try {
+				page.AccessCatalogItemEnrolledInside();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void AccessCatalogItemEnrollInside(){
-		page.AccessCatalogItemEnrollInside();
+		result ="Passed";
+		   try {
+				page.AccessCatalogItemEnrollInside();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void TimelineCompletionCriteriaOption() {
-		page.TimelineCompletionCriteriaOption();
+		result ="Passed";
+		   try {
+				page.TimelineCompletionCriteriaOption();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyReadMoreLessText() {
-		page.verifyReadMoreLessText();
+		result ="Passed";
+		   try {
+				page.verifyReadMoreLessText();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	
 

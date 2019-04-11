@@ -134,8 +134,10 @@ public class HomePage extends FractalBasePage {
     private By lblDetailedPage3=By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[3]/*//h3");
     private By myLearningClick = By.xpath("//*[@id=\'header\']/div/div[2]/div[2]/a/span");
     private By searchField=By.xpath(".//input[@placeholder='Search']");
-    private By bundleClick=By.xpath("//*[@id=\'ngview\']/div[3]/ng-include/div/div/div[3]/div[2]/div/div/div/div[2]/div/div[1]/div/h3");
-
+    private By bundleClick=By.xpath(".//span[contains(text(),'bundles')]");
+    private By courseClick = By.xpath(".//h3[contains(text(),'Automation Checking course')]");
+    private By courseFilter = By.xpath(".//span[contains(text(),'courses')]");
+    private By learningClick=By.xpath(".//h3[@title='Automation checking LP']");
     public HomePage(WebDriver driver) {
 		super(driver);
 		pageName ="HomePage"; 
@@ -499,44 +501,55 @@ public class HomePage extends FractalBasePage {
 	    }
 	}
 	public void AccessCatalogItemEnrolledOutside() {
-		click(rLinkViewAll);
+		click(myLearningClick);
+		wait(5);
+		click(courseFilter);
+		wait(5);
+		click(courseClick);
+		/*click(rLinkViewAll);
 		wait(5);
 		verifyLabel("lblEnrolledText",reSecondCatalogEnrolledText);
 		wait(5);
 		verifyLabel("lblEnrolledText",reThirdCatalogEnrolledText);
 		click(reSecondCatalog1);
-		wait(5);
+		wait(5);*/
 	}
 	public void	AccessCatalogItemEnrolledInside() {
 		click(myLearningClick);
 		wait(5);
 		WebElement textbox = driver.findElement(searchField);
-		enterData("Automation Checking",searchField);
+		enterData("automation checking lp",searchField);
 		textbox.sendKeys(Keys.RETURN);
 	   /* click(homeLink);
 		click(rLinkViewAll);
 		click(rlblBundles);
 		click(reThirdCatalog);	
 		wait(10);*/
-		click(bundleClick);
-		click(lblDetailedPage);
+		click(learningClick);
+		wait(5);
+		click(courseClick);
 		wait(5);
 		click(homeLink);
 	}
 	public void	AccessCatalogItemEnrollInside() {
 		click(rLinkViewAll);
 		wait(5);
-		verifyLabel("lblEnrollText",reFourthCatalogEnrollText);
+		click(bundleClick);
+		wait(5);
+		click(reFourthCatalog);
+		wait(5);
+		click(courseClick);
+		/*verifyLabel("lblEnrollText",reFourthCatalogEnrollText);
 		click(reFourthCatalog);
 		wait(5);
 		click(lblDetailedPage1);
-		wait(5);
+		wait(5);*/
 		click(homeLink);
 	}
 	public void	TimelineCompletionCriteriaOption() {
 	click(rLinkViewAll);
 	wait(5);
-	verifyLabel("lblEnrolledText",reFirstCatalogEnrollText);
+	//verifyLabel("lblEnrolledText",reFirstCatalogEnrollText);
 	click(reFirstCatalog1);
 	wait(5);
 	boolean fname1 = driver.findElement(By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[1]/*//h3")).isEnabled();

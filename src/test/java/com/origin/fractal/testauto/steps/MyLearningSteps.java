@@ -13,77 +13,245 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 	
 	public void verifyMyLearningPage() {
-		page.verifyMyLearningPage();
+		result ="Passed";
+		   try {
+				page.verifyMyLearningPage();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifySubMenu() {
-		page.verifySubMenu();
+		result ="Passed";
+		   try {
+				page.verifySubMenu();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	
 	public void verifyComplStatus() {
-		page.verifyComplStatus();
+		result ="Passed";
+		   try {
+				page.verifyComplStatus();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyCatalogname() {
-		page.verifyCatalogname();
+		result ="Passed";
+		   try {
+				page.verifyComplStatus();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyCourseInBundle() {
-		page.verifyCourseInBundle();
+		result ="Passed";
+		   try {
+				page.verifyCourseInBundle();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyCatalogDetails() {
-		page.verifyCatalogDetails();
+		result ="Passed";
+		   try {
+				page.verifyCatalogDetails();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyAllFilter(){
-		page.verifyAllFilter();
+		result ="Passed";
+		   try {
+				page.verifyAllFilter();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyBundleFilter(){
-		page.verifyBundleFilter();
+		result ="Passed";
+		   try {
+				page.verifyBundleFilter();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyCourseFilter(){
-		page.verifyCourseFilter();
+		result ="Passed";
+		   try {
+				page.verifyCourseFilter();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyResourceFilter(){
-		page.verifyResourceFilter();
+		result ="Passed";
+		   try {
+				page.verifyResourceFilter();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyTickmark(){
-		page.verifyTickmark();
+		result ="Passed";
+		   try {
+				page.verifyTickmark();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 
 	public void verifyListView(){
-		page.verifyListView();
+		result ="Passed";
+		   try {
+				page.verifyListView();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyGridView(){
-		page.verifyGridView();
+		result ="Passed";
+		   try {
+				page.verifyGridView();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyCategory(){
-		page.verifyCategory();
+		result ="Passed";
+		   try {
+				page.verifyCategory();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	
 	public void verifyCategoryList(){
-		page.verifyCategoryList();
+		result ="Passed";
+		   try {
+				page.verifyCategoryList();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 
 	public void verifyRatings(){
-		page.verifyRatings();
+		result ="Passed";
+		   try {
+				page.verifyRatings();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 
 	public void verifyBundleContents(){
-		page.verifyBundleContents();
+		result ="Passed";
+		   try {
+				page.verifyBundleContents();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	
 	public void verifyCourseContents(){
-		page.verifyCourseContents();
+		result ="Passed";
+		   try {
+				page.verifyCourseContents();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	
 
 	public void verifyLaunch(){
-		page.verifyLaunch();
+		result ="Passed";
+		   try {
+				page.verifyLaunch();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 
 	public void verifyTopArrowBtn() {
-    	page.verifyTopArrowBtn();
+		result ="Passed";
+		   try {
+				page.verifyTopArrowBtn();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
     }
 	//Added by Karpagavalli for global search count
 	public void globalSearchCount() {
-		page.globalSearchCount();
+		result ="Passed";
+		   try {
+				page.globalSearchCount();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 
 }

@@ -83,10 +83,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_015,  Verify the functionality of ^ > < symbol, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of ">" symbol
 		homeSteps.verifyNextBtn();
-	//	Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +  result );
+		Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +   homeSteps.getResult() );
 		//TCID_15: Verify the functionality of "<" symbol
 		homeSteps.verifyPreviousBtn();
-   //	Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +  result );
+    	Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +   homeSteps.getResult() );
 		//TCID_80:Verify the function of  Wish list icon
 		homeSteps.verifyWishListBtn();
 		Reporter.writeSummary("TCID_080, Verify the function of  Wish list icon, " +  homeSteps.getResult() );
@@ -179,7 +179,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyCourseFilterMostAdded(); //Data not present
 		Reporter.writeSummary("TCID_055,  Verify The Courses should be shown under the topic Most consumed content when the link  Courses is clicked, " +  homeSteps.getResult() );
 		//TCID_56:The Resources should be shown under the topic Most consumed content when the link Resources is clicked
-//		homeSteps.verifyResourceFilterMostAdded(); //Data not present
+		homeSteps.verifyResourceFilterMostAdded(); //Data not present
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
 		homeSteps.clickLogout();
 	}
@@ -211,7 +211,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		login(driver);
 	
 	}
-  /*****New features added for this build 2/2/19****/
+ 
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
 	public void testHome1(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -222,10 +222,10 @@ public class WebTestsHome extends FractalBaseWebTest {
     	Reporter.writeSummary("TCID_085,  Check whether the Enrolled text is displayed in free item , " +  homeSteps.getResult() );
 		homeSteps.verifyAllLanguage();
 		Reporter.writeSummary("TCID_086,  Check whether the All language is present in my learning section, " +  homeSteps.getResult() );
-	//	homeSteps.lastFourCatalogItemsTitleCompare();
-//		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
+		//homeSteps.lastFourCatalogItemsTitleCompare();
+		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
 	}
-	 //*****New features added for this build 2/2/19****//
+	 /****This will work only in future not now****/
 		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false,description ="")
 		public void testHomeItemSearch(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);

@@ -197,7 +197,7 @@ public class MyLearningPage extends FractalBasePage {
 		WebElement textbox = driver.findElement(searchField);
 		enterData("global_automation",searchField);
 		textbox.sendKeys(Keys.RETURN);
-		verifyText("0 Result(s) for global_automation",searchCount);
+		verifyText("6 Result(s) for global_automation",searchCount);
 		/*elementExist(searchResult1);
 		elementExist(searchResult2);
 		elementExist(searchResult3);*/
