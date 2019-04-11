@@ -22,45 +22,43 @@ public class ReportPage extends FractalBasePage{
 		super(driver);
 	}
 	
-	public void verifyGroupName() {
-		click(btnReports);
-		wait(5);
-		click(lblUsers);
-		wait(5);
-		click(lblUsername);
-		wait(5);
-		enterData("fractaldirectuser",lblUsername);
-		wait(5);
-		click(lblHighlight);
-	/*	Actions action=new Actions(driver);
-	    action.sendKeys("automation_directuser@originlearning.com").sendKeys(Keys.ENTER).build().perform();
-		wait(5);
-		click(btnGenerate);
-	/*	wait(15);	
-		Actions action=new Actions(driver);
-	    action.sendKeys("automation_directuser@originlearning.com").sendKeys(Keys.ENTER).build().perform();
-	*/	wait(5);
-		click(btnGenerate);
-		wait(20);
-		if(elementExist(lblGroupNameUser)) {
-		String lblGroupNameUser1=getText(lblGroupNameUser);
-		verifyText(lblGroupNameUser1,lblGroupNameUser);
+	 public void verifyGroupName() {
+			click(btnReports);
+			wait(5);
+			click(lblUsers);
+			wait(5);
+			click(lblUsername);
+			wait(5);
+			enterData("automation_directuser",lblUsername);
+			wait(5);
+			click(lblHighlight);
+			Actions action=new Actions(driver);
+		//    action.sendKeys("automation_directuser@originlearning.com").sendKeys(Keys.ENTER).build().perform();
+			wait(5);
+			click(btnGenerate);
+			/*wait(15);	
+		    action.sendKeys("automation_directuser@originlearning.com").sendKeys(Keys.ENTER).build().perform();
+			wait(5);
+			click(btnGenerate);
+			wait(20);*/
+			if(elementExist(lblGroupNameUser)) {
+			String lblGroupNameUser1=getText(lblGroupNameUser);
+			verifyText(lblGroupNameUser1,lblGroupNameUser);
+			}
+			click(lblContent);
+			wait(5);
+			click(lblRadiobtn);
+			wait(5);
+			click(lblCatalogName);
+			wait(5);
+			/*enterData("Bundle for Category check",lblCatalogName);
+			wait(10);
+			click(lblHighlight);
+			wait(10);
+			click(btnGenerate1);
+			wait(5);
+			if(elementExist(lblGroupNameContent)) {
+			String lblGroupNameContent1=getText(lblGroupNameContent);
+			verifyText(lblGroupNameContent1,lblGroupNameContent);*/
 		}
-		click(lblContent);
-		wait(5);
-		click(lblRadiobtn);
-		wait(5);
-		click(lblCatalogName);
-		wait(5);
-		enterData("Bundle for Category check",lblCatalogName);
-		wait(10);
-		click(lblHighlight);
-		wait(10);
-		click(btnGenerate1);
-		wait(5);
-		if(elementExist(lblGroupNameContent)) {
-		String lblGroupNameContent1=getText(lblGroupNameContent);
-		verifyText(lblGroupNameContent1,lblGroupNameContent);
-	}
-  }
 }
