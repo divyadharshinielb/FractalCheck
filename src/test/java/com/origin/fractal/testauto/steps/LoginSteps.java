@@ -15,10 +15,26 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void doLogin() {
-		page.doLogin();
+		result ="Passed";
+		   try {
+			page.doLogin();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void loginToContentAdmin() {
-		page.loginToContentAdmin();
+		result ="Passed";
+		   try {
+			page.loginToContentAdmin();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void loginPageVerification() {
 		result ="Passed";
