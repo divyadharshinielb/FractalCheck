@@ -86,8 +86,8 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyCatalogDetails() {
 		/**added here 1/30/2019**/
-	//	wait(5);
-	//	click(clickCatalog);
+	wait(5);
+	click(clickCatalog);
 		/***/
 		verifyPartialLabelText("lblUpdatedOn", lblUpdatedOnInCat);
 		verifyPartialLabelText("lbloverview", lbloverview);
