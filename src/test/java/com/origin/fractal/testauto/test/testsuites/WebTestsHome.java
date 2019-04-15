@@ -83,10 +83,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_015,  Verify the functionality of ^ > < symbol, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of ">" symbol
 		homeSteps.verifyNextBtn();
-	//	Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +  result );
+		Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " + homeSteps.getResult()  );
 		//TCID_15: Verify the functionality of "<" symbol
 		homeSteps.verifyPreviousBtn();
-   //	Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +  result );
+		Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +  homeSteps.getResult()  );
 		//TCID_80:Verify the function of  Wish list icon
 		homeSteps.verifyWishListBtn();
 		Reporter.writeSummary("TCID_080, Verify the function of  Wish list icon, " +  homeSteps.getResult() );
@@ -179,7 +179,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyCourseFilterMostAdded(); //Data not present
 		Reporter.writeSummary("TCID_055,  Verify The Courses should be shown under the topic Most consumed content when the link  Courses is clicked, " +  homeSteps.getResult() );
 		//TCID_56:The Resources should be shown under the topic Most consumed content when the link Resources is clicked
-//		homeSteps.verifyResourceFilterMostAdded(); //Data not present
+		homeSteps.verifyResourceFilterMostAdded(); //Data not present
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
 		homeSteps.clickLogout();
 	}
