@@ -179,7 +179,7 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyLaunch() {
 		click(clickCatalog); 
-		click(clickCourse);
+		//click(clickCourse);
 		//click(selectBundle);
 		launchCheck(lobjpath1,lobjpath2,lobjName);
 	}
