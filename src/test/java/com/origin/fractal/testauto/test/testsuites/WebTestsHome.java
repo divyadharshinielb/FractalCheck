@@ -248,8 +248,8 @@ public class WebTestsHome extends FractalBaseWebTest {
 			Reporter.writeSummary("TCID_April_1, Checking whether the contents are accessible independently ," +  homeSteps.getResult());
 			homeSteps.AccessCatalogItemEnrolledInside();
 			Reporter.writeSummary("TCID_April_2, Checking whether the contents are accessible inside the bundle that is enrolled," +  homeSteps.getResult());
-			homeSteps.AccessCatalogItemEnrollInside();
-			Reporter.writeSummary("TCID_April_3, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  homeSteps.getResult());
+     		//homeSteps.AccessCatalogItemEnrollInside();
+			//Reporter.writeSummary("TCID_April_3, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  homeSteps.getResult());
 		}
 		//**************************//
 		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
@@ -257,7 +257,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			login(driver);
 			HomeSteps homeSteps = new HomeSteps(driver);
-		    homeSteps.TimelineCompletionCriteriaOption();
+		//    homeSteps.TimelineCompletionCriteriaOption();
 		    homeSteps.verifyReadMoreLessText();
 		    Reporter.writeSummary("TCID_April_4, Checking whether the read more works fine," +  homeSteps.getResult());
 		}

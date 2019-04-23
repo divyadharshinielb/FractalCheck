@@ -135,6 +135,7 @@ public class HomePage extends FractalBasePage {
     private By myLearningClick = By.xpath("//*[@id=\'header\']/div/div[2]/div[2]/a/span");
     private By searchField=By.xpath(".//input[@placeholder='Search']");
     private By bundleClick=By.xpath(".//span[contains(text(),'bundles')]");
+    private By courseClick1=By.xpath("//span[contains(text(),'courses')]");
     private By courseClick = By.xpath(".//h3[contains(text(),'Automation Checking course')]");
     private By courseFilter = By.xpath(".//span[contains(text(),'courses')]");
     private By learningClick=By.xpath(".//h3[@title='Automation checking LP']");
@@ -536,14 +537,18 @@ public class HomePage extends FractalBasePage {
 		wait(5);
 		click(bundleClick);
 		wait(5);
+		if( elementExist(btnLoadMore)){
+	    	click(btnLoadMore);
+	    }
+		wait(5);
 		click(reFourthCatalog);
 		wait(5);
 		click(courseClick);
-		/*verifyLabel("lblEnrollText",reFourthCatalogEnrollText);
+	/*	verifyLabel("lblEnrollText",reFourthCatalogEnrollText);
 		click(reFourthCatalog);
 		wait(5);
 		click(lblDetailedPage1);
-		wait(5);*/
+	*/	wait(5);
 		click(homeLink);
 	}
 	public void	TimelineCompletionCriteriaOption() {
@@ -568,6 +573,11 @@ public class HomePage extends FractalBasePage {
 	public void verifyReadMoreLessText() {
 		click(rLinkViewAll);
 		wait(5);
+		click(courseClick1);
+		wait(5);
+		if( elementExist(btnLoadMore)){
+	    	click(btnLoadMore);
+	    }
 		click(reSecondCatalog1);
 		wait(5);
 		verifyText("Read more",lblReadMore);
