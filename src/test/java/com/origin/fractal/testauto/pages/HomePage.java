@@ -578,6 +578,10 @@ public class HomePage extends FractalBasePage {
 		if( elementExist(btnLoadMore)){
 	    	click(btnLoadMore);
 	    }
+		wait(5);
+		if( elementExist(btnLoadMore)){
+	    	click(btnLoadMore);
+	    }
 		click(reSecondCatalog1);
 		wait(5);
 		verifyText("Read more",lblReadMore);
