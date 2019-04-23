@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.HomeSteps;
+import com.origin.fractal.testauto.steps.LoginSteps;
+import com.origin.fractal.testauto.steps.MyLearningSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
@@ -78,10 +80,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_015,  Verify the functionality of ^ > < symbol, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of ">" symbol
 		homeSteps.verifyNextBtn();
-	//	Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +  result );
+		Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +  homeSteps.result );
 		//TCID_15: Verify the functionality of "<" symbol
 		homeSteps.verifyPreviousBtn();
-   //	Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +  result );
+		Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +  homeSteps.result );
 		//TCID_43: Verify Recently Added courses displayed
 		homeSteps.verifyRcntAdded_CoursesText();
 		Reporter.writeSummary("TCID_043,  Verify  Recently Added courses displayed, " + homeSteps.getResult() );
@@ -111,7 +113,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 		HomeSteps homeSteps = new HomeSteps(driver);
         homeSteps.firstTwoCatalogItemsTitleCompare();
-		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in Recommended section matches with the first 2 items in the Most recently added section. " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in Recommended section matches with the first 2 items in the Most recently added section, " +   homeSteps.getResult() );
 		//Verify the function of  Recently Added section attributes 
 		homeSteps.recentlyAddedsectionAttributes();
 		Reporter.writeSummary("TCID_082,  Verify the function of  Recently Added section attributes , " +   homeSteps.getResult() );
@@ -207,11 +209,39 @@ public class WebTestsHome extends FractalBaseWebTest {
 	public void testHomePageX(String row, String strBrowserName) {
 
 		driver = BrowserFactory.getBrowser(strBrowserName);
+		login(driver);	
+	}
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+	public void testAccessTheCatalogpage(String row, String strBrowserName) {
+		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
-
-	
-	
-		
+		HomeSteps homeSteps = new HomeSteps(driver);
+		homeSteps.AccessCatalogItemEnrolledOutside();
+		Reporter.writeSummary("TCID_April_1, Checking whether the contents are accessible independently ," +  homeSteps.getResult());
+		homeSteps.AccessCatalogItemEnrolledInside();
+		Reporter.writeSummary("TCID_April_2, Checking whether the contents are accessible inside the bundle that is enrolled," +  homeSteps.getResult());
+	//	homeSteps.AccessCatalogItemEnrollInside();
+	//	Reporter.writeSummary("TCID_April_3, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  homeSteps.getResult());
+	}
+	//**************************//
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+	public void testTimeline(String row, String strBrowserName) {
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		login(driver);
+		HomeSteps homeSteps = new HomeSteps(driver);
+	    homeSteps.TimelineCompletionCriteriaOption();
+	    homeSteps.verifyReadMoreLessText();
+	    Reporter.writeSummary("TCID_April_4, Checking whether the read more works fine," +  homeSteps.getResult());
+	}
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true)
+	public void testMyAccountPage(String row, String strBrowserName) {
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		LoginSteps loginSteps = new LoginSteps(driver);
+		MyLearningSteps mLSteps = new MyLearningSteps(driver);
+		loginSteps.doLogin();
+		mLSteps.globalSearchCount();
+		Reporter.writeSummary("TCID_April_5, Checking whether the global search works fine," +  mLSteps.getResult());
+		mLSteps.clickLogout();		
 	}
 
 }

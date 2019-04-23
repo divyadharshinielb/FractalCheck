@@ -131,4 +131,14 @@ public class LoginSteps extends FractalBaseStep {
 		page.loginAdmin();
 		
 	}
+	/*Starts - Added by Manjupriya A on Feb_18_19  for Admin*/
+	public void loginWithCredentials(String username, String password) {
+		page.loginWithCredentials(username, password);
+	}
+	/*Ends - Added by Manjupriya A on Feb_18_19  for Admin*/
+	/*Starts - Added by Manjupriya A on March_01_19  for Admin*/
+	public void loginToBusinessAdmin() {
+		page.loginToBusinessAdmin();
+	}
+	/*Ends - Added by Manjupriya A on March_01_19  for Admin*/
 }

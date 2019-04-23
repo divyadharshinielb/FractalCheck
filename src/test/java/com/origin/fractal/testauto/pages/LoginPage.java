@@ -16,7 +16,7 @@ public class LoginPage extends FractalBasePage {
 	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
 	private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
 	private By logOutButton = By.xpath(".//a[@class='pointer padding-l-15']");
-	private By registerButton = By.xpath(".//a[@class='cursor-pointer']");
+	private By registerButton = By.xpath(".//a[@class='cursor-pointer text-uppercase']");
 	private By resigstrationPage = By.xpath(".//*[contains(text(), 'I want to register as')]");
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
 	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
@@ -59,23 +59,30 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void rememberMe() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("P@ssw0rd",tbPassword);
+		enterData("AutoDU@123",tbPassword);
+		wait(10);
 		click(rememberMe);
+		wait(10);
 		click(btnLogin);
+		wait(10);
 		click(lblProfile);
+		wait(10);
 		click(logOutButton);
 		wait(5);
 		click(rememberMe);
 		wait(5);
 		click(btnLogin1);
+		wait(10);
 		click(lblProfile);
+		wait(10);
 		click(logOutButton);
+		wait(10);
 		click(btnLogin1);	
 		elementExist(blankPassword);
 		}
 
 	public void registerFunction() {
-		String baseUrl = "https://automation-origin.originfractal.com";
+		String baseUrl = "https://dev-origin.originfractal.com";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
@@ -117,10 +124,27 @@ public class LoginPage extends FractalBasePage {
 		enterData ("abcdef",searchLink);
 	}
 	//changes by karpagavalli
-		public void loginAdmin() {
-			enterData("contentadmin@origin.com",tbUserName);
-			enterData("contentadmin@origin.com",tbPassword);
-			click(btnLogin);
-		}
-		//changes by karpagavalli till here
+	public void loginAdmin() {
+		enterData("contentadmin@origin.com",tbUserName);
+		enterData("contentadmin@origin.com",tbPassword);
+		click(btnLogin);
+	}
+	//changes by karpagavalli till here
+	/*Starts - Added by Manjupriya A on April_12_19 for Admin*/
+	public void loginWithCredentials(String username, String password) {
+		wait(15);
+		clear(tbUserName);
+		enterData(username,tbUserName);
+		clear(tbPassword);
+		enterData(password,tbPassword);
+		click(btnLogin);
+		wait(5);
+	}
+	public void loginToBusinessAdmin() {
+		enterData("clientAdmin_internal@originlearning.com",tbUserName);//qacontentadmin
+		enterData("P@ssw0rd",tbPassword);//qacontentadmin
+		click(btnLogin);
+		wait(5);
+	}
+	/*Ends - Added by Manjupriya A on April_12_19  for Admin*/
 }
