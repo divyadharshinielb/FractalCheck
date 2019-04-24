@@ -142,6 +142,7 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyGridView() {
 		click(lblAll);
+		wait(5);
 		gridView();
 	}
 	public void verifyListView() {
