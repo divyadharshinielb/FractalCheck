@@ -135,7 +135,9 @@ public class HomePage extends FractalBasePage {
     private By myLearningClick = By.xpath("//*[@id=\'header\']/div/div[2]/div[2]/a/span");
     private By searchField=By.xpath(".//input[@placeholder='Search']");
     private By bundleClick=By.xpath("//*[@id=\'ngview\']/div[3]/ng-include/div/div/div[3]/div[2]/div/div/div/div[2]/div/div[1]/div/h3");
-
+    private By learningClick=By.xpath(".//h3[@title='Automation checking LP']");
+    private By learningPathLink=By.xpath("//span[@class='ng-scope']");
+    private By courseClick = By.xpath(".//h3[contains(text(),'Automation Checking course')]");
     public HomePage(WebDriver driver) {
 		super(driver);
 		pageName ="HomePage"; 
@@ -510,16 +512,18 @@ public class HomePage extends FractalBasePage {
 	public void	AccessCatalogItemEnrolledInside() {
 		click(myLearningClick);
 		wait(5);
-		WebElement textbox = driver.findElement(searchField);
-		enterData("Automation Checking",searchField);
+		click(learningPathLink);
+	/*	WebElement textbox = driver.findElement(searchField);
+		enterData("automation checking lp",searchField);
 		textbox.sendKeys(Keys.RETURN);
-	   /* click(homeLink);
+	   click(homeLink);
 		click(rLinkViewAll);
 		click(rlblBundles);
-		click(reThirdCatalog);	
-		wait(10);*/
-		click(bundleClick);
-		click(lblDetailedPage);
+		click(reThirdCatalog);	*/
+		wait(5);
+		click(learningClick);
+		wait(5);
+		click(courseClick);
 		wait(5);
 		click(homeLink);
 	}
