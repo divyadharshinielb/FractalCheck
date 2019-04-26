@@ -64,7 +64,7 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 		click(rememberMe);
 		wait(10);
-		click(btnLogin);
+		click(btnLogin1);
 		wait(10);
 		click(lblProfile);
 		wait(10);
@@ -99,7 +99,7 @@ public class LoginPage extends FractalBasePage {
 	public void blankPasswordVerification() {
 		enterData (userName[1],tbUserName);
 		enterData (passWord[0],tbPassword);
-		click(btnLogin);
+		click(btnLogin1);
 		wait(5);
 		elementExist(blankPassword);
 		
@@ -107,21 +107,21 @@ public class LoginPage extends FractalBasePage {
 	public void blankUserName() {
 		enterData (userName[0],tbUserName);
 		enterData (passWord[1],tbPassword);
-		click(btnLogin);
+		click(btnLogin1);
 		wait(5);
 		elementExist(blankUserName);
 	}
 	public void mandatoryField() {
 		enterData (userName[0],tbUserName);
 		enterData (passWord[0],tbPassword);
-		click(btnLogin);
+		click(btnLogin1);
 		wait(5);
 		elementExist(blankUserName);
 	}
 	public void inValid() {
 		enterData (userName[2],tbUserName);
 		enterData (passWord[2],tbPassword);
-		click(btnLogin);
+		click(btnLogin1);
 		wait(5);
 		elementExist(inValid);
 		}
@@ -129,7 +129,7 @@ public class LoginPage extends FractalBasePage {
 	public void inValidPassword() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("Origin",tbPassword);
-		click(btnLogin);
+		click(btnLogin1);
 		wait(5);
 		elementExist(inValid);
 		

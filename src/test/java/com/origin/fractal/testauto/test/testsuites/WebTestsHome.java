@@ -112,13 +112,13 @@ public class WebTestsHome extends FractalBaseWebTest {
 		login(driver);
 
 		HomeSteps homeSteps = new HomeSteps(driver);
-        homeSteps.firstTwoCatalogItemsTitleCompare();
+       homeSteps.firstTwoCatalogItemsTitleCompare();
 		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in Recommended section matches with the first 2 items in the Most recently added section, " +   homeSteps.getResult() );
 		//Verify the function of  Recently Added section attributes 
 		homeSteps.recentlyAddedsectionAttributes();
 		Reporter.writeSummary("TCID_082,  Verify the function of  Recently Added section attributes , " +   homeSteps.getResult() );
 		// rep.report(strTCID, Severity, Module, strTCDesc, strResult);TCID_33:Checking whether the coverage percentage is shown with the text \"Coverage\"
-		//TCID_42:The data should be shown under the topic Recently Added when All is clicked
+		//TCID_42:The data should be shown under the topic Recently Added when All is clicked*/
 		homeSteps.verifyAllFilterRcntAdded();
 		Reporter.writeSummary("TCID_042,  Verify The data should be shown under the topic Recently Added when All is clicked, " +   homeSteps.getResult() );
 		Reporter.writeSummary("TCID_057,  Verify whether Content Bundle Course Video and Learning path are shown  under Recently Added when All link is clicked, " +   homeSteps.getResult() );
@@ -257,7 +257,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			login(driver);
 			HomeSteps homeSteps = new HomeSteps(driver);
-		//    homeSteps.TimelineCompletionCriteriaOption();
+		    homeSteps.TimelineCompletionCriteriaOption();
 		    homeSteps.verifyReadMoreLessText();
 		    Reporter.writeSummary("TCID_April_4, Checking whether the read more works fine," +  homeSteps.getResult());
 		}

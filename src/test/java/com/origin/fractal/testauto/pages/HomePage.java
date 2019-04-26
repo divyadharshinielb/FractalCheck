@@ -211,6 +211,7 @@ public class HomePage extends FractalBasePage {
 	}
 
 	public void verifyAllFilterRcntAdded() {
+		wait(5);
 		click(rlblAll);
 		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,rlblFilterLink);
 	}

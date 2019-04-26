@@ -20,11 +20,9 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		LoginSteps loginSteps = new LoginSteps(driver);
 		Reporter.writeSummary("TCID_024,Verify the UI of the login page, " +  loginSteps.getResult() );
 		Reporter.writeSummary("TCID_028, Verify the login page with valid username and valid password., " +  loginSteps.getResult() );
-		/**added by mahesh 06/02/19***/
 		//TCID_65:Verify whether the entered password is displayed in encrypted format in the Change password field
 		loginSteps.verifypasswordField();
 		Reporter.writeSummary("TCID_065, Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult() );
-		/****end**/
 		//TCID_26:Verify the UI of the login page. User name, Password, Remember me fields and Login button are available in the login page.
 		loginSteps.loginPageVerification();
 		Reporter.writeSummary("TCID_026, Verify the UI of the login page. User name Password Remember me fields and Login button are available in the login page, " +  loginSteps.getResult() );
@@ -43,8 +41,8 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_072,  Verify the Remember me function, " +  loginSteps.getResult() );
 		Reporter.writeSummary("TCID_019,  Verify the Remember me function - By checking the radio button, " +  loginSteps.getResult() );
 		//TCID_74:Verification of Register link  function 
-		loginSteps.registerFunction();
-		Reporter.writeSummary("TCID_074, Verification of Register link  function, " +  loginSteps.getResult() );
+		//loginSteps.registerFunction();
+		//Reporter.writeSummary("TCID_074, Verification of Register link  function, " +  loginSteps.getResult() );
 	 }
 	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")

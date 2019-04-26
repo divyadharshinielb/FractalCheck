@@ -186,7 +186,7 @@ public class MyLearningPage extends FractalBasePage {
 		wait(5);
 		verifyPartialLabelText("catalogTitle", lblCatnameInside);
 		verifyPartialLabelText("lastUpdateddate", lblUpdatedOnInCat);
-		verifyPartialLabelText("lobjCount", lobjCount);
+		//verifyPartialLabelText("lobjCount", lobjCount);
 		verifyPartialLabelText("lblDuration", lblDurationInCat);
 		verifyPartialLabelText("lblValidity", lblValidTillInCat);
 		verifyPartialLabelText("lbloverview", lbloverview);
@@ -195,9 +195,9 @@ public class MyLearningPage extends FractalBasePage {
 	public void globalSearchCount() {
 		wait(5);
 		WebElement textbox = driver.findElement(searchField);
-		enterData("global_automation",searchField);
+		enterData("Automation_global_check",searchField);
 		textbox.sendKeys(Keys.RETURN);
-		verifyText("6 Result(s) for global_automation",searchCount);
+		verifyText("3 Result(s) for Automation_global_check",searchCount);
 		/*elementExist(searchResult1);
 		elementExist(searchResult2);
 		elementExist(searchResult3);*/
