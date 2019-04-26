@@ -43,7 +43,7 @@ public class MenuPage extends FractalBasePage{
 	}
 	public void gotoPaymentConfiguration() {
 		click(btnSettings);
-	//	click(btnScroll);
+		click(btnScroll);
 		wait(10);
 		click(btnPayment);
 		wait(10);

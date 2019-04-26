@@ -36,19 +36,19 @@ public class LoginPage extends FractalBasePage {
 	public void doLogin() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
-		click(btnLogin);
+		click(btnLogin1);
 		wait(5);
 	}
 	public void loginToContentAdmin() {
 		enterData("contentadmin@origin.com",tbUserName);
 	    enterData("P@ssw0rd",tbPassword);
-	    click(btnLogin);
+	    click(btnLogin1);
 	    wait(5);
 	}
 	public void doLogin1() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
-		click(btnLogin);
+		click(btnLogin1);
 	}
 	public void loginPageVerification() {
 		wait(5);
