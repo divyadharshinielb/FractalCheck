@@ -12,7 +12,7 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsHome extends FractalBaseWebTest {
-
+	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
@@ -28,7 +28,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//TCID_40:Checking whether the button Continue is displayed under the heading Learning in Progress
 		homeSteps.verifyComplStatus();
 		Reporter.writeSummary("TCID_039,  whether the coverage percentage is shown with the text completed under Percentage, " +  homeSteps.getResult() );
-      //TCID_33:The coverage percentage is shown with the text Coverage
+        //TCID_33:The coverage percentage is shown with the text Coverage
         homeSteps.verifyCoverageText();
 		Reporter.writeSummary("TCID_033,  Verify  The coverage percentage is shown with the text Coverage, " + homeSteps.getResult() );
 		//TCID_41: Verify Continue Text are displayed
@@ -61,7 +61,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_070, Verify whether All the Notifications are getting listed on clicking the All tab, " + homeSteps.getResult() ); 
 		homeSteps.clickLogout();
-	
+
 	}
 
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
@@ -72,6 +72,9 @@ public class WebTestsHome extends FractalBaseWebTest {
 		login(driver);
 		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.verifyNavTORcntAddedCoursesRtnToHome();
+		//TCID_43: Verify Recently Added courses displayed
+		homeSteps.verifyRcntAdded_CoursesText();
+		Reporter.writeSummary("TCID_043,  Verify  Recently Added courses displayed, " + homeSteps.getResult() );
 		//TCID_31: Verify navigation to Home page
 		homeSteps.verifySubHeaders();
 		Reporter.writeSummary("TCID_031,  Verify navigation to Home page, " + homeSteps.getResult() );
@@ -80,13 +83,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_015,  Verify the functionality of ^ > < symbol, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of ">" symbol
 		homeSteps.verifyNextBtn();
-		Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +  homeSteps.result );
+		Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +   homeSteps.getResult() );
 		//TCID_15: Verify the functionality of "<" symbol
 		homeSteps.verifyPreviousBtn();
-		Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +  homeSteps.result );
-		//TCID_43: Verify Recently Added courses displayed
-		homeSteps.verifyRcntAdded_CoursesText();
-		Reporter.writeSummary("TCID_043,  Verify  Recently Added courses displayed, " + homeSteps.getResult() );
+    	Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +   homeSteps.getResult() );
 		//TCID_80:Verify the function of  Wish list icon
 		homeSteps.verifyWishListBtn();
 		Reporter.writeSummary("TCID_080, Verify the function of  Wish list icon, " +  homeSteps.getResult() );
@@ -179,7 +179,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyCourseFilterMostAdded(); //Data not present
 		Reporter.writeSummary("TCID_055,  Verify The Courses should be shown under the topic Most consumed content when the link  Courses is clicked, " +  homeSteps.getResult() );
 		//TCID_56:The Resources should be shown under the topic Most consumed content when the link Resources is clicked
-//		homeSteps.verifyResourceFilterMostAdded(); //Data not present
+		homeSteps.verifyResourceFilterMostAdded(); //Data not present
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
 		homeSteps.clickLogout();
 	}
@@ -207,41 +207,68 @@ public class WebTestsHome extends FractalBaseWebTest {
 					+ "TCID_79:Verify the function of  Cart  icon " + "TCID_80:Verify the function of  Wishlist icon "
 					+ "TCID_3:Verify My Learning page is displayed after logging to app. ")
 	public void testHomePageX(String row, String strBrowserName) {
-
-		driver = BrowserFactory.getBrowser(strBrowserName);
-		login(driver);	
-	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
-	public void testAccessTheCatalogpage(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
-		HomeSteps homeSteps = new HomeSteps(driver);
-		homeSteps.AccessCatalogItemEnrolledOutside();
-		Reporter.writeSummary("TCID_April_1, Checking whether the contents are accessible independently ," +  homeSteps.getResult());
-		homeSteps.AccessCatalogItemEnrolledInside();
-		Reporter.writeSummary("TCID_April_2, Checking whether the contents are accessible inside the bundle that is enrolled," +  homeSteps.getResult());
-	//	homeSteps.AccessCatalogItemEnrollInside();
-	//	Reporter.writeSummary("TCID_April_3, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  homeSteps.getResult());
+	
 	}
-	//**************************//
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
-	public void testTimeline(String row, String strBrowserName) {
+ 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,description ="")
+	public void testHome1(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
-		HomeSteps homeSteps = new HomeSteps(driver);
-	    homeSteps.TimelineCompletionCriteriaOption();
-	    homeSteps.verifyReadMoreLessText();
-	    Reporter.writeSummary("TCID_April_4, Checking whether the read more works fine," +  homeSteps.getResult());
-	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true)
-	public void testMyAccountPage(String row, String strBrowserName) {
-		driver = BrowserFactory.getBrowser(strBrowserName);
-		LoginSteps loginSteps = new LoginSteps(driver);
-		MyLearningSteps mLSteps = new MyLearningSteps(driver);
-		loginSteps.doLogin();
-		mLSteps.globalSearchCount();
-		Reporter.writeSummary("TCID_April_5, Checking whether the global search works fine," +  mLSteps.getResult());
-		mLSteps.clickLogout();		
-	}
 
+		HomeSteps homeSteps = new HomeSteps(driver);
+    	homeSteps.verifyEnrolledText();
+    	Reporter.writeSummary("TCID_085,  Check whether the Enrolled text is displayed in free item , " +  homeSteps.getResult() );
+		homeSteps.verifyAllLanguage();
+		Reporter.writeSummary("TCID_086,  Check whether the All language is present in my learning section, " +  homeSteps.getResult() );
+		//homeSteps.lastFourCatalogItemsTitleCompare();
+		Reporter.writeSummary("TCID_059,  Check whether the last 4 items in the Recently Added lists gets displayed in the \"Most Popular\" section, " +  homeSteps.getResult() );
+	}
+	 /****This will work only in future not now****/
+		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false,description ="")
+		public void testHomeItemSearch(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+
+			HomeSteps homeSteps = new HomeSteps(driver);
+			homeSteps.searchFieldItemCodeUser();
+	  /*  	homeSteps.verifyEnrolledText();
+			homeSteps.verifyAllLanguage();
+			homeSteps.lastFourCatalogItemsTitleCompare();
+			
+	*/	}
+		//*****added by mahesh******//
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+		public void testAccessTheCatalogpage(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			HomeSteps homeSteps = new HomeSteps(driver);
+			homeSteps.AccessCatalogItemEnrolledOutside();
+			Reporter.writeSummary("TCID_April_1, Checking whether the contents are accessible independently ," +  homeSteps.getResult());
+			homeSteps.AccessCatalogItemEnrolledInside();
+			Reporter.writeSummary("TCID_April_2, Checking whether the contents are accessible inside the bundle that is enrolled," +  homeSteps.getResult());
+     		//homeSteps.AccessCatalogItemEnrollInside();
+			//Reporter.writeSummary("TCID_April_3, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  homeSteps.getResult());
+		}
+		//**************************//
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+		public void testTimeline(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			HomeSteps homeSteps = new HomeSteps(driver);
+		//    homeSteps.TimelineCompletionCriteriaOption();
+		    homeSteps.verifyReadMoreLessText();
+		    Reporter.writeSummary("TCID_April_4, Checking whether the read more works fine," +  homeSteps.getResult());
+		}
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true)
+		public void testMyAccountPage(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			LoginSteps loginSteps = new LoginSteps(driver);
+			MyLearningSteps mLSteps = new MyLearningSteps(driver);
+			loginSteps.doLogin();
+			mLSteps.globalSearchCount();
+			Reporter.writeSummary("TCID_April_5, Checking whether the global search works fine," +  mLSteps.getResult());
+			mLSteps.clickLogout();		
+		}
 }

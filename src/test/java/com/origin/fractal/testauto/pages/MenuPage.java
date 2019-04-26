@@ -71,11 +71,11 @@ public class MenuPage extends FractalBasePage{
 	    if( elementExist(btnLoadMore)){
 	    click(btnLoadMore);
 	    }
-	//    String[] expectedItems=verifySearchCataloItems(reboxBtn,reboxCatTitle);
-//	    for(String a:expectedItems) {
-//			System.out.println("---->"+a);
-//	    }
-	}
+/*	    String[] expectedItems=verifySearchCataloItems(reboxBtn,reboxCatTitle);
+	    for(String a:expectedItems) {
+			System.out.println("---->"+a);
+	    }
+*/	}
 	//*****end*****//
 	public void searchFieldItemCode() {
 		click(globalSearch);
@@ -91,8 +91,8 @@ public class MenuPage extends FractalBasePage{
 	    if( elementExist(btnLoadMore)){
 	    	click(btnLoadMore);
 	    }
-	//    String[] expectedItems=verifySearchCataloItems(reboxBtn,reboxCatTitle);
-/*	    for(String a:expectedItems) {
+/*	    String[] expectedItems=verifySearchCataloItems(reboxBtn,reboxCatTitle);
+	    for(String a:expectedItems) {
 			System.out.println("---->"+a);
 	    }
 */	}

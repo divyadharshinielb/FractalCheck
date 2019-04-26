@@ -12,7 +12,6 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsMyLearning extends FractalBaseWebTest {
 
-
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_1,4,11,12: "
 			+ "Verify navigation to My Learning page, " + "1: verify COmpletion Status(% Coverage)"
 			+ "4: Verify all links(All, Bundles, Courses, Learning Paths and resources)"
@@ -115,7 +114,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.clickLogout();
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_17,18,23,27 : "
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers",groups = { "pilot" }, enabled = true, description = "TCID_17,18,23,27 : "
 			+ "17: Verify Bundle Details after clicking" + "18: Verify course Details after clicking"
 			+ "23: Verify the learnig objeck launch" + "27: Verify the top arrow button")
 	public void testMyLearningPage3(String row, String strBrowserName) {

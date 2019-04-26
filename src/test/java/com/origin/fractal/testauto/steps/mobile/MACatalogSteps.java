@@ -173,7 +173,6 @@ public class MACatalogSteps extends FractalBaseStep{
 			e.printStackTrace();
 		}
 	}
-
 	public void verfiyContent() {
 		result = "Passed";
 		try {

@@ -12,6 +12,7 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 public class WebTestSettingsAdmin extends FractalBaseWebTest{
 	
+	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "TCID_009:Dynamic payment configurations should appear in the User purchase page.")
 
 public void WebTestSettingsAdminPaymentConfig(String row, String strBrowserName) {

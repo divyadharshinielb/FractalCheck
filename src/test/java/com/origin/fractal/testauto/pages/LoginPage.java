@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
-import com.origin.fractal.testauto.FractalUtils;
 
 public class LoginPage extends FractalBasePage {
 
@@ -16,7 +15,9 @@ public class LoginPage extends FractalBasePage {
 	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
 	private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
 	private By logOutButton = By.xpath(".//a[@class='pointer padding-l-15']");
-	private By registerButton = By.xpath(".//a[@class='cursor-pointer text-uppercase']");
+	/***added on 08/02/19***/
+	private By registerButton = By.xpath("//a[@class='cursor-pointer text-uppercase']");
+	/***here**/
 	private By resigstrationPage = By.xpath(".//*[contains(text(), 'I want to register as')]");
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
 	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
@@ -28,7 +29,7 @@ public class LoginPage extends FractalBasePage {
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://dev-origin.originfractal.com";
+		String baseUrl = "https://automation-origin.originfractal.com/#/login";
 		goTo(baseUrl);
 		
 	}
@@ -39,8 +40,8 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void loginToContentAdmin() {
-		enterData("contentadmin@origin.com",tbUserName);
-	    enterData("P@ssw0rd",tbPassword);
+		enterData("qacontentadmin",tbUserName);
+	    enterData("qacontentadmin",tbPassword);
 	    click(btnLogin);
 	    wait(5);
 	}
@@ -80,9 +81,15 @@ public class LoginPage extends FractalBasePage {
 		click(btnLogin1);	
 		elementExist(blankPassword);
 		}
+	//Starts - Added by Mahesh on Feb_06_19
+		public void verifypasswordField() {	
+			String readPass = getAttributeValuePassword(tbPassword);
+			verifyText("",readPass);
+		}
+		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://dev-origin.originfractal.com";
+		String baseUrl = "https://automation-origin.originfractal.com/#/login";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
@@ -100,6 +107,13 @@ public class LoginPage extends FractalBasePage {
 	public void blankUserName() {
 		enterData (userName[0],tbUserName);
 		enterData (passWord[1],tbPassword);
+		click(btnLogin);
+		wait(5);
+		elementExist(blankUserName);
+	}
+	public void mandatoryField() {
+		enterData (userName[0],tbUserName);
+		enterData (passWord[0],tbPassword);
 		click(btnLogin);
 		wait(5);
 		elementExist(blankUserName);
@@ -123,28 +137,4 @@ public class LoginPage extends FractalBasePage {
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
 	}
-	//changes by karpagavalli
-	public void loginAdmin() {
-		enterData("contentadmin@origin.com",tbUserName);
-		enterData("contentadmin@origin.com",tbPassword);
-		click(btnLogin);
-	}
-	//changes by karpagavalli till here
-	/*Starts - Added by Manjupriya A on April_12_19 for Admin*/
-	public void loginWithCredentials(String username, String password) {
-		wait(15);
-		clear(tbUserName);
-		enterData(username,tbUserName);
-		clear(tbPassword);
-		enterData(password,tbPassword);
-		click(btnLogin);
-		wait(5);
-	}
-	public void loginToBusinessAdmin() {
-		enterData("clientAdmin_internal@originlearning.com",tbUserName);//qacontentadmin
-		enterData("P@ssw0rd",tbPassword);//qacontentadmin
-		click(btnLogin);
-		wait(5);
-	}
-	/*Ends - Added by Manjupriya A on April_12_19  for Admin*/
 }

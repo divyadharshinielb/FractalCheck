@@ -40,14 +40,16 @@ public abstract class FractalBasePage extends BasePage {
 	private String lblNavBtn=".//div/h2[contains(text(),'Recently Added')]/../../following-sibling::div/*//div/slick/ul/li[";
 
 	private By wishListBtn=By.xpath(".//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]");
-    private By cartItemBtn=By.xpath(".//span[@class='float-left pointer padding-r-15']");
+    private By cartItemBtn=By.xpath(".//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]");
 	private By logoImg=By.xpath(".//div/ng-include//div/img");    
 	private By logOut=By.xpath(".//a[@class='pointer padding-l-15']");
 	private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
-	private By goToCart = By.xpath("//button[contains(text(),'GO TO CART')]");
-	private By checkout = By.xpath("//button[contains(@class,'ng-binding')]");
+	private By goToCart = By.xpath(".//span[@class='ng-binding'][contains(text(),'1')]");
+	private By checkout = By.xpath(".//button[contains(text(),'GO TO CART')]");
 	private By lblpaytm=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div/div/span/h3[contains(text(),'paytm')]");
 	private By lblpaypal=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div/div/span/h3[contains(text(),'paypal')]");
+	private By proceedCheck = By.xpath(".//button[contains(@class,'ng-binding')]");
+	
 	protected FractalBasePage(WebDriver driver) {
 		this.driver = driver;
 		verifier = new FractalVerifier(driver);
@@ -351,22 +353,22 @@ public abstract class FractalBasePage extends BasePage {
 			return catlogName;
 		}
 		//****for admin part assert search****//
-				public String[] verifySearchCataloItems(String objpath, String objpathType) {
-					int length = getItemsCount(By.xpath(objpath));
-					String wholeObjPath = "";
-					String actualCatalogName="";
-					String[] catlogName = new String[length];
-				//	click(btnLoadMore);
-					for(int i=1;i<=length;i++) {
-						wholeObjPath = objpath+"["+(i)+objpathType;
-						actualCatalogName=getText(By.xpath(wholeObjPath));
-						wait(2);
-						catlogName[i-1]=actualCatalogName;
-						
-					}
-					return catlogName;
-				}
-				//**********end**********//
+		public String[] verifySearchCataloItems(String objpath, String objpathType) {
+			int length = getItemsCount(By.xpath(objpath));
+			String wholeObjPath = "";
+			String actualCatalogName="";
+			String[] catlogName = new String[length];
+		//	click(btnLoadMore);
+			for(int i=1;i<=length;i++) {
+				wholeObjPath = objpath+"["+(i)+objpathType;
+				actualCatalogName=getText(By.xpath(wholeObjPath));
+				wait(2);
+				catlogName[i-1]=actualCatalogName;
+				
+			}
+			return catlogName;
+		}
+		//**********end**********//
 		
 	   //*****Recommended***//
 		public boolean verifyAllFilterTypeRecommAdded(String objBox, String objBoxtype, String objFilterLink) {
@@ -531,15 +533,17 @@ public abstract class FractalBasePage extends BasePage {
 		public void verifyCartItemBtn() {
 			click(cartItemBtn);
 		}
-
 		public void verifyCartItemBtn1() {
 			click(cartItemBtn);
 			click(goToCart);
 			click(checkout);
+			click(proceedCheck);
 			verifyText("Paytm", lblpaytm);
 			verifyText("Paypal", lblpaypal);
-			click(lblpaypal);	
+			click(lblpaypal);
+			
 		}
+
 
 
 		public void clickLogout() {

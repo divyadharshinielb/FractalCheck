@@ -15,10 +15,26 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void doLogin() {
-		page.doLogin();
+		result ="Passed";
+		   try {
+			page.doLogin();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void loginToContentAdmin() {
-		page.loginToContentAdmin();
+		result ="Passed";
+		   try {
+			page.loginToContentAdmin();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void loginPageVerification() {
 		result ="Passed";
@@ -31,6 +47,19 @@ public class LoginSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
+	//Starts - Added by Mahesh on Feb_06_19
+		public void verifypasswordField() {
+			result ="Passed";
+			try {
+				page.verifypasswordField();
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();   
+				result="FAILED";
+		  }
+		}
+		//end
 
 	public void rememberMe() {
 		result ="Passed";
@@ -126,19 +155,4 @@ public class LoginSteps extends FractalBaseStep {
 		result="FAILED";
 		  }
 	}
-
-	public void loginAdmin() {
-		page.loginAdmin();
-		
-	}
-	/*Starts - Added by Manjupriya A on Feb_18_19  for Admin*/
-	public void loginWithCredentials(String username, String password) {
-		page.loginWithCredentials(username, password);
-	}
-	/*Ends - Added by Manjupriya A on Feb_18_19  for Admin*/
-	/*Starts - Added by Manjupriya A on March_01_19  for Admin*/
-	public void loginToBusinessAdmin() {
-		page.loginToBusinessAdmin();
-	}
-	/*Ends - Added by Manjupriya A on March_01_19  for Admin*/
 }

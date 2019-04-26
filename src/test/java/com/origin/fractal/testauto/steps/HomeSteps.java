@@ -88,12 +88,30 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void clickContinueBtnRetToHome() {
-		page.clickContinueBtn();
+		result ="Passed";
+		   try {
+			   page.clickContinueBtn();
 		       page.clickOnHome();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+		
 		}
     public void verifyNavTORcntAddedCoursesRtnToHome() {
-		   	page.rcntAddedCourses(); 
-		   page.clickOnHome();
+    	result ="Passed";
+		   try {
+			   page.rcntAddedCourses(); 
+			   page.clickOnHome();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+		   	
 		   }
     public void verifyRcntAdded_CoursesText() {
     	 result ="Passed";
@@ -396,19 +414,20 @@ public class HomeSteps extends FractalBaseStep {
     public void verifyLogoImg() {
     	result ="Passed";
 		   try {
-	        	page.verifyLogoImg();
+			   page.verifyLogoImg();
 		   }
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
 			result="FAILED";
 		   }
+    	
     }
    /****************************/
     public void verifyNextBtn() {
     	result ="Passed";
 		   try {
-	        	page.verifyNextBtn();
+			   page.verifyNextBtn();
 		   }
 		   catch(Exception e)
 		   {
@@ -419,7 +438,7 @@ public class HomeSteps extends FractalBaseStep {
     public void verifyPreviousBtn() {
     	result ="Passed";
 		   try {
-	        	page.verifyPreviousBtn();
+			   page.verifyPreviousBtn();
 		   }
 		   catch(Exception e)
 		   {

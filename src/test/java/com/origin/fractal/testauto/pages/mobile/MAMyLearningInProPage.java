@@ -770,28 +770,29 @@ public class MAMyLearningInProPage extends FractalAppPage {
 		wait(5);
 		elementExist(progressBar);	
 	}
-     public void verifyGridListView() {
-		click(lblBackBtn);
-		wait(3);
-		click(lblBackBtn);
-		wait(3);
-		clickMenu();
-		wait(5);
-		clickMyLearning();
-		click(getObj(searchICon));
-		wait(5);
-		typeIntoElement("Catalogtest",getObj(searchText));
-		elementExist(gridViewCheck);
-		elementExist(listViewCheck);
-		click(getObj(filterIcon));
-		wait(5);
-		click(getObj(resourceSelection));
-		click(getObj(applyButton));
-		wait(5);
-		typeIntoElement("Bundlecheck",getObj(searchText));
-		elementExist(gridViewCheck);
-		elementExist(listViewCheck);
-	}
+
+ public void verifyGridListView() {
+			click(lblBackBtn);
+			wait(3);
+			click(lblBackBtn);
+			wait(3);
+			clickMenu();
+			wait(5);
+			clickMyLearning();
+			click(getObj(searchICon));
+			wait(5);
+			typeIntoElement("Catalogtest",getObj(searchText));
+			elementExist(gridViewCheck);
+			elementExist(listViewCheck);
+			click(getObj(filterIcon));
+			wait(5);
+			click(getObj(resourceSelection));
+			click(getObj(applyButton));
+			wait(5);
+			typeIntoElement("Bundlecheck",getObj(searchText));
+			elementExist(gridViewCheck);
+			elementExist(listViewCheck);
+		}
 	
 	
 	

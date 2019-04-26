@@ -48,7 +48,6 @@ public class FractalBaseTest extends BaseTest {
 	@BeforeSuite
 	public void beforeSuite() {
 		Reporter.createReports();
-
 	}
 
 	@AfterSuite

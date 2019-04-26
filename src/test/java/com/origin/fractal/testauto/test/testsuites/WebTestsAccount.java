@@ -11,7 +11,6 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsAccount extends FractalBaseWebTest {
 
-	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_61,62,64,63,66,67: "
 			+ "61: Verify  My account page, "
@@ -42,8 +41,8 @@ public void testMyAccountPage(String row, String strBrowserName) {
 	accountSteps.verifyFieldValidation();//63
 	Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
 	//TCID_66:Verify whether the new password is getting saved on changing and clicking the save button
-	//accountSteps.changePassword();
-	//Reporter.writeSummary("TCID_066,  Verify whether the new password is getting saved on changing and clicking the save button, " + accountSteps.getResult() );
+	accountSteps.changePassword();
+	Reporter.writeSummary("TCID_066,  Verify whether the new password is getting saved on changing and clicking the save button, " + accountSteps.getResult() );
 }
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_68:"
@@ -55,7 +54,7 @@ public void testMyAccountPage(String row, String strBrowserName) {
 		AccountSteps accountSteps = new AccountSteps(driver);
 		accountSteps.clickOnMyAccount();
 		//TCID_68:Checking whether the user is able to login with the new password
-	//	accountSteps.afterChangePassword();
+		accountSteps.afterChangePassword();
 		Reporter.writeSummary("TCID_068,  Verify whether the user is able to login with the new password, " + accountSteps.getResult() );
 	}
 

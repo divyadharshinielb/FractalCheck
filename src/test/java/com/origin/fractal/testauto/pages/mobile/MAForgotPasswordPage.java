@@ -3,7 +3,7 @@ package com.origin.fractal.testauto.pages.mobile;
 import org.openqa.selenium.By;
 
 import com.origin.fractal.testauto.FractalAppPage;
-import com.origin.fractal.testauto.GmailInbox;
+//import com.origin.fractal.testauto.GmailInbox;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -36,7 +36,7 @@ public class MAForgotPasswordPage extends FractalAppPage {
 	private By linkResend= By.id("com.originkonnect.app:id/resend");
 	private By lblQuestionResend= By.id("com.originkonnect.app:id/textView18");
 	private By errorWarning= By.id("com.originkonnect.app:id/userInput");
-	GmailInbox gm = new GmailInbox();
+//	GmailInbox gm = new GmailInbox();
 	String otp ="";
 	public MAForgotPasswordPage(AppiumDriver<MobileElement> appDriver) {
 		super(appDriver);
@@ -150,7 +150,7 @@ public class MAForgotPasswordPage extends FractalAppPage {
 		click(okBtn);
 	}
 	public void verifyOTPReceivedToEmail() {
-		otp = gm.read();
+//		otp = gm.read();
 		String otpReceived =otp;//have to get OTP from Mahesh/karpagavalli
 		verifyOTPReceived(otpReceived);
 	}

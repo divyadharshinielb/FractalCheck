@@ -13,7 +13,15 @@ public class ReportSteps extends FractalBaseStep{
 	}
 	
 	public void verifyGroupName() {
-		page.verifyGroupName();
+		 result ="Passed";
+		   try {
+		     page.verifyGroupName();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   };
 			
 	}
 

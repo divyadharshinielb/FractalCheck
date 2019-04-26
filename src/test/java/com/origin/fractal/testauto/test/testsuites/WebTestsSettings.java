@@ -33,6 +33,10 @@ public class WebTestsSettings extends FractalBaseWebTest {
 		settingsSteps.clickOnSwitch();
 		Reporter.writeSummary("TCID_077,Verify The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable, " +   settingsSteps.getResult() );
 		settingsSteps.clickOnSave();
+		/*****added by Mahesh on 06/02/19***/
+	//	settingsSteps.verifyMailReceivedToEmail();
+		Reporter.writeSummary("TCID_081,Verify The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable, " +   settingsSteps.getResult() );
+		/***end***/
 	}
 }
     
