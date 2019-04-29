@@ -46,7 +46,7 @@ public class MyLearningPage extends FractalBasePage {
 	
 	String catalogname = "";
 	private By searchField=By.xpath(".//input[@placeholder='Search']");
-	private By searchCount=By.xpath(".//h2[@title='global_automation']");
+	private By searchCount=By.xpath(".//h3[@title='Automation Checking']");
 	private By searchResult1=By.xpath(".//h3[@title='sample Image']");
 	private By searchResult2=By.xpath(".//h3[@title='sample image for automation']");
 	private By searchResult3=By.xpath(".//h3[@title='global_automation image']");
@@ -195,9 +195,9 @@ public class MyLearningPage extends FractalBasePage {
 	public void globalSearchCount() {
 		wait(5);
 		WebElement textbox = driver.findElement(searchField);
-		enterData("Automation_global_check",searchField);
+		enterData("Automation_Checking",searchField);
 		textbox.sendKeys(Keys.RETURN);
-		verifyText("3 Result(s) for Automation_global_check",searchCount);
+		verifyText("3 Result(s) for Automation_Checking",searchCount);
 		/*elementExist(searchResult1);
 		elementExist(searchResult2);
 		elementExist(searchResult3);*/

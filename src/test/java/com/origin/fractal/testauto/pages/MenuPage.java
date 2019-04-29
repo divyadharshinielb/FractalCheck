@@ -43,18 +43,18 @@ public class MenuPage extends FractalBasePage{
 	}
 	public void gotoPaymentConfiguration() {
 		click(btnSettings);
-		click(btnScroll);
-		wait(10);
-		click(btnPayment);
-		wait(10);
-		click(btnDropDown1);
-		wait(10);
-		click(btnPaypal);
-		wait(10);
-		enterData("AYgAXxd1WKn1QKyhdpesNV2jqY5eQqIyN7f5ywO3dy4eRAoQSvXwIKajXkw6ZFlFBvaixe56TKa-RFz8",clientText);
-	    enterData("rashim-facilitator@gmail.com",emailText);
-	    enterData("EMKzG8XxRDcFb0ckn4raTWnJde9JG_LQVgzYOeFw7a2O7fLM_PoFu7cXlqZ53PsgmozsVINVPEN_UknH",clientSecretText);
-		click(btnSave);
+		//	click(btnScroll);
+			wait(10);
+			click(btnPayment);
+			wait(10);
+			click(btnDropDown1);
+			wait(10);
+			click(btnPaypal);
+			wait(10);
+			enterData("AYgAXxd1WKn1QKyhdpesNV2jqY5eQqIyN7f5ywO3dy4eRAoQSvXwIKajXkw6ZFlFBvaixe56TKa-RFz8",clientText);
+		    enterData("rashim-facilitator@gmail.com",emailText);
+		    enterData("EMKzG8XxRDcFb0ckn4raTWnJde9JG_LQVgzYOeFw7a2O7fLM_PoFu7cXlqZ53PsgmozsVINVPEN_UknH",clientSecretText);
+			click(btnSave);
 	}
 	//****Devlopement in progress***//
 	public void searchFieldAsset() {

@@ -9,8 +9,8 @@ public class LoginPage extends FractalBasePage {
 
 	private By tbUserName = By.xpath(".//*[@name='uname']");
 	private By tbPassword = By.xpath(".//*[@name='userpassword']");
-	private By btnLogin = By.xpath(".//*[@id='btn']");
-	private By btnLogin1 = By.xpath(".//button[@id='login_btn']");
+	private By btnLogin = By.xpath("//button[@id='login_btn']");
+	private By btnLogin1 = By.xpath(".//button[@id='btn']");
 	private By logoSymbol = By.id("logo");
 	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
 	private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
@@ -72,13 +72,13 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 		click(rememberMe);
 		wait(5);
-		click(btnLogin1);
+		click(btnLogin);
 		wait(10);
 		click(lblProfile);
 		wait(10);
 		click(logOutButton);
 		wait(10);
-		click(btnLogin1);	
+		click(btnLogin);	
 		elementExist(blankPassword);
 		}
 	//Starts - Added by Mahesh on Feb_06_19
