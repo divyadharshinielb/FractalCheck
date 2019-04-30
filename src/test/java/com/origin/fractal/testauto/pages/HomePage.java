@@ -531,7 +531,7 @@ public class HomePage extends FractalBasePage {
 		click(reThirdCatalog);	*/
 		wait(5);
 		click(learningClick);
-		wait(5);
+		wait(10);
 		click(courseClick);
 		wait(5);
 		click(homeLink);
