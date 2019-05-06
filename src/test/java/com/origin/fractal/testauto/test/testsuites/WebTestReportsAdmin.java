@@ -18,7 +18,7 @@ public void WebTestAdminReports(String row, String strBrowserName) {
 		loginToContentAdmin(driver);
 		MenuSteps menuSteps = new MenuSteps(driver);
 		menuSteps.clickMenu();
-	   ReportSteps reportSteps= new ReportSteps(driver);
+		ReportSteps reportSteps= new ReportSteps(driver);
 		reportSteps.verifyGroupName();
 		Reporter.writeSummary("TCID_017, Verify group name in the reports., " +  reportSteps.getResult() );
    }
