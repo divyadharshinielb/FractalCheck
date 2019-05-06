@@ -19,6 +19,7 @@ import com.wv.auto.framework.utils.Reporter;
 public class BrowserFactory {
 	// for windows
 	private static String driversLocation = "C:/webdrivers/";
+	private static String browserExtn ="";
 	// for Mac
 	//private static String driversLocMac = "/Users/origin/webdrivers/";
 	public static WebDriver getBrowser(String strBrowserName) {
@@ -63,12 +64,11 @@ public class BrowserFactory {
 	public static void setDriverPath() {
 		if(getOS().equalsIgnoreCase("win")) {
 			driversLocation = "C:/webdrivers/";
+			browserExtn = ".exe";
 		}else if(getOS().equalsIgnoreCase("mac")){
 			driversLocation= "/Users/origin/webdrivers/";
+			browserExtn="";
 		}
-		System.out.println("***********************************");
-		System.out.println(driversLocation+", "+getOS());
-		System.out.println("***********************************");
 	}
 	/*End of - added by Manju Priya A on May_06_19*/
 	public static WebDriver getBrowser(BrowserType browserType) {
@@ -105,7 +105,7 @@ public class BrowserFactory {
 	
 
 	public static WebDriver getFirefoxBrowser() {
-		System.setProperty("webdriver.gecko.driver", driversLocation + "geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", driversLocation + "geckodriver"+browserExtn);
 		WebDriver browser = new FirefoxDriver();
 		return browser;
 
@@ -120,8 +120,7 @@ public class BrowserFactory {
 	}
 
 	public static WebDriver getChromeBrowser() {
-
-		System.setProperty("webdriver.chrome.driver", driversLocation + "chromedriver");
+		System.setProperty("webdriver.chrome.driver", driversLocation + "chromedriver"+browserExtn);
 		WebDriver browser = new ChromeDriver();
 
 		return browser;
