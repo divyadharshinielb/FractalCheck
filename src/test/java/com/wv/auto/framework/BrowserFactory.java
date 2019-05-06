@@ -20,8 +20,9 @@ public class BrowserFactory {
 	// for windows
 	private static String driversLocation = "C:/webdrivers/";
 	// for Mac
-	private static String driversLocMac = "/Users/origin";
+	//private static String driversLocMac = "/Users/origin/webdrivers/";
 	public static WebDriver getBrowser(String strBrowserName) {
+		setDriverPath();
 		WebDriver browser = null;
 		Reporter.setBrowserAppOS(strBrowserName);
 		if (strBrowserName.equalsIgnoreCase("firefox")) {
@@ -48,7 +49,28 @@ public class BrowserFactory {
 		/*End of - added by Manju Priya A on Jan_07_19*/
 		return browser;
 	}
-	
+	/*Start of - added by Manju Priya A on May_06_19*/
+	public static String getOS() {
+		String OS = System.getProperty("os.name").toLowerCase();
+		String osName ="";
+		if((OS.indexOf("win") >= 0)) {
+			osName = "win";
+		}else if((OS.indexOf("mac") >= 0)) {
+			osName = "mac";
+		}
+		return osName;
+	}
+	public static void setDriverPath() {
+		if(getOS().equalsIgnoreCase("win")) {
+			driversLocation = "C:/webdrivers/";
+		}else if(getOS().equalsIgnoreCase("mac")){
+			driversLocation= "/Users/origin/webdrivers/";
+		}
+		System.out.println("***********************************");
+		System.out.println(driversLocation+", "+getOS());
+		System.out.println("***********************************");
+	}
+	/*End of - added by Manju Priya A on May_06_19*/
 	public static WebDriver getBrowser(BrowserType browserType) {
 		WebDriver browser = null;
 
@@ -75,8 +97,7 @@ public class BrowserFactory {
 	}
 	/*Start of - added by Manju Priya A on Jan_07_19*/
 	public static WebDriver getSafariBrowser() {
-		System.setProperty("webdriver.safari.driver", driversLocMac+"SafariDriver.safariextz");
-		//System.setProperty("webdriver.ie.driver", driversLocation + "IEDriverServer.exe");
+		System.setProperty("webdriver.safari.driver", driversLocation+"SafariDriver.safariextz");
 		WebDriver browser = new SafariDriver();
 		return browser;
 
