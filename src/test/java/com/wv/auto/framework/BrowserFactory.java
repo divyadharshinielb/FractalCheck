@@ -121,7 +121,7 @@ public class BrowserFactory {
 
 	public static WebDriver getChromeBrowser() {
 
-		System.setProperty("webdriver.chrome.driver", driversLocation + "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", driversLocation + "chromedriver");
 		WebDriver browser = new ChromeDriver();
 
 		return browser;
