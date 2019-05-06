@@ -47,7 +47,7 @@ public class Reporter {
 
 	private static void writeHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME".split(",");
+		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME STAMP".split(",");
 		TimeManager.setTimeAtEvent();
 		// Write the record to file
 		if (repWriter != null)
@@ -64,7 +64,7 @@ public class Reporter {
 
 	private static void writeFailureHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME".split(",");
+		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME STAMP".split(",");
 	
 		// Write the record to file
 		if (repWriterFailure != null)
@@ -82,8 +82,8 @@ public class Reporter {
 			writeFailure(strReportWithBrowserEnvDetails);
 	}
 	
-	public static void writeSummary(String strLine,String TimeTaken,String Time) {
-		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeTaken+","+Time;
+	public static void writeSummary(String strLine,String TimeTaken,String TimeStamp) {
+		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeTaken+","+TimeStamp;
 
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
