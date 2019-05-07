@@ -95,7 +95,7 @@ public class MyLearningPage extends FractalBasePage {
 		/***/
 		verifyPartialLabelText("lblUpdatedOn", lblUpdatedOnInCat);
 		verifyPartialLabelText("lbloverview", lbloverview);
-		verifyPartialLabelText("lblValidtill", lblValidTillInCat);
+	//	verifyPartialLabelText("lblValidtill", lblValidTillInCat);
 		verifyPartialLabelText("lblDuration", lblDurationInCat);
 	}
 
