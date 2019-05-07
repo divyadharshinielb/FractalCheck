@@ -50,12 +50,12 @@ public class BrowserFactory {
 				browser = getBrowser(BrowserType.SAFARI);
 				System.out.println("Safari Browser Opened");
 			}
-			
-			/*if (strBrowserName.equalsIgnoreCase("chrome")) {
+			/*
+			if (strBrowserName.equalsIgnoreCase("chrome")) {
 				browser = getBrowser(BrowserType.CHROME);
 				System.out.println("Chrome Browser Opened");
-			}*/
-			/*if (strBrowserName.equalsIgnoreCase("firefox")) {
+			}
+			if (strBrowserName.equalsIgnoreCase("firefox")) {
 				browser = getBrowser(BrowserType.FIREFOX);
 				System.out.println("Firefox Browser Opened");
 			}*/
@@ -111,7 +111,11 @@ public class BrowserFactory {
 	}
 	/*Start of - added by Manju Priya A on Jan_07_19*/
 	public static WebDriver getSafariBrowser() {
-		System.setProperty("webdriver.safari.driver", "/Users/origin"+"SafariDriver.safariextz");
+		System.out.println("********************************************************************************************");
+		System.out.println(driversLocation+"SafariDriver.safariextz");
+		System.out.println("********************************************************************************************");
+		System.setProperty("webdriver.safari.driver", driversLocation+"SafariDriver.safariextz");
+		
 		WebDriver browser = new SafariDriver();
 		return browser;
 
