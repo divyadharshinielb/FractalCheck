@@ -126,6 +126,8 @@ public class HomePage extends FractalBasePage {
     private By reFourthCatalogEnrollText=By.xpath("//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation test bundle1')]/../..//span[contains(text(),'ENROLL')]");
     private By reFirstCatalog1=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation checking LP')]");
     private By reSecondCatalog1=By.xpath(".//*[@id=\"ngview\"]/div[3]/ng-include/div/div/div[2]/div[1]/div/div/div[2]/h3");
+    private By clickcourse = By.xpath("//h3[contains(text(),'Automation Checking course')]");
+    private By loadMore = By.xpath(".//*[@id=\"ngview\"]/div[3]/ng-include/div/div/div[3]/div[2]/button");
     private By reThirdCatalog=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation Checking')]");
     private By reFourthCatalog=By.xpath(".//ng-include[1]//div[1]/div[2]//div//div/h3[contains(text(),'Automation test bundle1')]");
     private By lblDetailedPage1=By.xpath(".//div/ng-include/div/*//h3/span[contains(text(),'Contents')]/../../../../div/div[2]/*//h3");
@@ -503,10 +505,12 @@ public class HomePage extends FractalBasePage {
 	public void AccessCatalogItemEnrolledOutside() {
 		click(rLinkViewAll);
 		wait(5);
-		verifyLabel("lblEnrolledText",reSecondCatalogEnrolledText);
+		click(loadMore);
+		verifyLabel("lblEnrolledText",clickcourse);
 		wait(5);
 		verifyLabel("lblEnrolledText",reThirdCatalogEnrolledText);
-		click(reSecondCatalog1);
+		click(clickcourse);
+		//click(reSecondCatalog1);
 		wait(5);
 	}
 	public void	AccessCatalogItemEnrolledInside() {
