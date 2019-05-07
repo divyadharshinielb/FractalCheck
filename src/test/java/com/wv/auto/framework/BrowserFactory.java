@@ -26,28 +26,42 @@ public class BrowserFactory {
 		setDriverPath();
 		WebDriver browser = null;
 		Reporter.setBrowserAppOS(strBrowserName);
-		if (strBrowserName.equalsIgnoreCase("firefox")) {
-			browser = getBrowser(BrowserType.FIREFOX);
-			System.out.println("Firefox Browser Opened");
+		/*Start of - Modified by Manju Priya A on May_07_19*/
+		if(getOS().equalsIgnoreCase("win")) {
+			if (strBrowserName.equalsIgnoreCase("firefox")) {
+				browser = getBrowser(BrowserType.FIREFOX);
+				System.out.println("Firefox Browser Opened");
+			}
+			if (strBrowserName.equalsIgnoreCase("ie11")) {
+				browser = getBrowser(BrowserType.IE);
+				System.out.println("IE Browser Opened");
+			}
+			if (strBrowserName.equalsIgnoreCase("chrome")) {
+				browser = getBrowser(BrowserType.CHROME);
+				System.out.println("Chrome Browser Opened");
+			}
+			if (strBrowserName.equalsIgnoreCase("msedge")) {
+				browser = getBrowser(BrowserType.EDGE);
+				System.out.println("Edge Browser Opened");
+			}
+		}else if(getOS().equalsIgnoreCase("mac")) {
+			/*Start of - added by Manju Priya A on Jan_07_19*/
+			if (strBrowserName.equalsIgnoreCase("safari")) {
+				browser = getBrowser(BrowserType.SAFARI);
+				System.out.println("Safari Browser Opened");
+			}
+			/*
+			if (strBrowserName.equalsIgnoreCase("chrome")) {
+				browser = getBrowser(BrowserType.CHROME);
+				System.out.println("Chrome Browser Opened");
+			}
+			if (strBrowserName.equalsIgnoreCase("firefox")) {
+				browser = getBrowser(BrowserType.FIREFOX);
+				System.out.println("Firefox Browser Opened");
+			}*/
+			/*End of - added by Manju Priya A on Jan_07_19*/
 		}
-		if (strBrowserName.equalsIgnoreCase("ie11")) {
-			browser = getBrowser(BrowserType.IE);
-			System.out.println("IE Browser Opened");
-		}
-		if (strBrowserName.equalsIgnoreCase("chrome")) {
-			browser = getBrowser(BrowserType.CHROME);
-			System.out.println("Chrome Browser Opened");
-		}
-		if (strBrowserName.equalsIgnoreCase("msedge")) {
-			browser = getBrowser(BrowserType.EDGE);
-			System.out.println("Edge Browser Opened");
-		}
-		/*Start of - added by Manju Priya A on Jan_07_19*/
-		if (strBrowserName.equalsIgnoreCase("safari")) {
-			browser = getBrowser(BrowserType.SAFARI);
-			System.out.println("Safari Browser Opened");
-		}
-		/*End of - added by Manju Priya A on Jan_07_19*/
+		/*Start of - Modified by Manju Priya A on May_07_19*/
 		return browser;
 	}
 	/*Start of - added by Manju Priya A on May_06_19*/
