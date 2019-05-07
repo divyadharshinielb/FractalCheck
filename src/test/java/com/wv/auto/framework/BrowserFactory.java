@@ -46,16 +46,16 @@ public class BrowserFactory {
 			}
 		}else if(getOS().equalsIgnoreCase("mac")) {
 			/*Start of - added by Manju Priya A on Jan_07_19*/
-			if (strBrowserName.equalsIgnoreCase("safari")) {
+			/*if (strBrowserName.equalsIgnoreCase("safari")) {
 				browser = getBrowser(BrowserType.SAFARI);
 				System.out.println("Safari Browser Opened");
 			}
-			/*
+			*/
 			if (strBrowserName.equalsIgnoreCase("chrome")) {
 				browser = getBrowser(BrowserType.CHROME);
 				System.out.println("Chrome Browser Opened");
 			}
-			if (strBrowserName.equalsIgnoreCase("firefox")) {
+			/*if (strBrowserName.equalsIgnoreCase("firefox")) {
 				browser = getBrowser(BrowserType.FIREFOX);
 				System.out.println("Firefox Browser Opened");
 			}*/
