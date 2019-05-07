@@ -111,11 +111,7 @@ public class BrowserFactory {
 	}
 	/*Start of - added by Manju Priya A on Jan_07_19*/
 	public static WebDriver getSafariBrowser() {
-		System.out.println("********************************************************************************************");
-		System.out.println(driversLocation+"SafariDriver.safariextz");
-		System.out.println("********************************************************************************************");
 		System.setProperty("webdriver.safari.driver", driversLocation+"SafariDriver.safariextz");
-		
 		WebDriver browser = new SafariDriver();
 		return browser;
 
