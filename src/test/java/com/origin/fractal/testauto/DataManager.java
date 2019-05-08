@@ -8,8 +8,9 @@ public class DataManager {
 	public static Object[][] browers() {
 		return new Object[][] {
 //			new Object[] { "1", "msedge" }, 
-				new Object[] { "2", "Chrome" }
-				,new Object[] { "3", "Firefox" }
+	//			new Object[] { "2", "Chrome" }
+			new Object[] { "3", "safari" },
+			new Object[] { "4", "Firefox" }
 
 		};
 	}
