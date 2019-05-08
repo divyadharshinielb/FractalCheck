@@ -19,36 +19,72 @@ import com.wv.auto.framework.utils.Reporter;
 public class BrowserFactory {
 	// for windows
 	private static String driversLocation = "C:/webdrivers/";
+	private static String browserExtn ="";
 	// for Mac
-	private static String driversLocMac = "/Users/origin";
+	//private static String driversLocMac = "/Users/origin/webdrivers/";
 	public static WebDriver getBrowser(String strBrowserName) {
+		setDriverPath();
 		WebDriver browser = null;
 		Reporter.setBrowserAppOS(strBrowserName);
-		if (strBrowserName.equalsIgnoreCase("firefox")) {
-			browser = getBrowser(BrowserType.FIREFOX);
-			System.out.println("Firefox Browser Opened");
+		/*Start of - Modified by Manju Priya A on May_08_19*/
+		if(getOS().equalsIgnoreCase("win")) {
+			if (strBrowserName.equalsIgnoreCase("firefox")) {
+				browser = getBrowser(BrowserType.FIREFOX);
+				System.out.println("Firefox Browser Opened");
+			}
+			if (strBrowserName.equalsIgnoreCase("ie11")) {
+				browser = getBrowser(BrowserType.IE);
+				System.out.println("IE Browser Opened");
+			}
+			if (strBrowserName.equalsIgnoreCase("chrome")) {
+				browser = getBrowser(BrowserType.CHROME);
+				System.out.println("Chrome Browser Opened");
+			}
+			if (strBrowserName.equalsIgnoreCase("msedge")) {
+				browser = getBrowser(BrowserType.EDGE);
+				System.out.println("Edge Browser Opened");
+			}
+		}else if(getOS().equalsIgnoreCase("mac")) {
+			/*Start of - added by Manju Priya A on Jan_07_19*/
+			if (strBrowserName.equalsIgnoreCase("safari")) {
+				browser = getBrowser(BrowserType.SAFARI);
+				System.out.println("Safari Browser Opened");
+			}
+			/*End of - added by Manju Priya A on Jan_07_19*/
+			/*
+			if (strBrowserName.equalsIgnoreCase("chrome")) {
+				browser = getBrowser(BrowserType.CHROME);
+				System.out.println("Chrome Browser Opened");
+			}
+			if (strBrowserName.equalsIgnoreCase("firefox")) {
+				browser = getBrowser(BrowserType.FIREFOX);
+				System.out.println("Firefox Browser Opened");
+			}*/
 		}
-		if (strBrowserName.equalsIgnoreCase("ie11")) {
-			browser = getBrowser(BrowserType.IE);
-			System.out.println("IE Browser Opened");
-		}
-		if (strBrowserName.equalsIgnoreCase("chrome")) {
-			browser = getBrowser(BrowserType.CHROME);
-			System.out.println("Chrome Browser Opened");
-		}
-		if (strBrowserName.equalsIgnoreCase("msedge")) {
-			browser = getBrowser(BrowserType.EDGE);
-			System.out.println("Edge Browser Opened");
-		}
-		/*Start of - added by Manju Priya A on Jan_07_19*/
-		if (strBrowserName.equalsIgnoreCase("safari")) {
-			browser = getBrowser(BrowserType.SAFARI);
-			System.out.println("Safari Browser Opened");
-		}
-		/*End of - added by Manju Priya A on Jan_07_19*/
+		/*End of - Modified by Manju Priya A on May_08_19*/
 		return browser;
 	}
-	
+	/*Start of - added by Manju Priya A on May_08_19*/
+	public static String getOS() {
+		String OS = System.getProperty("os.name").toLowerCase();
+		String osName ="";
+		if((OS.indexOf("win") >= 0)) {
+			osName = "win";
+		}else if((OS.indexOf("mac") >= 0)) {
+			osName = "mac";
+		}
+		return osName;
+	}
+	public static void setDriverPath() {
+		if(getOS().equalsIgnoreCase("win")) {
+			driversLocation = "C:/webdrivers/";
+			browserExtn = ".exe";
+		}else if(getOS().equalsIgnoreCase("mac")){
+			driversLocation= "/Users/origin/webdrivers/";
+			browserExtn="";
+		}
+	}
+	/*End of - added by Manju Priya A on May_08_19*/
 	public static WebDriver getBrowser(BrowserType browserType) {
 		WebDriver browser = null;
 
@@ -75,7 +111,7 @@ public class BrowserFactory {
 	}
 	/*Start of - added by Manju Priya A on Jan_07_19*/
 	public static WebDriver getSafariBrowser() {
-		System.setProperty("webdriver.safari.driver", driversLocMac+"SafariDriver.safariextz");
+		System.setProperty("webdriver.safari.driver", driversLocation+"SafariDriver.safariextz");
 		//System.setProperty("webdriver.ie.driver", driversLocation + "IEDriverServer.exe");
 		WebDriver browser = new SafariDriver();
 		return browser;
@@ -84,7 +120,7 @@ public class BrowserFactory {
 	
 
 	public static WebDriver getFirefoxBrowser() {
-		System.setProperty("webdriver.gecko.driver", driversLocation + "geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", driversLocation + "geckodriver"+browserExtn);
 		WebDriver browser = new FirefoxDriver();
 		return browser;
 
@@ -100,7 +136,7 @@ public class BrowserFactory {
 
 	public static WebDriver getChromeBrowser() {
 
-		System.setProperty("webdriver.chrome.driver", driversLocation + "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", driversLocation + "chromedriver"+browserExtn);
 		WebDriver browser = new ChromeDriver();
 
 		return browser;

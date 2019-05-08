@@ -7,10 +7,10 @@ public class DataManager {
 	@DataProvider
 	public static Object[][] browers() {
 		return new Object[][] {
-//			new Object[] { "1", "MSEDGE" }, 
-				new Object[] { "2", "CHROME" },
+//			new Object[] { "1", "msedge" }, 
+				new Object[] { "2", "chrome" },
 				new Object[] { "3", "safari" }
-//			,new Object[] { "4", "FIREFOX" }
+//			,new Object[] { "4", "firefox" }
 
 		};
 	}
