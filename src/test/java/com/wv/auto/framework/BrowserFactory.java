@@ -24,6 +24,7 @@ public class BrowserFactory {
 	// for Mac
 	//private static String driversLocMac = "/Users/origin/webdrivers/";
 	public static WebDriver getBrowser(String strBrowserName) {
+		setDriverPath();
 		Reporter.setBrowserAppOS(strBrowserName);
 		WebDriver browser = null;
 		/*Start of - Modified by Manju Priya A on May_08_19*/
