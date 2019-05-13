@@ -18,7 +18,7 @@ public class MyLearningPage extends FractalBasePage {
 
 
 	private By lblCompl = By.className("percentageValue_ent");
-	private By clickCatalog = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Valid till:')]");//Updated on Nov-22-18
+	private By clickCatalog = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Category')]");//Updated on Nov-22-18
 	/***added on 02/08/19***/
 	private By lblUpdatedOnInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]");
 	/******/
@@ -197,7 +197,7 @@ public class MyLearningPage extends FractalBasePage {
 		WebElement textbox = driver.findElement(searchField);
 		enterData("global_automation",searchField);
 		textbox.sendKeys(Keys.RETURN);
-		verifyText("6 Result(s) for global_automation",searchCount);
+		verifyText("7 Result(s) for global_automation",searchCount);
 		/*elementExist(searchResult1);
 		elementExist(searchResult2);
 		elementExist(searchResult3);*/
