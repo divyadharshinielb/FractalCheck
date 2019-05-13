@@ -6,7 +6,6 @@ import com.wv.auto.framework.BrowserFactory;
 
 public class DataManager extends BrowserFactory{
 
-	@SuppressWarnings("unused")
 	@DataProvider
 	public static Object[][] browers() {
 		if(getOS().equalsIgnoreCase("win")) {
