@@ -261,9 +261,12 @@ public abstract class FractalBasePage extends BasePage {
 				if(isExist) {
 					itemType = getText(By.xpath(objpath));
 					itemName=getText(By.xpath(path1+(i+1)+lobjName));
+					print("itemType"+itemType);
+					print("itemName"+itemName);
 					if(isLearninfObject(itemType)){
 						status = launchLearningObject(By.xpath(objpath),itemName);
 					}
+					break;
 				}else {
 					System.out.println("-----------------This is a catalog item not a learning path....so click...-----------------");//r
 				}
