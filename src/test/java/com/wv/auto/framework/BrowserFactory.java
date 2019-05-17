@@ -103,8 +103,8 @@ public class BrowserFactory {
 			browser = getMSEdgeBrowser();
 			break;
 		case SAFARI:
-			browser = getRemoteSafariBrowser();
-			//getSafariBrowser();/*Added by Manju Priya A on Jan_07_19 ths case*/
+			browser = getSafariBrowser();
+			//getRemoteSafariBrowser();,getSafariBrowser();/*Added by Manju Priya A on Jan_07_19 ths case*/
 			break;
 		}
 		browser.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
