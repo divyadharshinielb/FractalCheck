@@ -13,7 +13,7 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsLogin extends FractalBaseWebTest {
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -45,13 +45,12 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_074, Verification of Register link  function, " +  loginSteps.getResult() );
 	 }
 	
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLoginInvalid(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		LoginSteps loginSteps = new LoginSteps(driver);
 		//Verify the login page with valid user name and invalid password
-		print("RRRRRRRRRRRRRRRRRRRRRRRRRRRUNNING*************************************************");
 		loginSteps.inValidPassword();
 		Reporter.writeSummary("TCID_070, Verify the login page with valid user name and invalid password, " +  loginSteps.getResult() );
 		
@@ -67,7 +66,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_075, Verify the function of  Search link , " +  loginSteps.getResult() );
 	}
 	//Added by Manju Priya A on Jan_21_19
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "TCID_71: verification of Forgot Password Page"
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "TCID_71: verification of Forgot Password Page"
 			+ "TCID_73: Verification of Forgot Password function")
 	public void forgotPassword(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
