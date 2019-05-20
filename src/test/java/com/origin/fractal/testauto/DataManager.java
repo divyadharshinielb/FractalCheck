@@ -18,8 +18,7 @@ public class DataManager extends BrowserFactory{
 		
 		if(getOS().equalsIgnoreCase("mac")) {
 			return new Object[][] {
-				new Object[] { "2", "chrome" }
-					//new Object[] { "1", "safari" }
+					new Object[] { "1", "safari" }
 				};
 		}
 		return null;
