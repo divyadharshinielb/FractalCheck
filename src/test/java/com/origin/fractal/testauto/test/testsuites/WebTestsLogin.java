@@ -83,7 +83,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		fpassSteps.verifyForgotPasswordLabels();
 		Reporter.writeSummary("TCID_073, Verification of Forgot Password function, " +  fpassSteps.getResult() );
 		/********mahesh added 17/05/2019**************/
-		fpassSteps.verifyOTPSentPopup();
-		fpassSteps.verifyOTPReceivedToEmail();
+		//fpassSteps.verifyOTPSentPopup();
+		//fpassSteps.verifyOTPReceivedToEmail();
 	}
 }
