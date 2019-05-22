@@ -29,7 +29,7 @@ public class LoginPage extends FractalBasePage {
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://qadev.originfractal.com";
+		String baseUrl = "https://qadev.originfractal.com/admin/index.php"; //https://qadev.originfractal.com
 		goTo(baseUrl);
 		
 	}
