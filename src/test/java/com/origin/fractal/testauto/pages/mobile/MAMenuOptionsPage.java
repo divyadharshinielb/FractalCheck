@@ -93,7 +93,7 @@ public class MAMenuOptionsPage extends FractalAppPage {
 	}
 	public void verifyMenusFunctionality() {
 		wait(3);
-		verifyChangeInsMenu();
+		//verifyChangeInsMenu();
 		verifyMyLearningMenu();
 		verifycatalogMenu();
 		verifyMyAccMenu();
