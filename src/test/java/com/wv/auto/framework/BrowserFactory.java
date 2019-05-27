@@ -102,7 +102,8 @@ public class BrowserFactory {
 			browser = getMSEdgeBrowser();
 			break;
 		case SAFARI:
-			browser = getSafariBrowser();/*Added by Manju Priya A on Jan_07_19 ths case*/
+			browser = getRemoteSafariBrowser(); 
+			//getSafariBrowser();/*Added by Manju Priya A on Jan_07_19 ths case*/
 			break;
 		}
 		browser.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -202,7 +203,24 @@ public class BrowserFactory {
 		return browser;
 
 	}
+	public static WebDriver getRemoteSafariBrowser() {
+		WebDriver browser = null;
+		DesiredCapabilities safariCaps = DesiredCapabilities.safari();
+		//safariCaps.setVersion(strVersion);
+		//safariCaps.setPlatform(platform);
 
+		System.out.println("The Safari desired caps contains " + safariCaps.toString());
+		try {
+			// request the hub, with the desired capabilities
+			browser = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), safariCaps);
+			//http://OLSCHN-PC-0104:4444/wd/hub
+		} catch (MalformedURLException e) {
+
+			e.printStackTrace();
+		}
+		return browser;
+
+	}
 	
 
 }
