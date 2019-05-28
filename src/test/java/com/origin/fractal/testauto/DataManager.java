@@ -12,7 +12,7 @@ public class DataManager extends BrowserFactory{
 			return new Object[][] {
 				//new Object[] { "1", "msedge" }, 
 				new Object[] { "2", "Chrome" },
-				new Object[] { "3", "Firefox" }
+				//new Object[] { "3", "Firefox" }
 			};
 		}
 		
