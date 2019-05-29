@@ -106,7 +106,9 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyAllFilter() {
+		wait(5);
 		click(lblAll);
+		wait(5);
 		verifyAllFilterType(boxBtn, boxCatType, lblFilterLink);
 	}
 
