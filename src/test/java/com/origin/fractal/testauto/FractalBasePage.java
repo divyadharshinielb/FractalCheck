@@ -177,7 +177,7 @@ public abstract class FractalBasePage extends BasePage {
 			String actualFilType= "";
 			boolean status=false;
 			for(int i=1;i<count;i++) {
-				wholeObjPath = objPath1+"["+i+objpath2;
+				wholeObjPath = objPath1+"["+i+objpath2;print("Eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");wait(5);print("wholeObjPath: "+getText(By.xpath(wholeObjPath)));
 				actualFilType=getText(By.xpath(wholeObjPath));
 				if(actualFilType.equalsIgnoreCase(expType)){
 					status=true;
