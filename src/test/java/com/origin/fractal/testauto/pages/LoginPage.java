@@ -89,7 +89,7 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://qadev.originfractal.com";
+		String baseUrl = "https://qadev.originfractal.com/admin/index.php";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
