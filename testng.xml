@@ -13,7 +13,7 @@
 		<classes>
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> 
-							<class
+				<!-- 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
 									<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
@@ -24,7 +24,7 @@
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
 							<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" /> 
+				name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" />  -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
