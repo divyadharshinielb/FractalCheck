@@ -173,6 +173,7 @@ public abstract class FractalBasePage extends BasePage {
 		//To verify the bundle, course, learn path and resource filters in My Learning page
 		public boolean verifyFilterTypeRcntAdded(String objPath1, String objpath2, String expType) {
 			int count = getItemsCount(By.xpath(objPath1));
+			print("Count is : "+count);
 			String wholeObjPath = "";
 			String actualFilType= "";
 			boolean status=false;
