@@ -540,7 +540,7 @@ public abstract class FractalBasePage extends BasePage {
 			click(goToCart);
 			click(checkout);
 			click(proceedCheck);
-			verifyText("Paytm", lblpaytm);
+			//verifyText("Paytm", lblpaytm);
 			verifyText("Paypal", lblpaypal);
 			click(lblpaypal);
 			
