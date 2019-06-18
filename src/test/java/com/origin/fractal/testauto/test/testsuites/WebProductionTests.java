@@ -4,9 +4,12 @@ import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.AccountSteps;
+import com.origin.fractal.testauto.steps.AccountStepsNewUI;
 import com.origin.fractal.testauto.steps.HomeSteps;
+import com.origin.fractal.testauto.steps.HomeStepsNewUI;
 import com.origin.fractal.testauto.steps.LoginSteps;
 import com.origin.fractal.testauto.steps.MyLearningSteps;
+import com.origin.fractal.testauto.steps.MyLearningStepsNewUI;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
