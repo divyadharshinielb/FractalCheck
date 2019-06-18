@@ -12,12 +12,12 @@ import com.wv.auto.framework.BasePage;
 public abstract class FractalBasePage extends BasePage {
 	protected FractalVerifier verifier;
 
-	private By lblMyLearning = By.xpath(".//*[@id='header']/div/*//a/span[contains(text(),'My Learning')]");
-	private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
-	private By lblMyAccount = By.xpath(".//*[@id='header']/div/*//a[contains(text(),'My Account')]");
+	private By lblMyLearning = By.xpath("//a[contains(text(),'MY LEARNING')]");
+	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");//For new Ui.//*[@id='dLabel']/span
+	private By lblMyAccount = By.xpath("//li[contains(text(),'My account')]");
 	private By btnCategory = By.xpath(".//*[@id='header']/*//button");
-	private By btnBellIcon = By.xpath(".//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]");
-	private By viewAll = By.xpath(".//*[@id='notification-dropdown']/div[2]/div[2]/a");
+	private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//button[@class='jss29 jss3 jss5 jss8 circle-hover']");//For new UI.//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
+	private By viewAll = By.xpath(".//p[@class='mb-0 mt-0']");//For New UI.//*[@id='notification-dropdown']/div[2]/div[2]/a
 	private By settings = By.xpath(".//a[contains(text(),'Settings')]");
 	private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'CONTINUE')]");
@@ -41,8 +41,8 @@ public abstract class FractalBasePage extends BasePage {
 
 	private By wishListBtn=By.xpath(".//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]");
     private By cartItemBtn=By.xpath(".//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]");
-	private By logoImg=By.xpath(".//div/ng-include//div/img");    
-	private By logOut=By.xpath(".//a[@class='pointer padding-l-15']");
+	private By logoImg=By.xpath(".//div[@class='log_logo']//*/img");//For New UI.//div/ng-include//div/img   
+	private By logOut=By.xpath(".//li[contains(text(),'Logout')]");//For new Ui.//a[@class='pointer padding-l-15']
 	private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
 
 	protected FractalBasePage(WebDriver driver) {
@@ -259,7 +259,6 @@ public abstract class FractalBasePage extends BasePage {
 					if(isLearninfObject(itemType)){
 						status = launchLearningObject(By.xpath(objpath),itemName);
 					}
-					break;
 				}else {
 					System.out.println("-----------------This is a catalog item not a learning path....so click...-----------------");//r
 				}
@@ -501,6 +500,7 @@ public abstract class FractalBasePage extends BasePage {
 		}
 		
 		public void verifyMyLearningPage() {
+			wait(5);
 			click(lblMyLearning);
 			System.out.println("MyLearning page is displayed");
 		}
