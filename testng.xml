@@ -9,11 +9,10 @@
 			class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 	<!-- End of reportNg modification -->
-	<test thread-count="6" name="Test">
+	<test thread-count="5" name="Test">
 		<classes>
 							<class
 				name="com.origin.fractal.testauto.test.testsuites.WebProductionTests" /> 
-							
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

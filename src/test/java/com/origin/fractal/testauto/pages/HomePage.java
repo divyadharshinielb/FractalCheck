@@ -17,8 +17,8 @@ public class HomePage extends FractalBasePage {
 	private By lblCLPM = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Project Management')]");
 	private By lblCLMiLrn = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Micro Learning')]");
 
-	private By lblNotification = By.xpath(".//*[@id='notification-dropdown']/*//span[@class='heading']");
-	private By Check = By.xpath(".//div[contains(@class,'notificationdrop')]/*//span[contains(text(),'Check')]");
+	private By lblNotification = By.xpath("//p[contains(text(),'MORE')]");//For new UI.//*[@id='notification-dropdown']/*//span[@class='heading']
+	private By Check = By.xpath(".//p[contains(text(),'Check it out! ')]");//.//div[contains(@class,'notificationdrop')]/*//span[contains(text(),'Check')]
 
 	private By lblLearningInProgress= By.xpath(".//h2[contains(text(),'Learning in Progress')]");
 	private By lblCompl = By.xpath(".//div[@class='percentageValue ng-binding']");
@@ -63,7 +63,7 @@ public class HomePage extends FractalBasePage {
 
     private By lblCategory = By.xpath("//button[@placeholder='Category']");
     private By txtBoxSearch = By.xpath("//input[@placeholder='Search']");
-    private By iconWishlist = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'')]");
+    private By iconWishlist = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'î€„')]");
     private By iconCart = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]/../../../*//div/i[contains(@data-icon,'Q')]");
     private By lblMyLearning = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'My Learning')]");
     private By compPercent = By.xpath(".//div/ng-include/*//div[contains(@class,'percentageValue')]");
@@ -79,7 +79,7 @@ public class HomePage extends FractalBasePage {
 	private By vlblcourse = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'courses')]");
 	private By vlblResource = By.xpath(".//div/ng-include/*//div/*//a/span[contains(text(),'resources')]");
 	private By lblAllLanuages = By.xpath(".//div/ng-include/*//div/span[contains(text(),'ALL LANGUAGES')]");
-	private By iconListView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'')]");
+	private By iconListView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'î��')]");
 	private By iconGridView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'R')]");
 	private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
 	private By homeLink = By.xpath(".//div/ng-include/*//div/a/span[contains(text(),'Home')]");
@@ -135,7 +135,7 @@ public class HomePage extends FractalBasePage {
 		wait(2);
 		verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
-		verifyText(ntnIntroGST,Check );
+		verifyText(ntnIntroGST,Check);
 		clickOnViewAll();
 		
 	}

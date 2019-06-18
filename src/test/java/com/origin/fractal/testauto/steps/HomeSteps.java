@@ -394,7 +394,14 @@ public class HomeSteps extends FractalBaseStep {
 		   }
     }
     public void verifyLogoImg() {
-    	page.verifyLogoImg();
+    	result ="Passed";
+    	try{
+    		page.verifyLogoImg();
+    	}catch(Exception e)
+		{
+    		e.printStackTrace();   
+    		result="FAILED";
+		}
     }
    /****************************/
     public void verifyNextBtn() {
