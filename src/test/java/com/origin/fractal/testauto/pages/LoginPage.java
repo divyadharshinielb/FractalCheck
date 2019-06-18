@@ -7,18 +7,17 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class LoginPage extends FractalBasePage {
 
-	private By tbUserName = By.xpath(".//*[@name='uname']");
-	private By tbPassword = By.xpath(".//*[@name='userpassword']");
-	private By btnLogin = By.xpath(".//*[@id='btn']");
+	private By tbUserName = By.xpath(".//input[@name='username']");
+	private By tbPassword = By.xpath(".//input[@name='password']");
+	private By btnLogin = By.xpath(".//input[@class='w100 login_btn login']");
 	private By btnLogin1 = By.xpath(".//button[@id='login_btn']");
 	private By logoSymbol = By.id("logo");
-	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
-	private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
-	private By logOutButton = By.xpath(".//a[@class='pointer padding-l-15']");
-	/***added on 08/02/19***/
-	private By registerButton = By.xpath("//a[@class='cursor-pointer text-uppercase']");
-	/***here**/
-	private By resigstrationPage = By.xpath(".//*[contains(text(), 'I want to register as')]");
+	private By rememberMe=By.xpath(".//label[@class='font-size-14']");
+	private By lblProfile = By.xpath(".//div[@class='jss36']//div//span[@class='jss4']");
+	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]");
+	private By registerButton = By.xpath(".//*[@id=\'root\']/div/main/div/div/div[2]/div/form/div[10]/a");
+	private By forgotpassword = By.xpath(".//a[contains(text(),'Forgot Password?')]");
+	private By resigstrationPage = By.xpath(".//div[@class='col-lg-12 text-center log-title padding-30']");
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
 	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
 	private By inValid = By.xpath(".//*[contains(text(),'Username/Password is incorrect')]");
@@ -30,7 +29,7 @@ public class LoginPage extends FractalBasePage {
 		super(driver);
 		pageName ="LoginPage";
 		// Go to Home Page
-		String baseUrl = "https://origin.originfractal.com/admin/index.php#/login";
+		String baseUrl ="https://origin.originfractal.com/"; 
 		goTo(baseUrl);
 		
 	}
@@ -47,8 +46,8 @@ public class LoginPage extends FractalBasePage {
 	    wait(5);
 	}
 	public void doLogin1() {
-		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("AutoDU@123",tbPassword);
+		enterData("fractaldirectuser@gmail.com",tbUserName);
+		enterData("5P@ssw0rd",tbPassword);
 		click(btnLogin);
 	}
 	public void loginPageVerification() {
@@ -58,6 +57,7 @@ public class LoginPage extends FractalBasePage {
 		elementExist(tbPassword);
 		elementExist(tbUserName);
 		elementExist(rememberMe);
+		elementExist(forgotpassword);
 	}
 	public void rememberMe() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
@@ -65,7 +65,7 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 		click(rememberMe);
 		wait(10);
-		click(btnLogin1);
+		click(btnLogin);
 		wait(10);
 		click(lblProfile);
 		wait(10);
@@ -73,13 +73,13 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 		click(rememberMe);
 		wait(5);
-		click(btnLogin1);
+		click(btnLogin);
 		wait(10);
 		click(lblProfile);
 		wait(10);
 		click(logOutButton);
 		wait(10);
-		click(btnLogin1);	
+		click(btnLogin);	
 		elementExist(blankPassword);
 		}
 	//Starts - Added by Mahesh on Feb_06_19
@@ -91,12 +91,12 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://origin.originfractal.com/admin/index.php#/login";
+		String baseUrl = "https://staging-origin.originfractal.com/";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
 		elementExist(resigstrationPage);
-		click(registerLoginBtn);
+		//click(registerLoginBtn);
 	}
 	
 	public void blankPasswordVerification() {
@@ -139,5 +139,12 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
+	}
+	public void bothBlank() {
+		enterData (userName[0],tbUserName);
+		enterData (passWord[0],tbPassword);
+		click(btnLogin);
+		wait(5);
+		elementExist(blankPassword);
 	}
 }
