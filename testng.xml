@@ -13,8 +13,7 @@
 		<classes>
 							<class
 				name="com.origin.fractal.testauto.test.testsuites.WebProductionTests" /> 
-							<class
-				name="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd" />
+							
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
