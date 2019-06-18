@@ -30,7 +30,7 @@ public class LoginPage extends FractalBasePage {
 		super(driver);
 		pageName ="LoginPage";
 		// Go to Home Page
-		String baseUrl = "https://origin.originfractal.com";
+		String baseUrl = "https://origin.originfractal.com/admin/index.php#/login";
 		goTo(baseUrl);
 		
 	}
@@ -91,7 +91,7 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://origin.originfractal.com";
+		String baseUrl = "https://origin.originfractal.com/admin/index.php#/login";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
