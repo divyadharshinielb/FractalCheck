@@ -17,7 +17,7 @@ import com.wv.auto.framework.utils.Reporter;
 public class WebProductionTests extends FractalBaseWebTest {
 
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -46,7 +46,7 @@ public class WebProductionTests extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testMyLearningPage0(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
