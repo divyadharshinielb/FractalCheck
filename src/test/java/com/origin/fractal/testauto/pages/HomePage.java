@@ -361,7 +361,7 @@ public class HomePage extends FractalBasePage {
 		wait(10);
 		click(rLinkViewAll);
 		verifyText(getLabel("vlblAll"), vlblAll);
-		verifyText(getLabel("vlblBundle"), vlblBundle);
+		//verifyText(getLabel("vlblBundle"), vlblBundle);
 		wait(5);
 		verifyText(getLabel("vlblCourse"), vlblcourse);
 		verifyText(getLabel("vlblResource"), vlblResource);
