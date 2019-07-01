@@ -22,7 +22,7 @@ public class WebProductionTests extends FractalBaseWebTest {
 		LoginSteps loginSteps = new LoginSteps(driver);
 		HomeSteps homeSteps = new HomeSteps(driver);
 		loginSteps.loginPageVerification();
-		Reporter.writeSummary("TCID_026, Verify the UI of the login page. User name Password Remember me fields and Login button are available in the login page, " +  loginSteps.getResult() );
+		Reporter.writeSummary("TCID_026, Verify the UI of the login page. User name Password Remember me fields forgot password and Login button are available in the login page, " +  loginSteps.getResult() );
 		loginSteps.blankUserName();
 		Reporter.writeSummary("TCID_030, Verify the login page with blank user name and valid password," + loginSteps.getResult() );
 //		loginSteps.mandatoryField();
@@ -34,16 +34,14 @@ public class WebProductionTests extends FractalBaseWebTest {
 		loginSteps.inValidPassword();
 		Reporter.writeSummary("TCID_071, Verify the login page with valid user name and invalid password," +  loginSteps.getResult() );
 		loginSteps.rememberMe();
+		Reporter.writeSummary("TCID_028, Verify the login page with valid username and valid password.," +  loginSteps.getResult() );   
 		Reporter.writeSummary("TCID_072,  Verify the Remember me function," +  loginSteps.getResult() );
+		loginSteps.bothBlank();
+		Reporter.writeSummary("TCID_001,  Verify the login page with blank user name and blank password," +  loginSteps.getResult() );
 		loginSteps.registerFunction();
 		Reporter.writeSummary("TCID_074, Verification of Register link  function," +  loginSteps.getResult() );
-	//***added by mahesh***//
 		loginSteps.verifypasswordField();
 		Reporter.writeSummary("TCID_065, Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult());
-	//********//	
-		login(driver);
-		Reporter.writeSummary("TCID_028, Verify the login page with valid username and valid password.," +  loginSteps.getResult() );    
-		homeSteps.clickLogout();
 	}
 
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
@@ -51,8 +49,8 @@ public class WebProductionTests extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		Reporter.setBrowserAppOS(strBrowserName);
 		login(driver);
-		HomeSteps homeSteps = new HomeSteps(driver);
-	    MyLearningSteps mLSteps = new MyLearningSteps(driver);
+		HomeSteps homeSteps = new HomeSteps(driver); 
+		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		homeSteps.verifyMyLearningLabeltext();
 		Reporter.writeSummary("TCID_010,  Verify My Learning page details on clicking from Home Page," + homeSteps.getResult() );
 		homeSteps.verifyMyLearningPage();
@@ -83,24 +81,28 @@ public class WebProductionTests extends FractalBaseWebTest {
     //Need confirmation from team 
      accountSteps.verifyFieldValidation();
 	 Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
-
 	 accountSteps.verifyEmptyProfileValidation();
 	 Reporter.writeSummary("TCID_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );
 	 accountSteps.verifyAfterCancelValidation();
 	 Reporter.writeSummary("TCID_067,  Verify the changes should not be displayed on clicking Cancel, " +  accountSteps.getResult() );
-	 
 	 accountSteps.afterChangePassword();
 	 Reporter.writeSummary("TCID_068,  Verify whether the user is able to login with the new password, " + accountSteps.getResult() );
-	//*****//
-	 LoginSteps loginSteps = new LoginSteps(driver);
-	 wait(5);
-	 loginSteps.doLogin();
+	 
+	}
+	
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
+			description="TCID_61,62 "
+			+ "61: Verify  My account page,"
+			+ "62: Verify  My Account Profile details, ")
+   public void notificationCheck(String row, String strBrowserName) {
+	 driver = BrowserFactory.getBrowser(strBrowserName);
+	 Reporter.setBrowserAppOS(strBrowserName);
+	 login(driver);
+	 HomeSteps homeSteps = new HomeSteps(driver);
 	 homeSteps.verifyBellNotification();
 	 Reporter.writeSummary("TCID_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
 	 homeSteps.verifyLogoImg();
 	 Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());  
-	//***added by mahesh**//
-	
 	 homeSteps.clickLogout();
 	}
  }

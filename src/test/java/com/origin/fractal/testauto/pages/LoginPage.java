@@ -9,7 +9,8 @@ public class LoginPage extends FractalBasePage {
 
 	private By tbUserName = By.xpath(".//*[@name='uname']");
 	private By tbPassword = By.xpath(".//*[@name='userpassword']");
-	private By btnLogin = By.xpath(".//*[@id='btn']");
+	private By btnLogin = By.xpath(".//button[@id='btn']");
+	private By btnLoginbtn = By.cssSelector("#btn");
 	private By btnLogin1 = By.xpath(".//button[@id='login_btn']");
 	private By logoSymbol = By.id("logo");
 	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
@@ -37,7 +38,8 @@ public class LoginPage extends FractalBasePage {
 	public void doLogin() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
-		click(btnLogin);
+		wait(5);
+		click(btnLoginbtn);
 		wait(5);
 	}
 	public void loginToContentAdmin() {
@@ -49,7 +51,7 @@ public class LoginPage extends FractalBasePage {
 	public void doLogin1() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
-		click(btnLogin);
+		click(btnLogin1);
 	}
 	public void loginPageVerification() {
 		wait(5);
@@ -139,5 +141,12 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
+	}
+	public void bothBlank() {
+		enterData (userName[0],tbUserName);
+		enterData (passWord[0],tbPassword);
+		click(btnLogin1);
+		wait(5);
+		elementExist(blankPassword);
 	}
 }

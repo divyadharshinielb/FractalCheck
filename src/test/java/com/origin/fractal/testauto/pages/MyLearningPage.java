@@ -62,8 +62,8 @@ public class MyLearningPage extends FractalBasePage {
 
 		verifyLabel("lblAll", lblAll);
 		verifyLabel("lblCourses", lblCourses);
-		verifyLabel("lblResources", lblResources);
-		verifyLabel("lblBundles", lblBundles);
+	//	verifyLabel("lblResources", lblResources);
+	//	verifyLabel("lblBundles", lblBundles);
 	}
 
 	

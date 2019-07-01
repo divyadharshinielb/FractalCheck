@@ -139,4 +139,17 @@ public class LoginSteps extends FractalBaseStep {
 		result="FAILED";
 		  }
 	}
+
+	public void bothBlank() {
+		result ="Passed";
+		  try {
+		  page.bothBlank();
+		  }
+		  catch(Exception e)
+		  {
+		e.printStackTrace();   
+		result="FAILED";
+		  }
+		
+	}
 }
