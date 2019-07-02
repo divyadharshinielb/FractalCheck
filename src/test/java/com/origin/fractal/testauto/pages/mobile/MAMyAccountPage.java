@@ -50,6 +50,7 @@ public class MAMyAccountPage extends FractalAppPage{
 		}
 	}
 	public void verifyFirstLastNameWithSpace(String fName, String lName) {
+		wait(5);
 		clear(txtFname);
 		clear(txtLname);
 		//Updated by Manju Priya A on Jna_11_19
