@@ -71,7 +71,7 @@ public class MALoginPage extends FractalAppPage {
 	}
 	
 	public void doLogin() {
-		wait(5);
+		wait(10);
 		typeIntoElement("automation_directuser@originlearning.com",getObj(tbUserName));
 		wait(5);
 		typeIntoElement("AutoDU@123",getObj(tbPassword));
