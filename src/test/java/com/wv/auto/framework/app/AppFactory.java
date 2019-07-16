@@ -25,11 +25,6 @@ public class AppFactory {
 		System.out.println(new File(fratalApkFile).getAbsolutePath());
 		capabilities.setCapability("app", new File(fratalApkFile).getAbsolutePath());
 		capabilities.setCapability("noReset", "true");
-		System.out.println("Capabilities : " +capabilities.toString());
-//		capabilities.setCapability("automationName", "uiautomator2");
-//		capabilities.setCapability("appPackage", "com.originkonnect.app");
-//		capabilities.setCapability("appActivity", "com.originkonnect.app.Activity.SplashscreenActivity");
-//		capabilities.setCapability("deviceName", "944becb9");
 		
 		
 		try {

@@ -609,6 +609,32 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
+
+	public void videoLaunch() {
+		result ="Passed";
+		   try {
+				page.videoLaunch();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+		
+	}
+
+	public void videoLaunchCheck() {
+		result ="Passed";
+		   try {
+				page.videoLaunchCheck();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+		
+	}
 	
 
 }

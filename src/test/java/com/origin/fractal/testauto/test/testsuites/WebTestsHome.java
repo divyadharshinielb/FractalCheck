@@ -271,4 +271,13 @@ public class WebTestsHome extends FractalBaseWebTest {
 			Reporter.writeSummary("TCID_April_5, Checking whether the global search works fine," +  mLSteps.getResult());
 			mLSteps.clickLogout();		
 		}
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true)
+		public void videoCheck(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			HomeSteps homeSteps = new HomeSteps(driver);
+		    homeSteps.videoLaunchCheck();	
+		    Reporter.writeSummary("TCID_Video, Checking whether the video gets launched successfully ," +  homeSteps.getResult());	
+		    
+		}
 }

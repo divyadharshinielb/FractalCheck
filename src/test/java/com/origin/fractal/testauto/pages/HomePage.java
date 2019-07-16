@@ -1,10 +1,17 @@
 package com.origin.fractal.testauto.pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Pattern;
+import org.sikuli.script.Screen;
 
 import com.origin.fractal.testauto.FractalBasePage;
 
@@ -140,6 +147,10 @@ public class HomePage extends FractalBasePage {
     private By courseFilter = By.xpath(".//span[contains(text(),'courses')]");
     private By learningClick=By.xpath(".//h3[@title='Automation checking LP']");
     private By learningPathLink=By.xpath("//span[@class='ng-scope']");
+    private By videolp = By.xpath(".//button[contains(@class,'md-raised btn btn-default btn-lg text-uppercase btn-main text-D98040')]");
+    private By video = By.xpath(".//h3[contains(@class,'font-size-18 padding-r-20 ng-binding ng-scope')]");
+    private By play = By.xpath(".//div[@class='vjs-poster']");
+    
     public HomePage(WebDriver driver) {
 		super(driver);
 		pageName ="HomePage"; 
@@ -594,5 +605,39 @@ public class HomePage extends FractalBasePage {
 		verifyText("Less",lblLess);
 		click(lblLess);	
 		
+	}
+
+	public void videoLaunch() {
+		click(videolp);
+		wait(5);
+		click(video);
+		wait(5);
+		//elementExist(play);
+		String path =driver.getCurrentUrl();
+		print(path);		
+	}
+
+	public void videoLaunchCheck() throws FindFailed {
+		videoLaunch();
+	    //  System.setProperty("webdriver.chrome.driver", driversLocation + "chromedriver.exe");
+	  //    WebDriver driver= new ChromeDriver();
+//		WebDriver browser = new ChromeDriver();
+	      WebDriverWait wait=new WebDriverWait(driver,20);
+	      driver.manage().window().maximize();
+	      driver.manage().deleteAllCookies();
+	      driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+	      driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	  // driver.get("https://www.youtube.com/watch?v=0XowYwfvbo8");
+	      System.out.println("Youtube Opened");
+	      Screen s=new Screen();
+	      Pattern muteImg= new Pattern("video.png");
+	      s.wait(muteImg,100000);
+	      s.click(muteImg);
+	      s.wait(muteImg,100000);
+	      Pattern pauseImg= new Pattern("videopause.png");
+	      s.wait(pauseImg,10000000);
+	      System.out.println("pause img Opened");
+	     s.click(pauseImg);
+
 	}
 }

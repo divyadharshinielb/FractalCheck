@@ -13,7 +13,7 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsLogin extends FractalBaseWebTest {
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -45,7 +45,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_074, Verification of Register link  function, " +  loginSteps.getResult() );
 	 }
 	
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLoginInvalid(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
