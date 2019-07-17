@@ -13,6 +13,7 @@ import org.sikuli.script.FindFailed;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 
+
 import com.origin.fractal.testauto.FractalBasePage;
 
 public class HomePage extends FractalBasePage {
