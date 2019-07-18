@@ -148,9 +148,11 @@ public class HomePage extends FractalBasePage {
     private By courseFilter = By.xpath(".//span[contains(text(),'courses')]");
     private By learningClick=By.xpath(".//h3[@title='Automation checking LP']");
     private By learningPathLink=By.xpath("//span[@class='ng-scope']");
-    private By videolp = By.xpath(".//button[contains(@class,'md-raised btn btn-default btn-lg text-uppercase btn-main text-D98040')]");
+    private By videolp = By.xpath(".//h3[@class='content_list_view width-90percent lne-height-3 ng-binding']");
     private By video = By.xpath(".//h3[contains(@class,'font-size-18 padding-r-20 ng-binding ng-scope')]");
     private By play = By.xpath(".//div[@class='vjs-poster']");
+    private By lp = By.xpath(".//span[contains(text(),'Learning Paths')]");
+  
     
     public HomePage(WebDriver driver) {
 		super(driver);
@@ -609,13 +611,17 @@ public class HomePage extends FractalBasePage {
 	}
 
 	public void videoLaunch() {
+		wait(5);
+		WebElement textbox = driver.findElement(searchField);
+		enterData("Launch",searchField);
+		textbox.sendKeys(Keys.RETURN);
+		click(lp);
+		wait(5);
 		click(videolp);
 		wait(5);
 		click(video);
 		wait(5);
-		//elementExist(play);
-		String path =driver.getCurrentUrl();
-		print(path);		
+		elementExist(play);		
 	}
 
 	public void videoLaunchCheck() throws FindFailed {
@@ -632,11 +638,11 @@ public class HomePage extends FractalBasePage {
 	      System.out.println("Youtube Opened");
 	      Screen s=new Screen();
 	      Pattern muteImg= new Pattern("video.png");
-	      s.wait(muteImg,100000);
+	      s.wait(muteImg,50);
 	      s.click(muteImg);
-	      s.wait(muteImg,100000);
+	      s.wait(muteImg,50);
 	      Pattern pauseImg= new Pattern("videopause.png");
-	      s.wait(pauseImg,10000000);
+	      s.wait(pauseImg,50);
 	      System.out.println("pause img Opened");
 	     s.click(pauseImg);
 
