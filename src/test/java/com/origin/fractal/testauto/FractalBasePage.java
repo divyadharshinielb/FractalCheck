@@ -16,19 +16,16 @@ public abstract class FractalBasePage extends BasePage {
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");//For new Ui.//*[@id='dLabel']/span
 	private By lblMyAccount = By.xpath("//li[contains(text(),'My account')]");
 	private By btnCategory = By.xpath(".//*[@id='header']/*//button");
-	private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//button[@class='jss29 jss3 jss5 jss8 circle-hover']");//For new UI.//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
+	private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//img[@class='cp']");//For new UI.//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 	private By viewAll = By.xpath(".//p[@class='mb-0 mt-0']");//For New UI.//*[@id='notification-dropdown']/div[2]/div[2]/a
 	private By settings = By.xpath(".//a[contains(text(),'Settings')]");
 	private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'CONTINUE')]");
-	private By lblRcntAdded_Courses = By.xpath(
-			".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
+	private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
 	private By btnTopArr = By.xpath(".//i[contains(@class,'icon topArr')]");
-
 	private By btnList = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[2]");
 	private String gridBoxBtn = ".//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div";
 	private String gridLblName ="]/*//h3";
-
 	private String  listBoxBtn= ".//div/ng-include[1]/div[1]/div[1]/div[3]/ng-include[1]/div[1]/div[3]/div";
 	private String  listLblName="]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3";
 	private By catalogName = By.xpath(".//div/ng-include/*//div/span[contains(text(),'Updated on')]/../div/h3");
