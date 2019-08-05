@@ -130,6 +130,7 @@ public class MALoginPage extends FractalAppPage {
 		}
 
 		public void inValid() {
+			wait(5);
 			clear(tbUserName);
 			typeIntoElement (userName[2],getObj(tbUserName));
 			clear(tbPassword);
@@ -141,6 +142,7 @@ public class MALoginPage extends FractalAppPage {
 			wait(5);
 			}
 		public void blankUserNamePassword() {
+			wait(5);
 			clear(tbUserName);
 			typeIntoElement (userName[0],getObj(tbUserName));
 			clear(tbPassword);
