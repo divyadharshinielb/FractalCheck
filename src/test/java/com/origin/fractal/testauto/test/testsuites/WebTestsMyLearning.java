@@ -1,6 +1,5 @@
 package com.origin.fractal.testauto.test.testsuites;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;

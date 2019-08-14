@@ -86,13 +86,14 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyCatalogDetails() {
 		/**added here 1/30/2019**/
-	wait(5);
-	click(clickCatalog);
+		wait(5);
+		click(clickCatalog);
 		/***/
-		verifyPartialLabelText("lblUpdatedOn", lblUpdatedOnInCat);
-		verifyPartialLabelText("lbloverview", lbloverview);
-		verifyPartialLabelText("lblValidtill", lblValidTillInCat);
-		verifyPartialLabelText("lblDuration", lblDurationInCat);
+		//Updated by Nithin K on Aug_14_19
+		verifyPartialText(getLabel("lblUpdatedOn"), lblUpdatedOnInCat);
+		verifyPartialText(getLabel("lbloverview"), lbloverview);
+		verifyPartialText(getLabel("lblValidtill"), lblValidTillInCat);
+		verifyPartialText(getLabel("lblDuration"), lblDurationInCat);
 	}
 
 	public void verifyCourseInBundle() {
