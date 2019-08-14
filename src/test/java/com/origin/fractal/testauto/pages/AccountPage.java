@@ -65,7 +65,8 @@ public class AccountPage extends FractalBasePage {
 	public void verifyEmptyProfileValidation() {
 		clear(lblFName);
 		clear(lblLName);
-		enterData(getLabel("newPass"), txtboxNewPass);
+		enterData(getLabel("newPass"), lblFName);//Updated by Nithin K on Aug_14_19
+		clear(lblLName);
 		click(btnSave);
 		verifyErrorMessage();
 	}
