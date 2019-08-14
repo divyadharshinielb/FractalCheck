@@ -242,11 +242,12 @@ public abstract class FractalBasePage extends BasePage {
 		
 		public int getContentsCount(){
 			String fullText = getText(lblcontents);
-			String data = getLastWord(fullText," ");
+			String data = getLastWord(fullText," ").trim();
 			String count = getSubString(data,1,data.length()-1);
-			int itemsCount=Integer.parseInt(count);;
+			int itemsCount = Integer.parseInt(count);
 			return itemsCount;
 		}
+		
 		
 		public boolean launchCheck(String path1 , String path2,String lobjName){
 			boolean status = false;
