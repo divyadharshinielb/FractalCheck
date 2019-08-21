@@ -218,10 +218,10 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 	
 
-	public void verifyLaunch(){
+	public void verifyLaunch(String browserName){
 		result ="Passed";
 		   try {
-				page.verifyLaunch();
+				page.verifyLaunch(browserName);
 		   }
 		   catch(Exception e)
 		   {

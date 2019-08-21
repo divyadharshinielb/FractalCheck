@@ -173,9 +173,9 @@ public class MyLearningPage extends FractalBasePage {
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
 	}
 
-	public void verifyLaunch() {
+	public void verifyLaunch(String browserName) {
 		click(clickCatalog);
-		launchCheck(lobjpath1,lobjpath2,lobjName);
+		launchCheck(lobjpath1,lobjpath2,lobjName,browserName);
 	}
 
 	public void verifyTopArrowBtn() {
