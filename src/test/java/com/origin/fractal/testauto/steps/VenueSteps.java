@@ -3,7 +3,6 @@ package com.origin.fractal.testauto.steps;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBaseStep;
-import com.origin.fractal.testauto.pages.ClassroomPage;
 import com.origin.fractal.testauto.pages.VenuePage;
 
 public class VenueSteps extends FractalBaseStep{
