@@ -118,8 +118,12 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 			+ "23: Verify the learnig objeck launch" + "27: Verify the top arrow button")
 	public void testMyLearningPage3(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
+		String browserName = "";
+		if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
+			browserName = "safari";
+		}
+		
 		login(driver);
-
 		// Test moves to Home page
 		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.clickOnMyLearning();
@@ -136,7 +140,8 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_018,Verify course Details after clicking, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
 		//TCID_23:verify Launch learning object launch
-		mLSteps.verifyLaunch();
+		//mLSteps.verifyLaunch();
+		mLSteps.verifyLaunch(browserName);//Parameter added by Manju priya A for safari automation
 		Reporter.writeSummary("TCID_023,verify Launch learning object launch , " +  mLSteps.getResult() );
 		//TCID_27:Verify the top arrow button
 		mLSteps.verifyTopArrowBtn();

@@ -249,7 +249,7 @@ public abstract class FractalBasePage extends BasePage {
 		}
 		
 		
-		public boolean launchCheck(String path1 , String path2,String lobjName){
+		public boolean launchCheck(String path1 , String path2,String lobjName,String browserName){
 			boolean status = false;
 			int assignedItems=getContentsCount();
 			boolean isExist=false;
@@ -265,7 +265,7 @@ public abstract class FractalBasePage extends BasePage {
 					print("itemType"+itemType);
 					print("itemName"+itemName);
 					if(isLearninfObject(itemType)){
-						status = launchLearningObject(By.xpath(objpath),itemName);
+						status = launchLearningObject(By.xpath(objpath),itemName,browserName);
 					}
 					break;
 				}else {
@@ -275,13 +275,19 @@ public abstract class FractalBasePage extends BasePage {
 			return status;
 		}
 		
-		public boolean launchLearningObject(By objLoc, String lobjName) {
+		public boolean launchLearningObject(By objLoc, String lobjName, String browser) {
 			boolean status = false;
 			click(objLoc);
 			String strFirstWindowHandle = driver.getWindowHandle();
 			switchToNewWindow();
 			status = verifyLobjLaunch(lobjName);
-			closeNewWindow();
+			//Starts - Added by Manju priya A on Jan_08_19 for Safari automation
+			if(browser.equalsIgnoreCase("safari")) {
+				//We should not call closeNewWindow();, since it closes all the browser window. WIthout calling the function closeNewWindow() it works perfectly fine in safari.
+			}else {
+				closeNewWindow();
+			}
+			//Ends - Added by Manju priya A on Jan_08_19 for Safari automation
 			switchToParentWindow(strFirstWindowHandle); 
 			return status;
 		}
