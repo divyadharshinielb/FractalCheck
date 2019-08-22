@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -478,5 +479,10 @@ public abstract class  BasePage {
 	public String getAttributeValuePassword(By objLoc) {
 		String value = driver.findElement(objLoc).getAttribute("value");
 		return value;
+		}
+	public void scrollToElement(By objPath) {
+		WebElement element = driver.findElement(objPath);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;  wait(5);   
+		jse.executeScript("arguments[0].scrollIntoView();", element);
 		}
 }
