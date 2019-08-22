@@ -136,9 +136,9 @@ public class HomePage extends FractalBasePage {
     private By searchField=By.xpath(".//input[@placeholder='Search']");
     private By bundleClick=By.xpath(".//span[contains(text(),'bundles')]");
     private By courseClick1=By.xpath("//span[contains(text(),'courses')]");
-    private By courseClick = By.xpath(".//h3[contains(text(),'Automation Checking course')]");
+    private By courseClick = By.xpath(".//h3[contains(text(),'Course Expand Check')]");//Updated by Nithin on Aug_19_19
     private By courseFilter = By.xpath(".//span[contains(text(),'courses')]");
-    private By learningClick=By.xpath(".//h3[@title='Automation checking LP']");
+    private By learningClick=By.xpath(".//h3[contains(text(),'learning path check')]");
     private By learningPathLink=By.xpath("//span[@class='ng-scope']");
     public HomePage(WebDriver driver) {
 		super(driver);
