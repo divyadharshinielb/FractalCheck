@@ -29,6 +29,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentAdmin" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
