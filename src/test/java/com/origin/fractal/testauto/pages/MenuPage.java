@@ -27,6 +27,8 @@ public class MenuPage extends FractalBasePage{
 	private String reboxBtn="//ng-include[1]/div[1]/div[2]/div";
     private String reboxCatTitle="]/div[1]/div[1]/div[2]/h3[1]";
     private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
+    private By classroomBtn = By.xpath("//span[contains(text(),'classroom')]");
+    
     public MenuPage(WebDriver driver) {
 		super(driver);
 	}
@@ -96,4 +98,9 @@ public class MenuPage extends FractalBasePage{
 			System.out.println("---->"+a);
 	    }
 */	}
+	public void gotoClassroomCreation() {
+		click(classroomBtn);
+		wait(10);
+		
+	}
 }
