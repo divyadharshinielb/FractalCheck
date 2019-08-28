@@ -14,7 +14,7 @@ public class MenuSteps extends FractalBaseStep{
 	public void logout() {
 		result ="Passed";
 		   try {
-		     page.logout();
+			page.logout();
 		   }
 		   catch(Exception e)
 		   {
@@ -25,7 +25,7 @@ public class MenuSteps extends FractalBaseStep{
 	public void clickMenu() {
 		result ="Passed";
 		   try {
-		     page.clickMenu();
+			page.clickMenu();
 		   }
 		   catch(Exception e)
 		   {
@@ -36,7 +36,7 @@ public class MenuSteps extends FractalBaseStep{
 	public void gotoManageContents() {
 		result ="Passed";
 		   try {
-		     page.gotoManageContents();
+			page.gotoManageContents();
 		   }
 		   catch(Exception e)
 		   {
@@ -47,7 +47,7 @@ public class MenuSteps extends FractalBaseStep{
 	public void gotoPaymentConfiguration() {
 		result ="Passed";
 		   try {
-		     page.gotoPaymentConfiguration();
+			page.gotoPaymentConfiguration();
 		   }
 		   catch(Exception e)
 		   {
@@ -58,7 +58,7 @@ public class MenuSteps extends FractalBaseStep{
 	public void searchFieldAsset() {
 		result ="Passed";
 		   try {
-		     page.searchFieldAsset();
+			page.searchFieldAsset();
 		   }
 		   catch(Exception e)
 		   {
@@ -69,7 +69,18 @@ public class MenuSteps extends FractalBaseStep{
 	public void searchFieldItemCode() {
 		result ="Passed";
 		   try {
-		     page.searchFieldItemCode();
+			page.searchFieldItemCode();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+	public void gotoClassroomCreation() {
+		result ="Passed";
+		   try {
+			page.gotoClassroomCreation();
 		   }
 		   catch(Exception e)
 		   {
