@@ -145,8 +145,9 @@ public class HomePage extends FractalBasePage {
     private By bundleClick=By.xpath(".//span[contains(text(),'bundles')]");
     private By courseClick1=By.xpath("//span[contains(text(),'courses')]");
     private By courseClick = By.xpath(".//h3[contains(text(),'Automation Checking course')]");
+    private By learningpathCourseclick = By.xpath(".//h3[contains(text(),'Spelling Change: -ce/-se')]");
     private By courseFilter = By.xpath(".//span[contains(text(),'courses')]");
-    private By learningClick=By.xpath(".//h3[@title='Automation checking LP']");
+    private By learningClick=By.xpath(".//h3[@title='Automation Learningpath']");
     private By learningPathLink=By.xpath("//span[@class='ng-scope']");
     private By videolp = By.xpath(".//h3[@class='content_list_view width-90percent lne-height-3 ng-binding']");
     private By video = By.xpath(".//h3[contains(@class,'font-size-18 padding-r-20 ng-binding ng-scope')]");
@@ -546,7 +547,7 @@ public class HomePage extends FractalBasePage {
 		wait(5);
 		click(learningClick);
 		wait(10);
-		click(courseClick);
+		click(learningpathCourseclick);
 		wait(5);
 		click(homeLink);
 	}
