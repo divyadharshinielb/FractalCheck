@@ -28,6 +28,7 @@ public class MenuPage extends FractalBasePage{
     private String reboxCatTitle="]/div[1]/div[1]/div[2]/h3[1]";
     private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
     private By classroomBtn = By.xpath("//span[contains(text(),'classroom')]");
+    private By btnNotification = By.xpath("//a[@href='#notification/settings']//div[@class='icon']");
     
     public MenuPage(WebDriver driver) {
 		super(driver);
@@ -102,5 +103,11 @@ public class MenuPage extends FractalBasePage{
 		click(classroomBtn);
 		wait(10);
 		
+	}
+	public void gotoNotification() {
+		click(btnSettings);
+		wait(10);
+		click(btnNotification);
+		wait(10);
 	}
 }
