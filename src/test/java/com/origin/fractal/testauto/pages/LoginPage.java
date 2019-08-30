@@ -91,7 +91,7 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://staging-origin.originfractal.com/";
+		String baseUrl = "https://origin.originfractal.com/";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
