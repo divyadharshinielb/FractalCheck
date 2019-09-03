@@ -45,12 +45,13 @@ public class VersionPage extends FractalBasePage{
 	}
 
 	public void VersionCheck1() {
-		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'macOS Mojave 10.14.6 Supplemental Update')]")); 
+		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'tvOS 12.4.1')]")); 
 		Actions actions = new Actions(driver); 
 		actions.moveToElement(element);
 		actions.perform();
 		wait(10);
 		System.out.println("The version is being displayed"+version);
+		wait(5);
 		elementExist(version1);
 		getAttributeValue(version1);
 		verifyText("iOS 12.4.1",version1);
