@@ -33,18 +33,18 @@ public class WebTestNotification extends FractalBaseWebTest{
 		NotificationSteps notificationSteps= new NotificationSteps(driver);
 		notificationSteps.gotoEmailNotificationTab();
 		notificationSteps.verifyPasswordChangedTemplate();
-		Reporter.writeSummary("May_001, Verify whether password change template is working fine , " +  notificationSteps.getResult() );
+		Reporter.writeSummary("EmailTem_001, Verify whether password change template is working fine , " +  notificationSteps.getResult() );
 		notificationSteps.verifyPurchaseMailTemplate();
-		Reporter.writeSummary("May_002,Verify whether purchase mail template is working fine , " +  notificationSteps.getResult() );
+		Reporter.writeSummary("EmailTem_002,Verify whether purchase mail template is working fine , " +  notificationSteps.getResult() );
 		notificationSteps.verifyCourseCompletionTemplate();
-		Reporter.writeSummary("May_003, Verify whether course completion template is working fine , " +  notificationSteps.getResult() );
+		Reporter.writeSummary("EmailTem_003, Verify whether course completion template is working fine , " +  notificationSteps.getResult() );
 		notificationSteps.verifyUsersForgotPasswordMail();
-		Reporter.writeSummary("May_004, Verify whether users forgot password template is working fine , " +  notificationSteps.getResult() );
+		Reporter.writeSummary("EmailTem_004, Verify whether users forgot password template is working fine , " +  notificationSteps.getResult() );
 		notificationSteps.verifyTemplateForValidityExpired();
-		Reporter.writeSummary("May_005, Verify whether template for validity expired template is working fine , " +  notificationSteps.getResult() );
+		Reporter.writeSummary("EmailTem_005, Verify whether template for validity expired template is working fine , " +  notificationSteps.getResult() );
         notificationSteps.verifyContentAssignment();
-        Reporter.writeSummary("May_006,Verify whethercontent assignment template is working fine , " +  notificationSteps.getResult() );
+        Reporter.writeSummary("EmailTem_006,Verify whethercontent assignment template is working fine , " +  notificationSteps.getResult() );
         notificationSteps.verifyBusinessUserRegistration();
-        Reporter.writeSummary("May_007, Verify whether business user template is working fine , " +  notificationSteps.getResult() );
+        Reporter.writeSummary("EmailTem_007, Verify whether business user template is working fine , " +  notificationSteps.getResult() );
     }
 }
