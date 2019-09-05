@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 public class ClassroomPage extends FractalBasePage {
 	private By searchField = By.xpath("//input[@id='searchClassroom']");
 	private By dropDown1 = By.xpath("//div[@class='select-background learningobjectslist float-left select-180']");
-	private By dropDown = By.xpath("//li[contains(text(),'LMS Admin')]");
+	private By dropDown = By.xpath("//li[contains(text(),'content admin')]");
 	private By categoriesDropDown1 = By.xpath("//li[contains(text(),'Created By All')]");
 	private By categoriesDropDown2=By.xpath("//li[contains(text(),'Content Admin')]");
 	private By categoriesDropDown = By.xpath("//li[contains(text(),'All Categories')]");
@@ -43,7 +43,7 @@ public class ClassroomPage extends FractalBasePage {
     private By classroomDropDown1 = By.xpath("//li[contains(text(),'Origin Learning Solutions')]");//li[contains(text(),'Ramanujan Museum & Math Education Centre')]
     private By classroomDropDown3 = By.xpath("//span[contains(text(),'Classroom Organization.')]");
     private By classroomDropDown2 = By.xpath("//input[@placeholder='Select']");
-    private By classroomDropDown4 = By.xpath("//li[contains(text(),'prema jegan')]");
+    private By classroomDropDown4 = By.xpath("//li[contains(text(),'Sujitha M Sivan')]");
     private By classroomDropDown5 = By.xpath("//div[contains(@class,'select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20')]//span[contains(@class,'current')][contains(text(),'Select')]");
     private By lblSelect =By.xpath("//md-input-container[@class='flex']//span[@class='current'][contains(text(),'Select')]");
     private By selectDropDown=By.xpath("//div[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//li[@class='option'][contains(text(),'General')]");
