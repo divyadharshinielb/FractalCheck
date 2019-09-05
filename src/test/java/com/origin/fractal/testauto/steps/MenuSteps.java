@@ -88,4 +88,15 @@ public class MenuSteps extends FractalBaseStep{
 			result="FAILED";
 		   }
 	}
+public void gotoNotification() {
+		result ="Passed";
+		   try {
+	    page.gotoNotification();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
 }

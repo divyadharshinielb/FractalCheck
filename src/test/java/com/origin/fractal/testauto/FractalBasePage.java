@@ -572,6 +572,12 @@ public abstract class FractalBasePage extends BasePage {
 			}while(status);
 			return count;
 		}
+		public boolean templateFooterText(String text) {
+			 String expectedString=getText(By.xpath(text));
+			boolean result= verifyText(expectedString,By.xpath(text));
+			 return result;
+			 
+		 }
 		/***added by mahesh 06/02/19***/
 	/*	public String read() {
 	    	String emailSubject;
