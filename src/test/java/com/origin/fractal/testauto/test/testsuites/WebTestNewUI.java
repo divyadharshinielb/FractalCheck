@@ -36,8 +36,8 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_071, Verify the login page with valid user name and invalid password," +  loginSteps.getResult() );
 		loginSteps.rememberMe();
 		Reporter.writeSummary("TCID_072,  Verify the Remember me function," +  loginSteps.getResult() );
-		loginSteps.registerFunction();
-		Reporter.writeSummary("TCID_074, Verification of Register link  function," +  loginSteps.getResult() );
+		//loginSteps.registerFunction();
+		//Reporter.writeSummary("TCID_074, Verification of Register link  function," +  loginSteps.getResult() );
 		loginSteps.verifypasswordField();
 		Reporter.writeSummary("TCID_065, Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult());	
 		login(driver);
