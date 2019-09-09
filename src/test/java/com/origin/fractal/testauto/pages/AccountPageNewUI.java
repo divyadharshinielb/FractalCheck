@@ -12,7 +12,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 	private By lblMyAccountHdr = By.xpath("//div[contains(text(),'MY ACCOUNT')]");
 	private By lblProfileTitle = By.xpath("//div[contains(text(),'MY PROFILE')]");
 	private By lblEmailAddr = By.xpath(".//h3[@class='padding-b-10']");
-	private By lblFirstName = By.xpath(".//h3[contains(text(),'First Name *')]");
+	private By lblFirstName = By.xpath(".//h3[contains(text(),'First Name*')]");
 	private By lblLastName = By.xpath(".//h3[contains(text(),'Last Name *')]");
 	private By lblPhone = By.xpath(".//h3[contains(text(),'Phone *')]");
 	private By lblChgPass = By.xpath("//div[contains(text(),'CHANGE PASSWORD')]");

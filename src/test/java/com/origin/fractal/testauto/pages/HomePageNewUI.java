@@ -14,7 +14,7 @@ public class HomePageNewUI extends FractalBasePage {
 	private By termsLink = By.xpath("//a[contains(text(),'| Terms')]");
 	private By contactsLink = By.xpath("//a[contains(text(),'| Contact')]");
 	private By privacyPage = By.xpath("//span[contains(text(),'PRIVACY POLICY')]");
-	private By termsPage = By.xpath("//span[contains(text(),'Terms & Conditions')]");
+	private By termsPage = By.xpath(".//span[contains(text(),'TERMS & CONDITIONS')]");
 	private By contactsPage = By.xpath("//span[contains(text(),'CONTACT US')]");
 	private By lblHome = By.xpath("//span[contains(text(),'Home')]");
 	MyLearningPage myLearning = new MyLearningPage(driver);
