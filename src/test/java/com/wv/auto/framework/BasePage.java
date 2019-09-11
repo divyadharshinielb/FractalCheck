@@ -72,7 +72,6 @@ public abstract class  BasePage {
 		we.sendKeys(dataToEnter);
 		print("ENTERED DATA : The data " + dataToEnter
 				+ " is entered in input Element" + inpElement.toString());
-
 	}
 
 	public boolean verifyTitle(String expTitle) {
