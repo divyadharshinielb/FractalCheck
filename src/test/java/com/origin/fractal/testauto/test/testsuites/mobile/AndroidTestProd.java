@@ -26,8 +26,9 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
 		maLoginSteps.verifySplashScreen();
 		Reporter.writeSummary("TCID_001, Verifying whether the splash screen appears after launching the app, " +  maLoginSteps.getResult());
-		
+		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		maLoginSteps.doLogin();	
+		mASIS.selectFractal();
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen
@@ -43,6 +44,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		appDriver = AppFactory.getAndroidApp();
 
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		
 		maLoginSteps.blankPasswordVerification();
 		maLoginSteps.blankUserName();
@@ -53,6 +55,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_005,  Verify the origin fractal app login page with blank values for username and password, " +  maLoginSteps.getResult() );
 		wait(5);
 		maLoginSteps.doLogin();
+		mASIS.selectFractal();
 		Reporter.writeSummary("TCID_002,  Verify user is able to login for origin fractal app with valid user name and password., " +  maLoginSteps.getResult() );
 		
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
@@ -105,10 +108,9 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		/*mASIS.validateInstanceSelectionPage();
 
-		mASIS.swipeInstances();
+		mASIS.swipeInstances();*/
 
 		mASIS.selectFractal();
-		*/
 		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		mAWNS.validateWhatsNewPage();
 		mAWNS.clickLater();
@@ -140,9 +142,10 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		appDriver = AppFactory.getAndroidApp();
 
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
-		maLoginSteps.doLogin();		
-		// Select Instance Screen
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
+		maLoginSteps.doLogin();		
+		mASIS.selectFractal();
+		// Select Instance Screen
 		//mASIS.selectFractalDemo();
 		// What's New Screen MAWhatsNewSteps
 		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
@@ -188,7 +191,9 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		System.out.println("21");
 
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
+		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		maLoginSteps.doLogin();	
+		mASIS.selectFractal();
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen

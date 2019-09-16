@@ -14,6 +14,7 @@ public class MASelectInstancePage extends FractalAppPage {
 	private By insFractal = By.xpath("//android.widget.ImageView[@content-desc='Fractal']");
 	
 	private By insFractalDemo = By.xpath("//android.widget.ImageView[@content-desc='Fractal Demo']");
+	private By insCogScale= By.xpath("//android.widget.ImageView[@content-desc=\"CognitiveU\"]");
 	private By lblMyLearning = By.id("com.originkonnect.app:id/action");
 	private By btnMenu = By.id("com.originkonnect.app:id/action_bar_back");
 	private By insChangeBtn = By.id("com.originkonnect.app:id/change_client");
