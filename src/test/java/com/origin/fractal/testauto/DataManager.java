@@ -2,10 +2,12 @@ package com.origin.fractal.testauto;
 
 import org.testng.annotations.DataProvider;
 
-public class DataManager {
+import com.wv.auto.framework.BrowserFactory;
 
-	@DataProvider
-	public static Object[][] browers() {
+public class DataManager extends BrowserFactory {
+
+	//@DataProvider
+	/*public static Object[][] browers() {
 		return new Object[][] {
 	//		new Object[] { "1", "msedge" }, 
 				new Object[] { "2", "Chrome" }
@@ -14,4 +16,23 @@ public class DataManager {
 		};
 	}
 	
+}
+*/
+	@DataProvider
+	public static Object[][] browers() {
+		if(getOS().equalsIgnoreCase("win")) {
+			return new Object[][] {
+				//new Object[] { "1", "msedge" }, 
+				new Object[] { "2", "Chrome" },
+				//new Object[] { "3", "Firefox" }
+			};
+		}
+		
+		if(getOS().equalsIgnoreCase("mac")) {
+			return new Object[][] {
+					new Object[] { "1", "safari" }
+				};
+		}
+		return null;
+	}
 }

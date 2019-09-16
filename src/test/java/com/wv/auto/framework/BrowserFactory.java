@@ -20,11 +20,16 @@ import com.wv.auto.framework.utils.Reporter;
 public class BrowserFactory {
 	// for windows
 	private static String driversLocation = "C:/webdrivers/";
+	//Browser Extension
+	private static String browserExtn ="";
 	// for Mac
 	private static String driversLocMac = "/Users/origin";
 	public static WebDriver getBrowser(String strBrowserName) {
 		Reporter.setBrowserAppOS(strBrowserName);
 		WebDriver browser = null;
+		// Line added by divya on 16th September
+		Reporter.setBrowserAppOS(strBrowserName);
+		if(getOS().equalsIgnoreCase("win")) {
 		if (strBrowserName.equalsIgnoreCase("firefox")) {
 			browser = getBrowser(BrowserType.FIREFOX);
 			System.out.println("Firefox Browser Opened");
@@ -41,13 +46,36 @@ public class BrowserFactory {
 			browser = getBrowser(BrowserType.EDGE);
 			System.out.println("Edge Browser Opened");
 		}
+		}
+		else if(getOS().equalsIgnoreCase("mac")) {
 		/*Start of - added by Manju Priya A on Jan_07_19*/
 		if (strBrowserName.equalsIgnoreCase("safari")) {
 			browser = getBrowser(BrowserType.SAFARI);
 			System.out.println("Safari Browser Opened");
 		}
+		}
 		/*End of - added by Manju Priya A on Jan_07_19*/
 		return browser;
+	}//Added this function for opening safari browser if os is mac
+	public static String getOS() {
+		String OS = System.getProperty("os.name").toLowerCase();
+		String osName ="";
+		if((OS.indexOf("win") >= 0)) {
+			osName = "win";
+		}else if((OS.indexOf("mac") >= 0)) {
+			osName = "mac";
+		}
+		return osName;
+	}
+	//End of this function
+	public static void setDriverPath() {
+		if(getOS().equalsIgnoreCase("win")) {
+			driversLocation = "C:/webdrivers/";
+			browserExtn = ".exe";
+		}else if(getOS().equalsIgnoreCase("mac")){
+			driversLocation= "/Users/origin/webdrivers/";
+			browserExtn="";
+		}
 	}
 	
 	public static WebDriver getBrowser(BrowserType browserType) {
@@ -67,8 +95,8 @@ public class BrowserFactory {
 			browser = getMSEdgeBrowser();
 			break;
 		case SAFARI:
-			browser = getRemoteSafariBrowser();
-			//getSafariBrowser();/*Added by Manju Priya A on Jan_07_19 ths case*/
+			browser = getSafariBrowser();
+			// getRemoteSafariBrowser() , getSafariBrowser();/*Added by Manju Priya A on Jan_07_19 ths case*/
 			break;
 		}
 		browser.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
