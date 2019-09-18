@@ -662,7 +662,7 @@ public class AndroidTest extends FractalBaseAppTest {
 			//wait(5);
 			//mAWNS.clickLater();
 			// My Learning Screen
-			mACatSteps.verfiyContent();
+			//mACatSteps.verfiyContent();
 			Reporter.writeSummary("TCID_83, For LTI Content, When an item is clicked without BUY/ENROLL,it must display pop-up saying 'Please ENROLL/BUY' instead it displays, " +  mACatSteps.getResult());
 			mAMLS.clickMenu();
 			mAMnuSteps.clickOnLogout();
@@ -686,13 +686,13 @@ public class AndroidTest extends FractalBaseAppTest {
 			MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 			mAWNS.clickLater();
 		*/	MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
-			mACatSteps.verifyContentText();
+			/*mACatSteps.verifyContentText();
 			Reporter.writeSummary("TCID_84, Need to add catalog type along with the icon in the whole app," +  mACatSteps.getResult());
 			mACatSteps.verifyCatalogIconText();
 			Reporter.writeSummary("TCID_85, Hide the grid and list view status bar when there are no records in the screen," +  mACatSteps.getResult());
 			MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
-			mAMLS.verifyGridListView();
-			Reporter.writeSummary("TCID_86, Change the Contents as Content in all details page," +  mAMLS.getResult());
+			//mAMLS.verifyGridListView();*/
+		//	Reporter.writeSummary("TCID_86, Change the Contents as Content in all details page," +  mAMLS.getResult());
 		//**till here**//
 		}
 		//added by karpagavalli for global search count 
@@ -714,13 +714,13 @@ public class AndroidTest extends FractalBaseAppTest {
 					//wait(5);
 					//mAWNS.clickLater();
 					// My Learning Screen
-					mAMLS.globalSearch();
+					/*mAMLS.globalSearch();
 					Reporter.writeSummary("TCID_87, Checking whether the search count is getting displayed correctly," +  mAMLS.getResult());
 					mAMLS.countVerify();
 					Reporter.writeSummary("TCID_88, Checking whether the search count changes to service level," +  mAMLS.getResult());
 					wait(5);
 					mAMLS.clickMenu();
-					mAMnuSteps.clickOnLogout();
+					mAMnuSteps.clickOnLogout();*/
 				}
 				//added by karpagavalli for enroll buy
 						@Test(groups = { "April 6" }, enabled = false, description = "eroll/buy")
@@ -741,14 +741,14 @@ public class AndroidTest extends FractalBaseAppTest {
 							wait(5);
 							//mAWNS.clickLater();
 							// My Learning Screen
-							mAMLS.AccessCatalogItemEnrolledOutside();
+						/*	mAMLS.AccessCatalogItemEnrolledOutside();
 							Reporter.writeSummary("TCID_89, Checking whether the contents are accessible independently, " +  mAMLS.getResult());
 							mAMLS.AccessCatalogItemEnrolledInside();
 							Reporter.writeSummary("TCID_90, Checking whether the contents are accessible inside the bundle that is enrolled," +  mAMLS.getResult());
 							mAMLS.AccessCatalogItemEnrollInside();
 							Reporter.writeSummary("TCID_91, Checking whether the contents are accessible inside the bundle that is not yet Enrolled," +  mAMLS.getResult());
 							mAMLS.clickMenu();
-							mAMnuSteps.clickOnLogout();
+							mAMnuSteps.clickOnLogout();*/
 						}
 						//added by karpagavalli for retry
 						@Test(groups = { "feb 23rd" }, enabled = false, description = "Try again Option  -Purchase Failure flow")
@@ -769,7 +769,7 @@ public class AndroidTest extends FractalBaseAppTest {
 							//wait(5);
 							//mAWNS.clickLater();
 							// My Learning Screen
-							mACatSteps.retryBtn();
+							/*mACatSteps.retryBtn();
 							Reporter.writeSummary("TCID_92, Checking whether the items are getting added to the cart," +  mAMLS.getResult());
 							mACatSteps.tryAgain();
 							Reporter.writeSummary("TCID_93, Checking whether on clicking the retry button the page gets navigated to checkout page," +  mAMLS.getResult());
@@ -779,7 +779,7 @@ public class AndroidTest extends FractalBaseAppTest {
 							Reporter.writeSummary("TCID_95, Checking whether on clicking the explore catalog button the page gets navigated to catalog page," +  mAMLS.getResult());
 							wait(10);
 							mAMLS.clickMenu();
-							mAMnuSteps.clickOnLogout();
+							mAMnuSteps.clickOnLogout();*/
 						}
 						@Test(groups = { "April-19" }, enabled = true, description = "")	
 						
@@ -791,7 +791,7 @@ public class AndroidTest extends FractalBaseAppTest {
 							wait(10);
 							mAWNS.clickLater();
 							MACatalogSteps mACatSteps = new MACatalogSteps(appDriver);
-							mACatSteps.verifyCatalogItemName();
-							Reporter.writeSummary("TCID_01,Change in listing the learning objects count with the name in catalog pages., " +  mACatSteps.getResult());
+						//	mACatSteps.verifyCatalogItemName();
+							//Reporter.writeSummary("TCID_01,Change in listing the learning objects count with the name in catalog pages., " +  mACatSteps.getResult());
 						}
 }
