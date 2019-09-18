@@ -30,9 +30,9 @@
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" />
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
-				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
