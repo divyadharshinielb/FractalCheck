@@ -33,7 +33,15 @@ public class VenueSteps extends FractalBaseStep{
 			result="FAILED";
 		   }
 	}public void clickHomeMenu() {
-		page.clickHomeMenu();
+		result ="Passed";
+		   try {
+		     page.clickHomeMenu();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void createVenue() {
 		   try {

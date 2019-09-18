@@ -10,23 +10,63 @@ public class FractalBaseStep extends BaseStep {
 		}
 
 	public void clickOnMyLearning() {
-		fBPage.clickOnMyLearning();
+		result ="Passed";
+		   try {
+			   fBPage.clickOnMyLearning();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void clickOnProfile() {
-		fBPage.clickOnProfile();
+		result ="Passed";
+		   try {
+			   fBPage.clickOnProfile();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	
 	public void clickOnMyAccount() {
-		fBPage.clickOnMyAccount();
+		result ="Passed";
+		   try {
+			   fBPage.clickOnMyAccount();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	
 
 	public void clickOnsettings() {
-		fBPage.clickOnsettings();
+		result ="Passed";
+		   try {
+			   fBPage.clickOnsettings();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	
 	public void clickLogout() {
-		fBPage.clickLogout();
+		result ="Passed";
+		   try {
+			   fBPage.clickLogout();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	
 

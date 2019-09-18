@@ -43,7 +43,7 @@ public class WebTestContentAdmin extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
-@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description = "")
 	
 	public void WebTestAdminSearch(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
