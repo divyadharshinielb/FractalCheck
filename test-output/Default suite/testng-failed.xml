@@ -6,7 +6,6 @@
       <class name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning">
         <methods>
           <include name="beforeClass"/>
-          <include name="testMyLearningPage2" invocation-numbers="0"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
           <include name="afterClass"/>
