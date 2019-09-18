@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.wv.auto.framework.BrowserFactory;
 
 public class HomePageNewUI extends FractalBasePage {
 	private By btnContinue = By.xpath("//span[@class='continue_button']");
@@ -28,9 +29,11 @@ public class HomePageNewUI extends FractalBasePage {
 	}
 	
 		public void commonFunction() {
-			WebElement element = driver.findElement(By.xpath("//a[contains(text(),'| Contact')]")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
+			WebElement element = driver.findElement(By.xpath("//a[contains(text(),'| Contact')]")); 
+			if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+			Actions actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
+			}
 			wait(5);
 			}
 			public void verifyFooterLinks() {

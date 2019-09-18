@@ -79,17 +79,23 @@ public class AccountPageNewUI  extends FractalBasePage{
 		verifyLnameField(inpLName);
 	}
 	public boolean verifyFnameField(By objLoc){
+		
 		boolean status=false;
 		String[] inpArray= {"1111","!@#"};
 		for(int i=0;i<inpArray.length;i++) {
 			enterData(inpArray[i], objLoc);
-			WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
+			WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); 
+			
+			if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+				Actions actions = new Actions(driver); 
+				actions.moveToElement(element);
+				actions.perform();
+			}
+			
 			wait(5);
 			click(btnSave);
-			status=elementExist(fNameErrorOnlyLetters);
-			status=elementExist(lNameError);
+			status = elementExist(fNameErrorOnlyLetters);
+			status = elementExist(lNameError);
 		}
 		return status;
 	}
@@ -98,9 +104,15 @@ public class AccountPageNewUI  extends FractalBasePage{
 		String[] inpArray= {"1111","!@#"};
 		for(int i=0;i<inpArray.length;i++) {
 			enterData(inpArray[i], objLoc);
-			WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
+			
+			WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]"));
+			if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+			Actions actions = new Actions(driver); 
+			actions.moveToElement(element);
 			actions.perform();
+			}
+			
+			
 			wait(5);
 			click(btnSave);
 			status=elementExist(lNameError);
@@ -112,9 +124,11 @@ public class AccountPageNewUI  extends FractalBasePage{
 		clear(inpFName);
 		clear(inpLName);
 		enterData(getLabel("newPass"), inpNewPass);
-		WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
+		WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); 
+		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+		Actions actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(5);
 		click(btnSave);
 		verifyErrorMessage();
@@ -131,27 +145,35 @@ public class AccountPageNewUI  extends FractalBasePage{
 		enterData("P@ssw0rd1",inpNewPass);
 		enterData("P@ssw0rd1",inpConfirmPass);
 		wait(5);
-		WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
+		WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); 
+		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+		Actions actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(5);
 		click(btnSave);
 		wait(5);
 		enterData("Origin@123",inpNewPass);
 		enterData("Origin@123",inpConfirmPass);
 		wait(5);
-		WebElement element1 = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); Actions
-		actions1 = new Actions(driver); actions1.moveToElement(element1);
+		WebElement element1 = driver.findElement(By.xpath("//input[contains(@value,'Save')]"));
+		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+		Actions actions1 = new Actions(driver); actions1.moveToElement(element1);
 		actions1.perform();
+		}
 		wait(5);
-		actions = new Actions(driver); actions.moveToElement(element);
+		if(BrowserFactory.getOS().equalsIgnoreCase("win")) { 
+		Actions actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(5);
 		click(btnSave);
 		wait(5);
-		WebElement element2 = driver.findElement(By.xpath("//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]")); Actions
-		actions2 = new Actions(driver); actions2.moveToElement(element2);
+		WebElement element2 = driver.findElement(By.xpath("//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]")); 
+		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+		Actions actions2 = new Actions(driver); actions2.moveToElement(element2);
 		actions2.perform();
+		}
 		wait(5);
 		click(lblProfile);
 		wait(5);

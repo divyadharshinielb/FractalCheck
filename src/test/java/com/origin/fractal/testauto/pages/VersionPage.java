@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.wv.auto.framework.BrowserFactory;
 
 public class VersionPage extends FractalBasePage{
 	private By version1=By.xpath("//a[contains(text(),'iOS 12.4.1')]");
@@ -24,9 +25,11 @@ public class VersionPage extends FractalBasePage{
 	}
 	public void VersionCheck() {
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/div/table[3]/tbody/tr/th")); 
+		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
 		Actions actions = new Actions(driver); 
 		actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(10);
 		System.out.println("The version is being displayed"+version);
 		elementExist(version);
@@ -46,9 +49,11 @@ public class VersionPage extends FractalBasePage{
 
 	public void VersionCheck1() {
 		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'tvOS 12.4.1')]")); 
+		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
 		Actions actions = new Actions(driver); 
 		actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(10);
 		System.out.println("The version is being displayed"+version);
 		wait(5);
