@@ -9,8 +9,8 @@ public class Reporter {
 	private static CSVWriter repWriter;
 	private static CSVWriter repWriterDetail;
 	private static CSVWriter repWriterFailure;
-	private static String strBrowserAppOS = "FireFox";
-	private static String strEnv = "Staging";
+	private static String strBrowserAppOS = "Chrome";
+	private static String strEnv = "Automation";
 
 	public static void createReports() {
 		createReport();

@@ -21,7 +21,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		};
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_1,4,11,12: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_1,4,11,12: "
 			+ "Verify navigation to My Learning page, " + "1: verify COmpletion Status(% Coverage)"
 			+ "4: Verify all links(All, Bundles, Courses, Learning Paths and resources)"
 			+ "11: Verify learning item page is opened when any of the particular course catalog item is clicked"
@@ -53,7 +53,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_16,20,21,22: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_16,20,21,22: "
 			+ "16:Verify course name" + "20:Verify All filter" + "21:Verify Bundle filter" + "22:Verify Course filter")
 	public void testMyLearningPage1(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -86,7 +86,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_25,5,8,14,6,7: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_25,5,8,14,6,7: "
 			+ "25: Verify Tickmark for completed catalog item" + "5: Verify Category dropdown and Grid and List mode"
 			+ "8: Verify Category items" + "14: Verify Rating for completed catalog item"
 			+ "6,7: verify the Grid and List view items and functionality")
@@ -123,7 +123,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_17,18,23,27 : "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_17,18,23,27 : "
 			+ "17: Verify Bundle Details after clicking" + "18: Verify course Details after clicking"
 			+ "23: Verify the learnig objeck launch" + "27: Verify the top arrow button")
 	public void testMyLearningPage3(String row, String strBrowserName) {
@@ -165,21 +165,21 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 	MyLearningSteps mLSteps = new MyLearningSteps(driver);
    mLSteps.verifyClassroomDetails();
    mLSteps.verifyCancelRegistrationBtn();//newui
-  Reporter.writeSummary("Checking whether the cancel registration button are getting displayed on classroom asset, " +  mLSteps.getResult() );
+  Reporter.writeSummary("TC:6,Checking whether the cancel registration button are getting displayed on classroom asset, " +  mLSteps.getResult() );
    mLSteps.verifyDetailsBtn();//newui
-  Reporter.writeSummary("Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
+  Reporter.writeSummary("TC:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
    mLSteps.verifyAssignedClassroom();//newui
-  Reporter.writeSummary("TC:5The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
+  Reporter.writeSummary("TC:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
    mLSteps.verifyEventDisplayClassroomObject();//newui
-   Reporter.writeSummary("Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
-   Reporter.writeSummary("Checking whether the below details are present inside Event Date&Time ,Location, Instructor name, Register button," +  mLSteps.getResult() );
+   Reporter.writeSummary("TC:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
+   Reporter.writeSummary("TC:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
    mLSteps.verifyTraditionalClassBtn();//newui
  Reporter.writeSummary("TC:10The traditional class events should be displayed when clicking traditional class., " +  mLSteps.getResult() );
    mLSteps.verifyChooseEventBtn();//newui
- Reporter.writeSummary("Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
+ Reporter.writeSummary("TC:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
    mLSteps.verifyEventRegistrationBtn();//newui
- Reporter.writeSummary("TC:13the register button should be showing you are accepting the Terms & Conditions for this event by clicking on register.," +  mLSteps.getResult() );
+ Reporter.writeSummary("TC:13,the register button should be showing you are accepting the Terms & Conditions for this event by clicking on register.," +  mLSteps.getResult() );
    mLSteps.verifyClassrooomLabels();//newui
- Reporter.writeSummary("Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
+ Reporter.writeSummary("TC:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
 }
 }

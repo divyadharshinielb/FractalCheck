@@ -121,7 +121,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 		HomeSteps homeSteps = new HomeSteps(driver);
         homeSteps.firstTwoCatalogItemsTitleCompare();//newui
-		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in whats new section matches with the first 2 items in the Most popular content section. " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in whats new section matches with the first 2 items in the Most popular content section, " +   homeSteps.getResult() );
 		//Verify the function of  Recently Added section attributes 
 		homeSteps.whatsNewSectionAttributes();//newui
 		Reporter.writeSummary("TCID_082,  Verify the function of  Recently Added section attributes , " +   homeSteps.getResult() );

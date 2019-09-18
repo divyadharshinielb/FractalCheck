@@ -1,6 +1,0 @@
-"TCID"," TEST DESCRIPTION"," TEST RESULT"
-"Checking whether the cancel registration button are getting displayed on classroom asset"," Passed"
-"Checking whether the Details button are getting displayed on classroom asset"," Passed"
-"TC:5The assigned calssrooms are getting displayed under bundle/course."," Passed"
-"Checking whether the Event is displayed under classroom object"," Passed"
-"Checking whether the below details are present inside Event Date&Time ","Location"," Instructor name"," Register button","Passed"
