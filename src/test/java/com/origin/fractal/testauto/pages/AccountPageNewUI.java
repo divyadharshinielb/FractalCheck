@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.wv.auto.framework.BrowserFactory;
 
 public class AccountPageNewUI  extends FractalBasePage{
 	
