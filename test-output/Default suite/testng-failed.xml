@@ -8,14 +8,12 @@
           <include name="beforeClass"/>
           <include name="testMyLearningPage2" invocation-numbers="0"/>
           <include name="beforeMethod"/>
-          <include name="testMyLearningPage0" invocation-numbers="0"/>
-          <include name="testMyLearningPage3" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="afterClass"/>
-          <include name="testMyLearningPage1" invocation-numbers="0"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
+          <include name="testMyLearningPageClassroom" invocation-numbers="0"/>
           <include name="beforeTest"/>
         </methods>
       </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning -->

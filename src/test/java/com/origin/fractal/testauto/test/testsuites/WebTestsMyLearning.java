@@ -98,7 +98,6 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.clickOnMyLearning();
 		wait(5);
-
 		// Test moves to MyLearning page
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		//TCID_25:Verify Tick mark for completed catalog item
@@ -173,8 +172,8 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 	mLSteps.verifyEventDisplayClassroomObject();//newui
 	Reporter.writeSummary("TC:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
 	Reporter.writeSummary("TC:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
-	mLSteps.verifyTraditionalClassBtn();//newui
-	Reporter.writeSummary("TC:10The traditional class events should be displayed when clicking traditional class., " +  mLSteps.getResult() );
+//	mLSteps.verifyTraditionalClassBtn();//newui
+	Reporter.writeSummary("TC:10,The traditional class events should be displayed when clicking traditional class., " +  mLSteps.getResult() );
 	mLSteps.verifyChooseEventBtn();//newui
 	Reporter.writeSummary("TC:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
 	mLSteps.verifyEventRegistrationBtn();//newui

@@ -4,12 +4,11 @@ package com.origin.fractal.testauto.test.testsuites;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.steps.ClassroomSteps;
+import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;

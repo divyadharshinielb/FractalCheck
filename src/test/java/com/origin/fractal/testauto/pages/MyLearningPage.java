@@ -42,7 +42,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By lblTick = By.xpath(".//button[@class='pl-30 launch_btn www']//img");//round-progress-wrapper
 	private By lblCompleted = By.xpath("//li[contains(text(),'COMPLETED')]");
 
-	private By lblCategory = By.xpath(".//a[contains(text(),'CATEGORIES')]");
+	private By lblCategory = By.xpath(".//a[contains(text(),'Categories')]");//a[contains(text(),'CATEGORIES')]
    
 	private String categoryList = "../html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]//div//ul//li";//*[@id='header']/*//button[contains(text(),'Category')]/../../div/ul/li
     
@@ -167,6 +167,7 @@ public class MyLearningPage extends FractalBasePage {
 		System.out.println("true");
 	}
 	public void verifyCategory() {
+		wait(5);
 		verifyPartialLabelText("lblcategory", lblCategory);
 	}
 	
@@ -235,11 +236,11 @@ public class MyLearningPage extends FractalBasePage {
     private By classroomlblEventTime=By.xpath("//div[contains(@class,'display-box')]//div[contains(@class,'padding-t-5')]");
     private By classroomlblEventLocation=By.xpath("//div[contains(@class,'font-14 padding-l-10 padding-t-20 color6f')]");
     private By classroomlblEventRegistration=By.xpath("//button[contains(@class,'regBtn')]");
-    private By lblTraditionalClass=By.xpath("//button[contains(text(),'TRADITIONAL CLASS')]");
+    private By lblTraditionalClass=By.xpath(".//button[contains(text(),'TRADITIONAL CLASS')]");
     private By lblCancel=By.xpath("  //button[contains(text(),'CANCEL')]");
     private By lblRegisterText=By.xpath("//p[contains(text(),'By registering, you are accepting the')]");
     private By lblEventCalendarText=By.xpath("//button[contains(text(),'Choose Event')]");
-    private By btnCancelRegistration=By.xpath("//button[contains(text(),'CANCEL REGISTRATION')]");
+    private By btnCancelRegistration=By.xpath(".//button[contains(text(),'CANCEL REGISTRATION')]");
     private By lblAssignedClassroom2=By.xpath("//h1[contains(text(),'checking for classroom')]");//h1[contains(text(),'App_notification_check')]
     private By lblPreeventActivities=By.xpath("//span[contains(text(),'Pre-event Activities')]");
     private By lblReference=By.xpath(" //span[contains(text(),'Reference')]");
@@ -292,6 +293,7 @@ public class MyLearningPage extends FractalBasePage {
 			  verifyText("Reference",lblReference);
 			  verifyText("Post-event Activities",lblPosteventActivities);
 			  verifyText("Terms & Conditions",lblTermsCondition);
+			  
 			  click(btnCancelRegistration);
 			  verifyText("Are you sure you want to cancel your registration?",registrationCancelText);
 			  click(btnNO);
@@ -312,6 +314,7 @@ public class MyLearningPage extends FractalBasePage {
 			  }
 			//TC:9  the below details should be present inside Event Date&Time Location Instructor name Register button. 
 			  public void verifyTraditionalClassBtn(){
+				  wait(5);
 			  click(lblTraditionalClass);
 			  }
 			  public void verifyEventRegistrationBtn(){
