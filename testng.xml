@@ -11,6 +11,8 @@
 	<!-- End of reportNg modification -->
 	<test thread-count="11" name="Test">
 		<classes>
+					<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
 									<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> 
 							  <class
@@ -29,8 +31,6 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
 		</classes>
