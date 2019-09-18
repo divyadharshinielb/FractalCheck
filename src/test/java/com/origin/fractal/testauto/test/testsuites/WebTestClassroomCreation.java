@@ -4,6 +4,7 @@ package com.origin.fractal.testauto.test.testsuites;
 
 import java.io.IOException;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -51,7 +52,8 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
       cSteps.classroomPageInformation();
         Reporter.writeSummary("TCID_CLASS_028, Verify whether the Admin must be able to view the created CLASSROOM information," +  cSteps.getResult() );
 	}
-        @Test(dataProvider = "browers", groups = { "pilot"}, enabled = true,description="")
+        
+		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = true,description="")
     	public void testClassroomCreation1(String row, String strBrowserName) throws IOException {
     	
     		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -65,15 +67,15 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
     		
     	cSteps.durationNumericValue();
         Reporter.writeSummary("TCID_CLASS_019,Verify whether the Admin should be able to add duration," +  cSteps.getResult() );
-        cSteps.surveyLinks();
+       cSteps.surveyLinks();
         Reporter.writeSummary("TCID_CLASS_022,Verify whether the Admin must be able to add the links in the given field," +  cSteps.getResult() );
         cSteps.preEventValidateFields();
-        Reporter.writeSummary("TCID_CLASS_020,Verify whether the  Admin should be able to fill the valid fields," +  cSteps.getResult() );
-       	cSteps.postEventValidateFields();
-       	Reporter.writeSummary("TCID_CLASS_021,Verify whether the  Admin should be the same type fields of TC20 should be done for Pre-Event Assignment & Post-Event Assignment," +  cSteps.getResult() );
-       	cSteps.verifySessionTab();
+       Reporter.writeSummary("TCID_CLASS_020,Verify whether the  Admin should be able to fill the valid fields," +  cSteps.getResult() );
+       cSteps.postEventValidateFields();
+       Reporter.writeSummary("TCID_CLASS_021,Verify whether the  Admin should be the same type fields of TC20 should be done for Pre-Event Assignment & Post-Event Assignment," +  cSteps.getResult() );
+       cSteps.verifySessionTab();
         Reporter.writeSummary("TCID_CLASS_015,Verify whether the  Admin should be able to view the Sessions tab on filling all the details," +  cSteps.getResult() );
-        cSteps.editClassroomPage();
+      cSteps.editClassroomPage();
         Reporter.writeSummary("TCID_CLASS_025, Verify whether admin should be able to edit the classroom listing page," +  cSteps.getResult() );
         cSteps.deleteClassroomPage();
         Reporter.writeSummary("TCID_CLASS_026, Verify whether admin should be able to Delete the classroom listing page," +  cSteps.getResult() );

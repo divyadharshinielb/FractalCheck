@@ -89,9 +89,10 @@ public class HomeSteps extends FractalBaseStep {
 	}
 	public void clickContinueBtnRetToHome() {
 		page.clickContinueBtn();
+		wait(5);
 		       page.clickOnHome();
 		}
-    public void verifyNavTORcntAddedCoursesRtnToHome() {
+   public void verifyNavTORcntAddedCoursesRtnToHome() {
 		   	page.rcntAddedCourses(); 
 		   page.clickOnHome();
 		   }
@@ -118,10 +119,10 @@ public class HomeSteps extends FractalBaseStep {
 		   }
     }
 
-    public void verifyAllFilterRcntAdded(){
+    public void verifyAllFilterWhatsNew(){
     	 result ="Passed";
 		   try {
-			page.verifyAllFilterRcntAdded();
+			page.verifyAllFilterWhatsNew();
 		   }
 		   catch(Exception e)
 		   {
@@ -129,10 +130,10 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
-	public void verifyBundleFilterRcntAdded(){
+	public void verifyBundleFilterWhatsNew(){
 		 result ="Passed";
 		   try {
-			 page.verifyBundleFilterRcntAdded();
+			 page.verifyBundleFilterWhatsNew();
 		   }
 		   catch(Exception e)
 		   {
@@ -140,10 +141,10 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
-	public void verifyCourseFilterRcntAdded(){
+	public void verifyCourseFilterWhatsNew(){
 		result ="Passed";
 		   try {
-			  page.verifyCourseFilterRcntAdded();
+			  page.verifyCourseFilterWhatsNew();
 		   }
 		   catch(Exception e)
 		   {
@@ -151,10 +152,10 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
-	public void verifyResourceFilterRcntAdded(){
+	public void verifyResourceFilterWhatsNew(){
 		result ="Passed";
 		   try {
-			   page.verifyResourceFilterRcntAdded();
+			   page.verifyResourceFilterWhatsNew();
 		   }
 		   catch(Exception e)
 		   {
@@ -162,10 +163,10 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }	
 	}
-	public void verifyLearnPathFilterRcntAdded (){
+	public void verifyLearnPathFilterWhatsNew (){
 		result ="Passed";
 		   try {
-			   page.verifyLearnPathFilterRcntAdded();
+			   page.verifyLearnPathFilterWhatsNew();
 		   }
 		   catch(Exception e)
 		   {
@@ -351,10 +352,10 @@ public class HomeSteps extends FractalBaseStep {
 
 	}
 	
-	   public void recentlyAddedsectionAttributes() {
+	   public void whatsNewSectionAttributes() {
 		   result ="Passed";
 		   try {
-		    	page.recentlyAddedsectionAttributes();
+		    	page.whatsNewSectionAttributes();
 		   }
 		   catch(Exception e)
 		   {
@@ -363,16 +364,10 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	
 	    }
-	   public void verifyEnrolledText() {
-		   page.verifyEnrolledText();
-	   }
-	   public void verifyAllLanguage() {
-	   page.verifyAllLanguage();
-	   }
-	   public void verifyLearningInProgressText() {
+	   public void verifyResumeLearningText() {
 		   result ="Passed";
 		   try {
-			page.verifyLearningInProgressText();
+			page.verifyResumeLearningText();
 		   }
 		   catch(Exception e)
 		   {
@@ -394,38 +389,14 @@ public class HomeSteps extends FractalBaseStep {
 		   }
     }
     public void verifyLogoImg() {
-    	result ="Passed";
-		   try {
-	        	page.verifyLogoImg();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
+    	page.verifyLogoImg();
     }
    /****************************/
     public void verifyNextBtn() {
-    	result ="Passed";
-		   try {
-	        	page.verifyNextBtn();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
+    	page.verifyNextBtn();
     }
     public void verifyPreviousBtn() {
-    	result ="Passed";
-		   try {
-	        	page.verifyPreviousBtn();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
+    	page.verifyPreviousBtn();
     }
     public void verifyWishListBtn() {
     	 result ="Passed";
@@ -449,17 +420,7 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
     }
-    public void verifyCartItemBtn1() {
-     	 result ="Passed";
-  		   try {
-  		     page.verifyCartItemBtn1();
-  		   }
-  		   catch(Exception e)
-  		   {
-  			e.printStackTrace();   
-  			result="FAILED";
-  		   }
-     }
+
 
 	public void ViewAllRcntAddedBtn() {
 	   	 result ="Passed";
@@ -485,17 +446,6 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 
-	}
-	public void lastFourCatalogItemsTitleCompare() {
-		result ="Passed";
-		   try {
-				page.lastFourCatalogItemsTitleCompare();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
 	}
 
 	public void mostPopularCount() {
@@ -523,73 +473,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 		
 	}
-	public void searchFieldItemCodeUser() {
-		result ="Passed";
-		   try {
-				page.searchFieldItemCodeUser();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
-	}
 
-	public void AccessCatalogItemEnrolledOutside() {
-		result ="Passed";
-		   try {
-				page.AccessCatalogItemEnrolledOutside();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
-	}
-	public void AccessCatalogItemEnrolledInside() {
-		result ="Passed";
-		   try {
-				page.AccessCatalogItemEnrolledInside();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
-	}
-	public void AccessCatalogItemEnrollInside(){
-		result ="Passed";
-		   try {
-				page.AccessCatalogItemEnrollInside();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
-	}
-	public void TimelineCompletionCriteriaOption() {
-		result ="Passed";
-		   try {
-				page.TimelineCompletionCriteriaOption();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
-	}
-	public void verifyReadMoreLessText() {
-		result ="Passed";
-		   try {
-				page.verifyReadMoreLessText();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
-	}
 	
 
 }

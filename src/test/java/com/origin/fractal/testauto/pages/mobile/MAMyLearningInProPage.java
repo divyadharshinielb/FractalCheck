@@ -1,7 +1,6 @@
 package com.origin.fractal.testauto.pages.mobile;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 
 import com.origin.fractal.testauto.FractalAppPage;
 
@@ -26,8 +25,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	private By filterAll = By.id("com.originkonnect.app:id/all_selected");
 	private By progressBar = By.id("com.originkonnect.app:id/circularprogress");
 	private By searchICon = By.id("com.originkonnect.app:id/search");
-	private By searchText = By.id("com.originkonnect.app:id/editText6");
-	private By searchBar = By.id("com.originkonnect.app:id/search_text");
+	private By searchText = By.id("com.originkonnect.app:id/search_text");
 	private By clickCell = By.id("com.originkonnect.app:id/layout_cell");
 	private By verifytext = By.id("com.originkonnect.app:id/catalog_name");
 	private By backButton = By.id("com.originkonnect.app:id/new_back");
@@ -94,19 +92,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	private By  insideLpathBackBtn= By.id("");
 	private By  resourceCatalogTitle= By.id("");
 	private By  courseCatalogTitle= By.id("//XCUIElementTypeImage[contains(@name,'course_White')]/../XCUIElementTypeStaticText[1]");
-	private By lblBackBtn=By.id("com.originkonnect.app:id/back_white");
-	//Added by karpagavalli for global search
-		private By searchBtn =By.id("com.originkonnect.app:id/button2");
-		private By searchCount = By.id("com.originkonnect.app:id/textView16");
-		private By backBtn = By.id("com.originkonnect.app:id/imageView15");
-		private By closeBtn =By.id("com.originkonnect.app:id/imageView28");
-		//Added by Karpagavalli for enroll/buy
-		private By courseCheck= By.xpath("//android.widget.TextView[contains(@resource-id,'com.originkonnect.app:id/contentname1') and @text='Automation Checking course']");
-		private By courseBack = By.id("com.originkonnect.app:id/back_white");
-		private By bundleCheck = By.xpath("//android.widget.TextView[contains(@resource-id,'com.originkonnect.app:id/contentname1') and @text='Automation Checking']");
-		private By bundelCourse= By.xpath("//android.widget.TextView[contains(@resource-id,'com.originkonnect.app:id/contentname') and @text='Automation Checking course']");
-		private By enrollCourse= By.xpath("//android.widget.TextView[contains(@resource-id,'com.originkonnect.app:id/contentname1') and @instance='29']");
-		private By enrollCoursecheck= By.xpath("//android.widget.TextView[contains(@resource-id,'com.originkonnect.app:id/contentname') and @text='Automation Checking course']");
+
 	public MAMyLearningInProPage(AppiumDriver<MobileElement> appDriver) {
 		super(appDriver);
 		this.setLocators();
@@ -786,84 +772,31 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	}
 
 	
-    public void verifyGridListView() {
-		click(lblBackBtn);
-		wait(3);
-		click(lblBackBtn);
-		wait(3);
-		clickMenu();
-		wait(5);
-		clickMyLearning();
-		click(getObj(searchICon));
-		wait(5);
-		typeIntoElement("Catalogtest",getObj(searchBar));
-		elementExist(gridViewCheck);
-		elementExist(listViewCheck);
-		click(getObj(filterIcon));
-		wait(5);
-		click(getObj(resourceSelection));
-		click(getObj(applyButton));
-		wait(5);
-		typeIntoElement("Bundlecheck",getObj(searchText));
-		elementExist(gridViewCheck);
-		elementExist(listViewCheck);
-	}
-
-    public void globalSearch() {
-		click(getObj(searchICon));
-		wait(5);
-		typeIntoElement("global_automation",getObj(searchText));
-		click(searchBtn);
-} 
-public void countVerify() {
-	verifyText("3 Result(s)",searchCount);
-	click(backBtn);
-	click(closeBtn);
-}
-
-//Added by karpagavalli for enroll buy flow 
-
-public void AccessCatalogItemEnrolledOutside() {
-	click(getObj(searchICon));
-	wait(5);
-	typeIntoElement("Automation Checking Course",getObj(searchText));
-	click(searchBtn);
-	wait(5);
-	click(courseCheck);
-	wait(5);
-	elementExist(progressBar);
-	click(courseBack);
-	click(backBtn);
-	click(closeBtn);
-	}
-	public void AccessCatalogItemEnrolledInside() {
-		click(getObj(searchICon));
-		wait(5);
-		typeIntoElement("Automation Checking",getObj(searchText));
-		click(searchBtn);
-		wait(5);
-		click(bundleCheck);
-		wait(5);
-		click(bundelCourse);
-		elementExist(progressBar);
-		click(courseBack);
-		click(courseBack);
-		click(backBtn);
-		click(closeBtn);
-	}
-	public void AccessCatalogItemEnrollInside() {
-		click(getObj(searchICon));
-		wait(5);
-		typeIntoElement("Automation test bundle1",getObj(searchText));
-		click(searchBtn);
-		wait(5);
-		click(enrollCourse);
-		wait(5);
-		click(enrollCoursecheck);
-		elementExist(progressBar);
-		click(courseBack);
-		click(courseBack);
-		click(backBtn);
-		click(closeBtn);
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

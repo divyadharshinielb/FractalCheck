@@ -2,6 +2,7 @@ package com.origin.fractal.testauto.test.testsuites;
 
 import java.io.IOException;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -47,4 +48,7 @@ public class WebTestNotification extends FractalBaseWebTest{
         notificationSteps.verifyBusinessUserRegistration();
         Reporter.writeSummary("EmailTem_007, Verify whether business user template is working fine , " +  notificationSteps.getResult() );
     }
+
+
+	
 }

@@ -12,6 +12,7 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 public class WebTestSettingsAdmin extends FractalBaseWebTest{
 	
+	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "TCID_009:Dynamic payment configurations should appear in the User purchase page.")
 
 public void WebTestSettingsAdminPaymentConfig(String row, String strBrowserName) {
@@ -25,9 +26,9 @@ public void WebTestSettingsAdminPaymentConfig(String row, String strBrowserName)
 	    menuSteps.logout();
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
-		HomeSteps homeSteps = new HomeSteps(driver);
+/*		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.verifyCartItemBtn1();
 		Reporter.writeSummary("TCID_008, Verify If there is one payment mode is available in admin ensure that payment mode is reflecting in user part., " +  homeSteps.getResult() );
 		Reporter.writeSummary("TCID_009, Verify User should able to access the payment and it should redirect to payment section," +  homeSteps.getResult() );    
-	}
+*/	}
 }

@@ -11,16 +11,17 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 public class WebTestReportsAdmin extends FractalBaseWebTest{
 	
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Verify whether a group name is present in the reports.")
-	
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Verify whether a group name is present in the reports.")
 
 public void WebTestAdminReports(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		MenuSteps menuSteps = new MenuSteps(driver);
+		wait(10);//added on august 16 2019
 		menuSteps.clickMenu();
-	   ReportSteps reportSteps= new ReportSteps(driver);
+		ReportSteps reportSteps= new ReportSteps(driver);
 		reportSteps.verifyGroupName();
 		Reporter.writeSummary("TCID_017, Verify group name in the reports., " +  reportSteps.getResult() );
+		
    }
 }

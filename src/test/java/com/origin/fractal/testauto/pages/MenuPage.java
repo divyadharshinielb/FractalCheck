@@ -29,6 +29,7 @@ public class MenuPage extends FractalBasePage{
     private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
     private By classroomBtn = By.xpath("//span[contains(text(),'classroom')]");
     private By btnNotification = By.xpath("//a[@href='#notification/settings']//div[@class='icon']");
+    
     public MenuPage(WebDriver driver) {
 		super(driver);
 	}
@@ -45,18 +46,18 @@ public class MenuPage extends FractalBasePage{
 	}
 	public void gotoPaymentConfiguration() {
 		click(btnSettings);
-	//	click(btnScroll);
-		wait(10);
-		click(btnPayment);
-		wait(10);
-		click(btnDropDown1);
-		wait(10);
-		click(btnPaypal);
-		wait(10);
-		enterData("AYgAXxd1WKn1QKyhdpesNV2jqY5eQqIyN7f5ywO3dy4eRAoQSvXwIKajXkw6ZFlFBvaixe56TKa-RFz8",clientText);
-	    enterData("rashim-facilitator@gmail.com",emailText);
-	    enterData("EMKzG8XxRDcFb0ckn4raTWnJde9JG_LQVgzYOeFw7a2O7fLM_PoFu7cXlqZ53PsgmozsVINVPEN_UknH",clientSecretText);
-		click(btnSave);
+		//	click(btnScroll);
+			wait(10);
+			click(btnPayment);
+			wait(10);
+			click(btnDropDown1);
+			wait(10);
+			click(btnPaypal);
+			wait(10);
+			enterData("AYgAXxd1WKn1QKyhdpesNV2jqY5eQqIyN7f5ywO3dy4eRAoQSvXwIKajXkw6ZFlFBvaixe56TKa-RFz8",clientText);
+		    enterData("rashim-facilitator@gmail.com",emailText);
+		    enterData("EMKzG8XxRDcFb0ckn4raTWnJde9JG_LQVgzYOeFw7a2O7fLM_PoFu7cXlqZ53PsgmozsVINVPEN_UknH",clientSecretText);
+			click(btnSave);
 	}
 	//****Devlopement in progress***//
 	public void searchFieldAsset() {
@@ -76,8 +77,8 @@ public class MenuPage extends FractalBasePage{
 /*	    String[] expectedItems=verifySearchCataloItems(reboxBtn,reboxCatTitle);
 	    for(String a:expectedItems) {
 			System.out.println("---->"+a);
-    }
-*/		}
+	    }
+*/	}
 	//*****end*****//
 	public void searchFieldItemCode() {
 		click(globalSearch);

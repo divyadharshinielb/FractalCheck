@@ -7,17 +7,15 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class LoginPage extends FractalBasePage {
 
-	private By tbUserName = By.xpath(".//*[@name='uname']");
-	private By tbPassword = By.xpath(".//*[@name='userpassword']");
-	private By btnLogin = By.xpath(".//*[@id='btn']");
+	private By tbUserName = By.xpath(".//input[@name='username']");//*[@name='uname']
+	private By tbPassword = By.xpath(".//input[@name='password']");//*[@name='userpassword']
+	private By btnLogin = By.xpath(".//input[@type='submit']");//*[@id='btn']
 	private By btnLogin1 = By.xpath(".//button[@id='login_btn']");
 	private By logoSymbol = By.id("logo");
 	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
 	private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
 	private By logOutButton = By.xpath(".//a[@class='pointer padding-l-15']");
-	/***added on 08/02/19***/
-	private By registerButton = By.xpath("//a[@class='cursor-pointer text-uppercase']");
-	/***here**/
+	private By registerButton = By.xpath(".//a[@class='cursor-pointer']");
 	private By resigstrationPage = By.xpath(".//*[contains(text(), 'I want to register as')]");
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
 	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
@@ -29,7 +27,7 @@ public class LoginPage extends FractalBasePage {
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://staging-origin.originfractal.com/admin/index.php";
+		String baseUrl = "https://automation-origin.originfractal.com";
 		goTo(baseUrl);
 		
 	}
@@ -39,15 +37,9 @@ public class LoginPage extends FractalBasePage {
 		click(btnLogin);
 		wait(5);
 	}
-	public void loginToContentAdmin() {
-		enterData("siteadmin@originkonnect.com",tbUserName);
-	    enterData("P@ssw0rd",tbPassword);
-	    click(btnLogin);
-	    wait(5);
-	}
 	public void doLogin1() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("AutoDU@123",tbPassword);
+		enterData("P@ssw0rd",tbPassword);
 		click(btnLogin);
 	}
 	public void loginPageVerification() {
@@ -60,36 +52,23 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void rememberMe() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("AutoDU@123",tbPassword);
-		wait(10);
+		enterData("P@ssw0rd",tbPassword);
 		click(rememberMe);
-		wait(10);
 		click(btnLogin);
-		wait(10);
 		click(lblProfile);
-		wait(10);
 		click(logOutButton);
 		wait(5);
 		click(rememberMe);
 		wait(5);
 		click(btnLogin1);
-		wait(10);
 		click(lblProfile);
-		wait(10);
 		click(logOutButton);
-		wait(10);
 		click(btnLogin1);	
 		elementExist(blankPassword);
 		}
-	//Starts - Added by Mahesh on Feb_06_19
-		public void verifypasswordField() {	
-			String readPass = getAttributeValuePassword(tbPassword);
-			verifyText("",readPass);
-		}
-		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://staging-origin.originfractal.com/admin/index.php";
+		String baseUrl = "https://automation-origin.originfractal.com";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
@@ -107,13 +86,6 @@ public class LoginPage extends FractalBasePage {
 	public void blankUserName() {
 		enterData (userName[0],tbUserName);
 		enterData (passWord[1],tbPassword);
-		click(btnLogin);
-		wait(5);
-		elementExist(blankUserName);
-	}
-	public void mandatoryField() {
-		enterData (userName[0],tbUserName);
-		enterData (passWord[0],tbPassword);
 		click(btnLogin);
 		wait(5);
 		elementExist(blankUserName);
@@ -136,5 +108,11 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
+	}
+	public void loginToContentAdmin() {
+		enterData("contentadmin@origin.com",tbUserName);
+	    enterData("P@ssw0rd",tbPassword);
+	    click(btnLogin1);
+	    wait(5);
 	}
 }

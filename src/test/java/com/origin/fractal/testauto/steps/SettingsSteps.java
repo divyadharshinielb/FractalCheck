@@ -27,28 +27,13 @@ public class SettingsSteps extends FractalBaseStep {
 	}
 
 	public void printStatus() {
-		result ="Passed";
-		   try {
-			page.printStatus();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
+		page.printStatus();
 	}
 
 	public void clickOnSave() {
-		result ="Passed";
-		   try {
-			page.clickOnSave();
-		   }
-		   catch(Exception e)
-		   {
-			e.printStackTrace();   
-			result="FAILED";
-		   }
+		page.clickOnSave();
 	}
 
-
 }
+
+//added by karpagavalli on 16.11.2018

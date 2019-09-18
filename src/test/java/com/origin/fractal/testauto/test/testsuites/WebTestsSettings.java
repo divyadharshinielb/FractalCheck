@@ -3,7 +3,6 @@ package com.origin.fractal.testauto.test.testsuites;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.SettingsSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
@@ -12,7 +11,17 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsSettings extends FractalBaseWebTest {
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = {
+	@DataProvider
+	public Object[][] browers() {
+		return new Object[][] { 
+//			new Object[] { "1", "chrome" } 
+//		 new Object[] { "2", "firefox" } ,
+		new Object[] { "3", "msedge" } 
+//			new Object[] { "4", "ie11" }
+		};
+	}
+
+	@Test(dataProvider = "browers", groups = {
 			"Phase1.2" }, enabled = true, description = "TCID_nnn : Verify Settings Page")
 	public void testSettings(String row, String strBrowserName) {
 		String result = "Passed";
@@ -31,12 +40,8 @@ public class WebTestsSettings extends FractalBaseWebTest {
 		settingsSteps.printStatus();
 		//TCID_77:The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable 
 		settingsSteps.clickOnSwitch();
-		Reporter.writeSummary("TCID_077,Verify The Mail Notification is getting enabled on selecting the Mail notification button from enable to disable, " +   settingsSteps.getResult() );
+		Reporter.writeSummary("TCID_077,Verify The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable, " +   settingsSteps.getResult() );
 		settingsSteps.clickOnSave();
-		/*****added by Mahesh on 06/02/19***/
-	//	settingsSteps.verifyMailReceivedToEmail();
-		Reporter.writeSummary("TCID_081,Verify The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable, " +   settingsSteps.getResult() );
-		/***end***/
 	}
 }
     

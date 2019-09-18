@@ -13,11 +13,11 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebProductionTests extends FractalBaseWebTest {
 
+
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		Reporter.setBrowserAppOS(strBrowserName);
 		LoginSteps loginSteps = new LoginSteps(driver);
 		loginSteps.loginPageVerification();
 		Reporter.writeSummary("TCID_026, Verify the UI of the login page. User name Password Remember me fields and Login button are available in the login page, " +  loginSteps.getResult() );
@@ -42,7 +42,6 @@ public class WebProductionTests extends FractalBaseWebTest {
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testHome(String row, String strBrowserName) {	
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		Reporter.setBrowserAppOS(strBrowserName);
 		login(driver);
 		HomeSteps homeSteps = new HomeSteps(driver);
 	    MyLearningSteps mLSteps = new MyLearningSteps(driver);
@@ -63,7 +62,6 @@ public class WebProductionTests extends FractalBaseWebTest {
 			+ "62: Verify  My Account Profile details, ")
    public void testMyAccountPage(String row, String strBrowserName) {
 	 driver = BrowserFactory.getBrowser(strBrowserName);
-		Reporter.setBrowserAppOS(strBrowserName);
 	 login(driver);
 	 AccountSteps accountSteps = new AccountSteps(driver);
 	 HomeSteps homeSteps = new HomeSteps(driver);

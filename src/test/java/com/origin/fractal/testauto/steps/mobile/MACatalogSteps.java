@@ -24,24 +24,6 @@ public class MACatalogSteps extends FractalBaseStep{
 			e.printStackTrace();
 		}
 	}
-	public void verifyContentText() {
-		result = "Passed";
-		try {
-			page.verifyContentText();
-		}catch(Exception e) {
-			result = "FAILED";
-			e.printStackTrace();
-		}
-	}
-	public void verifyCatalogIconText() {
-		result = "Passed";
-		try {
-			page.verifyCatalogIconText();
-		}catch(Exception e) {
-			result = "FAILED";
-			e.printStackTrace();
-		}
-	}
 	
 	public void verifyBuyPresence() {
 		result = "Passed";
@@ -173,63 +155,4 @@ public class MACatalogSteps extends FractalBaseStep{
 			e.printStackTrace();
 		}
 	}
-	public void verfiyContent() {
-		result = "Passed";
-		try {
-			page.verfiyContent();
-		}catch(Exception e) {
-			result = "FAILED";
-			e.printStackTrace();
-		}
-		
-	}
-
-	//Added by karpagavalli
-		public void retryBtn() {
-			result = "Passed";
-			try {
-				page.retryBtn();
-			}catch(Exception e) {
-				result = "FAILED";
-				e.printStackTrace();
-			}
-		}
-
-		public void tryAgain() {
-			result = "Passed";
-			try {
-				page.tryAgain();
-			}catch(Exception e) {
-				result = "FAILED";
-				e.printStackTrace();
-			}
-			
-		}
-
-		public void gotoCart() {
-			result = "Passed";
-			try {
-				page.gotoCart();
-			}catch(Exception e) {
-				result = "FAILED";
-				e.printStackTrace();
-			}
-		}
-
-		public void exploreCatalog() {
-			result = "Passed";
-			try {
-				page.exploreCatalog();
-			}catch(Exception e) {
-				result = "FAILED";
-				e.printStackTrace();
-			}
-		}
-
-		public void verifyCatalogItemName() {
-			page.verifyCatalogItemName();
-
-			
-		}
-		
 }

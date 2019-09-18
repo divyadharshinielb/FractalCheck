@@ -2,10 +2,12 @@ package com.origin.fractal.testauto.test.testsuites;
 
 import java.io.IOException;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.steps.ClassroomEventSteps;
+import com.origin.fractal.testauto.steps.ManageContentSteps;
 import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
@@ -78,6 +80,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
+	
 	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
 			+ "TCID_11: Verify whether the Venue drop-down is displayed after selecting Physical classroom"
