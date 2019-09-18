@@ -163,23 +163,23 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		homeSteps.clickOnMyLearning();
 		wait(5);
 	MyLearningSteps mLSteps = new MyLearningSteps(driver);
-   mLSteps.verifyClassroomDetails();
-   mLSteps.verifyCancelRegistrationBtn();//newui
-  Reporter.writeSummary("TC:6,Checking whether the cancel registration button are getting displayed on classroom asset, " +  mLSteps.getResult() );
-   mLSteps.verifyDetailsBtn();//newui
-  Reporter.writeSummary("TC:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
-   mLSteps.verifyAssignedClassroom();//newui
-  Reporter.writeSummary("TC:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
-   mLSteps.verifyEventDisplayClassroomObject();//newui
-   Reporter.writeSummary("TC:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
-   Reporter.writeSummary("TC:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
-   mLSteps.verifyTraditionalClassBtn();//newui
- Reporter.writeSummary("TC:10The traditional class events should be displayed when clicking traditional class., " +  mLSteps.getResult() );
-   mLSteps.verifyChooseEventBtn();//newui
- Reporter.writeSummary("TC:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
-   mLSteps.verifyEventRegistrationBtn();//newui
- Reporter.writeSummary("TC:13,the register button should be showing you are accepting the Terms & Conditions for this event by clicking on register.," +  mLSteps.getResult() );
-   mLSteps.verifyClassrooomLabels();//newui
- Reporter.writeSummary("TC:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
+	mLSteps.verifyClassroomDetails();
+	mLSteps.verifyCancelRegistrationBtn();//newui
+	Reporter.writeSummary("TC:6,Checking whether the cancel registration button are getting displayed on classroom asset, " +  mLSteps.getResult() );
+	mLSteps.verifyDetailsBtn();//newui
+	Reporter.writeSummary("TC:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
+	mLSteps.verifyAssignedClassroom();//newui
+	Reporter.writeSummary("TC:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
+	mLSteps.verifyEventDisplayClassroomObject();//newui
+	Reporter.writeSummary("TC:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
+	Reporter.writeSummary("TC:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
+	mLSteps.verifyTraditionalClassBtn();//newui
+	Reporter.writeSummary("TC:10The traditional class events should be displayed when clicking traditional class., " +  mLSteps.getResult() );
+	mLSteps.verifyChooseEventBtn();//newui
+	Reporter.writeSummary("TC:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
+	mLSteps.verifyEventRegistrationBtn();//newui
+	Reporter.writeSummary("TC:13,the register button should be showing you are accepting the Terms & Conditions for this event by clicking on register.," +  mLSteps.getResult() );
+	mLSteps.verifyClassrooomLabels();//newui
+	Reporter.writeSummary("TC:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
 }
 }
