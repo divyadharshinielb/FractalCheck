@@ -11,12 +11,11 @@
 	<!-- End of reportNg modification -->
 	<test thread-count="12" name="Test">
 		<classes>
-
 				 <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
-							<class
+				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" />  
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentAdmin" />
