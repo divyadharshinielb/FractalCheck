@@ -12,21 +12,15 @@
 	<test thread-count="12" name="Test">
 		<classes>
 				 <class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> 
+							<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
+									<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
+									<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
+				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" /> 
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" />  
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestContentAdmin" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
-                <class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
