@@ -7,9 +7,9 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class LoginPage extends FractalBasePage {
 
-	private By tbUserName = By.xpath(".//*[@name='uname']");
-	private By tbPassword = By.xpath(".//*[@name='userpassword']");
-	private By btnLogin = By.xpath("//button[@id='login_btn']");
+	private By tbUserName = By.xpath(".//input[@name='username']");//*[@name='uname']
+	private By tbPassword = By.xpath(".//input[@name='password']");//*[@name='userpassword']
+	private By btnLogin = By.xpath("//input[@type='submit']");//button[@id='login_btn']
 	private By btnLogin1 = By.xpath(".//button[@id='btn']");
 	private By logoSymbol = By.id("logo");
 	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
@@ -24,6 +24,7 @@ public class LoginPage extends FractalBasePage {
 	private By inValid = By.xpath(".//*[contains(text(),'Username/Password is incorrect')]");
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
+	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
 	
 	public LoginPage(WebDriver driver) {
@@ -36,7 +37,9 @@ public class LoginPage extends FractalBasePage {
 	public void doLogin() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
-		click(btnLogin1);
+		click(btnLogin);
+		wait(2);
+		click(btnCookies);
 		wait(5);
 	}
 	public void loginToContentAdmin() {
