@@ -1,5 +1,7 @@
 package com.origin.fractal.testauto.test.testsuites;
 
+import java.io.IOException;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,7 +15,7 @@ public class WebTestReportsAdmin extends FractalBaseWebTest{
 	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Verify whether a group name is present in the reports.")
 
-public void WebTestAdminReports(String row, String strBrowserName) {
+public void WebTestAdminReports(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		MenuSteps menuSteps = new MenuSteps(driver);

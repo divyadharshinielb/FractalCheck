@@ -1,5 +1,7 @@
 package com.origin.fractal.testauto.test.testsuites;
 
+import java.io.IOException;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
@@ -11,7 +13,7 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsVenueCreation extends FractalBaseWebTest {
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Venue creation")
-	public void ClassroomVenu(String row, String strBrowserName)  {
+	public void ClassroomVenu(String row, String strBrowserName) throws IOException  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		loginToContentAdmin(driver);
@@ -38,7 +40,7 @@ public class WebTestsVenueCreation extends FractalBaseWebTest {
 		Reporter.writeSummary("Venue_012,verify whether the admin is able to create a venue by clicking the SAVE button.," +  venueSteps.getResult() );	
 	}
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Venue creation")
-	public void invalidTests(String row, String strBrowserName)  {
+	public void invalidTests(String row, String strBrowserName) throws IOException  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		VenueSteps venueSteps = new VenueSteps(driver);

@@ -1,9 +1,12 @@
 package com.origin.fractal.testauto.test;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.origin.fractal.testauto.steps.AdminLoginSteps;
 import com.origin.fractal.testauto.steps.LoginSteps;
 
 
@@ -37,11 +40,11 @@ public class FractalBaseWebTest extends FractalBaseTest {
 		if(driver!=null)
 			driver.quit();
 	}
-	protected void loginToContentAdmin(WebDriver driver) {
+	protected void loginToContentAdmin(WebDriver driver) throws IOException {
 		print("Inside testLogin");
-		LoginSteps loginSteps = new LoginSteps(driver);
+		AdminLoginSteps adminloginSteps = new AdminLoginSteps(driver);
 		print("Inside testLogin - Page Opened");
-		loginSteps.loginToContentAdmin();
+		adminloginSteps.loginToContentAdmin();
 		wait(5);
 	}
 }
