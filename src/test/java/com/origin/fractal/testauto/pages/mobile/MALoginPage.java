@@ -33,7 +33,7 @@ public class MALoginPage extends FractalAppPage {
     private By lblTitle = By.id("com.originkonnect.app:id/action");
     private By noInternetlbl= By.id("com.originkonnect.app:id/nointernet");
     //Added by mahesh till here
-    private By pageTitle = By.id("com.originkonnect.app:id/action");//Added by Manju Priya A on Dec-27-18
+    private By pageTitle = By.id("\\com.originkonnect.app:id/action");//Added by Manju Priya A on Dec-27-18
     private By animSplashScreen = By.id("com.originkonnect.app:id/animation_view");//Added by Manju Priya A on Dec-31-18-copy id from my code
     private By clickAllow = By.xpath("");//Added by Manju Priya A on Jan_11_19 for ios
 

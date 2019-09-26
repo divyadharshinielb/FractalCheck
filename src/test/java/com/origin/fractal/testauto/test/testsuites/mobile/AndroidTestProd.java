@@ -81,7 +81,8 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		// What's New Screen MAWhatsNewSteps
 		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		wait(5);
-		mAWNS.clickLater();
+		//mAWNS.clickLater();
+		mASIS.selectFractal();
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
