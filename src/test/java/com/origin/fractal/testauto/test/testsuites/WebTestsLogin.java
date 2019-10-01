@@ -72,7 +72,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_075, Verify the function of  Search link , " +  loginSteps.getResult() );
 	}
 	//Added by Manju Priya A on Jan_21_19
-		@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "TCID_71: verification of Forgot Password Page"
+		@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "TCID_71: verification of Forgot Password Page"
 				+ "TCID_73: Verification of Forgot Password function")
 		public void forgotPassword(String row, String strBrowserName) {
 				driver = BrowserFactory.getBrowser(strBrowserName);

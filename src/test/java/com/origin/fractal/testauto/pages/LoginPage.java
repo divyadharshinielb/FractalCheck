@@ -9,14 +9,19 @@ public class LoginPage extends FractalBasePage {
 
 	private By tbUserName = By.xpath(".//input[@name='username']");//*[@name='uname']
 	private By tbPassword = By.xpath(".//input[@name='password']");//*[@name='userpassword']
-	private By btnLogin = By.xpath("//input[@type='submit']");//button[@id='login_btn']
-	private By btnLogin1 = By.xpath(".//button[@id='btn']");
+	private By btnLogin = By.xpath("//input[@class='w100 login_btn login']");//button[@id='login_btn']
+	private By btnLogin1 = By.xpath(".//input[@class='w100 login_btn login']");  //button[@id='btn']
 	private By logoSymbol = By.id("logo");
-	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
-	private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
-	private By logOutButton = By.xpath(".//a[@class='pointer padding-l-15']");
+	//edit by divya
+	//	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
+	//private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
+	//private By logOutButton = By.xpath(".//a[@class='pointer padding-l-15']");
+	private By rememberMe=By.xpath(".//label[@class='font-size-14']");
+	private By lblProfile = By.xpath(".//div[@class='jss36']//div//span[@class='jss4']");  //*[@id='dLabel']/span
+	private By logOutButton = By.xpath(".//li[contains(@class, 'jss29 jss95 jss98 jss103 jss104 jss92 jss93 popup-text padding-t-15 removelastspan')]");  //a[@class='pointer padding-l-15']
 	/***added on 08/02/19***/
-	private By registerButton = By.xpath("//a[@class='cursor-pointer text-uppercase']");
+	//edited by divya on 23rd sept 2019
+	private By registerButton = By.xpath("//a[contains(@class, 'reg_btn font-size-18 reg')]");  //a[@class='cursor-pointer text-uppercase']
 	/***here**/
 	private By resigstrationPage = By.xpath(".//*[contains(text(), 'I want to register as')]");
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
@@ -25,7 +30,10 @@ public class LoginPage extends FractalBasePage {
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
-	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
+	//edit by divya 
+	// 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
+
+	private By searchLink = By.xpath(".//input[contains(@id, 'theInput')]"); //ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -67,7 +75,7 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 		click(rememberMe);
 		wait(10);
-		click(btnLogin1);
+		click(btnLogin);
 		wait(10);
 		click(lblProfile);
 		wait(10);
@@ -75,7 +83,9 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 		click(rememberMe);
 		wait(5);
-		click(btnLogin);
+		//edit by divya
+		// click(btnLogin);
+		click(btnLogin1);
 		wait(10);
 		click(lblProfile);
 		wait(10);
