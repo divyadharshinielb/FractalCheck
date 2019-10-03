@@ -226,7 +226,7 @@ public class MyLearningPage extends FractalBasePage {
 	/*End - Moved from FractalBasePage by Manju Priya A on Nov-29-18*/
 	private By clickClassroomCatalog=By.xpath(".//a[contains(text(),'Automation Learningpath')]");
 	private By globalSearch=By.xpath(".//input[@id='theInput']");
-	private By lbldetails=By.xpath("//div[@class='pl-10 brd-l padding-l-25 margin-l-30']//button[@class='detail_btn'][contains(text(),'Details')]");//div[5]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[contains(text(),'Details')]
+	private By lbldetails=By.xpath("//div[4]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[1]");//div[5]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[contains(text(),'Details')]
 	private By classroomlblDate=By.xpath("//p[contains(@class,'timebox-li margin-b-7')]");
 	private By classroomlblTime=By.xpath("//div[contains(@class,'margin-t-0')]//p[2]");
     private By classroomlblLocation=By.xpath("//div[contains(@class,'display-box')]");
