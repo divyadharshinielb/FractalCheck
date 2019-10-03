@@ -24,7 +24,7 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
 		};
 	}
 	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
-	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
+	public void testVerifyClassroomCreation(String row, String strBrowserName) throws IOException {
 	
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
@@ -52,8 +52,8 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
         Reporter.writeSummary("TCID_CLASS_028, Verify whether the Admin must be able to view the created CLASSROOM information," +  cSteps.getResult() );
 	}
         
-		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = true,description="")
-    	public void testClassroomCreation1(String row, String strBrowserName) throws IOException {
+		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = false,description="")
+    	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
     	
     		driver = BrowserFactory.getBrowser(strBrowserName);
     		loginToContentAdmin(driver);
