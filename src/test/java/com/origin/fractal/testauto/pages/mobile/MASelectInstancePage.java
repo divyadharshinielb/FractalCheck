@@ -64,10 +64,12 @@ public class MASelectInstancePage extends FractalAppPage {
 	
 	public void selectFractalDemo() {
 		wait(3);
-		click(getObj(insFractalDemo));
-		
+		click(getObj(insFractalDemo));	
 	}
-
+	public void selectCogscale() {
+		wait(3);
+		click(getObj(insCogScale));
+	}
 	public void verifyInstances() {
 		elementExist(insFractal);
 		elementExist(insFractalDemo);

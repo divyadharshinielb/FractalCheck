@@ -7,9 +7,10 @@
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="verifyMenuPage"/>
+          <include name="verifHomePage"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
+          <include name="verifySplashScreen"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
           <include name="afterMethod"/>

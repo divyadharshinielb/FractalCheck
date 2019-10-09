@@ -56,4 +56,15 @@ public class MASelectInstanceSteps extends FractalBaseStep{
 			e.printStackTrace();
 		}
 	}
+
+	public void selectCogscale() {
+		result = "Passed";
+		try{
+			page.selectCogscale();
+		}catch(Exception e){
+			result = "FAILED";
+			e.printStackTrace();
+		}
+		
+	}
 }
