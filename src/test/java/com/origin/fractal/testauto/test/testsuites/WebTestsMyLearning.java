@@ -1,5 +1,6 @@
 package com.origin.fractal.testauto.test.testsuites;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -155,6 +156,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description ="")
 	public void testMyLearningPageClassroom(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		login(driver);
 
 		// Test moves to Home page
@@ -182,3 +184,4 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 	Reporter.writeSummary("TC:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
 }
 }
+
