@@ -42,7 +42,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By lblTick = By.xpath(".//button[@class='pl-30 launch_btn www']//img");//round-progress-wrapper
 	private By lblCompleted = By.xpath("//li[contains(text(),'COMPLETED')]");
 
-	private By lblCategory = By.xpath(".//a[contains(text(),'Categories')]");//a[contains(text(),'CATEGORIES')]
+	private By lblCategory = By.xpath(".//a[contains(text(),'CATEGORIES')]");//a[contains(text(),'CATEGORIES')]
    
 	private String categoryList = "../html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]//div//ul//li";//*[@id='header']/*//button[contains(text(),'Category')]/../../div/ul/li
     
@@ -191,6 +191,7 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyBundleContents() {
+		
 		click(lblBundles);
 		wait(5);
 		click(clickCatalog);
