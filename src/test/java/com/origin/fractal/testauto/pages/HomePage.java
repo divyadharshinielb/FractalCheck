@@ -13,7 +13,7 @@ public class HomePage extends FractalBasePage {
 	 /*******new ui***************/
 	private By lblRcntAdded = By.xpath(".//div[@class='whats_title']");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Recently Added')]
 	private By lblPoplr = By.xpath(".//div[contains(text(),'Popular content')]");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Recommended')]
-	private By lblRecommended = By.xpath(".//div[contains(text(),'Recommended for you')]");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Most Popular')]
+	private By lblRecommended = By.xpath(".//div[contains(text(),'Recommended for You')]");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Most Popular')]
 	/***************/
 	
 	private By lblCLAll = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'All')]");
@@ -68,7 +68,7 @@ public class HomePage extends FractalBasePage {
     private String mostboxCatType ="]/*//p";
     
     /*******new ui***************/
-    private By lblCategory = By.xpath("//li//a[contains(text(),'Categories')]");
+    private By lblCategory = By.xpath("//li//a[contains(text(),'CATEGORIES')]");
     private By txtBoxSearch = By.xpath("//input[@id='theInput']");
     private By iconWishlist = By.xpath(".//div[@class='log_wishlist']");
     private By iconCart = By.xpath(".//div[@class='log_cart']");
@@ -97,9 +97,9 @@ public class HomePage extends FractalBasePage {
 	private By privacyLink = By.xpath(".//a[contains(text(),'Privacy')]");
 	private By termsLink = By.xpath(".//footer[@id='footer']//a[2]");//a[contains(text(),'| Terms')]
 	private By contactsLink = By.xpath(".//footer[@id='footer']//a[3]");//a[contains(text(),'| Contact')]
-	private By privacyPage = By.xpath(".//span[contains(text(),'Copyright ©')]");//span[contains(text(),'PRIVACY POLICY')]
+	private By privacyPage = By.xpath(".//span[contains(text(),'PRIVACY POLICY')]");//span[contains(text(),'PRIVACY POLICY')]
 	private By termsPage = By.xpath(".//span[contains(text(),'Terms & Conditions')]");//span[contains(text(),'TERMS & CONDITIONS')]
-	private By contactsPage = By.xpath(".//span[contains(text(),'success')]");//span[contains(text(),'CONTACT US')]
+	private By contactsPage = By.xpath(".//span[contains(text(),'contact us')]");//span[contains(text(),'CONTACT US')]
 	/************************/
 	MyLearningPage myLearning = new MyLearningPage(driver);
 
