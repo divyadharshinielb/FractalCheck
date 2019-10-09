@@ -32,7 +32,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		HomeSteps homeSteps = new HomeSteps(driver);
 		//TCID_37:Checking whether the dash board contains the heading Learning in Progress
 		homeSteps.verifyResumeLearningText();//newui
-		Reporter.writeSummary("TCID_037,  Verify  whether the dash board contains the heading Learning in Progress, " +  homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_037,  Verify  whether the dash board contains the heading Learning in Progress, " +  homeSteps.getResult() );
 		//TCID_40:Checking whether the button Continue is displayed under the heading Learning in Progress
 /*      homeSteps.verifyComplStatus();
 		Reporter.writeSummary("TCID_039,  whether the coverage percentage is shown with the text completed under Percentage, " +  homeSteps.getResult() );
@@ -41,13 +41,13 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_033,  Verify  The coverage percentage is shown with the text Coverage, " + homeSteps.getResult() );
 		//TCID_41: Verify Continue Text are displayed
 */		homeSteps.verifyContinueText();//newui
-		Reporter.writeSummary("TCID_041,  Verify Continue Text are displayed, " + homeSteps.getResult() );
-		Reporter.writeSummary("TCID_040,  Verify  whether the button Continue is displayed under the heading Learning in Progress, " +  homeSteps.getResult() );
-		Reporter.writeSummary("TCID_032,  Verify  whether the button Continue is present for the text Learning in progress,"+ homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_041,  Verify Continue Text are displayed, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_040,  Verify  whether the button Continue is displayed under the heading Learning in Progress, " +  homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_032,  Verify  whether the button Continue is present for the text Learning in progress,"+ homeSteps.getResult() );
 		homeSteps.clickContinueBtnRetToHome();//newui
 		//TCID_02: Verify  to My Home page data
 		homeSteps.verifyHomePageData();//newui
-		Reporter.writeSummary("TCID_ 002,  Verify  to My Home page data, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_ 002,  Verify  to My Home page data, " + homeSteps.getResult() );
 		//TCID_09:Verify progress of learning item in Home
 /*		homeSteps.verifyLearningInprogress();
 		Reporter.writeSummary("TCID_009, Verify progress of learning item in Home, " + homeSteps.getResult() );
@@ -56,18 +56,18 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_010,  Verify My Learning page details on clicking from Home Page, " + homeSteps.getResult() );
 */   	//TCID_13:Verification of View all page labels
 		homeSteps.verifyViewAllPage(); //newui
-		Reporter.writeSummary("TCID_013, Verification of View all page labels, " + homeSteps.getResult() );
-		Reporter.writeSummary("TCID_035, Verify whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_013, Verification of View all page labels, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_035, Verify whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
 		//TCID_34:Verify Privacy, Terms and Contact links
 		homeSteps.verifyFooterLinks();//newui
-		Reporter.writeSummary("TCID_034, Verify Privacy Terms and Contact links, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_034, Verify Privacy Terms and Contact links, " + homeSteps.getResult() );
 		//TCID_60:The page should be moving upwards when ^ button is clicked
 		homeSteps.verifyTopArrBtn();//newui
-		Reporter.writeSummary("TCID_060, The page should be moving upwards when ^ button is clicked, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_060, The page should be moving upwards when ^ button is clicked, " + homeSteps.getResult() );
 		//Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon. 
 		homeSteps.verifyBellNotification();//newui
-		Reporter.writeSummary("TCID_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
-		Reporter.writeSummary("TCID_070, Verify whether All the Notifications are getting listed on clicking the All tab, " + homeSteps.getResult() ); 
+		Reporter.writeSummary("TCID_HOME_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_070, Verify whether All the Notifications are getting listed on clicking the All tab, " + homeSteps.getResult() ); 
 		homeSteps.clickLogout();//newui
 	
 	}
@@ -82,10 +82,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 //		homeSteps.verifyNavTORcntAddedCoursesRtnToHome();
 		//TCID_31: Verify navigation to Home page
 		homeSteps.verifySubHeaders();//newui
-		Reporter.writeSummary("TCID_031,  Verify navigation to Home page, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_031,  Verify navigation to Home page, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of "^" symbol
 //		homeSteps.verifyTopArrBtn();//newui
-		Reporter.writeSummary("TCID_015,  Verify the functionality of ^ > < symbol, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_015,  Verify the functionality of ^ > < symbol, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of ">" symbol
 		homeSteps.verifyNextBtn();//newui
 	//	Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +  result );
@@ -97,16 +97,16 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_043,  Verify  Recently Added courses displayed, " + homeSteps.getResult() );
 */		//TCID_80:Verify the function of  Wish list icon
 		homeSteps.verifyWishListBtn();//newui
-		Reporter.writeSummary("TCID_080, Verify the function of  Wish list icon, " +  homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_080, Verify the function of  Wish list icon, " +  homeSteps.getResult() );
 		//TCID_79:Verify the function of  Cart  icon
 		homeSteps.verifyCartItemBtn();//newui
-		Reporter.writeSummary("TCID_079,  Verify the function of  Cart  icon, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_079,  Verify the function of  Cart  icon, " + homeSteps.getResult() );
 		//TCID_3:Verify My Learning page is displayed after logging to app.
 		homeSteps.verifyMyLearningPage();//newui
-		Reporter.writeSummary("TCID_003,  Verify My Learning page is displayed after logging to app, " +  homeSteps.getResult());
+		Reporter.writeSummary("TCID_HOME_003,  Verify My Learning page is displayed after logging to app, " +  homeSteps.getResult());
 		//Verify LogoImage is displayed after logging to app
 		homeSteps.verifyLogoImg();//newui
-		Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());
+		Reporter.writeSummary("TCID_HOME_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());
 		homeSteps.clickLogout(); 
 
 	}
@@ -121,27 +121,27 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 		HomeSteps homeSteps = new HomeSteps(driver);
         homeSteps.firstTwoCatalogItemsTitleCompare();//newui
-		Reporter.writeSummary("TCID_055, Checking whether two catalog items displayed in whats new section matches with the first 2 items in the Most popular content section, " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_055, Checking whether two catalog items displayed in whats new section matches with the first 2 items in the Most popular content section, " +   homeSteps.getResult() );
 		//Verify the function of  Recently Added section attributes 
 		homeSteps.whatsNewSectionAttributes();//newui
-		Reporter.writeSummary("TCID_082,  Verify the function of  Recently Added section attributes , " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_082,  Verify the function of  Recently Added section attributes , " +   homeSteps.getResult() );
 		// rep.report(strTCID, Severity, Module, strTCDesc, strResult);TCID_33:Checking whether the coverage percentage is shown with the text \"Coverage\"
 		//TCID_42:The data should be shown under the topic Recently Added when All is clicked
 		homeSteps.verifyAllFilterWhatsNew();//newui
-		Reporter.writeSummary("TCID_042,  Verify The data should be shown under the topic Recently Added when All is clicked, " +   homeSteps.getResult() );
-		Reporter.writeSummary("TCID_057,  Verify whether Content Bundle Course Video and Learning path are shown  under Recently Added when All link is clicked, " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_042,  Verify The data should be shown under the topic Recently Added when All is clicked, " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_057,  Verify whether Content Bundle Course Video and Learning path are shown  under Recently Added when All link is clicked, " +   homeSteps.getResult() );
 		//TCID_43:The Bundles should be shown under the topic Recently Added when the link Bundles is clicked
 		homeSteps.verifyCourseFilterWhatsNew();//newui
-		Reporter.writeSummary("TCID_045,  Verify  The courses should be shown under the topic Recently Added when the link courses is clicked, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_045,  Verify  The courses should be shown under the topic Recently Added when the link courses is clicked, " + homeSteps.getResult() );
 		//TCID_46:The resources should be shown under the topic Recently Added when the link resources is clicked
 		homeSteps.verifyBundleFilterWhatsNew();//newui
-		Reporter.writeSummary("TCID_043,  Verify  The Bundles should be shown under the topic Recently Added when the link Bundles is clicked, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_043,  Verify  The Bundles should be shown under the topic Recently Added when the link Bundles is clicked, " + homeSteps.getResult() );
 		//TCID_45:The courses should be shown under the topic Recently Added when the link courses is clicked
 		homeSteps.verifyResourceFilterWhatsNew();//newui
-		Reporter.writeSummary("TCID_046,  Verify The resources should be shown under the topic Recently Added when the link resources is clicked, " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_046,  Verify The resources should be shown under the topic Recently Added when the link resources is clicked, " +   homeSteps.getResult() );
     	//TCID_44:The Learning paths should be shown under the topic Recently Added when the link Learning paths is clicked
 		homeSteps.verifyLearnPathFilterWhatsNew();//newui
-		Reporter.writeSummary("TCID_044,  Verify The Learning paths should be shown under the topic Recently Added when the link Learning paths is clicked, " +   homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_044,  Verify The Learning paths should be shown under the topic Recently Added when the link Learning paths is clicked, " +   homeSteps.getResult() );
 		//TCID_47:The data should be shown under the topic Recommended content when All is clicked
 /*		homeSteps.verifyAllFilterRecommAdded();
 		Reporter.writeSummary("TCID_047,  Verify The data should be shown under the topic Recommended content when All is clicked, " +   homeSteps.getResult() );
