@@ -1,6 +1,1 @@
 "Browser/App"," Environment"," TCID"," TEST DESCRIPTION"," TEST RESULT ","TIME TAKEN(SEC)","TIME STAMP"
-"chrome","Automation","TCID_024","Verify the UI of the login page"," Passed","11","Tue Oct 01 20:55:53 IST 2019"
-"chrome","Automation","TCID_028"," Verify the login page with valid username and valid password."," Passed","0","Tue Oct 01 20:55:53 IST 2019"
-"chrome","Automation","TCID_029"," Verify whether the User name and Password are mandatory fields for login screen"," Passed","0","Tue Oct 01 20:55:53 IST 2019"
-"chrome","Automation","TCID_038"," Verify the login page with invalid user name and invalid password"," Passed","35","Tue Oct 01 20:56:29 IST 2019"
-"chrome","Automation","TCID_072","  Verify the Remember me function"," FAILED","20","Tue Oct 01 20:56:49 IST 2019"
