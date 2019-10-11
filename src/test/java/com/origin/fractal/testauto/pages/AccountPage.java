@@ -33,9 +33,9 @@ public class AccountPage extends FractalBasePage {
 	private By lNameError = By.id("errLastName");
 	private By lNameErrorOnlyLetters = By.id("errLastNameMinLetters");
 	
-	private By fNameErrMsg = By.xpath(".//div[contains(text(),'First name cannot be blank.')]");
-	private By lNameErrMsg = By.xpath(".//div[contains(text(),'Last Name cannot be blank.')]");
-	private By lNewPass = By.xpath(".//div[contains(text(),'Password must contain 8 characters, including one')]");
+	private By fNameErrMsg = By.xpath(".//div[contains(text(),'First name field should not be empty.')]");
+	private By lNameErrMsg = By.xpath(".//div[contains(text(),'Last name should not be empty.')]");
+	private By lNewPass = By.xpath(".//div[contains(text(),'Your password must be minimum 8 characters or long')]");
 	private By changePassword =By.xpath(".//input[@name='password']");
 	private By oldPassword= By.xpath(".//input[contains(@name,'oldpassword')]");
 	private By confirmPassword = By.xpath(".//input[@id='pass']");
@@ -159,11 +159,13 @@ public class AccountPage extends FractalBasePage {
 		wait(5);
 		click(saveButton);
 		wait(5);
-		WebElement element = driver.findElement(By.xpath(".//div[contains(@class,'myaccount-text padding-30 mt-3')]")); 
+		WebElement element = driver.findElement(By.xpath(".//img[@class='logout-height']")); 
 		Actions actions = new Actions(driver); 
 		actions.moveToElement(element);
 		actions.perform();
+		wait(2);
 		click(lblProfile);
+		wait(2);
 		click(logOutButton);	
 	}
 	public void afterChangePassword() {
