@@ -43,7 +43,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By timezoneDropdown = By.xpath(".//form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[4]/div[1]/md-input-container[1]/div[1]/span[1]");
 	private By selectTimezone = By.xpath(".//li[contains(text(),'EET Eastern European Time (GMT+2:00)')]");
 	private By inpAvgScore = By.xpath(".//input[contains(@name,'avg_score')]");
-	private By lblAssignment = By.id("pre_assignment_title");
+	private By lblAssignment = By.xpath("//h4[@id='pre_assignment_title']");//pre_assignment_title
+	private By lblAddAssignment = By.xpath("//button[@id='pre_addAssignment']");
 	private By lblPassScore = By.xpath(".//span[contains(text(),'Pass score')]");//span[contains(text(),'Pass score')]/../../p[1]
 	private By lblMaxScore = By.xpath(".//span[contains(text(),'Max score')]");//span[contains(text(),'Max score:')]/../../p[1]
 	private By lblReleaseDate = By.xpath(".//span[contains(text(),'Release Date')]");
@@ -76,6 +77,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblPostAssessSocreOutOf = By.xpath("//h4[@id='postassignment_title']/../../*//span[contains(text(),'Max score')]");
 	private By postAssignReleaseDate = By.xpath("//h4[@id='postassignment_title']/../../*//span[contains(text(),'Release Date')]");
 	private By postAssignSunDueDate = By.xpath("//h4[@id='postassignment_title']/../../*//span[contains(text(),'Submission Due Date')]");
+	private By postlblAddAssignmentBtn = By.xpath("//h4[@id='postassignment_title']");
 	private By postAddAssignmentBtn = By.xpath("//button[@id='post_addAssignment']");//post_addAssignment
 	private By inpPostAssignTitle = By.xpath("//h4[@id='postassignment_title']/../../*//input[contains(@name,'post_event_assignment_title')]");
 	private By inpPostAssignDesc = By.xpath(".//h4[@id='postassignment_title']/../../*//label[contains(text(),'Assignment Description')]");
@@ -267,7 +269,11 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyAssignDetailsDisplayed() {
 	click(btnAddEvent);
+	wait(2);
 	click(lblAssignment);
+	wait(2);
+	click(lblAddAssignment);
+	wait(2);
 	verifyText("Pass score",lblPassScore);
 	verifyText("Max score",lblMaxScore);
 	verifyText("Release Date",lblReleaseDate);
@@ -349,6 +355,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Add Assignment", postAddAssignmentBtn);
 	}
 	public void verifyPostAddAssignmentDetails() {
+		wait(2);
+	click(postlblAddAssignmentBtn);
 	wait(2);
 	click(postAddAssignmentBtn);
 	wait(5);
