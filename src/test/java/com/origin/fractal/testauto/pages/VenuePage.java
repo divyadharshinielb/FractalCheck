@@ -40,7 +40,7 @@ public class VenuePage extends FractalBasePage{
 	private By updateBtn = By.xpath(".//button[contains(@class,'btn btn-default md-raised')]");
 	private By backToList = By.xpath(".//button[@class='btn btn-default btn_radius md-raised text-uppercase']");
 	private By editCity = By.xpath(".//span[@class='current'][contains(text(),'Chennai')]");
-	private By deleteBtn = By.xpath(".//span[contains(text(),'OK')]");
+	private By deleteBtn = By.xpath(".//button//span[contains(text(),'Cancel')]");//span[contains(text(),'OK')]
 	
 	public VenuePage(WebDriver driver) {	
 		super(driver);	
@@ -147,14 +147,14 @@ public class VenuePage extends FractalBasePage{
 		enterData("Automation Sample",searchIcon);
 	}
 	public void editVenue() {
-		enterData("Automation Sample",searchIcon);
+		enterData("Automation Venue",searchIcon);
 		wait(10);
 		click(editIcon);
 		wait(5);
 		click(editCity);
 		wait(5);
 		click(selectBangalore);
-		click(updateBtn);
+	//	click(updateBtn);
 		click(backToList);
 	}
 	public void deleteVenue() {
