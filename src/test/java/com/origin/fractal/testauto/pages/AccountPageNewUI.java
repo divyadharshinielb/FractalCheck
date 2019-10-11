@@ -9,16 +9,16 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class AccountPageNewUI  extends FractalBasePage{
 	
-	private By lblMyAccountHdr = By.xpath("//div[contains(text(),'MY ACCOUNT')]");
+	private By lblMyAccountHdr = By.xpath(".//div[contains(text(),'My Account')]");
 	private By lblProfileTitle = By.xpath("//div[contains(text(),'MY PROFILE')]");
-	private By lblEmailAddr = By.xpath(".//h3[@class='padding-b-10']");
-	private By lblFirstName = By.xpath(".//h3[contains(text(),'First Name*')]");
-	private By lblLastName = By.xpath(".//h3[contains(text(),'Last Name *')]");
-	private By lblPhone = By.xpath(".//h3[contains(text(),'Phone *')]");
+	private By lblEmailAddr = By.xpath(".//h3[contains(text(),'Email address:')]");//edited bu Dhanushiya
+	private By lblFirstName = By.xpath(".//h3[contains(text(),'First name')]");//edited bu Dhanushiya
+	private By lblLastName = By.xpath(".//h3[contains(text(),'Last Name')]");//edited bu Dhanushiya
+	private By lblPhone = By.xpath(".//h3[contains(text(),'Phone')]");//edited bu Dhanushiya
 	private By lblChgPass = By.xpath("//div[contains(text(),'CHANGE PASSWORD')]");
-	private By lblOldPass = By.xpath(".//h3[contains(text(),'Old Password *')]");
-	private By lblNewPass = By.xpath(".//h3[contains(text(),'New Password *')]");
-	private By lblconfrmPass = By.xpath(".//h3[contains(text(),'Confirm Password *')]");
+	private By lblOldPass = By.xpath(".//h3[contains(text(),'Old password')]");
+	private By lblNewPass = By.xpath(".//h3[contains(text(),'New password')]");
+	private By lblconfrmPass = By.xpath(".//h3[contains(text(),'Confirm password')]");
 	
 	private By inpEmail = By.xpath(".//input[@name='email']");
 	private By inpFName = By.xpath(".//input[@name='firstname']");
@@ -52,7 +52,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 		verifyLabel("lblProfileTitle",lblProfileTitle);
 		verifyLabel("lblEmailAddr",lblEmailAddr);
 		verifyLabel("lblFirstName",lblFirstName);
-		verifyLabel("lblLastName",lblLastName);
+		//verifyLabel("lblLastName",lblLastName);
 		verifyLabel("lblPhone",lblPhone);
 		verifyLabel("lblOldPass",lblOldPass);
 		
