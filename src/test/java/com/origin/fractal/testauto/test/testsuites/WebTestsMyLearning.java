@@ -146,12 +146,12 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_MY_LEARN__018,Verify course Details after clicking, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
 		//TCID_23:verify Launch learning object launch
-//		mLSteps.verifyLaunch();
+/*		mLSteps.verifyLaunch();
 		Reporter.writeSummary("TCID_MY_LEARN__023,verify Launch learning object launch , " +  mLSteps.getResult() );
 		//TCID_27:Verify the top arrow button
-//		mLSteps.verifyTopArrowBtn();
+		mLSteps.verifyTopArrowBtn();
 		Reporter.writeSummary("TCID_MY_LEARN__027,Checking whether the page is moving upwards when ^ button is clicked , " +  mLSteps.getResult() );
-		mLSteps.clickLogout();
+*/		mLSteps.clickLogout();
 	}
 	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description ="")
 	public void testMyLearningPageClassroom(String row, String strBrowserName) {
@@ -174,9 +174,9 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 	mLSteps.verifyEventDisplayClassroomObject();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
 	Reporter.writeSummary("TC_MY_LEARN_:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
-//	mLSteps.verifyTraditionalClassBtn();//newui
+/*	mLSteps.verifyTraditionalClassBtn();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:10,The traditional class events should be displayed when clicking traditional class., " +  mLSteps.getResult() );
-	mLSteps.verifyChooseEventBtn();//newui
+*/	mLSteps.verifyChooseEventBtn();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
 	mLSteps.verifyEventRegistrationBtn();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:13,the register button should be showing you are accepting the Terms & Conditions for this event by clicking on register.," +  mLSteps.getResult() );
