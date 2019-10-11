@@ -44,8 +44,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By selectTimezone = By.xpath(".//li[contains(text(),'EET Eastern European Time (GMT+2:00)')]");
 	private By inpAvgScore = By.xpath(".//input[contains(@name,'avg_score')]");
 	private By lblAssignment = By.id("pre_assignment_title");
-	private By lblPassScore = By.xpath(".//span[contains(text(),'Pass score')]/../../p[1]");
-	private By lblMaxScore = By.xpath(".//span[contains(text(),'Max score:')]/../../p[1]");
+	private By lblPassScore = By.xpath(".//span[contains(text(),'Pass score')]");//span[contains(text(),'Pass score')]/../../p[1]
+	private By lblMaxScore = By.xpath(".//span[contains(text(),'Max score')]");//span[contains(text(),'Max score:')]/../../p[1]
 	private By lblReleaseDate = By.xpath(".//span[contains(text(),'Release Date')]");
 	private By lblSubmissionDueDate = By.xpath(".//span[contains(text(),'Submission Due Date')]");
 	private By lblEvalDueDate = By.xpath(".//span[contains(text(),'Evaluation Due Date')]");
@@ -198,6 +198,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void verifyPhysicalClassroomDropdown() {
 	click(btnAddEvent);
 	click(lblTraditionalClassroom);
+	wait(2);
 	verifyText("Select Venue",venueDropdown);
 	}
 	public void verifyVirtualClassroomDropdown() {
@@ -267,8 +268,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void verifyAssignDetailsDisplayed() {
 	click(btnAddEvent);
 	click(lblAssignment);
-	verifyText("Pass score: 50%",lblPassScore);
-	verifyText("Max score: 100",lblMaxScore);
+	verifyText("Pass score",lblPassScore);
+	verifyText("Max score",lblMaxScore);
 	verifyText("Release Date",lblReleaseDate);
 	verifyText("Submission Due Date",lblSubmissionDueDate);
 	verifyText("Evaluation Due Date",lblEvalDueDate);
