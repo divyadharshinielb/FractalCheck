@@ -95,7 +95,7 @@ public class MAMenuOptionsPage extends FractalAppPage {
 		wait(3);
 		//verifyChangeInsMenu();
 		verifyMyLearningMenu();
-		wait(3);
+		wait(5);
 		verifycatalogMenu();
 		wait(3);
 		verifyMyAccMenu();
@@ -119,13 +119,19 @@ public class MAMenuOptionsPage extends FractalAppPage {
 		click(insFractalDemo);
 	}
 	public void verifyMyLearningMenu() {
+		wait(3);
 		click(btnMenu);
+		wait(3);
 		click(btnMyLearning);
+		wait(3);
 		verifyMenuPage("MY LEARNING",lblTitle);
 	}
 	public void verifycatalogMenu() {
+		wait(3);
 		click(btnMenu);
+		wait(5);
 		click(btnCatalog);
+		wait(5);
 		verifyMenuPage("CATALOG",lblTitle);
 	}
 	public void verifyLogoutMenu() {
