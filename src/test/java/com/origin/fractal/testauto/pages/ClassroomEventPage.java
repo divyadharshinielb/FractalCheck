@@ -205,6 +205,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyVirtualClassroomDropdown() {
 	click(lblVirtualClassroom);
+	wait(2);
 	verifyText("select Link",linkDropdown);
 	}
 	public void verifyVenueDropdownAlertDisappears() {
