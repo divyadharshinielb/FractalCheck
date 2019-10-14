@@ -21,7 +21,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -72,7 +72,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			description = "TC_nnnn Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
 	public void testHomePageVerifyRcntAddedCourseNavigation(String row, String strBrowserName) {
@@ -143,7 +143,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyLearnPathFilterWhatsNew();//newui
 		Reporter.writeSummary("TCID_HOME_044,  Verify The Learning paths should be shown under the topic Recently Added when the link Learning paths is clicked, " +   homeSteps.getResult() );
 		//TCID_47:The data should be shown under the topic Recommended content when All is clicked
-/*		homeSteps.verifyAllFilterRecommAdded();
+   /*	homeSteps.verifyAllFilterRecommAdded();
 		Reporter.writeSummary("TCID_047,  Verify The data should be shown under the topic Recommended content when All is clicked, " +   homeSteps.getResult() );
 		//TCID_50:The courses should be shown under the topic Recommended content when the link courses is clicked
 		homeSteps.verifyCourseFilterRecommAdded();

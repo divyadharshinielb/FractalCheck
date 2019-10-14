@@ -305,10 +305,10 @@ public class MyLearningPage extends FractalBasePage {
 			//  verifyText("Post-event Activities",lblPosteventActivities);
 			  verifyText("Terms & Conditions",lblTermsCondition);
 			  
-			  click(btnCancelRegistration);
+		/*	  click(btnCancelRegistration);
 			  verifyText("Are you sure you want to cancel your registration?",registrationCancelText);
 			  click(btnNO);
-			  wait(2);
+		*/	  wait(2);
 			  click(breadcrumLink);
 			  scrollBar();
 			  wait(5);

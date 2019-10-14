@@ -165,9 +165,9 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		wait(5);
 	MyLearningSteps mLSteps = new MyLearningSteps(driver);
 	mLSteps.verifyClassroomDetails();
-	mLSteps.verifyCancelRegistrationBtn();//newui
+/*	mLSteps.verifyCancelRegistrationBtn();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:6,Checking whether the cancel registration button are getting displayed on classroom asset, " +  mLSteps.getResult() );
-	mLSteps.verifyDetailsBtn();//newui
+*/	mLSteps.verifyDetailsBtn();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
 	mLSteps.verifyAssignedClassroom();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
@@ -178,9 +178,9 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 	Reporter.writeSummary("TC_MY_LEARN_:10,The traditional class events should be displayed when clicking traditional class., " +  mLSteps.getResult() );
 */	mLSteps.verifyChooseEventBtn();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
-	mLSteps.verifyEventRegistrationBtn();//newui
+/*	mLSteps.verifyEventRegistrationBtn();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:13,the register button should be showing you are accepting the Terms & Conditions for this event by clicking on register.," +  mLSteps.getResult() );
-	mLSteps.verifyClassrooomLabels();//newui
+*/	mLSteps.verifyClassrooomLabels();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
 }
 }

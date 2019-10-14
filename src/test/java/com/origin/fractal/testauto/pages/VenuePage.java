@@ -147,6 +147,7 @@ public class VenuePage extends FractalBasePage{
 		enterData("Automation Sample",searchIcon);
 	}
 	public void editVenue() {
+		wait(5);
 		enterData("Automation Venue",searchIcon);
 		wait(10);
 		click(editIcon);
@@ -158,7 +159,8 @@ public class VenuePage extends FractalBasePage{
 		click(backToList);
 	}
 	public void deleteVenue() {
-		enterData("Automation Sample",searchIcon);
+		wait(5);
+		enterData("Automation Venue",searchIcon);
 		wait(10);
 		click(deleteIcon);
 		click(deleteBtn);
