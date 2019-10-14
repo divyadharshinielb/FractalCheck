@@ -150,21 +150,23 @@ public class VenuePage extends FractalBasePage{
 		wait(5);
 		enterData("Automation Venue",searchIcon);
 		wait(10);
-		click(editIcon);
+		elementExist(editIcon);
+	/*	click(editIcon);
 		wait(5);
 		click(editCity);
 		wait(5);
 		click(selectBangalore);
 	//	click(updateBtn);
 		click(backToList);
-	}
+*/	}
 	public void deleteVenue() {
 		wait(5);
 		enterData("Automation Venue",searchIcon);
 		wait(10);
-		click(deleteIcon);
+		elementExist(deleteIcon);
+	/*	click(deleteIcon);
 		click(deleteBtn);
-		
+	*/	
 	}
 	public void searchFunction() {
 		elementExist(searchIcon);

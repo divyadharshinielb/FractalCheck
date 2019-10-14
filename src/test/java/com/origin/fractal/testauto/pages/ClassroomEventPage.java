@@ -356,9 +356,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Add Assignment", postAddAssignmentBtn);
 	}
 	public void verifyPostAddAssignmentDetails() {
-		wait(2);
+	wait(2);	
 	click(postlblAddAssignmentBtn);
-	wait(2);
+	wait(5);
 	click(postAddAssignmentBtn);
 	wait(5);
 	verifyText("Assignment Title",getAttributeValue(inpPostAssignTitle));
