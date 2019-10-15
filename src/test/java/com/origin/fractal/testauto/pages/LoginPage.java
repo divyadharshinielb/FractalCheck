@@ -38,7 +38,7 @@ public class LoginPage extends FractalBasePage {
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://automation-origin.originfractal.com/"; //https://automation-origin.originfractal.com/#/login
+		String baseUrl = "https://qadev.originfractal.com"; //https://automation-origin.originfractal.com/#/login
 		goTo(baseUrl);
 		
 	}
@@ -102,7 +102,7 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://origin.originfractal.com/";
+		String baseUrl = "https://qadev.originfractal.com";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
