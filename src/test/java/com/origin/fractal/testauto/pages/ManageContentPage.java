@@ -71,6 +71,25 @@ public class ManageContentPage extends FractalBasePage{
 	private By deleteIcon = By.xpath("//*[@id=\"tab-content-59\"]/div/ng-include/div/div/div[3]/div/div[1]/div/div/div[5]/div[3]/i");
 	String[]  itemCodeValidation= {"", "1","  1","121"};
 	private By dangerText=By.xpath("//div[contains(@class,'text-danger font-size-12 padding-l-20 ng-scope')]");
+	
+	//Added by Vignesh (WVI) on 09-Oct-19 updated on 10-Oct-19 (item codes related) 
+		private By bundleBtn = By.xpath("//text()[contains(.,'Content Bundle')]/ancestor::button[1]");
+		private By learnpathBtn = By.xpath("//text()[contains(.,'Learning path')]/ancestor::button[1]");
+		private By courseBtn = By.xpath("//text()[contains(.,'Course')]/ancestor::button[1]");
+		private By resourceBtn = By.xpath("//text()[contains(.,'Resource')]/ancestor::button[1]");
+		private By podcastBtn = By.xpath("//text()[contains(.,'PODCAST')]/ancestor::button[1]");
+		private By itemcode = By.xpath("//input[@type='text'][@name='item_code']");
+		private By lbitemcodetxt = By.xpath("//label[text()='Item Code']");
+		private By cancel = By.xpath("//button[@class='btn btn-cancel btn_radius ng-binding text-left']");
+
+		//User side 
+		private By searchtab = By.xpath("//input[@id='theInput']");
+		private By nosearchresult = By.xpath("//span[@class='no-records-found']");
+		private By searchresult = By.xpath("//span[@class='no-records-found']");
+		private By useraccount = By.xpath("//*[contains(@class, 'logout-height')]");
+		private By logout = By.xpath("//li[text()='Logout']");
+
+		// End- here************************** Vignesh (WVI) on 14-Oct-19 ********************************
 	public ManageContentPage(WebDriver driver) {
 		super(driver);
 	}

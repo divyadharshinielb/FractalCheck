@@ -6,533 +6,451 @@ import org.openqa.selenium.WebDriver;
 import com.origin.fractal.testauto.FractalBasePage;
 
 public class ClassroomCCPage extends FractalBasePage {
-
-	private By Classroomicon = By.xpath("//div[@class='icon-Classroom-icon icon']");
-	private By AddClassbtn = By.xpath("//html/body/div/div/div[2]/div[3]/div[3]/div/div/div/div[2]/button");
-
-	//Add classroom
-	private By lblCCAllsession = By.xpath("//div[@class='col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60']//div[2]//label[1]");
-	private By lblCCAssDuedate = By.xpath("//*[contains(@class, 'col-sm-5')]/div[3]/label");
-	private By lblCCQualifyPrecentage = By.xpath("//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label");
-	private By InputCCQualifyPrecentage = By.xpath("//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label/div/div/md-input-container/input");
-	private By lblCCFeedbackDuedate = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[5]//label[1]");
-	private By lblCCManualCompletion= By.xpath("//div[6]//label[1]");
-	private By Cancelbtn= By.xpath("//button[@class='btn btn-cancel btn_radius ng-binding text-left']");
-
-	//Add classroom cc text
-	private By lblCCAllsessiontxt= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[2]/label[1]");
-	private By lblCCAssDuedatetxt = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[3]/label[1]");
-	private By lblCCQualifyPrecentagetxt = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[4]/label[1]");
-	private By lblCCFeedbackDuedatetxt = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[5]/label[1]");
-	private By lblCCManualCompletiontxt= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[6]/label[1]");
-
-	//Edit classroom
-	private By EditClassroomicon = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[5]/i[2]");
-	private By EditclasslblCCAllsession = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[2]/label[1]");
-	private By EditclasslblCCAssDuedate = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[3]/label[1]");
-	private By EditclasslblCCQualifyPrecentage = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[4]/label[1]");
-	private By EditclassInputCCQualifyPrecentage = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[4]/label[1]/div[1]/div[1]/md-input-container[1]/input[1]");
-	private By EditclasslblCCFeedbackDuedate = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[5]/label[1]");
-	private By EditclasslblCCManualCompletion= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[6]/label[1]");
-	private By EditclassCancelbtn= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[2]/span[1]/div[1]/button[1]");
-
-
-	private By HeaderAClogo= By.xpath("//span[contains(@class,'loggeduserbg ng-binding')]");
-	private By logout= By.xpath("//html/body/div/div/div/ng-include/div/div/div[2]/div/div/ul/div/div[3]");
-	public boolean booleanresult;
-
-	public ClassroomCCPage(WebDriver driver) 
-	{
-		super(driver);
-		pageName ="ClassroomPage"; 
-	}
-
-	public void GotoClassroom() 
-	{
-		click(Classroomicon);
-		wait(5);
-		print("In Admin side, Classroom is opened");
-	}
-
-	public void GotoEditClassroom() 
-	{
-		wait(5);
-		click(EditClassroomicon);
-		wait(5);
-		print("In Admin side, Edit Classroom is opened");
-	}
-
-	public void ClickCClblAllsession() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCAllsession);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickEditCClblAllsession() 
-	{
-
-		click(EditclasslblCCAllsession);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-		
-	}
-
-
-	public void ClickCClblAssDuedate() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCAssDuedate);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
 	
-	}
-
-	public void ClickEditCClblAssDuedate() 
-	{
-		click(EditclasslblCCAssDuedate);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-		
-	}
-
-
-	public void ClickCClblQualifyPrecentage() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCQualifyPrecentage);
-		wait(5);
-		enterData("35",InputCCQualifyPrecentage);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickEditCClblQualifyPrecentage() 
-	{
-		click(EditclasslblCCQualifyPrecentage);
-		wait(5);
-		clear(EditclassInputCCQualifyPrecentage);
-		enterData("35",EditclassInputCCQualifyPrecentage);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
+	private By addClassroomBtn = By.xpath("//button[contains(text(),'Add Classroom')]");
+	//Added by Vignesh (WVI) on 04-Oct-19 & Updated on 14-Oct-19 
 	
-	}
-
-	public void ClickCClblFeedbackDuedate() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCFeedbackDuedate);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
+		//classroom
+		private By classroomicon = By.xpath("//div[@class='icon-Classroom-icon icon']");
+		//add classroom
+		private By lblCCAllsession = By.xpath("//*[contains(@class, 'col-sm-5')]/div[2]//label[1]");
+		private By lblCCAssDuedate = By.xpath("//*[contains(@class, 'col-sm-5')]//div[3]//label[1]");
+		private By lblCCQualifyPrecentage = By.xpath("//*[contains(@class, 'col-sm-5')]//div[4]//label[1]");
+		private By InputCCQualifyPrecentage = By.xpath("//*[contains(@class, 'col-sm-5')]//div[4]//input[@type='number']");
+		private By lblCCFeedbackDuedate = By.xpath("//*[contains(@class, 'col-sm-5')]//div[5]//label[1]");
+		private By lblCCManualCompletion = By.xpath("//*[contains(@class, 'col-sm-5')]//div[6]//label[1]");
+		private By cancelbtn = By.xpath("//button[@class='btn btn-cancel btn_radius ng-binding text-left']");
+		//Edit classrooom
+		private By editclassroomicon = By.xpath("//*[@title='Edit']");
+		private By editClasslblCCAllsession = By.xpath("//div[contains(@class,'col-sm-5')]//div[2]//label[1]");
+		private By editClasslblCCAssDuedate = By.xpath("//div[contains(@class,'col-sm-5')]//div[3]//label[1]");
+		private By editClasslblCCQualifyPrecentage = By.xpath("//div[contains(@class,'col-sm-5')]//div[4]//label[1]");
+		private By editClassInputCCQualifyPrecentage =  By.xpath("//div[contains(@class,'col-sm-5')]//div[4]//input[@type='number']");
+		private By editClasslblCCFeedbackDuedate = By.xpath("//div[contains(@class,'col-sm-5')]//div[5]//label[1]");
+		private By editClasslblCCManualCompletion = By.xpath("//div[contains(@class,'col-sm-5')]//div[6]//label[1]");
+		private By editClasscancelBtn = By.xpath("//button[contains(@class,'btn btn-cancel btn_radius ng-binding text-left')]");
+		// my account & logout
+		private By headerAClogo= By.xpath("//span[@class='loggeduserbg ng-binding']");
+		private By logout= By.xpath("//ul[contains(@class,'dropdown-menu menu-myaccount')]//div[3]");
+		private final int WaitSec = 3;
+		public boolean booleanresult,booleanresult1,booleanresult2,booleanresult3,booleanresult4,booleanresult5;
 		
-	}
-	public void ClickEditCClblFeedbackDuedate() 
-	{
-		click(EditclasslblCCFeedbackDuedate);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-	
-	}
+		// End- here************************** Vignesh (WVI) on 14-Oct-19 ********************************
 
-	public void ClickCClblManualCompletion() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCManualCompletion);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		
-	}
-	public void ClickEditCClblManualCompletion() 
-	{
-		click(EditclasslblCCManualCompletion);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-	}
+		public ClassroomCCPage(WebDriver driver) {
+			super(driver);
+		}
+		//Added by Vignesh (WVI) on 04-Oct-19 & Updated on 14-Oct-19 
 
-	public void ClickCClblAllSession_Subdate() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCAllsession);
-		wait(5);
-		click(lblCCAssDuedate);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickEditCClblAllSession_Subdate() 
-	{
-		click(EditclasslblCCAllsession);
-		wait(5);
-		click(EditclasslblCCAssDuedate);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickCClblSubdate_Qualify() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCAssDuedate);
-		wait(5);
-		click(lblCCQualifyPrecentage);
-		wait(5);
-		enterData("35",EditclassInputCCQualifyPrecentage);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickEditCClblSubdate_Qualify() 
-	{
-		click(EditclasslblCCAssDuedate);
-		wait(5);
-		click(EditclasslblCCQualifyPrecentage);
-		wait(5);
-		enterData("35",EditclassInputCCQualifyPrecentage);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-		
-	}
-
-
-	public void ClickCClblQualify_feedbackdate() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCQualifyPrecentage);
-		wait(5);
-		enterData("35",InputCCQualifyPrecentage);
-		wait(5);
-		click(lblCCFeedbackDuedate);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickEditCClblQualify_feedbackdate() 
-	{
-		click(EditclasslblCCQualifyPrecentage);
-		wait(5);
-		enterData("35",EditclassInputCCQualifyPrecentage);
-		wait(5);
-		click(EditclasslblCCFeedbackDuedate);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickCClblfeedbackdate_Manualcomp() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCFeedbackDuedate);
-		wait(5);
-		click(lblCCManualCompletion);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickEditCClblfeedbackdate_Manualcomp() 
-	{
-		click(EditclasslblCCFeedbackDuedate);
-		wait(5);
-		click(EditclasslblCCManualCompletion);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickCClblManualcomp_Allsession() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCManualCompletion);
-		wait(5);
-		click(lblCCAllsession);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		
-	}
-
-	public void ClickEditCClblManualcomp_Allsession() 
-	{
-		click(EditclasslblCCManualCompletion);
-		wait(5);
-		click(EditclasslblCCAllsession);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-		
-	}
-
-	public boolean verifyCCTexts() {
-		click(AddClassbtn);
-		wait(5);
-		boolean  boleanresult1=false, boleanresult2=false, boleanresult3 =false, boleanresult4 =false, boleanresult5 =false;
-		if (verifyText("Participation in all sessions",lblCCAllsessiontxt) == true)
+		public void ClickCClblAllsession() 
 		{
-			boleanresult1 = true;
-		}
-		if (verifyText("Submission of all assignments before due date",lblCCAssDuedatetxt)==true)
-		{
-			boleanresult2 = true;
-		}
-		if(verifyText("% Qualifying score in graded assignments",lblCCQualifyPrecentagetxt) == true)
-		{
-			boleanresult3 = true;
-		}
-		if(verifyText("Submission of session/event feedback before due date",lblCCFeedbackDuedatetxt)== true)
-		{
-			boleanresult4 = true;
-		}
-		if(verifyText("Manual completion marking",lblCCManualCompletiontxt)== true) {
-			boleanresult5 = true;
+			print("In Admin side, Classroom is opened");
+			click(addClassroomBtn);
+			wait(WaitSec);
+			click(lblCCAllsession);
+			wait(WaitSec);
+			click(lblCCAllsession);
+			wait(WaitSec);
 		}
 
-		booleanresult= boleanresult1 && boleanresult2 && boleanresult3 && boleanresult4 && boleanresult5;
-		System.out.println("Boolean Result : "+booleanresult); // this is boolean result
-		click(Cancelbtn);
-		wait(5);
-		return booleanresult;
-	}
-
-	public boolean verifyEditCCTexts() {
-		
-		booleanresult= false;
-		boolean  boleanresult1=false, boleanresult2=false, boleanresult3 =false, boleanresult4 =false, boleanresult5 =false;
-		if (verifyText("Participation in all sessions",EditclasslblCCAllsession) == true)
+		public void ClickEditCClblAllsession() 
 		{
-			boleanresult1 = true;
-		}
-		if (verifyText("Submission of all assignments before due date",EditclasslblCCAssDuedate)==true)
-		{
-			boleanresult2 = true;
-		}
-		if(verifyText("% Qualifying score in graded assignments",EditclasslblCCQualifyPrecentage) == true)
-		{
-			boleanresult3 = true;
-		}
-		if(verifyText("Submission of session/event feedback before due date",EditclasslblCCFeedbackDuedate)== true)
-		{
-			boleanresult4 = true;
-		}
-		if(verifyText("Manual completion marking",EditclasslblCCManualCompletion)== true) {
-			boleanresult5 = true;
+			print("In Admin side, Edit Classroom is opened");
+			click(editclassroomicon);
+			wait(WaitSec);
+			click(editClasslblCCAllsession);
+			wait(WaitSec);
+			click(editClasslblCCAllsession);
 		}
 
-		booleanresult= boleanresult1 && boleanresult2 && boleanresult3 && boleanresult4 && boleanresult5;
-		System.out.println("Boolean Result : "+booleanresult); // this is boolean result
-		click(EditclassCancelbtn);
-		wait(5);
-		return booleanresult;
-	}
+		public void ClickCClblAssDuedate() 
+		{
+
+			click(lblCCAssDuedate);
+			wait(WaitSec);
+			click(lblCCAssDuedate);
+			wait(WaitSec);
+
+		}
+
+		public void ClickEditCClblAssDuedate() 
+		{
+			click(editClasslblCCAssDuedate);
+			wait(WaitSec);
+			click(editClasslblCCAssDuedate);
+			wait(WaitSec);
+		}
 
 
+		public void ClickCClblQualifyPrecentage() 
+		{
+			click(lblCCQualifyPrecentage);
+			wait(WaitSec);
+			enterData("5",InputCCQualifyPrecentage);
+			wait(WaitSec);
+			clear(InputCCQualifyPrecentage);
+			click(lblCCQualifyPrecentage);
+			wait(WaitSec);
+		}
 
-	public boolean verifyCCsessionLabels() {
-		wait(5);
-		click(AddClassbtn);
-		wait(5);
-		booleanresult = false;
-		if (verifyText("Participation in all sessions",lblCCAllsessiontxt) == true)
+		public void ClickEditCClblQualifyPrecentage() 
 		{
-			booleanresult = true;
-		}
-		click(Cancelbtn);
-		wait(5);
-		return booleanresult;
-	}
-	
-	public boolean verifyEditCCsessionLabels() {
-		booleanresult = false;
-		if (verifyText("Participation in all sessions",EditclasslblCCAllsession) == true)
-		{
-			booleanresult = true;
-		}
-		click(EditclassCancelbtn);
-		wait(5);
-		return booleanresult;
-	}
+			click(editClasslblCCQualifyPrecentage);
+			wait(WaitSec);
+			enterData("3",editClassInputCCQualifyPrecentage);
+			wait(WaitSec);
+			clear(editClassInputCCQualifyPrecentage);
+			click(editClasslblCCQualifyPrecentage);
+			wait(WaitSec);
 
-	public boolean verifyCCAssDuedateLabels() {
-		wait(5);
-		click(AddClassbtn);
-		wait(5);
-		booleanresult = false;
-		if (verifyText("Submission of all assignments before due date",lblCCAssDuedatetxt) == true)
-		{
-			booleanresult = true;
-		}
-		click(Cancelbtn);
-		wait(5);
-		return booleanresult;
-	}
-	
-	public boolean verifyEditCCAssDuedateLabels() {
-		
-		booleanresult = false;
-		if (verifyText("Submission of all assignments before due date",EditclasslblCCAssDuedate) == true)
-		{
-			booleanresult = true;
-		}
-		click(EditclassCancelbtn);
-		wait(5);
-		return booleanresult;
-	}
-	
-	public boolean verifyCCQualifyPrecentageLabels() {
-		wait(5);
-		click(AddClassbtn);
-		wait(5);
-		booleanresult = false;
-		if (verifyText("% Qualifying score in graded assignments",lblCCQualifyPrecentagetxt) == true)
-		{
-			booleanresult = true;
-		}
-		click(Cancelbtn);
-		wait(5);
-		return booleanresult;
-	}
-	
-	public boolean verifyEditCCQualifyPrecentageLabels() {
-		
-		booleanresult = false;
-		if (verifyText("% Qualifying score in graded assignments",EditclasslblCCQualifyPrecentage) == true)
-		{
-			booleanresult = true;
-		}
-		click(EditclassCancelbtn);
-		wait(5);
-		return booleanresult;
-	}
-	
-	public boolean verifyCCFeedbackDuedateLabels() {
-		wait(5);
-		click(AddClassbtn);
-		wait(5);
-		booleanresult = false;
-		if (verifyText("Submission of session/event feedback before due date",lblCCFeedbackDuedatetxt) == true)
-		{
-			booleanresult = true;
-		}
-		click(Cancelbtn);
-		wait(5);
-		return booleanresult;
-	}
-	
-	public boolean verifyEditCCFeedbackDuedateLabels() {
-		booleanresult = false;
-		if (verifyText("Submission of session/event feedback before due date",EditclasslblCCFeedbackDuedate) == true)
-		{
-			booleanresult = true;
-		}
-		click(EditclassCancelbtn);
-		wait(5);
-		return booleanresult;
-	}
-	
-	public boolean verifyCCManualCompletionLabels() {
-		click(AddClassbtn);
-		wait(5);
-		booleanresult = false;
-		if (verifyText("Manual completion marking",lblCCManualCompletiontxt) == true)
-		{
-			booleanresult = true;
-		}
-		click(Cancelbtn);
-		wait(5);
-		return booleanresult;
-	}
-	
-	public boolean verifyEditCCManualCompletionLabels() {
-		booleanresult = false;
-		if (verifyText("Manual completion marking",EditclasslblCCManualCompletion) == true)
-		{
-			booleanresult = true;
-		}
-		click(EditclassCancelbtn);
-		wait(5);
-		return booleanresult;
-	}
 
-	// Qualifying score allows single digit
-	public void ClickCClblQualifySinglePrecentage() 
-	{
-		click(AddClassbtn);
-		wait(5);
-		click(lblCCQualifyPrecentage);
-		wait(5);
-		enterData("5",InputCCQualifyPrecentage);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-		click(AddClassbtn);
-		wait(5);
-		enterData("5",InputCCQualifyPrecentage);
-		wait(5);
-		click(lblCCQualifyPrecentage);
-		wait(5);
-		click(Cancelbtn);
-		wait(5);
-	}
-	
-	// Qualifying score allows single digit
-	public void EditCClblQualifySinglePrecentage() 
-	{
-		
-		click(EditclasslblCCQualifyPrecentage);
-		wait(5);
-		enterData("5",EditclassInputCCQualifyPrecentage);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-		click(EditClassroomicon);
-		wait(5);
-		enterData("5",EditclassInputCCQualifyPrecentage);
-		wait(5);
-		click(EditclasslblCCQualifyPrecentage);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-		
-	}
+		}
 
-	public void Clicklogout() 
-	{
-		click(HeaderAClogo);
-		wait(5);
-		click(logout);
-		wait(5);
+		public void ClickCClblFeedbackDuedate() 
+		{
+
+			click(lblCCFeedbackDuedate);
+			wait(WaitSec);
+			click(lblCCFeedbackDuedate);
+			wait(WaitSec);
+
+		}
+		public void ClickEditCClblFeedbackDuedate() 
+		{
+
+			click(editClasslblCCFeedbackDuedate);
+			wait(WaitSec);
+			click(editClasslblCCFeedbackDuedate);
+			wait(WaitSec);
+
+
+		}
+
+		public void ClickCClblManualCompletion() 
+		{
+			click(lblCCManualCompletion);
+			wait(WaitSec);
+			click(lblCCManualCompletion);
+			wait(WaitSec);
+
+		}
+		public void ClickEditCClblManualCompletion() 
+		{
+			click(editClasslblCCManualCompletion);
+			wait(WaitSec);
+			click(editClasslblCCManualCompletion);
+			wait(WaitSec);
+
+		}
+
+		public void ClickCClblAllSession_Subdate() 
+		{
+
+			click(lblCCAllsession);
+			wait(WaitSec);
+			click(lblCCAssDuedate);
+			wait(WaitSec);
+			click(lblCCAllsession);
+			wait(WaitSec);
+			click(lblCCAssDuedate);
+			wait(WaitSec);
+
+		}
+
+		public void ClickEditCClblAllSession_Subdate() 
+		{
+
+			click(editClasslblCCAllsession);
+			wait(WaitSec);
+			click(editClasslblCCAssDuedate);
+			wait(WaitSec);
+			click(editClasslblCCAllsession);
+			wait(WaitSec);
+			click(editClasslblCCAssDuedate);
+			wait(WaitSec);
+
+
+		}
+
+		public void ClickCClblSubdate_Qualify() 
+		{
+			click(lblCCAssDuedate);
+			wait(WaitSec);
+			click(lblCCQualifyPrecentage);
+			wait(WaitSec);
+			enterData("5",InputCCQualifyPrecentage);
+			wait(WaitSec);
+			click(lblCCAssDuedate);
+			wait(WaitSec);
+			clear(InputCCQualifyPrecentage);
+			click(lblCCQualifyPrecentage);
+		}
+
+		public void ClickEditCClblSubdate_Qualify() 
+		{
+			click(editClasslblCCAssDuedate);
+			wait(WaitSec);
+			click(editClasslblCCQualifyPrecentage);
+			wait(WaitSec);
+			enterData("35",editClassInputCCQualifyPrecentage);
+			wait(WaitSec);
+			clear(editClassInputCCQualifyPrecentage);
+			click(editClasslblCCQualifyPrecentage);
+			wait(WaitSec);
+			click(editClasslblCCAssDuedate);
+		}
+
+
+		public void ClickCClblQualify_feedbackdate() 
+		{
+			click(lblCCQualifyPrecentage);
+			wait(WaitSec);
+			enterData("35",InputCCQualifyPrecentage);
+			wait(WaitSec);
+			click(lblCCFeedbackDuedate);
+			wait(WaitSec);
+			clear(InputCCQualifyPrecentage);
+			click(lblCCQualifyPrecentage);
+			wait(WaitSec);
+			click(lblCCFeedbackDuedate);
+
+		}
+
+		public void ClickEditCClblQualify_feedbackdate() 
+		{
+
+			click(editClasslblCCQualifyPrecentage);
+			wait(WaitSec);
+			enterData("5",editClassInputCCQualifyPrecentage);
+			wait(WaitSec);
+			click(editClasslblCCFeedbackDuedate);
+			click(editClasslblCCQualifyPrecentage);
+			clear(editClassInputCCQualifyPrecentage);
+			wait(WaitSec);
+			click(editClasslblCCFeedbackDuedate);
+
+		}
+
+		public void ClickCClblfeedbackdate_Manualcomp() 
+		{
+
+			click(lblCCFeedbackDuedate);
+			wait(WaitSec);
+			click(lblCCManualCompletion);
+			wait(WaitSec);
+			click(lblCCFeedbackDuedate);
+			wait(WaitSec);
+			click(lblCCManualCompletion);
+			wait(WaitSec);
+
+		}
+
+		public void ClickEditCClblfeedbackdate_Manualcomp() 
+		{
+
+			click(editClasslblCCFeedbackDuedate);
+			wait(WaitSec);
+			click(editClasslblCCManualCompletion);
+			wait(WaitSec);
+			click(editClasslblCCFeedbackDuedate);
+			wait(WaitSec);
+			click(editClasslblCCManualCompletion);
+			wait(WaitSec);
+
+
+		}
+
+		public void ClickCClblManualcomp_Allsession() 
+		{
+			click(lblCCManualCompletion);
+			wait(WaitSec);
+			click(lblCCAllsession);
+			wait(WaitSec);
+			click(lblCCManualCompletion);
+			wait(WaitSec);
+			click(lblCCAllsession);
+			wait(WaitSec);
+			click(cancelbtn);
+			wait(WaitSec);
+		}
+
+		public void ClickEditCClblManualcomp_Allsession() 
+		{
+
+			click(editClasslblCCManualCompletion);
+			wait(WaitSec);
+			click(editClasslblCCAllsession);
+			wait(WaitSec);
+			click(editClasslblCCManualCompletion);
+			wait(WaitSec);
+			click(editClasslblCCAllsession);
+			wait(WaitSec);
+			click(editClasscancelBtn);
+			wait(WaitSec);
+
+		}
+
+		public boolean verifyCCTexts() {
+			if (verifyText("Participation in all sessions",lblCCAllsession ) == true)
+			{
+				booleanresult1 = true;
+			}
+			if (verifyText("Submission of all assignments before due date",lblCCAssDuedate )==true)
+			{
+				booleanresult2 = true;
+			}
+			if(verifyText("% Qualifying score in graded assignments",lblCCQualifyPrecentage ) == true)
+			{
+				booleanresult3 = true;
+			}
+			if(verifyText("Submission of session/event feedback before due date",lblCCFeedbackDuedate )== true)
+			{
+				booleanresult4 = true;
+			}
+			if(verifyText("Manual completion marking",lblCCManualCompletion )== true) {
+				booleanresult5 = true;
+			}
+
+			booleanresult= booleanresult1 && booleanresult2 && booleanresult3 && booleanresult4 && booleanresult5;
+			System.out.println("Boolean Result : "+booleanresult); // this is boolean result
+			click(cancelbtn);
+			wait(WaitSec);
+			return booleanresult;
+		}
+
+		public boolean verifyEditCCTexts() {
+			booleanresult= false;
+			boolean  booleanresult1=false, booleanresult2=false, booleanresult3 =false, booleanresult4 =false, booleanresult5 =false;
+			if (verifyText("Participation in all sessions",editClasslblCCAllsession) == true)
+			{
+				booleanresult1 = true;
+			}
+			if (verifyText("Submission of all assignments before due date",editClasslblCCAssDuedate)==true)
+			{
+				booleanresult2 = true;
+			}
+			if(verifyText("% Qualifying score in graded assignments",editClasslblCCQualifyPrecentage) == true)
+			{
+				booleanresult3 = true;
+			}
+			if(verifyText("Submission of session/event feedback before due date",editClasslblCCFeedbackDuedate)== true)
+			{
+				booleanresult4 = true;
+			}
+			if(verifyText("Manual completion marking",editClasslblCCManualCompletion)== true) {
+				booleanresult5 = true;
+			}
+
+			booleanresult= booleanresult1 && booleanresult2 && booleanresult3 && booleanresult4 && booleanresult5;
+			System.out.println("Boolean Result : "+booleanresult); // this is boolean result
+			click(editClasscancelBtn);
+			wait(WaitSec);
+			return booleanresult;
+		}
+		public boolean verifyCCsessionLabels() {
+			click(addClassroomBtn);
+			wait(WaitSec);
+			booleanresult1 = false;
+			if (verifyText("Participation in all sessions",lblCCAllsession ) == true)
+			{
+				booleanresult1 = true;
+			}
+			return booleanresult1;
+		}
+
+		public boolean verifyEditCCsessionLabels() {
+			click(editclassroomicon);
+			wait(WaitSec);
+			booleanresult1 = false;
+			if (verifyText("Participation in all sessions",editClasslblCCAllsession) == true)
+			{
+				booleanresult1 = true;
+			}
+			return booleanresult1;
+		}
+
+		public boolean verifyCCAssDuedateLabels() {
+			booleanresult2 = false;
+			if (verifyText("Submission of all assignments before due date",lblCCAssDuedate ) == true)
+			{
+				booleanresult2 = true;
+			}
+			return booleanresult2;
+		}
+
+		public boolean verifyEditCCAssDuedateLabels() {
+			booleanresult2= false;
+			if (verifyText("Submission of all assignments before due date",editClasslblCCAssDuedate) == true)
+			{
+				booleanresult2 = true;
+			}
+			return booleanresult2;
+		}
+
+		public boolean verifyCCQualifyPrecentageLabels() {
+			booleanresult3 = false;
+			if (verifyText("% Qualifying score in graded assignments",lblCCQualifyPrecentage ) == true)
+			{
+				booleanresult3 = true;
+			}
+			return booleanresult3;
+		}
+
+		public boolean verifyEditCCQualifyPrecentageLabels() {
+			booleanresult3 = false;
+			if (verifyText("% Qualifying score in graded assignments",editClasslblCCQualifyPrecentage) == true)
+			{
+				booleanresult3 = true;
+			}
+
+			return booleanresult3;
+		}
+
+		public boolean verifyCCFeedbackDuedateLabels() {
+			booleanresult4 = false;
+			if (verifyText("Submission of session/event feedback before due date",lblCCFeedbackDuedate ) == true)
+			{
+				booleanresult4 = true;
+			}
+			return booleanresult4;
+		}
+
+		public boolean verifyEditCCFeedbackDuedateLabels() {
+			booleanresult4 = false;
+			if (verifyText("Submission of session/event feedback before due date",editClasslblCCFeedbackDuedate) == true)
+			{
+				booleanresult4 = true;
+			}
+			return booleanresult4;
+		}
+
+		public boolean verifyCCManualCompletionLabels() {
+
+			booleanresult5 = false;
+			if (verifyText("Manual completion marking",lblCCManualCompletion ) == true)
+			{
+				booleanresult5 = true;
+			}
+
+			return booleanresult5;
+		}
+
+		public boolean verifyEditCCManualCompletionLabels() {
+			booleanresult5 = false;
+			if (verifyText("Manual completion marking",editClasslblCCManualCompletion) == true)
+			{
+				booleanresult5 = true;
+			}
+			return booleanresult5;
+		}
+
+
+		public void Clicklogout() 
+		{
+			click(headerAClogo);
+			wait(WaitSec);
+			click(logout);
+			wait(WaitSec);
+		}
+		// End- here************************** Vignesh (WVI) on 14-Oct-19 ********************************
 	}
-}

@@ -14,124 +14,96 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsClassroomCC extends FractalBaseWebTest {
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, 
-			description = "TC_Admin_Classroom_CC_ 001 - 013: "
-					+ "TC_Admin_ 001,Admin Login and open the classroom,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-002,Select/Unselect Participation all sessions in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-003,Select/Unselect Assignment Due date in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-004,Select/Unselect Qualifying Score in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-005,Select/Unselect Feedback Due date in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-006,Select/Unselect Manual Submission in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-007,Select/Unselect Participation all sessions & Assignment Due date  in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-008,Select/Unselect Assignment Due date & Qualifying Score in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-009,Select/Unselect Qualifying Score & Feedback Due date in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-010,Select/Unselect Feedback Due date & Manual Submission in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-011,Select/Unselect Manual Submission & Participation all sessions in criteria,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-012,All texts in completion criteria (overall)"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-012a,Verify the text in CC -All Sessions,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-012b,Verify the text in CC-Assignment Due date,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-012c,Verify the text in CC-qualification percentage,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-012d,Verify the text in CC-Feedback Due date,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_CC-012e,Verify the text in CC-Manual Submission,"
-					+ "TC_Admin_Add_Classroom and Edit_classroom_013,Click Cancel button & logout,"
-			)
-	public void testClassroom(String row, String strBrowserName) throws IOException {
-		driver = BrowserFactory.getBrowser(strBrowserName);
-		loginToContentAdmin(driver);
-		ClassroomCCSteps ClassroomSteps = new ClassroomCCSteps(driver);
-			
-		ClassroomSteps.GotoClassroom();
-		Reporter.writeSummary("TC_Admin_ 001,Admin Login and open the classroom, " +  ClassroomSteps.getResult() );
+	//Added by Vignesh (WVI) on 04-Oct-19 & Updated on 14-Oct-19 
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, 
+				description = "TC_Admin_Classroom_CC_ 001 - 023: For Completion criteria Test case"
 
-		ClassroomSteps.CClblAllsession();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblAllsession();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-002,Select/Unselect Participation all sessions in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
+				)
+		public void testClassroom(String row, String strBrowserName) throws IOException {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			loginToContentAdmin(driver);
+			ClassroomCCSteps ClassroomCCSteps = new ClassroomCCSteps(driver);
+			MenuSteps menuSteps = new MenuSteps(driver);
+			menuSteps.clickMenu();
+			menuSteps.gotoClassroomCreation();
+			Reporter.writeSummary("TC_Admin_ 001,Admin Login and open the classroom, " +  menuSteps.getResult() );
+			//Addclassroom
+			ClassroomCCSteps.CClblAllsession();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-002,Select/Unselect Participation all sessions in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.CClblAssDuedate();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-003,Select/Unselect Assignment Due date in criteria , " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.CClblQualifyPrecentage();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-004,Select/Unselect Qualifying Score in criteria , " +  ClassroomCCSteps.getResult() );
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-004a,The Qualifying Score is allowing the single digit in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.CClblFeedbackDuedate();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-005,Select/Unselect Feedback Due date in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.CClblManualCompletion();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-006,Select/Unselect Manual Submission in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.CClblAllSession_Subdate();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-007,Select/Unselect Participation all sessions & Assignment Due date in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.CClblSubdate_Qualify();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-008,Select/Unselect Assignment Due date & Qualifying Score in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.CClblQualify_feedbackdate();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-009,Select/Unselect Qualifying Score & Feedback Due date in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.CClblfeedbackdate_Manualcomp();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-010,Select/Unselect Feedback Due date & Manual Submission in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.CClblManualcomp_Allsession();
+			Reporter.writeSummary("TC_Admin_Add_Classroom_CC-011,Select/Unselect Manual Submission & Participation all sessions in criteria, " +  ClassroomCCSteps.getResult() );
 
-		ClassroomSteps.CClblAssDuedate();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblAssDuedate();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-003,Select/Unselect Assignment Due date in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
+			//Edit classroom
+			ClassroomCCSteps.EditCClblAllsession();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-012,Select/Unselect Participation all sessions in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.EditCClblAssDuedate();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-013,Select/Unselect Assignment Due date in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.EditCClblQualifyPrecentage();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-014,Select/Unselect Qualifying Score in criteria, " +  ClassroomCCSteps.getResult() );
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-014a,The Qualifying Score is allowing the single digit in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.EditCClblFeedbackDuedate();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-015,Select/Unselect Feedback Due date in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.EditCClblManualCompletion();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-016,Select/Unselect Manual Submission in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.EditCClblAllSession_Subdate();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-017,Select/Unselect Participation all sessions & Assignment Due date in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.EditCClblSubdate_Qualify();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-018,Select/Unselect Assignment Due date & Qualifying Score in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.EditCClblQualify_feedbackdate();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-019,Select/Unselect Qualifying Score & Feedback Due date in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.EditCClblfeedbackdate_Manualcomp();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-020,Select/Unselect Feedback Due date & Manual Submission in criteria, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.EditCClblManualcomp_Allsession();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-021,Select/Unselect Manual Submission & Participation all sessions in criteria, " +  ClassroomCCSteps.getResult() );
 
-		ClassroomSteps.CClblQualifyPrecentage();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblQualifyPrecentage();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-004,Select/Unselect Qualifying Score in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-		
-		ClassroomSteps.CClblQualifySinglePrecentage();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblQualifySinglePrecentage();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-004a,The Qualifying Score is allowing the single digit in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
+			//Overall & one by one Completion Criteria text
+			//Addclassroom text verification
+			ClassroomCCSteps.verifyCCsessionLabels();
+			Reporter.writeSummary("TC_Admin_Add_Classroom _CC-022a,Verify the text in CC -All Sessions, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyCCAssDuedateLabels();
+			Reporter.writeSummary("TC_Admin_Add_Classroom _CC-022b,Verify the text in CC-Assignment Due date, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyCCQualifyPrecentageLabels();
+			Reporter.writeSummary("TC_Admin_Add_Classroom _CC-022c,Verify the text in CC-qualification percentage, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyCCFeedbackDuedateLabels();
+			Reporter.writeSummary("TC_Admin_Add_Classroom _CC-022d,Verify the text in CC-Feedback Due date, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyCCManualCompletionLabels();
+			Reporter.writeSummary("TC_Admin_Add_Classroom _CC-022e,Verify the text in CC-Manual Submission, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyCCTexts();
+			Reporter.writeSummary("TC_Admin_Add_Classroom _CC-022(overall),Verify ALL the Completion Criteria texts in add classroom, " +  ClassroomCCSteps.getResult() );
 
-		ClassroomSteps.CClblFeedbackDuedate();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblFeedbackDuedate();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-005,Select/Unselect Feedback Due date in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
+			//Editclassroom text verification
+			ClassroomCCSteps.verifyEditCCsessionLabels();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-023a,Verify the text in CC -All Sessions," +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyEditCCAssDuedateLabels();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-023b,Verify the text in CC-Assignment Due date, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyEditCCQualifyPrecentageLabels();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-023c,Verify the text in CC-qualification percentage, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyEditCCFeedbackDuedateLabels();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-023d,Verify the text in CC-Feedback Due date, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyEditCCManualCompletionLabels();
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-023e,Verify the text in CC-Manual Submission, " +  ClassroomCCSteps.getResult() );
+			ClassroomCCSteps.verifyEditCCTexts(); 
+			Reporter.writeSummary("TC_Admin_Edit_classroom_CC-023(overall),Verify ALL the Completion Criteria texts in Edit classroom, " +  ClassroomCCSteps.getResult() );
 
-		ClassroomSteps.CClblManualCompletion();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblManualCompletion();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-006,Select/Unselect Manual Submission in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.CClblAllSession_Subdate();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblAllSession_Subdate();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-007,Select/Unselect Participation all sessions & Assignment Due date in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.CClblSubdate_Qualify();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblSubdate_Qualify();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-008,Select/Unselect Assignment Due date & Qualifying Score in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.CClblQualify_feedbackdate();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblQualify_feedbackdate();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-009,Select/Unselect Qualifying Score & Feedback Due date in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.CClblfeedbackdate_Manualcomp();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblfeedbackdate_Manualcomp();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-010,Select/Unselect Feedback Due date & Manual Submission in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.CClblManualcomp_Allsession();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblManualcomp_Allsession();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-011,Select/Unselect Manual Submission & Participation all sessions in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		//Overall Completion Criteria text
-		ClassroomSteps.verifyCCTexts(); 
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.verifyEditCCTexts(); 
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012,Verify ALL the Completion Criteria texts (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-
-		// For all the five individual CC texts
-		ClassroomSteps.verifyCCsessionLabels();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.verifyEditCCsessionLabels();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012a,Verify the text in CC -All Sessions (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.verifyCCAssDuedateLabels();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.verifyEditCCAssDuedateLabels();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012b,Verify the text in CC-Assignment Due date (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.verifyCCQualifyPrecentageLabels();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.verifyEditCCQualifyPrecentageLabels();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012c,Verify the text in CC-qualification percentage (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.verifyCCFeedbackDuedateLabels();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.verifyEditCCFeedbackDuedateLabels();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012d,Verify the text in CC-Feedback Due date (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.verifyCCManualCompletionLabels();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.verifyEditCCManualCompletionLabels();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012e,Verify the text in CC-Manual Submission (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
-		ClassroomSteps.Clicklogout();
-		Reporter.writeSummary("TC_Admin_Add_Classroom_013,Click Cancel button & Logout, " +  ClassroomSteps.getResult() );
+			ClassroomCCSteps.Clicklogout();
+			Reporter.writeSummary("TC_Admin_024,Click My account & Logout, " +  ClassroomCCSteps.getResult() );
+		}
+		// End- here************************** Vignesh (WVI) on 14-Oct-19 ********************************
 	}
-}
