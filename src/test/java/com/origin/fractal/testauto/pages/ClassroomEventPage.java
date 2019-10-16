@@ -50,6 +50,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblReleaseDate = By.xpath(".//span[contains(text(),'Release Date')]");
 	private By lblSubmissionDueDate = By.xpath(".//span[contains(text(),'Submission Due Date')]");
 	private By lblEvalDueDate = By.xpath(".//span[contains(text(),'Evaluation Due Date')]");
+	private By btnPreAssignment = By.xpath("//h4[@id='pre_assignment_title']");
 	private By btnPreAddAssignment = By.xpath(".//button[@id='pre_addAssignment']");
 	private By inpPreEventAssignTitle = By.xpath(".//input[contains(@name,'pre_event_assignment_title')]");
 	private By inpPreEventAssignDesc = By.xpath(".//div//div//label[contains(text(),'Assignment Description')]");//input[contains(@name,'pre_event_assignment_description')]
@@ -292,7 +293,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyNewPreAssignmentForm() {
 	wait(5);
-	scrollToElement(btnPreAddAssignment);
+	scrollToElement(btnPreAssignment);
+	wait(2);
+	click(btnPreAssignment);
 	wait(5);
 	click(btnPreAddAssignment);
 	verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
@@ -358,7 +361,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Add Assignment", postAddAssignmentBtn);
 	}
 	public void verifyPostAddAssignmentDetails() {
-		wait(2);
+	wait(2);
+	scrollToElement(postlblAddAssignmentBtn);
+	wait(2);
 	click(postlblAddAssignmentBtn);
 	wait(2);
 	click(postAddAssignmentBtn);
