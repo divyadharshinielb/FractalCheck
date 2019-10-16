@@ -283,16 +283,17 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyPreAssessmentCount() {
 	String getText = getText(lblAssignment);
-	String count = getSubString(getText, getText.length()-2, getText.length()-1);
+//	String count = getSubString(getText, getText.length()-2, getText.length()-1);
 	//int assignCount = getNumber(count);
-	verifyText(count,"2");
+//	verifyText(count,"2");
 	}
 	public void verifyAddAssignmentBtn() {
 	verifyText("Add Assignment", btnPreAddAssignment);
 	}
 	public void verifyNewPreAssignmentForm() {
 	wait(5);
-	scrollToElement(btnPreAddAssignment);wait(5);
+	scrollToElement(btnPreAddAssignment);
+	wait(5);
 	click(btnPreAddAssignment);
 	verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
 	verifyText("Assignment Description",getAttributeValue(inpPreEventAssignDesc));
@@ -309,7 +310,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Add Survey",btnPreAddSurvey);
 	}
 	public void verifyPreSurveyFormDetails() {
-	scrollToElement(btnPreAddSurvey);wait(5);
+	scrollToElement(btnPreAddSurvey);
+	wait(5);
 	click(btnPreAddSurvey);
 	wait(2);
 	verifyText("survey Link",getAttributeValue(inpPreSurveyLink));
@@ -356,9 +358,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Add Assignment", postAddAssignmentBtn);
 	}
 	public void verifyPostAddAssignmentDetails() {
-	wait(2);	
+		wait(2);
 	click(postlblAddAssignmentBtn);
-	wait(5);
+	wait(2);
 	click(postAddAssignmentBtn);
 	wait(5);
 	verifyText("Assignment Title",getAttributeValue(inpPostAssignTitle));

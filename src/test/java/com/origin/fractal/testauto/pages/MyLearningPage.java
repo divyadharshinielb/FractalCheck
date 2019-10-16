@@ -88,6 +88,7 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyCatalogname() {
 		wait(2);
 		click(clickCatalog);
+		wait(5);
 		verifyText(getLabel("lblCatalogName"), lblCatnameInside);
 		wait(2);
 	    click(lblMyLearning);
@@ -105,6 +106,7 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyCourseInBundle() {
+		wait(2);
 		click(lblBundles);
 		wait(3);
 		click(bundleCnt);
@@ -191,13 +193,14 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyBundleContents() {
-		
+		wait(5);
 		click(lblBundles);
 		wait(5);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
 	}
 	public void verifyCourseContents() {
+		wait(5);
 		click(lblCourses);
 		wait(5);
 		click(clickCatalog);
