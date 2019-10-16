@@ -294,8 +294,6 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void verifyNewPreAssignmentForm() {
 	wait(5);
 	scrollToElement(btnPreAssignment);
-	wait(2);
-	click(btnPreAssignment);
 	wait(5);
 	click(btnPreAddAssignment);
 	verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
@@ -364,14 +362,14 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(2);
 	scrollToElement(postlblAddAssignmentBtn);
 	wait(2);
-	click(postlblAddAssignmentBtn);
+/*	click(postlblAddAssignmentBtn);
 	wait(2);
 	click(postAddAssignmentBtn);
 	wait(5);
 	verifyText("Assignment Title",getAttributeValue(inpPostAssignTitle));
 	wait(5);
 	verifyText("Assignment Description",getAttributeValue(inpPostAssignDesc));
-	}
+*/	}
 	public void verifyPostSurveyDetails() {
 	wait(2);
 	WebElement element = driver.findElement( By.id("postsurvey_title")); Actions
