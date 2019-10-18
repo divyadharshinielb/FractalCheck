@@ -36,7 +36,6 @@ public class MALoginPage extends FractalAppPage {
     private By pageTitle = By.id("com.originkonnect.app:id/action");//Added by Manju Priya A on Dec-27-18
     private By animSplashScreen = By.id("com.originkonnect.app:id/animation_view");//Added by Manju Priya A on Dec-31-18-copy id from my code
     private By clickAllow = By.xpath("");//Added by Manju Priya A on Jan_11_19 for ios
-
 	public MALoginPage(AppiumDriver<MobileElement> appDriver) {
 		super(appDriver);
 		this.setLocators();	
@@ -64,7 +63,8 @@ public class MALoginPage extends FractalAppPage {
 			lblYes = By.xpath("//XCUIElementTypeButton[@name='YES']");//Name can be btnYes, since it is a button
 			lblNo = By.xpath("//XCUIElementTypeButton[@name='NO']");
 			btnLogin = By.xpath("//XCUIElementTypeButton[contains(@name,'LOGIN')]");
-			btnLogout = By.xpath("//XCUIElementTypeStaticText[contains(@name,'LOGOUT')]");
+			//edit by divya
+			btnLogout = By.xpath("/XCUIElementTypeApplication[@name=\"Origin Fractal\"]/XCUIElementTypeWindow[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeButton"); //XCUIElementTypeStaticText[@name="LOGOUT"]
 			//Added by Manju Priya A on Jan-05-19
 			noInternetlbl = By.xpath("//XCUIElementTypeButton[contains(@name,'OK')]/../XCUIElementTypeStaticText[1]");
 		}
@@ -166,6 +166,12 @@ public class MALoginPage extends FractalAppPage {
 		}
 		//Updtaed by Manju Priya A on Jan_11_19
 		public void verifyValidLogin() {
+			//edit by divya
+			wait(3);
+			clear(tbUserName);
+			wait(3);
+			clear(tbPassword);
+			wait(3);
 			doLogin();
 			MASelectInstancePage selIns = new MASelectInstancePage(appDriver);
 			selIns.selectFractal();
@@ -193,12 +199,13 @@ public class MALoginPage extends FractalAppPage {
 		}
 		public void verifyLogoutWithYesBtn() {
 			click(getObj(menuBtn));
-			wait(5);
+			wait(10);
 			click(getObj(btnLogout));
 			wait(5);
 			click(getObj(lblYes));
 			wait(5);
-			verifyText("LOGOUT",btnLogin);
+			//edit b divya
+			verifyText("LOGIN",btnLogin);
 		}	
 			
 			

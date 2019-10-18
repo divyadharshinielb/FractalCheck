@@ -92,7 +92,8 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	private By  insideLpathBackBtn= By.id("");
 	private By  resourceCatalogTitle= By.id("");
 	private By  courseCatalogTitle= By.id("//XCUIElementTypeImage[contains(@name,'course_White')]/../XCUIElementTypeStaticText[1]");
-
+//edit by divya 
+	private By btnMenuMyAcc = By.xpath("com.originkonnect.app:id/action_bar_back");
 	public MAMyLearningInProPage(AppiumDriver<MobileElement> appDriver) {
 		super(appDriver);
 		this.setLocators();
@@ -107,7 +108,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 			*/
 			txtTitleMyLrn = By.name("MY LEARNING");
 			tabCompleted = By.id("COMPLETED");
-			btnMenu = By.xpath("//XCUIElementTypeImage[@name='menuButton']/../XCUIElementTypeButton[1]");
+			btnMenu = By.xpath("//XCUIElementTypeImage[@name='menuButton']/../XCUIElementTypeButton[1]"); 
 			/*Starts - added By manju priya A on Dec-27-18*/
 			linkMyLearning = By.xpath("//XCUIElementTypeStaticText[contains(@name,'MY LEARNING')]");
 			catalogType = By.xpath("//XCUIElementTypeImage[contains(@name,'bundle_Grey')]");//If there is no bundle in MyLearning page this will break - have to check with the developer
@@ -187,7 +188,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 			btnVoiceAssistant= By.xpath("//XCUIElementTypeButton[@name=\"chat trigger\"]");//
 			iconVoiceRec= By.xpath("com.originkonnect.app:id/btn_record");
 			iconVoiceAssistant= By.xpath("com.originkonnect.app:id/chatbot_img");
-			btnDeny= By.xpath("//XCUIElementTypeButton[@name=\"Don’t Allow\"]");//
+			btnDeny= By.xpath("//XCUIElementTypeButton[@name=\"Donï¿½t Allow\"]");//
 			btnAllow= By.xpath("//XCUIElementTypeButton[@name=\"Allow\"]");//
 			
 			bundleTitle = By.xpath("//XCUIElementTypeButton[contains(@name,'iconBack white')]/../XCUIElementTypeStaticText[1]");
@@ -202,6 +203,8 @@ public class MAMyLearningInProPage extends FractalAppPage {
 			//lpathTitle = By.xpath("");
 			//lpathTitle = By.xpath("");
 			//
+			//edit by divya
+			btnMenuMyAcc =	By.xpath("//XCUIElementTypeButton[@name='menuButton']");
 		}
 	}
 	public void validateMyLearningTitle() {
@@ -773,7 +776,12 @@ public class MAMyLearningInProPage extends FractalAppPage {
 		elementExist(progressBar);	
 	}
 
-	
+	public void clickMenuAccount() {
+		click(getObj(btnMenuMyAcc));
+		wait(5);
+		
+	}
+
 	
 	
 	

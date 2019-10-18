@@ -41,6 +41,7 @@ public class MAMenuOptionsPage extends FractalAppPage {
 			txtCatalog = By.xpath("//XCUIElementTypeStaticText[@name='CATALOG']/preceding-sibling::XCUIElementTypeButton)");
 			txtCatalog = By.xpath("//XCUIElementTypeStaticText[@name='MY CONTENT']/preceding-sibling::XCUIElementTypeButton)");
 			//btnLogout = By.xpath("//XCUIElementTypeStaticText[contains(@name,'LOGOUT')]");
+			// edit by  divya btnLogoutYes = By.xpath("//XCUIElementTypeButton[contains(text(),'YES')]"); //XCUIElementTypeButton[@name='YES']
 			btnLogoutYes = By.xpath("//XCUIElementTypeButton[@name='YES']");
 			/*Starts - added by Manju Priya A on Dec-21-18*///XCUIElementTypeImage[contains(@name,'menuButton')]
 			btnMenu = By.xpath("//XCUIElementTypeImage[@name='menuButton']/../XCUIElementTypeButton[1]");
@@ -51,7 +52,9 @@ public class MAMenuOptionsPage extends FractalAppPage {
 			btnChange = By.xpath("//XCUIElementTypeStaticText[contains(@value,'CHANGE')]");
 			insFractalDemo = By.xpath("//XCUIElementTypeStaticText[@name='Select Subscription']/../*//XCUIElementTypeCollectionView");//same xpath for fractal and fractalDemo.
 			btnCatalog = By.xpath("//XCUIElementTypeImage[contains(@name,'CatalogIcon')]/../XCUIElementTypeButton[1]");
-			btnLogout = By.xpath("//XCUIElementTypeStaticText[contains(@name,'LOGOUT')]");
+			//edit by divya
+			//btnLogout = By.xpath("//XCUIElementTypeApplication[@name=\"Origin Fractal\"]/XCUIElementTypeWindow[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeButton");
+			btnLogout = By.xpath("/XCUIElementTypeApplication[@name=\"Origin Fractal\"]/XCUIElementTypeWindow[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeButton"); //XCUIElementTypeStaticText[@name=\"LOGOUT\"]
 			btnMyLearning = By.xpath("//XCUIElementTypeImage[contains(@name,'MylearningIcon')]/../XCUIElementTypeButton[1]");
 			btnNo = By.xpath("//XCUIElementTypeButton[contains(@name,'NO')]");
 			lblSelectSubs = By.xpath("//XCUIElementTypeStaticText[@name='Select Subscription']");
@@ -108,7 +111,9 @@ public class MAMenuOptionsPage extends FractalAppPage {
 		}
 		click(btnMenu);
 		closeMenu();
-		verifyMenuPage("MY ACCOUNT",lblTitle);
+		//edit by divya
+		//verifyMenuPage("MY ACCOUNT",lblTitle);
+		verifyMenuPage("CATALOG",lblTitle);
 	}
 	public void verifyChangeInsMenu() {
 		click(btnMenu);

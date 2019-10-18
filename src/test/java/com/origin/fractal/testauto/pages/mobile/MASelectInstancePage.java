@@ -11,8 +11,7 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class MASelectInstancePage extends FractalAppPage {
 	private By txtSelectSub = By.id("com.originkonnect.app:id/textView3");
-	private By insFractal = By.xpath("//android.widget.ImageView[@content-desc='Fractal']");
-	
+    private By insFractal = By.xpath("//android.widget.ImageView[@content-desc='Fractal']");
 	private By insFractalDemo = By.xpath("//android.widget.ImageView[@content-desc='Fractal Demo']");
 	private By lblMyLearning = By.id("com.originkonnect.app:id/action");
 	private By btnMenu = By.id("com.originkonnect.app:id/action_bar_back");
@@ -27,6 +26,7 @@ public class MASelectInstancePage extends FractalAppPage {
 	public void setLocators() {
 		if(platform.equalsIgnoreCase("ios")) {
 			txtSelectSub = By.name("Select Subscription");
+			//edit by divya insFractal = By.xpath("//XCUIElementTypeStaticText[@name='Select Subscription']/../*//XCUIElementTypeCollectionView");
 			insFractal = By.xpath("//XCUIElementTypeStaticText[@name='Select Subscription']/../*//XCUIElementTypeCollectionView");
 			//Added By Manju Priya A on Dec-28-18
 			//insFractalDemo = By.xpath("//XCUIElementTypeStaticText[@name='Select Subscription']/../*//XCUIElementTypeCollectionView");
