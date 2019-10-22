@@ -79,11 +79,11 @@ public class WebProductionTests extends FractalBaseWebTest {
 	 HomeSteps homeSteps = new HomeSteps(driver);
 	 accountSteps.clickOnMyAccount();
 	 wait(10);
-	 accountSteps.verifyAccountPageLabels();                                                                                                 
+ accountSteps.verifyAccountPageLabels();                                                                                                 
 	 Reporter.writeSummary("TCID_061,  Verify  My account page, " +  accountSteps.getResult() );
-	 accountSteps.verifyProfileDetails();
+ accountSteps.verifyProfileDetails();
 	 Reporter.writeSummary("TCID_062,  Verify  My Account Profile details, " +  accountSteps.getResult() );
-     accountSteps.verifyFieldValidation();
+    accountSteps.verifyFieldValidation();
 	 Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
 	 accountSteps.verifyEmptyProfileValidation();
 	 Reporter.writeSummary("TCID_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );

@@ -115,7 +115,7 @@ public class MALoginPage extends FractalAppPage {
 			typeIntoElement (passWord[0],getObj(tbPassword));
 			click(btnLogin);
 			elementExist(blankPassword);
-			verifyText("Password cannot be blank.",getObj(blankPassword));
+			verifyText("Username/Password cannot be blank.",getObj(blankPassword));
 			click(getObj(okBtn));
 			wait(5);
 		}
@@ -124,7 +124,7 @@ public class MALoginPage extends FractalAppPage {
 			typeIntoElement (passWord[1],getObj(tbPassword));
 			click(getObj(btnLogin));
 			elementExist(blankUserName);
-			verifyText("Username cannot be blank.",getObj(blankUserName));
+			verifyText("Username/Password cannot be blank.",getObj(blankUserName));
 			click(getObj(okBtn));
 			wait(5);
 		}
@@ -147,7 +147,7 @@ public class MALoginPage extends FractalAppPage {
 			typeIntoElement (passWord[0],getObj(tbPassword));
 			click(getObj(btnLogin));
 			elementExist(blankUserNamePassword);
-			verifyText("Username cannot be blank.",getObj(blankUserNamePassword));
+			verifyText("Username/Password cannot be blank.",getObj(blankUserNamePassword));
 			click(getObj(okBtn));
 			wait(5);
 		}
