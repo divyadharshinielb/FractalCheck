@@ -1,53 +1,44 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
 
 public class LoginPage extends FractalBasePage {
 
-	private By tbUserName = By.xpath(".//input[@name='username']");//*[@name='uname']
-	private By tbPassword = By.xpath(".//input[@name='password']");//*[@name='userpassword']
-	private By btnLogin = By.xpath("//input[@class='w100 login_btn login']");//button[@id='login_btn']
-	private By btnLogin1 = By.xpath(".//input[@class='w100 login_btn login']");  //button[@id='btn']
-	private By logoSymbol = By.id("logo");
-	//edit by divya
-	//	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
-	//private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
-	//private By logOutButton = By.xpath(".//a[@class='pointer padding-l-15']");
-	private By rememberMe=By.xpath(".//label[@class='font-size-14']");
-	private By lblProfile = By.xpath(".//div[@class='jss36']//div//span[@class='jss4']");  //*[@id='dLabel']/span
-	private By logOutButton = By.xpath(".//li[contains(@class, 'jss29 jss95 jss98 jss103 jss104 jss92 jss93 popup-text padding-t-15 removelastspan')]");  //a[@class='pointer padding-l-15']
+	private By tbUserName = By.xpath(".//input[contains(@name,'username')]");//edit by dhanushiya
+	private By tbPassword = By.xpath(".//input[contains(@name,'password')]");//edit by dhanushiya
+	private By btnLogin = By.xpath(".//input[contains(@class,'w100 login_btn login')]");//edit by dhanushiya
+	private By btnLogin1 = By.xpath(".//input[contains(@class,'w100 login_btn login')]");//edit by dhanushiya
+	private By logoSymbol = By.xpath(".//img[contains(@class,'logo')]");
+	private By rememberMe=By.xpath(".//label[contains(@class,'font-size-14')]");
+	private By lblProfile = By.xpath(".//img[contains(@class,'logout-height')]");
+	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]");
 	/***added on 08/02/19***/
-	//edited by divya on 23rd sept 2019
-	private By registerButton = By.xpath("//a[contains(@class, 'reg_btn font-size-18 reg')]");  //a[@class='cursor-pointer text-uppercase']
+	private By registerButton = By.xpath("//a[@class='cursor-pointer text-uppercase']");
 	/***here**/
 	private By resigstrationPage = By.xpath(".//*[contains(text(), 'I want to register as')]");
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
 	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
-	private By inValid = By.xpath(".//*[contains(text(),'Username/Password is incorrect')]");
+	private By inValid = By.xpath(".//div[contains(text(),'User or Password are incorrect.')]");
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
-	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
-	//edit by divya 
-	// 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
-
-	private By searchLink = By.xpath(".//input[contains(@id, 'theInput')]"); //ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]
+	private By searchLink=By.xpath(".//input[contains(@id,'theInput')]");
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://staging-origin.originfractal.com"; //https://automation-origin.originfractal.com/#/login
+		String baseUrl = "https://staging-origin.originfractal.com";
 		goTo(baseUrl);
 		
 	}
 	public void doLogin() {
+		wait(5);
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
-		click(btnLogin);
-		wait(2);
-		click(btnCookies);
+		click(btnLogin1);
 		wait(5);
 	}
 	public void loginToContentAdmin() {
@@ -75,17 +66,15 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 		click(rememberMe);
 		wait(10);
-		click(btnLogin);
+		click(btnLogin1);
 		wait(10);
 		click(lblProfile);
 		wait(10);
 		click(logOutButton);
-		wait(5);
+		wait(10);
 		click(rememberMe);
-		wait(5);
-		//edit by divya
-		// click(btnLogin);
-		click(btnLogin1);
+		wait(10);
+		click(btnLogin);
 		wait(10);
 		click(lblProfile);
 		wait(10);
@@ -102,7 +91,7 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://origin.originfractal.com/";
+		String baseUrl = "https://automation-origin.originfractal.com/admin/index.php";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
@@ -115,11 +104,16 @@ public class LoginPage extends FractalBasePage {
 		click(btnLogin1);
 		wait(5);
 		elementExist(blankPassword);
-		
+		wait(5);
+		clear(tbUserName);
 	}
 	public void blankUserName() {
+		driver.navigate().refresh();
+		wait(10);
 		enterData (userName[0],tbUserName);
+		wait(5);
 		enterData (passWord[1],tbPassword);
+		wait(5);
 		click(btnLogin1);
 		wait(5);
 		elementExist(blankUserName);
@@ -149,5 +143,7 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
+		driver.findElement(By.id("theInput")).sendKeys(Keys.ENTER);
+		
 	}
 }

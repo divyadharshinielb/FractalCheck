@@ -15,7 +15,26 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void doLogin() {
-		page.doLogin();
+		result ="Passed";
+		   try {
+			page.doLogin();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+	public void loginToContentAdmin() {
+		result ="Passed";
+		   try {
+			page.loginToContentAdmin();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void loginPageVerification() {
 		result ="Passed";
@@ -28,6 +47,19 @@ public class LoginSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
+	//Starts - Added by Mahesh on Feb_06_19
+		public void verifypasswordField() {
+			result ="Passed";
+			try {
+				page.verifypasswordField();
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();   
+				result="FAILED";
+		  }
+		}
+		//end
 
 	public void rememberMe() {
 		result ="Passed";
@@ -122,18 +154,5 @@ public class LoginSteps extends FractalBaseStep {
 		e.printStackTrace();   
 		result="FAILED";
 		  }
-	}
-
-	public void loginToContentAdmin() {
-		result ="Passed";
-		  try {
-		  page.loginToContentAdmin();
-		  }
-		  catch(Exception e)
-		  {
-		e.printStackTrace();   
-		result="FAILED";
-		  }
-		
 	}
 }
