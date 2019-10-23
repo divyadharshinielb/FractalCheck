@@ -74,7 +74,9 @@ public class MyLearningPage extends FractalBasePage {
 
 		verifyLabel("lblAll", lblAll);
 		verifyLabel("lblCourses", lblCourses);
-		verifyLabel("lblResources", lblResources);
+		if(elementExist(lblResources)) {
+			verifyLabel("lblResources", lblResources);
+		}
 		verifyLabel("lblBundles", lblBundles);
 		verifyLabel("lblLearningPaths",lblLearningpath);
 	}
@@ -139,10 +141,12 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyResourceFilter() {
 		click(lblAll);
 		wait(5);
-		click(lblResources);
-		wait(5);
-		click(lblListView);
-		verifyFilterType(boxBtn, boxCatType, "resource");
+		if(elementExist(lblResources)) {
+			click(lblResources);
+			wait(5);
+			click(lblListView);
+			verifyFilterType(boxBtn, boxCatType, "resource");
+		}
 	}
 
 	public void verifyTickmark() {
@@ -301,9 +305,13 @@ public class MyLearningPage extends FractalBasePage {
 				  wait(2);
 			click(lblAssignedClassroom2);
 			//  verifyText("Pre-event Activities",lblPreeventActivities);
-			  verifyText("Reference",lblReference);
+			if(elementExist(lblReference)){
+				verifyText("Reference",lblReference);
+				}  
 			//  verifyText("Post-event Activities",lblPosteventActivities);
-			  verifyText("Terms & Conditions",lblTermsCondition);
+			if(elementExist(lblTermsCondition)){
+				  verifyText("Terms & Conditions",lblTermsCondition);
+				}  
 			  
 		/*	  click(btnCancelRegistration);
 			  verifyText("Are you sure you want to cancel your registration?",registrationCancelText);

@@ -142,10 +142,11 @@ public class HomePage extends FractalBasePage {
 		clickOnBellIcon();
 		wait(2);
 	//	verifyLabel("lblNotification",lblNotification );
+		if(elementExist(Check)) {
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check );
 		clickOnViewAll();
-		
+		}
 	}
 	public void verifyResumeLearningText() {
 		verifyLabel("lblLrnInProg",lblResumeLearning);
@@ -184,6 +185,8 @@ public class HomePage extends FractalBasePage {
 	}
 
 	public void verifyAllFilterWhatsNew() {
+		click(iconListView);
+		wait(2);
 		click(whlblAll);
 		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
 	     
@@ -374,8 +377,10 @@ public class HomePage extends FractalBasePage {
 		actions.moveToElement(element1);
 		actions1.perform();
 		wait(5);
-		click(privacyLink);
-		verifyLabel("privacyPage",privacyPage);
+		if(elementExist(privacyLink)){
+			click(privacyLink);
+			verifyLabel("privacyPage",privacyPage);
+			}
 	}
 	/*Ends- added by Manju Priya A on Nov-29-18*/
 	public void	whatsNewSectionAttributes() {
@@ -393,6 +398,7 @@ public class HomePage extends FractalBasePage {
 			System.out.println("---->"+a);
 	    }
 	    click(iconListView);
+	    wait(2);
 	    verifyAllFilterTypeRcntAdded(rboxBtn, rboxCatType, whlblFilterLink);
 	/*    verifyTileFunctionality();
 	    verifyTileStructure();

@@ -525,6 +525,7 @@ return status;
 
 
 public void verifyWishListBtn() {
+wait(2);
 click(wishListBtn);
 }
 
