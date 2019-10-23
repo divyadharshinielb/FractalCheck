@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.wv.auto.framework.BasePage;
 
@@ -38,8 +39,8 @@ private By btnGrid = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/a[
 private By lblcontents = By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/..");
 private String lblNavBtn=".//div/h2[contains(text(),'Recently Added')]/../../following-sibling::div/*//div/slick/ul/li[";
 
-private By cartItemBtn=By.xpath(".//div[@class='log_cart']");//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]
-private By wishListBtn=By.xpath(".//div[@class='log_wishlist']");//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]
+private By cartItemBtn=By.xpath(".//div[@class='jss32']//div//img[@class='cp']");//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]
+private By wishListBtn=By.xpath(".//div[@class='jss34']//div//img[@class='cp']");//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]
 private By logoImg=By.xpath("//img[@class='logo-height']");//div/ng-include//div/img   
 private By logOut=By.xpath("//li[contains(text(),'Logout')]");//a[@class='pointer padding-l-15']
 private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
@@ -75,6 +76,7 @@ click(btnCategory);
 }
 
 public void clickOnBellIcon() {
+	wait(2);
 click(btnBellIcon);
 }
 
@@ -525,6 +527,9 @@ return status;
 
 
 public void verifyWishListBtn() {
+	WebElement element = driver.findElement( By.xpath(".//div[@class='jss34']//div//img[@class='cp']")); Actions
+	actions = new Actions(driver); actions.moveToElement(element);
+	actions.perform();
 wait(2);
 click(wishListBtn);
 }
@@ -542,6 +547,9 @@ System.out.println("logoImg is clicked");
 
 }
 public void verifyCartItemBtn() {
+	WebElement element = driver.findElement( By.xpath("//div[@class='jss32']//div//img[@class='cp']")); Actions
+	actions = new Actions(driver); actions.moveToElement(element);
+	actions.perform();
 click(cartItemBtn);
 }
 

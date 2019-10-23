@@ -41,7 +41,7 @@ public class HomePage extends FractalBasePage {
 	private By whlblResources = By.xpath(".//button[contains(text(),'RESOURCES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'resources')]
 	private By whlblBundles = By.xpath(".//button[contains(text(),'BUNDLES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'bundles')]
 	private By whlblLpaths = By.xpath(".//button[contains(text(),'LEARNING PATHS')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'Learning Paths')]
-	private String whlblFilterLink = ".//div[@class='col-lg-9 col-md-9 col-sm-6 mt-2 mb-1 filter']//div//button";//div[@class='whats_menu margin-t-0 float-right']//./button
+	private String whlblFilterLink = ".//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]";//div[@class='col-lg-9 col-md-9 col-sm-6 mt-2 mb-1 filter']//div//button//div[@class='whats_menu margin-t-0 float-right']//./button
 	/*******************/
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
 	/************Newui***************/
@@ -185,9 +185,11 @@ public class HomePage extends FractalBasePage {
 	}
 
 	public void verifyAllFilterWhatsNew() {
+	/*	click(lblViewAllRcntAdded);
+		wait(2);
 		click(iconListView);
 		wait(2);
-		click(whlblAll);
+	*/	click(whlblAll);
 		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
 	     
 	}
@@ -360,14 +362,14 @@ public class HomePage extends FractalBasePage {
 		actions.moveToElement(element);
 		actions.perform();
 		wait(10);
-/*		
-		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
+		
+/*		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
 		Actions actions1= new Actions(driver);
 		actions.moveToElement(element1);
 		actions1.perform();
-		wait(10);
-*/		click(termsLink);
-		verifyLabel("termsPage",termsPage);
+*/		wait(10);
+		click(privacyLink);
+		verifyLabel("privacyPage",privacyPage);
 		wait(5);
 		click(contactsLink);
 		verifyLabel("contactsPage",contactsPage);
@@ -377,10 +379,11 @@ public class HomePage extends FractalBasePage {
 		actions.moveToElement(element1);
 		actions1.perform();
 		wait(5);
-		if(elementExist(privacyLink)){
-			click(privacyLink);
-			verifyLabel("privacyPage",privacyPage);
-			}
+		if(elementExist(termsLink)){
+				click(termsLink);
+				wait(5);
+	verifyLabel("termsPage",termsPage);
+		}	
 	}
 	/*Ends- added by Manju Priya A on Nov-29-18*/
 	public void	whatsNewSectionAttributes() {
