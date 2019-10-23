@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -79,8 +80,10 @@ click(btnBellIcon);
 }
 
 public void clickOnViewAll() {
-wait(5);
-click(viewAll);
+	if(elementExist(viewAll)){
+		wait(5);
+		click(viewAll);
+}
 
 }
 
@@ -142,6 +145,9 @@ public void clickOnCourseslink() {
 click(lblRcntAdded_Courses);
 }
 public void clickOnTopArrBtn() {
+wait(5);
+JavascriptExecutor je =(JavascriptExecutor)driver;
+je.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath(".//img[@class='scrollup-image']")));
 wait(5);
 click(btnTopArr);
 }
@@ -556,10 +562,12 @@ click(lblpaypal);
 
 
 public void clickLogout() {
-wait(5);
-click(lblProfile);
-wait(5);
-click(logOut);
+	JavascriptExecutor je =(JavascriptExecutor)driver;
+	je.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]")));
+	wait(5);
+	click(lblProfile);
+	wait(5);
+	click(logOut);
 
 }
 public int getItemsCount( String objBox,String objBoxtype) {

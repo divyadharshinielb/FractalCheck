@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 import com.origin.fractal.testauto.FractalBasePage;
 
 public class ForgotPasswordPage extends FractalBasePage{
-	private By forgotPasswordLink  = By.xpath(".//div/*//form/*//div[contains(@id,'forgot_password')]");
-	private By txtInputEmail  = By.xpath(".//div/*//form/*//md-input-container/input");
-	private By btnSend  = By.xpath(".//button[contains(@id,'button')]/span");
+	private By forgotPasswordLink  = By.xpath(".//a[contains(text(),'Forgot password?')]");
+	private By txtInputEmail  = By.xpath(".//input[contains(@class,'mui--is-untouched mui--is-dirty mui--is-empty')]");
+	private By btnSend  = By.xpath(".//input[contains(@class,'btn w100 primary-colr send_btn reset')]");
 	//private By forgotPasswordLink  = By.xpath("");
 	//private By forgotPasswordLink  = By.xpath("");
 	public ForgotPasswordPage(WebDriver driver) {
@@ -23,7 +23,9 @@ public class ForgotPasswordPage extends FractalBasePage{
 		wait(5);
 	}
 	public void verifyForgotPasswordLabels() {
+		wait(5);
 		elementExist(txtInputEmail);
+		wait(5);
 		verifyText("SEND", btnSend);
 	}
 }

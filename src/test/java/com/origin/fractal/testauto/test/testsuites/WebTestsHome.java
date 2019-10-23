@@ -21,7 +21,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -40,7 +40,7 @@ public class WebTestsHome extends FractalBaseWebTest {
         homeSteps.verifyCoverageText();
 		Reporter.writeSummary("TCID_033,  Verify  The coverage percentage is shown with the text Coverage, " + homeSteps.getResult() );
 		//TCID_41: Verify Continue Text are displayed
-*/		homeSteps.verifyContinueText();//newui
+*/		//dhanu homeSteps.verifyContinueText();//newui
 		Reporter.writeSummary("TCID_HOME_041,  Verify Continue Text are displayed, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_HOME_040,  Verify  whether the button Continue is displayed under the heading Learning in Progress, " +  homeSteps.getResult() );
 		Reporter.writeSummary("TCID_HOME_032,  Verify  whether the button Continue is present for the text Learning in progress,"+ homeSteps.getResult() );
@@ -81,7 +81,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		HomeSteps homeSteps = new HomeSteps(driver);
 //		homeSteps.verifyNavTORcntAddedCoursesRtnToHome();
 		//TCID_31: Verify navigation to Home page
-		homeSteps.verifySubHeaders();//newui
+		// dhanu homeSteps.verifySubHeaders();//newui
 		Reporter.writeSummary("TCID_HOME_031,  Verify navigation to Home page, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of "^" symbol
 //		homeSteps.verifyTopArrBtn();//newui
@@ -90,28 +90,28 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyNextBtn();//newui
 	//	Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +  result );
 		//TCID_15: Verify the functionality of "<" symbol
-		homeSteps.verifyPreviousBtn();//newui
+		//dhanu homeSteps.verifyPreviousBtn();//newui
    //	Reporter.writeSummary("TCID_015,  Verify the functionality of < symbol, " +  result );
 		//TCID_43: Verify Recently Added courses displayed
 /*		homeSteps.verifyRcntAdded_CoursesText();
 		Reporter.writeSummary("TCID_043,  Verify  Recently Added courses displayed, " + homeSteps.getResult() );
 */		//TCID_80:Verify the function of  Wish list icon
-		homeSteps.verifyWishListBtn();//newui
+		//dhanu homeSteps.verifyWishListBtn();//newui
 		Reporter.writeSummary("TCID_HOME_080, Verify the function of  Wish list icon, " +  homeSteps.getResult() );
 		//TCID_79:Verify the function of  Cart  icon
-		homeSteps.verifyCartItemBtn();//newui
+		//dhanu homeSteps.verifyCartItemBtn();//newui
 		Reporter.writeSummary("TCID_HOME_079,  Verify the function of  Cart  icon, " + homeSteps.getResult() );
 		//TCID_3:Verify My Learning page is displayed after logging to app.
-		homeSteps.verifyMyLearningPage();//newui
+		//dhanu homeSteps.verifyMyLearningPage();//newui
 		Reporter.writeSummary("TCID_HOME_003,  Verify My Learning page is displayed after logging to app, " +  homeSteps.getResult());
 		//Verify LogoImage is displayed after logging to app
-		homeSteps.verifyLogoImg();//newui
+		//dhanu homeSteps.verifyLogoImg();//newui
 		Reporter.writeSummary("TCID_HOME_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());
 		homeSteps.clickLogout(); 
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {

@@ -22,7 +22,7 @@ public class HomePage extends FractalBasePage {
 	private By lblCLMiLrn = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Micro Learning')]");
 
 	private By lblNotification = By.xpath(".//*[@id='notification-dropdown']/*//span[@class='heading']");
-	private By Check = By.xpath(".//p[contains(text(),'Check it out! New item added to Automation Learnin')]");
+	private By Check = By.xpath(".//p[contains(text(),'You can now access Launch.')]");
  /*******new ui***************/
 	private By lblResumeLearning= By.xpath(".//div[contains(text(),'RESUME LEARNING')]");//new ui
 /***************/	
@@ -91,7 +91,7 @@ public class HomePage extends FractalBasePage {
 	private By homeLink = By.xpath(".//img[@class='logo-height']");
 	/************************/
 	
-	private By iconGridView = By.xpath(".//div/ng-include/*//div/a[contains(@data-icon,'R')]");
+	private By iconGridView = By.xpath(".//div[contains(@class,'col-lg-6 col-md-6 col-sm-6 float-right mobo_width pr-0 text-right')]/../div/div/a/i");//edit by dhanushiya.k
    
 	/*******new ui***************/
 	private By privacyLink = By.xpath(".//a[contains(text(),'Privacy')]");

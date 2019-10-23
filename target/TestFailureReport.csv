@@ -1,0 +1,5 @@
+"Browser/App"," Environment"," TCID"," TEST DESCRIPTION"," TEST RESULT ","TIME TAKEN(SEC)","TIME STAMP"
+"chrome","Production","TCID_HOME_080"," Verify the function of  Wish list icon"," FAILED","40","Wed Oct 23 16:16:35 IST 2019"
+"chrome","Production","TCID_HOME_079","  Verify the function of  Cart  icon"," FAILED","0","Wed Oct 23 16:16:35 IST 2019"
+"chrome","Production","TCID_HOME_003","  Verify My Learning page is displayed after logging to app"," FAILED","0","Wed Oct 23 16:16:35 IST 2019"
+"chrome","Production","TCID_HOME_084"," Verify the functionality of the Logo displayed on the top left corner of the page."," FAILED","0","Wed Oct 23 16:16:35 IST 2019"
