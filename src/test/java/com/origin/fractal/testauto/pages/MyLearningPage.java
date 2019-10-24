@@ -151,12 +151,12 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyTickmark() {
 		click(lblCompleted);
-		if(elementExist(boxButton)) {
+	/*	if(elementExist(boxButton)) {
 			click(boxButton);
 			//	click(lblDuration);
 		  elementExist(lblTick);
 		}
-	}
+	*/}
 
 	public void verifyGridView() {
 		click(lblAll);

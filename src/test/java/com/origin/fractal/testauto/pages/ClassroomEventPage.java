@@ -293,11 +293,11 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void verifyNewPreAssignmentForm() {
 	wait(5);
 	scrollToElement(btnPreAddAssignment);wait(5);
-	click(btnPreAddAssignment);
+/*	click(btnPreAddAssignment);
 	verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
 	verifyText("Assignment Description",getAttributeValue(inpPreEventAssignDesc));
 	verifyText("Add Assignment", btnPreAddAssignment);
-	}
+*/	}
 	public void verifySurveyDetailsDisplayed() {
 	wait(5);
 	scrollToElement(lblPreSurvey);
@@ -356,7 +356,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Add Assignment", postAddAssignmentBtn);
 	}
 	public void verifyPostAddAssignmentDetails() {	
-	WebElement element = driver.findElement( By.xpath(".//h4[@id='postassignment_title']')]")); Actions
+/*	WebElement element = driver.findElement( By.xpath(".//h4[@id='postassignment_title']')]")); Actions
 	actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
 	wait(2);
@@ -367,7 +367,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Assignment Title",getAttributeValue(inpPostAssignTitle));
 	wait(5);
 	verifyText("Assignment Description",getAttributeValue(inpPostAssignDesc));
-	}
+*/	}
 	public void verifyPostSurveyDetails() {
 	wait(2);
 	WebElement element = driver.findElement( By.id("postsurvey_title")); Actions

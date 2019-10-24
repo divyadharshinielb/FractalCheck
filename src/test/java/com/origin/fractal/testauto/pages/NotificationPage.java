@@ -27,7 +27,7 @@ public class NotificationPage extends FractalBasePage{
 	private By lblRelaunchBtn=By.xpath("//a[contains(text(),'RELAUNCH')]");
 	private By lblforgotPasswordText=By.xpath("//h3[contains(text(),'Looks like you forgot your password!')]");
 	private By lblResetYourPasswordBtn=By.xpath("//a[contains(text(),'RESET YOUR PASSWORD')]");
-	private By lblHiNameText=By.xpath("//p[contains(text(),'Hi NAME!')]");
+	private By lblHiNameText=By.xpath("//p[contains(text(),'Hi NAME !')]");
 	private By lblValidityExpiredText=By.xpath("//h3");
 	private By lblExploreBtn=By.xpath("//a[contains(text(),'EXPLORE')]");
 	private By lblContentAssignText=By.xpath("//h3[contains(text(),'A new learning journey awaits you!')]");
