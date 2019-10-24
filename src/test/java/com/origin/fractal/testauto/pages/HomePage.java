@@ -368,12 +368,16 @@ public class HomePage extends FractalBasePage {
 		actions.moveToElement(element1);
 		actions1.perform();
 */		wait(10);
+    if(elementExist(privacyLink)) {
 		click(privacyLink);
 		verifyLabel("privacyPage",privacyPage);
 		wait(5);
+    }
+		if(elementExist(contactsLink)) {
 		click(contactsLink);
 		verifyLabel("contactsPage",contactsPage);
 		wait(5);
+		}
 		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
 		Actions actions1= new Actions(driver);
 		actions.moveToElement(element1);

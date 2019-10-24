@@ -47,7 +47,11 @@ public class MenuPage extends FractalBasePage{
 	public void gotoPaymentConfiguration() {
 		click(btnSettings);
 		//	click(btnScroll);
-			wait(10);
+		wait(2);
+		WebElement element = driver.findElement( By.xpath("//a[@href='#payment/settings']//i[@data-icon='P']")); Actions
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
+		wait(2);
 			click(btnPayment);
 			wait(10);
 			click(btnDropDown1);
