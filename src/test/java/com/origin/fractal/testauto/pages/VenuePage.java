@@ -12,7 +12,7 @@ public class VenuePage extends FractalBasePage{
 	private By userIcon = By.xpath(".//a[@id='dLabel']");
 	private By lblLogout = By.xpath(".//a[contains(text(),'Logout')]");
 	private By settingsIcon =By.xpath("//div[@class='icon dripicons-gear']");
-	private By settingsSelection = By.xpath("//li[@class='ng-scope']//li[7]");
+	private By settingsSelection = By.xpath(".//div[@class='icon-Classroom-settings icon']");//li[@class='ng-scope']//li[7]
 	private By addVenue = By.xpath(".//button[@class='md-raised btn btn-lg btn-default text-uppercase']");
 	private By venueName =By.name("name");
 	private By selectCountry = By.xpath(".//span[contains(text(),'Select Country')]");
@@ -53,7 +53,11 @@ public class VenuePage extends FractalBasePage{
 	}
 	public void clickMenu() {	
 		click(settingsIcon);
-		wait(10);
+		wait(2);
+		WebElement element = driver.findElement( By.xpath("//div[@class='icon-Classroom-settings icon']")); Actions
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
+		wait(2);
 		click(settingsSelection);
 		wait(10);
 	}
