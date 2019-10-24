@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 public class ClassroomPage extends FractalBasePage {
 	private By searchField = By.xpath("//input[@id='searchClassroom']");
 	private By dropDown1 = By.xpath("//div[@class='select-background learningobjectslist float-left select-180']");
-	private By dropDown = By.xpath("//li[contains(text(),'LMS Admin')]");
+	private By dropDown = By.xpath("//li[contains(text(),'content admin')]");//li[contains(text(),'LMS Admin')]
 	private By categoriesDropDown1 = By.xpath("//li[contains(text(),'Created By All')]");
 	private By categoriesDropDown2=By.xpath("//li[contains(text(),'Content Admin')]");
 	private By categoriesDropDown = By.xpath("//li[contains(text(),'All Categories')]");
@@ -43,13 +43,14 @@ public class ClassroomPage extends FractalBasePage {
     private By classroomDropDown1 = By.xpath("//li[contains(text(),'Origin Learning Solutions')]");//li[contains(text(),'Ramanujan Museum & Math Education Centre')]
     private By classroomDropDown3 = By.xpath("//span[contains(text(),'Classroom Organization.')]");
     private By classroomDropDown2 = By.xpath("//input[@placeholder='Select']");
-    private By classroomDropDown4 = By.xpath("//li[contains(text(),'prema jegan')]");
+    private By classroomDropDown4 = By.xpath("//li[contains(text(),'Anusha C S')]");//li[contains(text(),'prema jegan')]
     private By classroomDropDown5 = By.xpath("//div[contains(@class,'select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20')]//span[contains(@class,'current')][contains(text(),'Select')]");
     private By lblSelect =By.xpath("//md-input-container[@class='flex']//span[@class='current'][contains(text(),'Select')]");
     private By selectDropDown=By.xpath("//div[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//li[@class='option'][contains(text(),'General')]");
     private By lblSelectVenue= By.xpath("//form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[7]/div[2]/div[1]/md-input-container[1]/div[1]/span[1]");
     private By lblVirtualClassroom= By.xpath("//label[contains(text(),'Zoom')]");
-    private By lblAvgScore= By.xpath("//input[@type='number']");
+    private By lblAvgScoreHr= By.xpath("//input[contains(@placeholder,'hh')]");//input[@type='number']//input[@id='input_11']
+    private By lblAvgScoreMm= By.xpath("//input[contains(@placeholder,'mm')]");
     private By lblSession= By.xpath("//label[@id='session_expand']");
     private By lblDuration= By.xpath("//label[contains(text(),'Approx Duration')]");
     private By lblSessionRadioBtn= By.xpath("//li[@class='timeline__step cursor-pointer done']//i[@class='timeline__step-marker']");
@@ -227,7 +228,7 @@ public class ClassroomPage extends FractalBasePage {
 		wait(5);
 		click(classroomDropDown1);
 		wait(5);
-		enterData("40",lblAvgScore);
+	//	enterData("40",lblAvgScore);
 		wait(2);
 		click(lblVirtualClassroom);
 		wait(5);
@@ -262,12 +263,14 @@ public class ClassroomPage extends FractalBasePage {
 		classroomCommonFunction();
 		wait(5);
 		click(lblSession);
-		wait(2);
-		WebElement element = driver.findElement(By.xpath("//input[@type='number']")); Actions
+		WebElement element = driver.findElement(By.xpath("//span[contains(text(),'Duration')]")); Actions
 		actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
+		System.out.println("123456"+element);
 		wait(5);
-		enterData("123",lblAvgScore);
+		enterData("05",lblAvgScoreHr);
+		wait(2);
+		enterData("05",lblAvgScoreMm);
 		wait(5);
 		click(closeBtn);
 	}
