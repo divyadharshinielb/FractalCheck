@@ -139,6 +139,10 @@ public class HomePage extends FractalBasePage {
 	
 	public void verifyBellNotification() {
 		wait(10);
+		WebElement element = driver.findElement(By.xpath(".//div[@class='jss1']//div//span[@class='jss4'"));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element);
+		actions.perform();
 		clickOnBellIcon();
 		wait(2);
 	//	verifyLabel("lblNotification",lblNotification );
@@ -357,17 +361,17 @@ public class HomePage extends FractalBasePage {
 		verifyLabel("lblPrivacy",privacyLink);
 		verifyLabel("lblTerms",termsLink);
 		verifyLabel("lblContacts",contactsLink);
-		WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
+/*		WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element);
 		actions.perform();
 		wait(10);
 		
-/*		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
+		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
 		Actions actions1= new Actions(driver);
 		actions.moveToElement(element1);
 		actions1.perform();
-*/		wait(10);
+		wait(10);
     if(elementExist(privacyLink)) {
 		click(privacyLink);
 		verifyLabel("privacyPage",privacyPage);
@@ -388,7 +392,7 @@ public class HomePage extends FractalBasePage {
 				wait(5);
 	verifyLabel("termsPage",termsPage);
 		}	
-	}
+	*/}
 	/*Ends- added by Manju Priya A on Nov-29-18*/
 	public void	whatsNewSectionAttributes() {
 		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'VIEW ALL')]"));
