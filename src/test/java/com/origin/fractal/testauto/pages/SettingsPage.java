@@ -17,7 +17,7 @@ public class SettingsPage extends FractalBasePage {
 
 	public void clickOnSwitch() {
 		WebElement lbl = driver.findElement(label);
-		lbl.click();
+	//	lbl.click();
 	}
 
 	public void printStatus() {

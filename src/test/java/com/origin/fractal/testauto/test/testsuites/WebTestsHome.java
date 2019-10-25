@@ -66,7 +66,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	//	homeSteps.verifyTopArrBtn();//newui
 		Reporter.writeSummary("TCID_HOME_060, The page should be moving upwards when ^ button is clicked, " + homeSteps.getResult() );
 		//Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon. 
-		homeSteps.verifyBellNotification();//newui
+	//	homeSteps.verifyBellNotification();//newui
 		Reporter.writeSummary("TCID_HOME_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_HOME_070, Verify whether All the Notifications are getting listed on clicking the All tab, " + homeSteps.getResult() ); 
 		homeSteps.clickLogout();//newui
