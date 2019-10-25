@@ -2,6 +2,8 @@ package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
 
@@ -28,9 +30,10 @@ public class NotificationPage extends FractalBasePage{
 	private By lblforgotPasswordText=By.xpath("//h3[contains(text(),'Looks like you forgot your password!')]");
 	private By lblResetYourPasswordBtn=By.xpath("//a[contains(text(),'RESET YOUR PASSWORD')]");
 	private By lblHiNameText=By.xpath("//p[contains(text(),'Hi NAME !')]");
+	private By lblHiNameText1=By.xpath("//p[contains(text(),'Hi NAME!')]");
 	private By lblValidityExpiredText=By.xpath("//h3");
 	private By lblExploreBtn=By.xpath("//a[contains(text(),'EXPLORE')]");
-	private By lblContentAssignText=By.xpath("//h3[contains(text(),'A new learning journey awaits you!')]");
+	private By lblContentAssignText=By.xpath("//h3[contains(text(),'A new learning journey awaits you !')]");
 	private By lblLaunchBtn=By.xpath("//a[contains(text(),'LAUNCH')]");
 	private By lblRegistrationText=By.xpath("//h3");
 	private By lblWelcomHiNameText=By.xpath("//p[contains(text(),'Welcome NAME!')]");
@@ -49,6 +52,10 @@ public class NotificationPage extends FractalBasePage{
 		 wait(5);
 		 verifyText("You’ve got a new password!",lblNewPasswordText);
 		 wait(5);
+		 WebElement element = driver.findElement(By.xpath("//p[contains(text(),'Hi NAME !')]"));
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element);
+			actions.perform();
 		 verifyText("Hi NAME!",lblHiNameText);
 		 wait(5);
 		String expectedString=getText(lblTemplateName);
@@ -85,7 +92,11 @@ public class NotificationPage extends FractalBasePage{
 		click(lblPreview);
 		verifyText("Course Completion",lblCourseCompletionText);
 		wait(5);
-		 verifyText("Hi NAME!",lblHiNameText);
+		 WebElement element = driver.findElement(By.xpath("//p[contains(text(),'Hi NAME!')]"));
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element);
+			actions.perform();
+		 verifyText("Hi NAME!",lblHiNameText1);
 		 wait(5);
 		String expectedString=getText(lblTemplateName);
 		verifyText(expectedString,lblTemplateName);
@@ -103,6 +114,10 @@ public class NotificationPage extends FractalBasePage{
 		 click(lblPreview);
 		 verifyText("Looks like you forgot your password!",lblforgotPasswordText);
 		 wait(5);
+		 WebElement element = driver.findElement(By.xpath(".//p[contains(text(),'Hi NAME !')]"));
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element);
+			actions.perform();
 		 verifyText("Hi NAME!",lblHiNameText);
 		 wait(5);
 		 String expectedString=getText(lblTemplateName);
@@ -121,7 +136,11 @@ public class NotificationPage extends FractalBasePage{
 		 click(lblPreview);
 		 verifyText("Here's what happened...",lblValidityExpiredText);
 		 wait(5);
-		 verifyText("Hi NAME!",lblHiNameText);
+		 WebElement element = driver.findElement(By.xpath("//p[contains(text(),'Hi NAME!')]"));
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element);
+			actions.perform();
+		 verifyText("Hi NAME!",lblHiNameText1);
 		 wait(5);
 		 String expectedString=getText(lblTemplateName);
 		 verifyText(expectedString,lblTemplateName);
@@ -137,6 +156,10 @@ public class NotificationPage extends FractalBasePage{
 		 click(lblContentAssignment);
 		 wait(5);
 		 click(lblPreview);
+		 WebElement element = driver.findElement(By.xpath("//p[contains(text(),'Hi NAME !')]"));
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element);
+			actions.perform();
 		 verifyText("A new learning journey awaits you!",lblContentAssignText);
 		 wait(5);
 		 verifyText("Hi NAME!",lblHiNameText);
@@ -157,6 +180,10 @@ public class NotificationPage extends FractalBasePage{
 		 wait(5);
 		 click(lblPreview);
 		 wait(5);
+		 WebElement element = driver.findElement(By.xpath("//p[contains(text(),'Welcome NAME!')]"));
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element);
+			actions.perform();
 		 verifyText("You're in! Registration confirmed...",lblRegistrationText);
 		 wait(5);
 		 verifyText("Welcome NAME!",lblWelcomHiNameText);

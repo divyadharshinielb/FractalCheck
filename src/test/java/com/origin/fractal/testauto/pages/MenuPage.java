@@ -110,7 +110,10 @@ public class MenuPage extends FractalBasePage{
 	}
 	public void gotoNotification() {
 		click(btnSettings);
-		wait(10);
+		wait(5);
+		WebElement element = driver.findElement( By.xpath("//a[@href='#notification/settings']//div[@class='icon']")); Actions
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
 		click(btnNotification);
 		wait(10);
 	}

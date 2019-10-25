@@ -1,3 +1,4 @@
+
 package com.origin.fractal.testauto.test.testsuites;
 
 import java.io.IOException;
