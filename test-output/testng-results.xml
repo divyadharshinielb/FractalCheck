@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="104419" started-at="2019-10-21T12:03:43Z" finished-at="2019-10-21T12:05:27Z">
+  <suite name="Default suite" duration-ms="75921" started-at="2019-10-25T05:42:48Z" finished-at="2019-10-25T05:44:04Z">
     <groups>
       <group name="pilot">
-        <method signature="WebTestsHome.testHomePageVerifyFiltersRcntRecommended(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="testHomePageVerifyFiltersRcntRecommended" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
+        <method signature="WebTestSettingsAdmin.WebTestSettingsAdminPaymentConfig(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="WebTestSettingsAdminPaymentConfig" class="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin"/>
       </group> <!-- pilot -->
-      <group name="Home">
-        <method signature="WebTestsHome.testHomePageVerifyFiltersRcntRecommended(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="testHomePageVerifyFiltersRcntRecommended" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
-      </group> <!-- Home -->
     </groups>
-    <test name="Default test" duration-ms="104419" started-at="2019-10-21T12:03:43Z" finished-at="2019-10-21T12:05:27Z">
-      <class name="com.origin.fractal.testauto.test.testsuites.WebTestsHome">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="beforeSuite" is-config="true" duration-ms="17" started-at="2019-10-21T12:03:43Z" finished-at="2019-10-21T12:03:43Z">
+    <test name="Default test" duration-ms="75921" started-at="2019-10-25T05:42:48Z" finished-at="2019-10-25T05:44:04Z">
+      <class name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="beforeSuite" is-config="true" duration-ms="16" started-at="2019-10-25T05:42:48Z" finished-at="2019-10-25T05:42:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-10-21T12:03:43Z" finished-at="2019-10-21T12:03:43Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-10-25T05:42:48Z" finished-at="2019-10-25T05:42:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-21T12:03:43Z" finished-at="2019-10-21T12:03:43Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-25T05:42:48Z" finished-at="2019-10-25T05:42:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-10-21T12:03:43Z" finished-at="2019-10-21T12:03:43Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-10-25T05:42:48Z" finished-at="2019-10-25T05:42:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testHomePageVerifyFiltersRcntRecommended(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="testHomePageVerifyFiltersRcntRecommended" duration-ms="103612" started-at="2019-10-21T12:03:43Z" description="TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections" data-provider="browers" finished-at="2019-10-21T12:05:26Z">
+        <test-method status="PASS" signature="WebTestSettingsAdminPaymentConfig(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="WebTestSettingsAdminPaymentConfig" duration-ms="74946" started-at="2019-10-25T05:42:48Z" description="TCID_009:Dynamic payment configurations should appear in the User purchase page." data-provider="browers" finished-at="2019-10-25T05:44:03Z">
           <params>
             <param index="0">
               <value>
@@ -44,24 +41,24 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testHomePageVerifyFiltersRcntRecommended -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="afterMethod" is-config="true" duration-ms="784" started-at="2019-10-21T12:05:26Z" finished-at="2019-10-21T12:05:27Z">
+        </test-method> <!-- WebTestSettingsAdminPaymentConfig -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="afterMethod" is-config="true" duration-ms="955" started-at="2019-10-25T05:44:03Z" finished-at="2019-10-25T05:44:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-21T12:05:27Z" finished-at="2019-10-21T12:05:27Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-25T05:44:04Z" finished-at="2019-10-25T05:44:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-10-21T12:05:27Z" finished-at="2019-10-21T12:05:27Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-10-25T05:44:04Z" finished-at="2019-10-25T05:44:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@64bf3bbf]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-10-21T12:05:27Z" finished-at="2019-10-21T12:05:27Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin@64bf3bbf]" name="afterSuite" is-config="true" duration-ms="15" started-at="2019-10-25T05:44:04Z" finished-at="2019-10-25T05:44:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestsHome -->
+      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
