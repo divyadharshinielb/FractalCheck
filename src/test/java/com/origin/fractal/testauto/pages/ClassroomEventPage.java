@@ -295,7 +295,10 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	scrollToElement(btnPreAssignment);
 	wait(5);
+	click(btnPreAssignment);
+	wait(5);
 	click(btnPreAddAssignment);
+	wait(2);
 	verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
 	verifyText("Assignment Description",getAttributeValue(inpPreEventAssignDesc));
 	verifyText("Add Assignment", btnPreAddAssignment);

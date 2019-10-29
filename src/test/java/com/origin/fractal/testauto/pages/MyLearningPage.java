@@ -23,7 +23,7 @@ public class MyLearningPage extends FractalBasePage {
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");//Updated on Nov-22-18
+	private By clickCatalog = By.xpath(".//li[contains(@class,'slider-slide slide-visible')]//span[2]");//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");//Updated on Nov-22-18
 
 	private By lblCatlogCategory = By.xpath(".//div[contains(@class,'container pl-0 bgcolor')]//div[contains(@class,'category')]//div[1]");//div[contains(text(),'Category :')]
 	private By lblLanguage = By.xpath(".//div[contains(@class,'category')]//div[2]");//div[contains(text(),'Language :')]
@@ -267,7 +267,7 @@ public class MyLearningPage extends FractalBasePage {
 				actions.perform();
 			*/	wait(5);
 		    	click(clickClassroomCatalog);
-			  wait(5);
+		    	wait(5);
 		    }
 			  public void	verifyAssignedClassroom(){
 				  scrollBar();
