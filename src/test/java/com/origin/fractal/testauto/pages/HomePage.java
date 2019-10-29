@@ -22,7 +22,7 @@ public class HomePage extends FractalBasePage {
 	private By lblCLMiLrn = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Micro Learning')]");
 
 	private By lblNotification = By.xpath(".//*[@id='notification-dropdown']/*//span[@class='heading']");
-	private By Check = By.xpath(".//p[contains(text(),'Check it out! New item added to Automation Learnin')]");
+	private By Check = By.xpath(".//p[contains(text(),'You can now access Automation test bundle1.')]");
  /*******new ui***************/
 	private By lblResumeLearning= By.xpath(".//div[contains(text(),'RESUME LEARNING')]");//new ui
 /***************/	
@@ -144,7 +144,7 @@ public class HomePage extends FractalBasePage {
 	//	verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check );
-		clickOnViewAll();
+		//clickOnViewAll();
 		
 	}
 	public void verifyResumeLearningText() {
@@ -185,7 +185,7 @@ public class HomePage extends FractalBasePage {
 
 	public void verifyAllFilterWhatsNew() {
 		click(whlblAll);
-		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
+		//verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
 	     
 	}
 	public void verifyBundleFilterWhatsNew() {
@@ -393,7 +393,7 @@ public class HomePage extends FractalBasePage {
 			System.out.println("---->"+a);
 	    }
 	    click(iconListView);
-	    verifyAllFilterTypeRcntAdded(rboxBtn, rboxCatType, whlblFilterLink);
+	//    verifyAllFilterTypeRcntAdded(rboxBtn, rboxCatType, whlblFilterLink);
 	/*    verifyTileFunctionality();
 	    verifyTileStructure();
 	*/
