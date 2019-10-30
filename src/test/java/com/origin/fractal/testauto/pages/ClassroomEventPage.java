@@ -50,6 +50,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblReleaseDate = By.xpath(".//span[contains(text(),'Release Date')]");
 	private By lblSubmissionDueDate = By.xpath(".//span[contains(text(),'Submission Due Date')]");
 	private By lblEvalDueDate = By.xpath(".//span[contains(text(),'Evaluation Due Date')]");
+	private By lblCloseBtn = By.xpath("//div[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12']//i[@class='icon text-right font-size-35 padding-r-30 padding-t-10']");
 	private By btnPreAssignment = By.xpath("//h4[@id='pre_assignment_title']");
 	private By btnPreAddAssignment = By.xpath(".//button[@id='pre_addAssignment']");
 	private By inpPreEventAssignTitle = By.xpath(".//input[contains(@name,'pre_event_assignment_title')]");
@@ -295,6 +296,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	scrollToElement(btnPreAssignment);
 	wait(5);
+	click(btnPreAssignment);
+	wait(2);
 	click(btnPreAssignment);
 	wait(5);
 	click(btnPreAddAssignment);

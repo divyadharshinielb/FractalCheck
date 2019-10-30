@@ -24,7 +24,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		};
 	}
 	//Event
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
 			description="TCID_01:"
 			+ "TCID_01: Verify Add new event page is opened on clicking the Ads Event button"
 			+ "TCID_02: Verify on clicking SAVE, throws the alert for all mandatory fields"
@@ -186,9 +186,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		classSteps.verifyAddAssignmentBtn();
 		Reporter.writeSummary("TCID_Event_027,  Verify whether the new assignment details fields are displayed after clicking the Add Assignment Button, " +  classSteps.getResult() );
 		//TCID_27: Verify whether the new assignment details fields are displayed after clicking the Add Assignment Button
-		classSteps.verifyNewPreAssignmentForm();
-		Reporter.writeSummary("TCID_Event_028,   Verify Whether the Add survey details are displayed after clicking Survey label, " +  classSteps.getResult() );
-		//TCID_28: Verify Whether the Add survey details are displayed after clicking Survey label
+		
 		classSteps.verifySurveyDetailsDisplayed();
 		Reporter.writeSummary("TCID_Event_029,   Verify whether the Add Survey button is displayed after expanding Survey, " +  classSteps.getResult() );
 		//TCID_29: Verify whether the Add Survey button is displayed after expanding Survey
@@ -197,6 +195,9 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		//TCID_30: Verify whether the new Survey form details fields are displayed after clicking the Add Assignment Button
 //		classSteps.verifyPreSurveyFormDetails();
 		//TCID_31: Verify Whether the Session details are displayed after clicking Session label
+		classSteps.verifyNewPreAssignmentForm();
+		Reporter.writeSummary("TCID_Event_028,   Verify Whether the Add survey details are displayed after clicking Survey label, " +  classSteps.getResult() );
+		//TCID_28: Verify Whether the Add survey details are displayed after clicking Survey label
 		classSteps.verifySessionDetailsDisplayed();
 		Reporter.writeSummary("TCID_Event_032,   Verify whether the error message is displayed if the instructor name is not selected from drop-down, " +  classSteps.getResult() );
 		//TCID_32: Verify whether the error message is displayed if the instructor name is not selected from drop-down
@@ -230,7 +231,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
 			+ "TCID_41: Verify Whether the Notifications days are displayed under 'Notifications & Reminders' section"
 			+ "TCID_42: Verify whether the \"Notifications & Reminders\" fields accepts alphabets"
@@ -288,7 +289,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
 			+ "TCID_51: Verify whether the \"Maximum no. of participants\" field accepts alphanumerics"
 			+ "TCID_52: Verify whether the \"Maximum no. of participants\" field accepts special characters"
@@ -352,7 +353,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="")
 	public void verifyEvents5(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
