@@ -43,7 +43,7 @@ public class ClassroomPage extends FractalBasePage {
     private By classroomDropDown1 = By.xpath("//li[contains(text(),'Origin Learning Solutions')]");//li[contains(text(),'Ramanujan Museum & Math Education Centre')]
     private By classroomDropDown3 = By.xpath("//span[contains(text(),'Classroom Organization.')]");
     private By classroomDropDown2 = By.xpath("//input[@placeholder='Select']");
-    private By classroomDropDown4 = By.xpath("//li[contains(text(),'Anusha C S')]");//li[contains(text(),'prema jegan')]
+    private By classroomDropDown4 = By.xpath(".//li[contains(text(),'Vigneshwaran Rajagopal')]");//li[contains(text(),'prema jegan')]Anusha C S
     private By classroomDropDown5 = By.xpath("//div[contains(@class,'select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20')]//span[contains(@class,'current')][contains(text(),'Select')]");
     private By lblSelect =By.xpath("//md-input-container[@class='flex']//span[@class='current'][contains(text(),'Select')]");
     private By selectDropDown=By.xpath("//div[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//li[@class='option'][contains(text(),'General')]");
@@ -254,6 +254,9 @@ public class ClassroomPage extends FractalBasePage {
 		wait(2);
 		click(classroomDropDown5);
 		wait(2);
+		WebElement element11 = driver.findElement(By.xpath(".//li[contains(text(),'Vigneshwaran Rajagopal')]")); Actions
+		actions11 = new Actions(driver); actions11.moveToElement(element11);
+		actions11.perform();
 		click(classroomDropDown4);
 		wait(5);
 		click(continueBtn);
