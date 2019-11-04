@@ -20,6 +20,7 @@ import com.wv.auto.framework.utils.Reporter;
 public class BrowserFactory {
 	// for windows
 	private static String driversLocation = "C:/webdrivers/";
+	private static String browserExtn ="";
 	// for Mac
 	private static String driversLocMac = "/Users/origin";
 	public static WebDriver getBrowser(String strBrowserName) {
@@ -132,6 +133,9 @@ public class BrowserFactory {
 		case EDGE:
 			browser = getMSEdgeBrowser();
 			break;
+		case SAFARI:
+			browser = getSafariBrowser();/*Added by Manju Priya A on Jan_07_19 ths case*/
+			break;
 		}
 
 		return browser;
@@ -193,6 +197,26 @@ public class BrowserFactory {
 		//
 		return browser;
 	}
-	
-
+	 /*Start of - added by Manju Priya A on May_08_19*/
+	public static String getOS() {
+	String OS = System.getProperty("os.name").toLowerCase();
+	String osName ="";
+	if((OS.indexOf("win") >= 0)) {
+	osName = "win";
+	}else if((OS.indexOf("mac") >= 0)) {
+	osName = "mac";
+	}
+	return osName;
+	}
+	public static void setDriverPath() {
+		if(getOS().equalsIgnoreCase("win")) {
+		driversLocation = "C:/webdrivers/";
+		browserExtn = ".exe";
+		}else if(getOS().equalsIgnoreCase("mac")){
+		driversLocation= "/Users/origin/webdrivers/";
+		browserExtn="";
+		}
+		
+	/*End of - added by Manju Priya A on May_08_19*/
+	}
 }

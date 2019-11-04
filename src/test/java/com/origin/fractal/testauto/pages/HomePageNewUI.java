@@ -37,6 +37,7 @@ public class HomePageNewUI extends FractalBasePage {
 			commonFunction();
 			verifyText("| Terms",termsLink);
 			verifyText("| Contact",contactsLink);
+			wait(5);
 			click(privacyLink);
 			verifyText("PRIVACY POLICY",privacyPage);
 			click(lblHome);
