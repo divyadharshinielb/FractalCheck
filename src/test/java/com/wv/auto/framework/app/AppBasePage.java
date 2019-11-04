@@ -24,7 +24,7 @@ public abstract class AppBasePage extends BasePage {
 	protected WebDriverWait wdwait;
 	protected int timeOut;
 	protected String env;
-	protected String platform="android";
+	protected String platform="ios";
 	protected String part1 = "//android.widget.ListView/android.widget.RelativeLayout[contains(@index,'";
 	protected String part2= "')]";
 	@AndroidFindBy(id = "space") // changed name to id

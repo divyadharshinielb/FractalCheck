@@ -78,5 +78,17 @@ public class MAMyAccountSteps extends FractalBaseStep{//extends by Jan_16_19
 		}
 	}
 	/*Ends - added by Manju Priya A on Jan-22-19*/
+	/* start by divya*/
+	public void verifySamePassCredentials(String fName, String lName) {
+		result = "Passed";
+		try {
+			page.verifySamePassCredentials(fName, lName);
+		}
+		catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
+	}
+	/* Ended by divya*/
 	
 }

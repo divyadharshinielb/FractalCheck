@@ -57,7 +57,9 @@ public abstract class FractalBasePage extends BasePage {
 	}
 
 	public void clickOnProfile() {
+		wait(10);
 		click(lblProfile);
+		
 	}
 
 	public void clickOnMyAccount() {
@@ -516,7 +518,7 @@ public abstract class FractalBasePage extends BasePage {
 
 
 		public void clickLogout() {
-			wait(5);
+			wait(10);
 			click(lblProfile);
 			wait(5);
 			click(logOut);

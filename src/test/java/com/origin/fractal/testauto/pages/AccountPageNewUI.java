@@ -10,12 +10,12 @@ import com.wv.auto.framework.BrowserFactory;
 
 public class AccountPageNewUI  extends FractalBasePage{
 	
-	private By lblMyAccountHdr = By.xpath(".//div[contains(text(),'My Account')]");//edited by Dhanushiya
+	private By lblMyAccountHdr = By.xpath(".//div[contains(@class, 'heading-left mb-4')]");
 	private By lblProfileTitle = By.xpath("//div[contains(text(),'MY PROFILE')]");
-	private By lblEmailAddr = By.xpath(".//h3[contains(text(),'Email address:')]");//edited by Dhanushiya
-	private By lblFirstName = By.xpath(".//h3[contains(text(),'First name')]");//edited by Dhanushiya
-	private By lblLastName = By.xpath(".//h3[contains(text(),'Last Name')]");//edited by Dhanushiya
-	private By lblPhone = By.xpath(".//h3[contains(text(),'Phone')]");//edited by Dhanushiya
+	private By lblEmailAddr = By.xpath(".//h3[@class='padding-b-10']");
+	private By lblFirstName = By.xpath("//h3[contains(text(),'First name')]");
+	private By lblLastName = By.xpath(".//h3[contains(text(),'Last Name *')]");
+	private By lblPhone = By.xpath(".//h3[contains(text(),'Phone')]");
 	private By lblChgPass = By.xpath("//div[contains(text(),'CHANGE PASSWORD')]");
 	private By lblOldPass = By.xpath(".//h3[contains(text(),'Old password')]");
 	private By lblNewPass = By.xpath(".//h3[contains(text(),'New password')]");

@@ -48,7 +48,8 @@ public class MAForgotPasswordPage extends FractalAppPage {
 			/*tbUserName = By.xpath("//XCUIElementTypeImage[@name=\"iconUsername\"]/preceding-sibling::XCUIElementTypeTextField");
 			tbPassword = By.xpath("//XCUIElementTypeImage[@name=\"iconPassword\"]/following-sibling::XCUIElementTypeSecureTextField");
 			btnLogin = By.name("LOGIN");*/
-			lblForgotPassword = By.xpath("//XCUIElementTypeButton[contains(@name,'Forgot Password?')]");
+			//edit by divya lblForgotPassword = By.xpath("//XCUIElementTypeButton[contains(@name,'Forgot Password?')]");
+			lblForgotPassword = By.id("Forgot password?"); //XCUIElementTypeButton[@name="Forgot password?"]
 			lblEmailId = By.xpath("//XCUIElementTypeButton[contains(@name,'SEND')]/../XCUIElementTypeTextField");
 			tbEmailId = By.xpath("//XCUIElementTypeButton[contains(@name,'SEND')]/../XCUIElementTypeTextField");
 			lblSend = By.xpath("//XCUIElementTypeButton[contains(@name,'SEND')]");
@@ -73,7 +74,7 @@ public class MAForgotPasswordPage extends FractalAppPage {
 	
 	public void verifyForgotPassword() {
 		wait(5);
-		verifyText("Forgot Password?", getObj(lblForgotPassword));
+		verifyText("Forgot password?", getObj(lblForgotPassword));
 		wait(5);
 		click(getObj(lblForgotPassword));
 		wait(5);

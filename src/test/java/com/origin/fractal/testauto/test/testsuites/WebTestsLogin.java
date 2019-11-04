@@ -26,7 +26,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		loginSteps.verifypasswordField();
 		Reporter.writeSummary("TCID_065, Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult() );
 		/****end**/
-	/*	//TCID_26:Verify the UI of the login page. User name, Password, Remember me fields and Login button are available in the login page.
+	//TCID_26:Verify the UI of the login page. User name, Password, Remember me fields and Login button are available in the login page.
 		loginSteps.loginPageVerification();
 		Reporter.writeSummary("TCID_026, Verify the UI of the login page. User name Password Remember me fields and Login button are available in the login page, " +  loginSteps.getResult() );
 		//TCID_36:Verify the login page with valid user name and blank password
@@ -46,7 +46,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		//TCID_74:Verification of Register link  function 
 		loginSteps.registerFunction();
 		Reporter.writeSummary("TCID_074, Verification of Register link  function, " +  loginSteps.getResult() );
-	*/ }
+	 }
 	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLoginInvalid(String row, String strBrowserName) {
@@ -76,6 +76,8 @@ public class WebTestsLogin extends FractalBaseWebTest {
 				/****added from here***30/1**/
 				LoginSteps loginSteps = new LoginSteps(driver);
 				login(driver);
+				// Changes to check as admin user
+				//loginToContentAdmin(driver);
 				HomeSteps homeSteps = new HomeSteps(driver);
 				ForgotPasswordSteps fpassSteps = new ForgotPasswordSteps(driver);
 				homeSteps.clickLogout();

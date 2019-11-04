@@ -51,7 +51,7 @@ public class WebProductionTests extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
 		HomeStepsNewUI homeSteps = new HomeStepsNewUI(driver);
-		/* dhanu homeSteps.verifyResumeLearningLabeltext();
+		homeSteps.verifyResumeLearningLabeltext();
 		Reporter.writeSummary("TCID_010,  Verify My Learning page details on clicking from Home Page, " + homeSteps.getResult() );
 		homeSteps.verifyMyLearningPage();
 		Reporter.writeSummary("TCID_003,  Verify My Learning page is displayed after logging to app, " +  homeSteps.getResult());
@@ -59,7 +59,7 @@ public class WebProductionTests extends FractalBaseWebTest {
 		mLSteps.verifySubMenu();
 		Reporter.writeSummary("TCID_004, Verify all links(All Bundles Courses Learning Paths and resources), " +  mLSteps.getResult() );
 		mLSteps.verifyCatalogname();
-		Reporter.writeSummary("TCID_011, Verify learning item page is opened when any of the particular course catalog item is clicked, " +  mLSteps.getResult() );*/
+		Reporter.writeSummary("TCID_011, Verify learning item page is opened when any of the particular course catalog item is clicked, " +  mLSteps.getResult() );
 		homeSteps.verifyFooterLinks();
 		Reporter.writeSummary("TCID_034, Verify Privacy Terms and Contact links, " + homeSteps.getResult() );
 	}
@@ -79,11 +79,11 @@ public class WebProductionTests extends FractalBaseWebTest {
 	 HomeSteps homeSteps = new HomeSteps(driver);
 	 accountSteps.clickOnMyAccount();
 	 wait(10);
-	 accountSteps.verifyAccountPageLabels();                                                                                                 
+ accountSteps.verifyAccountPageLabels();                                                                                                 
 	 Reporter.writeSummary("TCID_061,  Verify  My account page, " +  accountSteps.getResult() );
-	/* dhanu accountSteps.verifyProfileDetails();
+ accountSteps.verifyProfileDetails();
 	 Reporter.writeSummary("TCID_062,  Verify  My Account Profile details, " +  accountSteps.getResult() );
-     accountSteps.verifyFieldValidation();
+    accountSteps.verifyFieldValidation();
 	 Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
 	 accountSteps.verifyEmptyProfileValidation();
 	 Reporter.writeSummary("TCID_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );
@@ -97,6 +97,6 @@ public class WebProductionTests extends FractalBaseWebTest {
 	 Reporter.writeSummary("TCID_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
 	 homeSteps.verifyLogoImg();
 	 Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());  
-	 homeSteps.clickLogout();*/
+	 homeSteps.clickLogout();
 	}
  }
