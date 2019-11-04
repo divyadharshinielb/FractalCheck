@@ -49,6 +49,9 @@ public class BrowserFactory {
 			if (strBrowserName.equalsIgnoreCase("safari")) {
 				browser = getBrowser(BrowserType.SAFARI);
 				System.out.println("Safari Browser Opened");
+				//comment disabled when need to check in chrome
+				//browser = getBrowser(BrowserType.CHROME);
+				//System.out.println("Chrome Browser Opened");
 			}
 			/*End of - added by Manju Priya A on Jan_07_19*/
 			/*

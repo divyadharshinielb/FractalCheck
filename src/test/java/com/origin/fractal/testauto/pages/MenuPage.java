@@ -9,7 +9,9 @@ import org.openqa.selenium.interactions.Actions;
 import com.origin.fractal.testauto.FractalBasePage;
 
 public class MenuPage extends FractalBasePage{
-	private By userIcon = By.xpath(".//a[@id='dLabel']");
+	//edited by divya on 30th Sept 2019
+	//private By userIcon = By.xpath(".//a[@id='dLabel']");  //a[@id='dLabel']
+	private By userIcon = By.xpath(".//div[contains(@class, 'pull-right padding-r-0 ng-scope')]"); 
 	private By lblLogout = By.xpath(".//a[contains(text(),'Logout')]");
 	private By manageContents = By.xpath("//span[contains(text(),'Manage Content')]");
 	private By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[contains(@title,'Menu')]");
@@ -100,6 +102,9 @@ public class MenuPage extends FractalBasePage{
 	    }
 */	}
 	public void gotoClassroomCreation() {
+		//edit by divya
+		wait(5);
+		//ended here
 		click(classroomBtn);
 		wait(10);
 		

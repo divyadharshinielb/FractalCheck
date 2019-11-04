@@ -10,7 +10,7 @@ import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 public class WebTestContentAdmin extends FractalBaseWebTest{
-	@DataProvider
+	/*@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
 			new Object[] { "1", "chrome" }
@@ -18,9 +18,27 @@ public class WebTestContentAdmin extends FractalBaseWebTest{
 //		, new Object[] { "3", "msedge" } 
 //		 new Object[] { "4", "ie11" }
 		};
-	}
+	}*/
+	//edited by divya from here
+		@DataProvider
+		public Object[][] browers() {
+		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+			return new Object[][] {
+				//new Object[] { "1", "msedge" }, 
+				new Object[] { "2", "Chrome" },
+				//new Object[] { "3", "Firefox" }
+			};
+		}
+		
+		if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
+			return new Object[][] {
+					new Object[] { "1", "safari" }
+				};
+		}
+		return null;
+		}//ended by divya
 	
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_61,62,64,63,66,67: "
 			+ "Verify on clicking the Audio opens another pop-up to create an Audio object"
 			+ "62: Verify  My Account Profile details,"

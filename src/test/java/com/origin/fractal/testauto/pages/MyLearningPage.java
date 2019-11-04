@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.wv.auto.framework.BrowserFactory;
 
 public class MyLearningPage extends FractalBasePage {
 	/***********Newui****************/
@@ -18,33 +19,33 @@ public class MyLearningPage extends FractalBasePage {
 	private By lblLearningpath=By.xpath(".//button[contains(text(),'LEARNING PATHS')]");
 	private By lblResources = By.xpath(".//button[contains(text(),'RESOURCES')]");//*[@id='ngview']/*//ng-include/*//span[contains(text(),'resources')]
 	private By lblBundles = By.xpath(".//button[contains(text(),'BUNDLES')]");//*[@id='ngview']/*//ng-include/*//span[contains(text(),'bundles')]
-	private By lblListView = By.xpath(".//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2 mb-3')]//div[2]//div[1]//a[1]");
+	private By lblListView = By.xpath(".//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2 mb-3')]//div[2]//div[1]"); //div[contains(@class, 'row')]//*/div[2]/div/a
 	private By btnGrid = By.xpath(".//a//i[contains(@class,'icon-grid-selected font-16')]");
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");//Updated on Nov-22-18
+	private By clickCatalog = By.xpath(".//div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')]");//Updated on Nov-22-18 .//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1] .//div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
 
-	private By lblCatlogCategory = By.xpath(".//div[contains(text(),'Category :')]");
-	private By lblLanguage = By.xpath(".//div[contains(text(),'Language :')]");
-	private By lblValidity = By.xpath(".//span[text()='Validity']");
+	private By lblCatlogCategory = By.xpath(".//div[contains(text(),'Category')]");
+	private By lblLanguage = By.xpath(".//div[contains(text(),'Language')]");
+	private By lblValidity = By.xpath(".//span[text()='Validity:']");
 	/********************/	
 	private By lblDurationInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/*//span[contains(text(),'Duration')]");
 	private String lblFilterLink = ".//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../a";
 	private String boxBtn = ".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a";
 	private String boxCatType = "]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]/span[2]";
-	private By boxButton = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]/div[1]/div[1]");//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
+	private By boxButton = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]/div[1]");//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
 	/************Newui***************/
-	private By lblCatnameInside = By.xpath(".//span[@class='three-line-clamp']");//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3
+	private By lblCatnameInside = By.xpath(".//div[contains(@class, 'cdescrip tecap')]/../div/span");//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3
 	private By bundleCnt = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");////Updated Nov-22-18
 	private By lblcourseName = By.xpath(".//span[@class='three-line-clamp']");//Updated Nov-22-18//h1[@class='masonry-bundlename ellipsis padding-t-5']
 	private By lblDuration = By.xpath(".//div/*//span[contains(text(),'Duration')]");
-	private By lblTick = By.xpath(".//button[@class='pl-30 launch_btn www']//img");//round-progress-wrapper
-	private By lblCompleted = By.xpath("//li[contains(text(),'COMPLETED')]");
+	private By lblTick = By.xpath(".//button[@class='pl-0 launch_btn www']/../button/img");//round-progress-wrapper
+	private By lblCompleted = By.xpath(".//li[contains(text(),'COMPLETED')]");
 
-	private By lblCategory = By.xpath(".//a[contains(text(),'Categories')]");//a[contains(text(),'CATEGORIES')]
+	private By lblCategory = By.xpath(".//a[contains(text(),'CATEGORIES')]");//a[contains(text(),'CATEGORIES')]
    
-	private String categoryList = "../html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]//div//ul//li";//*[@id='header']/*//button[contains(text(),'Category')]/../../div/ul/li
+	private String categoryList = "./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]//div//ul//li";//*[@id='header']/*//button[contains(text(),'Category')]/../../div/ul/li
     
 	private By lblStar= By.xpath(".//div//div[@class='dv-star-rating']");//div/ng-include/div/*//div/ng-include/div/*//div/ul
 	private By lblCatalogTick= By.xpath(".//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//a[1]//div[1]//img");//div/ng-include/div/*//div/ng-include/div/*//div/ul/../../div/*//div[contains(@class,'round-progress-wrapper')]
@@ -60,6 +61,9 @@ public class MyLearningPage extends FractalBasePage {
 	private By lobjCount = By.xpath(".//html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/ng-include[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h3[1]");
 	private By lbloverview = By.xpath("//*[@id='ngview']/div/ng-include/*//div/*//h3[contains(text(),'Overview')]");
 	/*End -added By manju Priya A on Nov-29-18*/
+    //edit by divya
+	private By boxButton1 = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]");
+	private By lblAssignedClassroom3 = By.xpath("//h1[contains(text(),'checking for classroom 1')]");
 	public MyLearningPage(WebDriver driver) {
 		super(driver);
 		pageName = "MyLearningPage";
@@ -113,8 +117,9 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyAllFilter() {
 		click(lblAll);
-		wait(2);
+		wait(5);
 		click(lblListView);
+		wait(5);
 		verifyAllFilterType(boxBtn, boxCatType, lblFilterLink);
 	}
 
@@ -147,8 +152,11 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyTickmark() {
 		click(lblCompleted);
-		if(elementExist(boxButton)) {
-			click(boxButton);
+		click(lblListView);
+		wait(5);
+		if(elementExist(boxButton1)) {
+			click(boxButton1);
+			wait(5);
 			//	click(lblDuration);
 		  elementExist(lblTick);
 		}
@@ -156,8 +164,9 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyGridView() {
 		click(lblAll);
-		wait(2);
+		wait(5);
 		gridView();
+		wait(5);
 		System.out.println("true");
 	}
 	public void verifyListView() {
@@ -176,16 +185,21 @@ public class MyLearningPage extends FractalBasePage {
 		click(lblCategory);
 		verifyAllCategories(categoryList);
 		wait(2);
+		print("CHECCCKKCKCKCKCKKCKKCKCK NOWWW in BROWSERRRRRR");
+		click(lblAll);
+		wait(5);
 	}
 
 	public void verifyRatings() {
-/*		click(lblCompleted);
-		wait(2);
-		click(btnGrid);
-		wait(2);
-		click(boxButton);
-	*/	wait(2);
-	if(elementExist(boxButton)) {
+		print("HHHHEIEIEIEIIEEIEIIE CHECK NOWWWW IN BROWSER" + lblCompleted);
+		wait(5);
+	click(lblCompleted);
+		wait(5);
+		//click(btnGrid);
+		//wait(2);
+		//click(boxButton);
+		//wait(5);
+	if(elementExist(boxButton1)) {
 		verifyCompletedCatalog(lblStar,lblCatalogTick);
 	}
 	}
@@ -194,6 +208,7 @@ public class MyLearningPage extends FractalBasePage {
 		click(lblBundles);
 		wait(5);
 		click(clickCatalog);
+		wait(5);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
 	}
 	public void verifyCourseContents() {
@@ -226,7 +241,8 @@ public class MyLearningPage extends FractalBasePage {
 	/*End - Moved from FractalBasePage by Manju Priya A on Nov-29-18*/
 	private By clickClassroomCatalog=By.xpath(".//a[contains(text(),'Automation Learningpath')]");
 	private By globalSearch=By.xpath(".//input[@id='theInput']");
-	private By lbldetails=By.xpath("//div[@class='pl-10 brd-l padding-l-25 margin-l-30']//button[@class='detail_btn'][contains(text(),'Details')]");//div[5]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[contains(text(),'Details')]
+	//edit by divya
+	private By lbldetails=By.xpath("//button[contains(text(),'DETAILS')]");//div[5]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[contains(text(),'Details')]
 	private By classroomlblDate=By.xpath("//p[contains(@class,'timebox-li margin-b-7')]");
 	private By classroomlblTime=By.xpath("//div[contains(@class,'margin-t-0')]//p[2]");
     private By classroomlblLocation=By.xpath("//div[contains(@class,'display-box')]");
@@ -239,9 +255,9 @@ public class MyLearningPage extends FractalBasePage {
     private By lblTraditionalClass=By.xpath(".//button[contains(text(),'TRADITIONAL CLASS')]");
     private By lblCancel=By.xpath("  //button[contains(text(),'CANCEL')]");
     private By lblRegisterText=By.xpath("//p[contains(text(),'By registering, you are accepting the')]");
-    private By lblEventCalendarText=By.xpath("//button[contains(text(),'Choose Event')]");
+    private By lblEventCalendarText=By.xpath("//button[contains(text(), 'Choose Event')]");
     private By btnCancelRegistration=By.xpath(".//button[contains(text(),'CANCEL REGISTRATION')]");
-    private By lblAssignedClassroom2=By.xpath("//h1[contains(text(),'checking for classroom')]");//h1[contains(text(),'App_notification_check')]
+    private By lblAssignedClassroom2=By.xpath("//h1[contains(text(),'checking for classroom event')]");//h1[contains(text(),'App_notification_check')]
     private By lblPreeventActivities=By.xpath("//span[contains(text(),'Pre-event Activities')]");
     private By lblReference=By.xpath(" //span[contains(text(),'Reference')]");
     private By lblPosteventActivities=By.xpath("//span[contains(text(),'Post-event Activities')]");
@@ -265,11 +281,13 @@ public class MyLearningPage extends FractalBasePage {
 			  wait(5);
 		    }
 			  public void	verifyAssignedClassroom(){
+				  scrollBar();
+				  wait(2);
 				 verifyText("Automation classroom",lblAssignedClassroom);
 					}
 			  
 			  public void	verifyDetailsBtn(){
-				  verifyText("DETAILS",lbldetails);
+				  verifyText("DETAILS m",lbldetails);
 					}
 		    
 			//TC:4  the  Details button should be getting displayed on classroom asset.
@@ -289,9 +307,9 @@ public class MyLearningPage extends FractalBasePage {
 		  
 			public void	verifyClassrooomLabels(){
 			click(lblAssignedClassroom2);
-			  verifyText("Pre-event Activities",lblPreeventActivities);
+			//edit by divya based on newcode  verifyText("Pre-event Activities",lblPreeventActivities);
 			  verifyText("Reference",lblReference);
-			  verifyText("Post-event Activities",lblPosteventActivities);
+			//edit by divya based on newcode  verifyText("Post-event Activities",lblPosteventActivities);
 			  verifyText("Terms & Conditions",lblTermsCondition);
 			  
 			  click(btnCancelRegistration);
@@ -306,6 +324,7 @@ public class MyLearningPage extends FractalBasePage {
 			}
 //			  Checking whether the Event is displayed under classroom object
 			  public void verifyEventDisplayClassroomObject(){
+				  click(lblAssignedClassroom3);
 			  elementExist(classroomlblEvent);
 			  elementExist(classroomlblEventDate);
 			  elementExist(classroomlblEventTime);
@@ -329,9 +348,11 @@ public class MyLearningPage extends FractalBasePage {
 			  verifyText("CHOOSE EVENT",lblEventCalendarText);
 			}
 		    public void scrollBar() {
-		    WebElement element = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom')]")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
+		    WebElement element = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom 1')]")); 
+		    if(BrowserFactory.getOS() == "win") {
+		    Actions actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
+		    }
 		    }
 
 

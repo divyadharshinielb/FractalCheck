@@ -1,5 +1,7 @@
 package com.origin.fractal.testauto.test.testsuites;
 
+import java.io.IOException;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -12,7 +14,7 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsLogin extends FractalBaseWebTest {
 
-	@DataProvider
+/*	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
 			new Object[] { "1", "chrome" }
@@ -20,7 +22,24 @@ public class WebTestsLogin extends FractalBaseWebTest {
 //		 new Object[] { "3", "msedge" } ,
 //		 new Object[] { "4", "ie11" }
 		};
+	}*///added by divya on 23rd sept 2019
+	@DataProvider
+	public Object[][] browers() {
+	if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+		return new Object[][] {
+			//new Object[] { "1", "msedge" }, 
+			new Object[] { "2", "Chrome" },
+			//new Object[] { "3", "Firefox" }
+		};
 	}
+	
+	if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
+		return new Object[][] {
+				new Object[] { "1", "safari" }
+			};
+	}
+	return null;
+	}//ended by divya on 23rd sept 2019
 
 	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {

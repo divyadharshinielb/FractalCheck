@@ -10,8 +10,8 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsHome extends FractalBaseWebTest {
 
-
-	@DataProvider
+//edit by divya on 23rd sept 2019
+	/*@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
 		new Object[] { "1", "chrome" }
@@ -19,7 +19,25 @@ public class WebTestsHome extends FractalBaseWebTest {
 //		 new Object[] { "3", "msedge" } ,
 //		 new Object[] { "4", "ie11" }
 		};
-	}
+	}*/
+	//added by divya on 23rd sept 2019
+		@DataProvider
+		public Object[][] browers() {
+		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+			return new Object[][] {
+				//new Object[] { "1", "msedge" }, 
+				new Object[] { "2", "Chrome" },
+				//new Object[] { "3", "Firefox" }
+			};
+		}
+		
+		if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
+			return new Object[][] {
+					new Object[] { "1", "safari" }
+				};
+		}
+		return null;
+		}//ended by divya on 23rd sept 2019
 	
 	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
@@ -165,7 +183,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	*/	homeSteps.clickLogout();
 	
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersForKOandMostAdded(String row, String strBrowserName) {
@@ -191,7 +209,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
 		homeSteps.clickLogout();
 	}
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_33:Checking whether the coverage percentage is shown with the text \"Coverage\""
 					+ "TCID_35:All the data should be shown under the heading \"Recently Added\" when \"view all\" button is clicked"

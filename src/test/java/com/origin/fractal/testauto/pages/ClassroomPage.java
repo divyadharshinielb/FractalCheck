@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.wv.auto.framework.BrowserFactory;
 
 public class ClassroomPage extends FractalBasePage {
 	private By searchField = By.xpath("//input[@id='searchClassroom']");
@@ -78,10 +79,14 @@ public class ClassroomPage extends FractalBasePage {
     private By eventList=By.xpath("//div[@ng-click='viewEventDetails(event_list)']");
     private By mandatoryOkBtn=By.xpath("//span[contains(text(),'OK')]");
     private By lblDescription=By.xpath("//textarea[@name='classroom_description']");
+  //added by divya
+    private By btnhome = By.xpath(".//li[contains(@title, 'Home')]");
+    private By btnclassroom = By.xpath(".//li[contains(@title, 'Classroom')]");
     public ClassroomPage(WebDriver driver) {
 		super(driver);
 	}
 	public void fieldValidation() {
+		wait(5);
 		click(searchField);
 		wait(5);
 		enterData("ERTYFG",searchField);
@@ -108,7 +113,9 @@ public class ClassroomPage extends FractalBasePage {
 		
 	}
 	public void addClassroomPage() {
+		wait(5);
 	click(addClassroomBtn);
+	wait(5);
 	click(closeBtn);
 	}
 	public void editClassroomPage() {
@@ -143,6 +150,7 @@ public class ClassroomPage extends FractalBasePage {
 	public void addEventPage() {
 		wait(5);
 		click(addEventBtn);
+		wait(5);
 		click(closeBtn);
 	}
 	public void titleAcceptsCharater() {
@@ -187,9 +195,11 @@ public class ClassroomPage extends FractalBasePage {
 		wait(2);
 		click(mandatoryOkBtn);
 		wait(2);
-		WebElement element = driver.findElement(By.xpath("//label[contains(text(),'Single Instructor')]")); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
+		WebElement element = driver.findElement(By.xpath("//label[contains(text(),'Single Instructor')]")); 
+		if(BrowserFactory.getOS() == "win") {
+		Actions actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(2);
 	   click(clickSingleInstructorBtn);
 		wait(3);
@@ -203,6 +213,12 @@ public class ClassroomPage extends FractalBasePage {
 	}
 	public void classroomPageInformation() {
 		wait(2);
+		//added by divya
+		click(btnhome);
+		wait(5);
+		click(btnclassroom);
+		wait(5);
+		//ended by divya
 		click(clickClassroomPage);
 		verifyText("Category :",detail1);
 		verifyText("View Details",detail2);
@@ -231,9 +247,11 @@ public class ClassroomPage extends FractalBasePage {
 		wait(2);
 		click(lblVirtualClassroom);
 		wait(5);
-		WebElement element = driver.findElement(By.xpath("//label[contains(text(),'Single Instructor')]")); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
+		WebElement element = driver.findElement(By.xpath("//label[contains(text(),'Single Instructor')]")); 
+		if(BrowserFactory.getOS() == "win") {
+		Actions actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(2);
 		click(classroomDropDown2);
 		wait(2);
@@ -241,9 +259,11 @@ public class ClassroomPage extends FractalBasePage {
 		wait(2);
 		click(clickSingleInstructorBtn);
 		wait(2);
-		WebElement element1 = driver.findElement(By.xpath("//form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[11]/div[1]/md-input-container[1]/div[1]/span[1]")); Actions
-		actions1= new Actions(driver); actions1.moveToElement(element1);
+		WebElement element1 = driver.findElement(By.xpath("//form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[11]/div[1]/md-input-container[1]/div[1]/span[1]")); 
+		if(BrowserFactory.getOS() == "win") {
+		Actions actions1= new Actions(driver); actions1.moveToElement(element1);
 		actions1.perform();
+		}
 		wait(2);
 //		click(selectSingleInstructor);
 //		wait(2);
@@ -263,9 +283,11 @@ public class ClassroomPage extends FractalBasePage {
 		wait(5);
 		click(lblSession);
 		wait(2);
-		WebElement element = driver.findElement(By.xpath("//input[@type='number']")); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
+		WebElement element = driver.findElement(By.xpath("//input[@type='number']")); 
+		if(BrowserFactory.getOS() == "win") {
+		Actions actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(5);
 		enterData("123",lblAvgScore);
 		wait(5);
@@ -313,9 +335,11 @@ public class ClassroomPage extends FractalBasePage {
 	public void	postEventValidateFields() {
 	classroomCommonFunction();
 	wait(5);
-	WebElement element = driver.findElement(By.xpath(".//label[contains(text(),'Post-event Assignment')]")); Actions
-	actions = new Actions(driver); actions.moveToElement(element);
+	WebElement element = driver.findElement(By.xpath(".//label[contains(text(),'Post-event Assignment')]")); 
+	if(BrowserFactory.getOS() == "win") {
+	Actions actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
+	}
 	click(post_eventAssignmentCheckbox);	
 	commonValidateFields();
 	}
@@ -346,11 +370,12 @@ public class ClassroomPage extends FractalBasePage {
 	verifyText("Completion criteria",completionCriteriaText);
 	wait(5);
 	click(backToClassroomLink);
-	wait(2);
+	wait(5);
 	click(backToClassroomText);
+	wait(3);
 	}
 	public void eventListedPage() {
-	wait(5);
+	wait(10);
 	click(clickClassroomCreationPage);
 	wait(10);
 	elementExist((eventList));
