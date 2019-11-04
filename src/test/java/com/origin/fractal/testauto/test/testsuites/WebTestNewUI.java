@@ -1,4 +1,5 @@
 package com.origin.fractal.testauto.test.testsuites;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;
@@ -14,6 +15,25 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestNewUI extends FractalBaseWebTest {
+	@DataProvider
+	public Object[][] browers() {
+	if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+	return new Object[][] {
+	//new Object[] { "1", "msedge" }, 
+	new Object[] { "2", "Chrome" },
+	//new Object[] { "3", "Firefox" }
+	};
+	}
+
+	if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
+	return new Object[][] {
+	new Object[] { "1", "safari" }
+	};
+	}
+
+	return null;
+	}//ended by divya
+
 
 
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
