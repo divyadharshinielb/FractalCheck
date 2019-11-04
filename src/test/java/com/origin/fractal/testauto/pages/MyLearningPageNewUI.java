@@ -36,7 +36,7 @@ public class MyLearningPageNewUI extends FractalBasePage {
 		wait(5);
 		verifyText("COURSES", lblCourses);
 		wait(5);
-		verifyText("RESOURCES", lblResources);
+		//verifyText("RESOURCES", lblResources);
 		wait(5);
 		verifyText("BUNDLES", lblBundles);
 		wait(5);

@@ -14,7 +14,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 	private By lblProfileTitle = By.xpath("//div[contains(text(),'MY PROFILE')]");
 	private By lblEmailAddr = By.xpath(".//h3[@class='padding-b-10']");
 	private By lblFirstName = By.xpath("//h3[contains(text(),'First name')]");
-	private By lblLastName = By.xpath(".//h3[contains(text(),'Last Name *')]");
+	private By lblLastName = By.xpath(".//div[@class='tab_1']//div[2]//div[2]//h3[1]");
 	private By lblPhone = By.xpath(".//h3[contains(text(),'Phone')]");
 	private By lblChgPass = By.xpath("//div[contains(text(),'CHANGE PASSWORD')]");
 	private By lblOldPass = By.xpath(".//h3[contains(text(),'Old password')]");
