@@ -24,7 +24,7 @@
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
 				<class
-                name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
+				 name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> 
 				<class
