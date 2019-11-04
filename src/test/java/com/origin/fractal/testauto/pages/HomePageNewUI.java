@@ -12,11 +12,11 @@ import com.wv.auto.framework.BrowserFactory;
 public class HomePageNewUI extends FractalBasePage {
 	private By btnContinue = By.xpath("//span[@class='continue_button']");
 	private By privacyLink = By.xpath("//a[contains(text(),'Privacy')]");
-	private By termsLink = By.xpath("//a[contains(text(),'| Terms')]");
-	private By contactsLink = By.xpath("//a[contains(text(),'| Contact')]");
+	private By termsLink = By.xpath(".//div[contains(@class,'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/../div/p/a[2]");//edited by dhanushiya
+	private By contactsLink = By.xpath(".//div[contains(@class,'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/../div/p/a[3]");//edited by dhanushiya
 	private By privacyPage = By.xpath("//span[contains(text(),'PRIVACY POLICY')]");
-	private By termsPage = By.xpath(".//span[contains(text(),'TERMS & CONDITIONS')]");
-	private By contactsPage = By.xpath("//span[contains(text(),'CONTACT US')]");
+	private By termsPage = By.xpath(".//span[contains(text(),'Terms & Conditions')]");//edited by dhanushiya
+	private By contactsPage = By.xpath(".//span[contains(text(),'contact us')]");//edited by dhanushiya
 	private By lblHome = By.xpath("//span[contains(text(),'Home')]");
 	MyLearningPage myLearning = new MyLearningPage(driver);
     public HomePageNewUI(WebDriver driver) {
@@ -29,13 +29,18 @@ public class HomePageNewUI extends FractalBasePage {
 	}
 	
 		public void commonFunction() {
-			WebElement element = driver.findElement(By.xpath("//a[contains(text(),'| Contact')]")); 
-			if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-			Actions actions = new Actions(driver); actions.moveToElement(element);
+			WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]")); Actions
+			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
+			wait(5);
+		}
+			 //edit by dhanuhsiya.k 
+			/*if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+			Actions actions1 = new Actions(driver); actions.moveToElement(element);
+			actions1.perform();
 			}
 			wait(5);
-			}
+			}*/
 			public void verifyFooterLinks() {
 			commonFunction();
 			verifyText("| Terms",termsLink);
@@ -47,7 +52,7 @@ public class HomePageNewUI extends FractalBasePage {
 			commonFunction();
 			click(termsLink);
 			wait(5);
-			verifyText("Terms & Conditions",termsPage);
+			verifyText("TERMS & CONDITIONS",termsPage);
 			click(lblHome);
 			wait(5);
 			commonFunction();

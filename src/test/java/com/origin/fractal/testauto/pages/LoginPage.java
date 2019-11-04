@@ -15,8 +15,8 @@ public class LoginPage extends FractalBasePage {
 	private By rememberMe=By.xpath(".//label[@class='font-size-14']");
 	private By lblProfile = By.xpath(".//div[@class='jss36']//div//span[@class='jss4']");
 	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]");
-	private By registerButton = By.xpath(".//*[@id=\'root\']/div/main/div/div/div[2]/div/form/div[10]/a");
-	private By forgotpassword = By.xpath(".//a[contains(text(),'Forgot Password?')]");
+	private By registerButton = By.xpath(".//a[@class='reg_btn font-size-18 reg']");
+	private By forgotpassword = By.xpath(".//a[@class='font-size-14 fgt-btn']");
 	private By resigstrationPage = By.xpath(".//div[@class='col-lg-12 text-center log-title padding-30']");
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
 	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
