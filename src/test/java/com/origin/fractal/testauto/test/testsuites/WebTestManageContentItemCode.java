@@ -1,6 +1,6 @@
-// Created by Vignesh(WVI) 
+//ddconflict// Created by Vignesh(WVI) 
 // Last Updated on 26-Oct-19
-package com.origin.fractal.testauto.test.testsuites;
+/*package com.origin.fractal.testauto.test.testsuites;
 
 import java.io.IOException;
 
@@ -89,3 +89,4 @@ public class WebTestManageContentItemCode extends FractalBaseWebTest  {
 
 	}
 }
+*/

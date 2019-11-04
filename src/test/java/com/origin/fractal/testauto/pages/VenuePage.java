@@ -12,11 +12,8 @@ public class VenuePage extends FractalBasePage{
 	private By userIcon = By.xpath(".//a[@id='dLabel']");
 	private By lblLogout = By.xpath(".//a[contains(text(),'Logout')]");
 	private By settingsIcon =By.xpath("//div[@class='icon dripicons-gear']");
-<<<<<<< HEAD
 	private By settingsSelection = By.xpath("//li[@class='ng-scope']//li[8]");
-=======
-	private By settingsSelection = By.xpath(".//div[@class='icon-Classroom-settings icon']");
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
+    //private By settingsSelection = By.xpath(".//div[@class='icon-Classroom-settings icon']");
 	private By addVenue = By.xpath(".//button[@class='md-raised btn btn-lg btn-default text-uppercase']");
 	private By venueName =By.name("name");
 	private By selectCountry = By.xpath(".//span[contains(text(),'Select Country')]");

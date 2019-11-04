@@ -426,7 +426,7 @@ public class ManageContentItemCodesSteps extends FractalBaseStep {
 			result="FAILED";
 		}
 	}
-	public void verifyLearningObjects() {
+	/*dd conflict public void verifyLearningObjects() {
 		page.verifyLearningObjects();
 	}
 	public void editVerifyLearningObjects() {
@@ -442,5 +442,5 @@ public class ManageContentItemCodesSteps extends FractalBaseStep {
 	public void reEdit() {
 		page.reEdit();
 	}
-
+*/
 }

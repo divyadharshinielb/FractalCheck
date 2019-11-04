@@ -16,7 +16,7 @@ public class MenuPage extends FractalBasePage{
 	private By manageContents = By.xpath("//span[contains(text(),'Manage Content')]");
 	private By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[contains(@title,'Menu')]");
 	private By btnPayment = By.xpath("//a[@href='#payment/settings']//i[@data-icon='P']");
-	private By btnScroll= By.xpath("//div[@id='mCSB_1_scrollbar_vertical']//div[@class='mCSB_draggerRail']");
+	private By btnScroll= By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/ng-include[1]/div[2]/ul[1]/li[7]/ul[1]/div[1]/div[2]/div[1]");
 	private By btnDropDown1 =By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div[1]/md-input-container[1]/div[1]");
 	private By btnPaypal = By.xpath("//md-input-container[1]/div[1]/ul/li[@data-value='paypal']");
 	private By btnSave =By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div/*/button[contains(text(),'Save')]");
@@ -36,10 +36,6 @@ public class MenuPage extends FractalBasePage{
 		super(driver);
 	}
 	public void logout() {
-		WebElement element = driver.findElement( By.xpath(".//a[@id='dLabel']")); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
-		actions.perform();
-		wait(5);
 		click(userIcon);
 		wait(5);
 		click(lblLogout);
@@ -51,13 +47,9 @@ public class MenuPage extends FractalBasePage{
 		click(manageContents);
 	}
 	public void gotoPaymentConfiguration() {
-			click(btnSettings);
-			wait(10);
+		click(btnSettings);
 		//	click(btnScroll);
-			wait(2);
-			WebElement element = driver.findElement( By.xpath("//a[@href='#payment/settings']//i[@data-icon='P']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
+			wait(10);
 			click(btnPayment);
 			wait(10);
 			click(btnDropDown1);

@@ -298,7 +298,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_Event_048,  Verify whether the 2nd page is opened on clicking continue button after filling all the mandatory fields, " +  classSteps.getResult() );
 		//TCID_48: Verify whether the 2nd page is opened on clicking continue button after filling all the mandatory fields.
 		classSteps.verifySecondPageOpened();
-<<<<<<< HEAD
+
 		/*Reporter.writeSummary("TCID_049, Verfy whether the alert message is thrown for all the Mandatory fields if Save button is clicked without filling any fields, " +  classSteps.getResult() );
 =======
 		Reporter.writeSummary("TCID_Event_049, Verfy whether the alert message is thrown for all the Mandatory fields if Save button is clicked without filling any fields, " +  classSteps.getResult() );
@@ -400,15 +400,14 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		//19:Verify whether the alert is disappearing after entering valid Duration
 		//18:Verify whether the alert is disappearing after entering valid Date
 		//19:Verify whether the alert is disappearing after entering valid completion percentage
-<<<<<<< HEAD
+
 //divya	 classSteps.verifyTickAndPlusMark();
 		Reporter.writeSummary("TCID_071,  Verify whether on clicking the Plus icon opens the Use list tab, " +  classSteps.getResult() );
 		Reporter.writeSummary("TCID_072,  Verify whether on clicking the Tick icon closes the Use list tab, " +  classSteps.getResult() );
-=======
 		classSteps.verifyTickAndPlusMark();
 		Reporter.writeSummary("TCID_Event_071,  Verify whether on clicking the Plus icon opens the Use list tab, " +  classSteps.getResult() );
 		Reporter.writeSummary("TCID_Event_072,  Verify whether on clicking the Tick icon closes the Use list tab, " +  classSteps.getResult() );
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
+
 		//TCID_71: Verify whether on clicking the Plus icon opens the Use list tab
 		//TCID_72:Verify whether on clicking the Tick icon closes the Use list tab
 		classSteps.verifyAlertAfterAddingMaximumNumberOfParticipants();

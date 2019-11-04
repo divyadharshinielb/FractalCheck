@@ -1,6 +1,5 @@
 package com.origin.fractal.testauto.test.testsuites;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -59,16 +58,16 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.verifyMyLearningPage();//newui
 		//TCID_4: Verify all links(All, Bundles, Courses, Learning Paths and resources)
 		mLSteps.verifySubMenu();//newui
-		Reporter.writeSummary("TCID_MY_LEARN_004, Verify all links(All Bundles Courses Learning Paths and resources), " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_004, Verify all links(All Bundles Courses Learning Paths and resources), " +  mLSteps.getResult() );
 		//TCID_1: verify COmpletion Status(% Coverage)
 		mLSteps.verifyComplStatus();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__001, Verify Completion Status(% Coverage), " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_001, Verify COmpletion Status(% Coverage), " +  mLSteps.getResult() );
 		//TCID_11: Verify learning item page is opened when any of the particular course catalog item is clicked
 		mLSteps.verifyCatalogname();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__011, Verify learning item page is opened when any of the particular course catalog item is clicked, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_011, Verify learning item page is opened when any of the particular course catalog item is clicked, " +  mLSteps.getResult() );
 		//TCID_12: Verify Learning item page contains Course Name,joined on date and time, Description,Validity,Duration
 		mLSteps.verifyCatalogDetails();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
 		mLSteps.clickLogout();
 	}
 
@@ -87,17 +86,17 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		// To Verify the bundleContents 
 		mLSteps.verifyCourseInBundle();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__016,Verify course name, " + mLSteps.getResult() );
+		Reporter.writeSummary("TCID_016,Verify course name, " + mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();//newui
 		//TCID_20:Verify All filter
 		mLSteps.verifyAllFilter();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__020,Verify All filter, " + mLSteps.getResult() );
+		Reporter.writeSummary("TCID_020,Verify All filter, " + mLSteps.getResult() );
 		//TCID_21:verify Bundle filter
 		mLSteps.verifyBundleFilter();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__021,verify Bundle filter, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_021,verify Bundle filter, " +  mLSteps.getResult() );
 		//TCID_22:verify Course filter
 		mLSteps.verifyCourseFilter();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__022,verify Course filter, " +  mLSteps.getResult());
+		Reporter.writeSummary("TCID_022,verify Course filter, " +  mLSteps.getResult());
 		// To verify Resource filter
 		mLSteps.verifyResourceFilter();//newui
 		homeSteps.clickOnMyLearning();
@@ -121,28 +120,23 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		//TCID_25:Verify Tick mark for completed catalog item
 		mLSteps.verifyTickmark();//newui 11/9/19
-		Reporter.writeSummary("TCID_MY_LEARN__025,Verify Tick mark for completed catalog item, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_025,Verify Tick mark for completed catalog item, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
 		//TCID_8: Verify Category items
-<<<<<<< HEAD
 	    mLSteps.verifyCategory();//newui
 		Reporter.writeSummary("TCID_008,Verify Category items, " +  mLSteps.getResult() );
-=======
-		mLSteps.verifyCategory();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__008,Verify Category items, " +  mLSteps.getResult() );
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 		//TCID_6:verify the Grid view items and functionality
 		mLSteps.verifyGridView();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__006,Verify the Grid view items and functionality, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_006,Verify the Grid view items and functionality, " +  mLSteps.getResult() );
 	    //TCID_7:verify the List view items and functionality
 		mLSteps.verifyListView();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__007,Verify the List view items and functionality, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_007,Verify the List view items and functionality, " +  mLSteps.getResult() );
 		//TCID_5: Verify Category drop down and Grid and List mode
 		mLSteps.verifyCategoryList();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__005,Verify Category drop down and Grid and List mode, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_005,Verify Category drop down and Grid and List mode, " +  mLSteps.getResult() );
 		//TCID_14:To verify the Ratings of completed catalog item 
 		mLSteps.verifyRatings();//newuui 12/9/19
-		Reporter.writeSummary("TCID_MY_LEARN__014,verify  the Ratings of completed catalog item , " +  mLSteps.getResult());
+		Reporter.writeSummary("TCID_014,verify  the Ratings of completed catalog item , " +  mLSteps.getResult());
 		mLSteps.clickLogout();
 	}
 
@@ -162,24 +156,23 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		//TCID_17:verify Labels of Bundles and courses
 		mLSteps.verifyBundleContents();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__017,Verify Labels of Bundles and courses, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_017,Verify Labels of Bundles and courses, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
 		//TCID_18:Verify course Details after clicking
 		mLSteps.verifyCourseContents();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__018,Verify course Details after clicking, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_018,Verify course Details after clicking, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
 		//TCID_23:verify Launch learning object launch
-/*		mLSteps.verifyLaunch();
-		Reporter.writeSummary("TCID_MY_LEARN__023,verify Launch learning object launch , " +  mLSteps.getResult() );
+//		mLSteps.verifyLaunch();
+		Reporter.writeSummary("TCID_023,verify Launch learning object launch , " +  mLSteps.getResult() );
 		//TCID_27:Verify the top arrow button
-		mLSteps.verifyTopArrowBtn();
-		Reporter.writeSummary("TCID_MY_LEARN__027,Checking whether the page is moving upwards when ^ button is clicked , " +  mLSteps.getResult() );
-*/		mLSteps.clickLogout();
+//		mLSteps.verifyTopArrowBtn();
+		Reporter.writeSummary("TCID_027,Checking whether the page is moving upwards when ^ button is clicked , " +  mLSteps.getResult() );
+		mLSteps.clickLogout();
 	}
 	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description ="")
 	public void testMyLearningPageClassroom(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
 		login(driver);
 
 		// Test moves to Home page
@@ -188,21 +181,13 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		wait(5);
 	MyLearningSteps mLSteps = new MyLearningSteps(driver);
 	mLSteps.verifyClassroomDetails();
-<<<<<<< HEAD
 	//dd mLSteps.verifyCancelRegistrationBtn();//newui
 	Reporter.writeSummary("TC:6,Checking whether the cancel registration button are getting displayed on classroom asset, " +  mLSteps.getResult() );
 	mLSteps.verifyDetailsBtn();//newui
 	Reporter.writeSummary("TC:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
-=======
-/*	mLSteps.verifyCancelRegistrationBtn();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:6,Checking whether the cancel registration button are getting displayed on classroom asset, " +  mLSteps.getResult() );
-*/	mLSteps.verifyDetailsBtn();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	mLSteps.verifyAssignedClassroom();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
+	Reporter.writeSummary("TC:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
 	mLSteps.verifyEventDisplayClassroomObject();//newui
-<<<<<<< HEAD
 	Reporter.writeSummary("TC:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
 	Reporter.writeSummary("TC:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
 //	mLSteps.verifyTraditionalClassBtn();//newui
@@ -213,18 +198,5 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 	Reporter.writeSummary("TC:13,the register button should be showing you are accepting the Terms & Conditions for this event by clicking on register.," +  mLSteps.getResult() );
 	mLSteps.verifyClassrooomLabels();//newui
 	Reporter.writeSummary("TC:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
-=======
-	Reporter.writeSummary("TC_MY_LEARN_:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
-	Reporter.writeSummary("TC_MY_LEARN_:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
-/*	mLSteps.verifyTraditionalClassBtn();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:10,The traditional class events should be displayed when clicking traditional class., " +  mLSteps.getResult() );
-*/	mLSteps.verifyChooseEventBtn();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
-/*	mLSteps.verifyEventRegistrationBtn();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:13,the register button should be showing you are accepting the Terms & Conditions for this event by clicking on register.," +  mLSteps.getResult() );
-*/	mLSteps.verifyClassrooomLabels();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 }
 }
-

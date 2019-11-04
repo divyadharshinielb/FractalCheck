@@ -206,28 +206,24 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void verifyPhysicalClassroomDropdown() {
 	click(btnAddEvent);
 	click(lblTraditionalClassroom);
-<<<<<<< HEAD
+
 	wait(5);
 	//edited by divya on 30th sept 2019
 	//verifyText("Select Venue",venueDropdown);
 	verifyText("Select",venueDropdown);
 	wait(10);
-=======
+
 	wait(2);
 	verifyText("Select Venue",venueDropdown);
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	}
 	public void verifyVirtualClassroomDropdown() {
 		wait(5);
 	click(lblVirtualClassroom);
-<<<<<<< HEAD
 	//edited by divya on 30th sept 2019
 	//verifyText("select Link",linkDropdown);
 	verifyText("Select",linkDropdown);
-=======
 	wait(2);
 	verifyText("select Link",linkDropdown);
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	}
 	public void verifyVenueDropdownAlertDisappears() {
 	click(btnContinue);
@@ -295,17 +291,17 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(btnAddEvent);
 	wait(2);
 	click(lblAssignment);
-<<<<<<< HEAD
+
 	wait(5);
 	verifyText("Pass score: 50%",lblPassScore);
 	verifyText("Max score: 100",lblMaxScore);
-=======
+
 	wait(2);
 	click(lblAddAssignment);
 	wait(2);
 	verifyText("Pass score",lblPassScore);
 	verifyText("Max score",lblMaxScore);
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
+
 	verifyText("Release Date",lblReleaseDate);
 	verifyText("Submission Due Date",lblSubmissionDueDate);
 	verifyText("Evaluation Due Date",lblEvalDueDate);

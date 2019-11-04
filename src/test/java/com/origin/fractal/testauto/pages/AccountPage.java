@@ -30,21 +30,13 @@ public class AccountPage extends FractalBasePage {
 	private By btncancel = By.xpath(".//div/form/*//button[contains(text(),'Cancel')]");
 
 	private By fNameError = By.id("errFirstName");
-	private By fNameErrorOnlyLetters = By.xpath(".//div[contains(text(), 'Please enter alphabet characters only.')]");
+	private By fNameErrorOnlyLetters = By.id("errFirstNameLetters");
 	private By lNameError = By.id("errLastName");
-<<<<<<< HEAD
-	private By lNameErrorOnlyLetters = By.xpath(".//div[contains(text(), 'Please enter alphabet characters only.')]");
-	//edit by divya
-	private By fNameErrMsg = By.xpath(".//div[contains(text(),'First name field should not be empty.')]");
-	private By lNameErrMsg = By.xpath(".//div[contains(text(),'Last name should not be empty.')]");
-	private By lNewPass = By.xpath(".//div[contains(text(),'Your password must be minimum 8 characters or longer, including at least one number, one special character and one uppercase letter.')]");
-=======
 	private By lNameErrorOnlyLetters = By.id("errLastNameMinLetters");
 	
-	private By fNameErrMsg = By.xpath(".//div[contains(text(),'First name field should not be empty.')]");
-	private By lNameErrMsg = By.xpath(".//div[contains(text(),'Last name should not be empty.')]");
-	private By lNewPass = By.xpath(".//div[contains(text(),'Your password must be minimum 8 characters or long')]");
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
+	private By fNameErrMsg = By.xpath(".//div[contains(text(),'First name cannot be blank.')]");
+	private By lNameErrMsg = By.xpath(".//div[contains(text(),'Last Name cannot be blank.')]");
+	private By lNewPass = By.xpath(".//div[contains(text(),'Password must contain 8 characters, including one')]");
 	private By changePassword =By.xpath(".//input[@name='password']");
 	private By oldPassword= By.xpath(".//input[contains(@name,'oldpassword')]");
 	private By confirmPassword = By.xpath(".//input[@id='pass']");
@@ -82,24 +74,17 @@ public class AccountPage extends FractalBasePage {
 	public void verifyEmptyProfileValidation() {
 		wait(5);
 		clear(lblFName);
-		wait(5);
 		clear(lblLName);
 		wait(5);
 		enterData(getLabel("newPass"), txtboxNewPass);
 		wait(5);
 		WebElement element = driver.findElement(By.xpath(".//input[contains(@class,'save-button')]")); 
 		if(BrowserFactory.getOS() == "win") {
-			Actions actions = new Actions(driver); 
-			actions.moveToElement(element);
-			actions.perform();
+		Actions actions = new Actions(driver); 
+		actions.moveToElement(element);
+		actions.perform();
 		}
-		/*wait(5);
-		clear(lblFName);
 		wait(5);
-		clear(lblLName);
-		print("fname : "+ getAttributeValue(lblFName)+" lname: "+ getAttributeValue(lblLName));
-		print("------------------------------------------------------------------------------------");
-		*/wait(20);
 		click(btnSave);
 		verifyErrorMessage();
 	}
@@ -141,8 +126,7 @@ public class AccountPage extends FractalBasePage {
 			wait(5);
 			click(btnSave);
 			status=elementExist(fNameErrorOnlyLetters);
-			//edit by divya
-			status=elementExist(lNameErrMsg);
+			status=elementExist(lNameError);
 		}
 		return status;
 	}
@@ -183,7 +167,6 @@ public class AccountPage extends FractalBasePage {
 		wait(5);
 		click(saveButton);
 		wait(5);
-<<<<<<< HEAD
 		WebElement element = driver.findElement(By.xpath(".//div[contains(@class,'myaccount-text padding-30 mt-3')]")); 
 		if(BrowserFactory.getOS() == "win") {
 
@@ -191,15 +174,7 @@ public class AccountPage extends FractalBasePage {
 		actions.moveToElement(element);
 		actions.perform();
 		}
-=======
-		WebElement element = driver.findElement(By.xpath(".//img[@class='logout-height']")); 
-		Actions actions = new Actions(driver); 
-		actions.moveToElement(element);
-		actions.perform();
-		wait(2);
->>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 		click(lblProfile);
-		wait(2);
 		click(logOutButton);	
 	}
 	public void afterChangePassword() {

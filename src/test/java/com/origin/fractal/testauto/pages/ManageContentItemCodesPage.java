@@ -664,7 +664,7 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 		print("----------ReEdit CI Itemcode End-----------");
 	}
 
-	public void verifyLearningObjects() {
+/* dd conflict	public void verifyLearningObjects() {
 		goToManagecontent();
 		verifyAdminLearnObjItemcodes();
 		adminLogout();
@@ -715,5 +715,5 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 		clickOnCreatecatalog();
 		reEditCatItemItemcodes();
 		adminLogout();
-	}
+	}*/
 }
