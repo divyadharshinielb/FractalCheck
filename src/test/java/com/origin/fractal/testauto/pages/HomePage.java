@@ -22,7 +22,7 @@ public class HomePage extends FractalBasePage {
 	private By lblCLMiLrn = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Micro Learning')]");
 
 	private By lblNotification = By.xpath(".//*[@id='notification-dropdown']/*//span[@class='heading']");
-	private By Check = By.xpath(".//p[contains(text(),'You can now access Automation test bundle1.')]");
+	private By Check = By.xpath(".//p[contains(text(),'Check it out! New item added to')]");//old ui//p[contains(text(),'You can now access Automation test bundle1.')]
  /*******new ui***************/
 	private By lblResumeLearning= By.xpath(".//div[contains(text(),'RESUME LEARNING')]");//new ui
 /***************/	
@@ -141,10 +141,10 @@ public class HomePage extends FractalBasePage {
 		wait(10);
 		clickOnBellIcon();
 		wait(2);
-	//	verifyLabel("lblNotification",lblNotification );
+		//verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check );
-		//clickOnViewAll();
+		clickOnViewAll();
 		
 	}
 	public void verifyResumeLearningText() {

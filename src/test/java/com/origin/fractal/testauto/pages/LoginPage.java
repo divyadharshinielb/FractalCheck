@@ -10,7 +10,7 @@ public class LoginPage extends FractalBasePage {
 	private By tbUserName = By.xpath(".//input[@name='username']");//*[@name='uname']
 	private By tbPassword = By.xpath(".//input[@name='password']");//*[@name='userpassword']
 	private By btnLogin = By.xpath("//input[@class='w100 login_btn login']");//button[@id='login_btn']
-	private By btnLogin1 = By.xpath(".//button[@id='btn']");  //button[@id='btn']
+	private By btnLogin1 = By.xpath(".//input[@class='w100 login_btn login']");  //button[@id='btn']
 	private By logoSymbol = By.id("logo");
 	//edit by divya
 	//	private By rememberMe=By.xpath(".//*[contains(text(),'Remember me')]");
