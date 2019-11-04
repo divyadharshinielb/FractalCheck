@@ -5,10 +5,12 @@ import java.io.IOException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.ManageContentSteps;
 import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
+import com.wv.auto.framework.utils.Reporter;
 public class WebTestContentAdmin extends FractalBaseWebTest{
 	/*@DataProvider
 	public Object[][] browers() {
@@ -61,14 +63,5 @@ public class WebTestContentAdmin extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
-@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description = "")
 	
-	public void WebTestAdminSearch(String row, String strBrowserName) throws IOException {
-		driver = BrowserFactory.getBrowser(strBrowserName);
-		loginToContentAdmin(driver);
-		MenuSteps menuSteps = new MenuSteps(driver);
-		menuSteps.searchFieldAsset();
-		menuSteps.searchFieldItemCode();	
-   }
-
 }

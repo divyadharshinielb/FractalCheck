@@ -32,11 +32,19 @@ public class AccountPage extends FractalBasePage {
 	private By fNameError = By.id("errFirstName");
 	private By fNameErrorOnlyLetters = By.xpath(".//div[contains(text(), 'Please enter alphabet characters only.')]");
 	private By lNameError = By.id("errLastName");
+<<<<<<< HEAD
 	private By lNameErrorOnlyLetters = By.xpath(".//div[contains(text(), 'Please enter alphabet characters only.')]");
 	//edit by divya
 	private By fNameErrMsg = By.xpath(".//div[contains(text(),'First name field should not be empty.')]");
 	private By lNameErrMsg = By.xpath(".//div[contains(text(),'Last name should not be empty.')]");
 	private By lNewPass = By.xpath(".//div[contains(text(),'Your password must be minimum 8 characters or longer, including at least one number, one special character and one uppercase letter.')]");
+=======
+	private By lNameErrorOnlyLetters = By.id("errLastNameMinLetters");
+	
+	private By fNameErrMsg = By.xpath(".//div[contains(text(),'First name field should not be empty.')]");
+	private By lNameErrMsg = By.xpath(".//div[contains(text(),'Last name should not be empty.')]");
+	private By lNewPass = By.xpath(".//div[contains(text(),'Your password must be minimum 8 characters or long')]");
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	private By changePassword =By.xpath(".//input[@name='password']");
 	private By oldPassword= By.xpath(".//input[contains(@name,'oldpassword')]");
 	private By confirmPassword = By.xpath(".//input[@id='pass']");
@@ -175,6 +183,7 @@ public class AccountPage extends FractalBasePage {
 		wait(5);
 		click(saveButton);
 		wait(5);
+<<<<<<< HEAD
 		WebElement element = driver.findElement(By.xpath(".//div[contains(@class,'myaccount-text padding-30 mt-3')]")); 
 		if(BrowserFactory.getOS() == "win") {
 
@@ -182,7 +191,15 @@ public class AccountPage extends FractalBasePage {
 		actions.moveToElement(element);
 		actions.perform();
 		}
+=======
+		WebElement element = driver.findElement(By.xpath(".//img[@class='logout-height']")); 
+		Actions actions = new Actions(driver); 
+		actions.moveToElement(element);
+		actions.perform();
+		wait(2);
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 		click(lblProfile);
+		wait(2);
 		click(logOutButton);	
 	}
 	public void afterChangePassword() {

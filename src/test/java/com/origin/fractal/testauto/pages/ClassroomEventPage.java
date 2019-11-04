@@ -47,12 +47,15 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By timezoneDropdown = By.xpath(".//form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[4]/div[1]/md-input-container[1]/div[1]/span[1]");
 	private By selectTimezone = By.xpath(".//li[contains(text(),'EET Eastern European Time (GMT+2:00)')]");
 	private By inpAvgScore = By.xpath(".//input[contains(@name,'avg_score')]");
-	private By lblAssignment = By.id("pre_assignment_title");
-	private By lblPassScore = By.xpath(".//span[contains(text(),'Pass score')]/../../p[1]");
-	private By lblMaxScore = By.xpath(".//span[contains(text(),'Max score:')]/../../p[1]");
+	private By lblAssignment = By.xpath("//h4[@id='pre_assignment_title']");//pre_assignment_title
+	private By lblAddAssignment = By.xpath("//button[@id='pre_addAssignment']");
+	private By lblPassScore = By.xpath(".//span[contains(text(),'Pass score')]");//span[contains(text(),'Pass score')]/../../p[1]
+	private By lblMaxScore = By.xpath(".//span[contains(text(),'Max score')]");//span[contains(text(),'Max score:')]/../../p[1]
 	private By lblReleaseDate = By.xpath(".//span[contains(text(),'Release Date')]");
 	private By lblSubmissionDueDate = By.xpath(".//span[contains(text(),'Submission Due Date')]");
 	private By lblEvalDueDate = By.xpath(".//span[contains(text(),'Evaluation Due Date')]");
+	private By lblCloseBtn = By.xpath("//div[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12']//i[@class='icon text-right font-size-35 padding-r-30 padding-t-10']");
+	private By btnPreAssignment = By.xpath("//h4[@id='pre_assignment_title']");
 	private By btnPreAddAssignment = By.xpath(".//button[@id='pre_addAssignment']");
 	private By inpPreEventAssignTitle = By.xpath(".//input[contains(@name,'pre_event_assignment_title')]");
 	private By inpPreEventAssignDesc = By.xpath(".//div//div//label[contains(text(),'Assignment Description')]");//input[contains(@name,'pre_event_assignment_description')]
@@ -80,6 +83,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblPostAssessSocreOutOf = By.xpath("//h4[@id='postassignment_title']/../../*//span[contains(text(),'Max score')]");
 	private By postAssignReleaseDate = By.xpath("//h4[@id='postassignment_title']/../../*//span[contains(text(),'Release Date')]");
 	private By postAssignSunDueDate = By.xpath("//h4[@id='postassignment_title']/../../*//span[contains(text(),'Submission Due Date')]");
+	private By postlblAddAssignmentBtn = By.xpath("//h4[@id='postassignment_title']");
 	private By postAddAssignmentBtn = By.xpath("//button[@id='post_addAssignment']");//post_addAssignment
 	private By inpPostAssignTitle = By.xpath("//h4[@id='postassignment_title']/../../*//input[contains(@name,'post_event_assignment_title')]");
 	private By inpPostAssignDesc = By.xpath(".//h4[@id='postassignment_title']/../../*//label[contains(text(),'Assignment Description')]");
@@ -202,18 +206,28 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void verifyPhysicalClassroomDropdown() {
 	click(btnAddEvent);
 	click(lblTraditionalClassroom);
+<<<<<<< HEAD
 	wait(5);
 	//edited by divya on 30th sept 2019
 	//verifyText("Select Venue",venueDropdown);
 	verifyText("Select",venueDropdown);
 	wait(10);
+=======
+	wait(2);
+	verifyText("Select Venue",venueDropdown);
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	}
 	public void verifyVirtualClassroomDropdown() {
 		wait(5);
 	click(lblVirtualClassroom);
+<<<<<<< HEAD
 	//edited by divya on 30th sept 2019
 	//verifyText("select Link",linkDropdown);
 	verifyText("Select",linkDropdown);
+=======
+	wait(2);
+	verifyText("select Link",linkDropdown);
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	}
 	public void verifyVenueDropdownAlertDisappears() {
 	click(btnContinue);
@@ -279,27 +293,42 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyAssignDetailsDisplayed() {
 	click(btnAddEvent);
+	wait(2);
 	click(lblAssignment);
+<<<<<<< HEAD
 	wait(5);
 	verifyText("Pass score: 50%",lblPassScore);
 	verifyText("Max score: 100",lblMaxScore);
+=======
+	wait(2);
+	click(lblAddAssignment);
+	wait(2);
+	verifyText("Pass score",lblPassScore);
+	verifyText("Max score",lblMaxScore);
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	verifyText("Release Date",lblReleaseDate);
 	verifyText("Submission Due Date",lblSubmissionDueDate);
 	verifyText("Evaluation Due Date",lblEvalDueDate);
 	}
 	public void verifyPreAssessmentCount() {
 	String getText = getText(lblAssignment);
-	String count = getSubString(getText, getText.length()-2, getText.length()-1);
+//	String count = getSubString(getText, getText.length()-2, getText.length()-1);
 	//int assignCount = getNumber(count);
-	verifyText(count,"2");
+//	verifyText(count,"2");
 	}
 	public void verifyAddAssignmentBtn() {
 	verifyText("Add Assignment", btnPreAddAssignment);
 	}
 	public void verifyNewPreAssignmentForm() {
 	wait(5);
-	scrollToElement(btnPreAddAssignment);wait(5);
+	scrollToElement(btnPreAssignment);
+	wait(5);
+	click(btnPreAssignment);
+	wait(2);
+	click(btnPreAssignment);
+	wait(5);
 	click(btnPreAddAssignment);
+	wait(2);
 	verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
 	verifyText("Assignment Description",getAttributeValue(inpPreEventAssignDesc));
 	verifyText("Add Assignment", btnPreAddAssignment);
@@ -315,7 +344,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Add Survey",btnPreAddSurvey);
 	}
 	public void verifyPreSurveyFormDetails() {
-	scrollToElement(btnPreAddSurvey);wait(5);
+	scrollToElement(btnPreAddSurvey);
+	wait(5);
 	click(btnPreAddSurvey);
 	wait(2);
 	verifyText("survey Link",getAttributeValue(inpPreSurveyLink));
@@ -363,12 +393,16 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyPostAddAssignmentDetails() {
 	wait(2);
+	scrollToElement(postlblAddAssignmentBtn);
+	wait(2);
+/*	click(postlblAddAssignmentBtn);
+	wait(2);
 	click(postAddAssignmentBtn);
 	wait(5);
 	verifyText("Assignment Title",getAttributeValue(inpPostAssignTitle));
 	wait(5);
 	verifyText("Assignment Description",getAttributeValue(inpPostAssignDesc));
-	}
+*/	}
 	public void verifyPostSurveyDetails() {
 	wait(2);
 	WebElement element = driver.findElement( By.id("postsurvey_title")); 

@@ -32,4 +32,6 @@ public class ManageContentSteps  extends FractalBaseStep{
 	public void verifyCatalogTitleValidation() {
 		page.verifyCatalogTitleValidation();
 	}
+	
+
 }

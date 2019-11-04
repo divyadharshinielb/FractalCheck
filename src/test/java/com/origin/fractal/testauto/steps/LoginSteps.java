@@ -136,4 +136,15 @@ public class LoginSteps extends FractalBaseStep {
 		  }
 		
 	}
+	//Added By vignesh on 23/Oct/19
+		public void reUsersidelogin() {
+			page.reUsersidelogin();
+		}
+		public void reUsersidelogin1() {
+			page.reUsersidelogin1();
+		}
+		public void reAdminsidelogin() {
+			page.reAdminsidelogin();
+		}
+		// End -Vignesh
 }

@@ -14,7 +14,11 @@ public class HomePage extends FractalBasePage {
 	 /*******new ui***************/
 	private By lblRcntAdded = By.xpath(".//div[@class='whats_title']");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Recently Added')]
 	private By lblPoplr = By.xpath(".//div[contains(text(),'Popular content')]");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Recommended')]
+<<<<<<< HEAD
 	private By lblRecommended = By.xpath(".//div[contains(text(), 'Recommended for You')]");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Most Popular')]
+=======
+	private By lblRecommended = By.xpath(".//div[contains(text(),'Recommended for You')]");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Most Popular')]
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	/***************/
 	
 	private By lblCLAll = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'All')]");
@@ -23,8 +27,12 @@ public class HomePage extends FractalBasePage {
 	private By lblCLMiLrn = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Micro Learning')]");
 
 	private By lblNotification = By.xpath(".//*[@id='notification-dropdown']/*//span[@class='heading']");
+<<<<<<< HEAD
 //edit by divya 	private By Check = By.xpath(".//p[contains(text(),'Check it out! New item added to Automation Learnin')]");
 	private By Check = By.xpath(".//p[contains(@class, 'noti-title mb-0')]");	 //p[contains(text(), 'Check it out! New item added to Elearning: Rule 5 - Set 3')]
+=======
+	private By Check = By.xpath(".//p[contains(text(),'Check it out! New item added to')]");//old ui//p[contains(text(),'You can now access Automation test bundle1.')]
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
  /*******new ui***************/
 	private By lblResumeLearning= By.xpath(".//div[contains(text(),'RESUME LEARNING')]");//new ui
 /***************/	
@@ -70,8 +78,11 @@ public class HomePage extends FractalBasePage {
     private String mostboxCatType ="]/*//p";
     
     /*******new ui***************/
+<<<<<<< HEAD
     //edit by divya
   //  private By lblCategory = By.xpath("//li//a[contains(text(),'Categories')]"); 
+=======
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
     private By lblCategory = By.xpath("//li//a[contains(text(),'CATEGORIES')]");
     private By txtBoxSearch = By.xpath("//input[@id='theInput']");
     private By iconWishlist = By.xpath(".//div[@class='log_wishlist']");
@@ -101,11 +112,17 @@ public class HomePage extends FractalBasePage {
 	private By privacyLink = By.xpath(".//a[contains(text(),'Privacy')]");
 	private By termsLink = By.xpath(".//footer[@id='footer']//a[2]");//a[contains(text(),'| Terms')]
 	private By contactsLink = By.xpath(".//footer[@id='footer']//a[3]");//a[contains(text(),'| Contact')]
+<<<<<<< HEAD
 	// edit by divya private By privacyPage = By.xpath(".//span[contains(text(),'Copyright �')]");//span[contains(text(),'PRIVACY POLICY')]
 	private By privacyPage = By.xpath(".//span[contains(text(),'PRIVACY POLICY')]");
 	private By termsPage = By.xpath(".//span[contains(text(), 'Terms & Conditions')]");//span[contains(text(),'TERMS & CONDITIONS')]
 	//edit by divya private By contactsPage = By.xpath(".//span[contains(text(),'success')]");//span[contains(text(),'CONTACT US')]
 	private By contactsPage = By.xpath(".//span[contains(text(), 'contact us')]");
+=======
+	private By privacyPage = By.xpath(".//span[contains(text(),'PRIVACY POLICY')]");//span[contains(text(),'PRIVACY POLICY')]
+	private By termsPage = By.xpath(".//span[contains(text(),'Terms & Conditions')]");//span[contains(text(),'TERMS & CONDITIONS')]
+	private By contactsPage = By.xpath(".//span[contains(text(),'contact us')]");//span[contains(text(),'CONTACT US')]
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	/************************/
 	MyLearningPage myLearning = new MyLearningPage(driver);
 
@@ -147,7 +164,7 @@ public class HomePage extends FractalBasePage {
 		wait(10);
 		clickOnBellIcon();
 		wait(2);
-	//	verifyLabel("lblNotification",lblNotification );
+		//verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check );
 		clickOnViewAll();
@@ -191,7 +208,7 @@ public class HomePage extends FractalBasePage {
 
 	public void verifyAllFilterWhatsNew() {
 		click(whlblAll);
-		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
+		//verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
 	     
 	}
 	public void verifyBundleFilterWhatsNew() {
@@ -411,7 +428,7 @@ public class HomePage extends FractalBasePage {
 			System.out.println("---->"+a);
 	    }
 	    click(iconListView);
-	    verifyAllFilterTypeRcntAdded(rboxBtn, rboxCatType, whlblFilterLink);
+	//    verifyAllFilterTypeRcntAdded(rboxBtn, rboxCatType, whlblFilterLink);
 	/*    verifyTileFunctionality();
 	    verifyTileStructure();
 	*/

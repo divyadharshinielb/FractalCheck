@@ -32,16 +32,16 @@ public void WebTestSettingsAdminPaymentConfig(String row, String strBrowserName)
 		loginToContentAdmin(driver);	
 		MenuSteps menuSteps = new MenuSteps(driver);
 		menuSteps.clickMenu();
-		js.executeScript("window.scrollBy(0,2000)");
+		js.executeScript("window.scrollBy(0,4000)");
 		menuSteps.gotoPaymentConfiguration();
 		Reporter.writeSummary("TCID_006, Verify we can able to add \"PAYTM/PAYPAL\" as a payment authentication., " +  menuSteps.getResult() );
 		Reporter.writeSummary("TCID_007, Verify If there is one payment mode is available in admin ensure that payment mode is reflecting in user part.," +  menuSteps.getResult() );
 	    menuSteps.logout();
-		driver = BrowserFactory.getBrowser(strBrowserName);
+		/*driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
-/*		HomeSteps homeSteps = new HomeSteps(driver);
+		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.verifyCartItemBtn1();
 		Reporter.writeSummary("TCID_008, Verify If there is one payment mode is available in admin ensure that payment mode is reflecting in user part., " +  homeSteps.getResult() );
 		Reporter.writeSummary("TCID_009, Verify User should able to access the payment and it should redirect to payment section," +  homeSteps.getResult() );    
-*/	}
+	*/}
 }

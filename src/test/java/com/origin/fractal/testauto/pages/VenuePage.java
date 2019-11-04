@@ -12,7 +12,11 @@ public class VenuePage extends FractalBasePage{
 	private By userIcon = By.xpath(".//a[@id='dLabel']");
 	private By lblLogout = By.xpath(".//a[contains(text(),'Logout')]");
 	private By settingsIcon =By.xpath("//div[@class='icon dripicons-gear']");
+<<<<<<< HEAD
 	private By settingsSelection = By.xpath("//li[@class='ng-scope']//li[8]");
+=======
+	private By settingsSelection = By.xpath(".//div[@class='icon-Classroom-settings icon']");
+>>>>>>> 8160d7e10a79877b93c27dda25424c89d4dd7047
 	private By addVenue = By.xpath(".//button[@class='md-raised btn btn-lg btn-default text-uppercase']");
 	private By venueName =By.name("name");
 	private By selectCountry = By.xpath(".//span[contains(text(),'Select Country')]");
@@ -40,7 +44,7 @@ public class VenuePage extends FractalBasePage{
 	private By updateBtn = By.xpath(".//button[contains(@class,'btn btn-default md-raised')]");
 	private By backToList = By.xpath(".//button[@class='btn btn-default btn_radius md-raised text-uppercase']");
 	private By editCity = By.xpath(".//span[@class='current'][contains(text(),'Chennai')]");
-	private By deleteBtn = By.xpath(".//span[contains(text(),'OK')]");
+	private By deleteBtn = By.xpath(".//button//span[contains(text(),'Cancel')]");//span[contains(text(),'OK')]
 	
 	public VenuePage(WebDriver driver) {	
 		super(driver);	
@@ -73,6 +77,7 @@ public class VenuePage extends FractalBasePage{
 		enterData("Automation Sample",venueName);
 	}
 	public void countrySelection() {
+		validVenueName();
 		click(selectCountry);
 		wait(5);
 		click(selectIndia);
@@ -147,22 +152,26 @@ public class VenuePage extends FractalBasePage{
 		enterData("Automation Sample",searchIcon);
 	}
 	public void editVenue() {
-		enterData("Automation Sample",searchIcon);
+		wait(5);
+		enterData("Automation Venue",searchIcon);
 		wait(10);
-		click(editIcon);
+		elementExist(editIcon);
+	/*	click(editIcon);
 		wait(5);
 		click(editCity);
 		wait(5);
 		click(selectBangalore);
-		click(updateBtn);
+	//	click(updateBtn);
 		click(backToList);
-	}
+*/	}
 	public void deleteVenue() {
-		enterData("Automation Sample",searchIcon);
+		wait(5);
+		enterData("Automation Venue",searchIcon);
 		wait(10);
-		click(deleteIcon);
+		elementExist(deleteIcon);
+	/*	click(deleteIcon);
 		click(deleteBtn);
-		
+	*/	
 	}
 	public void searchFunction() {
 		elementExist(searchIcon);

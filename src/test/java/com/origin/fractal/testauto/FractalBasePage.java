@@ -18,7 +18,7 @@ private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
 private By btnCategory = By.xpath(".//*[@id='header']/*//button");
 private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//span[@class='jss4']");//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 private By viewAll = By.xpath(".//p[contains(text(),'MORE')]");//*[@id='notification-dropdown']/div[2]/div[2]/a
-private By settings = By.xpath(".//a[contains(text(),'Settings')]");
+private By settings = By.xpath(".//li[contains(text(),'Settings')]");
 private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
 private By btnContinue = By.xpath(".//span[@class='continue_button']");//button[contains(text(),'CONTINUE')]
 private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
@@ -85,6 +85,10 @@ click(viewAll);
 }
 
 public void clickOnsettings() {
+click(settings);
+wait(2);
+clickOnProfile();
+wait(2);
 click(settings);
 }
 
