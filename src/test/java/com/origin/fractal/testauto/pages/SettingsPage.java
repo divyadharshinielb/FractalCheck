@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import com.origin.fractal.testauto.FractalBasePage;
 
 public class SettingsPage extends FractalBasePage {
-	private By label = By.xpath(".//input[@class='jss162']");//button[@class='btn green-button-save mb-4 width-25']
+	private By label = By.xpath("//div[@class='col-lg-2 col-md-2 col-sm-2 col-xs-2 text-left blue-span-2']");//button[@class='btn green-button-save mb-4 width-25']
 	private By save = By.xpath(".//button[contains(text(),'SAVE')]");
 
 	
@@ -17,8 +17,11 @@ public class SettingsPage extends FractalBasePage {
 
 	public void clickOnSwitch() {
 		WebElement lbl = driver.findElement(label);
-	//	lbl.click();
-	}
+		lbl.click();
+	/*System.out.println("labelStatus");
+		click(label);
+		System.out.println("labelStatus");	
+	  */ }
 
 	public void printStatus() {
 		WebElement lbl = driver.findElement(label);
