@@ -232,7 +232,7 @@ public class ClassroomPage extends FractalBasePage {
 		wait(2);
 		click(lblVirtualClassroom);
 		wait(5);
-		WebElement element = driver.findElement(By.xpath("//label[contains(text(),'Single Instructor')]")); Actions
+		WebElement element = driver.findElement(By.xpath("//div[@class='select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20']//span[@class='current'][contains(text(),'Select')]")); Actions//label[contains(text(),'Single Instructor')]
 		actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
 		wait(2);
