@@ -41,7 +41,7 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
 	}
 	return null;
 	}//ended by divya
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
 	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
 	
 		driver = BrowserFactory.getBrowser(strBrowserName);
