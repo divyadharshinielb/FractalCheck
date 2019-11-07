@@ -25,9 +25,9 @@ private By btnContinue = By.xpath(".//span[@class='continue_button']");//button[
 private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
 private By btnTopArr = By.xpath(".//img[@class='scrollup-image']");//i[contains(@class,'icon topArr')]
 
-private By btnList = By.xpath("//a//i[@class='icon-list font-16']");//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[2]
-private String gridBoxBtn = "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a";//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
-private String gridLblName ="]/div[1]/div[1]/div[2]/p[1]/a[1]";//]/*//h3
+private By btnList = By.xpath("//a//i[@class='icon-list-selected font-16']");   //div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[2]
+private String gridBoxBtn = ".//div[contains(@class,'mylearn')]/../div[3]/a";//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
+private String gridLblName ="]/*//a";//]/*//h3 //dd ]/div[1]/div[1]/div[2]/p[1]/a[1]
 
 private String  listBoxBtn= ".//div/ng-include[1]/div[1]/div[1]/div[3]/ng-include[1]/div[1]/div[3]/div";
 private String  listLblName="]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3";
@@ -197,6 +197,8 @@ return status;
 
 public void gridView() {
 verifyGridViewItems();
+wait(5);
+print("THIS FUNCTION OVERRRRUUUU");
 click(btnList);
 }
 public void listView() {
@@ -232,6 +234,7 @@ return status;
 }
 
 public void verifyCatalogDeatils(String name, String type, String totalCourses, String validity) {
+	wait(5);
 verifyLabel(name,catalogName);
 verifyLabel(type,catalogType);
 verifyPartialLabelText(totalCourses,catalogCourseCount);

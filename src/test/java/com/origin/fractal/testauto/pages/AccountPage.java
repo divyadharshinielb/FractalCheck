@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.wv.auto.framework.BrowserFactory;
 
 public class AccountPage extends FractalBasePage {
 
@@ -33,16 +34,16 @@ public class AccountPage extends FractalBasePage {
 	private By lNameError = By.id("errLastName");
 	private By lNameErrorOnlyLetters = By.id("errLastNameMinLetters");
 	
-	private By fNameErrMsg = By.xpath(".//div[contains(text(),'First name field should not be empty.')]");
-	private By lNameErrMsg = By.xpath(".//div[contains(text(),'Last name should not be empty.')]");
-	private By lNewPass = By.xpath(".//div[contains(text(),'Your password must be minimum 8 characters or long')]");
+	private By fNameErrMsg = By.xpath(".//div[contains(text(),'First name cannot be blank.')]");
+	private By lNameErrMsg = By.xpath(".//div[contains(text(),'Last Name cannot be blank.')]");
+	private By lNewPass = By.xpath(".//div[contains(text(),'Password must contain 8 characters, including one')]");
 	private By changePassword =By.xpath(".//input[@name='password']");
 	private By oldPassword= By.xpath(".//input[contains(@name,'oldpassword')]");
 	private By confirmPassword = By.xpath(".//input[@id='pass']");
 	private By saveButton = By.xpath(".//input[contains(@class,'save-button')]");
 	private By lblProfile = By.xpath(".//img[@class='logout-height']");
-	private By logOutButton = By.xpath("//a[@class='pointer padding-l-15']");
-
+	//edit by divya on 24thsept 2019 private By logOutButton = By.xpath("//a[@class='pointer padding-l-15']");
+	private By logOutButton = By.xpath(".//li[contains(text(), 'Logout')]");
 	public AccountPage(WebDriver driver) {
 		super(driver);
 		pageName ="AccountPage"; 
@@ -78,9 +79,11 @@ public class AccountPage extends FractalBasePage {
 		enterData(getLabel("newPass"), txtboxNewPass);
 		wait(5);
 		WebElement element = driver.findElement(By.xpath(".//input[contains(@class,'save-button')]")); 
+		if(BrowserFactory.getOS() == "win") {
 		Actions actions = new Actions(driver); 
 		actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(5);
 		click(btnSave);
 		verifyErrorMessage();
@@ -115,9 +118,11 @@ public class AccountPage extends FractalBasePage {
 		for(int i=0;i<inpArray.length;i++) {
 			enterData(inpArray[i], objLoc);
 			WebElement element = driver.findElement(By.xpath(".//input[contains(@class,'save-button')]")); 
+			if(BrowserFactory.getOS() == "win") {
 			Actions actions = new Actions(driver); 
 			actions.moveToElement(element);
 			actions.perform();
+			}
 			wait(5);
 			click(btnSave);
 			status=elementExist(fNameErrorOnlyLetters);
@@ -131,9 +136,12 @@ public class AccountPage extends FractalBasePage {
 		for(int i=0;i<inpArray.length;i++) {
 			enterData(inpArray[i], objLoc);
 			WebElement element = driver.findElement(By.xpath(".//input[contains(@class,'save-button')]")); 
+			//added by divya on 24th sept 2019 - condition for windows os in this page
+			if(BrowserFactory.getOS() == "win") {
 			Actions actions = new Actions(driver); 
 			actions.moveToElement(element);
 			actions.perform();
+			}
 			wait(5);
 			click(btnSave);
 			status=elementExist(lNameErrorOnlyLetters);
@@ -159,13 +167,14 @@ public class AccountPage extends FractalBasePage {
 		wait(5);
 		click(saveButton);
 		wait(5);
-		WebElement element = driver.findElement(By.xpath(".//img[@class='logout-height']")); 
+		WebElement element = driver.findElement(By.xpath(".//div[contains(@class,'myaccount-text padding-30 mt-3')]")); 
+		if(BrowserFactory.getOS() == "win") {
+
 		Actions actions = new Actions(driver); 
 		actions.moveToElement(element);
 		actions.perform();
-		wait(2);
+		}
 		click(lblProfile);
-		wait(2);
 		click(logOutButton);	
 	}
 	public void afterChangePassword() {

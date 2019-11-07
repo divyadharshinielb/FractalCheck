@@ -14,7 +14,7 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestClassroomCreation extends FractalBaseWebTest {
-	@DataProvider
+	/*@DataProvider
 	public  Object[][] browers() {
 		return new Object[][] {
 			new Object[] { "1", "chrome" }
@@ -22,9 +22,27 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
 //		, new Object[] { "3", "msedge" } 
 //		 new Object[] { "4", "ie11" }
 		};
+	}*/
+	//edited by divya from here
+	@DataProvider
+	public Object[][] browers() {
+	if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+		return new Object[][] {
+			//new Object[] { "1", "msedge" }, 
+			new Object[] { "2", "Chrome" },
+			//new Object[] { "3", "Firefox" }
+		};
 	}
+	
+	if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
+		return new Object[][] {
+				new Object[] { "1", "safari" }
+			};
+	}
+	return null;
+	}//ended by divya
 	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
-	public void testVerifyClassroomCreation(String row, String strBrowserName) throws IOException {
+	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
 	
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
@@ -52,8 +70,8 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
         Reporter.writeSummary("TCID_CLASS_028, Verify whether the Admin must be able to view the created CLASSROOM information," +  cSteps.getResult() );
 	}
         
-		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = false,description="")
-    	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
+		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = true,description="")
+    	public void testClassroomCreation1(String row, String strBrowserName) throws IOException {
     	
     		driver = BrowserFactory.getBrowser(strBrowserName);
     		loginToContentAdmin(driver);

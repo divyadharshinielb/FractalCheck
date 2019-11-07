@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.wv.auto.framework.BrowserFactory;
 
 public class HomePage extends FractalBasePage {
 
@@ -15,7 +16,7 @@ public class HomePage extends FractalBasePage {
 	 /*******new ui***************/
 	private By lblRcntAdded = By.xpath(".//div[@class='whats_title']");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Recently Added')]
 	private By lblPoplr = By.xpath(".//div[contains(text(),'Popular content')]");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Recommended')]
-	private By lblRecommended = By.xpath(".//div[contains(text(),'Recommended for You')]");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Most Popular')]
+	private By lblRecommended = By.xpath(".//div[contains(text(), 'Recommended for You')]");//*[@id='ngview']/*//ng-include/*//h2[contains(text(),'Most Popular')]
 	/***************/
 	
 	private By lblCLAll = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'All')]");
@@ -24,7 +25,8 @@ public class HomePage extends FractalBasePage {
 	private By lblCLMiLrn = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Micro Learning')]");
 
 	private By lblNotification = By.xpath(".//*[@id='notification-dropdown']/*//span[@class='heading']");
-	private By Check = By.xpath(".//p[contains(text(),'Check it out! New item added to')]");//old ui//p[contains(text(),'You can now access Automation test bundle1.')]
+//edit by divya 	private By Check = By.xpath(".//p[contains(text(),'Check it out! New item added to Automation Learnin')]");
+	private By Check = By.xpath(".//p[contains(@class, 'noti-title mb-0')]");	 //p[contains(text(), 'Check it out! New item added to Elearning: Rule 5 - Set 3')]
  /*******new ui***************/
 	private By lblResumeLearning= By.xpath(".//div[contains(text(),'RESUME LEARNING')]");//new ui
 /***************/	
@@ -71,6 +73,8 @@ public class HomePage extends FractalBasePage {
     private String mostboxCatType ="]/*//p";
     
     /*******new ui***************/
+    //edit by divya
+  //  private By lblCategory = By.xpath("//li//a[contains(text(),'Categories')]"); 
     private By lblCategory = By.xpath("//li//a[contains(text(),'CATEGORIES')]");
     private By txtBoxSearch = By.xpath("//input[@id='theInput']");
     private By iconWishlist = By.xpath(".//div[@class='log_wishlist']");
@@ -100,9 +104,11 @@ public class HomePage extends FractalBasePage {
 	private By privacyLink = By.xpath(".//a[contains(text(),'Privacy')]");
 	private By termsLink = By.xpath(".//footer[@id='footer']//a[2]");//a[contains(text(),'| Terms')]
 	private By contactsLink = By.xpath(".//footer[@id='footer']//a[3]");//a[contains(text(),'| Contact')]
-	private By privacyPage = By.xpath(".//span[contains(text(),'PRIVACY POLICY')]");//span[contains(text(),'PRIVACY POLICY')]
-	private By termsPage = By.xpath(".//span[contains(text(),'Terms & Conditions')]");//span[contains(text(),'TERMS & CONDITIONS')]
-	private By contactsPage = By.xpath(".//span[contains(text(),'contact us')]");//span[contains(text(),'CONTACT US')]
+	// edit by divya private By privacyPage = By.xpath(".//span[contains(text(),'Copyright �')]");//span[contains(text(),'PRIVACY POLICY')]
+	private By privacyPage = By.xpath(".//span[contains(text(),'PRIVACY POLICY')]");
+	private By termsPage = By.xpath(".//span[contains(text(), 'Terms & Conditions')]");//span[contains(text(),'TERMS & CONDITIONS')]
+	//edit by divya private By contactsPage = By.xpath(".//span[contains(text(),'success')]");//span[contains(text(),'CONTACT US')]
+	private By contactsPage = By.xpath(".//span[contains(text(), 'contact us')]");
 	/************************/
 	MyLearningPage myLearning = new MyLearningPage(driver);
 
@@ -176,7 +182,7 @@ public class HomePage extends FractalBasePage {
 		wait(10);
 		clickOnBellIcon();
 		wait(2);
-		//verifyLabel("lblNotification",lblNotification );
+	//	verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check );
 		clickOnViewAll();
@@ -220,7 +226,7 @@ public class HomePage extends FractalBasePage {
 
 	public void verifyAllFilterWhatsNew() {
 		click(whlblAll);
-		//verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
+		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
 	     
 	}
 	public void verifyBundleFilterWhatsNew() {
@@ -293,12 +299,13 @@ public class HomePage extends FractalBasePage {
 	}
    //************most popular************//
 	public void verifyAllFilterMostAdded(){
-		click(mostlblAll);
+		//edit by divya - All label is not present so commented click(mostlblAll);
+		//click(mostlblAll);
 		wait(3);
 		verifyAllFilterTypeMostAdded(mostboxBtn,mostboxCatType,mostlblFilterLink);
 	}
 	public void verifyBundleFilterMostAdded() {
-		click(mostlblAll);
+		//click(mostlblAll);
 		wait(3);
 		//edited By Karpagavalli from here
 		if(elementExist(mostlblBundles)) {
@@ -308,7 +315,7 @@ public class HomePage extends FractalBasePage {
 		}	
 	}
 	public void verifyCourseFilterMostAdded() {
-		click(mostlblAll);
+		//click(mostlblAll);
 		wait(3);
 		if(elementExist(mostlblCourses)) {
 			click(mostlblCourses);
@@ -317,7 +324,7 @@ public class HomePage extends FractalBasePage {
 		}	
 	}
 	public void verifyResourceFilterMostAdded() {
-		click(mostlblAll);
+		//click(mostlblAll);
 		wait(3);
 		if(elementExist(mostlblResources)) {
 			click(mostlblResources);
@@ -326,7 +333,7 @@ public class HomePage extends FractalBasePage {
 		}	
 	}
 	public void verifyLearnPathFilterMostAdded() {
-		click(mostlblAll);
+		//click(mostlblAll);
 		wait(3);
 		if(elementExist(mostlblLpaths)) {
 			click(mostlblLpaths);
@@ -361,9 +368,11 @@ public class HomePage extends FractalBasePage {
 		click(homeLink);
 	*/	
 	WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'VIEW ALL')]"));
+	if(BrowserFactory.getOS() == "win") {
 	Actions actions = new Actions(driver);
 	actions.moveToElement(element);
 	actions.perform();
+	}
 	wait(5);
 		click(whatsNewLinkViewAll);
 		wait(5);
@@ -388,9 +397,12 @@ public class HomePage extends FractalBasePage {
 		verifyLabel("lblTerms",termsLink);
 		verifyLabel("lblContacts",contactsLink);
 		WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
+		//edited by divya on 24th sept 2019
+		if(BrowserFactory.getOS() == "win") {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element);
 		actions.perform();
+		}//edited till here by divya
 		wait(10);
 /*		
 		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
@@ -405,9 +417,12 @@ public class HomePage extends FractalBasePage {
 		verifyLabel("contactsPage",contactsPage);
 		wait(5);
 		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
+		//edited by divya on 24th sept 2019
+				if(BrowserFactory.getOS() == "win") {
 		Actions actions1= new Actions(driver);
-		actions.moveToElement(element1);
+		actions1.moveToElement(element1);
 		actions1.perform();
+				}//edited till here by divya
 		wait(5);
 		click(privacyLink);
 		verifyLabel("privacyPage",privacyPage);
@@ -415,9 +430,12 @@ public class HomePage extends FractalBasePage {
 	/*Ends- added by Manju Priya A on Nov-29-18*/
 	public void	whatsNewSectionAttributes() {
 		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'VIEW ALL')]"));
+		//edited by divya on 24th sept 2019
+		if(BrowserFactory.getOS() == "win") {
 		Actions actions= new Actions(driver);
 		actions.moveToElement(element);
 		actions.perform();
+		}//edited till here by divya
 		wait(5);
 		click(lblViewAllRcntAdded);
 		wait(2);
@@ -428,7 +446,7 @@ public class HomePage extends FractalBasePage {
 			System.out.println("---->"+a);
 	    }
 	    click(iconListView);
-	//    verifyAllFilterTypeRcntAdded(rboxBtn, rboxCatType, whlblFilterLink);
+	    verifyAllFilterTypeRcntAdded(rboxBtn, rboxCatType, whlblFilterLink);
 	/*    verifyTileFunctionality();
 	    verifyTileStructure();
 	*/
@@ -451,9 +469,11 @@ public class HomePage extends FractalBasePage {
 	public void verifyNextBtn() {
 		
 		WebElement element = driver.findElement(By.xpath("//div[@class='slider-control-centerright']//div//img"));
+		if(BrowserFactory.getOS() == "win") {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element);
 		actions.perform();
+		}
 		wait(10);
 		click(nextButton);
     }

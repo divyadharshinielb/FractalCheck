@@ -65,7 +65,29 @@ public abstract class  BasePage {
 		enterData(dataToEnter, getObj(objLoc));
 
 	}
+	//edit by divya on 9thOct2019 
+	/*public void enterData1(int dataToEnter1, WebElement w) {
+		enterData1(dataToEnter1, getObj(w));
 
+public int getNumber(String data){
+		int number = Integer.parseInt(data);
+		return number;
+	}
+	}*/
+	
+	
+	/*public void enterasNum(WebElement webElement , int i) {
+		enterasNum( getObj(webElement), getNumber(i));
+
+	}*/
+	/*public void enterNum(String number, By objLoc) {
+		enterNum(number, getObj(objLoc));
+	}*/
+
+	/*public void enterNumPlace(WebElement webElement) {
+		enterNumPlace(getObj(webElement));
+	}*/
+//edit
 	public void enterData(String dataToEnter, WebElement inpElement) {
 		WebElement we = inpElement;
 		we.clear();
@@ -275,7 +297,11 @@ public abstract class  BasePage {
 	
 	//This function will get the particular text from the repeating tag(i.e.,The particular text in repeating div) and returns an array
 	public String[] getCatalogTypes(String objpath, String objpathType) {
+		print("HDHDHDHDHHDHD" +objpath);
+		print("hdhdhhd" +objpathType);
+		//.//div[contains(@class,'mylearn')]/../div[3]/a
 		int length = getItemsCount(By.xpath(objpath));
+		print("ddddddd"+length);
 		String wholeObjPath = "";
 		String actualCatalogType="";
 		String[] catlogType = new String[length-1];

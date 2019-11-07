@@ -1,6 +1,8 @@
 package com.origin.fractal.testauto.pages;
 import org.openqa.selenium.WebDriver;
 import com.origin.fractal.testauto.FractalBasePage;
+import com.wv.auto.framework.BrowserFactory;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +13,9 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class ClassroomEventPage extends FractalBasePage{
 
-	private By FirstListItem = By.xpath(".//span[contains(text(),'Added on')]");
+	//edited by divya on 1st Oct 2019
+	//private By FirstListItem = By.xpath(".//span[contains(text(),'Added on')]");
+	private By FirstListItem = By.xpath(".//a[contains(text(), 'Automation classroom')]");
 	private By btnAddEvent = By.xpath(".//button[contains(text(),'Add Event')]");//.//h4[contains(text(),'Events')]/../../*//button[contains(text(),'Add Event')]
 	private By eventPageTitle = By.xpath(".//h4[contains(text(),'New Event')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'Continue')]");
@@ -202,11 +206,22 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void verifyPhysicalClassroomDropdown() {
 	click(btnAddEvent);
 	click(lblTraditionalClassroom);
+
+	wait(5);
+	//edited by divya on 30th sept 2019
+	//verifyText("Select Venue",venueDropdown);
+	verifyText("Select",venueDropdown);
+	wait(10);
+
 	wait(2);
 	verifyText("Select Venue",venueDropdown);
 	}
 	public void verifyVirtualClassroomDropdown() {
+		wait(5);
 	click(lblVirtualClassroom);
+	//edited by divya on 30th sept 2019
+	//verifyText("select Link",linkDropdown);
+	verifyText("Select",linkDropdown);
 	wait(2);
 	verifyText("select Link",linkDropdown);
 	}
@@ -214,14 +229,16 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(btnContinue);
 	//click(btnBack);//Should remove
 	click(lblTraditionalClassroom);
-	verifyText("Venue Required",venueAlertMsg);
+//edited by divya on 30th sept 2019
+//verifyText("Venue Required",venueAlertMsg);
+	verifyText("Venue selection required.",venueAlertMsg);
 	click(venueDropdown);wait(5);
 	click(selectVenue);
 	wait(5);
 	}
 	public void verifyLinkDropdownAlertDisappears() {
 	click(lblVirtualClassroom);wait(10);
-	verifyText("Provider selection required",linkAlertMsg);
+	verifyText("Provider selection required.",linkAlertMsg);
 	click(linkDropdown);wait(5);
 //		click(selectLink);
 	}
@@ -274,11 +291,17 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(btnAddEvent);
 	wait(2);
 	click(lblAssignment);
+
+	wait(5);
+	verifyText("Pass score: 50%",lblPassScore);
+	verifyText("Max score: 100",lblMaxScore);
+
 	wait(2);
 	click(lblAddAssignment);
 	wait(2);
 	verifyText("Pass score",lblPassScore);
 	verifyText("Max score",lblMaxScore);
+
 	verifyText("Release Date",lblReleaseDate);
 	verifyText("Submission Due Date",lblSubmissionDueDate);
 	verifyText("Evaluation Due Date",lblEvalDueDate);
@@ -378,9 +401,12 @@ public class ClassroomEventPage extends FractalBasePage{
 */	}
 	public void verifyPostSurveyDetails() {
 	wait(2);
-	WebElement element = driver.findElement( By.id("postsurvey_title")); Actions
-	actions = new Actions(driver); actions.moveToElement(element);
+	WebElement element = driver.findElement( By.id("postsurvey_title")); 
+	//edited by divya on 1st Oct 2019
+	if(BrowserFactory.getOS() == "win") {
+	Actions actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
+	}
 	click(lblPostSurvey);
 	verifyText("Add Survey",btnPostAddSurvey);
 	}
@@ -408,6 +434,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Start Reminder for assignment evaluation days before due date",lblReminderEval);
 	}
 	public void verifyNotifAndReminderFieldsAcceptsAlphabets() {
+		print("check now in safariiiii");
+		wait(10);
 	enterData("abc",inpSendNotif);
 	enterData("abc",inpRepeatNotif);
 	enterData("abc",inpStartReminder);
@@ -429,6 +457,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	enterData("1@#",inpReminderEval);
 	}
 	public void verifyNotifAndReminderFieldsAcceptsNumbers() {
+		wait(10);
+		print("divyacheck in browser");
 	enterData("123",inpSendNotif);
 	enterData("123",inpRepeatNotif);
 	enterData("123",inpStartReminder);
@@ -439,8 +469,13 @@ public class ClassroomEventPage extends FractalBasePage{
 //		verifyText("Attachment",btnRefUpload);
 	}
 	public void verifyTermsConditions() {
+		wait(5);
 	verifyText("Terms & Conditions",lblTermsConditions);
+	//edit by divya on 1st oct 2019
+	wait(5);
+	//edit by divya on 1st oct 2019
 	closeLobjModel();
+	wait(5);
 	}
 	public void verifySecondPageOpened() {
 	wait(5);
@@ -449,12 +484,19 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	click(dropdownSelectInstructor1);
 	click(lblSelectCalendar);
-	wait(2);
+	wait(5);
 	click(dropdownSelectCalendar);
+	wait(5);
+	/*By objPh=By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-lr-0 display_inFlex11111111 margin-b-20')]//div[1]//input[1]");   
+	((WebElement) objPh).clear();   //To clear the phone text field    
+	((WebElement) objPh).sendKeys("10");*/
+	click(lblCalendarHour);
 	enterData("10",lblCalendarHour);
-	enterData("50",lblCalendarMinute);
+	wait(5);
+	
+	//enterData("50",lblCalendarMinute);
 	click(lblPm);
-	wait(2);
+	wait(10);
 	click(btnContinue);
 	verifyText("Auto update waiting list on cancellation",lblCompletionCriteria);
 	}
