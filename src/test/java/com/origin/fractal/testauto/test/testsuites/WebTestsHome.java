@@ -39,7 +39,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		return null;
 		}//ended by divya on 23rd sept 2019
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -90,7 +90,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "TC_nnnn Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
 	public void testHomePageVerifyRcntAddedCourseNavigation(String row, String strBrowserName) {
@@ -129,7 +129,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {
@@ -183,7 +183,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	*/	homeSteps.clickLogout();
 	
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersForKOandMostAdded(String row, String strBrowserName) {
@@ -209,7 +209,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
 		homeSteps.clickLogout();
 	}
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_33:Checking whether the coverage percentage is shown with the text \"Coverage\""
 					+ "TCID_35:All the data should be shown under the heading \"Recently Added\" when \"view all\" button is clicked"
@@ -299,7 +299,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 			
 			}
 		//Added by mahesh
-		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,
+		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false,
 				description = "")
 		public void testDynamicCatalogFilterCheck(String row, String strBrowserName) {
 

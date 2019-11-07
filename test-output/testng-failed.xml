@@ -6,13 +6,16 @@
       <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode">
         <methods>
           <include name="beforeClass"/>
+          <include name="editVerifyCatalogItemcodes" invocation-numbers="0"/>
           <include name="beforeMethod"/>
           <include name="editVerifyLearningObjectsItemcodes" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="afterClass"/>
+          <include name="verifyLearningObjectsItemcodes" invocation-numbers="0"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
+          <include name="verifyCatalogItemcodes" invocation-numbers="0"/>
           <include name="beforeTest"/>
         </methods>
       </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode -->
