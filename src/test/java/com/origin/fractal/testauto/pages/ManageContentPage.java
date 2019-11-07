@@ -734,7 +734,7 @@ public class ManageContentPage extends FractalBasePage {
 	}
 	public void reEditItem(){
 		LoginSteps login = new LoginSteps(driver);
-		login.reAdminsidelogin();
+	//	login.reAdminsidelogin();
 		goToManagecontent();
 		reEditLearnObjItemcodes();
 		clickOnCreatecatalog();
