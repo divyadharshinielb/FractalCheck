@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="testItemCodes" invocation-numbers="0"/>
+          <include name="editVerifyLearningObjectsItemcodes" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>

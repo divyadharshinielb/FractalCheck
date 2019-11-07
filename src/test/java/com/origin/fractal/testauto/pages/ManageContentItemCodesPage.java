@@ -85,7 +85,8 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 	private By[] updateAlertMsgEditCatItem = {updateAlertMsgEditCatItem1,updateAlertMsgEditCatItem2,updateAlertMsgEditCatItem3,updateAlertMsgEditCatItem4,updateAlertMsgEditCatItem5};
 	private By updateAlertMsgCat = By.xpath("//*[@ng-model='document']");
 	private By continueBtn = By.xpath(" //button[contains(text(),'Continue')]");
-	//private By saveBtn = By.xpath("//button[text()='Save']");
+	private By continueBtn1 = By.xpath("(//*[text()='Continue'])[1]");
+	private By saveBtn = By.xpath("(//*[text()='Save'])[1]");
 	private By backcatalogBtn = By.xpath(" //button[contains(text(),'Back to Catalog Items')]");
 	final int waitingSec =2;
 	public boolean [] boolVerifyAdminLOResult = new boolean[7];
@@ -96,6 +97,9 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 	public boolean [] boolVerifyUserCIResult = new boolean[5];
 	public boolean [] editboolVerifyAdminCIResult = new boolean[5]; 
 	public boolean [] editboolVerifyUserCIResult = new boolean[5];
+	private By searchResultCountofResults = By.xpath(".//div[contains(@class,'heading-left1')]/../div/b[1]");
+	private String arrayXpath1 = "(//html/body/div/div/main/div/div[3]/div/div/div/div/div/div/div/div/div/div/h6/span)";
+	private String arrayXpath2 ="]";
 	public boolean boolResult = false;
 	public int adminResultNext=0;
 	public int userResultNext=0;
@@ -103,7 +107,6 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 	public int editUserResultNext=0;
 	//User side
 	private By searchfieldUser= By.xpath("//input[@id='theInput']");
-	private By saveBtn = By.xpath("(//*[text()='Save'])[1]");
 
 	public ManageContentItemCodesPage(WebDriver driver) {
 		super(driver);
@@ -144,13 +147,27 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 			enterData(getLabel(searchLearnObjitemcode), searchfieldUser);
 			driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 			wait(waitingSec);
-			if(verifyTextIgnorecase(getLabel(exptLearnObjTitle), learnObjTitles[i]))
-			{
-				boolVerifyUserLOResult [i] = true;
+			verifyTextIgnorecase(getLabel(exptLearnObjTitle), learnObjTitles[i]);
+			int searchResultCount = Integer.parseInt(driver.findElement(searchResultCountofResults).getText());
+			print("Searchresult = "+searchResultCount);
+			if(elementExist(learnObjTitles[i]) && searchResultCount>0){
+				int itemCount = getItemsCount(arrayXpath1,arrayXpath2,searchResultCount);
+				print("---------"+itemCount);
+				if(itemCount == searchResultCount)
+				{
+					boolVerifyUserLOResult [i] = true;
+				}
+				else {
+					boolVerifyUserLOResult [i] = false;
+				}
+			}
+			else {
+				boolVerifyUserLOResult [i] = false;
 			}
 		}
 		print("----------Verify LO User Itemcode End-----------");
 	}
+
 	public void adminLogout() {
 		click(adminAccountLogo);
 		wait(waitingSec); 
@@ -308,17 +325,29 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 			actions.perform();
 			String exptLearnObjTitle = "learnObjTitle"+(Integer.toString(i+1));
 			String searchLearnObjitemcode = "learnObjItemcodes"+(Integer.toString(i+1));
-			clear(searchfieldUser);
 			enterData(getLabel(searchLearnObjitemcode), searchfieldUser);
 			driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 			wait(waitingSec);
-			if(verifyTextIgnorecase(getLabel(exptLearnObjTitle), learnObjTitles[i]))
-			{
-				editboolVerifyUserLOResult [i] = true;
+			verifyTextIgnorecase(getLabel(exptLearnObjTitle), learnObjTitles[i]);
+			int searchResultCount = Integer.parseInt(driver.findElement(searchResultCountofResults).getText());
+			if(elementExist(learnObjTitles[i]) && searchResultCount>0){
+				int itemCount = getItemsCount(arrayXpath1,arrayXpath2,searchResultCount);
+				print("---------"+itemCount);
+				if(itemCount == searchResultCount)
+				{
+					editboolVerifyUserLOResult [i] = true;
+				}
+				else {
+					editboolVerifyUserLOResult [i] = false;
+				}
+			}
+			else {
+				editboolVerifyUserLOResult [i] = false;
 			}
 		}
-		print("----------Verify LO User Edited Itemcode End-----------");
+		print("----------Verify LO User Itemcode End-----------");
 	}
+
 	public boolean editVerifyLOICeLearn() {
 		editUserResultNext=0;
 		editAdminResultNext=0;
@@ -417,7 +446,6 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 		}
 		print("----------ReEdit LO Itemcode End-----------");
 	}
-
 
 	//Catalog starts
 	public void clickOnCreatecatalog() {
@@ -530,9 +558,10 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 			wait(waitingSec);
 			click(continueBtn);
 			wait(waitingSec);
+			click(continueBtn1);
+			wait(waitingSec);
 			click(saveBtn);
 			wait(waitingSec);
-
 			String updateAlertMsg = "updatealertmsgItemcodeTitle"+(Integer.toString(i+1));
 			if(verifyTextIgnorecase(getLabel(updateAlertMsg), updateAlertMsgEditCatItem[i])) {
 				print("Update Passed......");
@@ -656,6 +685,8 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 			wait(waitingSec);
 			click(continueBtn);
 			wait(waitingSec);
+			click(continueBtn1);
+			wait(waitingSec);
 			click(saveBtn);
 			wait(waitingSec);
 			click(backcatalogBtn);
@@ -664,54 +695,60 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 		print("----------ReEdit CI Itemcode End-----------");
 	}
 
-	public void verifyLearningObjects() {
+	public void verifyAdminLearningObjects() {
 		goToManagecontent();
 		verifyAdminLearnObjItemcodes();
 		adminLogout();
-		LoginSteps login = new LoginSteps(driver);
-		login.reUsersidelogin();
-		verifyUserLearnObjItemcodes();
 	}
-	public void editVerifyLearningObjects() {
+	public void verifyUserLearningObjects() {
+		verifyUserLearnObjItemcodes();
 		userLogout();
-		LoginSteps login = new LoginSteps(driver);
-		login.reAdminsidelogin();
+	}
+	public void editVerifyAdminLearningObjects() {
 		goToManagecontent();
 		editLearnObjItemcodes();
 		editVerifyAdminLearnObjItemcodes();
 		adminLogout();
-		login.reUsersidelogin1();
-		editVerifyUserLearnObjItemcodes();
 	}
-	public void verifyCatalogItems(){
+	public void editVerifyUserLearningObjects() {
+		editVerifyUserLearnObjItemcodes();
 		userLogout();
-		LoginSteps login = new LoginSteps(driver);
-		login.reAdminsidelogin();
+	}
+	public void verifyAdminCatalogItems(){
 		goToManagecontent();
 		clickOnCreatecatalog();
 		verifyAdminCatItemItemcodes();
 		adminLogout();
-		login.reUsersidelogin1();
-		verifyUserCatItemItemcodes();
 	}
-	public void editCVerifyCatalogItems(){
+	public void verifyUserCatalogItems(){
+		verifyUserCatItemItemcodes();
 		userLogout();
-		LoginSteps login = new LoginSteps(driver);
-		login.reAdminsidelogin();
+	}
+	public void editVerifyAdminCatalogItems(){
 		goToManagecontent();
 		clickOnCreatecatalog();
 		editCataItemItemcodes();
 		editVerifyAdminCatItemItemcodes();
 		adminLogout();
-		login.reUsersidelogin1();
-		editVerifyUserCatItemItemcodes();
 	}
-	public void reEdit(){
+	public void editVerifyUserCatalogItems(){
+		editVerifyUserCatItemItemcodes();
 		userLogout();
+	}
+	public void reEditItem(){
 		LoginSteps login = new LoginSteps(driver);
 		login.reAdminsidelogin();
 		goToManagecontent();
 		reEditLearnObjItemcodes();
+		clickOnCreatecatalog();
+		reEditCatItemItemcodes();
+		adminLogout();
+	}
+	public void itemcoderenameLearningObject(){
+		goToManagecontent();
+		reEditLearnObjItemcodes();
+	}
+	public void itemcoderenamecatalog() {
 		clickOnCreatecatalog();
 		reEditCatItemItemcodes();
 		adminLogout();

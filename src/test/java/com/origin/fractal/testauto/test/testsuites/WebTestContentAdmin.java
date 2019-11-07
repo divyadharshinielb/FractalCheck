@@ -40,8 +40,8 @@ public class WebTestContentAdmin extends FractalBaseWebTest{
 		//Test moves to Manage Contents page
 		//Verify on clicking the Audio opens another pop-up to create an Audio object
 		ManageContentSteps mcSteps = new ManageContentSteps(driver);
-		mcSteps.verifyAudioCreationPage();
-		mcSteps.verifyMandatoryFieldsAlerMessage();
+		//mcSteps.verifyAudioCreationPage();
+		//mcSteps.verifyMandatoryFieldsAlerMessage();
 		wait(10);
 		menuSteps.logout();
 	}

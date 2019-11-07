@@ -21,7 +21,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -72,7 +72,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			description = "TC_nnnn Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
 	public void testHomePageVerifyRcntAddedCourseNavigation(String row, String strBrowserName) {
@@ -111,7 +111,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {
@@ -165,7 +165,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	*/	homeSteps.clickLogout();
 	
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersForKOandMostAdded(String row, String strBrowserName) {
@@ -215,13 +215,84 @@ public class WebTestsHome extends FractalBaseWebTest {
 					+ "TCID_79:Verify the function of  Cart  icon " + "TCID_80:Verify the function of  Wishlist icon "
 					+ "TCID_3:Verify My Learning page is displayed after logging to app. ")
 	public void testHomePageX(String row, String strBrowserName) {
-
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		login(driver);
+		login(driver);		
+	}
+	//Added by dhanushiya.k
+		@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+				// description="Verify categories are available as expected" )
+				description = "TCID_Verify Global Search with catalog Items and Learning Objects")
+		public void GlobalSearchUsingCatalogandLearningObjects(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			HomeSteps homeSteps = new HomeSteps(driver);
+			//TCID_:Verify Global Search for classroom,classrooms and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforClassroomandClassroomsKeyword();
+			Reporter.writeSummary("TCID_Globalsearch_1,  Verify Global Search for classroom,classrooms and Verify whether the count and the number of elements displayed are same," +  homeSteps.getResult() );
+			//TCID_:Verify Global Search for Image,Images and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforimageandimages();
+			Reporter.writeSummary("TCI_Globalsearch_2, Verify Global Search for image,images and Verify whether the count and the number of elements displayed are same,"+ homeSteps.getResult());
+			//TCID_:Verify Global Search for Audio,Audios and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforAudioandAudios();
+			Reporter.writeSummary("TCI_Globalsearch_3,Verify Global Search for Audio,Audios and Verify whether the count and the number of elements displayed are same,"+ homeSteps.getResult());
+			//TCID_:Verify Global Search for video ,videos and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforVideoandVideos();
+			Reporter.writeSummary("TCI_Globalsearch_4,Verify Global Search for video, videos and Verify whether the count and the number of elements displayed are same,"+homeSteps.getResult());
+			//TCID_:Verify Global Search for document,documents and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforDocumentandDocuments();
+			Reporter.writeSummary("TCI_Globalsearch_5,Verify Global Search for document,documents and Verify whether the count and the number of elements displayed are same,"+homeSteps.getResult());
+			//TCID_:Verify Global Search for vlab, vlabs and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforVlabsandVlabs();
+			Reporter.writeSummary("TCI_Globalsearch_6,Verify Global Search for vlab,vlabs and Verify whether the count and the number of elements displayed are same,"+homeSteps.getResult());
+			//TCID_:Verify Global Search for assessment,assessments and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforAssessmentandAssessments();
+			Reporter.writeSummary("TCI_Globalsearch_7,Verify Global Search for assessment,assessments and Verify whether the count and the number of elements displayed are same,"+homeSteps.getResult());
+			//TCID_:Verify Global Search for elearning ,elearnings and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforElearningandElearnings();
+			Reporter.writeSummary("TCI_Globalsearch_8,Verify Global Search for elearning,elearnings and Verify whether the count and the number of elements displayed are same,"+homeSteps.getResult());
+			//TCID_:Verify Global Search for bundles,bundles and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforBundleandBundles();
+			Reporter.writeSummary("TCI_Globalsearch_9,Verify Global Search for bundles and bundles,"+homeSteps.getResult());
+			//TCID_:Verify Global Search for podcast,podcasts and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforPodcastandPodcasts();
+			Reporter.writeSummary("TCI_Globalsearch_10,Verify Global Search for podcast,podcasts and Verify whether the count and the number of elements displayed are same,"+homeSteps.getResult());
+			//TCID_:Verify Global Search for learningpath,learningpaths and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforLearningpathandLearningpaths();
+			Reporter.writeSummary("TCI_Globalsearch_11,Verify Global Search for learningpath and learningpaths,"+homeSteps.getResult());
+			//TCID_:Verify Global Search for course,courses and Verify whether the count and the number of elements displayed are same.
+			homeSteps.GlobalSearchforCourseandCourses();
+			Reporter.writeSummary("TCI_Globalsearch_12,Verify Global Search for course,courses and Verify whether the count and the number of elements displayed are same,"+homeSteps.getResult());
+			//TCID_:Verify Global Search for resource ,resource and Verify whether the count and the number of elements displayed are same. 
+			homeSteps.GlobalSearchforResourceandResources();
+			Reporter.writeSummary("TCI_Globalsearch_13,Verify Global Search for resource,resources and Verify whether the count and the number of elements displayed are same,"+homeSteps.getResult());
+			//TCID_:Verify Global Search with random characters and integers.
+			homeSteps.GlobalSearchwithRandomcharacterandIntegers();
+			Reporter.writeSummary("TCI_Globalsearch_14,Verify Global Serach with random characters and integers,"+homeSteps.getResult());
+			//TCID_:Verify Global Search with Special characters
+			homeSteps.GlobalSearchwithSpecialcharacters();
+			Reporter.writeSummary("TCI_Globalsearch_15,Verify Global Search with Special characters,"+homeSteps.getResult());
+			//TCID_: Verify Global Search with unavailable keyword
+			homeSteps.GlobalSearchwithUnavailableKeyword();
+			Reporter.writeSummary("TCI_Globalsearch_16, Verify Global Search with unavailable keyword,"+homeSteps.getResult());
+			//TCID_: Verify Global Search with double and tab Space
+			homeSteps.GlobalSearchwithDoubleandTabspace();
+			Reporter.writeSummary("TCI_Globalsearch_17, Verify Global Search with double and tab Space,"+homeSteps.getResult()); 
+			
+			
+			}
+		//Added by mahesh
+		@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true,
+				description = "")
+		public void testDynamicCatalogFilterCheck(String row, String strBrowserName) {
 
-	
-	
-		
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			
+			HomeSteps homeSteps = new HomeSteps(driver);
+			homeSteps.verifyCatalogFilterDashboard();
+			homeSteps.verifyCatalogFilterMylearning();
+			homeSteps.verifyCatalogFilterCategories();
+			homeSteps.verifyCatalogFilterSearch();
 	}
 
 }

@@ -11,7 +11,7 @@ public class ManageContentSteps  extends FractalBaseStep{
 		page = new ManageContentPage(driver);
 		fBPage = page;
 	}
-	public void verifyAudioCreationPage() {
+	/*public void verifyAudioCreationPage() {
 		page.verifyAudioCreationPage();
 	}
 	public void verifyMandatoryFieldsAlerMessage() {
@@ -32,6 +32,6 @@ public class ManageContentSteps  extends FractalBaseStep{
 	public void verifyCatalogTitleValidation() {
 		page.verifyCatalogTitleValidation();
 	}
-	
+	*/
 
 }

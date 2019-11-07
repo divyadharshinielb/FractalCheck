@@ -1,909 +1,753 @@
+// Created by Vignesh(WVI) 
+// Last Updated on 26-Oct-19
 package com.origin.fractal.testauto.pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.steps.LoginSteps;
+import com.origin.fractal.testauto.steps.MenuSteps;
 
-public class ManageContentPage extends FractalBasePage{
-	private By btnCreateLobj = By.xpath(".//button[contains(text(),'Add Learning Object')]");
-	private By btnAudio = By.xpath(".//button/span[contains(text(),'Audio')]");
-	private By lobjTitle = By.xpath(".//i[contains(@data-icon,'9')]/../../h4/span");
-	private By closeModel = By.xpath(".//button[contains(@class,'close')]");
-	private By btnCancel = By.xpath(".//button[contains(text(),'Cancel')]");
-	private By btnSave = By.xpath(".//button[contains(text(),'Save')]");
-	private By titleErrorMsg = By.xpath(".//label[contains(text(),'Title')]/../div[contains(@class,'text-danger')]");
-	private By languageErrorMessage = By.xpath(".//select/../*//div[contains(@class,'text-danger')]");
-	private By categoryErrorMessage = By.xpath("//span[contains(@placeholder,'Select Category')]/../../../*//div[contains(@class,'text-danger')]");
-	private By fileUploadErrorMessage = By.xpath(".//input[contains(@type,'file')]/../../div[contains(@class,'text-danger')]");
-	private By descriptionErrorMessage = By.xpath(".//textarea/../../div[contains(@class,'text-danger')]");
-	private By btnCreateCalitem = By.xpath(".//button[contains(text(),'Add Catalog')]");
-	private By lblContentBundle = By.xpath("//md-dialog-content[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button//span[contains(text(),'Content Bundle')]");
-	private By lblBundleTitle = By.xpath("//div[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-tb-10 text-bcbcbc font-size-12 padding-l-19 ng-binding']/../div//div[@class='md-resize-wrapper']/textarea");
-	private By lblBundleDescr = By.xpath("//div[@class='col-lg-12 form-group cus_mar_b_30 margin-all-0 padding-t-20 padding-lr-0 whitelabel elearninglabel']/../div//textarea");
-	private By lblSelectLang = By.xpath("//div[1]/div[1]/ul[1]/li[contains(text(),'English')]");
-	private By lblSelectCateg = By.xpath("//span[@class='ng-binding ng-scope'][contains(text(),'3D Animation')]");
-	private By lblItemCode = By.xpath("//md-input-container[1]/input[@id='input_59']");
-	private By lblContinue = By.xpath("//button[contains(text(),'Continue')]");
-	private By lblCatalogTab = By.xpath("//md-tab-item[2]/span[contains(text(),'Catalog Items')]");
-	private By lblValidityNum = By.xpath("//input[@name='validity']");
-	private By lblValidityDrop = By.xpath("//li[contains(text(),'Month')]");
-	private By lblPrice = By.xpath("//li[contains(text(),'Free')]");
-	private By expandBtn = By.xpath("//i[@title='Expand Modules']");
-	private By catlogSelect = By.xpath("//md-dialog-content[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]");
-	private By lblSave = By.xpath("//button[contains(@value,'Create')]");
-	/*private By btnSave = By.xpath("");
-	private By btnSave = By.xpath("");
-	private By btnSave = By.xpath("");
-	private By btnSave = By.xpath("");
-	 */
-	private By CatalogItemBtn= By.xpath("//span[contains(text(),'Catalog Items')]");
-	private By lblReadMore= By.xpath("//span[contains(text(),'Read more')]");
-	private By lblLess= By.xpath("//span[@class='text-orange ngTruncateToggleText']");
-	private By catalogItemFirstClick= By.xpath("//ng-include[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div/div//span[contains(text(),'Category')]");
-	private By Catalog = By.xpath(".//div[@class='icon dripicons-document-edit']");
-	private By catalogClick= By.xpath(".//md-tab-item[@class='md-tab ng-scope ng-isolate-scope md-ink-ripple']//span[@class='text-uppercase padding-lr-10 ng-binding ng-scope'][contains(text(),'Catalog Items')]");
-	private By addCatalog = By.xpath(".//button[contains(text(),'Add Catalog')]");
-	private By bundleAdd = By.xpath(".//span[contains(text(),'Content Bundle')]");
-	private By textfield=By.xpath("//textarea[@name='item_name']");
-	private By dropDown = By.xpath(".//span[contains(text(),'Select Language')]");
-	private By languageChoose = By.xpath(".//*[@id='mCSB_8_container']/div/div[2]/div/div[1]/div/ul/li[3]");
-	private By CategorySelection = By.xpath(".//input[@placeholder='Select Category']");
-	private By CategorySelected = By.xpath(".//span[@class='ng-binding ng-scope'][contains(text(),'Projects')]");
-	private By scrollBar = By.xpath(".//*[@id=\'mCSB_8_scrollbar_vertical\']/div");
-	private By itemCode = By.xpath(".//input[@id='itemCode']");
-	private By description = By.id("descCatalogName");
-	private By continueButton = By.xpath(".//button[contains(text(),'Continue')]");
-	private By validityUnlimited = By.xpath(".//label[@id='unlimited']");
-	private By priceDropdown = By.xpath(".//span[contains(text(),'Price category')]");
-	private By priceFree = By.xpath(".//li[contains(text(),'Free')]");
-	private By addBundle = By.xpath(".//i[contains(@title,'Expand Modules')]");
-	private By bundleSelection = By.xpath(".//span[@title='who Is A Good Friend']");
-	private By createButton = By.xpath(".//button[contains(@value,'Create')]");
-	private By saveMessage = By.xpath(".//*[@id=\"mCSB_14_container\"]/div[2]");
-	private By daysSceneriao = By.xpath(".//input[@name='validity']");
-	private By dropDownClick = By.xpath(".//span[contains(text(),'Day')]");
-	private By monthSelection = By.xpath(".//li[contains(text(),'Month')]");
-	private By searchText =By.xpath(".//form[@name='quizFormAdd']//input[@placeholder='Search']");
-	private By backBtn = By.xpath(".//button[contains(text(),'Back to Catalog Items')]");
-	private By closebtn = By.xpath(".//*[@id=\"target\"]/div[3]/div/div/div[1]/button/i");
-	private By searchField = By.xpath(".//input[@id='searchCatalog']");
-	private By deleteIcon = By.xpath("//*[@id=\"tab-content-59\"]/div/ng-include/div/div/div[3]/div/div[1]/div/div/div[5]/div[3]/i");
-	String[]  itemCodeValidation= {"", "1","  1","121"};
-	private By dangerText=By.xpath("//div[contains(@class,'text-danger font-size-12 padding-l-20 ng-scope')]");
-
-	//Added by Vignesh (WVI) on 03-Oct-19 & updated on 07-Oct-19 (item codes related)
-	private By elearningBtn = By.xpath("//div[contains(@class,'aside-body')]//text()[contains(.,'eLearning')]/ancestor::button[1]");
-	private By VideoBtn = By.xpath("//div[contains(@class,'aside-body')]//text()[contains(.,'Video')]/ancestor::button[1]");
-	private By documentBtn = By.xpath("//div[contains(@class,'aside-body')]//text()[contains(.,'Document')]/ancestor::button[1]");
-	private By imageBtn = By.xpath("//div[contains(@class,'aside-body')]//text()[contains(.,'Image')]/ancestor::button[1]");
-	private By assessmentBtn = By.xpath("//div[contains(@class,'aside-body')]//text()[contains(.,'Assessment')]/ancestor::button[1]");
-	private By vlabBtn = By.xpath("//div[contains(@class,'aside-body')]//text()[contains(.,'vLab')]/ancestor::button[1]");
-	private By audioBtn = By.xpath("//div[contains(@class,'aside-body')]//text()[contains(.,'Audio')]/ancestor::button[1]");
-	private By closeXBtn = By.xpath("//i[contains(@class, 'font-size-35')]");
+public class ManageContentPage extends FractalBasePage {
+	public MenuSteps menusteps;
+	//Learning Object  
+	private By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
+	private By searchFieldCatItem = By.xpath("//*[@id='searchCatalog']");
+	private By editBtn = By.xpath("(//i[@role='button'])[2]");
+	private By catEditBtn = By.xpath("(//*[@role='button'])[152]");
+	//private By closeXBtn = By.xpath("//i[contains(@class, 'font-size-35')]");
 	private By itemcodetab = By.xpath("//input[@type='text'][@name='item_code']");
-	private By lbitemcode = By.xpath("//label[text()='Item Code']");
-	private By cancelBtn = By.xpath("//button[contains(@class,'md-raised btn btn-cancel margin-r-20 ng-binding')]");
+	private By updateBtn = By.xpath("//*[text()='Update']");
+	private By cancelBtn = By.xpath("//*[text()='Cancel']");//button[contains(@class,'md-raised btn btn-cancel margin-r-20 ng-binding')]
+	private By newVersionReqNoBtn = By.xpath("//*[text()='No']");
+	private By updateagainNoBtn = By.xpath("//*[text()='No']");
+	private By learnObjTitle1 = By.xpath("//*[text()='AutoTC_Itemcode_eLearning']");
+	private By learnObjTitle2 = By.xpath("//*[text()='AutoTC_Itemcode_Video']");
+	private By learnObjTitle3 = By.xpath("//*[text()='AutoTC_Itemcode_Document']");
+	private By learnObjTitle4 = By.xpath("//*[text()='AutoTC_Itemcode_Image']");
+	private By learnObjTitle5 = By.xpath("//*[text()='AutoTC_Itemcode_Assessment']");
+	private By learnObjTitle6 = By.xpath("//*[text()='AutoTC_Itemcode_vLab']");
+	private By learnObjTitle7 = By.xpath("//*[text()='AutoTC_Itemcode_Audio']");
+	private By[]learnObjTitles = { learnObjTitle1,learnObjTitle2,learnObjTitle3,learnObjTitle4,learnObjTitle5,learnObjTitle6,learnObjTitle7};
+	private By learnObjItemcode1 = By.xpath("//*[contains(text(),'Auto01LOe_0123456789')]");
+	private By learnObjItemcode2 = By.xpath("//*[contains(text(),'Auto02LOv_)!@#$%^&*(')]");
+	private By learnObjItemcode3 = By.xpath("//*[contains(text(),\"Auto03LOd_-=[]\\;',./\")]");
+	private By learnObjItemcode4 = By.xpath("//*[contains(text(),'Auto04LOi_+{}|:\"<>?~')]");
+	private By learnObjItemcode5 = By.xpath("//*[contains(text(),'Auto05LOa_0123456789')]");
+	private By learnObjItemcode6 = By.xpath("//*[contains(text(),'Auto06LOl_)!@#$%^&*(')]");
+	private By learnObjItemcode7 = By.xpath("//*[contains(text(),\"Auto07LOo_-=[]\\;',./\")]");
+	private By[] learnObjItemcodes = { learnObjItemcode1,learnObjItemcode2,learnObjItemcode3,learnObjItemcode4,learnObjItemcode5,learnObjItemcode6,learnObjItemcode7};
+	private By editlearnObjItemcode1 = By.xpath("//*[contains(text(),'Auto01LOe_012345678A')]");
+	private By editlearnObjItemcode2 = By.xpath("//*[contains(text(),'Auto02LOv_)!@#$%^&*A')]");
+	private By editlearnObjItemcode3 = By.xpath("//*[contains(text(),\"Auto03LOd_-=[];',.A\")]");
+	private By editlearnObjItemcode4 = By.xpath("//*[contains(text(),'Auto04LOi_+{}|:\"<>?A')]");
+	private By editlearnObjItemcode5 = By.xpath("//*[contains(text(),'Auto05LOa_012345678A')]");
+	private By editlearnObjItemcode6 = By.xpath("//*[contains(text(),'Auto06LOl_)!@#$%^&*A')]");
+	private By editlearnObjItemcode7 = By.xpath("//*[contains(text(),\"Auto07LOo_-=[];',.A\")]");
+	private By []editlearnObjItemcodes = {editlearnObjItemcode1,editlearnObjItemcode2,editlearnObjItemcode3,editlearnObjItemcode4,editlearnObjItemcode5,editlearnObjItemcode6,editlearnObjItemcode7}; 
+	// LO Update alert Msg/Notification
+	private By saveNewVersionBtn = By.xpath("//*[@class='md-title ng-binding']");
+	private By updateAlertMsgEditlearnObject1 =  By.xpath("//div[@class = 'col-lg-12 col-sm-12 col-md-12 col-xs-12 height-400']//div[2]");	//*[@id="target"]/div[3]/div/div/div[2]/md-dialog-content/div/div[1]/div/div[2]
+	private By updateAlertMsgEditlearnObject2 =  By.xpath("//*[@class ='mCSB_container']//div[2]");
 
-	public boolean boolstatus = false;
-	public boolean boolresult = false;
-	public boolean textresult = false;
-
-	final int waitingsec = 5;//standard waiting time
-	final int waiting7sec = 7;
-
-	private String itemcodetxt ="Item Code";
-
-
-	//Added by Vignesh (WVI) on 09-Oct-19 updated on 10-Oct-19 (item codes related) 
-	private By bundleBtn = By.xpath("//text()[contains(.,'Content Bundle')]/ancestor::button[1]");
-	private By learnpathBtn = By.xpath("//text()[contains(.,'Learning path')]/ancestor::button[1]");
-	private By courseBtn = By.xpath("//text()[contains(.,'Course')]/ancestor::button[1]");
-	private By resourceBtn = By.xpath("//text()[contains(.,'Resource')]/ancestor::button[1]");
-	private By podcastBtn = By.xpath("//text()[contains(.,'PODCAST')]/ancestor::button[1]");
-	private By itemcode = By.xpath("//input[@type='text'][@name='item_code']");
-	private By lbitemcodetxt = By.xpath("//label[text()='Item Code']");
-	private By cancel = By.xpath("//button[@class='btn btn-cancel btn_radius ng-binding text-left']");
-
-	//User side 
-	private By searchtab = By.xpath("//input[@id='theInput']");
-	private By nosearchresult = By.xpath("//span[@class='no-records-found']");
-	private By searchresult = By.xpath("//span[@class='no-records-found']");
-	private By useraccount = By.xpath("//*[contains(@class, 'logout-height')]");
-	private By logout = By.xpath("//li[text()='Logout']");
-
-	// End- here************************** Vignesh (WVI) on 14-Oct-19 ********************************
+	private By adminAccountLogo =By.xpath("//*[@title='LMS']");
+	private By adminLogout =By.xpath("//*[@class='dropdown-menu menu-myaccount']//div[3]");
+	private By userAccountLogo =By.xpath("//div[@class='logout_pop']");
+	private By userLogout =By.xpath("//*[text()='Logout']");
+	//Catalog
+	private By catalogItem= By.xpath("//span[contains(text(),'Catalog Items')]");
+	private By catItemTitle1 = By.xpath("//*[text()='AutoTC_Itemcode_Bundle']");
+	private By catItemTitle2 = By.xpath("//*[text()='AutoTC_Itemcode_LearnPath']");
+	private By catItemTitle3 = By.xpath("//*[text()='AutoTC_Itemcode_Course']");
+	private By catItemTitle4 = By.xpath("//*[text()='AutoTC_Itemcode_Resource']");
+	private By catItemTitle5 = By.xpath("//*[text()='AutoTC_Itemcode_Podcast']");
+	private By[] catItemTitles = {catItemTitle1,catItemTitle2,catItemTitle3,catItemTitle4,catItemTitle5};
+	private By catItemItemcode1 = By.xpath("//*[text()='Auto01CIb_0123456789']");
+	private By catItemItemcode2 = By.xpath("//*[text()='Auto02CIl_)!@#$%^&*(']");
+	private By catItemItemcode3 = By.xpath("//*[text()=\"Auto03CIc_-=[]\\;',./\"]");
+	private By catItemItemcode4 = By.xpath("//*[text()='Auto04CIr_+{}|:\"<>?~']");
+	private By catItemItemcode5 = By.xpath("//*[text()='Auto05CIp_0123456789']");
+	private By[] catItemItemcodes = {catItemItemcode1,catItemItemcode2,catItemItemcode3,catItemItemcode4,catItemItemcode5};
+	private By editCatItemItemcode1 = By.xpath("//*[text()='Auto01CIb_012345678A']");
+	private By editCatItemItemcode2 = By.xpath("//*[text()='Auto02CIl_)!@#$%^&*A']");
+	private By editCatItemItemcode3 = By.xpath("//*[text()=\"Auto03CIc_-=[];',.A\"]");
+	private By editCatItemItemcode4 = By.xpath("//*[text()='Auto04CIr_+{}|:\"<>?A']");
+	private By editCatItemItemcode5 = By.xpath("//*[text()='Auto05CIp_012345678A']");
+	private By[] editCatItemItemcodes = {editCatItemItemcode1,editCatItemItemcode2,editCatItemItemcode3,editCatItemItemcode4,editCatItemItemcode5};
+	// Update alert Msg/Notification
+	private By updateAlertMsgEditCatItem1 = By.xpath("/html/body/div[3]/div/div/div/md-dialog-content/div/div/div/div[1]/div/div[1]/div[2]");//Abs XPath
+	private By updateAlertMsgEditCatItem2 = By.xpath("/html/body/div[3]/div/div/div/md-dialog-content/div/div/div/div[1]/div/div[1]/div[2]");//Abs XPath
+	private By updateAlertMsgEditCatItem3 = By.xpath("/html/body/div[3]/div/div/div/md-dialog-content/div/div/div/div[1]/div/div[1]/div[2]");//Abs XPath
+	private By updateAlertMsgEditCatItem4 = By.xpath("/html/body/div[3]/div/div/div/md-dialog-content/div/div/div/div[1]/div/div[1]/div[2]");//Abs XPath
+	private By updateAlertMsgEditCatItem5 = By.xpath("/html/body/div[3]/div/div/div/md-dialog-content/div/div/div/div[1]/div/div[1]/div[2]");//Abs XPath
+	private By[] updateAlertMsgEditCatItem = {updateAlertMsgEditCatItem1,updateAlertMsgEditCatItem2,updateAlertMsgEditCatItem3,updateAlertMsgEditCatItem4,updateAlertMsgEditCatItem5};
+	private By updateAlertMsgCat = By.xpath("//*[@ng-model='document']");
+	private By continueBtn = By.xpath(" //button[contains(text(),'Continue')]");
+	private By saveBtn = By.xpath("(//*[text()='Save'])[1]");
+	private By backcatalogBtn = By.xpath(" //button[contains(text(),'Back to Catalog Items')]");
+	final int waitingSec =2;
+	public boolean [] boolVerifyAdminLOResult = new boolean[7];
+	public boolean [] boolVerifyUserLOResult = new boolean[7];
+	public boolean [] editboolVerifyAdminLOResult = new boolean[7]; 
+	public boolean [] editboolVerifyUserLOResult = new boolean[7];
+	public boolean [] boolVerifyAdminCIResult = new boolean[5];
+	public boolean [] boolVerifyUserCIResult = new boolean[5];
+	public boolean [] editboolVerifyAdminCIResult = new boolean[5]; 
+	public boolean [] editboolVerifyUserCIResult = new boolean[5];
+	private By searchResultCountofResults = By.xpath(".//div[contains(@class,'heading-left1')]/../div/b[1]");
+	private String arrayXpath1 = "(//html/body/div/div/main/div/div[3]/div/div/div/div/div/div/div/div/div/div/h6/span)";
+	private String arrayXpath2 ="]";
+	public boolean boolResult = false;
+	public int adminResultNext=0;
+	public int userResultNext=0;
+	public int editAdminResultNext=0;
+	public int editUserResultNext=0;
+	//User side
+	private By searchfieldUser= By.xpath("//input[@id='theInput']");
 
 	public ManageContentPage(WebDriver driver) {
 		super(driver);
+		menusteps = new MenuSteps(driver);
+		pageName = "ManageContentItemCodePage";
 	}
-	public void clickOnCreateLobjButton() {
-		click(btnCreateLobj);
+	public void goToManagecontent() {
+		menusteps.clickMenu();
+		menusteps.gotoManageContents();
+		wait(waitingSec);
 	}
-	public void selectAudioLobj() {
-		wait(10);
-		click(btnAudio);
-	}
-	public void closeLobjModel() {
-		click(closeModel);
-	}
-	public void closeCreateLobjPage() {
-		click(btnCancel);
-	}
-	public void verifyAudioCreationPage() {
-		clickOnCreateLobjButton();
-		selectAudioLobj();
-		verifyText("Audio",lobjTitle);
-		wait(5);
-	}
-	public void verifyMandatoryFieldsAlerMessage() {
-		click(btnSave);
-		verifyText("Title should not be empty",titleErrorMsg);
-		verifyText("languageErrorMessage",languageErrorMessage);
-		verifyText("Category should not be empty",categoryErrorMessage);
-		verifyText("Audio should not be empty",fileUploadErrorMessage);
-		verifyText("Description should not be empty",descriptionErrorMessage);
-	}
-	public void verifyItemCode() {
-		click(lblCatalogTab);
-		wait(5);
-		click(btnCreateCalitem);
-		wait(5);
-		click(lblContentBundle);
-		wait(5);
-		enterData("bundleautomationcheck",lblBundleTitle);
-		wait(5);
-		enterData("bundleautomationcheck",lblBundleDescr);
-		click(lblSelectLang);
-		wait(5);
-		click(lblSelectCateg);
-		wait(5);
-		enterData("55521",lblItemCode);
-		wait(5);
-		click(lblContinue);
-		wait(5);
-		enterData("2",lblValidityNum);
-		wait(5);
-		click(lblValidityDrop);
-		wait(5);
-		click(lblPrice);
-		wait(5);
-		click(expandBtn);
-		wait(5);
-		click(catlogSelect);
-		wait(5);
-		click(lblSave);
-
-	}
-	public void clickCatalog() {
-		click(Catalog);
-		wait(5);
-		click(catalogClick);
-		click(addCatalog);
-		click(bundleAdd);
-		wait(5);
-		enterData("Automation test2",textfield);
-		wait(5);
-		click(dropDown);
-		wait(3);
-		//	click(lblSelectLang);
-		click(languageChoose);
-		click(CategorySelection);
-		click(CategorySelected);
-		click(scrollBar);
-		wait(5);
-		enterData(itemCodeValidation[0],itemCode);
-		verifytextDanger(); 
-		enterData(itemCodeValidation[1],itemCode);
-		verifytextDanger();
-		enterData(itemCodeValidation[2],itemCode);
-		verifytextDanger();
-		enterData(itemCodeValidation[3],itemCode);
-		verifytextDanger();
-		enterData("23121",itemCode);
-		wait(5);
-		enterData("Automation test bundle desc",description);
-		click(continueButton);
-		wait(5);
-		click(validityUnlimited);
-		click(priceDropdown);
-		wait(5);
-		click(priceFree);
-		click(addBundle);
-		click(bundleSelection);
-		click(createButton);
-		elementExist(saveMessage);
-	}
-	private void verifytextDanger() {
-		elementExist(dangerText);
-		wait(3);
-		clear(itemCode);
-	}
-	public void validity() {
-		click(Catalog);
-		wait(5);
-		click(catalogClick);
-		click(addCatalog);
-		click(bundleAdd);
-		wait(5);
-		enterData("Automation test bundle1",textfield);
-		wait(5);
-		click(dropDown);
-		click(languageChoose);
-		click(CategorySelection);
-		click(CategorySelected);
-		click(scrollBar);
-		wait(5);
-		enterData("2",itemCode);
-		enterData("Automation test bundle desc",description);
-		click(continueButton);
-		enterData("2",daysSceneriao);
-		click(dropDownClick);
-		click(monthSelection);
-		click(priceDropdown);
-		wait(5);
-		click(priceFree);
-		click(addBundle);
-		click(bundleSelection);
-		click(createButton);
-		elementExist(saveMessage);
-	}
-	public void deleteCatalog() {
-		click(searchText);
-		enterData("Automation test bundle1",searchText);
-
-	}
-	public void verifyReadMoreLessText() {
-		click(CatalogItemBtn);
-		wait(5);
-		click(catalogItemFirstClick);
-		wait(5);
-		verifyText("Read more",lblReadMore);
-		click(lblReadMore);
-		wait(5);
-		verifyText("Less",lblLess);
-		click(lblLess);	
-
-	}
-	public void verifyCatalogTitleValidation() {
-		click(lblCatalogTab);
-		wait(5);
-		click(btnCreateCalitem);
-		wait(5);
-		click(lblContentBundle);
-		wait(5);
-		enterData("bun",lblBundleTitle);
-		wait(5);
-		click(lblContinue);
-		verifyText("Title must be at least 4 characters",titleErrorMsg);
-	}
-
-	//Added by Vignesh (WVI) on 03-Oct-19 & updated on 09-Oct-19(item codes related)
-	//------------------------------------------//
-
-	public boolean Clickelearning() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false)
+	//Learning Objects Itemcode verification - Admin side
+	public void verifyAdminLearnObjItemcodes() {
+		print("----------Verify LO Admin Itemcode start-----------");
+		for(int i=0;i<learnObjTitles.length;i++)
 		{
-			wait(waitingsec);
-			click(elearningBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[contains(@class,'aside minwidth-aside-50 ng-scope right am-slide-right')]//input[@type='text'][@name='item_code']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-
-			enterData("Abcd",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("1234",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("!@#$%",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("<>/{}[]",itemcodetab);
-
-			if(verifyText(itemcodetxt,lbitemcode))
+			String exptLearnObjTitle = "learnObjTitle"+(Integer.toString(i+1));
+			String exptitemcode = "learnObjItemcode"+(Integer.toString(i+1));
+			String searchLearnObjitemcode = "learnObjItemcodes"+(Integer.toString(i+1));
+			click(searchFieldLearnObj);
+			enterData(getLabel(searchLearnObjitemcode), searchFieldLearnObj);
+			wait(waitingSec);
+			if(verifyTextIgnorecase(getLabel(exptLearnObjTitle), learnObjTitles[i]) && verifyTextIgnorecase(getLabel(exptitemcode), learnObjItemcodes[i]))
 			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
+				boolVerifyAdminLOResult [i] = true;
 			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancelBtn);
-			print("Elearning Passed");
-
 		}
-		return boolresult;
+		print("----------Verify LO Admin Itemcode End-----------");
 	}
-
-	public boolean ClickVideo() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false)
+	//Learning Objects Itemcode verification - user side
+	public void verifyUserLearnObjItemcodes() {
+		print("----------Verify LO User Itemcode start-----------");
+		for(int i=0;i<learnObjTitles.length;i++)
 		{
-			wait(waitingsec);
-			click(VideoBtn);
-			wait(waitingsec);
+			String exptLearnObjTitle = "learnObjTitle"+(Integer.toString(i+1));
+			String searchLearnObjitemcode = "learnObjItemcodes"+(Integer.toString(i+1));
+			clear(searchfieldUser);
+			enterData(getLabel(searchLearnObjitemcode), searchfieldUser);
+			driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
+			wait(waitingSec);
+			verifyTextIgnorecase(getLabel(exptLearnObjTitle), learnObjTitles[i]);
+			int searchResultCount = Integer.parseInt(driver.findElement(searchResultCountofResults).getText());
+			print("Searchresult = "+searchResultCount);
+			if(elementExist(learnObjTitles[i]) && searchResultCount>0){
+				int itemCount = getItemsCount(arrayXpath1,arrayXpath2,searchResultCount);
+				print("---------"+itemCount);
+				if(itemCount == searchResultCount)
+				{
+					boolVerifyUserLOResult [i] = true;
+				}
+				else {
+					boolVerifyUserLOResult [i] = false;
+				}
+			}
+			else {
+				boolVerifyUserLOResult [i] = false;
+			}
+		}
 
-			WebElement element = driver.findElement(By.xpath("//div[contains(@class,'aside minwidth-aside-50 ng-scope right am-slide-right')]//input[@type='text'][@name='item_code']")); Actions
+		print("----------Verify LO User Itemcode End-----------");
+	}
+
+	public void adminLogout() {
+		click(adminAccountLogo);
+		wait(waitingSec); 
+		click(adminLogout);
+	}
+	public void userLogout() {
+		click(userAccountLogo);
+		wait(waitingSec);
+		click(userLogout);
+	}
+	public boolean verifyLOICeLearn() {
+		userResultNext=0;
+		adminResultNext=0;
+		boolResult =false;
+		if(boolVerifyUserLOResult[userResultNext]==true && boolVerifyAdminLOResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyLOICVideo() {
+		boolResult =false;
+		if(boolVerifyUserLOResult[userResultNext]==true && boolVerifyAdminLOResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyLOICDocument() {
+		boolResult =false;
+		if(boolVerifyUserLOResult[userResultNext]==true && boolVerifyAdminLOResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyLOICImage() {
+		boolResult =false;
+		if(boolVerifyUserLOResult[userResultNext]==true && boolVerifyAdminLOResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyLOICAssessment() {
+		boolResult =false;
+		if(boolVerifyUserLOResult[userResultNext]==true && boolVerifyAdminLOResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyLOICvLab() {
+		boolResult =false;
+		if(boolVerifyUserLOResult[userResultNext]==true && boolVerifyAdminLOResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyLOICAudio() {
+		boolResult =false;
+		if(boolVerifyUserLOResult[userResultNext]==true && boolVerifyAdminLOResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	//-----------------------LO Edit Start------------------------
+	public void editLearnObjItemcodes() {
+		print("----------Edit LO Itemcode Start-----------");
+		for(int i=0;i<learnObjItemcodes.length;i++)
+		{
+			String itemcode = "learnObjItemcodes"+(Integer.toString(i+1));
+			enterData(getLabel(itemcode), searchFieldLearnObj);
+			wait(waitingSec);
+			click(editBtn);
+			wait(waitingSec);
+			WebElement element = driver.findElement(itemcodetab); Actions
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
-
-			enterData("Abcd",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("1234",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("!@#$%",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("<>/{}[]",itemcodetab);
-
-			if(verifyText(itemcodetxt,lbitemcode))
+			wait(waitingSec);
+			String editItemcode = "editlearnObjItemcode"+(Integer.toString(i+1));
+			enterData(getLabel(editItemcode),itemcodetab);
+			wait(waitingSec);
+			click(updateBtn);
+			wait(waitingSec);
+			verifyTextIgnorecase(getLabel("SavealertmsglearnObj"), saveNewVersionBtn);
+			click(newVersionReqNoBtn);
+			wait(waitingSec);
+			try{
+				String updateAlertMsg = "UpdatealertmsglearnObjTitle"+(Integer.toString(i+1));
+				if(verifyTextIgnorecase(getLabel(updateAlertMsg), updateAlertMsgEditlearnObject1)) {
+					print("Update Passed......");
+				}
+				else
+				{
+					print("Update Failed......");
+				}
+			}
+			catch (Exception e){
+				String updateAlertMsg = "UpdatealertmsglearnObjTitle"+(Integer.toString(i+1));
+				if(verifyTextIgnorecase(getLabel(updateAlertMsg), updateAlertMsgEditlearnObject2)){
+					print("Update Passed......");
+				}
+				else
+				{
+					print("Update Failed......");
+				}
+			}
+			click(updateagainNoBtn);
+			wait(waitingSec);
+		}
+		print("----------Edit Itemcode End-----------");
+	}
+	//Learning Objects Edited Itemcode verification - Admin side
+	public void editVerifyAdminLearnObjItemcodes() {
+		print("----------Verify LO Admin Edited Itemcode start-----------");
+		for(int i=0;i<learnObjTitles.length;i++)
+		{
+			String exptLearnObjTitle = "learnObjTitle"+(Integer.toString(i+1));
+			String expEditedtitemcode = "editlearnObjItemcode"+(Integer.toString(i+1));
+			String searchLearnObjitemcode = "learnObjItemcodes"+(Integer.toString(i+1));
+			click(searchFieldLearnObj);
+			enterData(getLabel(searchLearnObjitemcode), searchFieldLearnObj);
+			wait(waitingSec);
+			if(verifyTextIgnorecase(getLabel(exptLearnObjTitle), learnObjTitles[i]) && verifyTextIgnorecase(getLabel(expEditedtitemcode), editlearnObjItemcodes[i]))
 			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
+				editboolVerifyAdminLOResult [i] = true;
+			}
+		}
+		print("----------Verify LO Admin Edited Itemcode End-----------");
+	}
+	//Learning Objects Edited Itemcode verification - user side
+	public void editVerifyUserLearnObjItemcodes() {
+		print("----------Verify LO User Edited Itemcode start-----------");
+		for(int i=0;i<learnObjTitles.length;i++)
+		{
+			WebElement element = driver.findElement(searchfieldUser); Actions
+			actions = new Actions(driver); actions.moveToElement(element);
+			actions.perform();
+			String exptLearnObjTitle = "learnObjTitle"+(Integer.toString(i+1));
+			String searchLearnObjitemcode = "learnObjItemcodes"+(Integer.toString(i+1));
+			enterData(getLabel(searchLearnObjitemcode), searchfieldUser);
+			driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
+			wait(waitingSec);
+			verifyTextIgnorecase(getLabel(exptLearnObjTitle), learnObjTitles[i]);
+			int searchResultCount = Integer.parseInt(driver.findElement(searchResultCountofResults).getText());
+			if(elementExist(learnObjTitles[i]) && searchResultCount>0){
+				int itemCount = getItemsCount(arrayXpath1,arrayXpath2,searchResultCount);
+				print("---------"+itemCount);
+				if(itemCount == searchResultCount)
+				{
+					editboolVerifyUserLOResult [i] = true;
+				}
+				else {
+					editboolVerifyUserLOResult [i] = false;
+				}
+			}
+			else {
+				editboolVerifyUserLOResult [i] = false;
+			}
+		}
+		print("----------Verify LO User Itemcode End-----------");
+	}
+
+	public boolean editVerifyLOICeLearn() {
+		editUserResultNext=0;
+		editAdminResultNext=0;
+		boolResult =false;
+		if(editboolVerifyUserLOResult[editUserResultNext]==true && editboolVerifyAdminLOResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyLOICVideo() {
+		boolResult =false;
+		if(editboolVerifyUserLOResult[editUserResultNext]==true && editboolVerifyAdminLOResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyLOICDocument() {
+		boolResult =false;
+		if(editboolVerifyUserLOResult[editUserResultNext]==true && editboolVerifyAdminLOResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyLOICImage() {
+		boolResult =false;
+		if(editboolVerifyUserLOResult[editUserResultNext]==true && editboolVerifyAdminLOResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyLOICAssessment() {
+		boolResult =false;
+		if(editboolVerifyUserLOResult[editUserResultNext]==true && editboolVerifyAdminLOResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyLOICvLab() {
+		boolResult =false;
+		if(editboolVerifyUserLOResult[editUserResultNext]==true && editboolVerifyAdminLOResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyLOICAudio() {
+		boolResult =false;
+		if(editboolVerifyUserLOResult[editUserResultNext]==true && editboolVerifyAdminLOResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	//-----------------------ReEdit Start------------------------
+	public void reEditLearnObjItemcodes() {
+		print("----------reEdit LO Itemcode Start-----------");
+		for(int i=0;i<learnObjItemcodes.length;i++)
+		{
+			String itemcode = "learnObjItemcodes"+(Integer.toString(i+1));
+			enterData(getLabel(itemcode), searchFieldLearnObj);
+			wait(waitingSec);
+			click(editBtn);
+			wait(waitingSec);
+			WebElement element = driver.findElement(itemcodetab); Actions
+			actions = new Actions(driver); actions.moveToElement(element);
+			actions.perform();
+			wait(waitingSec);
+			String editItemcode = "learnObjItemcode"+(Integer.toString(i+1));
+			enterData(getLabel(editItemcode),itemcodetab);
+			wait(waitingSec);
+			click(updateBtn);
+			wait(waitingSec);
+			click(newVersionReqNoBtn);
+			wait(waitingSec);
+			click(updateagainNoBtn);
+			wait(waitingSec);
+		}
+		print("----------ReEdit LO Itemcode End-----------");
+	}
+
+	//Catalog starts
+	public void clickOnCreatecatalog() {
+		click(catalogItem);
+		wait(waitingSec);
+	}
+	//catalog Itemcode verification - Admin side
+	public void verifyAdminCatItemItemcodes() {
+		print("----------Verify CI Admin Itemcode start-----------");
+		for(int i=0;i<catItemTitles.length;i++)
+		{
+			String exptcatItemTitle = "catItemTitle"+(Integer.toString(i+1));
+			String exptcatItemitemcode = "catItemItemcode"+(Integer.toString(i+1));
+			String searchcatItemitemcode = "catItemItemcodes"+(Integer.toString(i+1));
+			click(searchFieldCatItem);
+			enterData(getLabel(searchcatItemitemcode), searchFieldCatItem);
+			wait(waitingSec);
+			if(verifyTextIgnorecase(getLabel(exptcatItemTitle), catItemTitles[i]) && verifyTextIgnorecase(getLabel(exptcatItemitemcode), catItemItemcodes[i]))
+			{
+				boolVerifyAdminCIResult [i] = true;
+			}
+		}
+		print("----------Verify CI Admin Itemcode End-----------");
+	}
+	//catalog Itemcode verification - user side
+	public void verifyUserCatItemItemcodes() {
+		print("----------Verify CI User Itemcode start-----------");
+		for(int i=0;i<catItemTitles.length;i++)
+		{
+			String exptcatItemTitle = "catItemTitle"+(Integer.toString(i+1));
+			String searchcatItemitemcode = "catItemTitle"+(Integer.toString(i+1));
+			clear(searchfieldUser);
+			enterData(getLabel(searchcatItemitemcode), searchfieldUser);
+			driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
+			wait(waitingSec);
+			if(verifyTextIgnorecase(getLabel(exptcatItemTitle), catItemTitles[i]))
+			{
+				boolVerifyUserCIResult [i] = true;
+			}
+		}
+		print("----------Verify CI User Itemcode End-----------");
+	}
+	public boolean verifyCIICContBundle() {
+		userResultNext=0;
+		adminResultNext=0;
+		boolResult =false;
+		if(boolVerifyUserCIResult[userResultNext]==true && boolVerifyAdminCIResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyCIICLearningPath() {
+		boolResult =false;
+		if(boolVerifyUserCIResult[userResultNext]==true && boolVerifyAdminCIResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyCIICCourse() {
+		boolResult =false;
+		if(boolVerifyUserCIResult[userResultNext]==true && boolVerifyAdminCIResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyCIICResource() {
+		boolResult =false;
+		if(boolVerifyUserCIResult[userResultNext]==true && boolVerifyAdminCIResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public boolean verifyCIICPodcast() {
+		boolResult =false;
+		if(boolVerifyUserCIResult[userResultNext]==true && boolVerifyAdminCIResult[adminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		userResultNext++;
+		adminResultNext++;
+		return boolResult;
+	}
+	public void editCataItemItemcodes() {
+		print("----------Edit CI Itemcode Start-----------");
+		for(int i=0;i<catItemTitles.length;i++)
+		{
+			String itemcode = "catItemItemcodes"+(Integer.toString(i+1));
+			enterData(getLabel(itemcode), searchFieldCatItem);
+			wait(waitingSec);
+			click(catEditBtn);
+			wait(waitingSec);
+			WebElement element = driver.findElement(itemcodetab); Actions
+			actions = new Actions(driver); actions.moveToElement(element);
+			actions.perform();
+			wait(waitingSec);
+			String editItemcode = "editcatItemItemcode"+(Integer.toString(i+1));
+			enterData(getLabel(editItemcode),itemcodetab);
+			wait(waitingSec);
+			click(continueBtn);
+			wait(waitingSec);
+			click(saveBtn);
+			wait(waitingSec);
+			String updateAlertMsg = "updatealertmsgItemcodeTitle"+(Integer.toString(i+1));
+			if(verifyTextIgnorecase(getLabel(updateAlertMsg), updateAlertMsgEditCatItem[i])) {
+				print("Update Passed......");
 			}
 			else
 			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
+				print("Update Failed......");
 			}
-			wait(waitingsec);
-			click(cancelBtn);
-			print("Video Passed");
+
+
+			click(backcatalogBtn);
+			wait(waitingSec);
 		}
-		return boolresult;
+		print("----------Edit CI Itemcode End-----------");
 	}
-
-	public boolean ClickDocument() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(documentBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[contains(@class,'aside minwidth-aside-50 ng-scope right am-slide-right')]//input[@type='text'][@name='item_code']")); Actions
+	public void editVerifyAdminCatItemItemcodes() {
+		print("----------Verify CI Admin Edited Itemcode start-----------");
+		for(int i=0;i<catItemTitles.length;i++)
+		{
+			String exptcatItemTitle = "catItemTitle"+(Integer.toString(i+1));
+			String expEditedtitemcode = "editcatItemItemcode"+(Integer.toString(i+1));
+			String searchcatItemitemcode = "catItemItemcodes"+(Integer.toString(i+1));
+			click(searchFieldCatItem);
+			enterData(getLabel(searchcatItemitemcode), searchFieldCatItem);
+			wait(waitingSec);
+			if(verifyTextIgnorecase(getLabel(exptcatItemTitle), catItemTitles[i]) && verifyTextIgnorecase(getLabel(expEditedtitemcode), editCatItemItemcodes[i]))
+			{
+				editboolVerifyAdminCIResult [i] = true;
+			}
+		}
+		print("----------Verify CI Admin Edited Itemcode End-----------");
+	}
+	// Edited Itemcode verification - user side
+	public void editVerifyUserCatItemItemcodes() {
+		print("----------Verify CI User Itemcode start-----------");
+		for(int i=0;i<catItemTitles.length;i++)
+		{
+			WebElement element = driver.findElement(searchfieldUser); Actions
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
-
-
-			enterData("Abcd",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("1234",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-
-			enterData("!@#$%",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-
-			enterData("<>/{}[]",itemcodetab);
-
-
-			if(verifyText(itemcodetxt,lbitemcode))
+			String exptcatItemTitle = "catItemTitle"+(Integer.toString(i+1));
+			String searchcatItemitemcode = "catItemTitle"+(Integer.toString(i+1));
+			clear(searchfieldUser);
+			enterData(getLabel(searchcatItemitemcode), searchfieldUser);
+			driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
+			wait(waitingSec);
+			if(verifyTextIgnorecase(getLabel(exptcatItemTitle), catItemTitles[i]))
 			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
+				editboolVerifyUserCIResult [i] = true;
 			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancelBtn);
-			print("Document Passed");
 		}
-		return boolresult;
-
+		print("----------Verify CI User Itemcode End-----------");
 	}
-
-	public boolean ClickImage() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(imageBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[contains(@class,'aside minwidth-aside-50 ng-scope right am-slide-right')]//input[@type='text'][@name='item_code']")); Actions
+	public boolean editVerifyCIICContBundle() {
+		editUserResultNext=0;
+		editAdminResultNext=0;
+		boolResult =false;
+		if(editboolVerifyUserCIResult[editUserResultNext]==true && editboolVerifyAdminCIResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyCIICLearningPath() {
+		boolResult =false;
+		if(editboolVerifyUserCIResult[editUserResultNext]==true && editboolVerifyAdminCIResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyCIICCourse() {
+		boolResult =false;
+		if(editboolVerifyUserCIResult[editUserResultNext]==true && editboolVerifyAdminCIResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyCIICResource() {
+		boolResult =false;
+		if(editboolVerifyUserCIResult[editUserResultNext]==true && editboolVerifyAdminCIResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public boolean editVerifyCIICPodcast() {
+		boolResult =false;
+		if(editboolVerifyUserCIResult[editUserResultNext]==true && editboolVerifyAdminCIResult[editAdminResultNext]==true)
+		{
+			boolResult =true;
+		}
+		editUserResultNext++;
+		editAdminResultNext++;
+		return boolResult;
+	}
+	public void reEditCatItemItemcodes() {
+		print("----------reEdit CI Itemcode Start-----------");
+		for(int i=0;i<catItemTitles.length;i++)
+		{
+			String itemcode = "catItemItemcodes"+(Integer.toString(i+1));
+			enterData(getLabel(itemcode), searchFieldCatItem);
+			wait(waitingSec);
+			click(catEditBtn);
+			wait(waitingSec);
+			WebElement element = driver.findElement(itemcodetab); Actions
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
-
-			enterData("Abcd",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("1234",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("!@#$%",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("<>/{}[]",itemcodetab);
-
-			if(verifyText(itemcodetxt,lbitemcode))
-			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
-			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancelBtn);
-			print("Image Passed");
+			wait(waitingSec);
+			String editItemcode = "catItemItemcode"+(Integer.toString(i+1));
+			enterData(getLabel(editItemcode),itemcodetab);
+			wait(waitingSec);
+			click(continueBtn);
+			wait(waitingSec);
+			click(saveBtn);
+			wait(waitingSec);
+			click(backcatalogBtn);
+			wait(waitingSec);
 		}
-
-		return boolresult;
+		print("----------ReEdit CI Itemcode End-----------");
 	}
 
-	public boolean ClickAssessment() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(assessmentBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[contains(@class,'aside minwidth-aside-50 ng-scope right am-slide-right')]//input[@type='text'][@name='item_code']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-
-			enterData("Abcd",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("1234",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("!@#$%",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("<>/{}[]",itemcodetab);
-
-
-			if(verifyText(itemcodetxt,lbitemcode))
-			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
-			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancelBtn);
-			print("Assessment Passed");
-		}
-
-		return boolresult;
+	public void verifyAdminLearningObjects() {
+		goToManagecontent();
+		verifyAdminLearnObjItemcodes();
+		adminLogout();
 	}
-
-	public boolean ClickVlab() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(vlabBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[contains(@class,'aside minwidth-aside-50 ng-scope right am-slide-right')]//input[@type='text'][@name='item_code']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-
-			enterData("Abcd",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("1234",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("!@#$%",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("<>/{}[]",itemcodetab);
-
-
-			if(verifyText(itemcodetxt,lbitemcode))
-			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
-			}
-			else if(verifyText("", lbitemcode)) {
-				print("itemtext is verified ");
-				textresult=false;
-				boolresult = false;
-			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancelBtn);
-			print("Vlab Passed");
-		}
-		return boolresult;
+	public void verifyUserLearningObjects() {
+		verifyUserLearnObjItemcodes();
+		userLogout();
 	}
-
-	public boolean ClickAudio() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(audioBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[contains(@class,'aside minwidth-aside-50 ng-scope right am-slide-right')]//input[@type='text'][@name='item_code']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-
-			enterData("Abcd",itemcodetab);
-			wait(waitingsec);
-
-			enterData("1234",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("!@#$%",itemcodetab);
-			wait(waitingsec);
-			clear(itemcodetab);
-
-			enterData("<>/{}[]",itemcodetab);
-			wait(waitingsec);
-			if(verifyText(itemcodetxt,lbitemcode))
-			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
-			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancelBtn);
-			print("Audio Passed");
-			wait(waitingsec);
-			click(closeXBtn);
-
-		}
-
-		return boolresult;
+	public void editVerifyAdminLearningObjects() {
+		goToManagecontent();
+		editLearnObjItemcodes();
+		editVerifyAdminLearnObjItemcodes();
+		adminLogout();
 	}
-
-	//Added by Vignesh (WVI) on 09-Oct-19 updated on 10-Oct-19 (item codes related)
-
-	public void clickOnCreatecatalogButton() {
-		wait(waiting7sec);
-		click(CatalogItemBtn);
-		wait(waitingsec);
-		click(addCatalog);
-		wait(waitingsec);
+	public void editVerifyUserLearningObjects() {
+		editVerifyUserLearnObjItemcodes();
+		userLogout();
 	}
-
-	public boolean ClickBundle() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(bundleBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[@class = 'ng-scope']//input[@type='text'][@name='item_code']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-
-			enterData("Abcd",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("1234",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-
-			enterData("!@#$%",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("<>/{}[]",itemcode);
-
-			if(verifyText(itemcodetxt,lbitemcodetxt))
-			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
-			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancel);
-			print("Bundle Passed");
-
-		}
-		return boolresult;
-	}
-
-	public boolean ClickLearningPath() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(learnpathBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[@class = 'ng-scope']//input[@type='text'][@name='item_code']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-
-			enterData("Abcd",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("1234",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-
-			enterData("!@#$%",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("<>/{}[]",itemcode);
-
-			if(verifyText(itemcodetxt,lbitemcodetxt))
-			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
-			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancel);
-			print("LearningPath Passed");
-		}
-		return boolresult;
-	}
-
-	public boolean ClickCourse() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(courseBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[@class = 'ng-scope']//input[@type='text'][@name='item_code']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-
-			enterData("Abcd",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("1234",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-
-			enterData("!@#$%",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("<>/{}[]",itemcode);
-			wait(waitingsec);
-
-			/* Commented by Vignesh (WVI) on 11-Oct-19 Because the item code label text is NOT extractable in Course under Catalog items 
-
-			 *if(verifyText(itemcodetxt,lbitemcodetxt))
-			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
-			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}*/
-			print("The item code label text is NOT extractable in Course under Catalog items.");
-
-			textresult=true;
-			boolresult = true;
-			click(cancel);
-			print("Course Passed");
-		}
-		return boolresult;
-	}
-
-	public boolean ClickResource() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(resourceBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[@class = 'ng-scope']//input[@type='text'][@name='item_code']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-
-			enterData("Abcd",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("1234",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-
-			enterData("!@#$%",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("<>/{}[]",itemcode);
-
-			if(verifyText(itemcodetxt,lbitemcodetxt))
-			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
-			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancel);
-			print("Resource Passed");
-		}
-		return boolresult;
-	}
-
-	public boolean ClickPodcast() 
-	{
-		boolresult = false; 
-		textresult = false;
-		if(boolresult == false) {
-			wait(waitingsec);
-			click(podcastBtn);
-			wait(waitingsec);
-
-			WebElement element = driver.findElement(By.xpath("//div[@class = 'ng-scope']//input[@type='text'][@name='item_code']")); Actions
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-
-			enterData("Abcd",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("1234",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-
-			enterData("!@#$%",itemcode);
-			wait(waitingsec);
-			clear(itemcode);
-
-			enterData("<>/{}[]",itemcode);
-
-			if(verifyText(itemcodetxt,lbitemcodetxt))
-			{
-				print("itemtext is verified ");
-				textresult=true;
-				boolresult = true;
-			}
-			else
-			{
-				print("itemtext is verified it's NOT Matching");
-				textresult=false;
-				boolresult = false;
-			}
-			wait(waitingsec);
-			click(cancel);
-			wait(waitingsec);
-			print("Podcast Passed");
-			click(closeXBtn);
-			wait(waitingsec);
-		}
-		return boolresult;
-	}
-
-
-	public void Usersearchitemcode() 
-	{	wait(waitingsec);	
-		click(searchtab);
-		wait(waitingsec);
-		enterData("1234",searchtab);
-		driver.findElement(searchtab).sendKeys(Keys.RETURN);
-		wait(waitingsec);
-		verifyText("No catalog item available at the moment",nosearchresult);
-		print("No catalog item available at the moment");
-		wait(waitingsec);
-		enterData("876555",searchtab);
-		driver.findElement(searchtab).sendKeys(Keys.RETURN);
-		wait(waitingsec);
-		enterData("222222",searchtab);
-		driver.findElement(searchtab).sendKeys(Keys.RETURN);
-		wait(waitingsec);
-		click(useraccount);
-		wait(waitingsec);
-		click(logout);
+	public void verifyAdminCatalogItems(){
+		goToManagecontent();
+		clickOnCreatecatalog();
+		verifyAdminCatItemItemcodes();
+		adminLogout();
 
 	}
-
-
-	// End- here************************** Vignesh (WVI) on 14-Oct-19 ********************************
+	public void verifyUserCatalogItems(){
+		verifyUserCatItemItemcodes();
+		userLogout();
+	}
+	public void editVerifyAdminCatalogItems(){
+		goToManagecontent();
+		clickOnCreatecatalog();
+		editCataItemItemcodes();
+		editVerifyAdminCatItemItemcodes();
+		adminLogout();
+	}
+	public void editVerifyUserCatalogItems(){
+		editVerifyUserCatItemItemcodes();
+		userLogout();
+	}
+	public void reEditItem(){
+		LoginSteps login = new LoginSteps(driver);
+		login.reAdminsidelogin();
+		goToManagecontent();
+		reEditLearnObjItemcodes();
+		clickOnCreatecatalog();
+		reEditCatItemItemcodes();
+		adminLogout();
+	}
+	public void itemcoderenameLearningObject(){
+		goToManagecontent();
+		reEditLearnObjItemcodes();
+	}
+	public void itemcoderenamecatalog() {
+		clickOnCreatecatalog();
+		reEditCatItemItemcodes();
+		adminLogout();
+	}
 }

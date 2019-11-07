@@ -1,6 +1,8 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -41,6 +43,7 @@ public class HomePage extends FractalBasePage {
 	private By whlblResources = By.xpath(".//button[contains(text(),'RESOURCES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'resources')]
 	private By whlblBundles = By.xpath(".//button[contains(text(),'BUNDLES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'bundles')]
 	private By whlblLpaths = By.xpath(".//button[contains(text(),'LEARNING PATHS')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'Learning Paths')]
+	private By whlblPodcasts = By.xpath("//button[contains(text(),'PODCASTS')]");
 	private String whlblFilterLink = ".//div[@class='col-lg-9 col-md-9 col-sm-6 mt-2 mb-1 filter']//div//button";//div[@class='whats_menu margin-t-0 float-right']//./button
 	/*******************/
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
@@ -116,6 +119,38 @@ public class HomePage extends FractalBasePage {
     private By poFirstCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
     private By poSecondCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
     /*************/
+    //Added by dhanushiya from here
+    private By Search = By.xpath(".//input[contains(@class,'cat_search')]");
+    private By verificationText = By.xpath(".//div[contains(@class,'course_cnt  ml-3')]/../div/h6/span");
+    private By homepage = By.xpath(".//button[contains(@class,'btn btn active2')]/../button/a/span");
+    private By verificationText2 = By.xpath(".//div[contains(@class,'course_cnt ml-3 padding-t-6')]/../div/h6");
+    private By noItem = By.xpath(".//span[contains(text(),'No catalog item available at the moment')]");
+    private By eLearning = By.xpath(".//span[contains(text(),'eLearning')]");
+    private By video = By.xpath(".//div[contains(@class,'course_cnt ml-3 padding-t-6')]/../div/h6");
+    private By automationLearningpath = By.xpath(".//a[contains(text(),'Automation Learningpath')]");
+    
+    private By count = By.xpath(".//div[contains(@class,'heading-left1')]/../div/b");
+    private String arrayXpath1 = "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div";
+    private String arrayXpath2 ="]/a[1]/div[1]/div[1]/div[1]";
+    private String countResulcheck1 ="/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div";
+    private String countResultcheck2  ="]/a[1]/div[1]/div[1]/div[1]";
+    private By mylearning=By.xpath(".//a[contains(text(),'MY LEARNING')]");
+    private By automaionLearningpath=By.xpath(".//a[contains(text(),'Automation Learningpath')]");
+    private By automationclassroom=By.xpath(".//h1[contains(text(),'Automation classroom')]");
+    private By AutomationLearningpath=By.xpath(".//span[contains(text(),'Automation Learningpath')]");
+    //Added by dhanushiya.k till here
+    //added by mahesh
+    private String FirstboxBtn="/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/a";
+    private String FirstCatType="]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]";
+    private String MyLearnFirstboxBtn="/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a";
+    private String MyLearnFirstCatType="]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]/span[2]";
+    private String categorybox1 = "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/div[1]/div[1]/ul[1]/li";
+    private String categorybox2 = "]/a[1]";
+    private String CategoryFirstboxBtn="/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div";
+    private String CategoryFirstCatType="]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]";
+    String name="course";
+    //till here
+    
     
     public HomePage(WebDriver driver) {
 		super(driver);
@@ -459,4 +494,531 @@ public class HomePage extends FractalBasePage {
 		// TODO Auto-generated method stub
 		
 	}
+	//Added by Dhanushiya
+		public void backButtonCheckClassroomEvent() {
+			click(mylearning);
+			wait(5);
+			JavascriptExecutor je =(JavascriptExecutor)driver;
+			je.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath(".//a[contains(text(),'Automation Learningpath')]")));
+			wait(5);
+			click(automaionLearningpath);
+			wait(5);
+			je.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath(".//h1[contains(text(),'Automation classroom')]")));
+			wait(5);
+			click( automationclassroom);
+			wait(5);
+			driver.navigate().back();
+			wait(5);
+			//verifyText("Automation Learningpath",AutomationLearningpath);
+			wait(5);
+			
+		}
+		
+		
+		//added by dhanushiya
+
+		public void GlobalSearchforClassroomandClassroomsKeyword() {
+			
+			enterData("classroom",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Classroom",verificationText);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("classrooms",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Classroom",verificationText);
+			wait(5);
+			if(elementExist(verificationText)){
+				int itemCount = getItemsCount(arrayXpath1,arrayXpath2);
+				
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchforimageandimages() {
+			wait(5);
+			enterData("image",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Image",verificationText);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("images",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Image",verificationText);
+			if(elementExist(verificationText)){
+				int itemCount = getItemsCount(arrayXpath1,arrayXpath2);
+				
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchforAudioandAudios() {
+			wait(5);
+			enterData("audio",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("No catalog item available at the moment!",noItem);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("audios",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("No catalog item available at the moment!",noItem);
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchforVideoandVideos() {
+			wait(5);
+			enterData("video",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Video",verificationText);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("videos",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Video",verificationText);
+			if(elementExist(verificationText)){
+				int itemCount = getItemsCount(arrayXpath1,arrayXpath2);
+				
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchforDocumentandDocuments() {
+			wait(5);
+			enterData("document",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Document",verificationText);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("documents",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Document",verificationText);
+			if(elementExist(verificationText)){
+				int itemCount = getItemsCount(arrayXpath1,arrayXpath2);
+				
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchforVlabsandVlabs() {
+			wait(5);
+			enterData("vlab",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("No catalog item available at the moment!",noItem);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("vlabs",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("No catalog item available at the moment!",noItem);
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchforAssessmentandAssessments() {
+			wait(5);
+			enterData("assessment",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("No catalog item available at the moment!",noItem);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("assessment",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("No catalog item available at the moment!",noItem);
+				
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchforElearningandElearnings() {
+			wait(5);
+			enterData("elearning",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("eLearning",eLearning);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("elearnings",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("eLearning",eLearning);
+			if(elementExist(verificationText)){
+				int itemCount = getItemsCount(arrayXpath1,arrayXpath2);
+				
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchforBundleandBundles() {
+			wait(5);
+			enterData("bundle",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Bundle",verificationText2);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("bundles",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Bundle",verificationText2);
+			if(elementExist(verificationText2)){
+				int itemCount = getItemsCount(countResulcheck1,countResultcheck2);
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+			}
+		//Added by Dhanushiya
+		public void GlobalSearchforPodcastandPodcasts() {
+			wait(5);
+			enterData("podcast",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Podcast",verificationText2);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("podcasts",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Podcast",verificationText2);
+			if(elementExist(verificationText2)){
+				int itemCount = getItemsCount(countResulcheck1,countResultcheck2);
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+		}	
+		//Added by Dhanushiya
+		public void GlobalSearchforLearningpathandLearningpaths() {
+			wait(5);
+			enterData("learningpath",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Learning Path",verificationText2);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("learningpaths",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Learning Path",verificationText2);
+			if(elementExist(verificationText2)){
+				int itemCount = getItemsCount(countResulcheck1,countResultcheck2);
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchforCourseandCourses() {
+			wait(5);
+			enterData("Course",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Course",verificationText2);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("courses",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Course",verificationText2);
+			if(elementExist(verificationText2)){
+				int itemCount = getItemsCount(countResulcheck1,countResultcheck2);
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+			}
+		//Added by Dhanushiya
+		public void GlobalSearchforResourceandResources() {
+			wait(5);
+			enterData("resource",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Video",video);//resource only have videos
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("resources",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Video",video);
+			if(elementExist(verificationText2)){
+				int itemCount = getItemsCount(countResulcheck1,countResultcheck2);
+				System.out.println("---------"+itemCount);
+				String s = Integer.toString(itemCount); 
+				verifyText(s,count);
+				}
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			wait(5);
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchwithRandomcharacterandIntegers() {
+			wait(5);
+			enterData("gggg",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("No catalog item available at the moment!",noItem);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("123456",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("No catalog item available at the moment!",noItem);	
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchwithSpecialcharacters() {
+			wait(5);
+			enterData("classroom*&",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Classroom",verificationText);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("***images",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("No catalog item available at the moment!",noItem);	
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchwithUnavailableKeyword() {
+			wait(5);
+			enterData("machinelearning",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("No catalog item available at the moment!",noItem);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData("cloud",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("No catalog item available at the moment!",noItem);	
+			
+		}
+		//Added by Dhanushiya
+		public void GlobalSearchwithDoubleandTabspace() {
+			wait(5);
+			enterData("automation  learningpath",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(5);
+			verifyText("Automation Learningpath",automationLearningpath);
+			wait(5);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
+			enterData(" automation    learningpath",Search);
+			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			verifyText("Automation Learningpath",automationLearningpath);	
+		}
+		//added by mahesh
+		public void verifyCatalogFilterDashboard() {
+			WebElement element = driver.findElement(By.xpath("//a[contains(text(),'VIEW ALL')]"));
+			Actions actions= new Actions(driver);
+			actions.moveToElement(element);
+			actions.perform();
+			wait(5);
+			click(lblViewAllRcntAdded);
+			wait(2);
+			 click(iconListView);
+			    wait(2);
+			    String[] CatalogType=getCatalogTypes(FirstboxBtn,FirstCatType);
+				 for(String a:CatalogType) {
+					 System.out.println("---->"+a);
+				 }
+				 wait(2);
+				    commonCatalogType3();
+		         }
+	     public void verifyCatalogFilterMylearning() {
+	    	 wait(2);
+			 clickOnMyLearning();
+			 click(By.xpath("//div[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2 mb-3']//div[2]//div[1]//a[1]"));
+				wait(2);
+				    String[] CatalogType1=getCatalogTypes(MyLearnFirstboxBtn,MyLearnFirstCatType);
+					 for(String a:CatalogType1) {
+						 System.out.println("---->"+a);
+					 }
+					 wait(2);
+					 commonCatalogType2();
+		            }
+	     public void verifyCatalogFilterCategories() {
+	    	 /****General is the only common category for all url so i enabled general alone***/
+	   /* 	 click(By.xpath("//li[@class='bg-1']"));
+	    	 click(By.xpath("//li[@class='space lato']//a[contains(text(),'3D Animation')]"));
+	    	 wait(2);
+			 click(By.xpath("//i[@class='icon-list font-16']"));
+	    	 commonCatalogType4();
+	    	 click(By.xpath("//li[@class='bg-1']"));
+	    	 click(By.xpath("//a[contains(text(),'Micro Learning')]"));
+	    	 commonCatalogType4();
+	    	 click(By.xpath("//li[@class='bg-1']"));
+	    	 click(By.xpath("//a[contains(text(),'Healthcare')]"));
+	    	 commonCatalogType4();
+	    */	 click(By.xpath("//li[@class='bg-1']"));
+	    	 click(By.xpath("//a[contains(text(),'General')]"));
+	    	 wait(2);
+			 click(By.xpath("//i[@class='icon-list font-16']"));
+	    	 commonCatalogType4();
+	       }
+	     public void verifyCatalogFilterSearch() {
+	    	 
+	    	 WebElement queryElement= driver.findElement(By.xpath("//input[@id='theInput']"));
+	    	 queryElement.sendKeys("test bundle");//Automation Learningpath
+	    	 queryElement.sendKeys(Keys.ENTER);
+	    //	 enterData("Automation Learningpath",txtBoxSearch);
+	    	 wait(5);
+	    	 click(whlblBundles);
+			 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+				 wait(5);  
+				 verifyText("Bundle",By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"));
+				    wait(5);
+			    }
+	    	 
+	          }
+	     
+			public void commonCatalogType() {
+				 String[] CatalogType=getCatalogTypes(FirstboxBtn,FirstCatType);
+				 for(String a:CatalogType) { System.out.println("---->"+a);
+					/* if(name.equals(a)) {
+						 
+					}
+				*/ }
+			 }
+			public void commonCatalogType1() {
+				 String[] CatalogType1=getCatalogTypes(MyLearnFirstboxBtn,MyLearnFirstCatType);
+				 for(String a:CatalogType1) { System.out.println("---->"+a);
+					/* if(name.equals(a)) {
+						 
+					}
+			*/	 }
+				 }
+			public void commonCatalogType5() {
+				 String[] CatalogType1=getCatalogTypes1(CategoryFirstboxBtn,CategoryFirstCatType);
+				 for(String a:CatalogType1) { System.out.println("---->"+a);
+					/* if(name.equals(a)) {
+						 
+					}
+			*/	 }
+				 }
+			
+			public void commonCatalogType2() {
+				if(elementExist(whlblCourses)){
+						click(whlblCourses);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+				   commonCatalogType1();
+				    wait(2);
+				 }
+				 }
+				if(elementExist(whlblBundles)){
+				  click(whlblBundles);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+				    commonCatalogType1();
+				    wait(5);
+			    }
+				}
+				 if(elementExist(whlblResources)){
+				 click(whlblResources);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+					    commonCatalogType1();
+					    wait(5);
+				    }
+				 }
+				 if(elementExist(whlblLpaths)){
+				 click(whlblLpaths);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+					    commonCatalogType1();
+					    wait(5);
+				    }
+				 }
+				 if(elementExist(whlblPodcasts)){
+				 click(whlblPodcasts);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+					    commonCatalogType1();
+					    wait(5);
+				    }
+				 }
+			}
+			public void commonCatalogType3() {
+				   click(whlblCourses);
+					 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+					   commonCatalogType();
+					    wait(2);
+					 }
+					  click(whlblBundles);
+					 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+					    commonCatalogType();
+					    wait(5);
+				    }
+					 click(whlblResources);
+					 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+						    commonCatalogType();
+						    wait(5);
+					    }
+					 click(whlblLpaths);
+					 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+						    commonCatalogType();
+						    wait(5);
+					    }
+					 click(whlblPodcasts);
+					 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+						    commonCatalogType();
+						    wait(5);
+					    }
+				}
+			public void commonCatalogType4() {
+				click(whlblCourses);
+				 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+				   commonCatalogType5();
+				    wait(2);
+				 }
+				  click(whlblBundles);
+				 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+				    commonCatalogType5();
+				    wait(5);
+			    }
+				 click(whlblResources);
+				 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+					    commonCatalogType5();
+					    wait(5);
+				    }
+				 click(whlblLpaths);
+				 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+					    commonCatalogType5();
+					    wait(5);
+				    }
+				 if(elementExist(whlblPodcasts))
+				 click(whlblPodcasts);
+				 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+					    commonCatalogType5();
+					    wait(5);
+				    }
+				
+			}
+			//till here
+		
 }

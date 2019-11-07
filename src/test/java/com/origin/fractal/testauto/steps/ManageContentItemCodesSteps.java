@@ -16,157 +16,95 @@ public class ManageContentItemCodesSteps extends FractalBaseStep {
 	}
 	//Learning Objects Itemcode verification
 	public void verifyLOICeLearn() {
-		try {				
-			page.verifyLOICeLearn();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyLOICeLearn();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void verifyLOICVideo() {
-		try {				
-			page.verifyLOICVideo();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyLOICVideo();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void verifyLOICDocument() {
-		try {				
-			page.verifyLOICDocument();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyLOICDocument();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
+
 	public void verifyLOICImage() {
-		try {				
-			page.verifyLOICImage();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyLOICImage();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void verifyLOICAssessment() {
-		try {				
-			page.verifyLOICAssessment();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyLOICAssessment();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void verifyLOICvLab() {
-		try {				
-			page.verifyLOICvLab();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyLOICvLab();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void verifyLOICAudio() {
-		try {				
-			page.verifyLOICAudio();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyLOICAudio();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	//Learning Objects Edited Itemcode verification
 	public void editVerifyLOICeLearn() {
-		try {				
-			page.editVerifyLOICeLearn();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyLOICeLearn();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void editVerifyLOICVideo() {
-		try {				
-			page.editVerifyLOICVideo();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyLOICVideo();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void editVerifyLOICDocument() {
@@ -187,260 +125,176 @@ public class ManageContentItemCodesSteps extends FractalBaseStep {
 		}
 	}
 	public void editVerifyLOICImage() {
-		try {				
-			page.editVerifyLOICImage();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyLOICImage();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void editVerifyLOICAssessment() {
-		try {				
-			page.editVerifyLOICAssessment();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyLOICAssessment();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void editVerifyLOICvLab() {
-		try {				
-			page.editVerifyLOICvLab();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyLOICvLab();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void editVerifyLOICAudio() {
-		try {				
-			page.editVerifyLOICAudio();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyLOICAudio();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	//Catalog Item Itemcode Verifycation
 	public void verifyCIICContBundle() {
-		try {				
-			page.verifyCIICContBundle();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyCIICContBundle();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void verifyCIICLearningPath() {
-		try {				
-			page.verifyCIICLearningPath();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyCIICLearningPath();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void verifyCIICCourse() {
-		try {				
-			page.verifyCIICCourse();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyCIICCourse();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void verifyCIICResource() {
-		try {				
-			page.verifyCIICResource();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyCIICResource();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void verifyCIICPodcast() {
-		try {				
-			page.verifyCIICPodcast();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.verifyCIICPodcast();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	//edit Catalog Item Itemcode Verifycation
 	public void editVerifyCIICContBundle() {
-		try {				
-			page.editVerifyCIICContBundle();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyCIICContBundle();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void editVerifyCIICLearningPath() {
-		try {				
-			page.editVerifyCIICLearningPath();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyCIICLearningPath();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void editVerifyCIICCourse() {
-		try {				
-			page.editVerifyCIICCourse();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyCIICCourse();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void editVerifyCIICResource() {
-		try {				
-			page.editVerifyCIICResource();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyCIICResource();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
 	public void editVerifyCIICPodcast() {
-		try {				
-			page.editVerifyCIICPodcast();
-			if (page.boolResult == true) {
-				result ="PASSED";
-			}
-			else
-			{
-				result ="FAILED";
-			}
+		page.editVerifyCIICPodcast();
+		if (page.boolResult == true) {
+			result ="PASSED";
 		}
-		catch(Exception e)
+		else
 		{
-			e.printStackTrace();   
-			result="FAILED";
+			result ="FAILED";
 		}
 	}
-	public void verifyLearningObjects() {
-		page.verifyLearningObjects();
+	public void verifyAdminLearningObjects() {
+		page.verifyAdminLearningObjects();
 	}
-	public void editVerifyLearningObjects() {
-		page.editVerifyLearningObjects();
+	public void editVerifyAdminLearningObjects() {
+		page.editVerifyAdminLearningObjects();
 	}
-	public void verifyCatalogItems(){
-		page.verifyCatalogItems();
+	public void verifyAdminCatalogItems(){
+		page.verifyAdminCatalogItems();
 	}
-	public void editCVerifyCatalogItems()
-	{
-		page.editCVerifyCatalogItems();
+	public void editVerifyAdminCatalogItems(){
+		page.editVerifyAdminCatalogItems();
 	}
-	public void reEdit() {
-		page.reEdit();
+	public void verifyUserLearningObjects() {
+		page.verifyUserLearningObjects();
 	}
+	public void editVerifyUserLearningObjects() {
+		page.editVerifyUserLearningObjects();
+	}
+	public void verifyUserCatalogItems(){
+		page.verifyUserCatalogItems();
+	}
+	public void editVerifyUserCatalogItems(){
+		page.editVerifyUserCatalogItems();
+	}
+	public void itemcoderenameLearningObject() {
+		page.itemcoderenameLearningObject();
+	}
+	public void itemcoderenameCatalog() {
+		page.itemcoderenamecatalog();
+	}	
 
 }

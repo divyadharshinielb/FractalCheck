@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -18,7 +19,7 @@ private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
 private By btnCategory = By.xpath(".//*[@id='header']/*//button");
 private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//span[@class='jss4']");//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 private By viewAll = By.xpath(".//p[contains(text(),'MORE')]");//*[@id='notification-dropdown']/div[2]/div[2]/a
-private By settings = By.xpath(".//li[contains(text(),'Settings')]");
+private By settings = By.xpath(".//a[contains(text(),'Settings')]");
 private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
 private By btnContinue = By.xpath(".//span[@class='continue_button']");//button[contains(text(),'CONTINUE')]
 private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
@@ -33,7 +34,7 @@ private String  listLblName="]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3";
 private By catalogName = By.xpath(".//span[@class='three-line-clamp']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../div/h3
 private By catalogType = By.xpath(".//div//p[@class='cname margin-t-15']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../p
 private By catalogCourseCount = By.xpath(".//div//span[@class='obj_count padding-l-15 font-12']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../div[last()]/h3
-private By catalogValidity = By.xpath(".//span[text()='Validity:']");//div/ng-include/div/*//div/span[contains(text(),'Valid till:')]/span
+private By catalogValidity = By.xpath(".//span[text()='Validity']");//div/ng-include/div/*//div/span[contains(text(),'Valid till:')]/span
 private By btnGrid = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[1]");
 private By lblcontents = By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/..");
 private String lblNavBtn=".//div/h2[contains(text(),'Recently Added')]/../../following-sibling::div/*//div/slick/ul/li[";
@@ -47,6 +48,8 @@ private By goToCart = By.xpath("//button[contains(text(),'GO TO CART')]");
 private By checkout = By.xpath("//button[contains(@class,'ng-binding')]");
 private By lblpaytm=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div/div/span/h3[contains(text(),'paytm')]");
 private By lblpaypal=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div/div/span/h3[contains(text(),'paypal')]");
+
+private By loadMore=By.xpath(".//a[contains(text(),'LOAD MORE')]");
 protected FractalBasePage(WebDriver driver) {
 this.driver = driver;
 verifier = new FractalVerifier(driver);
@@ -85,10 +88,6 @@ click(viewAll);
 }
 
 public void clickOnsettings() {
-click(settings);
-wait(2);
-clickOnProfile();
-wait(2);
 click(settings);
 }
 
@@ -563,28 +562,66 @@ click(logOut);
 
 }
 public int getItemsCount( String objBox,String objBoxtype) {
-boolean status = true;
-int count =0;
-int i=0;
-String wholeObjPath = "";
-do {
-wholeObjPath =objBox+"["+(i+1)+objBoxtype;
-if(elementExist(By.xpath(wholeObjPath))) {
-count = count + 1;
-i = i+1;
-status = true;
-}else {
-status = false;
-}
-}while(status);
-return count;
+	boolean status = true;
+	int count = 0;
+	int i=2;
+	String wholeObjPath = "";
+	do {
+			wholeObjPath =objBox+"["+i+objBoxtype;
+			if(elementExist(By.xpath(wholeObjPath)))
+			{
+				count = count + 1;
+				i = i+1;
+				if(count>=15){
+					
+					if(elementExist(loadMore)){
+						
+						JavascriptExecutor je =(JavascriptExecutor)driver;
+						je.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath(".//a[contains(text(),'LOAD MORE')]")));
+						wait(5);
+						click(loadMore);
+						}
+				}
+				status = true;
+		}
+		else {
+			status = false;
+			}
+			
+		}
+		while(status);
+		return count;
 }
 public boolean templateFooterText(String text) {
-String expectedString=getText(By.xpath(text));
-boolean result= verifyText(expectedString,By.xpath(text));
-return result;
+	String expectedString=getText(By.xpath(text));
+	boolean result= verifyText(expectedString,By.xpath(text));
+	return result;
 
 }
+//Added by vignesh on 03-Nov-19
+	public int getItemsCount( String objBox,String objBoxtype,int searchResultCount) {
+		boolean status = false;
+		int count =0;
+		int i=1;
+		String wholeObjPath = "";
+		do {
+			if(searchResultCount>=i) 
+			{
+				wholeObjPath =objBox+"["+(i)+objBoxtype;
+				if(elementExist(By.xpath(wholeObjPath))) {
+					count = count + 1;
+					i = i+1;
+					status = true;
+				}
+			}
+			else {
+				status = false;
+			}
+
+		}while(status);
+		return count;
+	}
+	//End-Vignesh on 03-Nov-19
 /***added by mahesh 06/02/19***/
 /* public String read() {
     String emailSubject;
