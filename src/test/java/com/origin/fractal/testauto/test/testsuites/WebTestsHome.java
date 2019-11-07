@@ -112,7 +112,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {
@@ -224,5 +224,18 @@ public class WebTestsHome extends FractalBaseWebTest {
 	
 		
 	}
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false,
+			description = "")
+	public void testDynamicCatalogFilterCheck(String row, String strBrowserName) {
+
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		login(driver);
+		
+		HomeSteps homeSteps = new HomeSteps(driver);
+		homeSteps.verifyCatalogFilterDashboard();
+		homeSteps.verifyCatalogFilterMylearning();
+		homeSteps.verifyCatalogFilterCategories();
+		homeSteps.verifyCatalogFilterSearch();
+}
 
 }

@@ -73,12 +73,18 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifySubMenu() {
 
 		verifyLabel("lblAll", lblAll);
+		if(elementExist(lblCourses)) {
 		verifyLabel("lblCourses", lblCourses);
+		}
 		if(elementExist(lblResources)) {
 			verifyLabel("lblResources", lblResources);
 		}
+		if(elementExist(lblBundles)) {
 		verifyLabel("lblBundles", lblBundles);
+		}
+		if(elementExist(lblLearningpath)) {
 		verifyLabel("lblLearningPaths",lblLearningpath);
+		}
 	}
 
 	

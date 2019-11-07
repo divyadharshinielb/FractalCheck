@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -41,6 +42,7 @@ public class HomePage extends FractalBasePage {
 	private By whlblResources = By.xpath(".//button[contains(text(),'RESOURCES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'resources')]
 	private By whlblBundles = By.xpath(".//button[contains(text(),'BUNDLES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'bundles')]
 	private By whlblLpaths = By.xpath(".//button[contains(text(),'LEARNING PATHS')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'Learning Paths')]
+	private By whlblPodcasts = By.xpath("//button[contains(text(),'PODCASTS')]");
 	private String whlblFilterLink = ".//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]";//div[@class='col-lg-9 col-md-9 col-sm-6 mt-2 mb-1 filter']//div//button//div[@class='whats_menu margin-t-0 float-right']//./button
 	/*******************/
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
@@ -116,7 +118,15 @@ public class HomePage extends FractalBasePage {
     private By poFirstCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
     private By poSecondCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
     /*************/
-    
+    private String FirstboxBtn="/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/a";
+    private String FirstCatType="]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]";
+    private String MyLearnFirstboxBtn="/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a";
+    private String MyLearnFirstCatType="]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]/span[2]";
+    private String categorybox1 = "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/div[1]/div[1]/ul[1]/li";
+    private String categorybox2 = "]/a[1]";
+    private String CategoryFirstboxBtn="/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div";
+    private String CategoryFirstCatType="]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]";
+    String name="course";
     public HomePage(WebDriver driver) {
 		super(driver);
 		pageName ="HomePage"; 
@@ -476,4 +486,192 @@ public class HomePage extends FractalBasePage {
 		// TODO Auto-generated method stub
 		
 	}
+	public void verifyCatalogFilterDashboard() {
+		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'VIEW ALL')]"));
+		Actions actions= new Actions(driver);
+		actions.moveToElement(element);
+		actions.perform();
+		wait(5);
+		click(lblViewAllRcntAdded);
+		wait(2);
+		 click(iconListView);
+		    wait(2);
+		    String[] CatalogType=getCatalogTypes(FirstboxBtn,FirstCatType);
+			 for(String a:CatalogType) {
+				 System.out.println("---->"+a);
+			 }
+			 wait(2);
+			    commonCatalogType3();
+	         }
+     public void verifyCatalogFilterMylearning() {
+    	 wait(2);
+		 clickOnMyLearning();
+		 click(By.xpath("//div[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2 mb-3']//div[2]//div[1]//a[1]"));
+			wait(2);
+			    String[] CatalogType1=getCatalogTypes(MyLearnFirstboxBtn,MyLearnFirstCatType);
+				 for(String a:CatalogType1) {
+					 System.out.println("---->"+a);
+				 }
+				 wait(2);
+				 commonCatalogType2();
+	            }
+     public void verifyCatalogFilterCategories() {
+    	 /****General is the only common category for all url so i enabled general alone***/
+   /* 	 click(By.xpath("//li[@class='bg-1']"));
+    	 click(By.xpath("//li[@class='space lato']//a[contains(text(),'3D Animation')]"));
+    	 wait(2);
+		 click(By.xpath("//i[@class='icon-list font-16']"));
+    	 commonCatalogType4();
+    	 click(By.xpath("//li[@class='bg-1']"));
+    	 click(By.xpath("//a[contains(text(),'Micro Learning')]"));
+    	 commonCatalogType4();
+    	 click(By.xpath("//li[@class='bg-1']"));
+    	 click(By.xpath("//a[contains(text(),'Healthcare')]"));
+    	 commonCatalogType4();
+    */	 click(By.xpath("//li[@class='bg-1']"));
+    	 click(By.xpath("//a[contains(text(),'General')]"));
+    	 wait(2);
+		 click(By.xpath("//i[@class='icon-list font-16']"));
+    	 commonCatalogType4();
+       }
+     public void verifyCatalogFilterSearch() {
+    	 
+    	 WebElement queryElement= driver.findElement(By.xpath("//input[@id='theInput']"));
+    	 queryElement.sendKeys("test bundle");//Automation Learningpath
+    	 queryElement.sendKeys(Keys.ENTER);
+    //	 enterData("Automation Learningpath",txtBoxSearch);
+    	 wait(5);
+    	 click(whlblBundles);
+		 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+			 wait(5);  
+			 verifyText("Bundle",By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"));
+			    wait(5);
+		    }
+    	 
+          }
+     
+    
+	
+		   
+		    
+	
+
+		public void commonCatalogType() {
+			 String[] CatalogType=getCatalogTypes(FirstboxBtn,FirstCatType);
+			 for(String a:CatalogType) { System.out.println("---->"+a);
+				/* if(name.equals(a)) {
+					 
+				}
+			*/ }
+		 }
+		public void commonCatalogType1() {
+			 String[] CatalogType1=getCatalogTypes(MyLearnFirstboxBtn,MyLearnFirstCatType);
+			 for(String a:CatalogType1) { System.out.println("---->"+a);
+				/* if(name.equals(a)) {
+					 
+				}
+		*/	 }
+			 }
+		public void commonCatalogType5() {
+			 String[] CatalogType1=getCatalogTypes1(CategoryFirstboxBtn,CategoryFirstCatType);
+			 for(String a:CatalogType1) { System.out.println("---->"+a);
+				/* if(name.equals(a)) {
+					 
+				}
+		*/	 }
+			 }
+		
+		public void commonCatalogType2() {
+			if(elementExist(whlblCourses)){
+					click(whlblCourses);
+			 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+			   commonCatalogType1();
+			    wait(2);
+			 }
+			 }
+			if(elementExist(whlblBundles)){
+			  click(whlblBundles);
+			 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+			    commonCatalogType1();
+			    wait(5);
+		    }
+			}
+			 if(elementExist(whlblResources)){
+			 click(whlblResources);
+			 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+				    commonCatalogType1();
+				    wait(5);
+			    }
+			 }
+			 if(elementExist(whlblLpaths)){
+			 click(whlblLpaths);
+			 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+				    commonCatalogType1();
+				    wait(5);
+			    }
+			 }
+			 if(elementExist(whlblPodcasts)){
+			 click(whlblPodcasts);
+			 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+				    commonCatalogType1();
+				    wait(5);
+			    }
+			 }
+		}
+		public void commonCatalogType3() {
+			   click(whlblCourses);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+				   commonCatalogType();
+				    wait(2);
+				 }
+				  click(whlblBundles);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+				    commonCatalogType();
+				    wait(5);
+			    }
+				 click(whlblResources);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+					    commonCatalogType();
+					    wait(5);
+				    }
+				 click(whlblLpaths);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+					    commonCatalogType();
+					    wait(5);
+				    }
+				 click(whlblPodcasts);
+				 if(elementExist(By.xpath("//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]"))){
+					    commonCatalogType();
+					    wait(5);
+				    }
+			}
+		public void commonCatalogType4() {
+			click(whlblCourses);
+			 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+			   commonCatalogType5();
+			    wait(2);
+			 }
+			  click(whlblBundles);
+			 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+			    commonCatalogType5();
+			    wait(5);
+		    }
+			 click(whlblResources);
+			 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+				    commonCatalogType5();
+				    wait(5);
+			    }
+			 click(whlblLpaths);
+			 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+				    commonCatalogType5();
+				    wait(5);
+			    }
+			 if(elementExist(whlblPodcasts))
+			 click(whlblPodcasts);
+			 if(elementExist(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]"))){
+				    commonCatalogType5();
+				    wait(5);
+			    }
+			
+		}
 }

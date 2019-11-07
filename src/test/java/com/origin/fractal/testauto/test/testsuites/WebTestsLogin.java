@@ -51,7 +51,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_LOGIN_074, Verification of Register link  function, " +  loginSteps.getResult() );
 	}
 	
-	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLoginInvalid(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -62,7 +62,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		
 	}
 	/***added here**/
-	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void testLoginSearchLink(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);

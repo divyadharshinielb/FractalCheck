@@ -514,6 +514,51 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 		
 	}
+	public void verifyCatalogFilterDashboard() {
+		result ="Passed";
+		   try {
+				page.verifyCatalogFilterDashboard();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+
+	public void verifyCatalogFilterMylearning() {
+		result ="Passed";
+		   try {
+				page.verifyCatalogFilterMylearning();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+	   public void verifyCatalogFilterCategories() {
+		   result ="Passed";
+		   try {
+				page.verifyCatalogFilterCategories();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	   }
+	   public void verifyCatalogFilterSearch(){
+		   result ="Passed";
+		   try {
+				page.verifyCatalogFilterSearch();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	   }
 
 	
 

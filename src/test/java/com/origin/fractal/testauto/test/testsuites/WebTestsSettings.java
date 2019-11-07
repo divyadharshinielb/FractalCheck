@@ -37,7 +37,7 @@ public class WebTestsSettings extends FractalBaseWebTest {
 
 		//Test moves to next page
 		SettingsSteps settingsSteps = new SettingsSteps(driver);
-	//	settingsSteps.printStatus();
+		//settingsSteps.printStatus();
 		//TCID_77:The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable 
 		settingsSteps.clickOnSwitch();
 		Reporter.writeSummary("TCID_077,Verify The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable, " +   settingsSteps.getResult() );

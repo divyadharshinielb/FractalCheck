@@ -286,6 +286,18 @@ public abstract class  BasePage {
 		}
 		return catlogType;
 	}
+	public String[] getCatalogTypes1(String objpath, String objpathType) {
+		int length = getItemsCount(By.xpath(objpath));
+		String wholeObjPath = "";
+		String actualCatalogType="";
+		String[] catlogType = new String[length-1];
+		for(int i=0;i<length-1;i++) {
+			wholeObjPath = objpath+"["+(i+2)+objpathType;
+			actualCatalogType=getText(By.xpath(wholeObjPath));
+			catlogType[i]=(actualCatalogType).toLowerCase();
+		}
+		return catlogType;
+	}
 	
 	//This function will remove the last letter from each array item 
 	public static String[] removeLastInArrayItems(String[] array) {
