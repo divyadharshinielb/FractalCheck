@@ -41,7 +41,7 @@ public class HomePage extends FractalBasePage {
 	private By whlblResources = By.xpath(".//button[contains(text(),'RESOURCES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'resources')]
 	private By whlblBundles = By.xpath(".//button[contains(text(),'BUNDLES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'bundles')]
 	private By whlblLpaths = By.xpath(".//button[contains(text(),'LEARNING PATHS')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'Learning Paths')]
-	private String whlblFilterLink = ".//div[@class='col-lg-9 col-md-9 col-sm-6 mt-2 mb-1 filter']//div//button";//div[@class='whats_menu margin-t-0 float-right']//./button
+	private String whlblFilterLink = ".//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]";//div[@class='whats_menu margin-t-0 float-right']//./button
 	/*******************/
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
 	/************Newui***************/
@@ -142,10 +142,11 @@ public class HomePage extends FractalBasePage {
 		clickOnBellIcon();
 		wait(2);
 	//	verifyLabel("lblNotification",lblNotification );
-		String ntnIntroGST=getText(Check);
-		verifyText(ntnIntroGST,Check );
-		clickOnViewAll();
-		
+		if(elementExist(Check)) {
+			String ntnIntroGST=getText(Check);
+			verifyText(ntnIntroGST,Check );
+			clickOnViewAll();
+			}
 	}
 	public void verifyResumeLearningText() {
 		verifyLabel("lblLrnInProg",lblResumeLearning);
