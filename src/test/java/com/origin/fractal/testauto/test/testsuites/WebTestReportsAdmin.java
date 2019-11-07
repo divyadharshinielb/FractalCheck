@@ -13,7 +13,7 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 public class WebTestReportsAdmin extends FractalBaseWebTest{
 	
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Verify whether a group name is present in the reports.")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Verify whether a group name is present in the reports.")
 
 public void WebTestAdminReports(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);

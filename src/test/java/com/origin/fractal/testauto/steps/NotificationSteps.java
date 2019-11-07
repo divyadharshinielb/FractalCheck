@@ -21,8 +21,8 @@ public class NotificationSteps extends FractalBaseStep{
 	public void verifyPurchaseMailTemplate() {
 		page.verifyPurchaseMailTemplate();
 	}
-	public void verifyCourseCompletionTemplate() {
-		page.verifyCourseCompletionTemplate();
+	public void verifyUnAssignTemplate() {
+		page.verifyUnAssignTemplate();
 	}
 	public void verifyUsersForgotPasswordMail() {
 		page.verifyUsersForgotPasswordMail();

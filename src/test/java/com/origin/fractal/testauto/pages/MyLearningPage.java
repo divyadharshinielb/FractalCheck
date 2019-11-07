@@ -74,9 +74,15 @@ public class MyLearningPage extends FractalBasePage {
 
 		verifyLabel("lblAll", lblAll);
 		verifyLabel("lblCourses", lblCourses);
+		if(elementExist(lblResources)) {
 		verifyLabel("lblResources", lblResources);
+		}
+		if(elementExist(lblBundles)) {
 		verifyLabel("lblBundles", lblBundles);
+		}
+		if(elementExist(lblLearningpath)) {
 		verifyLabel("lblLearningPaths",lblLearningpath);
+		}
 	}
 
 	
@@ -105,10 +111,12 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyCourseInBundle() {
+		if(elementExist(lblBundles)) {
 		click(lblBundles);
 		wait(3);
 		click(bundleCnt);
 		verifyLabel("lblCourseNameText", lblcourseName);
+		}
 	}
 
 	public void verifyAllFilter() {
@@ -121,33 +129,40 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyBundleFilter() {
 		click(lblAll);
 		wait(5);
+		if(elementExist(lblBundles)) {
 		click(lblBundles);
 		wait(5);
 		click(lblListView);
 		verifyFilterType(boxBtn, boxCatType, "bundle");
+		}
 	}
 
 	public void verifyCourseFilter() {
 		click(lblAll);
 		wait(5);
+		if(elementExist(lblCourses)) {
 		click(lblCourses);
 		wait(5);
 		click(lblListView);
 		verifyFilterType(boxBtn, boxCatType, "course");
+		}
 	}
 
 	public void verifyResourceFilter() {
 		click(lblAll);
 		wait(5);
+		if(elementExist(lblResources)) {
 		click(lblResources);
 		wait(5);
 		click(lblListView);
 		verifyFilterType(boxBtn, boxCatType, "resource");
+		}
 	}
 
 	public void verifyTickmark() {
 		click(lblCompleted);
 		if(elementExist(boxButton)) {
+			wait(2);
 			click(boxButton);
 			//	click(lblDuration);
 		  elementExist(lblTick);
@@ -191,11 +206,12 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyBundleContents() {
-		
+		if(elementExist(lblBundles)) {
 		click(lblBundles);
 		wait(5);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
+		}
 	}
 	public void verifyCourseContents() {
 		click(lblCourses);
@@ -301,9 +317,13 @@ public class MyLearningPage extends FractalBasePage {
 				  wait(2);
 			click(lblAssignedClassroom2);
 			//  verifyText("Pre-event Activities",lblPreeventActivities);
+			if(elementExist(lblReference)) {
 			  verifyText("Reference",lblReference);
+			}
 			//  verifyText("Post-event Activities",lblPosteventActivities);
+			if(elementExist(lblTermsCondition)) {
 			  verifyText("Terms & Conditions",lblTermsCondition);
+			}
 			  
 		/*	  click(btnCancelRegistration);
 			  verifyText("Are you sure you want to cancel your registration?",registrationCancelText);

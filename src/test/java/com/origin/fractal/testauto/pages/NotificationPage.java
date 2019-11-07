@@ -9,7 +9,7 @@ public class NotificationPage extends FractalBasePage{
 	private By lblEmailNotification=By.xpath("//span[@id='step-9']");
 	private By lblPasswordChangedTemplate=By.xpath("//span[contains(text(),'Password Changed Template')]");
 	private By lblPurchaseMailTemplate=By.xpath("//span[contains(text(),'Purchase Mail Template')]");
-	private By lblCourseCompletionTemplate=By.xpath("//span[contains(text(),'Course Completion Template')]");
+	private By lblUnAssignTemplate=By.xpath("//span[contains(text(),'Unassign Template')]");
 	private By lblUsersForgotPasswordMail=By.xpath("//span[contains(text(),'Users Forgot Password Mail')]");
 	private By lblTemplateForValidityExpired=By.xpath("//span[contains(text(),'Template for Validity Expired')]");
 	private By lblContentAssignment=By.xpath("//span[contains(text(),'Content Assignment')]");
@@ -23,8 +23,8 @@ public class NotificationPage extends FractalBasePage{
 	private By lblTemplateName=By.xpath("//p[2]");
 	private By lblPurchaseText=By.xpath("//h3[contains(text(),'Here’s your Purchase Statement.')]");
 	private By lblPurchaseItem=By.xpath("//td[contains(text(),'ITEM_PURCHASED')]");
-	private By lblCourseCompletionText=By.xpath("//h3[contains(text(),'Course Completion')]");
-	private By lblRelaunchBtn=By.xpath("//a[contains(text(),'RELAUNCH')]");
+	private By lblUnassignText=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[2]/div[3]/div[1]/span[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[4]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/h3[1]");
+	private By lblRelaunchBtn=By.xpath("//a[contains(text(),'EXPLORE')]");
 	private By lblforgotPasswordText=By.xpath("//h3[contains(text(),'Looks like you forgot your password!')]");
 	private By lblResetYourPasswordBtn=By.xpath("//a[contains(text(),'RESET YOUR PASSWORD')]");
 	private By lblHiNameText=By.xpath("//p[contains(text(),'Hi NAME!')]");
@@ -78,19 +78,19 @@ public class NotificationPage extends FractalBasePage{
 		 wait(5);
 		 click(lblBack);
 	 }
-	 public void verifyCourseCompletionTemplate() {
+	 public void verifyUnAssignTemplate() {
 		wait(5);
-		click(lblCourseCompletionTemplate);
+		click(lblUnAssignTemplate);
 		wait(5);
 		click(lblPreview);
-		verifyText("Course Completion",lblCourseCompletionText);
+		verifyText("Here's what happened...",lblUnassignText);
 		wait(5);
 		 verifyText("Hi NAME!",lblHiNameText);
 		 wait(5);
 		String expectedString=getText(lblTemplateName);
 		verifyText(expectedString,lblTemplateName);
 	    wait(5);
-	    verifyText("RELAUNCH",lblRelaunchBtn);
+	    verifyText("EXPLORE",lblExploreBtn);
 	    verifyText("Keep Learning!",lblKeepLearningText);
 		templateFooterText(lblFooterText);
 		wait(5);
