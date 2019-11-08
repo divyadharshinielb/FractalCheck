@@ -14,12 +14,12 @@ public class LoginPage extends FractalBasePage {
 	private By logoSymbol = By.id("logo");
 	private By rememberMe=By.xpath(".//label[@class='font-size-14']");
 	private By lblProfile = By.xpath(".//div[@class='jss36']//div//span[@class='jss4']");
-	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]");
-	private By registerButton = By.xpath(".//*[@id=\'root\']/div/main/div/div/div[2]/div/form/div[10]/a");
-	private By forgotpassword = By.xpath(".//a[contains(text(),'Forgot Password?')]");
+	private By logOutButton = By.xpath(".//*[@id=\"menu-list-grow\"]/ul/li/img");
+	private By registerButton = By.xpath(".//a[@class='reg_btn font-size-18 reg']");
+	private By forgotpassword = By.xpath(".//a[@class='font-size-14 fgt-btn']");
 	private By resigstrationPage = By.xpath(".//div[@class='col-lg-12 text-center log-title padding-30']");
-	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
-	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
+	private By blankPassword = By.xpath(".//div[@class='errorMsg']");
+	private By blankUserName = By.xpath(".//div[@class='errorMsg']");
 	private By inValid = By.xpath(".//*[contains(text(),'Username/Password is incorrect')]");
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
@@ -29,7 +29,7 @@ public class LoginPage extends FractalBasePage {
 		super(driver);
 		pageName ="LoginPage";
 		// Go to Home Page
-		String baseUrl ="https://cognitivescale.originfractal.com/"; 
+		String baseUrl ="https://mulesoft.originfractal.com/"; 
 		goTo(baseUrl);
 		
 	}
@@ -91,7 +91,7 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://cognitivescale.originfractal.com/";
+		String baseUrl = "https://mulesoft.originfractal.com/";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);

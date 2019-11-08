@@ -36,7 +36,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 
 
 
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -56,8 +56,8 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_071, Verify the login page with valid user name and invalid password," +  loginSteps.getResult() );
 		loginSteps.rememberMe();
 		Reporter.writeSummary("TCID_072,  Verify the Remember me function," +  loginSteps.getResult() );
-		//loginSteps.registerFunction();
-		//Reporter.writeSummary("TCID_074, Verification of Register link  function," +  loginSteps.getResult() );
+		loginSteps.registerFunction();
+		Reporter.writeSummary("TCID_074, Verification of Register link  function," +  loginSteps.getResult() );
 		loginSteps.verifypasswordField();
 		Reporter.writeSummary("TCID_065, Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult());	
 		login(driver);
@@ -65,7 +65,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
 	public void testMyLearningPage0(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);

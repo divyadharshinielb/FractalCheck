@@ -10,7 +10,7 @@ import com.wv.auto.framework.BrowserFactory;
 
 public class AccountPageNewUI  extends FractalBasePage{
 	
-	private By lblMyAccountHdr = By.xpath(".//div[contains(text(),'My Account')]");
+	private By lblMyAccountHdr = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
 	private By lblProfileTitle = By.xpath("//div[contains(text(),'MY PROFILE')]");
 	private By lblEmailAddr = By.xpath(".//h3[contains(text(),'Email address:')]");//edited bu Dhanushiya
 	private By lblFirstName = By.xpath(".//h3[contains(text(),'First name')]");//edited bu Dhanushiya
