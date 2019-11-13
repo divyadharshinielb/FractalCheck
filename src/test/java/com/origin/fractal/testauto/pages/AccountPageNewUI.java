@@ -10,12 +10,12 @@ import com.wv.auto.framework.BrowserFactory;
 
 public class AccountPageNewUI  extends FractalBasePage{
 	
-	private By lblMyAccountHdr = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
-	private By lblProfileTitle = By.xpath("//div[contains(text(),'MY PROFILE')]");
-	private By lblEmailAddr = By.xpath(".//h3[contains(text(),'Email address:')]");//edited bu Dhanushiya
-	private By lblFirstName = By.xpath(".//h3[contains(text(),'First name')]");//edited bu Dhanushiya
-	private By lblLastName = By.xpath(".//h3[contains(text(),'Last Name')]");//edited bu Dhanushiya
-	private By lblPhone = By.xpath(".//h3[contains(text(),'Phone')]");//edited bu Dhanushiya
+	private By lblMyAccountHdr = By.xpath(".//div[contains(@class,'heading-left mb-4')]");
+	private By lblProfileTitle = By.xpath(".//div[contains(@class,'myaccount-text padding-30 mt-3')]");
+	private By lblEmailAddr = By.xpath(".//h3[contains(text(),'Email address:')]");
+	private By lblFirstName = By.xpath(".//h3[contains(text(),'First name')]");
+	private By lblLastName = By.xpath(".//div[contains(@class,'tab_1')]//div[2]//div[2]//h3[1]");
+	private By lblPhone = By.xpath(".//h3[contains(text(),'Phone')]");
 	private By lblChgPass = By.xpath("//div[contains(text(),'CHANGE PASSWORD')]");
 	private By lblOldPass = By.xpath(".//h3[contains(text(),'Old password')]");
 	private By lblNewPass = By.xpath(".//h3[contains(text(),'New password')]");
@@ -53,7 +53,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 		verifyLabel("lblProfileTitle",lblProfileTitle);
 		verifyLabel("lblEmailAddr",lblEmailAddr);
 		verifyLabel("lblFirstName",lblFirstName);
-		//verifyLabel("lblLastName",lblLastName);
+		verifyLabel("lblLastName",lblLastName);
 		verifyLabel("lblPhone",lblPhone);
 		verifyLabel("lblOldPass",lblOldPass);
 		

@@ -15,28 +15,8 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestNewUI extends FractalBaseWebTest {
-	@DataProvider
-	public Object[][] browers() {
-	if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-	return new Object[][] {
-	//new Object[] { "1", "msedge" }, 
-	new Object[] { "2", "Chrome" },
-	//new Object[] { "3", "Firefox" }
-	};
-	}
 
-	if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
-	return new Object[][] {
-	new Object[] { "1", "safari" }
-	};
-	}
-
-	return null;
-	}//ended by divya
-
-
-
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -65,7 +45,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
 	public void testMyLearningPage0(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
@@ -102,9 +82,9 @@ public class WebTestNewUI extends FractalBaseWebTest {
 	 Reporter.writeSummary("TCID_061,  Verify  My account page, " +  accountSteps.getResult() );
 	 accountSteps.verifyProfileDetails();
 	 Reporter.writeSummary("TCID_062,  Verify  My Account Profile details, " +  accountSteps.getResult() );
-     accountSteps.verifyFieldValidation();
+	 accountSteps.verifyFieldValidation();
 	 Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
-	 accountSteps.verifyEmptyProfileValidation();
+	 /* accountSteps.verifyEmptyProfileValidation();
 	 Reporter.writeSummary("TCID_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );
 	 accountSteps.afterChangePassword();
 	 Reporter.writeSummary("TCID_068,  Verify whether the user is able to login with the new password, " + accountSteps.getResult() );
@@ -114,7 +94,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 	 wait(5);
 	 homeSteps.verifyBellNotification();
 	 Reporter.writeSummary("TCID_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
-	 homeSteps.verifyLogoImg();
+	 homeSteps.verifyLogoImg();*/
 	 Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());  
 	 homeSteps.clickLogout();
 	}
