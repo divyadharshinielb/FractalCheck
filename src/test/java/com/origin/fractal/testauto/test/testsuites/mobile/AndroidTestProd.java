@@ -29,6 +29,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		maLoginSteps.doLogin();	
 		//mASIS.selectFractal();
+		mASIS.swipeInstances();
 		mASIS.selectCogscale();
 		wait(5);
 		// My Learning Screen
@@ -58,6 +59,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		wait(5);
 		maLoginSteps.doLogin();
 		//mASIS.selectFractal();
+		mASIS.swipeInstances();
 		mASIS.selectCogscale();
 		wait(5);
 		Reporter.writeSummary("TCID_002,  Verify user is able to login for origin fractal app with valid user name and password., " +  maLoginSteps.getResult() );
@@ -87,6 +89,8 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		wait(5);
 		//mAWNS.clickLater();
 		//mASIS.selectFractal();
+		mASIS.swipeInstances();
+		wait(5);
 		mASIS.selectCogscale();
 		wait(5);
 		// My Learning Screen
@@ -113,9 +117,9 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		maLoginSteps.doLogin();
 		// Select Instance Screen
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
-		/*mASIS.validateInstanceSelectionPage();
+		/*mASIS.validateInstanceSelectionPage();*/
 
-		mASIS.swipeInstances();*/
+		mASIS.swipeInstances();
 
 		//mASIS.selectFractal();
 		mASIS.selectCogscale();
@@ -154,6 +158,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		maLoginSteps.doLogin();		
 		//mASIS.selectFractal();
+		//mASIS.swipeInstances();
 		mASIS.selectCogscale();
 		wait(5);
 		// Select Instance Screen
@@ -205,6 +210,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		maLoginSteps.doLogin();	
 		//mASIS.selectFractal();
+		mASIS.swipeInstances();
 		mASIS.selectCogscale();
 		wait(5);
 		// My Learning Screen

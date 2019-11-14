@@ -6,8 +6,8 @@
       <class name="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd">
         <methods>
           <include name="beforeClass"/>
+          <include name="verifyMyAccountPage"/>
           <include name="beforeMethod"/>
-          <include name="verifyMenuPage"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
