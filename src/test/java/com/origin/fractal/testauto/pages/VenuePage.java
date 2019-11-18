@@ -74,7 +74,7 @@ public class VenuePage extends FractalBasePage{
 		wait(5);
 	}
 	public void validVenueName() {
-		enterData("Automation Sample",venueName);
+		enterData("AutomationSampleEvent",venueName);
 	}
 	public void countrySelection() {
 		click(selectCountry);
@@ -108,6 +108,11 @@ public class VenuePage extends FractalBasePage{
 		elementExist(saveBtn);
 		wait(5);
 		click(cancel);
+	//	search();
+		wait(10);
+		click(By.xpath("//body[@id='target']//div[@class='ng-scope']//div[@class='ng-scope']//div[@class='ng-scope']//div[@class='ng-scope']//div[1]//div[1]//div[5]//div[2]//i[1]"));
+		wait(5);
+		click(By.xpath("//span[contains(text(),'OK')]]"));
 	}
 	public void mandatoryCheck() {
 		wait(5);
@@ -148,7 +153,7 @@ public class VenuePage extends FractalBasePage{
 		click(cancel);			
 		}	
 	public void search() {
-		enterData("Automation Sample",searchIcon);
+		enterData("AutomationSampleEvent",searchIcon);
 	}
 	public void editVenue() {
 		wait(5);

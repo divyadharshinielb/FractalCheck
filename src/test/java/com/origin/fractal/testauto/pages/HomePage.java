@@ -41,6 +41,7 @@ public class HomePage extends FractalBasePage {
 	private By whlblResources = By.xpath(".//button[contains(text(),'RESOURCES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'resources')]
 	private By whlblBundles = By.xpath(".//button[contains(text(),'BUNDLES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'bundles')]
 	private By whlblLpaths = By.xpath(".//button[contains(text(),'LEARNING PATHS')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'Learning Paths')]
+	private By whlblPodcasts = By.xpath("//button[contains(text(),'PODCASTS')]");
 	private String whlblFilterLink = ".//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h6[1]";//div[@class='col-lg-9 col-md-9 col-sm-6 mt-2 mb-1 filter']//div//button//div[@class='whats_menu margin-t-0 float-right']//./button
 	/*******************/
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
@@ -222,6 +223,14 @@ public class HomePage extends FractalBasePage {
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Learning Path");
 	}
 	}
+	public void verifyPodcastFilterWhatsNew() {
+		click(whlblAll);
+		if(elementExist(whlblPodcasts)) {
+		click(whlblPodcasts);
+		wait(2);
+		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Podcast");
+      	}
+		}
 	public void verifyAllFilterRecommAdded(){
 		click(relblAll);
 		wait(3);
