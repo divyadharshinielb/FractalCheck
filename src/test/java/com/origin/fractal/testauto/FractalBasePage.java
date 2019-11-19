@@ -14,7 +14,7 @@ public abstract class FractalBasePage extends BasePage {
 
 	private By lblMyLearning = By.xpath("//a[contains(text(),'MY LEARNING')]");
 	private By lblProfile = By.xpath(".//img[@class='logout-height']");//For new Ui.//*[@id='dLabel']/span
-	private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
+	private By lblMyAccount = By.xpath("//ul/*/li[contains(text(), 'My Account')]"); //img[@class='pl-2 padding-r-10 pt-1']
 	private By btnCategory = By.xpath(".//*[@id='header']/*//button");
 	private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//img[@class='cp']");//For new UI.//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 	private By viewAll = By.xpath(".//p[@class='mb-0 mt-0']");//For New UI.//*[@id='notification-dropdown']/div[2]/div[2]/a
@@ -41,7 +41,8 @@ public abstract class FractalBasePage extends BasePage {
 	private By logoImg=By.xpath(".//div[@class='log_logo']//*/img");//For New UI.//div/ng-include//div/img   
 	private By logOut=By.xpath(".//li[contains(text(),'Logout')]");//For new Ui.//a[@class='pointer padding-l-15']
 	private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
-
+//edit by divya
+	private By homebtnContinue = By.xpath("//span[@class='continue_button']");
 	protected FractalBasePage(WebDriver driver) {
 		this.driver = driver;
 		verifier = new FractalVerifier(driver);
@@ -62,7 +63,9 @@ public abstract class FractalBasePage extends BasePage {
 
 	public void clickOnMyAccount() {
 		clickOnProfile();
+		wait(5);
 		click(lblMyAccount);
+	wait(5);
 	}
 
 	public void clickOnCategory() {
@@ -503,8 +506,19 @@ public abstract class FractalBasePage extends BasePage {
 		}
 			
 		public void verifyLogoImg() {
+			//edit by divya updation after review 
+			click(lblMyLearning);
+			wait(5);
 			click(logoImg);
 			System.out.println("logoImg is clicked");
+			//added to check whether clicking logo redirects to homepage
+			wait(5);
+			verifyText("CONTINUE", homebtnContinue);
+			click(homebtnContinue);
+			System.out.println("By clicking the Logo, the page is redirected to homepage");
+			wait(5);
+			click(logoImg);
+			wait(5);
 		
 		}
 		public void verifyCartItemBtn() {

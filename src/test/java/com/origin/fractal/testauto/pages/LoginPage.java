@@ -17,7 +17,7 @@ public class LoginPage extends FractalBasePage {
 	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]");
 	private By registerButton = By.xpath(".//*[@id=\'root\']/div/main/div/div/div[2]/div/form/div[10]/a");
 	private By forgotpassword = By.xpath(".//a[contains(text(),'Forgot Password?')]");
-	private By resigstrationPage = By.xpath(".//div[@class='col-lg-12 text-center log-title padding-30']");
+	private By resigstrationPage = By.xpath(".//div[contains(text(), 'SIGN UP')]"); //div[@class='col-lg-12 text-center log-title padding-30']
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
 	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
 	private By inValid = By.xpath(".//*[contains(text(),'Username/Password is incorrect')]");
@@ -25,6 +25,11 @@ public class LoginPage extends FractalBasePage {
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
 	private By registerLoginBtn=By.xpath("//div[@class='padding-bp-12 text-center padding-t-5']//a[@class='text-D98040'][contains(text(),'LOG IN')]");
+	//edit by divya for register function
+	private By individualBtn = By.xpath("//label[contains(text(), 'Individual')]");
+	private By businessBtn = By.xpath(".//label[contains(text(), 'Business')]");
+	private By registerBtn = By.xpath("//input[contains(@value, 'Register')]");
+	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		pageName ="LoginPage";
@@ -51,7 +56,7 @@ public class LoginPage extends FractalBasePage {
 		click(btnLogin);
 	}
 	public void loginPageVerification() {
-		wait(5);
+		wait(15);
 		elementExist(logoSymbol);
 		elementExist(btnLogin);
 		elementExist(tbPassword);
@@ -96,7 +101,14 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 		click(registerButton);
 		elementExist(resigstrationPage);
-		//click(registerLoginBtn);
+		/* edit by divya//click(registerLoginBtn);
+		//edit by divya after reviewing
+		
+		if( elementExist(businessBtn)) {
+			click(businessBtn);
+			
+		}*/
+		
 	}
 	
 	public void blankPasswordVerification() {

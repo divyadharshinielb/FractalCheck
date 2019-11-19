@@ -5,11 +5,13 @@
     <classes>
       <class name="com.origin.fractal.testauto.test.testsuites.WebTestNewUI">
         <methods>
-          <include name="testMyLearningPage0" invocation-numbers="0"/>
+          <include name="testMyLearningPage0"/>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
           <include name="afterClass"/>
+          <include name="testLogin" invocation-numbers="0"/>
+          <include name="testMyAccountPage"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
