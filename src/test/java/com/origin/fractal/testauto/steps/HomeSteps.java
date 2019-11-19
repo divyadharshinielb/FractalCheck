@@ -190,6 +190,17 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }		
 	}
+	public void verifyPodcastFilterWhatsNew(){
+		result ="Passed";
+		   try {
+			   page.verifyPodcastFilterWhatsNew();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }	
+	}
      public void verifyAllFilterRecommAdded(){
 		 result ="Passed";
 		   try {
@@ -514,7 +525,17 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 		
 	}
-
+	 public void verifyCartItemBtn1() {
+		   result ="Passed";
+			   try {
+			        page.verifyCartItemBtn1();
+			   }
+			  catch(Exception e)
+			   {
+				e.printStackTrace();   
+				result="FAILED";
+			  }
+	   }
 	
 
 }
