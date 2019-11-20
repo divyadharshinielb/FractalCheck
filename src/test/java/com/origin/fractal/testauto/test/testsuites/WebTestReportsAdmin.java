@@ -23,7 +23,7 @@ public void WebTestAdminReports(String row, String strBrowserName) throws IOExce
 		menuSteps.clickMenu();
 		ReportSteps reportSteps= new ReportSteps(driver);
 		reportSteps.verifyGroupName();
-		Reporter.writeSummary("TCID_017, Verify group name in the reports., " +  reportSteps.getResult() );
+		Reporter.writeSummary("TCID_017, Verify Groups name in the reports., " +  reportSteps.getResult() );
 		
    }
 }

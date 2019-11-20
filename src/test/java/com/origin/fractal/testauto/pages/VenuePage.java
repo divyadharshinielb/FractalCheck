@@ -106,6 +106,11 @@ public class VenuePage extends FractalBasePage{
 		elementExist(saveBtn);
 		wait(5);
 		click(cancel);
+		search();
+		wait(10);
+		click(By.xpath("//body[@id='target']//div[@class='ng-scope']//div[@class='ng-scope']//div[@class='ng-scope']//div[@class='ng-scope']//div[1]//div[1]//div[5]//div[2]//i[1]"));
+		wait(5);
+		click(By.xpath("//span[contains(text(),'OK')]"));
 	}
 	public void mandatoryCheck() {
 		wait(5);

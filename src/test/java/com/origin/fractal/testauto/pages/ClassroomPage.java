@@ -27,6 +27,8 @@ public class ClassroomPage extends FractalBasePage {
 	private By classroomNameReqText = By.xpath("//div[contains(text(),'Classroom title required.')]");//div[contains(text(),'Classroom Title required')]
     private By venueNameReqText = By.xpath("//div[contains(text(),'Traditional classroom venue selection required')]");
     private By classroomCategoryReqText = By.xpath("//div[contains(text(),'Classroom category selection required')]");
+    private By skillsetReqText = By.xpath("//div[contains(text(),'Skillset selection required.')]");
+    private By InstructorSelectionReqText = By.xpath("//span[contains(text(),'Instructor(s) selection required.')]");
     private By classroomDescriptionReqText = By.xpath("//div[contains(text(),'Classroom description required')]");
     private By titleCaution = By.xpath("//input[@name='classroom_name']");
     private By classroomTitleCautionText = By.xpath("//div[contains(text(),'Classroom title must be 4 or more characters.')]");//div[contains(text(),'Classroom Title must be 4 or more characters')]
@@ -146,6 +148,81 @@ public class ClassroomPage extends FractalBasePage {
 		wait(5);	
 		click(closeBtn);
 		wait(5);
+	}
+	public void cautionAlertsForClassroomTitle() {
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		wait(5);
+		verifyText("Classroom title required.",classroomNameReqText);
+		wait(5);	
+		click(closeBtn);
+	}
+	public void cautionAlertsForClassroomVenue(){
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		wait(5);
+		verifyText("Traditional classroom venue selection required.",venueNameReqText);
+		wait(5);	
+		click(closeBtn);
+	}
+	public void cautionAlertsForCategorySelection(){
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		wait(5);
+		verifyText("Classroom category selection required.",classroomCategoryReqText);
+		wait(5);	
+		click(closeBtn);
+	}
+	public void cautionAlertsForClassroomDescription(){
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		wait(5);
+		verifyText("Classroom category selection required.",classroomCategoryReqText);
+		wait(5);	
+		click(closeBtn);
+	}
+	public void cautionAlertsForSkillsetSelection(){
+	wait(5);
+	click(addClassroomBtn);
+	wait(5);
+	click(continueBtn);
+	wait(5);
+	click(mandatoryOkBtn);
+	wait(5);
+	verifyText("Skillset selection required.",skillsetReqText);
+	wait(5);	
+	click(closeBtn);
+}
+	public void cautionAlertsForInstructorSelection(){
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		WebElement element = driver.findElement(By.xpath("//span[contains(text(),'Instructor(s) selection required.')]")); Actions
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
+		wait(5);
+		verifyText("Instructor(s) selection required.",InstructorSelectionReqText);
+		wait(5);	
+		click(closeBtn);
 	}
 	public void addEventPage() {
 		wait(5);
