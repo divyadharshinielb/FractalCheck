@@ -136,7 +136,7 @@ public class HomePage extends FractalBasePage {
 		clickOnBellIcon();
 		wait(2);
 		//edit by divya - updated based on reivewing -  to click anywhere to check whether the popup is gone
-		click(logoclick);
+		//click(logoclick);
 		/*verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check);

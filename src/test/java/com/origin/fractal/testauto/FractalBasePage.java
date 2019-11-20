@@ -507,6 +507,7 @@ public abstract class FractalBasePage extends BasePage {
 			
 		public void verifyLogoImg() {
 			//edit by divya updation after review 
+			wait(5);
 			click(lblMyLearning);
 			wait(5);
 			click(logoImg);
@@ -514,10 +515,10 @@ public abstract class FractalBasePage extends BasePage {
 			//added to check whether clicking logo redirects to homepage
 			wait(5);
 			verifyText("CONTINUE", homebtnContinue);
-			click(homebtnContinue);
+		//	click(homebtnContinue);
 			System.out.println("By clicking the Logo, the page is redirected to homepage");
 			wait(5);
-			click(logoImg);
+			//click(logoImg);
 			wait(5);
 		
 		}
