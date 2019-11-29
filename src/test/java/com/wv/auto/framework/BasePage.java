@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -126,11 +127,28 @@ public abstract class  BasePage {
 	}
 
 	public void click(WebElement obj) {
-	
-		obj.click();
-		print("CLICKED : " + obj.toString());
+		if(BrowserFactory.getOS()=="mac") {
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", obj);
+		//obj.click();
+		print("iosclickcheck : " + obj.toString());
 	}
-
+		else {
+			obj.click();
+			print("CLICKED : " + obj.toString());
+		}
+	}
+	//added by divya for click function in safari browser
+	/*public void checkclick(By objLoc) {
+		checkclick(getObj(objLoc));
+	}
+	public void checkclick(WebElement obj) {
+	JavascriptExecutor executor = (JavascriptExecutor)driver;
+	executor.executeScript("arguments[0].click();", obj);
+	print("iosclickcheck : " + obj.toString());
+	}//ended by divya here
+	*/
+	
 	public void selectByVisibleText(String textToBeSelected, By objLoc) {
 		selectByVisibleText(textToBeSelected, getObj(objLoc));
 	}

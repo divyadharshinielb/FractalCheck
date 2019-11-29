@@ -49,10 +49,10 @@ public class MyLearningPageNewUI extends FractalBasePage {
 /*		click(clickCatalog);
 */		  wait(5);
          click(lblHome);
-         wait(5);
+         wait(10);
          click(lblContinue);
          wait(15);
-		verifyText("Automation Checking1", lblCatnameInside);
+		verifyText(" Financial News Insights", lblCatnameInside);
 	}
 	public void verifyMyLearningLabels() {
 		wait(5);

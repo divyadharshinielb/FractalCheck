@@ -55,7 +55,7 @@ public class HomePageNewUI extends FractalBasePage {
 			wait(5);
 			click(contactsLink);
 			wait(5);
-			verifyText("CONTACT US",contactsPage);
+			verifyText("contact us",contactsPage);
 			wait(5);
 			//edit by divya based on reviewing testcases
 			click(supportLink);

@@ -92,7 +92,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 			wait(5);
 			click(btnSave);
 			status=elementExist(fNameErrorOnlyLetters);
-			status=elementExist(lNameError);
+			//only in automation, the value gets printed automatically status=elementExist(lNameError);
 		}
 		return status;
 	}
@@ -108,7 +108,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 			}
 			wait(5);
 			click(btnSave);
-			status=elementExist(lNameError);
+			//only in automation, the value gets printed automatically status=elementExist(lNameError);
 			status=elementExist(fNameErrorOnlyLetters);
 		}
 		return status;
