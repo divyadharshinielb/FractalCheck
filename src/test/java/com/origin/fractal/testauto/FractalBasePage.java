@@ -41,7 +41,7 @@ public abstract class FractalBasePage extends BasePage {
 
 	private By wishListBtn=By.xpath(".//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]");
     private By cartItemBtn=By.xpath(".//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]");
-	private By logoImg=By.xpath(".//div/ng-include//div/img");    
+	private By logoImg=By.xpath(".//img[contains(@class, 'logo-height')]");    //div/ng-include//div/img
 	private By logOut=By.xpath(".//a[@class='pointer padding-l-15']");
 	private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
 

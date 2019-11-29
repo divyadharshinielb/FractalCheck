@@ -70,7 +70,7 @@ public class HomePage extends FractalBasePage {
     /***added on 08/02/19***/
     private By learningItemTitle = By.xpath(".//div/ng-include/*//div/*//span[contains(text(),'joined on')]/../*//h3");
     /*****end***/
-    private By btnContinue = By.xpath(".//div/ng-include/*//div/button[contains(text(),'CONTINUE')]");
+    private By btnContinue = By.xpath("//span[contains(text(), 'CONTINUE')]"); //div/ng-include/*//div/button[contains(text(),'CONTINUE')]
 
 	private By rLinkViewAll = By.xpath(".//h2[contains(text(),'Recently Added')]/../../../div/*//div/slick/div/../../../../*//a[contains(text(),'View All')]");
 	private By vlblAll = By.xpath(".//div/ng-include/*//div/*//a[contains(text(),'ALL')]");
@@ -308,6 +308,7 @@ public class HomePage extends FractalBasePage {
 	}
 	/*--------------here------*/
 	public void verifyMyLearningLabeltext() {
+		wait(5);
 		click(btnContinue);
 		myLearning.verifyMyLearningLabels();
 	}
