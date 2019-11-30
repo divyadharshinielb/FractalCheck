@@ -45,7 +45,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
-		
+		wait(5);
 		maLoginSteps.blankPasswordVerification();
 		maLoginSteps.blankUserName();
 		Reporter.writeSummary("TCID_004,  Verify the origin fractal app login page with invalid user name and  valid password., " +  maLoginSteps.getResult() );

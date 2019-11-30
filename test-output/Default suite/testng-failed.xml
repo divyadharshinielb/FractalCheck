@@ -6,17 +6,14 @@
       <class name="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd">
         <methods>
           <include name="verifySelectClientPage"/>
-          <include name="beforeMethod"/>
-          <include name="verifHomePage"/>
-          <include name="beforeSuite"/>
-          <include name="afterTest"/>
           <include name="beforeClass"/>
           <include name="LoginPage"/>
-          <include name="verifyMyAccountPage"/>
-          <include name="verifyMenuPage"/>
+          <include name="beforeMethod"/>
           <include name="afterClass"/>
+          <include name="beforeSuite"/>
           <include name="verifySplashScreen"/>
           <include name="afterSuite"/>
+          <include name="afterTest"/>
           <include name="afterMethod"/>
           <include name="beforeTest"/>
         </methods>

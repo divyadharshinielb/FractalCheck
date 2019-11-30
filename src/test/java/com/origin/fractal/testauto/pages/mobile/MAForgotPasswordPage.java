@@ -150,7 +150,7 @@ public class MAForgotPasswordPage extends FractalAppPage {
 		click(okBtn);
 	}
 	public void verifyOTPReceivedToEmail() {
-//		otp = gm.read();
+		//otp = gm.read();
 		String otpReceived =otp;//have to get OTP from Mahesh/karpagavalli
 		verifyOTPReceived(otpReceived);
 	}
