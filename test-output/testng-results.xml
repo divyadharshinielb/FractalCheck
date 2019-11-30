@@ -2,114 +2,114 @@
 <testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1158940" started-at="2019-11-14T05:58:42Z" finished-at="2019-11-14T06:18:01Z">
+  <suite name="Default suite" duration-ms="1146533" started-at="2019-11-29T16:20:41Z" finished-at="2019-11-29T16:39:47Z">
     <groups>
       <group name="LoginPage0">
-        <method signature="AndroidTestProd.LoginPage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="LoginPage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
+        <method signature="AndroidTestProd.LoginPage()[pri:1, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="LoginPage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
       </group> <!-- LoginPage0 -->
       <group name="pilot">
-        <method signature="AndroidTestProd.verifHomePage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifHomePage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
-        <method signature="AndroidTestProd.verifyMenuPage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifyMenuPage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
-        <method signature="AndroidTestProd.verifyMyAccountPage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifyMyAccountPage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
-        <method signature="AndroidTestProd.verifySelectClientPage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifySelectClientPage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
+        <method signature="AndroidTestProd.verifHomePage()[pri:3, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifHomePage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
+        <method signature="AndroidTestProd.verifyMenuPage()[pri:2, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifyMenuPage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
+        <method signature="AndroidTestProd.verifyMyAccountPage()[pri:4, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifyMyAccountPage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
+        <method signature="AndroidTestProd.verifySelectClientPage()[pri:5, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifySelectClientPage" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
         <method signature="AndroidTestProd.verifySplashScreen()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifySplashScreen" class="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd"/>
       </group> <!-- pilot -->
     </groups>
-    <test name="Default test" duration-ms="1158940" started-at="2019-11-14T05:58:42Z" finished-at="2019-11-14T06:18:01Z">
+    <test name="Default test" duration-ms="1146533" started-at="2019-11-29T16:20:41Z" finished-at="2019-11-29T16:39:47Z">
       <class name="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeSuite" is-config="true" duration-ms="23" started-at="2019-11-14T05:58:42Z" finished-at="2019-11-14T05:58:42Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeSuite" is-config="true" duration-ms="17" started-at="2019-11-29T16:20:41Z" finished-at="2019-11-29T16:20:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-11-14T05:58:42Z" finished-at="2019-11-14T05:58:42Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-11-29T16:20:41Z" finished-at="2019-11-29T16:20:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-11-14T05:58:42Z" finished-at="2019-11-14T05:58:42Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-11-29T16:20:41Z" finished-at="2019-11-29T16:20:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-11-14T05:58:42Z" finished-at="2019-11-14T05:58:42Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:20:41Z" finished-at="2019-11-29T16:20:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="LoginPage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="LoginPage" duration-ms="357166" started-at="2019-11-14T05:58:42Z" description="Combined mobile test" finished-at="2019-11-14T06:04:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginPage -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-14T06:04:39Z" finished-at="2019-11-14T06:04:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-11-14T06:04:39Z" finished-at="2019-11-14T06:04:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifHomePage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifHomePage" duration-ms="142149" started-at="2019-11-14T06:04:39Z" description="TCID_27,28,29,30,31,32,61:Verification of My Learning page27: Verify whether the user able be  to access the My Learning page28:Verify whether the user able be  to navigate correctly in both In progress and Completed Tabs.29:Verify the Catalog items are displayed in an List View format on clicking the List view icon30:Verify the Catalog items are displayed in an Grid View format on clicking the Grid view icon31:Verify the  content which are not completed is displayed in the In Progress Tab" finished-at="2019-11-14T06:07:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifHomePage -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-11-14T06:07:01Z" finished-at="2019-11-14T06:07:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-14T06:07:01Z" finished-at="2019-11-14T06:07:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyMenuPage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifyMenuPage" duration-ms="159198" started-at="2019-11-14T06:07:01Z" description="TCID_25:Verification of Menus page25: Verify the Menu functionality is working fine" finished-at="2019-11-14T06:09:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyMenuPage -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-14T06:09:40Z" finished-at="2019-11-14T06:09:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-14T06:09:40Z" finished-at="2019-11-14T06:09:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyMyAccountPage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifyMyAccountPage" duration-ms="294879" started-at="2019-11-14T06:09:40Z" description="TCID_:Verification of My Account page61: Verifying whether the user details are displayed correctly in the My Account page62: Verifying whether the first  and last name accespts space63: Verifying whether the first  and last name accespts number64: Verifying whether the first  and last name accespts special charecters70: Verifying whether the valid  first  and last names are updated successfully" finished-at="2019-11-14T06:14:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyMyAccountPage -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-14T06:14:35Z" finished-at="2019-11-14T06:14:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="verifySelectClientPage()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifySelectClientPage" duration-ms="102279" started-at="2019-11-14T06:14:35Z" description="TCID_20,21:Verification of Select client page20: Verify that assigned clients are listed for user21: Verify that user able to select their &#039;Learning site&#039; " finished-at="2019-11-14T06:16:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySelectClientPage -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-14T06:14:35Z" finished-at="2019-11-14T06:14:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifySplashScreen()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifySplashScreen" duration-ms="103237" started-at="2019-11-14T06:16:17Z" description="TCID_01:Verification of Splash ScreenTCID_01: Verify the splash screen after login to the application," finished-at="2019-11-14T06:18:01Z">
+        <test-method status="PASS" signature="verifySplashScreen()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifySplashScreen" duration-ms="115294" started-at="2019-11-29T16:20:41Z" description="TCID_01:Verification of Splash ScreenTCID_01: Verify the splash screen after login to the application," finished-at="2019-11-29T16:22:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySplashScreen -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-14T06:16:17Z" finished-at="2019-11-14T06:16:17Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:22:36Z" finished-at="2019-11-29T16:22:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-14T06:16:17Z" finished-at="2019-11-14T06:16:17Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:22:36Z" finished-at="2019-11-29T16:22:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-11-14T06:18:01Z" finished-at="2019-11-14T06:18:01Z">
+        <test-method status="PASS" signature="LoginPage()[pri:1, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="LoginPage" duration-ms="239476" started-at="2019-11-29T16:22:36Z" description="Combined mobile test" finished-at="2019-11-29T16:26:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginPage -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:26:35Z" finished-at="2019-11-29T16:26:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-11-14T06:18:01Z" finished-at="2019-11-14T06:18:01Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-11-29T16:26:35Z" finished-at="2019-11-29T16:26:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-11-14T06:18:01Z" finished-at="2019-11-14T06:18:01Z">
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="verifyMenuPage()[pri:2, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifyMenuPage" duration-ms="152919" started-at="2019-11-29T16:26:35Z" description="TCID_25:Verification of Menus page25: Verify the Menu functionality is working fine" finished-at="2019-11-29T16:29:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMenuPage -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:29:08Z" finished-at="2019-11-29T16:29:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:29:08Z" finished-at="2019-11-29T16:29:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="verifHomePage()[pri:3, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifHomePage" duration-ms="219520" started-at="2019-11-29T16:29:08Z" description="TCID_27,28,29,30,31,32,61:Verification of My Learning page27: Verify whether the user able be  to access the My Learning page28:Verify whether the user able be  to navigate correctly in both In progress and Completed Tabs.29:Verify the Catalog items are displayed in an List View format on clicking the List view icon30:Verify the Catalog items are displayed in an Grid View format on clicking the Grid view icon31:Verify the  content which are not completed is displayed in the In Progress Tab" finished-at="2019-11-29T16:32:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifHomePage -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:32:48Z" finished-at="2019-11-29T16:32:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="verifyMyAccountPage()[pri:4, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifyMyAccountPage" duration-ms="305574" started-at="2019-11-29T16:32:48Z" description="TCID_:Verification of My Account page61: Verifying whether the user details are displayed correctly in the My Account page62: Verifying whether the first  and last name accespts space63: Verifying whether the first  and last name accespts number64: Verifying whether the first  and last name accespts special charecters70: Verifying whether the valid  first  and last names are updated successfully" finished-at="2019-11-29T16:37:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyMyAccountPage -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:32:48Z" finished-at="2019-11-29T16:32:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:37:53Z" finished-at="2019-11-29T16:37:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="verifySelectClientPage()[pri:5, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="verifySelectClientPage" duration-ms="113719" started-at="2019-11-29T16:37:53Z" description="TCID_20,21:Verification of Select client page20: Verify that assigned clients are listed for user21: Verify that user able to select their &#039;Learning site&#039; " finished-at="2019-11-29T16:39:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySelectClientPage -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:37:53Z" finished-at="2019-11-29T16:37:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-11-29T16:39:47Z" finished-at="2019-11-29T16:39:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-11-14T06:18:01Z" finished-at="2019-11-14T06:18:01Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-11-29T16:39:47Z" finished-at="2019-11-29T16:39:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-11-29T16:39:47Z" finished-at="2019-11-29T16:39:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd@13805618]" name="afterSuite" is-config="true" duration-ms="2" started-at="2019-11-29T16:39:47Z" finished-at="2019-11-29T16:39:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

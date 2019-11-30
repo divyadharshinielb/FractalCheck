@@ -15,6 +15,7 @@ public class MASelectInstancePage extends FractalAppPage {
 	
 	private By insFractalDemo = By.xpath("//android.widget.ImageView[@content-desc='Fractal Demo']");
 	private By insCogScale= By.xpath("//android.widget.ImageView[@content-desc=\"CognitiveU\"]");
+	private By insMuleSoft = By.xpath("//android.widget.ImageView[@content-desc=\"MuleSoft\"]");
 	private By lblMyLearning = By.id("com.originkonnect.app:id/action");
 	private By btnMenu = By.id("com.originkonnect.app:id/action_bar_back");
 	private By insChangeBtn = By.id("com.originkonnect.app:id/change_client");
@@ -67,8 +68,40 @@ public class MASelectInstancePage extends FractalAppPage {
 		click(getObj(insFractalDemo));	
 	}
 	public void selectCogscale() {
-		wait(3);
-		click(getObj(insCogScale));
+		if(elementExist(insCogScale))
+			{
+			click(getObj(insCogScale));
+			}
+		
+		else if(elementExist(insFractal))
+			{
+				swipeInstances();
+				if (elementExist(insMuleSoft))
+				{
+				swipeInstances();
+				}
+				click(getObj(insCogScale));
+				wait(5);
+				print("Fractal");
+			}
+		else if(elementExist(insMuleSoft))
+		{
+			swipeInstances();
+			if (elementExist(insFractal))
+			{
+			swipeInstances();
+			}
+			else
+			{
+			click(getObj(insCogScale));
+			wait(5);
+			}
+			print("Mulesoft");
+		}
+		/*else {
+			click(getObj(insCogScale));
+		}*/
+		
 	}
 	public void verifyInstances() {
 		elementExist(insFractal);
