@@ -135,8 +135,8 @@ public class HomePage extends FractalBasePage {
 		wait(2);
 		/*verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
-		verifyText(ntnIntroGST,Check);
-		clickOnViewAll();*/
+		verifyText(ntnIntroGST,Check);*/
+		clickOnViewAll();
 		
 	}
 	public void verifyLearningInProgressText() {
