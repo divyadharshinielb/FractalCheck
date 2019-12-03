@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -125,10 +126,22 @@ public abstract class  BasePage {
 		click(getObj(objLoc));
 	}
 
-	public void click(WebElement obj) {
+	/*public void click(WebElement obj) {
 	
 		obj.click();
 		print("CLICKED : " + obj.toString());
+	}*/
+	public void click(WebElement obj) {
+		if(BrowserFactory.getOS()=="mac") {
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", obj);
+		//obj.click();
+		print("SAFARICLICK : " + obj.toString());
+	}
+		else {
+			obj.click();
+			print("CLICKED : " + obj.toString());
+		}
 	}
 
 	public void selectByVisibleText(String textToBeSelected, By objLoc) {

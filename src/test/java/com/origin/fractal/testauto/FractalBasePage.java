@@ -14,7 +14,7 @@ public abstract class FractalBasePage extends BasePage {
 
 	private By lblMyLearning = By.xpath("//a[contains(text(),'MY LEARNING')]");
 	private By lblProfile = By.xpath(".//img[@class='logout-height']");//For new Ui.//*[@id='dLabel']/span
-	private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
+	private By lblMyAccount = By.xpath(".//li[contains(text(), 'My Account')]"); //img[@class='pl-2 padding-r-10 pt-1']
 	private By btnCategory = By.xpath(".//*[@id='header']/*//button");
 	private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//img[@class='cp']");//For new UI.//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 	private By viewAll = By.xpath(".//p[@class='mb-0 mt-0']");//For New UI.//*[@id='notification-dropdown']/div[2]/div[2]/a
@@ -61,8 +61,11 @@ public abstract class FractalBasePage extends BasePage {
 	}
 
 	public void clickOnMyAccount() {
+		wait(5);
 		clickOnProfile();
+		wait(5);
 		click(lblMyAccount);
+		wait(5);
 	}
 
 	public void clickOnCategory() {
@@ -497,7 +500,7 @@ public abstract class FractalBasePage extends BasePage {
 		}
 		
 		public void verifyMyLearningPage() {
-			wait(5);
+			wait(10);
 			click(lblMyLearning);
 			System.out.println("MyLearning page is displayed");
 		}

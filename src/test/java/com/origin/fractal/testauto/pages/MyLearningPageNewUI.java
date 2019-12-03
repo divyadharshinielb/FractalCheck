@@ -34,22 +34,22 @@ public class MyLearningPageNewUI extends FractalBasePage {
          wait(15);
 		verifyText("ALL", lblAll);
 		wait(5);
-		verifyText("COURSES", lblCourses);
+		/*verifyText("COURSES", lblCourses);
 		wait(5);
 		verifyText("RESOURCES", lblResources);
 		wait(5);
-		verifyText("BUNDLES", lblBundles);
+		verifyText("BUNDLES", lblBundles);*/
 		wait(5);
 		verifyText("LEARNING PATHS", lblLearningPath);
 	}
 	public void verifyCatalogname() {
 /*		click(clickCatalog);
 */		  wait(5);
-         click(lblHome);
-         wait(5);
+        click(lblHome);
+         wait(10);
          click(lblContinue);
          wait(15);
-		verifyText("Automation Checking1", lblCatnameInside);
+		verifyText(" Technical Introduction to MuleSoft", lblCatnameInside);
 	}
 	public void verifyMyLearningLabels() {
 		wait(5);
