@@ -801,5 +801,17 @@ public class HomeSteps extends FractalBaseStep {
 			   }
 		   }
 		   //till here
+		   public void verifyCartItemBtn1() {
+			   result ="Passed";
+				   try {
+				        page.verifyCartItemBtn1();
+				   }
+				  catch(Exception e)
+				   {
+					e.printStackTrace();   
+					result="FAILED";
+				  }
+		   }
+
 
 }
