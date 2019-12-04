@@ -39,10 +39,9 @@ public void testMyAccountPage(String row, String strBrowserName) {
 	//accountSteps.verifyAfterCancelValidation();
 	//Reporter.writeSummary("TCID_067,  Verify the changes should not be displayed on clicking Cancel, " +  accountSteps.getResult() );
 	//TCID_63:Verify the validation for all fields under profile
-//divya	accountSteps.verifyFieldValidation();//63
+	accountSteps.verifyFieldValidation();//63
 	Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
 	//TCID_66:Verify whether the new password is getting saved on changing and clicking the save button
-//divya	accountSteps.changePassword();
 /*	accountSteps.changePassword();
 	Reporter.writeSummary("TCID_066,  Verify whether the new password is getting saved on changing and clicking the save button, " + accountSteps.getResult() );
 */

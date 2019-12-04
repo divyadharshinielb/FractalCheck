@@ -14,7 +14,7 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestClassroomCreation extends FractalBaseWebTest {
-	/*@DataProvider
+	@DataProvider
 	public  Object[][] browers() {
 		return new Object[][] {
 			new Object[] { "1", "chrome" }
@@ -22,34 +22,16 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
 //		, new Object[] { "3", "msedge" } 
 //		 new Object[] { "4", "ie11" }
 		};
-	}*/
-	//edited by divya from here
-	@DataProvider
-	public Object[][] browers() {
-	if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-		return new Object[][] {
-			//new Object[] { "1", "msedge" }, 
-			new Object[] { "2", "Chrome" },
-			//new Object[] { "3", "Firefox" }
-		};
 	}
-	
-	if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
-		return new Object[][] {
-				new Object[] { "1", "safari" }
-			};
-	}
-	return null;
-	}//ended by divya
 	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
-	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
+	public void testVerifyClassroomCreation(String row, String strBrowserName) throws IOException {
 	
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		MenuSteps menuSteps = new MenuSteps(driver);
 		Reporter.writeSummary("TCID_CLASS_001, Verify clicking the Classroom icon displays the Classroom page, " +  menuSteps.getResult() );
 		menuSteps.clickMenu();
-	//	Reporter.writeSummary("TCID_CLASS_002, Verify whether Admin should be able to view the CLASS ROOM page , " +  menuSteps.getResult() );
+//		Reporter.writeSummary("TCID_CLASS_002, Verify whether Admin should be able to view the CLASS ROOM page , " +  menuSteps.getResult() );
 		menuSteps.gotoClassroomCreation();
 		Reporter.writeSummary("TCID_CLASS_003, Verify clicking the Add Classroom button displays Classroom creation page , " +  menuSteps.getResult() );
 		ClassroomSteps cSteps=new ClassroomSteps(driver);
@@ -82,8 +64,8 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
         Reporter.writeSummary("TCID_CLASS_028, Verify the user is able to view the Classroom details of a  Classroom," +  cSteps.getResult() );
 	}
         
-		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = true,description="")
-    	public void testClassroomCreation1(String row, String strBrowserName) throws IOException {
+		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = false,description="")
+    	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
     	
     		driver = BrowserFactory.getBrowser(strBrowserName);
     		loginToContentAdmin(driver);

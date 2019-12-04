@@ -36,4 +36,8 @@ public class NotificationSteps extends FractalBaseStep{
 	public void verifyBusinessUserRegistration() {
 		page.verifyBusinessUserRegistration();
 	}
+	public void verifyUnAssignTemplate() {
+		page.verifyUnAssignTemplate();
+		
+	}
 }

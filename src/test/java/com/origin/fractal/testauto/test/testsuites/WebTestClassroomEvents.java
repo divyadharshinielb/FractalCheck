@@ -14,7 +14,7 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestClassroomEvents extends FractalBaseWebTest{
-/*	//edited by divya on 30th September 2019 @DataProvider
+	@DataProvider
 	public Object[][] browers() {
 		return new Object[][] {
 			new Object[] { "1", "chrome" }
@@ -22,25 +22,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 //		, new Object[] { "3", "msedge" } 
 //		 new Object[] { "4", "ie11" }
 		};
-	}*/
-	//Added by Divya on 30th September 2019
-	@DataProvider
-	public Object[][] browers() {
-	if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-		return new Object[][] {
-			//new Object[] { "1", "msedge" }, 
-			new Object[] { "2", "Chrome" },
-			//new Object[] { "3", "Firefox" }
-		};
 	}
-	
-	if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
-		return new Object[][] {
-				new Object[] { "1", "safari" }
-			};
-	}
-	return null;
-	}//ended by divya on 30th September 2019
 	//Event
 	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
@@ -72,7 +54,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		//TCID_02: Verify on clicking SAVE, throws the alert for all mandatory fields
 		classSteps.verifyAlertForAllFieldsInPage1();
 		Reporter.writeSummary("TCID_Event_003,  Verify whether the alert is thrown when provider drop-down is not selected, " +  classSteps.getResult() );
-	//	Reporter.writeSummary("TCID_Event_29,  Verify on clicking SAVE throws the alert for all mandatory fields, " +  classSteps.getResult() );
+	  //Reporter.writeSummary("TCID_Event_29,  Verify on clicking SAVE throws the alert for all mandatory fields, " +  classSteps.getResult() );
 		//TCID_03: Verify whether the alert is thrown, when Venue drop-down is not selected.
 		//29:Verify on clicking SAVE, throws the alert for all mandatory fields
 	//	classSteps.verifySelectClassroomTypeAlertMsg();
@@ -149,8 +131,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		classSteps.verifyTimezoneAlertDisappeared();
 		Reporter.writeSummary("TCID_Event_019,   Verify Whether the average score alert disappear after entering the score, " +  classSteps.getResult() );
 		//TCID_19: Verify Whether the average score alert disappear after entering the score
-//commented from heredivya
-		classSteps.verifyAvgScoreAlertDisappears();
+/*	classSteps.verifyAvgScoreAlertDisappears();
 		//TCID_20: Verify whether the Average score accepts alphabets
 		classSteps.verifyAvgScoreAcceptsAlphabets();
 		//TCID_21: Verify whether the Average score accepts Special characters
@@ -160,8 +141,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		//TCID_23: Verify whether the Average score accepts accepts more than 2 digis
 		classSteps.verifyAvgScoreAcceptsMoretha2DIgits();
 		
-		classSteps.closeLobjModel();
-		//commented till here  divya
+	*/	classSteps.closeLobjModel();
 		wait(10);
 		menuSteps.logout();
 	}
@@ -206,7 +186,9 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		classSteps.verifyAddAssignmentBtn();
 		Reporter.writeSummary("TCID_Event_027,  Verify whether the new assignment details fields are displayed after clicking the Add Assignment Button, " +  classSteps.getResult() );
 		//TCID_27: Verify whether the new assignment details fields are displayed after clicking the Add Assignment Button
-		
+		classSteps.verifyNewPreAssignmentForm();
+		Reporter.writeSummary("TCID_Event_028,   Verify Whether the Add survey details are displayed after clicking Survey label, " +  classSteps.getResult() );
+		//TCID_28: Verify Whether the Add survey details are displayed after clicking Survey label
 		classSteps.verifySurveyDetailsDisplayed();
 		Reporter.writeSummary("TCID_Event_029,   Verify whether the Add Survey button is displayed after expanding Survey, " +  classSteps.getResult() );
 		//TCID_29: Verify whether the Add Survey button is displayed after expanding Survey
@@ -215,9 +197,6 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		//TCID_30: Verify whether the new Survey form details fields are displayed after clicking the Add Assignment Button
 //		classSteps.verifyPreSurveyFormDetails();
 		//TCID_31: Verify Whether the Session details are displayed after clicking Session label
-		classSteps.verifyNewPreAssignmentForm();
-		Reporter.writeSummary("TCID_Event_028,   Verify Whether the Add survey details are displayed after clicking Survey label, " +  classSteps.getResult() );
-		//TCID_28: Verify Whether the Add survey details are displayed after clicking Survey label
 		classSteps.verifySessionDetailsDisplayed();
 		Reporter.writeSummary("TCID_Event_032,   Verify whether the error message is displayed if the instructor name is not selected from drop-down, " +  classSteps.getResult() );
 		//TCID_32: Verify whether the error message is displayed if the instructor name is not selected from drop-down
@@ -298,15 +277,16 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_Event_048,  Verify whether the 2nd page is opened on clicking continue button after filling all the mandatory fields, " +  classSteps.getResult() );
 		//TCID_48: Verify whether the 2nd page is opened on clicking continue button after filling all the mandatory fields.
 		classSteps.verifySecondPageOpened();
-		/*Reporter.writeSummary("TCID_049, Verfy whether the alert message is thrown for all the Mandatory fields if Save button is clicked without filling any fields, " +  classSteps.getResult() );
+		Reporter.writeSummary("TCID_Event_049, Verfy whether the alert message is thrown for all the Mandatory fields if Save button is clicked without filling any fields, " +  classSteps.getResult() );
 		//TCID_49: Verfy whether the alert message is thrown for all the Mandatory fields, if Save button is clicked without filling any fields
 		classSteps.verifySecondPageAlertMsgs();
 		Reporter.writeSummary("TCID_Event_050, Verify whether the Maximum no. of participants field accepts numbers, " +  classSteps.getResult() );
 		//TCID_50: Verify whether the "Maximum no. of participants" field accepts numbers
 		classSteps.verifyMaxNumParticipAcceptNum();
+		
 		classSteps.closeLobjModel();
 		wait(10);
-		menuSteps.logout();*/
+		menuSteps.logout();
 	}
 	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
@@ -395,14 +375,9 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		//19:Verify whether the alert is disappearing after entering valid Duration
 		//18:Verify whether the alert is disappearing after entering valid Date
 		//19:Verify whether the alert is disappearing after entering valid completion percentage
-
-//divya	 classSteps.verifyTickAndPlusMark();
-		Reporter.writeSummary("TCID_071,  Verify whether on clicking the Plus icon opens the Use list tab, " +  classSteps.getResult() );
-		Reporter.writeSummary("TCID_072,  Verify whether on clicking the Tick icon closes the Use list tab, " +  classSteps.getResult() );
 		classSteps.verifyTickAndPlusMark();
 		Reporter.writeSummary("TCID_Event_071,  Verify whether on clicking the Plus icon opens the Use list tab, " +  classSteps.getResult() );
 		Reporter.writeSummary("TCID_Event_072,  Verify whether on clicking the Tick icon closes the Use list tab, " +  classSteps.getResult() );
-
 		//TCID_71: Verify whether on clicking the Plus icon opens the Use list tab
 		//TCID_72:Verify whether on clicking the Tick icon closes the Use list tab
 		classSteps.verifyAlertAfterAddingMaximumNumberOfParticipants();

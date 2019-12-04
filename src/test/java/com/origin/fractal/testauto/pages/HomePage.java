@@ -254,6 +254,14 @@ public class HomePage extends FractalBasePage {
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Learning Path");
 	}
 	}
+	public void verifyPodcastFilterWhatsNew() {
+		click(whlblAll);
+		if(elementExist(whlblPodcasts)) {
+		click(whlblPodcasts);
+		wait(2);
+		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Podcast");
+      	}
+		}
 	public void verifyAllFilterRecommAdded(){
 		click(relblAll);
 		wait(3);
