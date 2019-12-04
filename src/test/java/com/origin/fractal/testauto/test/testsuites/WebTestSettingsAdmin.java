@@ -2,7 +2,10 @@ package com.origin.fractal.testauto.test.testsuites;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

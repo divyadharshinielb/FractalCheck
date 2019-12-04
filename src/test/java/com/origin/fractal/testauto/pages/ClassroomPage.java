@@ -319,17 +319,19 @@ public class ClassroomPage extends FractalBasePage {
 		click(lblSelectVenue);
 		wait(5);
 		click(classroomDropDown1);
-		wait(5);
+	/*	wait(5);
 		enterData("40",lblAvgScore);
-		wait(2);
+	*/	wait(2);
 		click(lblVirtualClassroom);
 		wait(5);
-		WebElement element = driver.findElement(By.xpath("//label[contains(text(),'Single Instructor')]")); 
-		if(BrowserFactory.getOS() == "win") {
+		WebElement element = driver.findElement(By.xpath("//div[@class='select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20']//span[@class='current'][contains(text(),'Select')]")); Actions
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
+	/*	if(BrowserFactory.getOS() == "win") {
 		Actions actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
 		}
-		wait(2);
+	*/	wait(2);
 		click(classroomDropDown2);
 		wait(2);
 		click(classroomDropDown3);
