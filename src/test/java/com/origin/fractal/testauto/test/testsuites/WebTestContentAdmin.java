@@ -20,7 +20,7 @@ public class WebTestContentAdmin extends FractalBaseWebTest{
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true,
 			description="TCID_61,62,64,63,66,67: "
 			+ "Verify on clicking the Audio opens another pop-up to create an Audio object"
 			+ "62: Verify  My Account Profile details,"
