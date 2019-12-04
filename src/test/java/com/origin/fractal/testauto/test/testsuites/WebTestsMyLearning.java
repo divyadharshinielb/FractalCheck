@@ -22,7 +22,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		};
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_1,4,11,12: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_1,4,11,12: "
 			+ "Verify navigation to My Learning page, " + "1: verify COmpletion Status(% Coverage)"
 			+ "4: Verify all links(All, Bundles, Courses, Learning Paths and resources)"
 			+ "11: Verify learning item page is opened when any of the particular course catalog item is clicked"
