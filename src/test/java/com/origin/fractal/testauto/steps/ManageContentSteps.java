@@ -33,5 +33,13 @@ public class ManageContentSteps  extends FractalBaseStep{
 		page.verifyCatalogTitleValidation();
 	}
 	*/
+	public void verifyAudioCreationPage() {
+		page.verifyAudioCreationPage();
+		
+	}
+	public void verifyMandatoryFieldsAlerMessage() {
+		page.verifyMandatoryFieldsAlerMessage();
+		
+	}
 
 }
