@@ -19,22 +19,22 @@ private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
 private By btnCategory = By.xpath(".//*[@id='header']/*//button");
 private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//span[@class='jss4']");//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 private By viewAll = By.xpath(".//p[contains(text(),'MORE')]");//*[@id='notification-dropdown']/div[2]/div[2]/a
-private By settings = By.xpath(".//li[contains(text(),'Settings')]");
+private By settings = By.xpath(".//a[contains(text(),'Settings')]");
 private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
 private By btnContinue = By.xpath(".//span[@class='continue_button']");//button[contains(text(),'CONTINUE')]
 private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
 private By btnTopArr = By.xpath(".//img[@class='scrollup-image']");//i[contains(@class,'icon topArr')]
 
-private By btnList = By.xpath("//a//i[@class='icon-list font-16']");//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[2]
-private String gridBoxBtn = "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a";//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
-private String gridLblName ="]/div[1]/div[1]/div[2]/p[1]/a[1]";//]/*//h3
+private By btnList = By.xpath("//a//i[@class='icon-list-selected font-16']");   //div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[2]
+private String gridBoxBtn = ".//div[contains(@class,'mylearn')]/../div[3]/a";//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
+private String gridLblName ="]/*//a";//]/*//h3 //dd ]/div[1]/div[1]/div[2]/p[1]/a[1]
 
 private String  listBoxBtn= ".//div/ng-include[1]/div[1]/div[1]/div[3]/ng-include[1]/div[1]/div[3]/div";
 private String  listLblName="]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3";
 private By catalogName = By.xpath(".//span[@class='three-line-clamp']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../div/h3
 private By catalogType = By.xpath(".//div//p[@class='cname margin-t-15']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../p
 private By catalogCourseCount = By.xpath(".//div//span[@class='obj_count padding-l-15 font-12']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../div[last()]/h3
-private By catalogValidity = By.xpath(".//span[text()='Validity:']");//div/ng-include/div/*//div/span[contains(text(),'Valid till:')]/span
+private By catalogValidity = By.xpath(".//span[text()='Validity']");//div/ng-include/div/*//div/span[contains(text(),'Valid till:')]/span
 private By btnGrid = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[1]");
 private By lblcontents = By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/..");
 private String lblNavBtn=".//div/h2[contains(text(),'Recently Added')]/../../following-sibling::div/*//div/slick/ul/li[";
@@ -48,6 +48,8 @@ private By goToCart = By.xpath("//button[contains(text(),'GO TO CART')]");
 private By checkout = By.xpath("//p[@class='checkout_btn']");//button[contains(@class,'ng-binding')]
 private By lblpaytm=By.xpath("//img[@alt='Paytm']");
 private By lblpaypal=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div/div/span/h3[contains(text(),'paypal')]");
+
+private By loadMore=By.xpath(".//a[contains(text(),'LOAD MORE')]");
 protected FractalBasePage(WebDriver driver) {
 this.driver = driver;
 verifier = new FractalVerifier(driver);
@@ -80,18 +82,12 @@ click(btnBellIcon);
 }
 
 public void clickOnViewAll() {
-	if(elementExist(viewAll)){
-		wait(5);
-		click(viewAll);
-}
+wait(5);
+click(viewAll);
 
 }
 
 public void clickOnsettings() {
-click(settings);
-wait(2);
-clickOnProfile();
-wait(2);
 click(settings);
 }
 
@@ -145,9 +141,6 @@ public void clickOnCourseslink() {
 click(lblRcntAdded_Courses);
 }
 public void clickOnTopArrBtn() {
-wait(5);
-JavascriptExecutor je =(JavascriptExecutor)driver;
-je.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath(".//img[@class='scrollup-image']")));
 wait(5);
 click(btnTopArr);
 }
@@ -204,6 +197,8 @@ return status;
 
 public void gridView() {
 verifyGridViewItems();
+wait(5);
+print("THIS FUNCTION OVERRRRUUUU");
 click(btnList);
 }
 public void listView() {
@@ -239,6 +234,7 @@ return status;
 }
 
 public void verifyCatalogDeatils(String name, String type, String totalCourses, String validity) {
+	wait(5);
 verifyLabel(name,catalogName);
 verifyLabel(type,catalogType);
 verifyPartialLabelText(totalCourses,catalogCourseCount);
@@ -562,37 +558,73 @@ public void verifyCartItemBtn1() {
 
 
 public void clickLogout() {
-	JavascriptExecutor je =(JavascriptExecutor)driver;
-	je.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]")));
-	wait(5);
-	click(lblProfile);
-	wait(5);
-	click(logOut);
+wait(5);
+click(lblProfile);
+wait(5);
+click(logOut);
 
 }
 public int getItemsCount( String objBox,String objBoxtype) {
-boolean status = true;
-int count =0;
-int i=0;
-String wholeObjPath = "";
-do {
-wholeObjPath =objBox+"["+(i+1)+objBoxtype;
-if(elementExist(By.xpath(wholeObjPath))) {
-count = count + 1;
-i = i+1;
-status = true;
-}else {
-status = false;
-}
-}while(status);
-return count;
+	boolean status = true;
+	int count = 0;
+	int i=2;
+	String wholeObjPath = "";
+	do {
+			wholeObjPath =objBox+"["+i+objBoxtype;
+			if(elementExist(By.xpath(wholeObjPath)))
+			{
+				count = count + 1;
+				i = i+1;
+				if(count>=15){
+					
+					if(elementExist(loadMore)){
+						
+						JavascriptExecutor je =(JavascriptExecutor)driver;
+						je.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath(".//a[contains(text(),'LOAD MORE')]")));
+						wait(5);
+						click(loadMore);
+						}
+				}
+				status = true;
+		}
+		else {
+			status = false;
+			}
+			
+		}
+		while(status);
+		return count;
 }
 public boolean templateFooterText(String text) {
-String expectedString=getText(By.xpath(text));
-boolean result= verifyText(expectedString,By.xpath(text));
-return result;
+	String expectedString=getText(By.xpath(text));
+	boolean result= verifyText(expectedString,By.xpath(text));
+	return result;
 
 }
+//Added by vignesh on 03-Nov-19
+	public int getItemsCount( String objBox,String objBoxtype,int searchResultCount) {
+		boolean status = false;
+		int count =0;
+		int i=1;
+		String wholeObjPath = "";
+		do {
+			if(searchResultCount>=i) 
+			{
+				wholeObjPath =objBox+"["+(i)+objBoxtype;
+				if(elementExist(By.xpath(wholeObjPath))) {
+					count = count + 1;
+					i = i+1;
+					status = true;
+				}
+			}
+			else {
+				status = false;
+			}
+
+		}while(status);
+		return count;
+	}
+	//End-Vignesh on 03-Nov-19
 /***added by mahesh 06/02/19***/
 /* public String read() {
     String emailSubject;

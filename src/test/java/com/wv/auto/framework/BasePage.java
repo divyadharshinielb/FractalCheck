@@ -65,7 +65,29 @@ public abstract class  BasePage {
 		enterData(dataToEnter, getObj(objLoc));
 
 	}
+	//edit by divya on 9thOct2019 
+	/*public void enterData1(int dataToEnter1, WebElement w) {
+		enterData1(dataToEnter1, getObj(w));
 
+public int getNumber(String data){
+		int number = Integer.parseInt(data);
+		return number;
+	}
+	}*/
+	
+	
+	/*public void enterasNum(WebElement webElement , int i) {
+		enterasNum( getObj(webElement), getNumber(i));
+
+	}*/
+	/*public void enterNum(String number, By objLoc) {
+		enterNum(number, getObj(objLoc));
+	}*/
+
+	/*public void enterNumPlace(WebElement webElement) {
+		enterNumPlace(getObj(webElement));
+	}*/
+//edit
 	public void enterData(String dataToEnter, WebElement inpElement) {
 		WebElement we = inpElement;
 		we.clear();
@@ -275,7 +297,11 @@ public abstract class  BasePage {
 	
 	//This function will get the particular text from the repeating tag(i.e.,The particular text in repeating div) and returns an array
 	public String[] getCatalogTypes(String objpath, String objpathType) {
+		print("HDHDHDHDHHDHD" +objpath);
+		print("hdhdhhd" +objpathType);
+		//.//div[contains(@class,'mylearn')]/../div[3]/a
 		int length = getItemsCount(By.xpath(objpath));
+		print("ddddddd"+length);
 		String wholeObjPath = "";
 		String actualCatalogType="";
 		String[] catlogType = new String[length-1];
@@ -286,6 +312,20 @@ public abstract class  BasePage {
 		}
 		return catlogType;
 	}
+	//added by mahesh
+	public String[] getCatalogTypes1(String objpath, String objpathType) {
+		int length = getItemsCount(By.xpath(objpath));
+		String wholeObjPath = "";
+		String actualCatalogType="";
+		String[] catlogType = new String[length-1];
+		for(int i=0;i<length-1;i++) {
+			wholeObjPath = objpath+"["+(i+2)+objpathType;
+			actualCatalogType=getText(By.xpath(wholeObjPath));
+			catlogType[i]=(actualCatalogType).toLowerCase();
+		}
+		return catlogType;
+	}
+	//till here
 	
 	//This function will remove the last letter from each array item 
 	public static String[] removeLastInArrayItems(String[] array) {
@@ -484,4 +524,27 @@ public abstract class  BasePage {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;  wait(5);   
 		jse.executeScript("arguments[0].scrollIntoView();", element);
 		}
+	//Added by vignesh on 20/Oct/19 for Ignorecase
+	public boolean compareStringsIgnorecase(String expValue, String actualValue) {
+	if (expValue.equalsIgnoreCase(actualValue)) {
+	print("PASSED : The expected string is " + expValue
+	+ " , the actual string is " + actualValue);
+	return true;
+	} else {
+	print("FAILED : The expected string is " + expValue
+	+ " , the actual string is " + actualValue);
+	// Assert.assertTrue(false);
+	return false;
+	}
+	}
+	//Added by Vignesh on 20/Oct/19 for Ignorecase (Updated on 28/Oct/19)
+		public boolean verifyTextIgnorecase(String expText, By objLoc) {
+			WebElement we = getObj(objLoc);
+			return verifyTextIgnorecase(expText, we);
+		}
+		public boolean verifyTextIgnorecase(String expText, WebElement obj) {
+			String actText = obj.getText();
+			return compareStringsIgnorecase(expText, actText);
+		}
+		//End- vignesh 
 }
