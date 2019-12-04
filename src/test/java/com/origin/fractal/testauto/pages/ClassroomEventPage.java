@@ -584,7 +584,6 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(lblSelectCalendar);
 	wait(5);
 	click(dropdownSelectCalendar);
-	wait(5);
 	enterData("10",lblCalendarHour);
 	enterData("50",lblCalendarMinute);
 	click(lblPm);
