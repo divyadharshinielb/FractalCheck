@@ -316,18 +316,12 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Add Assignment", btnPreAddAssignment);
 	}
 	public void verifyNewPreAssignmentForm() {
-	wait(5);
-	scrollToElement(btnPreAssignment);
-	wait(5);
-	click(btnPreAssignment);
-	wait(2);
-	click(btnPreAssignment);
-	wait(5);
-	click(btnPreAddAssignment);
-	wait(2);
-	verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
-	verifyText("Assignment Description",getAttributeValue(inpPreEventAssignDesc));
-	verifyText("Add Assignment", btnPreAddAssignment);
+		wait(5);
+		scrollToElement(btnPreAddAssignment);wait(5);
+		click(btnPreAddAssignment);
+		verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
+		verifyText("Assignment Description",getAttributeValue(inpPreEventAssignDesc));
+		verifyText("Add Assignment", btnPreAddAssignment);
 	}
 	public void verifySurveyDetailsDisplayed() {
 	wait(5);
@@ -478,27 +472,20 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	}
 	public void verifySecondPageOpened() {
-	wait(5);
-	click(btnAddEvent);
-	fillFirstPage();
-	wait(5);
-	click(dropdownSelectInstructor1);
-	click(lblSelectCalendar);
-	wait(5);
-	click(dropdownSelectCalendar);
-	wait(5);
-	/*By objPh=By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-lr-0 display_inFlex11111111 margin-b-20')]//div[1]//input[1]");   
-	((WebElement) objPh).clear();   //To clear the phone text field    
-	((WebElement) objPh).sendKeys("10");*/
-	click(lblCalendarHour);
-	enterData("10",lblCalendarHour);
-	wait(5);
-	
-	//enterData("50",lblCalendarMinute);
-	click(lblPm);
-	wait(10);
-	click(btnContinue);
-	verifyText("Auto update waiting list on cancellation",lblCompletionCriteria);
+		wait(5);
+		click(btnAddEvent);
+		fillFirstPage();
+		wait(5);
+		click(dropdownSelectInstructor1);
+		click(lblSelectCalendar);
+		wait(2);
+		click(dropdownSelectCalendar);
+		enterData("10",lblCalendarHour);
+		enterData("50",lblCalendarMinute);
+		click(lblPm);
+		wait(2);
+		click(btnContinue);
+		verifyText("Auto update waiting list on cancellation",lblCompletionCriteria);
 	}
 	public void fillFirstPage() {
 	wait(2);

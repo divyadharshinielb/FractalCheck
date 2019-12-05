@@ -297,11 +297,8 @@ public int getNumber(String data){
 	
 	//This function will get the particular text from the repeating tag(i.e.,The particular text in repeating div) and returns an array
 	public String[] getCatalogTypes(String objpath, String objpathType) {
-		print("HDHDHDHDHHDHD" +objpath);
-		print("hdhdhhd" +objpathType);
 		//.//div[contains(@class,'mylearn')]/../div[3]/a
 		int length = getItemsCount(By.xpath(objpath));
-		print("ddddddd"+length);
 		String wholeObjPath = "";
 		String actualCatalogType="";
 		String[] catlogType = new String[length-1];
