@@ -20,11 +20,11 @@
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" />
 				<class
-                name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
-				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
+				<class
+                name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> 
 				<class
