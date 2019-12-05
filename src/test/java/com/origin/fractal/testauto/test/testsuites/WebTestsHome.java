@@ -56,8 +56,8 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_010,  Verify My Learning page details on clicking from Home Page, " + homeSteps.getResult() );
 */   	//TCID_13:Verification of View all page labels
 		homeSteps.verifyViewAllPage(); //newui
-		Reporter.writeSummary("TCID_HOME_013, Verify View All page elements, " + homeSteps.getResult() );
-		Reporter.writeSummary("TCID_HOME_035, Verify whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
+		//Reporter.writeSummary("TCID_HOME_013, Verify View All page elements, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_035, Verify whether view all page elements and whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
 		//TCID_34:Verify Privacy, Terms and Contact links
 		homeSteps.verifyFooterLinks();//newui
 		Reporter.writeSummary("TCID_HOME_034, Verify Privacy Terms and Contact links, " + homeSteps.getResult() );
@@ -67,7 +67,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon. 
 		homeSteps.verifyBellNotification();//newui
 		Reporter.writeSummary("TCID_HOME_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
-		Reporter.writeSummary("TCID_HOME_070, Verify whether All the Notifications are getting listed on clicking the All tab, " + homeSteps.getResult() ); 
+		Reporter.writeSummary("TCID_HOME_070, Verify whether All the Notifications are getting listed on clicking the more button, " + homeSteps.getResult() ); 
 		homeSteps.clickLogout();//newui
 	
 	}
