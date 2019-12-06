@@ -38,7 +38,8 @@
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
+				
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
