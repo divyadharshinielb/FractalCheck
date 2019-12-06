@@ -32,7 +32,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		HomeSteps homeSteps = new HomeSteps(driver);
 		//TCID_37:Checking whether the dash board contains the heading Learning in Progress
 		homeSteps.verifyResumeLearningText();//newui
-		Reporter.writeSummary("TCID_HOME_037,  Verify  whether the dash board contains the heading Learning in Progress, " +  homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_037,  Verify  whether the dash board contains the heading Resume Learning, " +  homeSteps.getResult() );
 		//TCID_40:Checking whether the button Continue is displayed under the heading Learning in Progress
 /*      homeSteps.verifyComplStatus();
 		Reporter.writeSummary("TCID_039,  whether the coverage percentage is shown with the text completed under Percentage, " +  homeSteps.getResult() );
@@ -41,7 +41,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_033,  Verify  The coverage percentage is shown with the text Coverage, " + homeSteps.getResult() );
 		//TCID_41: Verify Continue Text are displayed
 */	    homeSteps.verifyContinueText();//newui
-		Reporter.writeSummary("TCID_HOME_041,  Verify Continue Text are displayed, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_041,  Verify Continue button is displayed, " + homeSteps.getResult() );
 	//	Reporter.writeSummary("TCID_HOME_040,  Verify  whether the button Continue is displayed under the heading Learning in Progress, " +  homeSteps.getResult() );
 	//	Reporter.writeSummary("TCID_HOME_032,  Verify  whether the button Continue is present for the text Learning in progress,"+ homeSteps.getResult() );
 		homeSteps.clickContinueBtnRetToHome();//newui
@@ -56,8 +56,8 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_010,  Verify My Learning page details on clicking from Home Page, " + homeSteps.getResult() );
 */   	//TCID_13:Verification of View all page labels
 		homeSteps.verifyViewAllPage(); //newui
-		Reporter.writeSummary("TCID_HOME_013, Verify View All page elements, " + homeSteps.getResult() );
-		Reporter.writeSummary("TCID_HOME_035, Verify whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
+		//Reporter.writeSummary("TCID_HOME_013, Verify View All page elements, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_035, Verify whether view all page elements and whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
 		//TCID_34:Verify Privacy, Terms and Contact links
 		homeSteps.verifyFooterLinks();//newui
 		Reporter.writeSummary("TCID_HOME_034, Verify Privacy Terms and Contact links, " + homeSteps.getResult() );
@@ -67,7 +67,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon. 
 		homeSteps.verifyBellNotification();//newui
 		Reporter.writeSummary("TCID_HOME_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
-		Reporter.writeSummary("TCID_HOME_070, Verify whether All the Notifications are getting listed on clicking the All tab, " + homeSteps.getResult() ); 
+		Reporter.writeSummary("TCID_HOME_070, Verify whether All the Notifications are getting listed on clicking the more button, " + homeSteps.getResult() ); 
 		homeSteps.clickLogout();//newui
 	
 	}
