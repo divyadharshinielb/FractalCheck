@@ -22,7 +22,7 @@ public class LoginPage extends FractalBasePage {
 	private By resigstrationPage = By.xpath(".//div[contains(text(), 'SIGN UP')]"); //div[@class='col-lg-12 text-center log-title padding-30']
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty.')]");
 	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
-	private By inValid = By.xpath(".//*[contains(text(),'User or Password are incorrect.')]");
+	private By inValid = By.xpath(".//*[contains(text(),'Username or Password is incorrect.')]");
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
