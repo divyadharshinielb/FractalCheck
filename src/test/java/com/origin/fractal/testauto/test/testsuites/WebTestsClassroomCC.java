@@ -43,9 +43,9 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 		ClassroomSteps.GotoClassroom();
 		Reporter.writeSummary("TC_Admin_ 001,Admin Login and open the classroom, " +  ClassroomSteps.getResult() );
 
-		ClassroomSteps.CClblAllsession();
+//		ClassroomSteps.CClblAllsession();
 		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.EditCClblAllsession();
+//		ClassroomSteps.EditCClblAllsession();
 		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-002,Select/Unselect Participation all sessions in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
 
 		ClassroomSteps.CClblAssDuedate();
@@ -106,7 +106,7 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 
 
 		// For all the five individual CC texts
-		ClassroomSteps.verifyCCsessionLabels();
+//		ClassroomSteps.verifyCCsessionLabels();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCsessionLabels();
 		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012a,Verify the text in CC -All Sessions (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );

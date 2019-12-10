@@ -47,14 +47,14 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		ClassroomEventSteps classSteps = new ClassroomEventSteps(driver);
 		//To click on a particular classroom item
 		classSteps.clickOnClassroomItem();
-		Reporter.writeSummary("TCID_Event_001,  Verify Add new event page is opened on clicking the Ads Event button, " +  classSteps.getResult() );
+		Reporter.writeSummary("TCID_Event_001,  Verify Add new event page is opened on clicking the Add Event icon, " +  classSteps.getResult() );
 		//TCID_01: Verify Add new event page is opened on clicking the Ads Event button
 		classSteps.verifyAddEventPageOpened();
 		Reporter.writeSummary("TCID_Event_002,  Verify on clicking SAVE throws the alert for all mandatory fields, " +  classSteps.getResult() );
 		//TCID_02: Verify on clicking SAVE, throws the alert for all mandatory fields
 		classSteps.verifyAlertForAllFieldsInPage1();
-		Reporter.writeSummary("TCID_Event_003,  Verify whether the alert is thrown when Venue drop-down is not selected, " +  classSteps.getResult() );
-		Reporter.writeSummary("TCID_Event_29,  Verify on clicking SAVE throws the alert for all mandatory fields, " +  classSteps.getResult() );
+		Reporter.writeSummary("TCID_Event_003,  Verify whether the alert is thrown when provider drop-down is not selected, " +  classSteps.getResult() );
+	  //Reporter.writeSummary("TCID_Event_29,  Verify on clicking SAVE throws the alert for all mandatory fields, " +  classSteps.getResult() );
 		//TCID_03: Verify whether the alert is thrown, when Venue drop-down is not selected.
 		//29:Verify on clicking SAVE, throws the alert for all mandatory fields
 	//	classSteps.verifySelectClassroomTypeAlertMsg();

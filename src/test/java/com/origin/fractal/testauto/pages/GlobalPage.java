@@ -13,7 +13,7 @@ public class GlobalPage extends FractalBasePage{
     private By verificationText = By.xpath(".//div[contains(@class,'course_cnt  ml-3')]/../div/h6/span");
     private By homepage = By.xpath(".//button[contains(@class,'btn btn active2')]/../button/a/span");
     private By verificationText2 = By.xpath(".//div[contains(@class,'course_cnt ml-3 padding-t-6')]/../div/h6");
-    private By noItem = By.xpath(".//span[contains(text(),'No catalog item available at the moment')]");
+    private By noItem = By.xpath(".//span[@class='no-records-found']");//span[contains(text(),'No catalog item available at the moment')]
     private By eLearning = By.xpath(".//span[contains(text(),'eLearning')]");
     private By video = By.xpath(".//div[contains(@class,'course_cnt ml-3 padding-t-6')]/../div/h6");
     private By automationLearningpath = By.xpath(".//a[contains(text(),'Automation Learningpath')]");
@@ -84,12 +84,12 @@ public class GlobalPage extends FractalBasePage{
 			enterData("audio",Search);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			wait(5);
-			verifyText("No catalog item available at the moment!",noItem);
+			verifyText("Audio",verificationText);
 			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
 			enterData("audios",Search);;
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
-			verifyText("No catalog item available at the moment!",noItem);
+			verifyText("Audio",verificationText);
 			
 		}
 		//Added by Dhanushiya
@@ -125,12 +125,12 @@ public class GlobalPage extends FractalBasePage{
 			enterData("vlab",Search);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			wait(5);
-			verifyText("No catalog item available at the moment!",noItem);
+			verifyText("vLab",verificationText);
 			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
 			enterData("vlabs",Search);;
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
-			verifyText("No catalog item available at the moment!",noItem);
+			verifyText("vLab",verificationText);
 			
 		}
 		//Added by Dhanushiya
@@ -139,7 +139,7 @@ public class GlobalPage extends FractalBasePage{
 			enterData("assessment",Search);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			wait(5);
-			verifyText("No catalog item available at the moment!",noItem);
+			verifyText("Assessment",verificationText);
 			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
 			enterData("assessment",Search);;
@@ -254,7 +254,7 @@ public class GlobalPage extends FractalBasePage{
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
 			enterData("***images",Search);;
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
-			verifyText("No catalog item available at the moment!",noItem);	
+			verifyText("Image",verificationText);	
 			
 		}
 		//Added by Dhanushiya

@@ -52,6 +52,9 @@ public class NotificationPage extends FractalBasePage{
 		 wait(5);
 		 verifyText("You’ve got a new password!",lblNewPasswordText);
 		 wait(5);
+		String templateName = getAttributeValuePassword(By.xpath("//textarea[@type='text']"));
+		System.out.println("---->"+templateName);  
+		 wait(2);
 		 WebElement element = driver.findElement(By.xpath("//p[contains(text(),'Hi NAME !')]"));
 			Actions actions = new Actions(driver);
 			actions.moveToElement(element);
