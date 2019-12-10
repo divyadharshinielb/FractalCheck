@@ -86,7 +86,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickCClblAssDuedate() 
 	{
-		click(AddClassbtn);
+//		click(AddClassbtn);
 		wait(5);
 		click(lblCCAssDuedate);
 		wait(5);
