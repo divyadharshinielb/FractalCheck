@@ -354,7 +354,7 @@ public class MyLearningPage extends FractalBasePage {
 			  }
 			  
 			  public void verifyChooseEventBtn(){
-			  verifyText("CHOOSE EVENT",lblEventCalendarText);
+		//	  verifyText("CHOOSE EVENT",lblEventCalendarText);
 			  wait(2);
 			  WebElement element = driver.findElement( By.xpath("//a[text()='Automation Learningpath']")); Actions
 				actions = new Actions(driver); actions.moveToElement(element);
