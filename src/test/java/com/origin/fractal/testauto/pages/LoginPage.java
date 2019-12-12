@@ -17,8 +17,8 @@ public class LoginPage extends FractalBasePage {
 	//private By lblProfile = By.xpath(".//*[@id='dLabel']/span");
 	//private By logOutButton = By.xpath(".//a[@class='pointer padding-l-15']");
 	private By rememberMe=By.xpath(".//label[@class='font-size-14']");
-	private By lblProfile = By.xpath(".//div[@class='jss36']//div//span[@class='jss4']");  //*[@id='dLabel']/span
-	private By logOutButton = By.xpath(".//li[contains(@class, 'jss29 jss95 jss98 jss103 jss104 jss92 jss93 popup-text padding-t-15 removelastspan')]");  //a[@class='pointer padding-l-15']
+	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");  //*[@id='dLabel']/span
+	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]");  //a[@class='pointer padding-l-15']
 	/***added on 08/02/19***/
 	//edited by divya on 23rd sept 2019
 	private By registerButton = By.xpath("//a[contains(@class, 'reg_btn font-size-18 reg')]");  //a[@class='cursor-pointer text-uppercase']

@@ -219,8 +219,9 @@ public class ClassroomPage extends FractalBasePage {
 		click(closeBtn);
 	}
 	public void addEventPage() {
-		wait(5);
+		wait(10);
 		click(addEventBtn);
+		wait(2);
 		click(closeBtn);
 	}
 	public void titleAcceptsCharater() {
