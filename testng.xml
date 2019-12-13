@@ -28,9 +28,9 @@
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> 
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
-			    <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
 				<class
