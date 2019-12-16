@@ -136,6 +136,18 @@ public class LoginSteps extends FractalBaseStep {
 		  }
 		
 	}
+	public void loginToInstructor() {
+		result ="Passed";
+		  try {
+		  page.loginToInstructor();
+		  }
+		  catch(Exception e)
+		  {
+		e.printStackTrace();   
+		result="FAILED";
+		  }
+		
+	}
 
 	public void verifypasswordField() {
 		result ="Passed";

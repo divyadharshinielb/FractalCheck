@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.wv.auto.framework.BasePage;
 
@@ -531,6 +532,9 @@ click(wishListBtn);
 }
 
 public void verifyMyLearningPage() {
+WebElement element = driver.findElement( By.xpath("//a[contains(text(),'MY LEARNING')]")); Actions
+actions = new Actions(driver); actions.moveToElement(element);
+actions.perform();
 wait(5);
 click(lblMyLearning);
 System.out.println("MyLearning page is displayed");
