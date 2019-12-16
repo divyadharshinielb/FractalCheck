@@ -36,11 +36,11 @@
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
 				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
+				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
