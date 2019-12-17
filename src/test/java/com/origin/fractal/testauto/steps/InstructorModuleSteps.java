@@ -189,4 +189,15 @@ public class InstructorModuleSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
+	public void verifyReviewInsideLabels() {
+		result ="Passed";
+		   try {
+				page.verifyReviewInsideLabels();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
 }

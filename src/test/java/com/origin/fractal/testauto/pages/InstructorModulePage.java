@@ -50,6 +50,10 @@ public class InstructorModulePage extends FractalBasePage {
     private By breadCrumLink= By.xpath("//button[contains(@class,'btn btn active cp pl-0')]//a[1]");
     private By reviewButton= By.xpath("//body//div[contains(@class,'maindiv insdash container')]//div//div[3]//a[1]//div[1]//div[4]//button[1]");
     private By nextEventViewAll= By.xpath("//h2[@class='nxtevt']//a[@class='filter-link cursor-pointer font-size-14 text-capitalize margin-r-0'][contains(text(),'View all')]");
+    private By lblAll= By.xpath(" //button[contains(text(),'ALL')]");
+    private By lblReviewCompleted= By.xpath("//button[contains(text(),'REVIEW COMPLETED')]");
+    private By lblReviewPending= By.xpath("//button[contains(text(),'REVIEW PENDING')]");
+    private By lblDescription= By.xpath("//span[contains(text(),'Description')]");
     public InstructorModulePage(WebDriver driver) {
 		super(driver);
 		pageName ="InstructorModulePage"; 
@@ -69,7 +73,6 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("ACCEPT",btnAccept );
 		verifyText("REJECT",btnCancel );
 		verifyText("Request To Reschedule",btnReschedule );
-		
 	}
 	public void verifyPopupButtons() {
 		click(btnReschedule);
@@ -230,6 +233,23 @@ public class InstructorModulePage extends FractalBasePage {
 		click(invitesReminderViewallBtn);
 		wait(2);
 		verifyText("REVIEW",reviewButton);
+	}
+	public void verifyReviewInsideLabels() {
+		wait(2);
+		click(dashBoardIcon);
+		wait(2);
+		click(invitesReminderViewallBtn);
+		wait(2);
+		click(By.xpath("//div[5]//a[1]//div[1]//div[4]//button[1]//a[1]"));
+		wait(2);
+		verifyText("ALL",lblAll);
+		wait(2);
+		verifyText("REVIEW COMPLETED",lblReviewCompleted);
+		wait(2);
+		verifyText("REVIEW PENDING",lblReviewPending);
+		wait(2);
+		verifyText("Description",lblDescription);
+		
 	}
 }
 	
