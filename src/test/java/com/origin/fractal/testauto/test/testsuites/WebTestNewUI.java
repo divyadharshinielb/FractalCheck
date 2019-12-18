@@ -16,7 +16,7 @@ import com.wv.auto.framework.utils.Reporter;
 public class WebTestNewUI extends FractalBaseWebTest {
 
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -45,7 +45,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testMyLearningPage0(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
@@ -92,7 +92,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 	 wait(5);
 	 loginSteps.doLogin();
 	 wait(5);
-	 //homeSteps.verifyBellNotification();
+	 homeSteps.verifyBellNotification();
 	 Reporter.writeSummary("TCID_069, Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
 	 homeSteps.verifyLogoImg();
 	 Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());  

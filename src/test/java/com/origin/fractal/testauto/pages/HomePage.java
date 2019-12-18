@@ -133,10 +133,10 @@ public class HomePage extends FractalBasePage {
 		wait(5);
 		clickOnBellIcon();
 		wait(2);
-		verifyLabel("lblNotification",lblNotification );
+		/*verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check);
-		clickOnViewAll();
+		clickOnViewAll();*/
 		
 	}
 	public void verifyLearningInProgressText() {
