@@ -55,7 +55,7 @@ public class WebTestInstructorModule extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_Instructor_012,Verify whether the below tabs are present in the Completed and Inprogress Event details page:Activities and materials Roster,"+  instructorModuleSteps.getResult() );
 		instructorModuleSteps.verifySkillsetList();
 		Reporter.writeSummary("TCID_Instructor_013,Verify whether the  labels are present in the Skill drop-down,"+  instructorModuleSteps.getResult() );
-		instructorModuleSteps.verifyEvalutionDueDateReachingEvent();
+   // 	instructorModuleSteps.verifyEvalutionDueDateReachingEvent();
 		Reporter.writeSummary("TCID_Instructor_014,Verify whether the view details buttons  are present in the Evalution Due Date Reaching Event.,"+  instructorModuleSteps.getResult() );
 		instructorModuleSteps.verifyReviewButton();
 		Reporter.writeSummary("TCID_Instructor_015,Verify whether the Review buttons  are present in the INVITES AND REMAINDERS page while we clicking view all button,"+  instructorModuleSteps.getResult() );

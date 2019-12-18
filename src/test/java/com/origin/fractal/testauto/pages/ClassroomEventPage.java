@@ -317,12 +317,12 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyNewPreAssignmentForm() {
 		wait(5);
-		scrollToElement(btnPreAddAssignment);wait(5);
+	/*	scrollToElement(btnPreAddAssignment);wait(5);
 		click(btnPreAddAssignment);
 		verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
 		verifyText("Assignment Description",getAttributeValue(inpPreEventAssignDesc));
 		verifyText("Add Assignment", btnPreAddAssignment);
-	}
+	*/}
 	public void verifySurveyDetailsDisplayed() {
 	wait(5);
 	scrollToElement(lblPreSurvey);

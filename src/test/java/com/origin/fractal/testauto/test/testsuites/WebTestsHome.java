@@ -21,7 +21,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -102,16 +102,16 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//dhanu homeSteps.verifyCartItemBtn();//newui
 		Reporter.writeSummary("TCID_HOME_079,  Verify the function of  Cart  icon, " + homeSteps.getResult() );
 		//TCID_3:Verify My Learning page is displayed after logging to app.
-		//dhanu homeSteps.verifyMyLearningPage();//newui
+		 homeSteps.verifyMyLearningPage();//newui
 		Reporter.writeSummary("TCID_HOME_003,   Verify Home page is Land after logging to app, " +  homeSteps.getResult());
 		//Verify LogoImage is displayed after logging to app
-		//dhanu homeSteps.verifyLogoImg();//newui
+		 homeSteps.verifyLogoImg();//newui
 		Reporter.writeSummary("TCID_HOME_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());
 		homeSteps.clickLogout(); 
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {
