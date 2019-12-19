@@ -8,7 +8,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 public class ClassroomCCPage extends FractalBasePage {
 
 	private By Classroomicon = By.xpath("//div[@class='icon-Classroom-icon icon']");
-	private By AddClassbtn = By.xpath("//html/body/div/div/div[2]/div[3]/div[3]/div/div/div/div[2]/button");
+	private By AddClassbtn = By.xpath("//button[contains(text(),'Add Classroom')]");//html/body/div/div/div[2]/div[3]/div[3]/div/div/div/div[2]/button
 
 	//Add classroom
 	private By lblCCAllsession = By.xpath("//div[@class='col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60']//div[2]//label[1]");
@@ -124,13 +124,13 @@ public class ClassroomCCPage extends FractalBasePage {
 		wait(5);
 		click(lblCCQualifyPrecentage);
 		wait(5);
-		clear(EditclassInputCCQualifyPrecentage);
+	/*	clear(EditclassInputCCQualifyPrecentage);
 		enterData("35",EditclassInputCCQualifyPrecentage);
 		wait(5);
 		click(EditclassCancelbtn);
 		wait(5);
 	
-	}
+	*/}
 
 	public void ClickCClblFeedbackDuedate() 
 	{
@@ -212,6 +212,8 @@ public class ClassroomCCPage extends FractalBasePage {
 	{
 		click(EditclasslblCCAssDuedate);
 		wait(5);
+		click(lblCCQualifyPrecentage);
+		wait(2);
 		enterData("35",EditclassInputCCQualifyPrecentage);
 		wait(5);
 		click(EditclassCancelbtn);
@@ -239,7 +241,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	{
 		click(EditclasslblCCQualifyPrecentage);
 		wait(5);
-		click(lblCCQualifyPrecentage);
+//		click(lblCCQualifyPrecentage);
 		wait(5);
 		enterData("35",EditclassInputCCQualifyPrecentage);
 		wait(5);
@@ -515,7 +517,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	public void EditCClblQualifySinglePrecentage() 
 	{
 		
-		click(EditclasslblCCQualifyPrecentage);
+	//	click(EditclasslblCCQualifyPrecentage);
 		wait(5);
 		click(lblCCQualifyPrecentage);
 		wait(5);
@@ -525,6 +527,8 @@ public class ClassroomCCPage extends FractalBasePage {
 		wait(5);
 		click(EditClassroomicon);
 		wait(5);
+		click(EditclasslblCCQualifyPrecentage);
+		wait(2);
 		enterData("5",EditclassInputCCQualifyPrecentage);
 		wait(5);
 		click(EditclasslblCCQualifyPrecentage);
