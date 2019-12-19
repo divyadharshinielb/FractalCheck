@@ -13,7 +13,7 @@ public class LoginPage extends FractalBasePage {
 	private By btnLogin1 = By.xpath(".//button[@id='login_btn']");
 	private By logoSymbol = By.id("logo");
 	private By rememberMe=By.xpath(".//label[@class='font-size-14']");
-	private By lblProfile = By.xpath(".//div[@class='jss36']//div//span[@class='jss4']");
+	private By lblProfile = By.xpath(".//img[@class='logout-height']");
 	private By logOutButton = By.xpath(".//*[@id=\"menu-list-grow\"]/ul/li/img");
 	private By registerButton = By.xpath(".//a[@class='reg_btn font-size-18 reg']");
 	private By forgotpassword = By.xpath(".//a[@class='font-size-14 fgt-btn']");

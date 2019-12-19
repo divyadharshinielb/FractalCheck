@@ -18,6 +18,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 
 	@Test(dataProviderClass=DataManager.class,dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
 
+	
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);

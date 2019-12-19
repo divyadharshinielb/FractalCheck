@@ -49,7 +49,7 @@ public class MyLearningPageNewUI extends FractalBasePage {
          wait(5);
          click(lblContinue);
          wait(15);
-		verifyText("Automation Checking1", lblCatnameInside);
+		verifyText("Technical Introduction to MuleSoft", lblCatnameInside);
 	}
 	public void verifyMyLearningLabels() {
 		wait(5);
