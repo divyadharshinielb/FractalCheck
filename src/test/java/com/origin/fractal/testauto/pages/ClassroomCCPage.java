@@ -493,7 +493,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	// Qualifying score allows single digit
 	public void ClickCClblQualifySinglePrecentage() 
 	{
-		click(AddClassbtn);
+	//	click(AddClassbtn);
 		wait(5);
 		click(lblCCQualifyPrecentage);
 		wait(5);
