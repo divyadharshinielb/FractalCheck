@@ -43,7 +43,7 @@ public class WebTestClassroomCreation1 extends FractalBaseWebTest {
    Reporter.writeSummary("TCID_CLASS_021,Verify whether the  Admin should be the same type fields of TC20 should be done for Pre-Event Assignment & Post-Event Assignment," +  cSteps.getResult() );
    cSteps.verifySessionTab();
     Reporter.writeSummary("TCID_CLASS_015,Verify whether the  Admin should be able to view the Sessions tab on filling all the details," +  cSteps.getResult() );
-  cSteps.editClassroomPage();
+   cSteps.editClassroomPage();
     Reporter.writeSummary("TCID_CLASS_025, Verify whether admin should be able to edit the classroom listing page," +  cSteps.getResult() );
     cSteps.deleteClassroomPage();
     Reporter.writeSummary("TCID_CLASS_026, Verify whether admin should be able to Delete the classroom listing page," +  cSteps.getResult() );

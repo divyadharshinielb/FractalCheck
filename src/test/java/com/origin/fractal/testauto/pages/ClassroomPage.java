@@ -75,7 +75,7 @@ public class ClassroomPage extends FractalBasePage {
     private By clickClassroomCreationPage=By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]");
     private By editTextBtn=By.xpath("//div[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-all-0 ng-scope']//div[1]//div[1]//div[1]//div[5]//i[2]");//button[@type='button'][contains(text(),'Edit')]
     private By viewDetails=By.xpath("//div[contains(text(),'View Details')]");
-    private By completionCriteriaText=By.xpath("//h3[contains(text(),'Completion Criteria')]");
+    private By categoryText=By.xpath("//span[contains(text(),'Category :')]");
     private By backToClassroomLink=By.xpath(".//div[contains(text(),'Back to Classroom')]");
     private By backToClassroomText=By.xpath(".//div[contains(text(),'Back to Classroom List')]");
     private By eventList=By.xpath("//div[@ng-click='viewEventDetails(event_list)']");
@@ -446,7 +446,7 @@ public class ClassroomPage extends FractalBasePage {
 	wait(5);
 */	click(viewDetails);
 	wait(5);
-	verifyText("Completion criteria",completionCriteriaText);
+	verifyText("Category :",categoryText);
 	wait(5);
 	click(backToClassroomLink);
 	wait(5);
