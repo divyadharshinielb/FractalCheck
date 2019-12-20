@@ -21,7 +21,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -111,7 +111,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {
@@ -120,8 +120,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 		login(driver);
 
 		HomeSteps homeSteps = new HomeSteps(driver);
-        homeSteps.firstTwoCatalogItemsTitleCompare();//newui
-		Reporter.writeSummary("TCID_HOME_055, Checking whether two catalog items displayed in whats new section matches with the first 2 items in the Most popular content section, " +   homeSteps.getResult() );
+		/**this functionality currently not there**/
+  //    homeSteps.firstTwoCatalogItemsTitleCompare();//newui
+  //	Reporter.writeSummary("TCID_HOME_055, Checking whether two catalog items displayed in whats new section matches with the first 2 items in the popular content section, " +   homeSteps.getResult() );
+		/****till here**/
 		//Verify the function of  Recently Added section attributes 
 		homeSteps.whatsNewSectionAttributes();//newui
 		Reporter.writeSummary("TCID_HOME_082,  Verify the function of  What's New section attributes , " +   homeSteps.getResult() );
