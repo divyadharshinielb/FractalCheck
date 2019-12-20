@@ -301,7 +301,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 
 	public boolean verifyCCTexts() {
-	//	click(AddClassbtn); /**added by mahesh 20-12-19
+		click(AddClassbtn); /**added by mahesh 20-12-19**/
 		wait(5);
 		boolean  boleanresult1=false, boleanresult2=false, boleanresult3 =false, boleanresult4 =false, boleanresult5 =false;
 /*		if (verifyText("Participation in all sessions",lblCCAllsessiontxt) == false)
@@ -481,6 +481,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	
 	public boolean verifyEditCCManualCompletionLabels() {
 		booleanresult = false;
+		wait(2);
 		if (verifyText("Manual completion marking",EditclasslblCCManualCompletion) == true)
 		{
 			booleanresult = true;
