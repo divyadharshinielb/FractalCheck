@@ -73,12 +73,15 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(invitesReminderViewallBtn);
 		wait(2);
+		if(elementExist(btnAccept)) {
 		verifyText("ACCEPT",btnAccept );
 		verifyText("REJECT",btnCancel );
 		wait(2);
 		verifyText("Request To Reschedule",btnReschedule );
+		}
 	}
 	public void verifyPopupButtons() {
+		if(elementExist(btnReschedule)) {
 		click(btnReschedule);
 		wait(2);
 		verifyText("Request to Reschedule",lblReschedulePopupText);
@@ -90,6 +93,7 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("Are you sure you want to Reject the Event Invite",lblRejectPopupText);
 		wait(2);
 		click(lblcloseBtn);
+		}
 	}
 	public void verifyNextEventSectionViewAll() {
 		WebElement element = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]"));

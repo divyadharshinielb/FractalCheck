@@ -24,7 +24,7 @@ public class MyLearningPage extends FractalBasePage {
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath(".//div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')]");//Updated on Nov-22-18 .//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1] .//div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
+	private By clickCatalog = By.xpath("./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");//Updated on Nov-22-18 //div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')] //div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
 
 	private By lblCatlogCategory = By.xpath(".//div[contains(text(),'Category')]");
 	private By lblLanguage = By.xpath(".//div[contains(text(),'Language')]");
@@ -262,7 +262,7 @@ public class MyLearningPage extends FractalBasePage {
     private By lblReference=By.xpath(" //span[contains(text(),'Reference')]");
     private By lblPosteventActivities=By.xpath("//span[contains(text(),'Post-event Activities')]");
     private By lblTermsCondition=By.xpath("//p[contains(text(),'Terms & Conditions')]");
-    private By breadcrumLink=By.xpath("//a[text()='learning path check']");
+    private By breadcrumLink=By.xpath("//a[text()='Automation Learningpath']");
     private By registrationCancelText=By.xpath("//p[contains(text(),'Are you sure you want to cancel your registration?')]");
     private By btnNO=By.xpath("//button[contains(text(),'NO')]");
 	 public void  verifyClassroomDetails() {
@@ -311,23 +311,25 @@ public class MyLearningPage extends FractalBasePage {
 		    WebElement element = driver.findElement( By.xpath(".//a[text()='Automation Learningpath']")); Actions 
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
+			wait(2);
 		    click(By.xpath(".//a[text()='Automation Learningpath']"));
 		    wait(2);
 			click(lblAssignedClassroom2);
 			if(elementExist(lblReference)) {	  
 			//edit by divya based on newcode  verifyText("Pre-event Activities",lblPreeventActivities);
 			  verifyText("Reference",lblReference);
-			  verifyText("Post-event Activities",lblPosteventActivities);
 			  verifyText("Terms & Conditions",lblTermsCondition);
-			  
+			//edit by divya based on newcode  verifyText("Post-event Activities",lblPosteventActivities);
+			  if(elementExist(btnCancelRegistration)) {
 			  click(btnCancelRegistration);
 			  verifyText("Are you sure you want to cancel your registration?",registrationCancelText);
 			  click(btnNO);
+			  }
 			  wait(2);
 			  click(breadcrumLink);
 			  scrollBar();
 			  wait(5);
-			  click(lbldetails);
+			  click(By.xpath("//div[@class='margin-t-0']//div[3]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[1]"));
 			  wait(5);
 			}
 		}
