@@ -18,6 +18,7 @@ public class SettingsPage extends FractalBasePage {
 	public void clickOnSwitch() {
 		WebElement lbl = driver.findElement(label);
 		lbl.click();
+		clickOnSave();
 	}
 
 	public void printStatus() {
@@ -34,7 +35,7 @@ public class SettingsPage extends FractalBasePage {
 	public void clickOnSave() {
 		WebElement btn = driver.findElement(save);
 		btn.click();
-
+		System.out.println("Saved successfully");
 	}
 
 
