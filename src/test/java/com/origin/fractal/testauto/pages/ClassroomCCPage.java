@@ -301,7 +301,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 
 	public boolean verifyCCTexts() {
-	//	click(AddClassbtn);
+	//	click(AddClassbtn); /**added by mahesh 20-12-19
 		wait(5);
 		boolean  boleanresult1=false, boleanresult2=false, boleanresult3 =false, boleanresult4 =false, boleanresult5 =false;
 /*		if (verifyText("Participation in all sessions",lblCCAllsessiontxt) == false)
