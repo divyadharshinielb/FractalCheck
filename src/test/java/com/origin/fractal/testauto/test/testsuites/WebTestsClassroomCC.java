@@ -99,14 +99,14 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-011,Select/Unselect Manual Submission & Participation all sessions in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
 
 		//Overall Completion Criteria text
-		ClassroomSteps.verifyCCTexts(); 
+	/*	ClassroomSteps.verifyCCTexts(); 
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCTexts(); 
 		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012,Verify ALL the Completion Criteria texts (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
 
 
 		// For all the five individual CC texts
-	/*currently this functionality is not there start here*/	
+	currently this functionality is not there start here*/	
 	//	ClassroomSteps.verifyCCsessionLabels();
 	//	ClassroomSteps.GotoEditClassroom();
 	//	ClassroomSteps.verifyEditCCsessionLabels();
