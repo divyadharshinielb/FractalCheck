@@ -105,12 +105,12 @@ public class VenuePage extends FractalBasePage{
 	}
 	public void saveButton() {
 		click(saveBtn);
-		elementExist(saveBtn);
+	/*	elementExist(saveBtn);
 		wait(5);
 		click(cancel);
-		search();
+	*/	search();
 		wait(10);
-		click(By.xpath("//body[@id='target']//div[@class='ng-scope']//div[@class='ng-scope']//div[@class='ng-scope']//div[@class='ng-scope']//div[1]//div[1]//div[5]//div[2]//i[1]"));
+		click(By.xpath("//i[@title='Delete Venue']"));//body[@id='target']//div[@class='ng-scope']//div[@class='ng-scope']//div[@class='ng-scope']//div[@class='ng-scope']//div[1]//div[1]//div[5]//div[2]//i[1]
 		wait(5);
 		click(By.xpath("//span[contains(text(),'OK')]"));
 	}
