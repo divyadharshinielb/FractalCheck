@@ -13,7 +13,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		fBPage = page;
 	}
 	public void verifyDashboardSubHeaders() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyDashboardSubHeaders();
 		   }
@@ -24,7 +24,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyEventSectionLabels(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.verifyEventSectionLabels();
 		   }
@@ -35,7 +35,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyButtons() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyButtons();
 		   }
@@ -46,7 +46,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyPopupButtons() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyPopupButtons();
 		   }
@@ -57,7 +57,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyNextEventSectionViewAll() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyNextEventSectionViewAll();
 		   }
@@ -68,7 +68,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyInvitesReminderViewAll() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyInvitesReminderViewAll();
 		   }
@@ -80,7 +80,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 	}
 	
 	public void verifyEventsPageLabels() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.verifyEventsPageLabels();
 		   }
@@ -91,7 +91,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyEventsInvitesClick(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.verifyEventsInvitesClick();
 		   }
@@ -102,7 +102,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyLabelsInsideEventDetailsPage(){
-	result ="Passed";
+	result ="PASSED";
 	   try {
 			page.verifyLabelsInsideEventDetailsPage();
 	   }
@@ -113,7 +113,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 	   }
     }
 	public void verifyInprogressEvent(){
-	result ="Passed";
+	result ="PASSED";
 	   try {
 			page.verifyInprogressEvent();
 	   }
@@ -124,7 +124,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 	   }
     }
 	public void  verifyUpcomingEvent() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.verifyUpcomingEvent();
 		   }
@@ -135,7 +135,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCompletedEvent(){
-	result ="Passed";
+	result ="PASSED";
 	   try {
 			page.verifyCompletedEvent();
 	   }
@@ -146,7 +146,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 	   }
     }
 	public void verifySkillsetList() {
-	  result ="Passed";
+	  result ="PASSED";
 		   try {
 				page.verifySkillsetList();
 		   }
@@ -157,7 +157,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyActivitiesAndRosterTab() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.verifyActivitiesAndRosterTab();
 		   }
@@ -168,7 +168,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyEvalutionDueDateReachingEvent() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.verifyEvalutionDueDateReachingEvent();
 		   }
@@ -179,7 +179,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyReviewButton(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.verifyReviewButton();
 		   }
@@ -190,7 +190,7 @@ public class InstructorModuleSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyReviewInsideLabels() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.verifyReviewInsideLabels();
 		   }

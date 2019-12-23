@@ -32,7 +32,7 @@ public class WebTestGlobalSearch extends FractalBaseWebTest {
 		GlobalSteps globalSteps = new GlobalSteps(driver);
 		//TCID_:Verify Global Search for classroom and classrooms
 		globalSteps.GlobalSearchforClassroomandClassroomsKeyword();
-		Reporter.writeSummary("TCID_Global_01,  Verify Global Search for classroom and classrooms," +  globalSteps.getResult() );
+		Reporter.writeSummary("TCID_Global_01, Verify Global Search for classroom and classrooms," +  globalSteps.getResult() );
 		//TCID_:Verify Global Search for Image and Images
 		globalSteps.GlobalSearchforimageandimages();
 		Reporter.writeSummary("TCI_Global_02, Verify Global Search for image and images,"+ globalSteps.getResult());

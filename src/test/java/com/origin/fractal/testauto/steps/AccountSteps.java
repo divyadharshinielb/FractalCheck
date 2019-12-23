@@ -16,7 +16,7 @@ public class AccountSteps extends FractalBaseStep {
 	}
 
 	public void verifyAccountPageLabels() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyAccountPageLabels();
 		   }
@@ -28,7 +28,7 @@ public class AccountSteps extends FractalBaseStep {
 
 	}
 	public void verifyProfileDetails() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyProfileDetails();
 		   }
@@ -40,7 +40,7 @@ public class AccountSteps extends FractalBaseStep {
 
 	}
 	public void verifyEmptyProfileValidation() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyEmptyProfileValidation();
 		   }
@@ -53,7 +53,7 @@ public class AccountSteps extends FractalBaseStep {
 	}
 
 	public void verifyAfterCancelValidation() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyAfterCancelValidation();
 		   }
@@ -65,7 +65,7 @@ public class AccountSteps extends FractalBaseStep {
 
 	}
 	public void verifyFieldValidation() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyFieldValidation();
 		   }
@@ -77,7 +77,7 @@ public class AccountSteps extends FractalBaseStep {
 	
 	}
 	public void changePassword() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.changePassword();	
 		   }
@@ -89,7 +89,7 @@ public class AccountSteps extends FractalBaseStep {
 	
 	}
 	public void afterChangePassword() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.afterChangePassword();
 		   }
