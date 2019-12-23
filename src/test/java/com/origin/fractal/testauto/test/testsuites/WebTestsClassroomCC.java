@@ -106,11 +106,12 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 
 
 		// For all the five individual CC texts
-//		ClassroomSteps.verifyCCsessionLabels();
-		ClassroomSteps.GotoEditClassroom();
-		ClassroomSteps.verifyEditCCsessionLabels();
-		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012a,Verify the text in CC -All Sessions (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
+	/*currently this functionality is not there start here*/	
+	//	ClassroomSteps.verifyCCsessionLabels();
+	//	ClassroomSteps.GotoEditClassroom();
+	//	ClassroomSteps.verifyEditCCsessionLabels();
+	//	Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012a,Verify the text in CC -All Sessions (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
+   /*end here*/ 
 		ClassroomSteps.verifyCCAssDuedateLabels();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCAssDuedateLabels();

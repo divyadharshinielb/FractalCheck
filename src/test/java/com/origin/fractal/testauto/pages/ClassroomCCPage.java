@@ -303,7 +303,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	public boolean verifyCCTexts() {
 		click(AddClassbtn); /**added by mahesh 20-12-19**/
 		wait(5);
-		boolean  boleanresult1=false, boleanresult2=false, boleanresult3 =false, boleanresult4 =false, boleanresult5 =false;
+		boolean  boleanresult2=false, boleanresult3 =false, boleanresult4 =false, boleanresult5 =false;
 /*		if (verifyText("Participation in all sessions",lblCCAllsessiontxt) == false)
 		{
 			boleanresult1 = true;
@@ -324,7 +324,7 @@ public class ClassroomCCPage extends FractalBasePage {
 			boleanresult5 = true;
 		}
 
-		booleanresult= boleanresult1 && boleanresult2 && boleanresult3 && boleanresult4 && boleanresult5;
+		booleanresult= boleanresult2 && boleanresult3 && boleanresult4 && boleanresult5;
 		System.out.println("Boolean Result : "+booleanresult); // this is boolean result
 		click(Cancelbtn);
 		wait(5);
