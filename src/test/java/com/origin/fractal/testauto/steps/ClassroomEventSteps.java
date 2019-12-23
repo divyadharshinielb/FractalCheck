@@ -13,7 +13,7 @@
 		fBPage = page;
 		}
 		public void clickOnClassroomItem() {
-			result ="Passed";
+			result ="PASSED";
 			   try {
 				page.clickOnClassroomItem();
 			   }
@@ -25,7 +25,7 @@
 		}
 		public void closeLobjModel() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.closeLobjModel();
 				   }
@@ -38,7 +38,7 @@
 		}
 		public void verifyAddEventPageOpened() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAddEventPageOpened();
 				   }
@@ -51,7 +51,7 @@
 		}
 		public void verifyAlertForAllFieldsInPage1() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAlertForAllFieldsInPage1();
 				   }
@@ -64,7 +64,7 @@
 		}
 		public void verifySelectClassroomTypeAlertMsg() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySelectClassroomTypeAlertMsg();
 				   }
@@ -77,7 +77,7 @@
 		}
 		public void verifySelectVenueDropdownAlertMsg() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySelectVenueDropdownAlertMsg();
 				   }
@@ -90,7 +90,7 @@
 		}
 		public void verifySelectLinkDropdownAlertMsg() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySelectLinkDropdownAlertMsg();
 				   }
@@ -103,7 +103,7 @@
 		}
 		public void verifyAverageScoreAlertMsg() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAverageScoreAlertMsg();
 				   }
@@ -116,7 +116,7 @@
 		}
 		public void verifySessionStartTimeAlertMsg() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySessionStartTimeAlertMsg();
 				   }
@@ -129,7 +129,7 @@
 		}
 		public void verifySessionEndTimeAlertMsg() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySessionEndTimeAlertMsg();
 				   }
@@ -142,7 +142,7 @@
 		}
 		public void verifySelectInstrtuctorAlertMsg() {
 				{
-					result ="Passed";
+					result ="PASSED";
 					   try {
 						page.verifySelectInstrtuctorAlertMsg();
 					   }
@@ -155,7 +155,7 @@
 		}
 		public void verifySelectInstrtuctorAlertMsgDisappears() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySelectInstrtuctorAlertMsgDisappears();
 				   }
@@ -168,7 +168,7 @@
 		}
 		public void verifyPhysicalClassroomDropdown() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPhysicalClassroomDropdown();
 				   }
@@ -181,7 +181,7 @@
 		}
 		public void verifyVirtualClassroomDropdown() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyVirtualClassroomDropdown();
 				   }
@@ -194,7 +194,7 @@
 		}
 		public void verifyVenueDropdownAlertDisappears() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyVenueDropdownAlertDisappears();
 				   }
@@ -207,7 +207,7 @@
 		}
 		public void verifyLinkDropdownAlertDisappears() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyLinkDropdownAlertDisappears();
 				   }
@@ -220,7 +220,7 @@
 		}
 		public void verifyShowmapCheckbox() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyShowmapCheckbox();
 				   }
@@ -233,7 +233,7 @@
 		}
 		public void verifyShowmapCheckboxChecked() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyShowmapCheckboxChecked();
 				   }
@@ -246,7 +246,7 @@
 		}
 		public void verifyShowmapCheckboxUnchecked() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyShowmapCheckboxUnchecked();
 				   }
@@ -259,7 +259,7 @@
 		}
 		public void verifyTimezoneAlertDisappeared() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyTimezoneAlertDisappeared();
 				   }
@@ -272,7 +272,7 @@
 		}
 		public void verifyAvgScoreAlertDisappears() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAvgScoreAlertDisappears();
 				   }
@@ -285,7 +285,7 @@
 		}
 		public void verifyAvgScoreAcceptsAlphabets() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAvgScoreAcceptsAlphabets();
 				   }
@@ -298,7 +298,7 @@
 		}
 		public void verifyAvgScoreAcceptsSpecialChars() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAvgScoreAcceptsSpecialChars();
 				   }
@@ -311,7 +311,7 @@
 		}
 		public void verifyAvgScoreAcceptsAlphanumeric() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAvgScoreAcceptsAlphanumeric();
 				   }
@@ -324,7 +324,7 @@
 		}
 		public void verifyAvgScoreAcceptsMoretha2DIgits() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAvgScoreAcceptsMoretha2DIgits();
 				   }
@@ -337,7 +337,7 @@
 		}
 		public void verifyAssignDetailsDisplayed() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAssignDetailsDisplayed();
 				   }
@@ -350,7 +350,7 @@
 		}
 		public void verifyPreAssessmentCount() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPreAssessmentCount();
 				   }
@@ -363,7 +363,7 @@
 		}
 		public void verifyAddAssignmentBtn() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAddAssignmentBtn();
 				   }
@@ -376,7 +376,7 @@
 		}
 		public void verifyNewPreAssignmentForm() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyNewPreAssignmentForm();
 				   }
@@ -389,7 +389,7 @@
 		}
 		public void verifySurveyDetailsDisplayed() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySurveyDetailsDisplayed();
 				   }
@@ -402,7 +402,7 @@
 		}
 		public void verifyPreSurveyAddBtn() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPreSurveyAddBtn();
 				   }
@@ -415,7 +415,7 @@
 		}
 		public void verifyPreSurveyFormDetails() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPreSurveyFormDetails();
 				   }
@@ -428,7 +428,7 @@
 		}
 		public void verifySessionDetailsDisplayed() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySessionDetailsDisplayed();
 				   }
@@ -441,7 +441,7 @@
 		}
 		public void verifyInstructorDropdownAlertMsg() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyInstructorDropdownAlertMsg();
 				   }
@@ -454,7 +454,7 @@
 		}
 		public void verifyInstructorDropdownAlertDisappears() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyInstructorDropdownAlertDisappears();
 				   }
@@ -467,7 +467,7 @@
 		}
 		public void verifyPostAssignmentDetails() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPostAssignmentDetails();
 				   }
@@ -480,7 +480,7 @@
 		}
 		public void verifyPostAssignmentCount() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPostAssignmentCount();
 				   }
@@ -493,7 +493,7 @@
 		}
 		public void verifyPostAddAssignmentBtn() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPostAddAssignmentBtn();
 				   }
@@ -506,7 +506,7 @@
 		}
 		public void verifyPostAddAssignmentDetails() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPostAddAssignmentDetails();
 				   }
@@ -519,7 +519,7 @@
 		}
 		public void verifyPostSurveyDetails() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPostSurveyDetails();
 				   }
@@ -532,7 +532,7 @@
 		}
 		public void verifyPostAddSurveyButton() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPostAddSurveyButton();
 				   }
@@ -545,7 +545,7 @@
 		}
 		public void verifyPostAddSurveyFormFields() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPostAddSurveyFormFields();
 				   }
@@ -558,7 +558,7 @@
 		}
 		public void verifyNotifAndReminder() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyNotifAndReminder();
 				   }
@@ -571,7 +571,7 @@
 		}
 		public void verifyNotifAndReminderFieldsAcceptsAlphabets() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyNotifAndReminderFieldsAcceptsAlphabets();
 				   }
@@ -584,7 +584,7 @@
 		}
 		public void verifyNotifAndReminderFieldsAcceptsAlphaNumerics() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyNotifAndReminderFieldsAcceptsAlphaNumerics();
 				   }
@@ -597,7 +597,7 @@
 		}
 		public void verifyNotifAndReminderFieldsAcceptsSpecialChars() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyNotifAndReminderFieldsAcceptsSpecialChars();
 				   }
@@ -610,7 +610,7 @@
 		}
 		public void verifyNotifAndReminderFieldsAcceptsNumbers() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyNotifAndReminderFieldsAcceptsNumbers();
 				   }
@@ -623,7 +623,7 @@
 		}
 		public void verifyReferenceUploadBtn() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyReferenceUploadBtn();
 				   }
@@ -636,7 +636,7 @@
 		}
 		public void verifyTermsConditions() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyTermsConditions();
 				   }
@@ -649,7 +649,7 @@
 		}
 		public void verifySecondPageOpened() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySecondPageOpened();
 				   }
@@ -662,7 +662,7 @@
 		}
 		public void verifySecondPageAlertMsgs() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifySecondPageAlertMsgs();
 				   }
@@ -675,7 +675,7 @@
 		}
 		public void verifyMaxNumParticipAcceptNum() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMaxNumParticipAcceptNum();
 				   }
@@ -688,7 +688,7 @@
 		}
 		public void verifyMaxNumParticipAcceptAlphaNumeric() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMaxNumParticipAcceptAlphaNumeric();
 				   }
@@ -701,7 +701,7 @@
 		}
 		public void verifyMaxNumParticipAcceptSpecialChars() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMaxNumParticipAcceptSpecialChars();
 				   }
@@ -714,7 +714,7 @@
 		}
 		public void verifyMaxNumParticipAcceptAlphabets() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMaxNumParticipAcceptAlphabets();
 				   }
@@ -727,7 +727,7 @@
 		}
 		public void verifyMaxParticipAlertDisappears() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMaxParticipAlertDisappears();
 				   }
@@ -740,7 +740,7 @@
 		}
 		public void verifyMinNumParticipAcceptNum() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMinNumParticipAcceptNum();
 				   }
@@ -753,7 +753,7 @@
 		}
 		public void verifyMinNumParticipAcceptAlphaNumeric() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMinNumParticipAcceptAlphaNumeric();
 				   }
@@ -766,7 +766,7 @@
 		}
 		public void verifyMinNumParticipAcceptSpecialChars() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMinNumParticipAcceptSpecialChars();
 				   }
@@ -779,7 +779,7 @@
 		}
 		public void verifyMinNumParticipAcceptAlphabets() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMinNumParticipAcceptAlphabets();
 				   }
@@ -792,7 +792,7 @@
 		}
 		public void verifyMinNumParticipAlertDisappears() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyMinNumParticipAlertDisappears();
 				   }
@@ -805,7 +805,7 @@
 		}
 		public void  verifyCancellationPolicy() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyCancellationPolicy();
 				   }
@@ -818,7 +818,7 @@
 		}
 		public void  verifyTickAndPlusMark() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyTickAndPlusMark();
 				   }
@@ -831,7 +831,7 @@
 		}
 		public void verifyAlertAfterAddingMaximumNumberOfParticipants() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAlertAfterAddingMaximumNumberOfParticipants();
 				   }
@@ -844,7 +844,7 @@
 		}
 		public void verifyAlertAfterAddingMinimumNumberOfParticipants() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAlertAfterAddingMinimumNumberOfParticipants();
 				   }
@@ -857,7 +857,7 @@
 		}
 		public void verifyAddTheUsersInParticipantsList(){
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAddTheUsersInParticipantsList();
 				   }
@@ -870,7 +870,7 @@
 		}
 		public void verifyParticipantsDeletedFromParticipantsList() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyParticipantsDeletedFromParticipantsList();
 				   }
@@ -883,7 +883,7 @@
 		}
 		public void verifyConfirmButtonDisplayed() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyConfirmButtonDisplayed();
 				   }
@@ -896,7 +896,7 @@
 		}
 		public void verifyAutoUpdateWaitingList(){
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAutoUpdateWaitingList();
 				   }
@@ -909,7 +909,7 @@
 		}	
 		public void verifyParticipantsSearch() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyParticipantsSearch();
 				   }
@@ -922,7 +922,7 @@
 		}
 		public void verifyAllFilterSearch() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAllFilterSearch();
 				   }
@@ -935,7 +935,7 @@
 		}
 		public void verifyPublishEventBtn() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyPublishEventBtn();
 				   }
@@ -948,7 +948,7 @@
 		}
 		public void verifyAlertDisappearStartDateRegistartion() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAlertDisappearStartDateRegistartion();
 				   }
@@ -961,7 +961,7 @@
 		   }
 		public void verifyAlertDisappearLastDateRegistartion() {
 			{
-				result ="Passed";
+				result ="PASSED";
 				   try {
 					page.verifyAlertDisappearLastDateRegistartion();
 				   }

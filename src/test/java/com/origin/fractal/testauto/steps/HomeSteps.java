@@ -16,7 +16,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 
 	public void verifySubHeaders() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifySubHeaders();
 		   }
@@ -28,7 +28,7 @@ public class HomeSteps extends FractalBaseStep {
 
 	}
 	public void verifyCategories() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyCategories();
 		   }
@@ -41,7 +41,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 	
 	public void verifyBellNotification() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyBellNotification();
 		   }
@@ -55,7 +55,7 @@ public class HomeSteps extends FractalBaseStep {
 	
 
 	public void verifyComplStatus() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 			   page.verifyComplStatus();
 		   }
@@ -66,7 +66,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCoverageText() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyCoverageText();
 		   }
@@ -77,7 +77,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyContinueText() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyContinueText();
 		   }
@@ -88,7 +88,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void clickContinueBtnRetToHome() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.clickContinueBtn();
 				wait(5);
@@ -101,7 +101,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 		}
    public void verifyNavTORcntAddedCoursesRtnToHome() {
-	   result ="Passed";
+	   result ="PASSED";
 	   try {
 			page.rcntAddedCourses(); 
 			   page.clickOnHome();
@@ -113,7 +113,7 @@ public class HomeSteps extends FractalBaseStep {
 	   }
    }
     public void verifyRcntAdded_CoursesText() {
-    	 result ="Passed";
+    	 result ="PASSED";
 		   try {
 			 	page.verifyRcntAdded_CoursesText();
 		   }
@@ -124,7 +124,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
     }
     public void verifyTopArrBtn() {
-    	 result ="Passed";
+    	 result ="PASSED";
 		   try {
 			 	page.verifyTopArrBtn();
 		   }
@@ -136,7 +136,7 @@ public class HomeSteps extends FractalBaseStep {
     }
 
     public void verifyAllFilterWhatsNew(){
-    	 result ="Passed";
+    	 result ="PASSED";
 		   try {
 			page.verifyAllFilterWhatsNew();
 		   }
@@ -147,7 +147,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyBundleFilterWhatsNew(){
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 			 page.verifyBundleFilterWhatsNew();
 		   }
@@ -158,7 +158,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCourseFilterWhatsNew(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			  page.verifyCourseFilterWhatsNew();
 		   }
@@ -169,7 +169,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyResourceFilterWhatsNew(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyResourceFilterWhatsNew();
 		   }
@@ -180,7 +180,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }	
 	}
 	public void verifyLearnPathFilterWhatsNew (){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyLearnPathFilterWhatsNew();
 		   }
@@ -191,7 +191,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }		
 	}
 	public void verifyPodcastFilterWhatsNew(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyPodcastFilterWhatsNew();
 		   }
@@ -202,7 +202,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }	
 	}
      public void verifyAllFilterRecommAdded(){
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 			   page.verifyAllFilterRecommAdded();
 		   }
@@ -213,7 +213,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }		
 	}
 	public void verifyBundleFilterRecommAdded(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			  page.verifyBundleFilterRecommAdded();
 		   }
@@ -224,7 +224,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }	
 	}
 	public void verifyCourseFilterRecommAdded(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			  page.verifyCourseFilterRecommAdded();
 		   }
@@ -235,7 +235,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }			
 	}
 	public void verifyResourceFilterRecommAdded(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyResourceFilterRecommAdded();
 		   }
@@ -246,7 +246,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyLearnPathFilterRecommAdded(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyLearnPathFilterRecommAdded();
 		   }
@@ -258,7 +258,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 
 	public void verifyAllFilterMostAdded(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			  page.verifyAllFilterMostAdded();
 		   }
@@ -269,7 +269,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 		}
 	public void verifyBundleFilterMostAdded(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			  page.verifyBundleFilterMostAdded();
 		   }
@@ -280,7 +280,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCourseFilterMostAdded(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.verifyCourseFilterMostAdded();
 		   }
@@ -291,7 +291,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyResourceFilterMostAdded(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyResourceFilterMostAdded();
 		   }
@@ -302,7 +302,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyLearnPathFilterMostAdded(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			  page.verifyLearnPathFilterMostAdded();
 		   }
@@ -314,7 +314,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 
 	public void verifyHomePageData() {
-		   result ="Passed";
+		   result ="PASSED";
 		   try {
 				page.verifyHomePageData();
 		   }
@@ -327,7 +327,7 @@ public class HomeSteps extends FractalBaseStep {
 
 	}
 	public void verifyLearningInprogress() {
-		   result ="Passed";
+		   result ="PASSED";
 		   try {
 				
 				page.verifyLearningInprogress();
@@ -340,7 +340,7 @@ public class HomeSteps extends FractalBaseStep {
 
 	}
 	public void verifyMyLearningLabeltext() {
-		   result ="Passed";
+		   result ="PASSED";
 		   try {
 				page.verifyMyLearningLabeltext();
 		   }
@@ -354,7 +354,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 
 	public void verifyViewAllPage() {
-		   result ="Passed";
+		   result ="PASSED";
 		   try {
 				page.verifyViewAllPage();
 		   }
@@ -367,7 +367,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 
 	public void verifyFooterLinks() {
-		   result ="Passed";
+		   result ="PASSED";
 		   try {
 				page.verifyFooterLinks();
 		   }
@@ -380,7 +380,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 	
 	   public void whatsNewSectionAttributes() {
-		   result ="Passed";
+		   result ="PASSED";
 		   try {
 		    	page.whatsNewSectionAttributes();
 		   }
@@ -392,7 +392,7 @@ public class HomeSteps extends FractalBaseStep {
 	
 	    }
 	   public void verifyResumeLearningText() {
-		   result ="Passed";
+		   result ="PASSED";
 		   try {
 			page.verifyResumeLearningText();
 		   }
@@ -405,7 +405,7 @@ public class HomeSteps extends FractalBaseStep {
 		
 	 /******29/11/2018**************/
     public void verifyMyLearningPage() {
-    	result ="Passed";
+    	result ="PASSED";
 		   try {
 	        	page.verifyMyLearningPage();
 		   }
@@ -416,7 +416,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
     }
     public void verifyLogoImg() {
-    	result ="Passed";
+    	result ="PASSED";
 		   try {
 			   page.verifyLogoImg();
 		   }
@@ -428,7 +428,7 @@ public class HomeSteps extends FractalBaseStep {
     }
    /****************************/
     public void verifyNextBtn() {
-    	result ="Passed";
+    	result ="PASSED";
 		   try {
 			   page.verifyNextBtn();
 		   }
@@ -440,7 +440,7 @@ public class HomeSteps extends FractalBaseStep {
     }
     	
     public void verifyPreviousBtn() {
-    	result ="Passed";
+    	result ="PASSED";
 		   try {
 				page.verifyPreviousBtn();
 		   }
@@ -451,7 +451,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
     }
     public void verifyWishListBtn() {
-    	 result ="Passed";
+    	 result ="PASSED";
 		   try {
 			page.verifyWishListBtn();;
 		   }
@@ -462,7 +462,7 @@ public class HomeSteps extends FractalBaseStep {
 		   }
     }
     public void verifyCartItemBtn() {
-    	 result ="Passed";
+    	 result ="PASSED";
 		   try {
 		     page.verifyCartItemBtn();
 		   }
@@ -475,7 +475,7 @@ public class HomeSteps extends FractalBaseStep {
 
 
 	public void ViewAllRcntAddedBtn() {
-	   	 result ="Passed";
+	   	 result ="PASSED";
 			   try {
 					page.ViewAllRcntAddedBtn();
 			   }
@@ -488,7 +488,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 
 	public void firstTwoCatalogItemsTitleCompare() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.firstTwoCatalogItemsTitleCompare();
 		   }
@@ -501,7 +501,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 
 	public void mostPopularCount() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.mostPopularCount();
 		   }
@@ -514,7 +514,7 @@ public class HomeSteps extends FractalBaseStep {
 	}
 
 	public void recentlyCount() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.recentlyCount();
 		   }
@@ -526,7 +526,7 @@ public class HomeSteps extends FractalBaseStep {
 		
 	}
    public void verifyCartItemBtn1() {
-	   result ="Passed";
+	   result ="PASSED";
 		   try {
 		        page.verifyCartItemBtn1();
 		   }

@@ -13,7 +13,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 	
 	public void verifyMyLearningPage() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyMyLearningPage();
 		   }
@@ -24,7 +24,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifySubMenu() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifySubMenu();
 		   }
@@ -36,7 +36,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 	
 	public void verifyComplStatus() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyComplStatus();
 		   }
@@ -47,7 +47,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCatalogname() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyCatalogname();
 		   }
@@ -58,7 +58,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCourseInBundle() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyCourseInBundle();
 		   }
@@ -69,7 +69,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCatalogDetails() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyCatalogDetails();
 		   }
@@ -80,7 +80,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyAllFilter(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyAllFilter();
 		   }
@@ -91,7 +91,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyBundleFilter(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyBundleFilter();
 		   }
@@ -102,7 +102,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCourseFilter(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyCourseFilter();
 		   }
@@ -113,7 +113,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyResourceFilter(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyResourceFilter();
 		   }
@@ -124,7 +124,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyTickmark(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyTickmark();
 		   }
@@ -136,7 +136,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 
 	public void verifyListView(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyListView();
 		   }
@@ -147,7 +147,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyGridView(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyGridView();
 		   }
@@ -158,7 +158,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCategory(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyCategory();
 		   }
@@ -170,7 +170,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 	
 	public void verifyCategoryList(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyCategoryList();
 		   }
@@ -182,7 +182,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 
 	public void verifyRatings(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyRatings();
 		   }
@@ -194,7 +194,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 
 	public void verifyBundleContents(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyBundleContents();
 		   }
@@ -206,7 +206,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 	
 	public void verifyCourseContents(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyCourseContents();
 		   }
@@ -219,7 +219,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	
 
 	public void verifyLaunch(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.verifyLaunch();
 		   }
@@ -231,7 +231,7 @@ public class MyLearningSteps extends FractalBaseStep {
 	}
 
 	public void verifyTopArrowBtn() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyTopArrowBtn();
 		   }
@@ -242,7 +242,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
     }
 	public void verifyClassroomDetails() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyClassroomDetails();
 		   }
@@ -253,7 +253,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyCancelRegistrationBtn() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyCancelRegistrationBtn();
 		   }
@@ -264,7 +264,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	 }
 	public void verifyDetailsBtn() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyDetailsBtn();
 		   }
@@ -275,7 +275,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyAssignedClassroom(){
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyAssignedClassroom();
 		   }
@@ -286,7 +286,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyInsideClassroomDetails() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyInsideClassroomDetails();
 		   }
@@ -297,7 +297,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyEventDisplayClassroomObject() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyEventDisplayClassroomObject();
 		   }
@@ -308,7 +308,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyTraditionalClassBtn() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyTraditionalClassBtn();
 		   }
@@ -319,7 +319,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyChooseEventBtn() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   page.verifyChooseEventBtn();
 		   }
@@ -330,7 +330,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyEventRegistrationBtn() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.verifyEventRegistrationBtn();
 		   }
@@ -341,7 +341,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		   }
 	}
 	public void verifyClassrooomLabels() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.verifyClassrooomLabels();
 		   }
