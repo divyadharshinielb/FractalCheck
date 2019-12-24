@@ -24,7 +24,7 @@ public class WebTestsSettings extends FractalBaseWebTest {
 	@Test(dataProvider = "browers", groups = {
 			"Phase1.2" }, enabled = true, description = "TCID_nnn : Verify Settings Page")
 	public void testSettings(String row, String strBrowserName) {
-		String result = "Passed";
+		String result = "PASSED";
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
 

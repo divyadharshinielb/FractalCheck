@@ -47,7 +47,7 @@ public class WebTestGlobalSearch extends FractalBaseWebTest {
 		Reporter.writeSummary("TCI_Global_05,Verify Global Search for document and documents,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for vlab and vlabs
 		globalSteps.GlobalSearchforVlabsandVlabs();
-		Reporter.writeSummary("TCI_Global_06,Verify Global Search for vlab and vlabs"+globalSteps.getResult());
+		Reporter.writeSummary("TCI_Global_06,Verify Global Search for vlab and vlabs,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for assessment and assessments
 		//globalSteps.GlobalSearchforAssessmentandAssessments();
 		Reporter.writeSummary("TCI_Global_07,Verify Global Search for assessment and assessments,"+globalSteps.getResult());
