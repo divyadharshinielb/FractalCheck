@@ -104,8 +104,8 @@ public class VenuePage extends FractalBasePage{
 		click(okBtn);
 	}
 	public void saveButton() {
-		click(saveBtn);
-	/*	elementExist(saveBtn);
+	/*	click(saveBtn);
+		elementExist(saveBtn);
 		wait(5);
 		click(cancel);
 	*/	search();

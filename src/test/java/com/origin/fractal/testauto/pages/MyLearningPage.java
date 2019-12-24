@@ -161,7 +161,7 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyGridView() {
 		click(lblAll);
 		wait(2);
-		gridView();
+	//	gridView();
 		System.out.println("true");
 	}
 	public void verifyListView() {
@@ -263,10 +263,10 @@ public class MyLearningPage extends FractalBasePage {
 				action.sendKeys("learning path check").sendKeys(Keys.ENTER).build().perform();
 				 wait(15);
 			 
-			 WebElement element = driver.findElement( By.xpath(".//a[contains(text(),'learning path check')]")); Actions 
+			*/ WebElement element = driver.findElement( By.xpath(".//a[contains(text(),'Automation Learningpath')]")); Actions //learning path check
 				actions = new Actions(driver); actions.moveToElement(element);
 				actions.perform();
-			*/	wait(5);
+				wait(5);
 		    	click(clickClassroomCatalog);
 			  wait(5);
 		    }
