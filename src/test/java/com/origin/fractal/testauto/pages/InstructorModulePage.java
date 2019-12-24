@@ -13,18 +13,18 @@ public class InstructorModulePage extends FractalBasePage {
 	private By lblUpdatesText= By.xpath("//h2[contains(text(),'Updates')]");
 	private By lblInvitesRemindersText= By.xpath("//h2[contains(text(),'Invites & Reminders')]");
 	private By lblSkillsText= By.xpath("//span[contains(text(),'Skills')]");
-	private By lblUpcomingLabel= By.xpath("//p[contains(text(),'upcoming')]");
-	private By lblInprogressLabel= By.xpath("//p[contains(text(),'In Progress')]");
-	private By lblCompletedLabel= By.xpath("//p[contains(text(),'Completed')]");
+	private By lblUpcomingLabel= By.xpath("//li[@id='react-tabs-2']");//p[contains(text(),'upcoming')]
+	private By lblInprogressLabel= By.xpath("//li[@id='react-tabs-0']");//p[contains(text(),'In Progress')]
+	private By lblCompletedLabel= By.xpath("//li[@id='react-tabs-4']");//p[contains(text(),'Completed')]
 	private By btnAccept= By.xpath("//button[@class='Buttonstyle button btn btn-success margin-r-0 margin-tb-5']");//li[@class='slider-slide slide-visible']//button[@class='btn btn-success margin-r-0 margin-tb-5'][contains(text(),'ACCEPT')]
 	private By btnCancel= By.xpath("//button[@class='Buttonstyle button btn btn-warning margin-r-0 margin-tb-5']");//li[@class='slider-slide slide-visible']//button[@class='btn btn-warning margin-r-0 margin-tb-5 btn-reject-effect'][contains(text(),'REJECT')]
 	private By btnReschedule= By.xpath("//button[@class='view view-btn-color Buttonstyle button btn margin-r-0 margin-tb-5 style:width=250px']");//li[@class='slider-slide slide-visible']//button[contains(text(),'Request to reschedule')]
 	private By lblReschedulePopupText= By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]");//h4[contains(text(),'Request to Reschedule')]
 	private By lblRejectPopupText= By.xpath("//p[contains(text(),'Are you sure you want to Reject the Event Invite')]");
 	private By lblcloseBtn= By.xpath("//button[@class='styles_closeButton__20ID4']");
-	private By lblEventInsideClick= By.xpath("//li[@class='slider-slide slide-visible']//div[@class='row br padding-lr-10 padding-t-10']");
-	private By lblPreEvent= By.xpath("//span[contains(text(),'Pre - Event')]");
-	private By lblSessions= By.xpath("//span[contains(@class,'bstyle')][contains(text(),'Session')]");
+	private By lblEventInsideClick= By.xpath("//div[@class='row insslider top-bar-list margin-lr-0']//li[@class='slider-slide slide-visible']");//li[@class='slider-slide slide-visible']//div[@class='row br padding-lr-10 padding-t-10']
+	private By lblPreEvent= By.xpath("//span[contains(text(),'Pre-Event')]");
+	private By lblSessions= By.xpath("//span[contains(@class,'bstyle text-3D4C57')][contains(text(),'Session')]");
 	private By lblPostEvent= By.xpath("//span[contains(text(),'Post-Event')]");
 	private By lblReference= By.xpath("//span[contains(text(),'References')]");
 	private By lblTermsAndConditions= By.xpath("//p[contains(text(),'Terms & Conditions')]");
@@ -65,11 +65,16 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("Skills", lblSkillsText);
 	}
 	public void verifyEventSectionLabels(){
+		wait(2);
+		click(nextEventViewAll);
+		wait(2);
 		verifyText("upcoming",lblUpcomingLabel);
 		verifyText("In Progress",lblInprogressLabel);
 		verifyText("Completed",lblCompletedLabel);
 	}
 	public void verifyButtons() {
+		wait(2);
+		click(dashBoardIcon);
 		wait(2);
 		click(invitesReminderViewallBtn);
 		wait(2);
