@@ -128,10 +128,10 @@ public class InstructorModulePage extends FractalBasePage {
 		click(lblEventInsideClick);
     }
 	public void verifyLabelsInsideEventDetailsPage(){
-		WebElement element = driver.findElement(By.xpath("//p[contains(text(),'Terms & Conditions')]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		verifyText("Pre - Event",lblPreEvent);
+		WebElement element = driver.findElement(By.xpath("//p[contains(@class,'font-size-16 font-weight-bolder evnt_std_clr line-height-15')]"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		verifyText("Sessions",lblSessions);
 		wait(2);
