@@ -102,10 +102,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 		//dhanu homeSteps.verifyCartItemBtn();//newui
 		Reporter.writeSummary("TCID_HOME_079,  Verify the function of  Cart  icon, " + homeSteps.getResult() );
 		//TCID_3:Verify My Learning page is displayed after logging to app.
-		//dhanu homeSteps.verifyMyLearningPage();//newui
+		homeSteps.verifyMyLearningPage();//newui
 		Reporter.writeSummary("TCID_HOME_003,   Verify Home page is Land after logging to app, " +  homeSteps.getResult());
 		//Verify LogoImage is displayed after logging to app
-		//dhanu homeSteps.verifyLogoImg();//newui
+	    homeSteps.verifyLogoImg();//newui
 		Reporter.writeSummary("TCID_HOME_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());
 		homeSteps.clickLogout(); 
 
@@ -120,8 +120,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 		login(driver);
 
 		HomeSteps homeSteps = new HomeSteps(driver);
-        homeSteps.firstTwoCatalogItemsTitleCompare();//newui
-		Reporter.writeSummary("TCID_HOME_055, Checking whether two catalog items displayed in whats new section matches with the first 2 items in the Most popular content section, " +   homeSteps.getResult() );
+		/**this functionality currently not there**/
+   //   homeSteps.firstTwoCatalogItemsTitleCompare();//newui
+  //	Reporter.writeSummary("TCID_HOME_055, Checking whether two catalog items displayed in whats new section matches with the first 2 items in the Most popular content section, " +   homeSteps.getResult() );
+		/****till here**/
 		//Verify the function of  Recently Added section attributes 
 		homeSteps.whatsNewSectionAttributes();//newui
 		Reporter.writeSummary("TCID_HOME_082,  Verify the function of  What's New section attributes , " +   homeSteps.getResult() );
@@ -167,7 +169,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	*/	homeSteps.clickLogout();
 	
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersForKOandMostAdded(String row, String strBrowserName) {

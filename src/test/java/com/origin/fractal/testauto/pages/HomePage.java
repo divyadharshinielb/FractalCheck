@@ -46,8 +46,8 @@ public class HomePage extends FractalBasePage {
 	/*******************/
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
 	/************Newui***************/
-	private String rboxBtn= "./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/a";
-	private String rboxCatType= "]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]";
+	private String rboxBtn= "./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/a";
+	private String rboxCatType= "]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6";
 	/*******************/
 	//for recommended filters//
 	private By relblAll = By.xpath(".//h2[contains(text(),'Recommended')]/../div/*//a[contains(text(),'ALL')]");
@@ -86,7 +86,7 @@ public class HomePage extends FractalBasePage {
 	private By wlblLpath = By.xpath(".//button[contains(text(),'LEARNING PATHS')]");
 	private By wlblcourse = By.xpath(".//button[contains(text(),'COURSES')]");
 	private By wlblResource = By.xpath(".//button[contains(text(),'RESOURCES')]");
-	private By lblAllLanuages = By.xpath("//select[@name='langfilter']//option[contains(text(),'ALL LANGUAGES')]");
+	private By lblAllLanuages = By.xpath("//div[contains(text(),'ALL LANGUAGES')]");//select[@name='langfilter']//option[contains(text(),'ALL LANGUAGES')]
 	private By iconListView = By.xpath(".//i[@class='icon-list font-16']");//div/ng-include/*//div/a[contains(@data-icon,'î��')]
 	private By btnLoadMore = By.xpath(".//a[contains(text(),'LOAD MORE')]");
 	private By homeLink = By.xpath(".//img[@class='logo-height']");
@@ -268,12 +268,13 @@ public class HomePage extends FractalBasePage {
 	}
    //************most popular************//
 	public void verifyAllFilterMostAdded(){
-		click(mostlblAll);
+		//edit by divya - All label is not present so commented click(mostlblAll);
+	//	click(mostlblAll);
 		wait(3);
 		verifyAllFilterTypeMostAdded(mostboxBtn,mostboxCatType,mostlblFilterLink);
 	}
 	public void verifyBundleFilterMostAdded() {
-		click(mostlblAll);
+	//	click(mostlblAll);
 		wait(3);
 		//edited By Karpagavalli from here
 		if(elementExist(mostlblBundles)) {
@@ -283,7 +284,7 @@ public class HomePage extends FractalBasePage {
 		}	
 	}
 	public void verifyCourseFilterMostAdded() {
-		click(mostlblAll);
+	//	click(mostlblAll);
 		wait(3);
 		if(elementExist(mostlblCourses)) {
 			click(mostlblCourses);
@@ -292,7 +293,7 @@ public class HomePage extends FractalBasePage {
 		}	
 	}
 	public void verifyResourceFilterMostAdded() {
-		click(mostlblAll);
+	//	click(mostlblAll);
 		wait(3);
 		if(elementExist(mostlblResources)) {
 			click(mostlblResources);
@@ -301,7 +302,7 @@ public class HomePage extends FractalBasePage {
 		}	
 	}
 	public void verifyLearnPathFilterMostAdded() {
-		click(mostlblAll);
+	//	click(mostlblAll);
 		wait(3);
 		if(elementExist(mostlblLpaths)) {
 			click(mostlblLpaths);
