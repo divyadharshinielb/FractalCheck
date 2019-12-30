@@ -44,7 +44,7 @@ public void WebTestSettingsAdminPaymentConfig(String row, String strBrowserName)
 		login(driver);
 		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.verifyCartItemBtn1();
-		Reporter.writeSummary("TCID_008, Verify If there is one payment mode is available in admin ensure that payment mode is reflecting in user part., " +  homeSteps.getResult() );
+	//	Reporter.writeSummary("TCID_008, Verify If there is one payment mode is available in admin ensure that payment mode is reflecting in user part., " +  homeSteps.getResult() );
 		Reporter.writeSummary("TCID_009, Verify User should able to access the payment and it should redirect to payment section," +  homeSteps.getResult() );    
 	}
 }

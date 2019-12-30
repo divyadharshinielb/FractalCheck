@@ -52,7 +52,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		LoginSteps loginSteps = new LoginSteps(driver);
 		//Verify the login page with valid user name and invalid password
 		loginSteps.inValidPassword();
-		Reporter.writeSummary("TCID_070, Verify the login page with valid user name and invalid password, " +  loginSteps.getResult() );
+		Reporter.writeSummary("TCID_LOGIN_070, Verify the login page with valid user name and invalid password, " +  loginSteps.getResult() );
 		
 	}
 	/***added here**/
@@ -63,7 +63,7 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		LoginSteps loginSteps = new LoginSteps(driver);
 		login(driver);
 		loginSteps.verifySearchLink();
-		Reporter.writeSummary("TCID_075, Verify the function of  Search link , " +  loginSteps.getResult() );
+		Reporter.writeSummary("TCID_LOGIN_075, Verify the function of  Search link , " +  loginSteps.getResult() );
 	}
 	//Added by Manju Priya A on Jan_21_19
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "TCID_71: verification of Forgot Password Page"
@@ -78,10 +78,10 @@ public class WebTestsLogin extends FractalBaseWebTest {
 			homeSteps.clickLogout();
 			/****/
 		fpassSteps.clickForgotPasswordLink();
-		Reporter.writeSummary("TCID_071, verification of Forgot Password Page, " +  fpassSteps.getResult() );
+		Reporter.writeSummary("TCID_LOGIN_071, verification of Forgot Password Page, " +  fpassSteps.getResult() );
 		//TCID_73: Verification of Forgot Password function
 		fpassSteps.verifyForgotPasswordLabels();
-		Reporter.writeSummary("TCID_073, Verification of Forgot Password function, " +  fpassSteps.getResult() );
+		Reporter.writeSummary("TCID_LOGIN_073, Verification of Forgot Password function, " +  fpassSteps.getResult() );
 		/********mahesh added 17/05/2019**************/
 		//fpassSteps.verifyOTPSentPopup();
 		//fpassSteps.verifyOTPReceivedToEmail();
