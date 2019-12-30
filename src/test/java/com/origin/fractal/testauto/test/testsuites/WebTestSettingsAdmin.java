@@ -41,7 +41,7 @@ public void WebTestSettingsAdminPaymentConfig(String row, String strBrowserName)
 		login(driver);
 		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.verifyCartItemBtn1();
-		Reporter.writeSummary("TCID_008, Verify the payment configured in admin only is available to the user., " +  homeSteps.getResult() );
+	//	Reporter.writeSummary("TCID_008, Verify the payment configured in admin only is available to the user., " +  homeSteps.getResult() );
 		Reporter.writeSummary("TCID_009, Verify User should able to access the payment and it should redirect to payment section," +  homeSteps.getResult() );    
 	}
 }

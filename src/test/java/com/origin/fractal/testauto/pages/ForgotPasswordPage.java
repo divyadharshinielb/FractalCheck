@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 import com.origin.fractal.testauto.FractalBasePage;
 
 public class ForgotPasswordPage extends FractalBasePage{
-	private By forgotPasswordLink  = By.xpath(".//div/*//form/*//div[contains(@id,'forgot_password')]");
+	private By forgotPasswordLink  = By.xpath(".//a[contains(text(), 'Forgot password')]");
 	private By txtInputEmail  = By.xpath(".//div/*//form/*//md-input-container/input");
-	private By btnSend  = By.xpath(".//button[contains(@id,'button')]/span");
+	private By btnSend  = By.xpath(".//input[contains(@type, 'submit')]");
 	//private By forgotPasswordLink  = By.xpath("");
 	//private By forgotPasswordLink  = By.xpath("");
 	public ForgotPasswordPage(WebDriver driver) {
