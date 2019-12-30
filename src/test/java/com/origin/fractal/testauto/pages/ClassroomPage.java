@@ -20,7 +20,7 @@ public class ClassroomPage extends FractalBasePage {
 	private By closeBtn = By.xpath("//html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/button[1]/i[1]");
 	private By addEventBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[@title='Add Event']");
 	private By editBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[@title='Edit']");
-	private By deleteBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[ @title='Delete']");
+	private By deleteBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[2]/div[1]//i[ @title='Delete']");
 	private By cancelBtn = By.xpath("//span[contains(text(),'Cancel')]");
 	private By continueBtn = By.xpath("//button[contains(text(),'Continue')]");
 	private By classroomNameReqText = By.xpath("//div[contains(text(),'Classroom title required.')]");//div[contains(text(),'Classroom Title required')]
@@ -71,7 +71,7 @@ public class ClassroomPage extends FractalBasePage {
     private By eventCautionText1=By.xpath("//div[contains(text(),'Venue selection required')]");
     private By eventCautionText2=By.xpath("//div[contains(text(),'Timezone selection required')]");
     private By eventCautionText3=By.xpath("//div[contains(text(),'Instructor selection required')]");
-    private By clickClassroomCreationPage=By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]");
+    private By clickClassroomCreationPage=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]");
     private By editTextBtn=By.xpath("//div[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-all-0 ng-scope']//div[1]//div[1]//div[1]//div[5]//i[2]");//button[@type='button'][contains(text(),'Edit')]
     private By viewDetails=By.xpath("//div[contains(text(),'View Details')]");
     private By CategoryText=By.xpath("//span[contains(text(),'Category :')]");
@@ -427,7 +427,7 @@ public class ClassroomPage extends FractalBasePage {
 	click(backToClassroomText);
 	}
 	public void eventListedPage() {
-	wait(2);
+	wait(5);
 	click(clickClassroomCreationPage);
 	wait(10);
 	elementExist((eventList));
