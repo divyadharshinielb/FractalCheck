@@ -15,7 +15,7 @@ import io.appium.java_client.ios.IOSDriver;
 public class AppFactory {
 
 	public static AppiumDriver<MobileElement> getAndroidApp() {
-		String fratalApkFile = "fractalapk/OriginFractal3.0.14.apk";
+		String fratalApkFile = "fractalapk/OriginFractal3.0.16.apk";
 		AppiumDriver<MobileElement> appDriver = null;
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
