@@ -23,23 +23,23 @@ public class InstructorModulePage extends FractalBasePage {
 	private By lblRejectPopupText= By.xpath("//p[contains(text(),'Are you sure you want to Reject the Event Invite')]");
 	private By lblcloseBtn= By.xpath("//button[@class='styles_closeButton__20ID4']");
 	private By lblEventInsideClick= By.xpath("//div[@class='row insslider top-bar-list margin-lr-0']//li[@class='slider-slide slide-visible']");//li[@class='slider-slide slide-visible']//div[@class='row br padding-lr-10 padding-t-10']
-	private By lblPreEvent= By.xpath("//span[contains(text(),'Pre-Event')]");
-	private By lblSessions= By.xpath("//span[contains(@class,'bstyle text-3D4C57')][contains(text(),'Session')]");
-	private By lblPostEvent= By.xpath("//span[contains(text(),'Post-Event')]");
+	private By lblPreEvent= By.xpath("//span[contains(text(),'Pre-event')]");
+	private By lblSessions= By.xpath("//span[contains(@class,'bstyle')][contains(text(),'Session')]");
+	private By lblPostEvent= By.xpath("//span[contains(text(),'Post-event')]");
 	private By lblReference= By.xpath("//span[contains(text(),'References')]");
-	private By lblTermsAndConditions= By.xpath("//p[contains(text(),'Terms & Conditions')]");
+	private By lblTermsAndConditions= By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']");//p[contains(text(),'Terms & Conditions')]
 	private By lblUpcomingEvent= By.xpath("//div[contains(@class,'ins_eve_div')]");
 	private By lblInprogressEvent= By.xpath("//div[contains(@class,'ins_eve_div bdr_live')]");//div[contains(@class,'ins_eve_div bdr_postevent')](automation)
 	private By lblInprogressSessions= By.xpath("//span[contains(@class,'bstyle')][contains(text(),'Session')]");
-	private By lblInprogressPostEvent= By.xpath("//span[contains(text(),'Post-Event')]");
+	private By lblInprogressPostEvent= By.xpath("//span[contains(text(),'Post-event')]");
 	private By lblInprogressReference= By.xpath("//span[contains(text(),'References')]");
-	private By lblInprogressTermsAndConditions= By.xpath("//p[contains(text(),'Terms & Conditions')]");
-	private By lblCompeletdEvent= By.xpath("//div[contains(@class,'ins_eve_div')]");
+	private By lblInprogressTermsAndConditions= By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']");//p[contains(text(),'Terms & Conditions')]
+	private By lblCompeletdEvent= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/a[1]/div[1]");//div[contains(@class,'ins_eve_div')]
 	private By dashBoardIcon= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]");
 	private By eventTab= By.xpath("//i[contains(text(),';')]");
 	private By lblInprogress= By.xpath("//li[@id='react-tabs-0']");
 	private By lblUpcoming= By.xpath("//li[@id='react-tabs-2']");
-	private By lblCompleted= By.xpath("//li[@id='react-tabs-4']");
+	private By lblCompleted= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[3]");//li[@id='react-tabs-4']
 	private String SkillSetBox1 ="//select[@name='skillfilter']//option";
     private String SkillSetBox2 ="]";
     private By lblActivitiesText= By.xpath("//li[contains(text(),'Activities & Materials')]");
@@ -48,7 +48,7 @@ public class InstructorModulePage extends FractalBasePage {
     private By sessionDetailsBtn= By.xpath("//div[4]//dl[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[3]//p[1]//button[1]");
     private By invitesReminderViewallBtn= By.xpath("//h2[contains(text(),'Invites & Reminders')]//a[@class='filter-link cursor-pointer font-size-14 text-capitalize margin-r-0'][contains(text(),'View all')]");
     private By breadCrumLink= By.xpath("//button[contains(@class,'btn btn active cp pl-0')]//a[1]");
-    private By reviewButton= By.xpath("//div[6]//a[1]//div[1]//div[4]//button[1]//a[1]");
+    private By reviewButton= By.xpath("//div[contains(@class,'maindiv insdash container')]//div[2]//a[1]//div[1]//div[4]//button[1]");
     private By nextEventViewAll= By.xpath("//h2[@class='nxtevt']//a[@class='filter-link cursor-pointer font-size-14 text-capitalize margin-r-0'][contains(text(),'View all')]");
     private By lblAll= By.xpath(" //button[contains(text(),'ALL')]");
     private By lblReviewCompleted= By.xpath("//button[contains(text(),'REVIEW COMPLETED')]");
@@ -129,13 +129,14 @@ public class InstructorModulePage extends FractalBasePage {
     }
 	public void verifyLabelsInsideEventDetailsPage(){
 		wait(2);
-		verifyText("Pre - Event",lblPreEvent);
-		WebElement element = driver.findElement(By.xpath("//p[contains(@class,'font-size-16 font-weight-bolder evnt_std_clr line-height-15')]"));
+		WebElement element = driver.findElement(By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		verifyText("Sessions",lblSessions);
 		wait(2);
 		verifyText("Post - Event",lblPostEvent);
+		wait(2);
+		verifyText("Pre - Event",lblPreEvent);
 		wait(2);
 		verifyText("References",lblReference);
 		wait(2);
@@ -248,7 +249,7 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(invitesReminderViewallBtn);
 		wait(2);
-		WebElement element1= driver.findElement(By.xpath("//div[6]//a[1]//div[1]//div[4]//button[1]//a[1]"));
+		WebElement element1= driver.findElement(By.xpath("//div[contains(@class,'maindiv insdash container')]//div[2]//a[1]//div[1]//div[4]//button[1]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
 		wait(2);
 		verifyText("REVIEW",reviewButton);
@@ -262,10 +263,10 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(invitesReminderViewallBtn);
 		wait(2);
-		WebElement element1= driver.findElement(By.xpath("//div[6]//a[1]//div[1]//div[4]//button[1]//a[1]"));
+		WebElement element1= driver.findElement(By.xpath("//div[contains(@class,'maindiv insdash container')]//div[2]//a[1]//div[1]//div[4]//button[1]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
 		wait(2);
-		click(By.xpath("//div[6]//a[1]//div[1]//div[4]//button[1]//a[1]"));
+		click(By.xpath("//div[contains(@class,'maindiv insdash container')]//div[2]//a[1]//div[1]//div[4]//button[1]"));
 		wait(2);
 /*		verifyText("ALL",lblAll);
 		wait(2);
