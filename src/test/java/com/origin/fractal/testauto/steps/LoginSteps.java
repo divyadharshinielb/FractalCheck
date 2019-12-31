@@ -28,6 +28,17 @@ public class LoginSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
+	public void verifypasswordField() {
+		result ="Passed";
+		try {
+			page.verifypasswordField();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+	  }
+	}
 
 	public void rememberMe() {
 		result ="PASSED";

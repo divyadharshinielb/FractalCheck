@@ -33,14 +33,14 @@ public class WebTestsSettings extends FractalBaseWebTest {
 		homeSteps.clickOnProfile();
 		//TCID_76:The user is able to navigate to the settings page on clicking the "Settings" Hyperlink
 		homeSteps.clickOnsettings();
-		Reporter.writeSummary("TCID_076,Verify The user is able to navigate to the settings page on clicking the Settings Hyperlink, " +   result);
+		Reporter.writeSummary("TCID_Settings_076,Verify The user is able to navigate to the settings page on clicking the Settings Hyperlink, " +   result);
 
 		//Test moves to next page
 		SettingsSteps settingsSteps = new SettingsSteps(driver);
 	//	settingsSteps.printStatus();
 		//TCID_77:The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable 
 		settingsSteps.clickOnSwitch();
-		Reporter.writeSummary("TCID_077,Verify The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable, " +   settingsSteps.getResult() );
+		Reporter.writeSummary("TCID_Settings_077,Verify The Mail Notification is getting enabled on selecting the Mail notification button from disable to enable, " +   settingsSteps.getResult() );
 		settingsSteps.clickOnSave();
 	}
 }

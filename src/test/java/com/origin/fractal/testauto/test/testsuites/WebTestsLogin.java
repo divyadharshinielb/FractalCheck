@@ -29,6 +29,9 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		LoginSteps loginSteps = new LoginSteps(driver);
 		Reporter.writeSummary("TCID_LOGIN_024,Verify the UI of the login page, " +  loginSteps.getResult() );
 		Reporter.writeSummary("TCID_LOGIN_028, Verify the login page with valid username and valid password., " +  loginSteps.getResult() );
+		//TCID_65:Verify whether the entered password is displayed in encrypted format in the Change password field
+		loginSteps.verifypasswordField();
+		Reporter.writeSummary("TCID_LOGIN_065, Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult() );
 		//TCID_26:Verify the UI of the login page. User name, Password, Remember me fields and Login button are available in the login page.
 		loginSteps.loginPageVerification();
 		Reporter.writeSummary("TCID_LOGIN_026, Verify the UI of the login page. User name Password Remember me fields and Login button are available in the login page, " +  loginSteps.getResult() );
