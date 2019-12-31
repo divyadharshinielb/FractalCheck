@@ -56,7 +56,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_010,  Verify My Learning page details on clicking from Home Page, " + homeSteps.getResult() );
 */   	//TCID_13:Verification of View all page labels
 		homeSteps.verifyViewAllPage(); //newui
-		//Reporter.writeSummary("TCID_HOME_013, Verify View All page elements, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_HOME_013, Verify View All page elements, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_HOME_035, Verify whether view all page elements and whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
 		//TCID_34:Verify Privacy, Terms and Contact links
 		homeSteps.verifyFooterLinks();//newui

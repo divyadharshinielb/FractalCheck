@@ -28,19 +28,19 @@ public void testMyAccountPage(String row, String strBrowserName) {
 	accountSteps.clickOnMyAccount();
 	//TCID_61: Verify  My account page
 	//accountSteps.verifyAccountPageLabels();
-	Reporter.writeSummary("TCID_061,  Verify  My account page, " +  accountSteps.getResult() );
+	Reporter.writeSummary("TCID_MyAccount_061,  Verify  My account page, " +  accountSteps.getResult() );
 	//TCID_62: Verify  My Account Profile details
 	accountSteps.verifyProfileDetails();
-	Reporter.writeSummary("TCID_062,  Verify  My Account Profile details, " +  accountSteps.getResult() );
+	Reporter.writeSummary("TCID_MyAccount_062,  Verify  My Account Profile details, " +  accountSteps.getResult() );
 	//TCID_64: verify the error message on leaving all the fields empty
 	accountSteps.verifyEmptyProfileValidation();
-	Reporter.writeSummary("TCID_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );
+	Reporter.writeSummary("TCID_MyAccount_064,  Verify the error message on leaving all the fields empty, " +  accountSteps.getResult() );
 	//TCID_67: Verifying the changes should not be displayed on clicking Cancel
 	//accountSteps.verifyAfterCancelValidation();
 	//Reporter.writeSummary("TCID_067,  Verify the changes should not be displayed on clicking Cancel, " +  accountSteps.getResult() );
 	//TCID_63:Verify the validation for all fields under profile
 	accountSteps.verifyFieldValidation();//63
-	Reporter.writeSummary("TCID_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
+	Reporter.writeSummary("TCID_MyAccount_063,  Verify the validation for all fields under profile, " + accountSteps.getResult() );
 	//TCID_66:Verify whether the new password is getting saved on changing and clicking the save button
 /*	accountSteps.changePassword();
 	Reporter.writeSummary("TCID_066,  Verify whether the new password is getting saved on changing and clicking the save button, " + accountSteps.getResult() );
@@ -57,7 +57,7 @@ public void testMyAccountPage(String row, String strBrowserName) {
 		accountSteps.clickOnMyAccount();
 		//TCID_68:Checking whether the user is able to login with the new password
 		accountSteps.afterChangePassword();
-		Reporter.writeSummary("TCID_068,  Verify whether the user is able to login with the new password, " + accountSteps.getResult() );
+		Reporter.writeSummary("TCID_MyAccount_068,  Verify whether the user is able to login with the new password, " + accountSteps.getResult() );
 	}
 
 }
