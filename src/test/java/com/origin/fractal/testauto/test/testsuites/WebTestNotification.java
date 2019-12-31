@@ -37,17 +37,17 @@ public class WebTestNotification extends FractalBaseWebTest{
 		Reporter.writeSummary("EmailTem_001, Verify whether password change template is working fine , " +  notificationSteps.getResult() );
 		notificationSteps.verifyPurchaseMailTemplate();
 		Reporter.writeSummary("EmailTem_002,Verify whether purchase mail template is working fine , " +  notificationSteps.getResult() );
-		notificationSteps.verifyUnAssignTemplate();
+	/*	notificationSteps.verifyUnAssignTemplate();
 		Reporter.writeSummary("EmailTem_003, Verify whether Un assign template is working fine , " +  notificationSteps.getResult() );
 		notificationSteps.verifyUsersForgotPasswordMail();
 		Reporter.writeSummary("EmailTem_004, Verify whether users forgot password template is working fine , " +  notificationSteps.getResult() );
-	/*	notificationSteps.verifyTemplateForValidityExpired();
+		notificationSteps.verifyTemplateForValidityExpired();
 		Reporter.writeSummary("EmailTem_005, Verify whether template for validity expired template is working fine , " +  notificationSteps.getResult() );
         notificationSteps.verifyContentAssignment();
         Reporter.writeSummary("EmailTem_006,Verify whethercontent assignment template is working fine , " +  notificationSteps.getResult() );
-   */     notificationSteps.verifyBusinessUserRegistration();
+        notificationSteps.verifyBusinessUserRegistration();
         Reporter.writeSummary("EmailTem_007, Verify whether business user template is working fine , " +  notificationSteps.getResult() );
-    }
+   */ }
 
 
 	

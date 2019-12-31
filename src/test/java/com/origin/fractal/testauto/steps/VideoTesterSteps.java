@@ -13,7 +13,7 @@ public class VideoTesterSteps extends FractalBaseStep{
 		fBPage = page;
 	} 
 	public void verifyVideoTester()  {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.verifyVideoTester();
 		   }
