@@ -12,6 +12,8 @@
 	<test thread-count="19" name="Test" >
 		<classes>
 		        <class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
+		        <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" /> 
 				<class
 				 name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
