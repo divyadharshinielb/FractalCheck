@@ -47,7 +47,9 @@ public class LoginPage extends FractalBasePage {
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin);
 		wait(2);
-		click(btnCookies);
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
 		wait(5);
 	}
 	public void loginToInstructor() {
