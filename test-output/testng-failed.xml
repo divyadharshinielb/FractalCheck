@@ -10,6 +10,7 @@
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
           <include name="afterClass"/>
+          <include name="testMyAccountPage" invocation-numbers="0"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
