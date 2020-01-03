@@ -108,6 +108,8 @@ public class HomePage extends FractalBasePage {
     private By mFourthCatalog=By.xpath("//ng-include[1]/div[1]/div[1]/div[7]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[4]/div[1]/div[2]/h3[1]");
     private String reBox1=".//ng-include[1]/div[1]/div[2]/div";
     private String reBox2="]/div[1]/div[1]/div[2]/h3[1]";
+    //edit by divya
+    private By logoclick = By.xpath(".//img[contains(@class, 'logo-height')]");
     
     public HomePage(WebDriver driver) {
 		super(driver);
@@ -133,6 +135,8 @@ public class HomePage extends FractalBasePage {
 		wait(5);
 		clickOnBellIcon();
 		wait(2);
+		//edit by divya - updated based on reivewing -  to click anywhere to check whether the popup is gone
+		//click(logoclick);
 		/*verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check);*/

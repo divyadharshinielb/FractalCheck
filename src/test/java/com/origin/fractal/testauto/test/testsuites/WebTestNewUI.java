@@ -36,7 +36,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 
 
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="LOGIN PAGE")
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -65,13 +65,13 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
 	public void testMyLearningPage0(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
 		HomeStepsNewUI homeSteps = new HomeStepsNewUI(driver);
 		homeSteps.verifyResumeLearningLabeltext();
-		Reporter.writeSummary("TCID_010,  Verify My Learning page details on clicking from Home Page, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_010,  Verify whether clicking the Continue button is navigating to that particular catalog item page., " + homeSteps.getResult() );
 		homeSteps.verifyMyLearningPage();
 		Reporter.writeSummary("TCID_003,  Verify My Learning page is displayed after logging to app, " +  homeSteps.getResult());
 		MyLearningStepsNewUI mLSteps = new MyLearningStepsNewUI(driver);
