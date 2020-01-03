@@ -24,7 +24,7 @@ public class LoginPage extends FractalBasePage {
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
-	private By registerLoginBtn=By.xpath("//div[@class='padding-bp-12 text-center padding-t-5']//a[@class='text-D98040'][contains(text(),'LOG IN')]");
+	private By registerLoginBtn=By.xpath("//div[@class='padding-bp-12 text-center padding-t-5']//a[@class='text-D98040']");
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		pageName ="LoginPage";
