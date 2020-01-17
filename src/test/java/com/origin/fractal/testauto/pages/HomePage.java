@@ -18,7 +18,7 @@ public class HomePage extends FractalBasePage {
 	private By lblCLMiLrn = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Micro Learning')]");
 
 	private By lblNotification = By.xpath("//p[contains(text(),'MORE')]");//For new UI.//*[@id='notification-dropdown']/*//span[@class='heading']
-	private By Check = By.xpath(".//p[contains(text(),'Check it out! ')]");//.//div[contains(@class,'notificationdrop')]/*//span[contains(text(),'Check')]
+	private By Check = By.xpath(".//*[@id=\'menu-list-grow\']");//.//div[contains(@class,'notificationdrop')]/*//span[contains(text(),'Check')]
 
 	private By lblLearningInProgress= By.xpath(".//h2[contains(text(),'Learning in Progress')]");
 	private By lblCompl = By.xpath(".//div[@class='percentageValue ng-binding']");
@@ -135,10 +135,12 @@ public class HomePage extends FractalBasePage {
 		wait(5);
 		clickOnBellIcon();
 		wait(2);
+		elementExist(Check);
+		
 		//edit by divya - updated based on reivewing -  to click anywhere to check whether the popup is gone
 		//click(logoclick);
-		/*verifyLabel("lblNotification",lblNotification );
-		String ntnIntroGST=getText(Check);
+		//verifyLabel("lblNotification",lblNotification );
+		/*String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check);*/
 		//clickOnViewAll();
 		
