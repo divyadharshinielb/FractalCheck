@@ -1,28 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="233318" started-at="2019-12-18T12:22:42Z" finished-at="2019-12-18T12:26:35Z">
+  <suite name="Default suite" duration-ms="677078" started-at="2020-01-17T07:37:59Z" finished-at="2020-01-17T07:49:16Z">
     <groups>
       <group name="pilot">
         <method signature="WebTestNewUI.testMyAccountPage(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="testMyAccountPage" class="com.origin.fractal.testauto.test.testsuites.WebTestNewUI"/>
       </group> <!-- pilot -->
+      <group name="Phase1.0">
+        <method signature="WebTestNewUI.testLogin(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="testLogin" class="com.origin.fractal.testauto.test.testsuites.WebTestNewUI"/>
+        <method signature="WebTestNewUI.testMyLearningPage0(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="testMyLearningPage0" class="com.origin.fractal.testauto.test.testsuites.WebTestNewUI"/>
+      </group> <!-- Phase1.0 -->
     </groups>
-    <test name="Default test" duration-ms="233318" started-at="2019-12-18T12:22:42Z" finished-at="2019-12-18T12:26:35Z">
+    <test name="Default test" duration-ms="677078" started-at="2020-01-17T07:37:59Z" finished-at="2020-01-17T07:49:16Z">
       <class name="com.origin.fractal.testauto.test.testsuites.WebTestNewUI">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeSuite" is-config="true" duration-ms="16" started-at="2019-12-18T12:22:42Z" finished-at="2019-12-18T12:22:42Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeSuite" is-config="true" duration-ms="22" started-at="2020-01-17T07:37:59Z" finished-at="2020-01-17T07:37:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-12-18T12:22:42Z" finished-at="2019-12-18T12:22:42Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeTest" is-config="true" duration-ms="1" started-at="2020-01-17T07:37:59Z" finished-at="2020-01-17T07:37:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-12-18T12:22:42Z" finished-at="2019-12-18T12:22:42Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-01-17T07:37:59Z" finished-at="2020-01-17T07:37:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="testMyAccountPage(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="testMyAccountPage" duration-ms="232192" started-at="2019-12-18T12:22:42Z" description="TCID_61,62 61: Verify  My account page,62: Verify  My Account Profile details, " data-provider="browers" finished-at="2019-12-18T12:26:34Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-17T07:37:59Z" finished-at="2020-01-17T07:37:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="testLogin" duration-ms="321678" started-at="2020-01-17T07:37:59Z" description="Login Page" data-provider="browers" finished-at="2020-01-17T07:43:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterMethod" is-config="true" duration-ms="1217" started-at="2020-01-17T07:43:21Z" finished-at="2020-01-17T07:43:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-01-17T07:43:22Z" finished-at="2020-01-17T07:43:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testMyAccountPage(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="testMyAccountPage" duration-ms="202405" started-at="2020-01-17T07:43:22Z" description="TCID_61,62 61: Verify  My account page,62: Verify  My Account Profile details, " data-provider="browers" finished-at="2020-01-17T07:46:44Z">
           <params>
             <param index="0">
               <value>
@@ -38,23 +70,43 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMyAccountPage -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-12-18T12:22:42Z" finished-at="2019-12-18T12:22:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterMethod" is-config="true" duration-ms="1098" started-at="2019-12-18T12:26:34Z" finished-at="2019-12-18T12:26:35Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterMethod" is-config="true" duration-ms="1468" started-at="2020-01-17T07:46:44Z" finished-at="2020-01-17T07:46:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-12-18T12:26:35Z" finished-at="2019-12-18T12:26:35Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-17T07:46:46Z" finished-at="2020-01-17T07:46:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testMyLearningPage0(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="testMyLearningPage0" duration-ms="149049" started-at="2020-01-17T07:46:46Z" description="Login Page" data-provider="browers" finished-at="2020-01-17T07:49:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMyLearningPage0 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterMethod" is-config="true" duration-ms="1229" started-at="2020-01-17T07:49:15Z" finished-at="2020-01-17T07:49:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-01-17T07:49:16Z" finished-at="2020-01-17T07:49:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-12-18T12:26:35Z" finished-at="2019-12-18T12:26:35Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-01-17T07:49:16Z" finished-at="2020-01-17T07:49:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-12-18T12:26:35Z" finished-at="2019-12-18T12:26:35Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestNewUI@3d36e4cd]" name="afterSuite" is-config="true" duration-ms="2" started-at="2020-01-17T07:49:16Z" finished-at="2020-01-17T07:49:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
