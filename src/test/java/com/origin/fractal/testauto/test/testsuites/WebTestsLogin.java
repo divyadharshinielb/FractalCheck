@@ -41,8 +41,9 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_LOGIN_072,  Verify the Remember me function, " +  loginSteps.getResult() );
 		Reporter.writeSummary("TCID_LOGIN_019,  Verify the Remember me function - By checking the radio button, " +  loginSteps.getResult() );
 		//TCID_74:Verification of Register link  function 
-		loginSteps.registerFunction();
-		Reporter.writeSummary("TCID_LOGIN_074, Verification of Register link  function, " +  loginSteps.getResult() );
+		//register is present for cogscale
+		/*loginSteps.registerFunction();
+		Reporter.writeSummary("TCID_LOGIN_074, Verification of Register link  function, " +  loginSteps.getResult() );*/
 	 }
 	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
