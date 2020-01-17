@@ -17,7 +17,7 @@ public class HomePage extends FractalBasePage {
 	private By lblCLPM = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Project Management')]");
 	private By lblCLMiLrn = By.xpath(".//*[@id='header']/*//ul/*//a/span[contains(text(),'Micro Learning')]");
 
-	private By lblNotification = By.xpath("//p[contains(text(),'MORE')]");//For new UI.//*[@id='notification-dropdown']/*//span[@class='heading']
+	private By lblNotification = By.xpath("//p[@class='noti-title mb-0']");//For new UI.//*[@id='notification-dropdown']/*//span[@class='heading']
 	private By Check = By.xpath(".//p[contains(text(),'Check it out! ')]");//.//div[contains(@class,'notificationdrop')]/*//span[contains(text(),'Check')]
 
 	private By lblLearningInProgress= By.xpath(".//h2[contains(text(),'Learning in Progress')]");
@@ -133,8 +133,8 @@ public class HomePage extends FractalBasePage {
 		wait(5);
 		clickOnBellIcon();
 		wait(2);
-		/*verifyLabel("lblNotification",lblNotification );
-		String ntnIntroGST=getText(Check);
+		verifyLabel("lblNotification",lblNotification );
+		/*String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check);
 		clickOnViewAll();*/
 		
