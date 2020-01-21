@@ -51,8 +51,9 @@ public class AdminLoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void loginToContentAdmin() throws IOException{
-		enterData("contentadmin@origin.com",tbUserName);
-	    enterData("P@ssw0rd",tbPassword);
+		//updating the credentials of siteadmin as settings icon is present only for siteadmin
+				enterData("automation_siteadmin@origin.com",tbUserName);
+			    enterData("AutoSA@123",tbPassword);
 	    click(btnLogin1);
 	    wait(5);
 	}
