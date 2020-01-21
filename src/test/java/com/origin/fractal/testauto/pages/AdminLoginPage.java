@@ -51,8 +51,9 @@ public class AdminLoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void loginToContentAdmin() throws IOException{
-		enterData("qacontentadmin",tbUserName);//contentadmin@origin.com
-	    enterData("qacontentadmin",tbPassword);//P@ssw0rd
+		//changing credentials as settings icon is present in siteadmin
+		enterData("qasiteadmin@origin.com",tbUserName);//contentadmin@origin.com
+	    enterData("P@ssw0rd",tbPassword);//P@ssw0rd
 	    click(btnLogin1);
 	    wait(5);
 	}
