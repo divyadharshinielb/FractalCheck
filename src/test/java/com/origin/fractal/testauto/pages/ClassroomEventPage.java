@@ -137,16 +137,16 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	click(btnContinue);
 	//click(btnBack);//Should remove
-//		verifyText("Select Classroom Type",selectClassroomTypeAlert);
+//	verifyText("Select Classroom Type",selectClassroomTypeAlert);
 	verifyText("Timezone selection required",timezoneAlertMsg);
 	click(lblTraditionalClassroom);
 	verifyText("Venue selection required",dropdownAlertVenue);
 	click(lblVirtualClassroom);
-//		verifyText("Link Required",dropdownAlertLink);
-//		verifyText("Average Score Required",avgScoreAlertMsg);
+//	verifyText("Link Required",dropdownAlertLink);
+//	verifyText("Average Score Required",avgScoreAlertMsg);
 	click(lblSession);
 	verifyText("Start Time Required",startTimeAlertMsg);
-//		verifyText("End Time Required",endimeAlertMsg);
+//	verifyText("End Time Required",endimeAlertMsg);
 	verifyText("Instructor selection required",dropdownSelectInstructorAlertMsg);
 	}
 	public void verifySelectVenueDropdownAlertMsg() {
@@ -374,8 +374,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyPostAssignmentCount() {
 	String getText = getText(lblPostAssessment);
-//		String count = getSubString(getText, getText.length()-2, getText.length()-1);
-	//int assignCount = getNumber(count);
+//	String count = getSubString(getText, getText.length()-2, getText.length()-1);
+//  int assignCount = getNumber(count);
 	verifyText("Assignment ()",getText);
 	}
 	public void verifyPostAddAssignmentBtn() {
@@ -498,8 +498,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	click(timezoneDropdown);
 	click(selectTimezone);
-//		enterData("35",inpAvgScore);
-//		click(lblSession);
+//	enterData("35",inpAvgScore);
+//	click(lblSession);
 	wait(2);
 	click(dropdownSelectInstructor);
 	verifyText("Select Instructor",insDropdoenAlertMshg);
@@ -588,11 +588,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblSeatsFullWaitingListText= By.xpath("//p[contains(@class,'ng-binding')]");
 	private By lblOk= By.xpath("//span[contains(text(),'OK')]");
 	private By lblConfirm= By.xpath("//button[contains(text(),'SAVE')]");
-	/*	private By eventPageTitle = By.xpath("");
-	private By eventPageTitle = By.xpath("");
-	private By eventPageTitle = By.xpath("");
-	private By eventPageTitle = By.xpath("");
-	*/
+	
+	
 	private By lblDelete1= By.xpath(".//div[contains(@class,'col-lg-12 col-sm-6 col-md-6 col-xs-6 margin-l-30')]//i[contains(@class,'icon text-right font-size-14 gray-85')]");
 	private By lblDelete2= By.xpath(".//div[contains(@class,'col-lg-12 col-sm-6 col-md-6 col-xs-6 margin111-l-30 margin-l-15')]//i[contains(@class,'icon text-right font-size-14 gray-85')]");
 	private By lblAutoUpdate= By.xpath(".//label[@id='completion_criteria_checkbox']");
@@ -613,12 +610,12 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(timezoneDropdown);
 	wait(5);
 	click(selectTimezone);
-//		enterData("35",inpAvgScore);
+//	enterData("35",inpAvgScore);
 	click(lblSession);
 	wait(10);
 	click(dropdownSelectInstructor);
-	/*	verifyText("Select Instructor",insDropdoenAlertMshg);
-	*/	wait(5);
+/*	verifyText("Select Instructor",insDropdoenAlertMshg);
+*/	wait(5);
 	click(dropdownSelectInstructor1);
 	wait(5);
 	enterData("10",lblCalendarHour);
@@ -638,8 +635,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(plusBtn);
 	}
 	public void verifyAlertAfterAddingMaximumNumberOfParticipants(){
-	    click(BtnSave);
-	    wait(2);
+	click(BtnSave);
+	wait(2);
 	enterData("1",inpMaxParticipants);
 	wait(2);
 	}
@@ -697,7 +694,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyPublishEventBtn() {
 	wait(2);
-//		verifyText("PUBLISH EVENT",BtnPublishEvent);
+//	verifyText("PUBLISH EVENT",BtnPublishEvent);
 	}
 	public void verifyAlertDisappearStartDateRegistartion() {
 	click(btnSave);

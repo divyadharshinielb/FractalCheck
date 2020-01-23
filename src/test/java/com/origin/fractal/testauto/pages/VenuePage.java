@@ -53,6 +53,7 @@ public class VenuePage extends FractalBasePage{
 		click(lblLogout);
 	}
 	public void clickMenu() {	
+		wait(2);
 		click(settingsIcon);
 		wait(10);
 		click(settingsSelection);
