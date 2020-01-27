@@ -43,7 +43,7 @@ private String lblNavBtn=".//div/h2[contains(text(),'Recently Added')]/../../fol
 private By cartItemBtn=By.xpath(".//div[@class='log_cart']");//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]
 private By wishListBtn=By.xpath(".//div[@class='log_wishlist']");//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]
 private By logoImg=By.xpath("//img[@class='logo-height']");//div/ng-include//div/img   
-private By logOut=By.xpath("//li[contains(text(),'Logout')]");//a[@class='pointer padding-l-15']
+private By logOut=By.xpath("//li[@class='jss29 jss141 jss144 jss149 jss150 jss138 jss139 popup-text padding-t-15']");//a[@class='pointer padding-l-15']
 private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
 private By goToCart = By.xpath("//button[contains(text(),'GO TO CART')]");
 private By checkout = By.xpath("//p[@class='checkout_btn']");//button[contains(@class,'ng-binding')]
