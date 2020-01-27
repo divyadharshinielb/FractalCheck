@@ -12,7 +12,7 @@
 	<test thread-count="18" name="Test" >
 		<classes>
 		
-		<!--		<class
+				<class
 name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
@@ -31,10 +31,10 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> -->
+name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
- <!--   <class
+    <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
@@ -43,7 +43,7 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />-->
+name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 				
 		</classes>
 	</test> <!-- Test -->
