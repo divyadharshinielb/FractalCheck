@@ -11,6 +11,7 @@ import com.origin.fractal.testauto.steps.ManageContentSteps;
 import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
+import com.wv.auto.framework.utils.MyScreenRecorder;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestClassroomEvents extends FractalBaseWebTest{
@@ -36,11 +37,12 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 			+ "TCID_08: Verify whether the alert is thrown, when the End Time is not entered under sessions"
 			+ "TCID_09: Verify whether the alert is thrown, when the Instructor drop-down is not selected under sessions"
 			+ "TCID_10: Verify whether the error message is disappered after Classroom selecting any of the classroom type.")
-	public void verifyEvents(String row, String strBrowserName) throws IOException {
+	public void verifyEvents(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		
 		MenuSteps menuSteps = new MenuSteps(driver);
+		MyScreenRecorder.startRecording("navigationTest");
 		menuSteps.clickMenu();
 		//Test moves to Manage Contents page
 		menuSteps.gotoClassroomCreation();
@@ -77,6 +79,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_Event_010,  Verify whether the error message is disappeared after Classroom selecting any of the classroom type, " +  classSteps.getResult() );
 		//TCID_10: Verify whether the error message is disappeared after Classroom selecting any of the classroom type.
 		classSteps.verifySelectInstrtuctorAlertMsgDisappears();
+		MyScreenRecorder.stopRecording();
 		wait(10);
 		menuSteps.logout();
 	}
@@ -96,12 +99,13 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 			+ "TCID_21: Verify whether the Average score accepts Special characters"
 			+ "TCID_22: Verify whether the Average score accepts Alpha numerics"
 			+ "TCID_23: Verify whether the Average score accepts accepts more than 2 digis")
- 	public void verifyEvents1(String row, String strBrowserName) throws IOException {
+ 	public void verifyEvents1(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		
 		
 		MenuSteps menuSteps = new MenuSteps(driver);
+		MyScreenRecorder.startRecording("navigationTest");
 		menuSteps.clickMenu();
 		//Test moves to Manage Contents page
 		menuSteps.gotoClassroomCreation();
@@ -142,6 +146,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		classSteps.verifyAvgScoreAcceptsMoretha2DIgits();
 		
 	*/	classSteps.closeLobjModel();
+	MyScreenRecorder.stopRecording();
 		wait(10);
 		menuSteps.logout();
 	}
@@ -164,11 +169,12 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 			+ "TCID_38: Verify Whether the Add survey details are displayed after clicking Survey label under post event"
 			+ "TCID_39: Verify whether the Add Survey button is displayed after expanding Survey under post event"
 			+ "TCID_40: Verify whether the new Survey form details fields are displayed after clicking the Add Assignment Button under post event")
-	public void verifyEvents2(String row, String strBrowserName) throws IOException {
+	public void verifyEvents2(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		
 		MenuSteps menuSteps = new MenuSteps(driver);
+		MyScreenRecorder.startRecording("navigationTest");
 		menuSteps.clickMenu();
 		//Test moves to Manage Contents page
 		menuSteps.gotoClassroomCreation();
@@ -220,6 +226,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		classSteps.verifyPostSurveyDetails();
 		Reporter.writeSummary("TCID_Event_039,  Verify whether the Add Survey button is displayed after expanding Survey under post event, " +  classSteps.getResult() );
 		//TCID_39: Verify whether the Add Survey button is displayed after expanding Survey under post event
+		MyScreenRecorder.stopRecording();
 		classSteps.verifyPostAddSurveyButton();
 		Reporter.writeSummary("TCID_Event_040,  Verify whether the new Survey form details fields are displayed after clicking the Add Assignment Button under post event, " +  classSteps.getResult() );
 		//TCID_40: Verify whether the new Survey form details fields are displayed after clicking the Add Assignment Button under post event
@@ -242,11 +249,12 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 			+ "TCID_48: Verify whether the 2nd page is opened on clicking continue button after filling all the mandatory fields."
 			+ "TCID_49: Verfy whether the alert message is thrown for all the Mandatory fields, if Save button is clicked without filling any fields"
 			+ "TCID_50: Verify whether the \"Maximum no. of participants\" field accepts numbers")
-	public void verifyEvents3(String row, String strBrowserName) throws IOException {
+	public void verifyEvents3(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		
 		MenuSteps menuSteps = new MenuSteps(driver);
+		MyScreenRecorder.startRecording("navigationTest");
 		menuSteps.clickMenu();
 		//Test moves to Manage Contents page
 		menuSteps.gotoClassroomCreation();
@@ -285,6 +293,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		classSteps.verifyMaxNumParticipAcceptNum();
 		
 		classSteps.closeLobjModel();
+		MyScreenRecorder.stopRecording();
 		wait(10);
 		menuSteps.logout();
 	}
@@ -300,11 +309,12 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 			+ "TCID_58: Verify whether the \"Minimum no. of participants\" field accepts alphabets"
 			+ "TCID_59: Verify whether the alert message is disappeared after entering 'Minimum no. of participants'"
 			+ "TCID_60: Verify whether the 'Waiting List Threshold' field accepts numbers")
-	public void verifyEvents4(String row, String strBrowserName) throws IOException {
+	public void verifyEvents4(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		
 		MenuSteps menuSteps = new MenuSteps(driver);
+		MyScreenRecorder.startRecording("navigationTest");
 		menuSteps.clickMenu();
 		//Test moves to Manage Contents page
 		menuSteps.gotoClassroomCreation();
@@ -345,6 +355,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		//TCID_60: Verify whether the 'Waiting List Threshold' field accepts numbers
 		classSteps.verifyMinNumParticipAlertDisappears();
         classSteps.verifyCancellationPolicy();
+        MyScreenRecorder.stopRecording();
         Reporter.writeSummary("TCID_Event_070,  Verify Whether the Cancellation Policy is displayed at the bottom of the page, " +  classSteps.getResult() );
      	//TCID_70: Verify Whether the Cancellation Policy is displayed at the bottom of the page
 		
@@ -354,11 +365,12 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 	}
 	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="")
-	public void verifyEvents5(String row, String strBrowserName) throws IOException {
+	public void verifyEvents5(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		
 		MenuSteps menuSteps = new MenuSteps(driver);
+		MyScreenRecorder.startRecording("navigationTest");
 		menuSteps.clickMenu();
 		//Test moves to Manage Contents page
 		menuSteps.gotoClassroomCreation();
@@ -425,6 +437,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_Event_33,  Verify whether the alert is disappearing after selecting Start Date For Registration, " +  classSteps.getResult() );
 		//33:Verify whether the alert is disappearing after selecting Start Date For Registration
 		classSteps.verifyAlertDisappearLastDateRegistartion();
+		MyScreenRecorder.stopRecording();
 		Reporter.writeSummary("TCID_Event_34,  Verify whether the alert is disappearing after selecting Last Date For Registration, " +  classSteps.getResult() );
 		//34:Verify whether the alert is disappearing after selecting Last Date For Registration
  
