@@ -34,7 +34,7 @@ public class AdminLoginPage extends FractalBasePage {
 		// Go to Home Page
 //*******************************added by mahesh 08/04/2019****************************//	
 	//	String baseUrl=getGobal("webtesturl");
-		String baseUrl = "https://automation-origin.originfractal.com/admin/index.php#/login"; //https://dev-huron.originfractal.com;
+		String baseUrl = "https://automation-origin.originfractal.com/admin"; //https://dev-huron.originfractal.com;
 		goTo(baseUrl);
 		
 	}
@@ -51,8 +51,9 @@ public class AdminLoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void loginToContentAdmin() throws IOException{
-		enterData("contentadmin@origin.com",tbUserName);
-	    enterData("P@ssw0rd",tbPassword);
+		//updating the credentials of siteadmin as settings icon is present only for siteadmin
+				enterData("automation_siteadmin@origin.com",tbUserName);
+			    enterData("AutoSA@123",tbPassword);
 	    click(btnLogin1);
 	    wait(5);
 	}
