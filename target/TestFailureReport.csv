@@ -1,1 +1,3 @@
 "Browser/App"," Environment"," TCID"," TEST DESCRIPTION"," TEST RESULT ","TIME TAKEN(SEC)","TIME STAMP"
+"chrome","Staging","TCID_MY_LEARN__011"," Verify learning item page is opened when any of the particular course catalog item is clicked"," FAILED","32","Fri Jan 17 16:00:15 IST 2020"
+"chrome","Staging","TCID_MY_LEARN__012","Verify Learning item page contains Course Name joined on date and time Description Validity Duration"," FAILED","34","Fri Jan 17 16:00:50 IST 2020"
