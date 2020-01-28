@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="981672" started-at="2019-11-08T08:32:01Z" finished-at="2019-11-08T08:48:22Z">
+  <suite name="Default suite" duration-ms="94583" started-at="2020-01-21T11:31:27Z" finished-at="2020-01-21T11:33:02Z">
     <groups>
-      <group name="Phase1.0">
-        <method signature="WebTestManageContentItemCode.editVerifyCatalogItemcodes(java.lang.String, java.lang.String)[pri:3, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="editVerifyCatalogItemcodes" class="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode"/>
-        <method signature="WebTestManageContentItemCode.editVerifyLearningObjectsItemcodes(java.lang.String, java.lang.String)[pri:1, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="editVerifyLearningObjectsItemcodes" class="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode"/>
-        <method signature="WebTestManageContentItemCode.renameItemCodes_LO_CI(java.lang.String, java.lang.String)[pri:4, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="renameItemCodes_LO_CI" class="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode"/>
-        <method signature="WebTestManageContentItemCode.verifyCatalogItemcodes(java.lang.String, java.lang.String)[pri:2, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="verifyCatalogItemcodes" class="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode"/>
-        <method signature="WebTestManageContentItemCode.verifyLearningObjectsItemcodes(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="verifyLearningObjectsItemcodes" class="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode"/>
-      </group> <!-- Phase1.0 -->
+      <group name="pilot">
+        <method signature="WebTestVideoTester.verifyvideo(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="verifyvideo" class="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester"/>
+      </group> <!-- pilot -->
     </groups>
-    <test name="Default test" duration-ms="981672" started-at="2019-11-08T08:32:01Z" finished-at="2019-11-08T08:48:22Z">
-      <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="beforeSuite" is-config="true" duration-ms="17" started-at="2019-11-08T08:32:01Z" finished-at="2019-11-08T08:32:01Z">
+    <test name="Default test" duration-ms="94583" started-at="2020-01-21T11:31:27Z" finished-at="2020-01-21T11:33:02Z">
+      <class name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="beforeSuite" is-config="true" duration-ms="27" started-at="2020-01-21T11:31:27Z" finished-at="2020-01-21T11:31:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-11-08T08:32:01Z" finished-at="2019-11-08T08:32:01Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-01-21T11:31:27Z" finished-at="2020-01-21T11:31:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-11-08T08:32:01Z" finished-at="2019-11-08T08:32:01Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-01-21T11:31:27Z" finished-at="2020-01-21T11:31:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="verifyLearningObjectsItemcodes(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="verifyLearningObjectsItemcodes" duration-ms="89753" started-at="2019-11-08T08:32:01Z" description="TC_BothAU_ManageContent_LearnObj_Itemcode-01-07" data-provider="browers" finished-at="2019-11-08T08:33:30Z">
+        <test-method status="PASS" signature="verifyvideo(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="verifyvideo" duration-ms="93388" started-at="2020-01-21T11:31:27Z" description="video testing" data-provider="browers" finished-at="2020-01-21T11:33:00Z">
           <params>
             <param index="0">
               <value>
@@ -41,124 +37,28 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLearningObjectsItemcodes -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-08T08:32:01Z" finished-at="2019-11-08T08:32:01Z">
+        </test-method> <!-- verifyvideo -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-21T11:31:27Z" finished-at="2020-01-21T11:31:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="afterMethod" is-config="true" duration-ms="957" started-at="2019-11-08T08:33:30Z" finished-at="2019-11-08T08:33:31Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="afterMethod" is-config="true" duration-ms="1167" started-at="2020-01-21T11:33:00Z" finished-at="2020-01-21T11:33:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-08T08:33:31Z" finished-at="2019-11-08T08:33:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="editVerifyLearningObjectsItemcodes(java.lang.String, java.lang.String)[pri:1, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="editVerifyLearningObjectsItemcodes" duration-ms="280291" started-at="2019-11-08T08:33:31Z" description="TC_BothAU_ManageContent_Edited_LearnObj_Itemcode-08-14" data-provider="browers" finished-at="2019-11-08T08:38:12Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editVerifyLearningObjectsItemcodes -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="afterMethod" is-config="true" duration-ms="972" started-at="2019-11-08T08:38:12Z" finished-at="2019-11-08T08:38:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-08T08:38:13Z" finished-at="2019-11-08T08:38:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyCatalogItemcodes(java.lang.String, java.lang.String)[pri:2, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="verifyCatalogItemcodes" duration-ms="80467" started-at="2019-11-08T08:38:13Z" description="TC_BothAU_ManageContent_CatItem_Itemcode-15-19" data-provider="browers" finished-at="2019-11-08T08:39:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCatalogItemcodes -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="afterMethod" is-config="true" duration-ms="905" started-at="2019-11-08T08:39:33Z" finished-at="2019-11-08T08:39:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="editVerifyCatalogItemcodes(java.lang.String, java.lang.String)[pri:3, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="editVerifyCatalogItemcodes" duration-ms="210156" started-at="2019-11-08T08:39:34Z" description="TC_BothAU_ManageContent_Edited_CatItem_Itemcode-20-24" data-provider="browers" finished-at="2019-11-08T08:43:04Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editVerifyCatalogItemcodes -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-08T08:39:34Z" finished-at="2019-11-08T08:39:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="afterMethod" is-config="true" duration-ms="969" started-at="2019-11-08T08:43:04Z" finished-at="2019-11-08T08:43:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="renameItemCodes_LO_CI(java.lang.String, java.lang.String)[pri:4, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="renameItemCodes_LO_CI" duration-ms="316149" started-at="2019-11-08T08:43:05Z" description="Rename_ReEdit the itemcodes" data-provider="browers" finished-at="2019-11-08T08:48:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- renameItemCodes_LO_CI -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-08T08:43:05Z" finished-at="2019-11-08T08:43:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="afterMethod" is-config="true" duration-ms="1019" started-at="2019-11-08T08:48:21Z" finished-at="2019-11-08T08:48:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-11-08T08:48:22Z" finished-at="2019-11-08T08:48:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-11-08T08:48:22Z" finished-at="2019-11-08T08:48:22Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-01-21T11:33:02Z" finished-at="2020-01-21T11:33:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode@64bfbc86]" name="afterSuite" is-config="true" duration-ms="2" started-at="2019-11-08T08:48:22Z" finished-at="2019-11-08T08:48:22Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-01-21T11:33:02Z" finished-at="2020-01-21T11:33:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@64bfbc86]" name="afterSuite" is-config="true" duration-ms="1" started-at="2020-01-21T11:33:02Z" finished-at="2020-01-21T11:33:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode -->
+      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestVideoTester -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
