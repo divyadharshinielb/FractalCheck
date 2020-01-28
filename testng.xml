@@ -11,7 +11,7 @@
 	<!-- End of reportNg modification -->
 	<test thread-count="18" name="Test" >
 		<classes>
-		<!--
+		
 				<class
 name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 <class
@@ -19,10 +19,9 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" />  -->
+name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" />  
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" /> 
-<!-- 
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
 <class
@@ -44,7 +43,7 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />-->
+name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 				
 		</classes>
 	</test> <!-- Test -->
