@@ -11,10 +11,10 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class ClassroomEventPage extends FractalBasePage{
 
-	private By FirstListItem = By.xpath(".//span[contains(text(),'Added on')]");
+	private By FirstListItem = By.xpath(".//a[contains(text(), 'Automation classroom')]");//span[contains(text(),'Added on')]
 	private By btnAddEvent = By.xpath(".//button[contains(text(),'Add Event')]");//.//h4[contains(text(),'Events')]/../../*//button[contains(text(),'Add Event')]
 	private By eventPageTitle = By.xpath(".//h4[contains(text(),'New Event')]");
-	private By btnContinue = By.xpath(".//button[@id='Continue_event']");//button[contains(text(),'Continue')]
+	private By btnContinue = By.xpath(".//button[contains(text(),'Continue')]");//button[contains(text(),'Continue')]
 	private By btnBack = By.xpath(".//button[contains(text(),'BACK')]");
 	private By btnCancel = By.xpath("//button[@class='btn btn-cancel btn_radius ng-binding text-left']");//button[contains(text(),'CANCEL')]
 	private By lblTraditionalClassroom = By.xpath(".//label[contains(text(),'Traditional Classroom')]");
@@ -212,7 +212,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(btnContinue);
 	//click(btnBack);//Should remove
 	click(lblTraditionalClassroom);
-	verifyText("Venue Required",venueAlertMsg);
+	verifyText("Venue selection required.",venueAlertMsg);
 	click(venueDropdown);wait(5);
 	click(selectVenue);
 	wait(5);
@@ -292,12 +292,12 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyNewPreAssignmentForm() {
 	wait(5);
-	scrollToElement(btnPreAddAssignment);wait(5);
+/*	scrollToElement(btnPreAddAssignment);wait(5);
 	click(btnPreAddAssignment);
 	verifyText("Assignment Title",getAttributeValue(inpPreEventAssignTitle));
 	verifyText("Assignment Description",getAttributeValue(inpPreEventAssignDesc));
 	verifyText("Add Assignment", btnPreAddAssignment);
-	}
+*/	}
 	public void verifySurveyDetailsDisplayed() {
 	wait(5);
 	scrollToElement(lblPreSurvey);
@@ -584,6 +584,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(lblSelectCalendar);
 	wait(5);
 	click(dropdownSelectCalendar);
+	wait(5);
 	enterData("10",lblCalendarHour);
 	enterData("50",lblCalendarMinute);
 	click(lblPm);

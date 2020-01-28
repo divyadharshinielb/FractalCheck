@@ -30,7 +30,7 @@ public class ReportPage extends FractalBasePage{
 			click(lblUsername);
 			wait(5);
 			enterData("automation_directuser",lblUsername);
-			wait(5);
+			wait(10);
 			click(lblHighlight);
 			Actions action=new Actions(driver);
 		//    action.sendKeys("automation_directuser@originlearning.com").sendKeys(Keys.ENTER).build().perform();

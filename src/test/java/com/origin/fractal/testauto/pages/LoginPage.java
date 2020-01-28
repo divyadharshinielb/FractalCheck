@@ -26,7 +26,7 @@ public class LoginPage extends FractalBasePage {
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//input[contains(@id,'theInput')]");
-	
+	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
@@ -40,6 +40,19 @@ public class LoginPage extends FractalBasePage {
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin1);
 		wait(5);
+	}
+	public void loginToInstructor() {
+		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
+	    enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2
+	    click(btnLogin1);
+	    wait(2);
+		if(elementExist(btnCookies)) {
+		click(btnCookies);
+		}
+	    wait(5);
+	    click(By.xpath("//div[@class='ci-hover']//button[@class='jss29 jss3 jss5 jss8 circle-hover']"));
+	    wait(5);
+	    click(By.xpath("//button[@class='role-button']"));
 	}
 	public void loginToContentAdmin() {
 		enterData("contentadmin@origin.com",tbUserName);
