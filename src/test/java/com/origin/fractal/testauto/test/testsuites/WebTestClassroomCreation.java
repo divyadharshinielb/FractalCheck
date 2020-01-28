@@ -11,6 +11,7 @@ import com.origin.fractal.testauto.steps.ClassroomSteps;
 import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
+import com.wv.auto.framework.utils.MyScreenRecorder;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestClassroomCreation extends FractalBaseWebTest {
@@ -24,9 +25,10 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
 		};
 	}
 	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
-	public void testVerifyClassroomCreation(String row, String strBrowserName) throws IOException {
+	public void testVerifyClassroomCreation(String row, String strBrowserName) throws Exception {
 	
 		driver = BrowserFactory.getBrowser(strBrowserName);
+		MyScreenRecorder.startRecording("navigationTest");
 		loginToContentAdmin(driver);
 		MenuSteps menuSteps = new MenuSteps(driver);
 		Reporter.writeSummary("TCID_CLASS_001, Verify clicking the Classroom icon displays the Classroom page, " +  menuSteps.getResult() );
@@ -61,13 +63,15 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
         cSteps.singleAndMultiInstructor();
         Reporter.writeSummary("TCID_CLASS_014, Verify whether the Admin should be able to view drop-down for Single Instructor and selection box for Multiple Instructors," +  cSteps.getResult() );
       cSteps.classroomPageInformation();
+      MyScreenRecorder.stopRecording();
         Reporter.writeSummary("TCID_CLASS_028, Verify the user is able to view the Classroom details of a  Classroom," +  cSteps.getResult() );
 	}
         
 		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = false,description="")
-    	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
+    	public void testClassroomCreation(String row, String strBrowserName) throws Exception {
     	
     		driver = BrowserFactory.getBrowser(strBrowserName);
+    		MyScreenRecorder.startRecording("navigationTest");
     		loginToContentAdmin(driver);
     		MenuSteps menuSteps = new MenuSteps(driver);   
     		menuSteps.clickMenu();
@@ -96,6 +100,7 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
 	    Reporter.writeSummary("TCID_CLASS_029, Verify whether Admin must be able to view  the completion criteria page," +  cSteps.getResult() );
 	    cSteps.classroomListedPage();
 	    cSteps.eventListedPage();
+	    MyScreenRecorder.stopRecording();
 	    Reporter.writeSummary("TCID_CLASS_030, Verify whether Admin must be able to view the created EVENT and information," +  cSteps.getResult() );
 	 }
 }
