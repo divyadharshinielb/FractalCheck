@@ -51,7 +51,7 @@ public class AdminLoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void loginToContentAdmin() throws IOException{
-		enterData("contentadmin@origin.com",tbUserName);
+		enterData("siteadmin@origin.com",tbUserName);//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPassword);//Admin@123
 	    click(btnLogin1);
 	    wait(5);
