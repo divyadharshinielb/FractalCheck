@@ -19,12 +19,12 @@ public class MyLearningPage extends FractalBasePage {
 	private By lblLearningpath=By.xpath(".//button[contains(text(),'LEARNING PATHS')]");
 	private By lblResources = By.xpath(".//button[contains(text(),'RESOURCES')]");//*[@id='ngview']/*//ng-include/*//span[contains(text(),'resources')]
 	private By lblBundles = By.xpath(".//button[contains(text(),'BUNDLES')]");//*[@id='ngview']/*//ng-include/*//span[contains(text(),'bundles')]
-	private By lblListView = By.xpath(".//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2 mb-3')]//div[2]//div[1]"); //div[contains(@class, 'row')]//*/div[2]/div/a
+	private By lblListView = By.xpath(".//div[contains(@class,'bgcolor padding-tb-0')]//div[contains(@class,'bgcolor')]//div//div[2]//div[1]//a[1]"); //div[contains(@class, 'row')]//*/div[2]/div/a
 	private By btnGrid = By.xpath(".//a//i[contains(@class,'icon-grid-selected font-16')]");
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath("//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Valid till:')]");//Updated on Nov-22-18 //div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')] //div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
+	private By clickCatalog = By.xpath("//*[@id=\"react-tabs-1\"]/div/div/div/div[3]/div/div[1]/a[1]/div");//Updated on Nov-22-18 //div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')] //div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
 
 	private By lblCatlogCategory = By.xpath(".//div[contains(text(),'Category')]");
 	private By lblLanguage = By.xpath(".//div[contains(text(),'Language')]");
@@ -37,7 +37,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By boxButton = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]/div[1]");//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
 	/************Newui***************/
 	private By lblCatnameInside = By.xpath(".//div[contains(@class, 'cdescrip tecap')]/../div/span");//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3
-	private By bundleCnt = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]");////Updated Nov-22-18
+	private By bundleCnt = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]");////Updated Nov-22-18
 	private By lblcourseName = By.xpath(".//span[@class='three-line-clamp']");//Updated Nov-22-18//h1[@class='masonry-bundlename ellipsis padding-t-5']
 	private By lblDuration = By.xpath(".//div/*//span[contains(text(),'Duration')]");
 	private By lblTick = By.xpath(".//button[@class='pl-0 launch_btn www']/../button/img");//round-progress-wrapper
@@ -112,6 +112,7 @@ public class MyLearningPage extends FractalBasePage {
 		click(lblBundles);
 		wait(3);
 		click(lblListView);
+		wait(5);
 		click(bundleCnt);
 		verifyLabel("lblCourseNameText", lblcourseName);
 	}
@@ -260,7 +261,7 @@ public class MyLearningPage extends FractalBasePage {
     private By lblRegisterText=By.xpath("//p[contains(text(),'By registering, you are accepting the')]");
     private By lblEventCalendarText=By.xpath("//button[contains(text(), 'Choose Event')]");
     private By btnCancelRegistration=By.xpath(".//button[contains(text(),'CANCEL REGISTRATION')]");
-    private By lblAssignedClassroom2=By.xpath("//h1[contains(text(),'checking for classroom event')]");//h1[contains(text(),'App_notification_check')]
+    private By lblAssignedClassroom2=By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/div[3]/div[3]/div[1]/div[1]/div[1]");//h1[contains(text(),'App_notification_check')]
     private By lblPreeventActivities=By.xpath("//span[contains(text(),'Pre-event Activities')]");
     private By lblReference=By.xpath(" //span[contains(text(),'Reference')]");
     private By lblPosteventActivities=By.xpath("//span[contains(text(),'Post-event Activities')]");
@@ -316,7 +317,11 @@ public class MyLearningPage extends FractalBasePage {
 			actions.perform();
 			wait(2);
 		    click(By.xpath(".//a[text()='Automation Learningpath']"));
-		    wait(2);
+		    wait(5);
+		    WebElement element1 = driver.findElement( By.xpath("//h1[contains(text(),'Automation classroom')]")); Actions 
+			actions1 = new Actions(driver); actions.moveToElement(element1);
+			actions1.perform();
+			wait(5);
 			click(lblAssignedClassroom2);
 			if(elementExist(lblReference)) {	  
 			//edit by divya based on newcode  verifyText("Pre-event Activities",lblPreeventActivities);
