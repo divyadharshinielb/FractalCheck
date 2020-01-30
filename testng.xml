@@ -18,7 +18,14 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
-
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" /> 
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" /> 
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
 				
 		</classes>
 	</test> <!-- Test -->

@@ -565,7 +565,7 @@ public void verifyCartItemBtn1() {
 public void clickLogout() {
 wait(5);
 click(lblProfile);
-wait(5);
+wait(6);
 click(logOut);
 
 }

@@ -17,10 +17,10 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
 	@DataProvider
 	public  Object[][] browers() {
 		return new Object[][] {
-			new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
+		 new Object[] { "1", "chrome" }
+ //     , new Object[] { "2", "firefox" }
 //		, new Object[] { "3", "msedge" } 
-//		 new Object[] { "4", "ie11" }
+//		  new Object[] { "4", "ie11" }
 		};
 	}
 	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
@@ -45,24 +45,24 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
         Reporter.writeSummary("TCID_CLASS_016, Verify the caution alerts for all the fields," +  cSteps.getResult() );
         cSteps.cautionAlertsForClassroomTitle();
         Reporter.writeSummary("TCID_CLASS_NEW_01, Verify whether Admin should be able to view the caution alerts for ClassroomTitle," +  cSteps.getResult() );
-         cSteps.cautionAlertsForClassroomVenue();
+ /*        cSteps.cautionAlertsForClassroomVenue();
          Reporter.writeSummary("TCID_CLASS_NEW_02, Verify whether Admin should be able to view the caution alerts for ClassroomVenue," +  cSteps.getResult() );
-         cSteps.cautionAlertsForCategorySelection();
+  */       cSteps.cautionAlertsForCategorySelection();
          Reporter.writeSummary("TCID_CLASS_NEW_03, Verify whether Admin should be able to view the caution alerts for CategorySelection," +  cSteps.getResult() );
          cSteps.cautionAlertsForClassroomDescription();
          Reporter.writeSummary("TCID_CLASS_NEW_04, Verify whether Admin should be able to view the caution alerts for ClassroomDescription," +  cSteps.getResult() );
          cSteps.cautionAlertsForSkillsetSelection();
          Reporter.writeSummary("TCID_CLASS_NEW_05, Verify whether Admin should be able to view the caution alerts for SkillsetSelection," +  cSteps.getResult() );
-         cSteps.cautionAlertsForInstructorSelection();
+  /*       cSteps.cautionAlertsForInstructorSelection();
          Reporter.writeSummary("TCID_CLASS_NEW_06, Verify whether Admin should be able to view the caution alerts for InstructorSelection," +  cSteps.getResult() );
         cSteps.titleAcceptsCharater(); 
         Reporter.writeSummary("TCID_CLASS_007, Verify the Title field accepts only more than 4 characters.," +  cSteps.getResult() );
-  //    cSteps.completionCriteriaCheckUncheck();
+      cSteps.completionCriteriaCheckUncheck();
         cSteps.singleAndMultiInstructor();
         Reporter.writeSummary("TCID_CLASS_014, Verify whether the Admin should be able to view drop-down for Single Instructor and selection box for Multiple Instructors," +  cSteps.getResult() );
       cSteps.classroomPageInformation();
         Reporter.writeSummary("TCID_CLASS_028, Verify the user is able to view the Classroom details of a  Classroom," +  cSteps.getResult() );
-	}
+	*/}
         
 		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = false,description="")
     	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
