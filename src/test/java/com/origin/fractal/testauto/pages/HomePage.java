@@ -184,9 +184,9 @@ public class HomePage extends FractalBasePage {
 		clickOnBellIcon();
 		wait(2);
 	//	verifyLabel("lblNotification",lblNotification );
-		String ntnIntroGST=getText(Check);
-		verifyText(ntnIntroGST,Check );
-		clickOnViewAll();
+	//	String ntnIntroGST=getText(Check);
+	//	verifyText(ntnIntroGST,Check );
+	//	clickOnViewAll();
 		
 	}
 	public void verifyResumeLearningText() {
@@ -218,6 +218,11 @@ public class HomePage extends FractalBasePage {
 	}
 	public void verifyTopArrBtn() {
 		wait(5);
+		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
+		Actions actions1= new Actions(driver);
+		actions1.moveToElement(element1);
+		actions1.perform();
+		wait(10);
 		clickOnTopArrBtn();
 		System.out.println("The page should be moving upwards");
 	}
@@ -230,7 +235,7 @@ public class HomePage extends FractalBasePage {
 		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
 	     
 	}
-	public void verifyBundleFilterWhatsNew() {
+	/*public void verifyBundleFilterWhatsNew() {
 		click(whlblAll);
 		click(whlblBundles);
 		wait(2);
@@ -241,7 +246,7 @@ public class HomePage extends FractalBasePage {
 		click(whlblCourses);
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Course");
 		
-	}
+	}*/
 	public void verifyResourceFilterWhatsNew() {
 		click(whlblAll);
 		click(whlblResources);
@@ -354,9 +359,9 @@ public class HomePage extends FractalBasePage {
 	/*Added by Manju Priya A on Nov-27-18*/
 	public void verifyHomePageData() {
 		elementExist(txtBoxSearch);
-		elementExist(iconWishlist);
-		elementExist(iconCart);
-		verifyText(getLabel("lblcategory"), lblCategory);
+		//elementExist(iconWishlist);
+		//elementExist(iconCart);
+		//verifyText(getLabel("lblcategory"), lblCategory);
 		verifyText(getLabel("lblMyLearning"), lblMyLearning);
 		
 	}
@@ -407,29 +412,29 @@ public class HomePage extends FractalBasePage {
 		verifyLabel("lblContacts",contactsLink);
 		WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
 		//edited by divya on 24th sept 2019
-		if(BrowserFactory.getOS() == "win") {
+		/*	if(BrowserFactory.getOS() == "win") {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element);
 		actions.perform();
 		}//edited till here by divya
-		wait(10);
-/*		
+		wait(10);*/
+		
 		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
 		Actions actions1= new Actions(driver);
-		actions.moveToElement(element1);
+		actions1.moveToElement(element1);
 		actions1.perform();
 		wait(10);
-*/		click(termsLink);
+		click(termsLink);
 		verifyLabel("termsPage",termsPage);
 		wait(5);
 		click(contactsLink);
 		verifyLabel("contactsPage",contactsPage);
 		wait(5);
-		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
+		WebElement element2 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
 		//edited by divya on 24th sept 2019
 				if(BrowserFactory.getOS() == "win") {
-		Actions actions1= new Actions(driver);
-		actions1.moveToElement(element1);
+		Actions actions= new Actions(driver);
+		actions1.moveToElement(element2);
 		actions1.perform();
 				}//edited till here by divya
 		wait(5);

@@ -175,8 +175,8 @@ homeSteps.whatsNewSectionAttributes();
 /******************/
 	
 	 homeSteps.verifyAllFilterWhatsNew();
-   homeSteps.verifyBundleFilterWhatsNew();
-   homeSteps.verifyCourseFilterWhatsNew();
+  // homeSteps.verifyBundleFilterWhatsNew();
+  // homeSteps.verifyCourseFilterWhatsNew();
    homeSteps.verifyResourceFilterWhatsNew();
    homeSteps.verifyLearnPathFilterWhatsNew();
 

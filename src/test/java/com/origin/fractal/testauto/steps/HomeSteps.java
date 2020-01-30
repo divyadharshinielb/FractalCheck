@@ -146,7 +146,7 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
-	public void verifyBundleFilterWhatsNew(){
+	/*public void verifyBundleFilterWhatsNew(){
 		 result ="PASSED";
 		   try {
 			 page.verifyBundleFilterWhatsNew();
@@ -167,7 +167,7 @@ public class HomeSteps extends FractalBaseStep {
 			e.printStackTrace();   
 			result="FAILED";
 		   }
-	}
+	}*/
 	public void verifyResourceFilterWhatsNew(){
 		result ="PASSED";
 		   try {

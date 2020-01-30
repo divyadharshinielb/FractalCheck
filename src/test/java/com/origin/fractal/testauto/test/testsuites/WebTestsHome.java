@@ -72,7 +72,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "TC_nnnn Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
 	public void testHomePageVerifyRcntAddedCourseNavigation(String row, String strBrowserName) {
@@ -111,7 +111,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {
@@ -133,11 +133,11 @@ public class WebTestsHome extends FractalBaseWebTest {
 	//	Reporter.writeSummary("TCID_HOME_042,  Verify The data should be shown under the topic Recently Added when All is clicked, " +   homeSteps.getResult() );
 	//	Reporter.writeSummary("TCID_HOME_057,  Verify whether Content Bundle Course Video and Learning path are shown  under Recently Added when All link is clicked, " +   homeSteps.getResult() );
 		//TCID_43:The Bundles should be shown under the topic Recently Added when the link Bundles is clicked
-		homeSteps.verifyCourseFilterWhatsNew();//newui
-		Reporter.writeSummary("TCID_HOME_045,  Verify  The courses should be shown under the What's New Added when the link courses is clicked, " + homeSteps.getResult() );
+		//homeSteps.verifyCourseFilterWhatsNew();//newui
+		//Reporter.writeSummary("TCID_HOME_045,  Verify  The courses should be shown under the What's New Added when the link courses is clicked, " + homeSteps.getResult() );
 		//TCID_46:The resources should be shown under the topic Recently Added when the link resources is clicked
-		homeSteps.verifyBundleFilterWhatsNew();//newui
-		Reporter.writeSummary("TCID_HOME_043,  Verify  The Bundles should be shown under the What's New Added when the link Bundles is clicked, " + homeSteps.getResult() );
+		//homeSteps.verifyBundleFilterWhatsNew();//newui
+		//Reporter.writeSummary("TCID_HOME_043,  Verify  The Bundles should be shown under the What's New Added when the link Bundles is clicked, " + homeSteps.getResult() );
 		//TCID_45:The courses should be shown under the topic Recently Added when the link courses is clicked
 		homeSteps.verifyResourceFilterWhatsNew();//newui
 		Reporter.writeSummary("TCID_HOME_046,  Verify The resources should be shown under the What's New Added when the link resources is clicked, " +   homeSteps.getResult() );
@@ -169,7 +169,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 	*/	homeSteps.clickLogout();
 	
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersForKOandMostAdded(String row, String strBrowserName) {
@@ -182,14 +182,14 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyAllFilterMostAdded();
 		Reporter.writeSummary("TCID_052,  Verify The data should be shown under the topic Most consumed content when All is clicked, " +  homeSteps.getResult() );
 		//TCID_53:The Bundles should be shown under the topic Most consumed content when the link Bundles is clicked
-		homeSteps.verifyBundleFilterMostAdded();
-		Reporter.writeSummary("TCID_053,  Verify The Bundles should be shown under the topic Most consumed content when the link Bundles is clicked, " + homeSteps.getResult() );
+		//homeSteps.verifyBundleFilterMostAdded();
+		//Reporter.writeSummary("TCID_053,  Verify The Bundles should be shown under the topic Most consumed content when the link Bundles is clicked, " + homeSteps.getResult() );
 		//TCID_54:The LearnPaths should be shown under the topic Most consumed content when the link  LearnPaths is clicked
 		homeSteps.verifyLearnPathFilterMostAdded();
 		Reporter.writeSummary("TCID_054,  Verify The LearnPaths should be shown under the topic Most consumed content when the link  LearnPaths is clicked, " + homeSteps.getResult() );
 		//TCID_55:The Courses should be shown under the topic Most consumed content when the link  Courses is clicked
-		homeSteps.verifyCourseFilterMostAdded(); //Data not present
-		Reporter.writeSummary("TCID_055,  Verify The Courses should be shown under the topic Most consumed content when the link  Courses is clicked, " +  homeSteps.getResult() );
+		//homeSteps.verifyCourseFilterMostAdded(); //Data not present
+		//Reporter.writeSummary("TCID_055,  Verify The Courses should be shown under the topic Most consumed content when the link  Courses is clicked, " +  homeSteps.getResult() );
 		//TCID_56:The Resources should be shown under the topic Most consumed content when the link Resources is clicked
 //		homeSteps.verifyResourceFilterMostAdded(); //Data not present
 		Reporter.writeSummary("TCID_056,  Verify The Resources should be shown under the topic Most consumed content when the link Resources is clicked, " +  homeSteps.getResult() );
