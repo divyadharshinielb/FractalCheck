@@ -83,7 +83,9 @@ public class BrowserFactory {
 			driversLocation = "C:/webdrivers/";
 			browserExtn = ".exe";
 		}else if(getOS().equalsIgnoreCase("mac")){
+		//local run edit for divya alone driversLocation= "/Users/origin/webdrivers/";
 			driversLocation= "/Users/origin/webdrivers/";
+			//driversLocation="/Users/divyadharshini.r/Downloads/webdrivers/";
 			browserExtn="";
 		}
 	}
@@ -139,7 +141,7 @@ public class BrowserFactory {
 
 	public static WebDriver getChromeBrowser() {
 
-		System.setProperty("webdriver.chrome.driver", driversLocation + "chromedriver"+browserExtn);
+		System.setProperty("webdriver.chrome.driver", driversLocation + "chromedriver 2"+browserExtn);
 		WebDriver browser = new ChromeDriver();
 
 		return browser;

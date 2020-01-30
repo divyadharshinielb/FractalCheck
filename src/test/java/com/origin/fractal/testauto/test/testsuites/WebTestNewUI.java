@@ -27,7 +27,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 
 	if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
 	return new Object[][] {
-	new Object[] { "1", "safari" }
+	new Object[] { "1", "Safari" }
 	};
 	}
 
@@ -36,7 +36,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 
 
 
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="LOGIN PAGE")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="LOGIN PAGE",priority = 0)
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -65,7 +65,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
 	public void testMyLearningPage0(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
@@ -86,7 +86,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 
 
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false, 
 			description="TCID_61,62 "
 			+ "61: Verify  My account page,"
 			+ "62: Verify  My Account Profile details, ")

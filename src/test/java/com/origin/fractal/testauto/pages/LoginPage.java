@@ -77,7 +77,7 @@ public class LoginPage extends FractalBasePage {
 		click(lblProfile);
 		wait(10);
 		click(logOutButton);
-		wait(5);
+		wait(15);
 		click(rememberMe);
 		wait(5);
 		click(btnLogin);
