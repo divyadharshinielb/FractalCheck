@@ -89,7 +89,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_25,5,8,14,6,7: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_25,5,8,14,6,7: "
 			+ "25: Verify Tickmark for completed catalog item" + "5: Verify Category dropdown and Grid and List mode"
 			+ "8: Verify Category items" + "14: Verify Rating for completed catalog item"
 			+ "6,7: verify the Grid and List view items and functionality")
@@ -156,7 +156,9 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_MY_LEARN__027,Checking whether the page is moving upwards when ^ button is clicked , " +  mLSteps.getResult() );
 */		mLSteps.clickLogout();
 	}
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description ="")
+	
+	//This is made false because this particular test suite is not applicable for cog scale
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description ="")
 	public void testMyLearningPageClassroom(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;

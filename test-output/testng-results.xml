@@ -1,35 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="5" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="126997" started-at="2020-01-30T07:54:01Z" finished-at="2020-01-30T07:56:08Z">
+  <suite name="Default suite" duration-ms="494800" started-at="2020-01-30T11:59:03Z" finished-at="2020-01-30T12:07:18Z">
     <groups>
       <group name="pilot">
+        <method signature="WebTestsHome.testHomePage(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePage" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
         <method signature="WebTestsHome.testHomePageVerifyFiltersForKOandMostAdded(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyFiltersForKOandMostAdded" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
+        <method signature="WebTestsHome.testHomePageVerifyFiltersRcntRecommended(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyFiltersRcntRecommended" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
+        <method signature="WebTestsHome.testHomePageVerifyRcntAddedCourseNavigation(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyRcntAddedCourseNavigation" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
       </group> <!-- pilot -->
       <group name="Home">
+        <method signature="WebTestsHome.testHomePage(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePage" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
         <method signature="WebTestsHome.testHomePageVerifyFiltersForKOandMostAdded(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyFiltersForKOandMostAdded" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
+        <method signature="WebTestsHome.testHomePageVerifyFiltersRcntRecommended(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyFiltersRcntRecommended" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
+        <method signature="WebTestsHome.testHomePageVerifyRcntAddedCourseNavigation(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyRcntAddedCourseNavigation" class="com.origin.fractal.testauto.test.testsuites.WebTestsHome"/>
       </group> <!-- Home -->
     </groups>
-    <test name="Default test" duration-ms="126997" started-at="2020-01-30T07:54:01Z" finished-at="2020-01-30T07:56:08Z">
+    <test name="Default test" duration-ms="494800" started-at="2020-01-30T11:59:03Z" finished-at="2020-01-30T12:07:18Z">
       <class name="com.origin.fractal.testauto.test.testsuites.WebTestsHome">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeSuite" is-config="true" duration-ms="13" started-at="2020-01-30T07:54:01Z" finished-at="2020-01-30T07:54:01Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeSuite" is-config="true" duration-ms="13" started-at="2020-01-30T11:59:03Z" finished-at="2020-01-30T11:59:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-01-30T07:54:01Z" finished-at="2020-01-30T07:54:01Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-01-30T11:59:03Z" finished-at="2020-01-30T11:59:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-01-30T07:54:01Z" finished-at="2020-01-30T07:54:01Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-01-30T11:59:03Z" finished-at="2020-01-30T11:59:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-01-30T07:54:01Z" finished-at="2020-01-30T07:54:01Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-01-30T11:59:03Z" finished-at="2020-01-30T11:59:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testHomePageVerifyFiltersForKOandMostAdded(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyFiltersForKOandMostAdded" duration-ms="126360" started-at="2020-01-30T07:54:01Z" description="TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections" data-provider="browers" finished-at="2020-01-30T07:56:08Z">
+        <test-method status="PASS" signature="testHomePage(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePage" duration-ms="202519" started-at="2020-01-30T11:59:03Z" description="TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recentlyadded courses and arrow button at the top" data-provider="browers" finished-at="2020-01-30T12:02:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePage -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterMethod" is-config="true" duration-ms="655" started-at="2020-01-30T12:02:26Z" finished-at="2020-01-30T12:02:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-01-30T12:02:26Z" finished-at="2020-01-30T12:02:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testHomePageVerifyFiltersForKOandMostAdded(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyFiltersForKOandMostAdded" duration-ms="124763" started-at="2020-01-30T12:02:26Z" description="TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections" data-provider="browers" finished-at="2020-01-30T12:04:31Z">
           <params>
             <param index="0">
               <value>
@@ -45,19 +75,67 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomePageVerifyFiltersForKOandMostAdded -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterMethod" is-config="true" duration-ms="615" started-at="2020-01-30T07:56:08Z" finished-at="2020-01-30T07:56:08Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterMethod" is-config="true" duration-ms="612" started-at="2020-01-30T12:04:31Z" finished-at="2020-01-30T12:04:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-01-30T07:56:08Z" finished-at="2020-01-30T07:56:08Z">
+        <test-method status="PASS" signature="testHomePageVerifyFiltersRcntRecommended(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyFiltersRcntRecommended" duration-ms="85316" started-at="2020-01-30T12:04:32Z" description="TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections" data-provider="browers" finished-at="2020-01-30T12:05:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageVerifyFiltersRcntRecommended -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-30T12:04:32Z" finished-at="2020-01-30T12:04:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterMethod" is-config="true" duration-ms="604" started-at="2020-01-30T12:05:57Z" finished-at="2020-01-30T12:05:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="testHomePageVerifyRcntAddedCourseNavigation(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="testHomePageVerifyRcntAddedCourseNavigation" duration-ms="79684" started-at="2020-01-30T12:05:58Z" description="TC_nnnn Verify Home Page has Learning in progress text, completion status, Continue text and button, recentlyadded courses and arrow button at the top" data-provider="browers" finished-at="2020-01-30T12:07:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageVerifyRcntAddedCourseNavigation -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-30T12:05:58Z" finished-at="2020-01-30T12:05:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterMethod" is-config="true" duration-ms="619" started-at="2020-01-30T12:07:17Z" finished-at="2020-01-30T12:07:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-01-30T12:07:18Z" finished-at="2020-01-30T12:07:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-01-30T07:56:08Z" finished-at="2020-01-30T07:56:08Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-01-30T12:07:18Z" finished-at="2020-01-30T12:07:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterSuite" is-config="true" duration-ms="11" started-at="2020-01-30T07:56:08Z" finished-at="2020-01-30T07:56:08Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsHome@2d928643]" name="afterSuite" is-config="true" duration-ms="8" started-at="2020-01-30T12:07:18Z" finished-at="2020-01-30T12:07:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
