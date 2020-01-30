@@ -386,9 +386,9 @@ public class HomePage extends FractalBasePage {
 		click(whatsNewLinkViewAll);
 		wait(5);
 		verifyText(getLabel("vlblAll"), wlblAll);
-		verifyText(getLabel("vlblBundle"), wlblBundle);
+		//verifyText(getLabel("vlblBundle"), wlblBundle);
 		wait(5);
-		verifyText(getLabel("vlblCourse"), wlblcourse);
+		//verifyText(getLabel("vlblCourse"), wlblcourse);
 		verifyText(getLabel("vlblResource"), wlblResource);
 		if(elementExist(wlblLpath)){
 		verifyText(getLabel("vlblLearningPath"), wlblLpath);

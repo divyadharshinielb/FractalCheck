@@ -103,11 +103,11 @@ public class ClassroomPage extends FractalBasePage {
 		wait(5);
 	/*	Actions builder = new Actions(driver);
 	   builder.moveToElement((WebElement) dropDown).perform();
-	*/	click(dropDown1);
+	click(dropDown1);
 		wait(5);
 		click(dropDown);
 		wait(5);
-//		click(categoriesDropDown2);
+	*///click(categoriesDropDown2);
 //		wait(5);
 //		click(categoriesDropDown1);
 //		wait(5);
@@ -142,7 +142,7 @@ public class ClassroomPage extends FractalBasePage {
 		click(mandatoryOkBtn);
 		wait(5);
 		verifyText("Classroom Title required",classroomNameReqText);
-		verifyText("Traditional classroom venue selection required",venueNameReqText);
+	//	verifyText("Traditional classroom venue selection required",venueNameReqText);
 		verifyText("Classroom category selection required",classroomCategoryReqText);
 		verifyText("Classroom description required",classroomDescriptionReqText);
 		wait(5);	
