@@ -124,8 +124,9 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_MY_LEARN__014,verify  the Ratings of completed catalog item , " +  mLSteps.getResult());
 		mLSteps.clickLogout();
 	}
-
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_17,18,23,27 : "
+	
+	//This is made false because this particular test suite is not applicable for cog scale
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_17,18,23,27 : "
 			+ "17: Verify Bundle Details after clicking" + "18: Verify course Details after clicking"
 			+ "23: Verify the learnig objeck launch" + "27: Verify the top arrow button")
 	public void testMyLearningPage3(String row, String strBrowserName) {
@@ -140,8 +141,8 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		// Test moves to MyLearning page
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		//TCID_17:verify Labels of Bundles and courses
-		mLSteps.verifyBundleContents();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__017,Verify Labels of Bundles and courses, " +  mLSteps.getResult() );
+		//mLSteps.verifyBundleContents();//newui
+		//Reporter.writeSummary("TCID_MY_LEARN__017,Verify Labels of Bundles and courses, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
 		//TCID_18:Verify course Details after clicking
 		mLSteps.verifyCourseContents();//newui
