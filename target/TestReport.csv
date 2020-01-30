@@ -1,7 +1,0 @@
-"Browser/App"," Environment"," TCID"," TEST DESCRIPTION"," TEST RESULT ","TIME TAKEN(SEC)","TIME STAMP"
-"chrome","Automation-dev","TCID_MY_LEARN__025","Verify Tick mark for completed catalog item"," FAILED","90","Fri Jan 17 16:32:05 IST 2020"
-"chrome","Automation-dev","TCID_MY_LEARN__008","Verify Category items"," PASSED","12","Fri Jan 17 16:32:18 IST 2020"
-"chrome","Automation-dev","TCID_MY_LEARN__006","Verify the Grid view items and functionality"," PASSED","15","Fri Jan 17 16:32:33 IST 2020"
-"chrome","Automation-dev","TCID_MY_LEARN__007","Verify the List view items and functionality"," PASSED","10","Fri Jan 17 16:32:43 IST 2020"
-"chrome","Automation-dev","TCID_MY_LEARN__005","Verify Category drop down and Grid and List mode"," PASSED","42","Fri Jan 17 16:33:25 IST 2020"
-"chrome","Automation-dev","TCID_MY_LEARN__014","verify  the Ratings of completed catalog item "," FAILED","35","Fri Jan 17 16:34:00 IST 2020"
