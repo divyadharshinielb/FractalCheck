@@ -8,6 +8,7 @@ import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.MyLearningSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
+import com.wv.auto.framework.utils.MyScreenRecorder;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsMyLearning extends FractalBaseWebTest {
@@ -27,11 +28,12 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 			+ "4: Verify all links(All, Bundles, Courses, Learning Paths and resources)"
 			+ "11: Verify learning item page is opened when any of the particular course catalog item is clicked"
 			+ "12: Verify Learning item page contains Course Name,joined on date and time, Description,Validity,Duration")
-	public void testMyLearningPage0(String row, String strBrowserName) {
+	public void testMyLearningPage0(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
 
 		// Test moves to Home page
+		MyScreenRecorder.startRecording("navigationTest");
 		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.clickOnMyLearning();
 		wait(5);
@@ -52,6 +54,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.verifyCatalogDetails();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
 		mLSteps.clickLogout();
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_16,20,21,22: "

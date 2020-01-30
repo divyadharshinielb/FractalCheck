@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1158179" started-at="2020-01-28T06:10:26Z" finished-at="2020-01-28T06:29:44Z">
+  <suite name="Default suite" duration-ms="55036" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:07:23Z">
     <groups>
       <group name="pilot">
-        <method signature="WebTestClassroomEvents.verifyEvents(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents" class="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents"/>
-        <method signature="WebTestClassroomEvents.verifyEvents1(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents1" class="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents"/>
-        <method signature="WebTestClassroomEvents.verifyEvents2(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents2" class="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents"/>
-        <method signature="WebTestClassroomEvents.verifyEvents3(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents3" class="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents"/>
-        <method signature="WebTestClassroomEvents.verifyEvents4(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents4" class="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents"/>
-        <method signature="WebTestClassroomEvents.verifyEvents5(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents5" class="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents"/>
+        <method signature="WebTestsMyLearning.testMyLearningPage0(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="testMyLearningPage0" class="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning"/>
       </group> <!-- pilot -->
     </groups>
-    <test name="Default test" duration-ms="1158179" started-at="2020-01-28T06:10:26Z" finished-at="2020-01-28T06:29:44Z">
-      <class name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="beforeSuite" is-config="true" duration-ms="17" started-at="2020-01-28T06:10:26Z" finished-at="2020-01-28T06:10:26Z">
+    <test name="Default test" duration-ms="55036" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:07:23Z">
+      <class name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="beforeSuite" is-config="true" duration-ms="17" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:06:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-01-28T06:10:26Z" finished-at="2020-01-28T06:10:26Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:06:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="beforeClass" is-config="true" duration-ms="1" started-at="2020-01-28T06:10:26Z" finished-at="2020-01-28T06:10:26Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:06:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="verifyEvents(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents" duration-ms="176706" started-at="2020-01-28T06:10:26Z" description="TCID_01:TCID_01: Verify Add new event page is opened on clicking the Ads Event buttonTCID_02: Verify on clicking SAVE, throws the alert for all mandatory fieldsTCID_03: Verify whether the alert is thrown, when Venue dropdown is not selected.TCID_04: Verify whether the alert is thrown, when Venue dropdown is not selected.TCID_05: Verify whether the alert is thrown, when Link dropdown is not selected.TCID_06: Verify whether the alert is thrown, when an Average score is not entered.TCID_07: Verify whether the alert is thrown, when the Start Time is not entered under sessionsTCID_08: Verify whether the alert is thrown, when the End Time is not entered under sessionsTCID_09: Verify whether the alert is thrown, when the Instructor drop-down is not selected under sessionsTCID_10: Verify whether the error message is disappered after Classroom selecting any of the classroom type." data-provider="browers" finished-at="2020-01-28T06:13:22Z">
+        <test-method status="PASS" signature="testMyLearningPage0(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="testMyLearningPage0" duration-ms="54134" started-at="2020-01-29T11:06:28Z" description="TCID_1,4,11,12: Verify navigation to My Learning page, 1: verify COmpletion Status(% Coverage)4: Verify all links(All, Bundles, Courses, Learning Paths and resources)11: Verify learning item page is opened when any of the particular course catalog item is clicked12: Verify Learning item page contains Course Name,joined on date and time, Description,Validity,Duration" data-provider="browers" finished-at="2020-01-29T11:07:22Z">
           <params>
             <param index="0">
               <value>
@@ -42,148 +37,28 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEvents -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-28T06:10:26Z" finished-at="2020-01-28T06:10:26Z">
+        </test-method> <!-- testMyLearningPage0 -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:06:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="afterMethod" is-config="true" duration-ms="1005" started-at="2020-01-28T06:13:22Z" finished-at="2020-01-28T06:13:23Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="afterMethod" is-config="true" duration-ms="880" started-at="2020-01-29T11:07:22Z" finished-at="2020-01-29T11:07:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-28T06:13:23Z" finished-at="2020-01-28T06:13:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyEvents1(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents1" duration-ms="134368" started-at="2020-01-28T06:13:23Z" description="TCID_01:TCID_11: Verify whether the Venue drop-down is displayed after selecting Physical classroomTCID_12: Verify whether the Link drop-down is displayed after selecting Virtual classroomTCID_13: Verify whether the Venue drop-down alert is disappeared after selecting any Venue TCID_14: Verify whether the Link drop-down alert is disappeared after selecting any Link TCID_15: Verify whether the show map check-box is displayed under Select Venue dropdownTCID_16: Verify whether the Show map check-box is enabled on clicking Show mapTCID_17: Verify whether the Show map check-box is disabled on clicking Show mapTCID_18: Verify whether the timezone alert is disappeared after slecting any Time ZoneTCID_19: Verify Whether the average score alert disappear after entering the scoreTCID_20: Verify whether the Average score accepts alphabetsTCID_21: Verify whether the Average score accepts Special charactersTCID_22: Verify whether the Average score accepts Alpha numericsTCID_23: Verify whether the Average score accepts accepts more than 2 digis" data-provider="browers" finished-at="2020-01-28T06:15:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEvents1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="afterMethod" is-config="true" duration-ms="1022" started-at="2020-01-28T06:15:38Z" finished-at="2020-01-28T06:15:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-01-28T06:15:39Z" finished-at="2020-01-28T06:15:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyEvents2(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents2" duration-ms="132839" started-at="2020-01-28T06:15:39Z" description="TCID_01:TCID_24: Verify whether the Assignment details are displayed when clicking assignments labelTCID_25: Verify whether the assignment count maches with the number of assignments displayedTCID_26: Verify whether the Add Assignment button is displayed after expanding AssignmentsTCID_27: Verify whether the new assignment details fields are displayed after clicking the Add Assignment ButtonTCID_28: Verify Whether the Add survey details are displayed after clicking Survey labelTCID_29: Verify whether the Add Survey button is displayed after expanding SurveyTCID_30: Verify whether the new Survey form details fields are displayed after clicking the Add Assignment ButtonTCID_31: Verify Whether the Session details are displayed after clicking Session labelTCID_32: Verify whether the error message is displayed if the instructor name is not selected from drop-downTCID_33: Verify whether the error message is disappeared after selecting any instructor from drop-downTCID_34: Verify whether the Assignment details are displayed when clicking Post event assignments labelTCID_35: Verify whether the post event assignment count matches with the number of assignments displayedTCID_36: Verify whether the Add Assignment button is displayed after expanding Assignments under post eventTCID_37: Verify whether the new assignment details fields are displayed after clicking the Add Assignment Button under post eventTCID_38: Verify Whether the Add survey details are displayed after clicking Survey label under post eventTCID_39: Verify whether the Add Survey button is displayed after expanding Survey under post eventTCID_40: Verify whether the new Survey form details fields are displayed after clicking the Add Assignment Button under post event" data-provider="browers" finished-at="2020-01-28T06:17:52Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEvents2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="afterMethod" is-config="true" duration-ms="894" started-at="2020-01-28T06:17:52Z" finished-at="2020-01-28T06:17:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2020-01-28T06:17:53Z" finished-at="2020-01-28T06:17:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="verifyEvents3(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents3" duration-ms="172843" started-at="2020-01-28T06:17:53Z" description="TCID_01:TCID_41: Verify Whether the Notifications days are displayed under &#039;Notifications &amp; Reminders&#039; sectionTCID_42: Verify whether the &quot;Notifications &amp; Reminders&quot; fields accepts alphabetsTCID_43: Verify whether the &quot;Notifications &amp; Reminders&quot; fields accepts alpha numericsTCID_44: Verify whether the &quot;Notifications &amp; Reminders&quot; fields accepts special charectersTCID_45: Verify whether the &quot;Notifications &amp; Reminders&quot; fields accepts numbersTCID_46: Verify whether the Reference Material Upload button is displayedTCID_47: Verify whether the &quot;Terms &amp; Conditions&quot; are displayed at the end of the pageTCID_48: Verify whether the 2nd page is opened on clicking continue button after filling all the mandatory fields.TCID_49: Verfy whether the alert message is thrown for all the Mandatory fields, if Save button is clicked without filling any fieldsTCID_50: Verify whether the &quot;Maximum no. of participants&quot; field accepts numbers" data-provider="browers" finished-at="2020-01-28T06:20:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEvents3 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="afterMethod" is-config="true" duration-ms="897" started-at="2020-01-28T06:20:45Z" finished-at="2020-01-28T06:20:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="verifyEvents4(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents4" duration-ms="307836" started-at="2020-01-28T06:20:46Z" description="TCID_01:TCID_51: Verify whether the &quot;Maximum no. of participants&quot; field accepts alphanumericsTCID_52: Verify whether the &quot;Maximum no. of participants&quot; field accepts special charactersTCID_53: Verify whether the &quot;Maximum no. of participants&quot; field accepts alphabetsTCID_54: Verify whether the alert messgae is disappeared after entering &quot;Maximum no. of participants&quot;TCID_55: Verify whether the &quot;Minimum no. of participants&quot; field accepts numbersTCID_56: Verify whether the &quot;Minimum no. of participants&quot; field accepts alphanumericsTCID_57: Verify whether the &quot;Minimum no. of participants&quot; field accepts special charactersTCID_58: Verify whether the &quot;Minimum no. of participants&quot; field accepts alphabetsTCID_59: Verify whether the alert message is disappeared after entering &#039;Minimum no. of participants&#039;TCID_60: Verify whether the &#039;Waiting List Threshold&#039; field accepts numbers" data-provider="browers" finished-at="2020-01-28T06:25:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEvents4 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-28T06:20:46Z" finished-at="2020-01-28T06:20:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="afterMethod" is-config="true" duration-ms="881" started-at="2020-01-28T06:25:54Z" finished-at="2020-01-28T06:25:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="verifyEvents5(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="verifyEvents5" duration-ms="227921" started-at="2020-01-28T06:25:55Z" data-provider="browers" finished-at="2020-01-28T06:29:43Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEvents5 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-28T06:25:55Z" finished-at="2020-01-28T06:25:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="afterMethod" is-config="true" duration-ms="932" started-at="2020-01-28T06:29:43Z" finished-at="2020-01-28T06:29:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-01-28T06:29:44Z" finished-at="2020-01-28T06:29:44Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-01-29T11:07:23Z" finished-at="2020-01-29T11:07:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-01-28T06:29:44Z" finished-at="2020-01-28T06:29:44Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-01-29T11:07:23Z" finished-at="2020-01-29T11:07:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@148080bb]" name="afterSuite" is-config="true" duration-ms="1" started-at="2020-01-28T06:29:44Z" finished-at="2020-01-28T06:29:44Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="afterSuite" is-config="true" duration-ms="1" started-at="2020-01-29T11:07:23Z" finished-at="2020-01-29T11:07:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents -->
+      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
