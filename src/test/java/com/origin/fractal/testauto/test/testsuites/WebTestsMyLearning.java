@@ -89,7 +89,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_25,5,8,14,6,7: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_25,5,8,14,6,7: "
 			+ "25: Verify Tickmark for completed catalog item" + "5: Verify Category dropdown and Grid and List mode"
 			+ "8: Verify Category items" + "14: Verify Rating for completed catalog item"
 			+ "6,7: verify the Grid and List view items and functionality")
