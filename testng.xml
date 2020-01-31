@@ -11,15 +11,14 @@
 	<!-- End of reportNg modification -->
 	<test thread-count="18" name="Test" >
 		<classes>
-		     
+		     	<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" />
 			    <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" /> 
 				<class
