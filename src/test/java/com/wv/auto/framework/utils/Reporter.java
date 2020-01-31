@@ -10,7 +10,7 @@ public class Reporter {
 	private static CSVWriter repWriterDetail;
 	private static CSVWriter repWriterFailure;
 	private static String strBrowserAppOS = "Chrome";
-	private static String strEnv = "Automation-dev";
+	private static String strEnv = "Automation-Cog mirror";
 
 	public static void createReports() {
 		createReport();

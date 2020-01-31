@@ -31,11 +31,11 @@ public class WebTestGlobalSearch extends FractalBaseWebTest {
 		login(driver);
 		GlobalSteps globalSteps = new GlobalSteps(driver);
 		//TCID_:Verify Global Search for classroom and classrooms
-		globalSteps.GlobalSearchforClassroomandClassroomsKeyword();
-		Reporter.writeSummary("TCID_Global_01, Verify Global Search for classroom and classrooms," +  globalSteps.getResult() );
+		//globalSteps.GlobalSearchforClassroomandClassroomsKeyword();
+		//Reporter.writeSummary("TCID_Global_01, Verify Global Search for classroom and classrooms," +  globalSteps.getResult() );
 		//TCID_:Verify Global Search for Image and Images
-		globalSteps.GlobalSearchforimageandimages();
-		Reporter.writeSummary("TCI_Global_02, Verify Global Search for image and images,"+ globalSteps.getResult());
+		//globalSteps.GlobalSearchforimageandimages();
+		//Reporter.writeSummary("TCI_Global_02, Verify Global Search for image and images,"+ globalSteps.getResult());
 		//TCID_:Verify Global Search for Audio and Audios
 		globalSteps.GlobalSearchforAudioandAudios();
 		Reporter.writeSummary("TCI_Global_03, Verify Global Search for Audio and Audios,"+ globalSteps.getResult());
@@ -55,8 +55,8 @@ public class WebTestGlobalSearch extends FractalBaseWebTest {
 		globalSteps.GlobalSearchforElearningandElearnings();
 		Reporter.writeSummary("TCI_Global_08, Verify Global Search for elearning and elearnings,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for bundles and bundles
-		globalSteps.GlobalSearchforBundleandBundles();
-		Reporter.writeSummary("TCI_Global_09, Verify Global Search for bundles and bundles,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchforBundleandBundles();
+		//Reporter.writeSummary("TCI_Global_09, Verify Global Search for bundles and bundles,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for podcast and podcasts
 		globalSteps.GlobalSearchforPodcastandPodcasts();
 		Reporter.writeSummary("TCI_Global_10, Verify Global Search for podcast and podcasts,"+globalSteps.getResult());
@@ -64,8 +64,8 @@ public class WebTestGlobalSearch extends FractalBaseWebTest {
 		globalSteps.GlobalSearchforLearningpathandLearningpaths();
 		Reporter.writeSummary("TCI_Global_11, Verify Global Search for learningpath and learningpaths,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for course and courses
-		globalSteps.GlobalSearchforCourseandCourses();
-		Reporter.writeSummary("TCI_Global_12, Verify Global Search for course and courses,"+globalSteps.getResult());
+	//	globalSteps.GlobalSearchforCourseandCourses();
+		//Reporter.writeSummary("TCI_Global_12, Verify Global Search for course and courses,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for resource  and resource 
 		globalSteps.GlobalSearchforResourceandResources();
 		Reporter.writeSummary("TCI_Global_13, Verify Global Search for resource and resources ,"+globalSteps.getResult());
@@ -73,14 +73,14 @@ public class WebTestGlobalSearch extends FractalBaseWebTest {
 		globalSteps.GlobalSearchwithRandomcharacterandIntegers();
 		Reporter.writeSummary("TCI_Global_14, Verify Global Serach with random characters and integers,"+globalSteps.getResult());
 		//TCID_:Verify Global Search with Special characters
-		globalSteps.GlobalSearchwithSpecialcharacters();
-		Reporter.writeSummary("TCI_Global_15, Verify Global Search with Special characters,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchwithSpecialcharacters();
+		//Reporter.writeSummary("TCI_Global_15, Verify Global Search with Special characters,"+globalSteps.getResult());
 		//TCID_: Verify Global Search with unavailable keyword
 		globalSteps.GlobalSearchwithUnavailableKeyword();
 		Reporter.writeSummary("TCI_Global_16, Verify Global Search with unavailable keyword,"+globalSteps.getResult());
 		//TCID_: Verify Global Search with double and tab Space
-		globalSteps.GlobalSearchwithDoubleandTabspace();
-		Reporter.writeSummary("TCI_Global_17, Verify Global Search with double and tab Space,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchwithDoubleandTabspace();
+		//Reporter.writeSummary("TCI_Global_17, Verify Global Search with double and tab Space,"+globalSteps.getResult());
 		
 		}
 }
