@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="55036" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:07:23Z">
+  <suite name="Default suite" duration-ms="71109" started-at="2020-01-31T10:36:36Z" finished-at="2020-01-31T10:37:47Z">
     <groups>
       <group name="pilot">
-        <method signature="WebTestsMyLearning.testMyLearningPage0(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="testMyLearningPage0" class="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning"/>
+        <method signature="WebTestVideoTester.verifyvideo(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="verifyvideo" class="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester"/>
       </group> <!-- pilot -->
     </groups>
-    <test name="Default test" duration-ms="55036" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:07:23Z">
-      <class name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="beforeSuite" is-config="true" duration-ms="17" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:06:28Z">
+    <test name="Default test" duration-ms="71109" started-at="2020-01-31T10:36:36Z" finished-at="2020-01-31T10:37:47Z">
+      <class name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="beforeSuite" is-config="true" duration-ms="22" started-at="2020-01-31T10:36:36Z" finished-at="2020-01-31T10:36:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:06:28Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="beforeTest" is-config="true" duration-ms="1" started-at="2020-01-31T10:36:36Z" finished-at="2020-01-31T10:36:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:06:28Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-01-31T10:36:36Z" finished-at="2020-01-31T10:36:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="testMyLearningPage0(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="testMyLearningPage0" duration-ms="54134" started-at="2020-01-29T11:06:28Z" description="TCID_1,4,11,12: Verify navigation to My Learning page, 1: verify COmpletion Status(% Coverage)4: Verify all links(All, Bundles, Courses, Learning Paths and resources)11: Verify learning item page is opened when any of the particular course catalog item is clicked12: Verify Learning item page contains Course Name,joined on date and time, Description,Validity,Duration" data-provider="browers" finished-at="2020-01-29T11:07:22Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-31T10:36:36Z" finished-at="2020-01-31T10:36:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="verifyvideo(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="verifyvideo" duration-ms="70195" started-at="2020-01-31T10:36:36Z" description="video testing" data-provider="browers" finished-at="2020-01-31T10:37:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[Chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMyLearningPage0 -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-29T11:06:28Z" finished-at="2020-01-29T11:06:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="afterMethod" is-config="true" duration-ms="880" started-at="2020-01-29T11:07:22Z" finished-at="2020-01-29T11:07:23Z">
+        </test-method> <!-- verifyvideo -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="afterMethod" is-config="true" duration-ms="887" started-at="2020-01-31T10:37:46Z" finished-at="2020-01-31T10:37:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-01-29T11:07:23Z" finished-at="2020-01-29T11:07:23Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-01-31T10:37:47Z" finished-at="2020-01-31T10:37:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-01-29T11:07:23Z" finished-at="2020-01-29T11:07:23Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-01-31T10:37:47Z" finished-at="2020-01-31T10:37:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning@148080bb]" name="afterSuite" is-config="true" duration-ms="1" started-at="2020-01-29T11:07:23Z" finished-at="2020-01-29T11:07:23Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestVideoTester@55d56113]" name="afterSuite" is-config="true" duration-ms="1" started-at="2020-01-31T10:37:47Z" finished-at="2020-01-31T10:37:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning -->
+      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestVideoTester -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

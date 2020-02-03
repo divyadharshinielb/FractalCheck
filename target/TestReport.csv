@@ -1,5 +1,2 @@
 "Browser/App"," Environment"," TCID"," TEST DESCRIPTION"," TEST RESULT ","TIME TAKEN(SEC)","TIME STAMP"
-"chrome","Automation-dev","TCID_MY_LEARN_004"," Verify all links(All Bundles Courses Learning Paths and resources)"," PASSED","32","Wed Jan 29 16:37:00 IST 2020"
-"chrome","Automation-dev","TCID_MY_LEARN__001"," Verify COmpletion Status(% Coverage)"," PASSED","0","Wed Jan 29 16:37:00 IST 2020"
-"chrome","Automation-dev","TCID_MY_LEARN__011"," Verify learning item page is opened when any of the particular course catalog item is clicked"," PASSED","4","Wed Jan 29 16:37:05 IST 2020"
-"chrome","Automation-dev","TCID_MY_LEARN__012","Verify Learning item page contains Course Name joined on date and time Description Validity Duration"," PASSED","5","Wed Jan 29 16:37:11 IST 2020"
+"Chrome","Automation-dev","TCID_Video"," Verify the video gets launched succesfully","PASSED","70","Fri Jan 31 16:07:46 IST 2020"
