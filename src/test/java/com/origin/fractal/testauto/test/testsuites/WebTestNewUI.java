@@ -15,28 +15,8 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestNewUI extends FractalBaseWebTest {
-	@DataProvider
-	public Object[][] browers() {
-	if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-	return new Object[][] {
-	//new Object[] { "1", "msedge" }, 
-	new Object[] { "2", "Chrome" },
-	//new Object[] { "3", "Firefox" }
-	};
-	}
-
-	if(BrowserFactory.getOS().equalsIgnoreCase("mac")) {
-	return new Object[][] {
-	new Object[] { "1", "Safari" }
-	};
-	}
-
-	return null;
-	}//ended by divya
-
-
-
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="LOGIN PAGE",priority = 0)
+	
+	@Test(dataProviderClass=DataManager.class,dataProvider = "browers", groups= {"pilot"}, enabled= true, description="LOGIN PAGE",priority = 0)
 	public void testLogin(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -65,7 +45,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
+	@Test(dataProviderClass=DataManager.class,dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
 	public void testMyLearningPage0(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
@@ -86,7 +66,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 
 
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_61,62 "
 			+ "61: Verify  My account page,"
 			+ "62: Verify  My Account Profile details, ")

@@ -125,6 +125,11 @@ public abstract class  BasePage {
 	public void click(By objLoc) {
 		click(getObj(objLoc));
 	}
+	public void click(WebElement obj) {
+		
+		obj.click();
+		print("CLICKED : " + obj.toString());
+	}
 
 /*	public void click(WebElement obj) {
 		if(BrowserFactory.getOS()=="mac") {
@@ -139,11 +144,11 @@ public abstract class  BasePage {
 		}
 	}*/
 	
-	public void click(WebElement obj) {
+	/*public void click(WebElement obj) {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", obj);
 		print("iosclickcheck : " + obj.toString());
-	}
+	}*/
 	//added by divya for click function in safari browser
 	/*public void checkclick(By objLoc) {
 		checkclick(getObj(objLoc));
