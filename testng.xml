@@ -43,6 +43,8 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
 name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
+<class
+name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
 				
 		</classes>
 	</test> <!-- Test -->
