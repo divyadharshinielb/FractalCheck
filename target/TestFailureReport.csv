@@ -1,0 +1,7 @@
+"Browser/App"," Environment"," TCID"," TEST DESCRIPTION"," TEST RESULT ","TIME TAKEN(SEC)","TIME STAMP"
+"chrome","QaDev","TCID_CLASS_019","Verify whether the Admin should be able to add duration","FAILED","192","Mon Feb 10 15:39:12 IST 2020"
+"chrome","QaDev","TCID_CLASS_022","Verify whether the Admin must be able to add the links in the given field","FAILED","10","Mon Feb 10 15:39:22 IST 2020"
+"chrome","QaDev","TCID_CLASS_020","Verify whether the  Admin should be able to fill the valid fields","FAILED","5","Mon Feb 10 15:39:27 IST 2020"
+"chrome","QaDev","TCID_CLASS_021","Verify whether the  Admin should be the same type fields of TC20 should be done for Pre-Event Assignment & Post-Event Assignment","FAILED","5","Mon Feb 10 15:39:32 IST 2020"
+"chrome","QaDev","TCID_CLASS_015","Verify whether the  Admin should be able to view the Sessions tab on filling all the details","FAILED","5","Mon Feb 10 15:39:38 IST 2020"
+"chrome","QaDev","TCID_CLASS_026"," Verify whether admin should be able to Delete the classroom listing page","FAILED","35","Mon Feb 10 15:40:38 IST 2020"
