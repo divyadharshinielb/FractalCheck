@@ -33,7 +33,7 @@ public class WebTestRolesManagement extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_RolesManagement_0014, Verify instructors present in Add classroom, " +  rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.editclassroomcheck();
 		Reporter.writeSummary("TCID_RolesManagement_0015, Verify instructors present in Edit classroom, " +  rolesmngmtsteps.getResult() );
-		rolesmngmtsteps.editmanagerolefunctionality();
+	/*	rolesmngmtsteps.editmanagerolefunctionality();*/
 		rolesmngmtsteps.gotoManageUser();
 		rolesmngmtsteps.BusinessUserRole();
 		Reporter.writeSummary("TCID_RolesManagement_001, Verify roles mapped to business user in admin part, " +  rolesmngmtsteps.getResult() );
@@ -67,7 +67,6 @@ public class WebTestRolesManagement extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_RolesManagement_012, Verify business admin with Business user, " +  rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.Businessuserwithinsrole();
 		Reporter.writeSummary("TCID_RolesManagement_013, Verify Business user with Instructor role, " +  rolesmngmtsteps.getResult() );
-		
 		
 	}
 }

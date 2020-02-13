@@ -69,7 +69,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By sessionDate = By.xpath("//h4[@id='session_title']/../../../*//span[contains(text(),'Date')]");
 	private By surveyStartTime = By.xpath("//h4[@id='session_title']/../../*//div[contains(text(),'Start Time')]");
 	private By surveyEndTime = By.xpath("//h4[@id='session_title']/../../*//div[contains(text(),'End Time')]");
-	private By dropdownSelectInstructor1 =By.xpath(".//html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/div[3]/md-input-container[1]/div[1]/ul[1]/li[2]");
+	private By dropdownSelectInstructor1 =By.xpath(".//li[contains(text(),'Sujitha M Sivan')]");//html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/div[3]/md-input-container[1]/div[1]/ul[1]/li[2]
 	private By dropdownSelectInstructor	=By.xpath(".//span[contains(text(),'Select Instructor')]");
 	private By lblSelectCalendar=By.xpath(".//button[contains(@class,'md-datepicker-button md-icon-button md-button md-ink-ripple')]");
 	private By dropdownSelectCalendar=By.xpath("//td[@class='md-calendar-date md-calendar-date-today md-focus']//span[@class='md-calendar-date-selection-indicator']");//td[@class='md-calendar-date md-calendar-date-today md-calendar-selected-date md-focus'](staging)
@@ -297,6 +297,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Max score: 100",lblMaxScore);
 
 	wait(2);
+	WebElement element = driver.findElement(lblAddAssignment); Actions
+	actions = new Actions(driver); actions.moveToElement(element);
+	actions.perform();
 	click(lblAddAssignment);
 	wait(2);
 	verifyText("Pass score",lblPassScore);
@@ -476,7 +479,12 @@ public class ClassroomEventPage extends FractalBasePage{
 		click(btnAddEvent);
 		fillFirstPage();
 		wait(5);
+		WebElement element = driver.findElement(By.xpath(".//li[contains(text(),'Sujitha M Sivan')]")); Actions
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
+		wait(5);
 		click(dropdownSelectInstructor1);
+		wait(5);
 		click(lblSelectCalendar);
 		wait(2);
 		click(dropdownSelectCalendar);
