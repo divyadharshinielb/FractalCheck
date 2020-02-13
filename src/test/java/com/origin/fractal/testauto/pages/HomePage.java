@@ -30,7 +30,7 @@ public class HomePage extends FractalBasePage {
  /*******new ui***************/
 	private By lblResumeLearning= By.xpath(".//div[contains(text(),'RESUME LEARNING')]");//new ui
 /***************/	
-	private By lblCompl = By.xpath(".//div[@class='percentageValue ng-binding']");
+	private By lblCompl = By.xpath(".//div[@class='mt-4 text-center p-0 padding-t-5 progress-position']");//div[@class='percentageValue ng-binding']
 	private By lblCoverage= By.xpath(".//div[contains(text(),'Completion Status')]");
 	/*******new ui***************/
 	private By lblContinue= By.xpath(".//span[contains(text(),'CONTINUE')]");
@@ -183,10 +183,10 @@ public class HomePage extends FractalBasePage {
 		wait(10);
 		clickOnBellIcon();
 		wait(2);
-	//	verifyLabel("lblNotification",lblNotification );
+	/*	verifyLabel("lblNotification",lblNotification );
 		String ntnIntroGST=getText(Check);
 		verifyText(ntnIntroGST,Check );
-		clickOnViewAll();
+	*/	clickOnViewAll();
 		
 	}
 	public void verifyResumeLearningText() {
