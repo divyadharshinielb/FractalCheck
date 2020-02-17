@@ -3,21 +3,29 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd">
+      <class name="com.origin.fractal.testauto.test.testsuites.mobile.AndroidTest">
         <methods>
-          <include name="verifySelectClientPage"/>
-          <include name="beforeClass"/>
-          <include name="LoginPage"/>
+          <include name="verifyVoice"/>
           <include name="beforeMethod"/>
-          <include name="afterClass"/>
           <include name="beforeSuite"/>
-          <include name="verifySplashScreen"/>
-          <include name="afterSuite"/>
+          <include name="verifyCatalogPage1"/>
+          <include name="verifyCatalogPage0"/>
+          <include name="verifyMyAccountPage"/>
           <include name="afterTest"/>
+          <include name="verifyMenuPage"/>
+          <include name="beforeClass"/>
+          <include name="veriyFilterPage"/>
+          <include name="LoginPage1"/>
+          <include name="afterClass"/>
+          <include name="LoginPage0"/>
+          <include name="verifySelectClientPage"/>
+          <include name="verifHomePage"/>
+          <include name="verifyNotificationPage"/>
+          <include name="afterSuite"/>
           <include name="afterMethod"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- com.origin.fractal.testauto.test.testsuites.mobile.AndroidTestProd -->
+      </class> <!-- com.origin.fractal.testauto.test.testsuites.mobile.AndroidTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
