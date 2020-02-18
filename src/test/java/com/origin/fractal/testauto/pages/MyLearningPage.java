@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -23,7 +24,7 @@ public class MyLearningPage extends FractalBasePage {
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");//Updated on Nov-22-18
+	private By clickCatalog = By.xpath(".//div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')]");//Updated on Nov-22-18
 
 	private By lblCatlogCategory = By.xpath(".//div[contains(@class,'container pl-0 bgcolor')]//div[contains(@class,'category')]//div[1]");//div[contains(text(),'Category :')]
 	private By lblLanguage = By.xpath(".//div[contains(@class,'category')]//div[2]");//div[contains(text(),'Language :')]
