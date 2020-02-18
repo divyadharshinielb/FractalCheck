@@ -161,13 +161,14 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 					boolVerifyUserLOResult [i] = false;
 				}
 			}
+			
 			else {
 				boolVerifyUserLOResult [i] = false;
 			}
 		}
 		print("----------Verify LO User Itemcode End-----------");
 	}
-
+ 
 	public void adminLogout() {
 		click(adminAccountLogo);
 		wait(waitingSec); 

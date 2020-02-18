@@ -15,8 +15,8 @@ public class WebTestGlobalSearch extends FractalBaseWebTest {
 	@DataProvider
 	public  Object[][] browers() {
 		return new Object[][] {
-			new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
+		//	new Object[] { "1", "chrome" }
+		 new Object[] { "2", "firefox" }
 //		, new Object[] { "3", "msedge" } 
 //		 new Object[] { "4", "ie11" }
 		};
@@ -34,10 +34,11 @@ public class WebTestGlobalSearch extends FractalBaseWebTest {
 		//globalSteps.GlobalSearchforClassroomandClassroomsKeyword();
 		//Reporter.writeSummary("TCID_Global_01, Verify Global Search for classroom and classrooms," +  globalSteps.getResult() );
 		//TCID_:Verify Global Search for Image and Images
-		//globalSteps.GlobalSearchforimageandimages();
-		//Reporter.writeSummary("TCI_Global_02, Verify Global Search for image and images,"+ globalSteps.getResult());
+		globalSteps.GlobalSearchforimageandimages();
+		Reporter.writeSummary("TCI_Global_02, Verify Global Search for image and images,"+ globalSteps.getResult());
 		//TCID_:Verify Global Search for Audio and Audios
 		globalSteps.GlobalSearchforAudioandAudios();
+		
 		Reporter.writeSummary("TCI_Global_03, Verify Global Search for Audio and Audios,"+ globalSteps.getResult());
 		//TCID_:Verify Global Search for video and videos
 		globalSteps.GlobalSearchforVideoandVideos();

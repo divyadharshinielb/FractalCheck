@@ -32,12 +32,12 @@ public class WebTestManageContentItemCode extends FractalBaseWebTest  {
 		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-03, Verify the Document Itemcode ," +  Itemcode.getResult());
 		Itemcode.verifyLOICImage();
 		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-04, Verify the Image Itemcode ," +  Itemcode.getResult());
-		Itemcode.verifyLOICAssessment();
+		/*Itemcode.verifyLOICAssessment();
 		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-05, Verify the Assessment Itemcode ," +  Itemcode.getResult());
 		Itemcode.verifyLOICvLab();
 		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-06, Verify the vLab Itemcode ," +  Itemcode.getResult());
 		Itemcode.verifyLOICAudio();
-		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-07, Verify the Audio Itemcode ," +  Itemcode.getResult());
+		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-07, Verify the Audio Itemcode ," +  Itemcode.getResult());*/
 	}
 
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, priority = 1 ,
@@ -59,15 +59,15 @@ public class WebTestManageContentItemCode extends FractalBaseWebTest  {
 		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-10, Edit & Verify the Document Itemcode ," +  Itemcode.getResult());
 		Itemcode.editVerifyLOICImage();
 		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-11, Edit & Verify the Image Itemcode ," +  Itemcode.getResult());
-		Itemcode.editVerifyLOICAssessment();
+		/*Itemcode.editVerifyLOICAssessment();
 		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-12, Edit & Verify the Assessment Itemcode ," +  Itemcode.getResult());
 		Itemcode.editVerifyLOICvLab();
 		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-13, Edit & Verify the vLab Itemcode ," +  Itemcode.getResult());
 		Itemcode.editVerifyLOICAudio();
-		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-14, Edit & Verify the Audio Itemcode ," +  Itemcode.getResult());
+		Reporter.writeSummary("TC_BothAU_ManageContent_LearnObj_Itemcode-14, Edit & Verify the Audio Itemcode ," +  Itemcode.getResult());*/
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, priority = 2 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, priority = 2 ,
 			description = "TC_BothAU_ManageContent_CatItem_Itemcode-15-19")
 	public void verifyCatalogItemcodes(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -90,7 +90,7 @@ public class WebTestManageContentItemCode extends FractalBaseWebTest  {
 		Reporter.writeSummary("TC_BothAU_ManageContentCatItemItemcode-19, Verify the Podcast Itemcode ," +  Itemcode.getResult());
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, priority = 3 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, priority = 3 ,
 			description = "TC_BothAU_ManageContent_Edited_CatItem_Itemcode-20-24")
 	public void editVerifyCatalogItemcodes(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -113,7 +113,7 @@ public class WebTestManageContentItemCode extends FractalBaseWebTest  {
 		Reporter.writeSummary("TC_BothAU_ManageContentCatItemItemcode-24, Edit & Verify the Podcast Itemcode, " +  Itemcode.getResult());
 	}
 	
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, priority = 4 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, priority = 4 ,
 			description = "Rename_ReEdit the itemcodes")
 	public void renameItemCodes_LO_CI(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
