@@ -54,8 +54,8 @@ public class AccountPageNewUI  extends FractalBasePage{
 		verifyLabel("lblEmailAddr",lblEmailAddr);
 		wait(5);
 		verifyLabel("lblFirstName",lblFirstName);
-		verifyLabel("lblLastName",lblLastName);
-		verifyLabel("lblPhone",lblPhone);
+		//verifyLabel("lblLastName",lblLastName);
+		//verifyLabel("lblPhone",lblPhone);
 		verifyLabel("lblOldPass",lblOldPass);
 		verifyLabel("lblChgPass",lblChgPass);
 		verifyLabel("lblNewPass",lblNewPass);
@@ -68,7 +68,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 		wait(5);
 		verifyValue(getLabel("inpLName"),inpLName);
 		wait(5);
-		verifyValue(getLabel("inpPhone"),inpPhone);
+	//	verifyValue(getLabel("inpPhone"),inpPhone);
 	}
 	public void verifyFieldValidation() {
 		clear(inpFName);
