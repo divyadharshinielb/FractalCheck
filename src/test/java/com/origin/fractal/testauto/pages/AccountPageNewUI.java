@@ -54,7 +54,8 @@ public class AccountPageNewUI  extends FractalBasePage{
 		verifyLabel("lblEmailAddr",lblEmailAddr);
 		verifyLabel("lblFirstName",lblFirstName);
 		//verifyLabel("lblLastName",lblLastName);
-		verifyLabel("lblPhone",lblPhone);
+		//commenting phone field because the field is not present
+	//	verifyLabel("lblPhone",lblPhone);
 		verifyLabel("lblOldPass",lblOldPass);
 		
 		verifyLabel("lblChgPass",lblChgPass);
