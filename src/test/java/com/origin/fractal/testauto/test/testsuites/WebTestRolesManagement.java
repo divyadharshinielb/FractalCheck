@@ -20,7 +20,7 @@ public class WebTestRolesManagement extends FractalBaseWebTest {
 //	new Object[] { "4", "ie11" }
 		};
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+	@Test(dataProviderClass=DataManager.class,dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
 
 	public void webTestRolesCheck(String row, String strBrowserName) throws IOException  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -33,13 +33,13 @@ public class WebTestRolesManagement extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_0014, Verify instructors present in Add classroom, " +  rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.editclassroomcheck();
 		Reporter.writeSummary("TCID_0015, Verify instructors present in Edit classroom, " +  rolesmngmtsteps.getResult() );
-		rolesmngmtsteps.editmanagerolefunctionality();
+	//	rolesmngmtsteps.editmanagerolefunctionality();
 		rolesmngmtsteps.gotoManageUser();
 		rolesmngmtsteps.BusinessUserRole();
 		Reporter.writeSummary("TCID_001, Verify roles mapped to business user in admin part, " +  rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.instructorUserRole();
 		Reporter.writeSummary("TCID_002, Verify roles mapped to instructor user in admin part, " +  rolesmngmtsteps.getResult() );
-	rolesmngmtsteps.businessAdminRole();
+		rolesmngmtsteps.businessAdminRole();
 		Reporter.writeSummary("TCID_003, Verify roles mapped to businessAdmin in admin part, " +  rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.siteAdminRole();
 		Reporter.writeSummary("TCID_004, Verify roles mapped to siteAdmin in admin part, " +  rolesmngmtsteps.getResult() );
@@ -47,7 +47,6 @@ public class WebTestRolesManagement extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_005, Verify roles mapped to directUser in admin part, " +  rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.learningAdminRole();
 		Reporter.writeSummary("TCID_006, Verify roles mapped to learningAdmin in admin part, " +  rolesmngmtsteps.getResult() );
-	
 	}
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Roles")
 	public void testroles(String row, String strBrowserName) {
@@ -57,7 +56,7 @@ public class WebTestRolesManagement extends FractalBaseWebTest {
 	   Reporter.writeSummary("TCID_007, Verify direct user with learning admin and instructor role, " +  rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.Checkdirectuserinsandlearningadminmapping();
 		Reporter.writeSummary("TCID_008, Verify direct user mapping with learning admin and instructor role, " +  rolesmngmtsteps.getResult() );
-	   rolesmngmtsteps.InstructorwithDirectuserrole();
+	    rolesmngmtsteps.InstructorwithDirectuserrole();
 		Reporter.writeSummary("TCID_009, Verify Instructor with Directuser role mapping, " +  rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.SiteadminwithDirectuserRole();
 		Reporter.writeSummary("TCID_010, Verify siteadmin with direct role mapping, " + rolesmngmtsteps.getResult() );
