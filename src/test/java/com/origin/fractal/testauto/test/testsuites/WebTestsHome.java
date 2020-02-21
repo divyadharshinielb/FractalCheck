@@ -34,13 +34,13 @@ public class WebTestsHome extends FractalBaseWebTest {
 		homeSteps.verifyResumeLearningText();//newui
 		Reporter.writeSummary("TCID_HOME_037,  Verify  whether the dash board contains the heading Learning in Progress, " +  homeSteps.getResult() );
 		//TCID_40:Checking whether the button Continue is displayed under the heading Learning in Progress
-/*      homeSteps.verifyComplStatus();
+      homeSteps.verifyComplStatus();
 		Reporter.writeSummary("TCID_039,  whether the coverage percentage is shown with the text completed under Percentage, " +  homeSteps.getResult() );
       //TCID_33:The coverage percentage is shown with the text Coverage
-        homeSteps.verifyCoverageText();
+    /*    homeSteps.verifyCoverageText();
 		Reporter.writeSummary("TCID_033,  Verify  The coverage percentage is shown with the text Coverage, " + homeSteps.getResult() );
-		//TCID_41: Verify Continue Text are displayed
-*/	    homeSteps.verifyContinueText();//newui
+		//TCID_41: Verify Continue Text are displayed	
+	*/	homeSteps.verifyContinueText();//newui
 		Reporter.writeSummary("TCID_HOME_041,  Verify Continue Text are displayed, " + homeSteps.getResult() );
 	//	Reporter.writeSummary("TCID_HOME_040,  Verify  whether the button Continue is displayed under the heading Learning in Progress, " +  homeSteps.getResult() );
 	//	Reporter.writeSummary("TCID_HOME_032,  Verify  whether the button Continue is present for the text Learning in progress,"+ homeSteps.getResult() );

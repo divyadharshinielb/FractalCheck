@@ -20,13 +20,13 @@ public class RolesManagementPage extends FractalBasePage {
 	private By instructorcheck = By.xpath("//span[contains(text(),'Total events')]");
 	private By learnerrolecheckbtn = By.xpath("//button[contains(text(),'Learner')]");
 	private By mylearningcheck = By.xpath("//a[contains(text(),'MY LEARNING')]");
-	private By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[contains(@title,'Menu')]");
+	private By btnMenu = By.xpath("//div[@class='menu-icon']");//ng-include[@id='header1']/*//div[contains(@title,'Menu')]
 	private By userIcon = By.xpath(".//div[contains(@class, 'pull-right padding-r-0 ng-scope')]");
 	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]");
 	private By adminlogout = By.xpath("//a[contains(text(),'Logout')]");
 	private By wishlisticon = By.xpath("//i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]");
 	//for admin  
-	private By manageUser = By.xpath("//li[@title='Manage Users']//a//span[contains(text(),'Manage Users')]");
+	private By manageUser = By.xpath("//li[@title='Manage Users']//a");//li[@title='Manage Users']//a//span[contains(text(),'Manage Users')]
 	    private By businessUser = By.xpath("//span[contains(text(),'Businessuser Automation')]");
 	    private By buInstructor = By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-all-0 padding-b-40 padding-t-20 min-height-500 ng-scope')]//div[contains(@class,'ng-scope')]//div[1]//div[1]//div[1]//div[4]//div[2]");
 	    private By instructorUser = By.xpath("//span[contains(text(),'Automation Instructor')]");
@@ -100,6 +100,7 @@ public class RolesManagementPage extends FractalBasePage {
 			click(lblProfile);
 			elementExist(instructorroleBtn);
 			elementExist(learningadminroleBtn);
+			wait(2);
 			click(learningadminroleBtn);
 			print("CHECKKKKKKKKKKKKWINDOSSSS");
 			wait(15);
@@ -120,6 +121,7 @@ public class RolesManagementPage extends FractalBasePage {
 		}
 		//instructor mapping to directuser check
 		public void InstructorwithDirectuserrole() {
+			wait(2);
 			enterData("automation_instructor@origin.com",tbUserName);
 			enterData("P@ssw0rd",tbPassword);
 			click(btnLogin);
@@ -135,7 +137,9 @@ public class RolesManagementPage extends FractalBasePage {
 			click(mylearningcheck);
 			wait(2);
 			click(lblProfile);
+			wait(2);
 			click(logOutButton);
+			wait(2);
 		}
 		//learningadmin mapping to directuser role check
 		public void LearningadminwithDirectuserrole() {
@@ -174,9 +178,11 @@ public class RolesManagementPage extends FractalBasePage {
 			click(mylearningcheck);
 			wait(2);
 			click(lblProfile);
+			wait(2);
 			elementExist(siteadminroleBtn);
 			click(siteadminroleBtn);
 			elementExist(btnMenu);
+			wait(2);
 			click(userIcon);
 			click(adminlogout);
 		}
@@ -219,6 +225,7 @@ public class RolesManagementPage extends FractalBasePage {
 			click(logOutButton);
 		}
 		public void gotoManageUser() {
+			wait(2);
 			click(manageUser);
 		}
 		public void BusinessUserRole() {
@@ -280,6 +287,7 @@ public class RolesManagementPage extends FractalBasePage {
 			click(btnMenu);
 		}
 		public void editclassroomcheck() {
+			wait(2);
 			click(classroomediticon);
 			wait(2);
 			WebElement element = driver.findElement(By.xpath("//div[contains(@class,'col-lg-2 col-md-2 col-sm-2 col-xs-2 padding-tb-15')]//div[contains(@class,'nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required')]")); 

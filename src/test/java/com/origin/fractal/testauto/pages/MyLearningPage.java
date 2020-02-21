@@ -24,7 +24,7 @@ public class MyLearningPage extends FractalBasePage {
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath("//*[@id=\"react-tabs-1\"]/div/div/div/div[3]/div/div[1]/a[1]/div");//Updated on Nov-22-18 //div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')] //div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
+	private By clickCatalog = By.xpath("//*[@id='react-tabs-1']/div/div/div/div[3]/div/div[1]/a[1]/div");//Updated on Nov-22-18 //div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')] //div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
 
 	private By lblCatlogCategory = By.xpath(".//div[contains(text(),'Category')]");
 	private By lblLanguage = By.xpath(".//div[contains(text(),'Language')]");
@@ -90,8 +90,12 @@ public class MyLearningPage extends FractalBasePage {
 	
 
 	public void verifyCatalogname() {
-		wait(2);
-		click(clickCatalog);
+		wait(5);
+		click(lblMyLearning);
+		wait(5);
+		click(By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div/div[@class='overflow mb-5']/div[2]"));
+		wait(5);
+	//	click(clickCatalog);
 		verifyText(getLabel("lblCatalogName"), lblCatnameInside);
 		wait(2);
 	    click(lblMyLearning);
@@ -100,6 +104,9 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyCatalogDetails() {
 		/**added here 1/30/2019**/
 		wait(5);
+		WebElement element = driver.findElement( By.xpath("//*[@id='react-tabs-1']/div/div/div/div[3]/div/div[1]/a[1]/div")); 
+	    Actions actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
 		click(clickCatalog);
 		/***/
 		verifyPartialLabelText("lblUpdatedOn", lblCatlogCategory);

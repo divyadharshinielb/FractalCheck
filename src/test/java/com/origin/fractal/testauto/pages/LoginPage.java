@@ -165,4 +165,20 @@ public class LoginPage extends FractalBasePage {
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
 	}
+	private By googleButton = By.xpath("//div[@class='login-with-google']");
+	private By facebookButton = By.xpath("//div[@class='login-with-facebook']");
+	
+	public void googleBtn() {
+	wait(2);
+	elementExist(googleButton);
+	wait(5);
+	click(googleButton);
+	
+	}
+	public void facebookButton() {
+		wait(5);
+		elementExist(facebookButton);
+		wait(5);
+		click(facebookButton);
+		}
 }
