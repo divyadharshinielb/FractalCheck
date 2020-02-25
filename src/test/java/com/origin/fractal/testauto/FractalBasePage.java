@@ -594,6 +594,30 @@ boolean result= verifyText(expectedString,By.xpath(text));
 return result;
 
 }
+//Added by vignesh on 03-Nov-19
+	public int getItemsCount( String objBox,String objBoxtype,int searchResultCount) {
+		boolean status = false;
+		int count =0;
+		int i=1;
+		String wholeObjPath = "";
+		do {
+			if(searchResultCount>=i) 
+			{
+				wholeObjPath =objBox+"["+(i)+objBoxtype;
+				if(elementExist(By.xpath(wholeObjPath))) {
+					count = count + 1;
+					i = i+1;
+					status = true;
+				}
+			}
+			else {
+				status = false;
+			}
+
+		}while(status);
+		return count;
+	}
+	//End-Vignesh on 03-Nov-19
 /***added by mahesh 06/02/19***/
 /* public String read() {
     String emailSubject;

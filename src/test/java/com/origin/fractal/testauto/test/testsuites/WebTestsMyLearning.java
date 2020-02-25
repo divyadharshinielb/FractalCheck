@@ -38,19 +38,22 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 
 		// Test moves to MyLearning page
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
-		mLSteps.verifyMyLearningPage();//newui
+	    mLSteps.verifyMyLearningPage();//newui
 		//TCID_4: Verify all links(All, Bundles, Courses, Learning Paths and resources)
-		mLSteps.verifySubMenu();//newui
+	    mLSteps.verifySubMenu();//newui
 		Reporter.writeSummary("TCID_MY_LEARN_004, Verify all links(All Bundles Courses Learning Paths and resources), " +  mLSteps.getResult() );
 		//TCID_1: verify COmpletion Status(% Coverage)
 		mLSteps.verifyComplStatus();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__001, Verify COmpletion Status(% Coverage), " +  mLSteps.getResult() );
 		//TCID_11: Verify learning item page is opened when any of the particular course catalog item is clicked
+		wait(5);
 		mLSteps.verifyCatalogname();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__011, Verify learning item page is opened when any of the particular course catalog item is clicked, " +  mLSteps.getResult() );
 		//TCID_12: Verify Learning item page contains Course Name,joined on date and time, Description,Validity,Duration
 		mLSteps.verifyCatalogDetails();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
+		mLSteps.multiplecategorycheck();
+		mLSteps.multiplecategoryhomepage();
 		mLSteps.clickLogout();
 	}
 
