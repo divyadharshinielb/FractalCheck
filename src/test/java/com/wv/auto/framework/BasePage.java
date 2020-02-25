@@ -496,27 +496,51 @@ public abstract class  BasePage {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;  wait(5);   
 		jse.executeScript("arguments[0].scrollIntoView();", element);
 		}
-	//Added by vignesh on 20/Oct/19 for Ignorecase
-		public boolean compareStringsIgnorecase(String expValue, String actualValue) {
-		if (expValue.equalsIgnoreCase(actualValue)) {
-		print("PASSED : The expected string is " + expValue
-		+ " , the actual string is " + actualValue);
-		return true;
-		} else {
-		print("FAILED : The expected string is " + expValue
-		+ " , the actual string is " + actualValue);
-		// Assert.assertTrue(false);
-		return false;
-		}
-		}
 	//Added by Vignesh on 20/Oct/19 for Ignorecase (Updated on 28/Oct/19)
-			public boolean verifyTextIgnorecase(String expText, By objLoc) {
-				WebElement we = getObj(objLoc);
-				return verifyTextIgnorecase(expText, we);
-			}
-			public boolean verifyTextIgnorecase(String expText, WebElement obj) {
-				String actText = obj.getText();
-				return compareStringsIgnorecase(expText, actText);
-			}
-			//End- vignesh 
+	public boolean verifyTextIgnorecase(String expText, By objLoc) {
+	WebElement we = getObj(objLoc);
+	return verifyTextIgnorecase(expText, we);
+	}
+	public boolean verifyTextIgnorecase(String expText, WebElement obj) {
+	String actText = obj.getText();
+	return compareStringsIgnorecase(expText, actText);
+	}	
+	//End- vignesh
+	//Added by vignesh on 20/Oct/19 for Ignorecase
+	public boolean compareStringsIgnorecase(String expValue, String actualValue) {
+	if (expValue.equalsIgnoreCase(actualValue)) {
+	print("PASSED : The expected string is " + expValue
+	+ " , the actual string is " + actualValue);
+	return true;
+	} else {
+	print("FAILED : The expected string is " + expValue
+	+ " , the actual string is " + actualValue);
+	// Assert.assertTrue(false);
+	return false;
+	}
+	}
+	//Added by vignesh on 03-Nov-19
+	public int getItemsCount( String objBox,String objBoxtype,int searchResultCount) {
+	boolean status = false;
+	int count =0;
+	int i=1;
+	String wholeObjPath = "";
+	do {
+	if(searchResultCount>=i)
+	{
+	wholeObjPath =objBox+"["+(i)+objBoxtype;
+	if(elementExist(By.xpath(wholeObjPath))) {
+	count = count + 1;
+	i = i+1;
+	status = true;
+	}
+	}
+	else {
+	status = false;
+	}
+
+	}while(status);
+	return count;
+	}
+
 }
