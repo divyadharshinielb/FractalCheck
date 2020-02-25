@@ -28,14 +28,7 @@ public class FractalBaseWebTest extends FractalBaseTest {
 		wait(5);
 		
 	}
-	protected void loginToInstructor(WebDriver driver) {
-		print("change testLogin");
-		LoginSteps loginSteps = new LoginSteps(driver);
-		print("Inside testLogin - Page Opened");
-		loginSteps.loginToInstructor();
-		wait(5);
-		
-	}
+	
 	@BeforeMethod
 	public void beforeMethod() {
 		// do nothing
