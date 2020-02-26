@@ -24,7 +24,7 @@ public class MyLearningPage extends FractalBasePage {
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath("//*[@id='react-tabs-1']/div/div/div/div[3]/div/div[1]/a[1]/div");//Updated on Nov-22-18 //div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')] //div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
+	private By clickCatalog = By.xpath("//*[@class='masonry-bundlename two-line-clamp'])[1]");//Updated on Nov-22-18 //div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')] //div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
 
 	private By lblCatlogCategory = By.xpath(".//div[contains(text(),'Category')]");
 	private By lblLanguage = By.xpath(".//div[contains(text(),'Language')]");
