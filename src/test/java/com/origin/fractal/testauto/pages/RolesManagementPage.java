@@ -156,6 +156,7 @@ public class RolesManagementPage extends FractalBasePage {
 			wait(10);
 			elementExist(mylearningcheck);
 			click(mylearningcheck);
+			wait(2);
 			click(lblProfile);
 			wait(2);
 			elementExist(learningadminroleBtn);
@@ -178,7 +179,7 @@ public class RolesManagementPage extends FractalBasePage {
 			click(mylearningcheck);
 			wait(2);
 			click(lblProfile);
-			wait(2);
+			wait(5);
 			elementExist(siteadminroleBtn);
 			click(siteadminroleBtn);
 			elementExist(btnMenu);
@@ -199,7 +200,9 @@ public class RolesManagementPage extends FractalBasePage {
 			wait(10);
 			elementExist(mylearningcheck);
 			click(mylearningcheck);
+			wait(5);
 			click(lblProfile);
+			wait(5);
 			elementExist(businessadminroleBtn);
 			//click(businessadminroleBtn);
 			elementExist(logOutButton);
