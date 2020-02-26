@@ -325,10 +325,10 @@ public class MyLearningPage extends FractalBasePage {
 			wait(2);
 		    click(By.xpath(".//a[text()='Automation Learningpath']"));
 		    wait(5);
-		    WebElement element1 = driver.findElement( By.xpath("//h1[contains(text(),'Automation classroom')]")); Actions 
-			actions1 = new Actions(driver); actions.moveToElement(element1);
-			actions1.perform();
-			wait(5);
+		    WebElement element1 = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom event')]")); Actions 
+		    actions1 = new Actions(driver); actions1.moveToElement(element1);
+		    actions1.perform();
+		    wait(2);
 			click(lblAssignedClassroom2);
 			if(elementExist(lblReference)) {	  
 			//edit by divya based on newcode  verifyText("Pre-event Activities",lblPreeventActivities);
