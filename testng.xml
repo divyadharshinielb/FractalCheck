@@ -12,9 +12,7 @@
 	<test thread-count="2" name="Test">
 		<classes>
 							<class
-				name="com.origin.fractal.testauto.test.testsuites.WebProductionTests" /> 
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestVersionCheck" /> 
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin" /> 
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
