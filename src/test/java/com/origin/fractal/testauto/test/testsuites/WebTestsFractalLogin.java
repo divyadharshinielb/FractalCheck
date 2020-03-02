@@ -16,10 +16,10 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 	public void testLogin(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		FractalLoginSteps fractalLoginSteps = new FractalLoginSteps(driver);
-		fractalLoginSteps.verifyLogoandText();
+		/*fractalLoginSteps.verifyLogoandText();
 		Reporter.writeSummary("TC-01-FractalWVFInstanceURL, Verify the Fractal WVF Instance URL for presence of Logo and Text," +  fractalLoginSteps.getResult()); 
-		fractalLoginSteps.verifyUserNameAndPassword();
-		Reporter.writeSummary("TC-02-FractalWVFInstanceLogin, Verify the Fractal WVF Instance URL: User Login," +  fractalLoginSteps.getResult()); 
+		*/fractalLoginSteps.verifyUserNameAndPassword();
+		Reporter.writeSummary("TC-01-FractalWVFInstanceLogin, Verify the Fractal WVF Instance URL: User Login," +  fractalLoginSteps.getResult()); 
 		driver.close(); 
 	}
 	
