@@ -3,9 +3,8 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.origin.fractal.testauto.test.testsuites.WebTestNewUI">
+      <class name="com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin">
         <methods>
-          <include name="testMyLearningPage0" invocation-numbers="0"/>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
@@ -13,9 +12,10 @@
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
+          <include name="testLogin" invocation-numbers="0"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestNewUI -->
+      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,10 +1,17 @@
 package com.origin.fractal.testauto.pages;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import com.origin.fractal.testauto.FractalBasePage;
+
+
 
 public class FractalLoginPage extends FractalBasePage {
 	private By tbUserNameNewUI = By.xpath("//input[@name='username']");
@@ -14,7 +21,7 @@ public class FractalLoginPage extends FractalBasePage {
 	private By signInWith=By.xpath("//div[text()='Sign in with']");
 
 
-	public FractalLoginPage(WebDriver driver) throws IOException {
+	public FractalLoginPage(WebDriver driver)  {
 		super(driver);
 		pageName ="FractalWVFInstance"; 
 		String baseUrl=getLabel("winVinayaInstanceUrl");
@@ -32,11 +39,15 @@ public class FractalLoginPage extends FractalBasePage {
 		}
 		return false;
 	}
-	
+	@Test
 	public void verifyUserNameAndPassword() {
+		//Assert.assertTrue(tbUserNameNewUI.isDisplayed());
+		//Assert.assertFalse(tbUserNameNewUI);
+		assertTrue(elementExist(By.xpath("tbUserNameNewUI")));
+		Assert.assertSame(tbUserNameNewUI, tbUserNameNewUI);
 		enterData(getLabel("winVinayaUser_Username"),tbUserNameNewUI);
 		enterData(getLabel("winVinayaUser_Password"),tbPasswordNewUI);
 		click(btnLoginNewUI);
-		wait(5);
+	
 	}
 }
