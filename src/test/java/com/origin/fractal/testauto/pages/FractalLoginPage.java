@@ -43,8 +43,8 @@ public class FractalLoginPage extends FractalBasePage {
 	public void verifyUserNameAndPassword() {
 		//Assert.assertTrue(tbUserNameNewUI.isDisplayed());
 		//Assert.assertFalse(tbUserNameNewUI);
-		assertTrue(elementExist(By.xpath("tbUserNameNewUI")));
-		Assert.assertSame(tbUserNameNewUI, tbUserNameNewUI);
+		//assertTrue(elementExist(By.xpath("tbUserNameNewUI")));
+		//Assert.assertSame(tbUserNameNewUI, tbUserNameNewUI);
 		enterData(getLabel("winVinayaUser_Username"),tbUserNameNewUI);
 		enterData(getLabel("winVinayaUser_Password"),tbPasswordNewUI);
 		click(btnLoginNewUI);

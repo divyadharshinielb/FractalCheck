@@ -3,9 +3,12 @@ package com.origin.fractal.testauto.steps;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.FractalBaseStep;
 import com.origin.fractal.testauto.pages.FractalLoginPage;
+
+import jxl.common.Assert;
 
 public class FractalLoginSteps extends FractalBaseStep {
 
@@ -27,6 +30,7 @@ public class FractalLoginSteps extends FractalBaseStep {
 			result="FAILED";
 		}
 	}
+	@Test
 	public void verifyUserNameAndPassword() {
 		result="FAILED";
 		try {
@@ -36,6 +40,7 @@ public class FractalLoginSteps extends FractalBaseStep {
 		catch(Exception e) {
 			e.printStackTrace();
 			result="FAILED";
+			Assert.verify(false);
 		}
 	}
 }
