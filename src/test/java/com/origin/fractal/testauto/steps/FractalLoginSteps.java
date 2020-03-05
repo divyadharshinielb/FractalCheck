@@ -2,6 +2,7 @@ package com.origin.fractal.testauto.steps;
 
 import java.io.IOException;
 
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -35,12 +36,13 @@ public class FractalLoginSteps extends FractalBaseStep {
 		result="FAILED";
 		try {
 			page.verifyUserNameAndPassword();
-			result="PASSED";
+			result="PASSED";	
 		}
-		catch(Exception e) {
+		catch(NoSuchWindowException e) {
 			e.printStackTrace();
 			result="FAILED";
-			Assert.verify(false);
+				
 		}
+		
 	}
 }
