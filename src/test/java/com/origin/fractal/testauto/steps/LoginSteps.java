@@ -15,7 +15,7 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void doLogin() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.doLogin();
 		   }
@@ -26,7 +26,7 @@ public class LoginSteps extends FractalBaseStep {
 		   }
 	}
 	public void loginToContentAdmin() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.loginToContentAdmin();
 		   }
@@ -49,7 +49,7 @@ public class LoginSteps extends FractalBaseStep {
 		
 	}
 	public void loginPageVerification() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.loginPageVerification();
 		   }
@@ -61,7 +61,7 @@ public class LoginSteps extends FractalBaseStep {
 	}
 	//Starts - Added by Mahesh on Feb_06_19
 		public void verifypasswordField() {
-			result ="Passed";
+			result ="PASSED";
 			try {
 				page.verifypasswordField();
 			}
@@ -74,7 +74,7 @@ public class LoginSteps extends FractalBaseStep {
 		//end
 
 	public void rememberMe() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.rememberMe();
 		   }
@@ -85,7 +85,7 @@ public class LoginSteps extends FractalBaseStep {
 		   }
 	}
 	public void registerFunction() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.registerFunction();
 		   }
@@ -96,7 +96,7 @@ public class LoginSteps extends FractalBaseStep {
 		   }
 	}
 	public void blankPasswordVerification() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.blankPasswordVerification();
 		   }
@@ -108,7 +108,7 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void blankUserName() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 		   page.blankUserName();
 		   }
@@ -120,7 +120,7 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void inValid() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 		   page.inValid();
 		   }
@@ -132,7 +132,7 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void doLogin1() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 		   page.doLogin1();
 		   }
@@ -145,7 +145,7 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void inValidPassword() {
-		result ="Passed";
+		result ="PASSED";
 		  try {
 		  page.inValidPassword();
 		  }
@@ -157,7 +157,7 @@ public class LoginSteps extends FractalBaseStep {
 		
 	}
 	public void verifySearchLink() {
-		result ="Passed";
+		result ="PASSED";
 		  try {
 		  page.verifySearchLink();
 		  }

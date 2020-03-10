@@ -18,7 +18,7 @@ public class GlobalSteps extends FractalBaseStep {
 
 	//Added by Dhanushiya.K
 	public void backButtonCheckClassroomEvent() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.backButtonCheckClassroomEvent() ;
 		   }
@@ -32,7 +32,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}//ended by Dhanushiya.k
 
 	public void GlobalSearchforClassroomandClassroomsKeyword() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforClassroomandClassroomsKeyword() ;
 		   }
@@ -45,7 +45,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchforimageandimages() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforimageandimages();
 		   }
@@ -59,7 +59,7 @@ public class GlobalSteps extends FractalBaseStep {
 
 	public void GlobalSearchforAudioandAudios() {
 		
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforAudioandAudios();
 		   }
@@ -71,7 +71,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchforVideoandVideos() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforVideoandVideos();
 		   }
@@ -84,7 +84,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchforDocumentandDocuments() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforDocumentandDocuments();
 		   }
@@ -96,7 +96,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchforVlabsandVlabs() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforVlabsandVlabs();
 		   }
@@ -110,7 +110,7 @@ public class GlobalSteps extends FractalBaseStep {
 
 	public void GlobalSearchforAssessmentandAssessments() {
 		
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforAssessmentandAssessments();
 		   }
@@ -123,7 +123,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchforElearningandElearnings() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforElearningandElearnings();
 		   }
@@ -138,7 +138,7 @@ public class GlobalSteps extends FractalBaseStep {
 
 	public void GlobalSearchforBundleandBundles() {
 		
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforBundleandBundles();
 		   }
@@ -152,7 +152,7 @@ public class GlobalSteps extends FractalBaseStep {
 
 	public void GlobalSearchforPodcastandPodcasts() {
 		
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforPodcastandPodcasts();
 		   }
@@ -164,7 +164,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchforLearningpathandLearningpaths() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforLearningpathandLearningpaths() ;
 		   }
@@ -177,7 +177,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchforCourseandCourses() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforCourseandCourses() ;
 		   }
@@ -189,7 +189,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchforResourceandResources() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchforResourceandResources() ;
 		   }
@@ -202,7 +202,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchwithRandomcharacterandIntegers() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchwithRandomcharacterandIntegers();
 		   }
@@ -215,7 +215,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchwithSpecialcharacters() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchwithSpecialcharacters();
 		   }
@@ -228,7 +228,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchwithUnavailableKeyword() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchwithUnavailableKeyword();
 		   }
@@ -241,7 +241,7 @@ public class GlobalSteps extends FractalBaseStep {
 	}
 
 	public void GlobalSearchwithDoubleandTabspace() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 				page.GlobalSearchwithDoubleandTabspace();
 		   }
