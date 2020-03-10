@@ -54,7 +54,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_16,20,21,22: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_16,20,21,22: "
 			+ "16:Verify course name" + "20:Verify All filter" + "21:Verify Bundle filter" + "22:Verify Course filter")
 	public void testMyLearningPage1(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -87,7 +87,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_25,5,8,14,6,7: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_25,5,8,14,6,7: "
 			+ "25: Verify Tickmark for completed catalog item" + "5: Verify Category dropdown and Grid and List mode"
 			+ "8: Verify Category items" + "14: Verify Rating for completed catalog item"
 			+ "6,7: verify the Grid and List view items and functionality")
@@ -123,7 +123,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_17,18,23,27 : "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_17,18,23,27 : "
 			+ "17: Verify Bundle Details after clicking" + "18: Verify course Details after clicking"
 			+ "23: Verify the learnig objeck launch" + "27: Verify the top arrow button")
 	public void testMyLearningPage3(String row, String strBrowserName) {
@@ -153,7 +153,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_MY_LEARN__027,Checking whether the page is moving upwards when ^ button is clicked , " +  mLSteps.getResult() );
 */		mLSteps.clickLogout();
 	}
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description ="")
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description ="")
 	public void testMyLearningPageClassroom(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
