@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import com.origin.fractal.testauto.FractalBasePage;
 
 public class InstructorModulePage extends FractalBasePage {
-	private By lblTotalEventsText= By.xpath("//span[contains(text(),'Total Events')]");
+	private By lblTotalEventsText= By.xpath("//span[contains(text(),'Total events')]");
 	private By lblUpdatesText= By.xpath("//h2[contains(text(),'Updates')]");
 	private By lblInvitesRemindersText= By.xpath("//h2[contains(text(),'Invites & Reminders')]");
 	private By lblSkillsText= By.xpath("//span[contains(text(),'Skills')]");
@@ -46,10 +46,10 @@ public class InstructorModulePage extends FractalBasePage {
     private By lblRosterText= By.xpath("//li[contains(text(),'Roster')]");
     private By preEventDetailsBtn= By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12')]//div[2]//dl[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[3]//p[1]//button[1]");
     private By sessionDetailsBtn= By.xpath("//div[4]//dl[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[3]//p[1]//button[1]");
-    private By invitesReminderViewallBtn= By.xpath("//h2[contains(text(),'Invites & Reminders')]//a[@class='filter-link cursor-pointer font-size-14 text-capitalize margin-r-0'][contains(text(),'View all')]");
+    private By invitesReminderViewallBtn= By.xpath("//h2[contains(text(),'Invites & Reminders')]//a[contains(text(),'View all')]");//h2[contains(text(),'Invites & Reminders')]//a[@class='filter-link cursor-pointer font-size-14 text-capitalize margin-r-0'][contains(text(),'View all')]
     private By breadCrumLink= By.xpath("//button[contains(@class,'btn btn active cp pl-0')]//a[1]");
     private By reviewButton= By.xpath("//a[@class='ins_rev_button']");
-    private By nextEventViewAll= By.xpath("//h2[@class='nxtevt']//a[@class='filter-link cursor-pointer font-size-14 text-capitalize margin-r-0'][contains(text(),'View all')]");
+    private By nextEventViewAll= By.xpath("//h2[@class='nxtevt']//a[contains(text(),'View all')]");
     private By lblAll= By.xpath(" //button[contains(text(),'ALL')]");
     private By lblReviewCompleted= By.xpath("//button[contains(text(),'REVIEW COMPLETED')]");
     private By lblReviewPending= By.xpath("//button[contains(text(),'REVIEW PENDING')]");
@@ -68,9 +68,9 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(nextEventViewAll);
 		wait(2);
-		verifyText("upcoming",lblUpcomingLabel);
-		verifyText("In Progress",lblInprogressLabel);
-		verifyText("Completed",lblCompletedLabel);
+		verifyText("UPCOMING",lblUpcomingLabel);
+		verifyText("IN PROGRESS",lblInprogressLabel);
+		verifyText("COMPLETED",lblCompletedLabel);
 	}
 	public void verifyButtons() {
 		wait(2);

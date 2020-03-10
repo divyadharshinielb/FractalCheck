@@ -10,8 +10,7 @@
 	</listeners>
 	<!-- End of reportNg modification -->
 	<test thread-count="19" name="Test" >
-		<classes>
-		        <class
+		<classes><class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 		        <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" /> 
@@ -35,16 +34,19 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
-			    <class
+			  <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
-				<class
+		 		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
+				
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
