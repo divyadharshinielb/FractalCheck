@@ -65,7 +65,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
 	public void testMyLearningPage0(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
@@ -86,7 +86,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 
 
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_61,62 "
 			+ "61: Verify  My account page,"
 			+ "62: Verify  My Account Profile details, ")

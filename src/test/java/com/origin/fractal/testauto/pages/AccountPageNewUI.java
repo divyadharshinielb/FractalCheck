@@ -54,7 +54,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 		verifyLabel("lblEmailAddr",lblEmailAddr);
 		verifyLabel("lblFirstName",lblFirstName);
 		//verifyLabel("lblLastName",lblLastName);
-		verifyLabel("lblPhone",lblPhone);
+		//commenting because phone field is removed nowverifyLabel("lblPhone",lblPhone);
 		verifyLabel("lblOldPass",lblOldPass);
 		
 		verifyLabel("lblChgPass",lblChgPass);
@@ -68,7 +68,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 		wait(5);
 		verifyValue(getLabel("inpLName"),inpLName);
 		wait(5);
-		verifyValue(getLabel("inpPhone"),inpPhone);
+		//commenting because phone field is removed nowverifyValue(getLabel("inpPhone"),inpPhone);
 	}
 	public void verifyFieldValidation() {
 		clear(inpFName);

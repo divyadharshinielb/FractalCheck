@@ -21,13 +21,13 @@ public class MyLearningPage extends FractalBasePage {
 	private By lblUpdatedOnInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]");
 	/******/
 	private By lblDescInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/*//h3[contains(text(),'Overview')]");
-	private By lblValidTillInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/*//span[contains(text(),'Valid till')]");
-	private By lblDurationInCat = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/*//span[contains(text(),'Duration')]");
+	private By lblValidTillInCat = By.xpath("//span[text()='Validity:']"); //*[@id='ngview']/div/ng-include/*//div/*//span[contains(text(),'Valid till')]
+	private By lblDurationInCat = By.xpath("//div[contains(text(),'Language')]/../div[3]/span"); //*[@id='ngview']/div/ng-include/*//div/*//span[contains(text(),'Duration')]
 	private String lblFilterLink = ".//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../a";
 	private String boxBtn = ".//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div";
 	private String boxCatType = "]/*//p";
 	private By boxButton = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div");
-	private By lblCatnameInside = By.xpath(".//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3");
+	private By lblCatnameInside = By.xpath("//span[@class='three-line-clamp']");//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3
 
 	private By bundleCnt = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Valid till:')]");////Updated Nov-22-18
 	private By lblcourseName = By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/*//h3");//Updated Nov-22-18
@@ -82,8 +82,8 @@ public class MyLearningPage extends FractalBasePage {
 	//	wait(5);
 	//	click(clickCatalog);
 		/***/
-		verifyPartialLabelText("lblUpdatedOn", lblUpdatedOnInCat);
-		verifyPartialLabelText("lbloverview", lbloverview);
+		//commenting because updated field is removed verifyPartialLabelText("lblUpdatedOn", lblUpdatedOnInCat);
+		//commenting because this field is removed now verifyPartialLabelText("lbloverview", lbloverview);
 		verifyPartialLabelText("lblValidtill", lblValidTillInCat);
 		verifyPartialLabelText("lblDuration", lblDurationInCat);
 	}
@@ -178,11 +178,11 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyMyLearningLabels() {
 		wait(5);
 		verifyPartialLabelText("catalogTitle", lblCatnameInside);
-		verifyPartialLabelText("lastUpdateddate", lblUpdatedOnInCat);
-		verifyPartialLabelText("lobjCount", lobjCount);
+		//commenting because updated field is removed verifyPartialLabelText("lastUpdateddate", lblUpdatedOnInCat);
+		//commenting because the count is not thereverifyPartialLabelText("lobjCount", lobjCount);
 		verifyPartialLabelText("lblDuration", lblDurationInCat);
 		verifyPartialLabelText("lblValidity", lblValidTillInCat);
-		verifyPartialLabelText("lbloverview", lbloverview);
+	//commenting because this is not there	verifyPartialLabelText("lbloverview", lbloverview);
 	}
 	/*End - Moved from FractalBasePage by Manju Priya A on Nov-29-18*/
 

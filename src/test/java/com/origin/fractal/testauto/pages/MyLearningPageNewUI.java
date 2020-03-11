@@ -35,15 +35,26 @@ public class MyLearningPageNewUI extends FractalBasePage {
          wait(15);
 		verifyText("ALL", lblAll);
 		wait(5);
-		//verifyText("COURSES", lblCourses);
+		if(elementExist(lblCourses)) {
+		verifyText("COURSES", lblCourses);
+		}
 		wait(5);
 		//edit by divya
+		if(elementExist(lblPodcasts)) {
 		verifyText("PODCASTS", lblPodcasts);
+		}
+		wait(5);
+		if(elementExist(lblResources)) {
 		verifyText("RESOURCES", lblResources);
+		}
 		wait(5);
-	//	verifyText("BUNDLES", lblBundles);
+		if(elementExist(lblBundles)) {
+	    verifyText("BUNDLES", lblBundles);
 		wait(5);
+		}
+		if(elementExist(lblLearningPath)) {
 		verifyText("LEARNING PATHS", lblLearningPath);
+		}
 	}
 	public void verifyCatalogname() {
 /*		click(clickCatalog);

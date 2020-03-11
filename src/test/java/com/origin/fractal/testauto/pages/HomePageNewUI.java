@@ -26,7 +26,7 @@ public class HomePageNewUI extends FractalBasePage {
 	public void verifyResumeLearningLabeltext() {
 		wait(5);
 		click(btnContinue);
-	//	myLearning.verifyMyLearningLabels();
+		myLearning.verifyMyLearningLabels();
 	}
 	
 		public void commonFunction() {

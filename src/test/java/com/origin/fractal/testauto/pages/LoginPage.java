@@ -11,7 +11,7 @@ public class LoginPage extends FractalBasePage {
 
 	private By tbUserName = By.xpath(".//input[@name='username']");
 	private By tbPassword = By.xpath(".//input[@name='password']");
-	private By btnLogin = By.xpath(".//input[contains(@value, 'Login')]");
+	private By btnLogin = By.xpath("//input[contains(@value,'Login')]");//input[@class='w100 login_btn login']
 	private By btnLogin1 = By.xpath(".//button[@id='login_btn']");
 	private By logoSymbol = By.xpath(".//img[contains(@class, 'logo')]");
 	private By rememberMe=By.xpath(".//label[@class='font-size-14']");
@@ -22,7 +22,7 @@ public class LoginPage extends FractalBasePage {
 	private By resigstrationPage = By.xpath(".//div[contains(text(), 'SIGN UP')]"); //div[@class='col-lg-12 text-center log-title padding-30']
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty.')]");
 	private By blankUserName = By.xpath(".//*[contains(text(), 'Username field should not be empty')]");
-	private By inValid = By.xpath(".//*[contains(text(),'Username or Password is incorrect.')]");
+	private By inValid = By.xpath("//label[contains(text(),'Password')]/../../div[contains(@class,'errorMsg')]"); //*[contains(text(),'Username or Password is incorrect.')]
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
@@ -45,12 +45,14 @@ public class LoginPage extends FractalBasePage {
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin);
 		wait(5);
+	//click(btnLogin);
 	}
 	public void loginToContentAdmin() {
 		enterData("contentadmin@origin.com",tbUserName);
 	    enterData("contentadmin@origin.com",tbPassword);
 	    click(btnLogin);
 	    wait(5);
+	    click(btnLogin);
 	}
 	public void doLogin1() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
