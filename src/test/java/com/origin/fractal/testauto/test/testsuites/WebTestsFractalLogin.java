@@ -7,20 +7,48 @@ import org.testng.annotations.Test;
 import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.FractalLoginSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
-import com.wv.auto.framework.BrowserFactory;
+import com.wv.auto.framework.BrowserFactory;  
 import com.wv.auto.framework.utils.Reporter;
 
+import jxl.common.Assert;
+
 public class WebTestsFractalLogin extends FractalBaseWebTest {
+	String fractalInstance = "FractalWvfInstance";
+	String fractalInstanceUrl = "Url"; 
+	int runningIndex = 0;
+	static short overallResult = 0;
+
+	public void verifyInstanceLogin() throws IOException {
+
+		FractalLoginSteps fractalLoginSteps = new FractalLoginSteps(driver, fractalInstance,fractalInstanceUrl);
+		fractalLoginSteps.verifyLogoandText();
+		fractalLoginSteps.verifyUserNameAndPassword();
+
+		if(fractalLoginSteps.getResult().equalsIgnoreCase("FAILED")) {
+			overallResult++;
+			print("Running index " + runningIndex);
+		};
+		Reporter.writeSummary("TC-0" + runningIndex + "-" + fractalInstance + ": Verify the " + fractalInstance + " URL and User Login," +  fractalLoginSteps.getResult()); 
+
+	}
 
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0", "pilot" }, enabled = true, description = "Fractal Login Page")
 	public void testLogin(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		FractalLoginSteps fractalLoginSteps = new FractalLoginSteps(driver);
-		/*fractalLoginSteps.verifyLogoandText();
-		Reporter.writeSummary("TC-01-FractalWVFInstanceURL, Verify the Fractal WVF Instance URL for presence of Logo and Text," +  fractalLoginSteps.getResult()); 
-		*/fractalLoginSteps.verifyUserNameAndPassword();
-		Reporter.writeSummary("TC-01-FractalWVFInstanceLogin, Verify the Fractal WVF Instance URL: User Login," +  fractalLoginSteps.getResult()); 
+
+		fractalInstance = "FractalWvfInstance"; 
+		runningIndex++;
+		verifyInstanceLogin();
+		driver.close();  
+
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		fractalInstance = "FractalQadevInstance";
+		runningIndex++;
+		verifyInstanceLogin();
+		if(overallResult > 0) {
+			Assert.verify(false);
+		}
+
 		driver.close(); 
 	}
-	
 }

@@ -1,53 +1,43 @@
 package com.origin.fractal.testauto.pages;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import com.origin.fractal.testauto.FractalBasePage;
-
-
 
 public class FractalLoginPage extends FractalBasePage {
 	private By tbUserNameNewUI = By.xpath("//input[@name='username']");
 	private By tbPasswordNewUI = By.xpath("//input[@name='password']");
 	private By btnLoginNewUI = By.xpath("//input[@value='Login']");
-	private By logoWVF=By.xpath("//*[contains(@class, 'logo')]");
-	private By signInWith=By.xpath("//div[text()='Sign in with']");
+	private By logoDiv = By.xpath("//*[contains(@class, 'logo')]");
+	// private By signInWith=By.xpath("//*[text()='Sign in with']");
+	// private By loginDiv = By.xpath("//html/body/div/div/main/div/div/div/div[2]/div/div[2]");
+	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
 
-
-	public FractalLoginPage(WebDriver driver)  {
+	public FractalLoginPage(WebDriver driver, String fractalInst, String fractInstUrl) throws IOException {
 		super(driver);
-		pageName ="FractalWVFInstance"; 
-		String baseUrl=getLabel("winVinayaInstanceUrl");
+		pageName = fractalInst; 
+		String baseUrl = getLabel(fractInstUrl);  
 		goTo(baseUrl);
 	}
-	
-	public boolean loginToWVFInstance() throws IOException {
-		if(elementExist(logoWVF) && elementExist(signInWith)) {
-			print("The Logo and Text are present");
+
+	public boolean loginToFractalInstance() throws IOException {
+
+		if(elementExist(logoDiv)) {
 			return true;
-		}
-		else
-		{
-			print("The Text and logo are NOT present");			
 		}
 		return false;
 	}
-	@Test
+
 	public void verifyUserNameAndPassword() {
-		//Assert.assertTrue(tbUserNameNewUI.isDisplayed());
-		//Assert.assertFalse(tbUserNameNewUI);
-		//assertTrue(elementExist(By.xpath("tbUserNameNewUI")));
-		//Assert.assertSame(tbUserNameNewUI, tbUserNameNewUI);
-		enterData(getLabel("winVinayaUser_Username"),tbUserNameNewUI);
-		enterData(getLabel("winVinayaUser_Password"),tbPasswordNewUI);
+		if (elementExist(btnCookies)) {
+			click(btnCookies); 
+			wait(2);
+		}
+		enterData(getLabel("Username"), tbUserNameNewUI);
+		enterData(getLabel("Password"), tbPasswordNewUI);
 		click(btnLoginNewUI);
-	
+		wait(5);
 	}
 }
