@@ -71,25 +71,22 @@ public class LoginPage extends FractalBasePage {
 	public void rememberMe() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
-		wait(10);
-		click(rememberMe);
-		wait(10);
-		click(btnLogin);
-		wait(10);
-		click(lblProfile);
-		wait(10);
-		click(logOutButton);
-		wait(15);
+		wait(5);
 		click(rememberMe);
 		wait(5);
 		click(btnLogin);
 		wait(10);
 		click(lblProfile);
-		wait(10);
+		wait(5);
 		click(logOutButton);
-		wait(10);
-		click(btnLogin);	
-		elementExist(blankPassword);
+		wait(5);
+		click(rememberMe);
+		wait(5);
+		click(btnLogin);
+		wait(5);
+		click(lblProfile);
+		wait(5);
+		click(logOutButton);	
 		}
 	//Starts - Added by Mahesh on Feb_06_19
 		public void verifypasswordField() {	

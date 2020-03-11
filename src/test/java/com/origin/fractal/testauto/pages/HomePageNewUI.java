@@ -17,7 +17,7 @@ public class HomePageNewUI extends FractalBasePage {
 	private By termsPage = By.xpath(".//span[contains(text(),'Terms & Conditions')]");//edited by dhanushiya
 	private By contactsPage = By.xpath(".//span[contains(text(),'contact us')]");//edited by dhanushiya
 	private By lblHome = By.xpath("//span[contains(text(),'Home')]");
-	private By supportLink = By.xpath(".//div[contains(@class,'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/../div/p/a[4]");
+	private By supportLink = By.xpath(".//a[contains(text(),'| Support')]");//div[contains(@class,'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/../div/p/a[4]
 	MyLearningPage myLearning = new MyLearningPage(driver);
     public HomePageNewUI(WebDriver driver) {
 		super(driver);
@@ -31,15 +31,18 @@ public class HomePageNewUI extends FractalBasePage {
 	
 		public void commonFunction() {
 			WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]")); 
-			//Actions actions = new Actions(driver); actions.moveToElement(element);
-		//	actions.perform();
+			Actions actions = new Actions(driver); actions.moveToElement(element);
+			actions.perform();
 			wait(5);
 			}
 			public void verifyFooterLinks() {
 			commonFunction();
-			verifyText(" | Terms",termsLink);
-			verifyText(" | Contact",contactsLink);
+			verifyText("| Terms",termsLink);
+			verifyText("| Contact",contactsLink);
 			wait(5);
+			WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]")); 
+			Actions actions = new Actions(driver); actions.moveToElement(element);
+			actions.perform();
 			click(privacyLink);
 			wait(5);
 			verifyText("PRIVACY POLICY",privacyPage);
@@ -58,6 +61,7 @@ public class HomePageNewUI extends FractalBasePage {
 			verifyText("contact us",contactsPage);
 			wait(5);
 			//edit by divya based on reviewing testcases
+			commonFunction();
 			click(supportLink);
 			}
 	}
