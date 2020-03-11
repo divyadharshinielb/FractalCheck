@@ -127,8 +127,13 @@ public abstract class  BasePage {
 
 	public void click(WebElement obj) {
 	
-		obj.click();
+
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", obj);
+		//obj.click();
 		print("CLICKED : " + obj.toString());
+		//obj.click();
+		//print("CLICKED : " + obj.toString());
 	}
 
 	public void selectByVisibleText(String textToBeSelected, By objLoc) {
