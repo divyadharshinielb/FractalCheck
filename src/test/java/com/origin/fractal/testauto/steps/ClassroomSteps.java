@@ -66,6 +66,72 @@ public class ClassroomSteps extends FractalBaseStep{
 			result="FAILED";
 		   }
 	}
+	public void cautionAlertsForClassroomTitle() {
+		result ="PASSED";
+		   try {
+			page.cautionAlertsForClassroomTitle();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+	public void cautionAlertsForClassroomVenue(){
+		result ="PASSED";
+		   try {
+			page.cautionAlertsForClassroomVenue();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+	public void  cautionAlertsForCategorySelection(){
+		result ="PASSED";
+		   try {
+			page.cautionAlertsForCategorySelection();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+	public void cautionAlertsForClassroomDescription(){
+		result ="PASSED";
+		   try {
+			page.cautionAlertsForClassroomDescription();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+	public void cautionAlertsForSkillsetSelection(){
+		result ="PASSED";
+		   try {
+			page.cautionAlertsForSkillsetSelection();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+	public void cautionAlertsForInstructorSelection(){
+		result ="PASSED";
+		   try {
+			page.cautionAlertsForInstructorSelection();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
 	public void addEventPage() {
 		result ="Passed";
 		   try {

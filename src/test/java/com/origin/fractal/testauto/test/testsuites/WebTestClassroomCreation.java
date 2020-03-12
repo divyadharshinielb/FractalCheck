@@ -43,6 +43,18 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
         cSteps.cautionAlertsForMandatoryFields();
         Reporter.writeSummary("TCID_CLASS_006, Verify whether Admin should be able to view the caution alerts for all mandatory fields," +  cSteps.getResult() );
         Reporter.writeSummary("TCID_CLASS_016,Verify the caution alerts for all the fields," +  cSteps.getResult() );
+        cSteps.cautionAlertsForClassroomTitle();
+        Reporter.writeSummary("TCID_CLASS_NEW_01, Verify whether Admin should be able to view the caution alerts for ClassroomTitle," +  cSteps.getResult() );
+         cSteps.cautionAlertsForClassroomVenue();
+         Reporter.writeSummary("TCID_CLASS_NEW_02, Verify whether Admin should be able to view the caution alerts for ClassroomVenue," +  cSteps.getResult() );
+         cSteps.cautionAlertsForCategorySelection();
+         Reporter.writeSummary("TCID_CLASS_NEW_03, Verify whether Admin should be able to view the caution alerts for CategorySelection," +  cSteps.getResult() );
+         cSteps.cautionAlertsForClassroomDescription();
+         Reporter.writeSummary("TCID_CLASS_NEW_04, Verify whether Admin should be able to view the caution alerts for ClassroomDescription," +  cSteps.getResult() );
+         cSteps.cautionAlertsForSkillsetSelection();
+         Reporter.writeSummary("TCID_CLASS_NEW_05, Verify whether Admin should be able to view the caution alerts for SkillsetSelection," +  cSteps.getResult() );
+         cSteps.cautionAlertsForInstructorSelection();
+         Reporter.writeSummary("TCID_CLASS_NEW_06, Verify whether Admin should be able to view the caution alerts for InstructorSelection," +  cSteps.getResult() );
         cSteps.titleAcceptsCharater(); 
         Reporter.writeSummary("TCID_CLASS_007, Verify whether the title accepts more than 4 characters of length also it should not accept less than 4 characters," +  cSteps.getResult() );
   //    cSteps.completionCriteriaCheckUncheck();

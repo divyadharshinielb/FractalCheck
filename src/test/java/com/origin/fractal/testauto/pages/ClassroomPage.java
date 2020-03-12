@@ -79,6 +79,8 @@ public class ClassroomPage extends FractalBasePage {
     private By eventList=By.xpath("//div[@ng-click='viewEventDetails(event_list)']");
     private By mandatoryOkBtn=By.xpath("//span[contains(text(),'OK')]");
     private By lblDescription=By.xpath("//textarea[@name='classroom_description']");
+    private By skillsetReqText = By.xpath("//div[contains(text(),'Skillset selection required.')]");
+    private By InstructorSelectionReqText = By.xpath("//span[contains(text(),'Instructor(s) selection required.')]");
     public ClassroomPage(WebDriver driver) {
 		super(driver);
 	}
@@ -140,6 +142,81 @@ public class ClassroomPage extends FractalBasePage {
 		wait(5);	
 		click(closeBtn);
 		wait(5);
+	}
+	public void cautionAlertsForClassroomTitle() {
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		wait(5);
+		verifyText("Classroom title required.",classroomNameReqText);
+		wait(5);	
+		click(closeBtn);
+	}
+	public void cautionAlertsForClassroomVenue(){
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		wait(5);
+		verifyText("Traditional classroom venue selection required.",venueNameReqText);
+		wait(5);	
+		click(closeBtn);
+	}
+	public void cautionAlertsForCategorySelection(){
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		wait(5);
+		verifyText("Classroom category selection required.",classroomCategoryReqText);
+		wait(5);	
+		click(closeBtn);
+	}
+	public void cautionAlertsForClassroomDescription(){
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		wait(5);
+		verifyText("Classroom category selection required.",classroomCategoryReqText);
+		wait(5);	
+		click(closeBtn);
+	}
+	public void cautionAlertsForSkillsetSelection(){
+	wait(5);
+	click(addClassroomBtn);
+	wait(5);
+	click(continueBtn);
+	wait(5);
+	click(mandatoryOkBtn);
+	wait(5);
+	verifyText("Skillset selection required.",skillsetReqText);
+	wait(5);	
+	click(closeBtn);
+}
+	public void cautionAlertsForInstructorSelection(){
+		wait(5);
+		click(addClassroomBtn);
+		wait(5);
+		click(continueBtn);
+		wait(5);
+		click(mandatoryOkBtn);
+		WebElement element = driver.findElement(By.xpath("//span[contains(text(),'Instructor(s) selection required.')]")); Actions
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
+		wait(5);
+		verifyText("Instructor(s) selection required.",InstructorSelectionReqText);
+		wait(5);	
+		click(closeBtn);
 	}
 	public void addEventPage() {
 		wait(5);
