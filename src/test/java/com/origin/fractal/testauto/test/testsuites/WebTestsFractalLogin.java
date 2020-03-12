@@ -28,7 +28,7 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 			overallResult++;
 			print("Running index " + runningIndex);
 		};
-		Reporter.writeSummary("TC-0" + runningIndex + "-" + fractalInstance + ": Verify the " + fractalInstance + " URL and User Login," +  fractalLoginSteps.getResult()); 
+		Reporter.writeSummary("TC-0" + runningIndex + "-" + fractalInstance +","+ " Verify the " + fractalInstance + " URL and User Login," +  fractalLoginSteps.getResult()); 
 
 	}
 
