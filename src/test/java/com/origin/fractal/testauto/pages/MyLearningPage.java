@@ -176,7 +176,8 @@ public class MyLearningPage extends FractalBasePage {
 	}
 	/*Moved from FractalBasePage by Manju Priya A on Nov-29-18*/
 	public void verifyMyLearningLabels() {
-		wait(5);
+		wait(7);
+		elementExist(lblCatnameInside);
 		verifyPartialLabelText("catalogTitle", lblCatnameInside);
 		//commenting because updated field is removed verifyPartialLabelText("lastUpdateddate", lblUpdatedOnInCat);
 		//commenting because the count is not thereverifyPartialLabelText("lobjCount", lobjCount);

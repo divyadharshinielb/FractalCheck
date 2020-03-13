@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.wv.auto.framework.BrowserFactory;
 
 public class HomePageNewUI extends FractalBasePage {
 	private By btnContinue = By.xpath("//span[@class='continue_button']");
@@ -26,14 +27,17 @@ public class HomePageNewUI extends FractalBasePage {
 	public void verifyResumeLearningLabeltext() {
 		wait(5);
 		click(btnContinue);
+		wait(5);
 		myLearning.verifyMyLearningLabels();
 	}
 	
 		public void commonFunction() {
 			WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]")); 
+			if(BrowserFactory.getOS() == "win") {
 			Actions actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
 			wait(5);
+			}
 			}
 			public void verifyFooterLinks() {
 			commonFunction();
@@ -41,8 +45,10 @@ public class HomePageNewUI extends FractalBasePage {
 			verifyText("| Contact",contactsLink);
 			wait(5);
 			WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]")); 
+			if(BrowserFactory.getOS() == "win") {
 			Actions actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
+			}
 			click(privacyLink);
 			wait(5);
 			verifyText("PRIVACY POLICY",privacyPage);

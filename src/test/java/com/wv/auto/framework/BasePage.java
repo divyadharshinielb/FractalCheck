@@ -126,9 +126,10 @@ public abstract class  BasePage {
 		click(getObj(objLoc));
 	}
 	public void click(WebElement obj) {
-		
-		obj.click();
-		print("CLICKED : " + obj.toString());
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", obj);
+		//obj.click();
+		print("iosclickcheck : " + obj.toString());
 	}
 
 /*	public void click(WebElement obj) {
