@@ -87,7 +87,6 @@ public class RolesManagementPage extends FractalBasePage {
 		click(lblProfile);
 		elementExist(learnerrolecheckbtn);
 		elementExist(learningadminroleBtn);
-		print("CJECKCKEKKFJKFLDKSFJLDKSFJ");
 		wait(2);
 		click(learnerrolecheckbtn);
 		wait(10);
@@ -101,7 +100,6 @@ public class RolesManagementPage extends FractalBasePage {
 			elementExist(instructorroleBtn);
 			elementExist(learningadminroleBtn);
 			click(learningadminroleBtn);
-			print("CHECKKKKKKKKKKKKWINDOSSSS");
 			wait(15);
 			elementExist(btnMenu);
 			click(btnMenu);
