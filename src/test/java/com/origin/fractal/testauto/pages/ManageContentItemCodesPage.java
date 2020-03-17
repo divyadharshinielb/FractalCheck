@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import com.origin.fractal.testauto.FractalBasePage;
 import com.origin.fractal.testauto.steps.LoginSteps;
 import com.origin.fractal.testauto.steps.MenuSteps;
+import com.wv.auto.framework.utils.MyScreenRecorder;
 
 public class ManageContentItemCodesPage extends FractalBasePage {
 	public MenuSteps menusteps;
@@ -704,9 +705,11 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 		verifyUserLearnObjItemcodes();
 		userLogout();
 	}
-	public void editVerifyAdminLearningObjects() {
+	public void editVerifyAdminLearningObjects() throws Exception {
+		MyScreenRecorder.startRecording("navigationTest");
 		goToManagecontent();
 		editLearnObjItemcodes();
+		MyScreenRecorder.stopRecording();
 		editVerifyAdminLearnObjItemcodes();
 		adminLogout();
 	}

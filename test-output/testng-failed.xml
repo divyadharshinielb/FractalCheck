@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning">
+      <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode">
         <methods>
-          <include name="beforeClass"/>
-          <include name="beforeMethod"/>
-          <include name="testMyLearningPage3" invocation-numbers="0"/>
+          <include name="editVerifyLearningObjectsItemcodes" invocation-numbers="0"/>
           <include name="afterMethod"/>
-          <include name="afterClass"/>
+          <include name="renameItemCodes_LO_CI" invocation-numbers="0"/>
           <include name="beforeSuite"/>
-          <include name="afterSuite"/>
           <include name="afterTest"/>
+          <include name="beforeClass"/>
+          <include name="editVerifyCatalogItemcodes" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+          <include name="afterClass"/>
+          <include name="verifyLearningObjectsItemcodes" invocation-numbers="0"/>
+          <include name="afterSuite"/>
+          <include name="verifyCatalogItemcodes" invocation-numbers="0"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning -->
+      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

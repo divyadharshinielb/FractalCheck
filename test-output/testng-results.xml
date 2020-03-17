@@ -1,32 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-12-04T06:34:43Z" name="Default suite" finished-at="2019-12-04T06:40:20Z" duration-ms="337599">
+  <suite name="Default suite" duration-ms="601613" started-at="2020-03-16T07:12:27Z" finished-at="2020-03-16T07:22:29Z">
     <groups>
       <group name="pilot">
-        <method signature="WebTestClassroomEvents.verifyEvents4(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" name="verifyEvents4" class="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents"/>
+        <method signature="WebTestRolesManagement.webTestRolesCheck(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="webTestRolesCheck" class="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement"/>
       </group> <!-- pilot -->
+      <group name="Phase1.0">
+        <method signature="WebTestRolesManagement.testroles(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="testroles" class="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement"/>
+      </group> <!-- Phase1.0 -->
     </groups>
-    <test started-at="2019-12-04T06:34:43Z" name="Default test" finished-at="2019-12-04T06:40:20Z" duration-ms="337599">
-      <class name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" started-at="2019-12-04T06:34:43Z" name="beforeSuite" finished-at="2019-12-04T06:34:43Z" duration-ms="14" status="PASS">
+    <test name="Default test" duration-ms="601613" started-at="2020-03-16T07:12:27Z" finished-at="2020-03-16T07:22:29Z">
+      <class name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="beforeSuite" is-config="true" duration-ms="31" started-at="2020-03-16T07:12:27Z" finished-at="2020-03-16T07:12:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" started-at="2019-12-04T06:34:43Z" name="beforeTest" finished-at="2019-12-04T06:34:43Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" started-at="2019-12-04T06:34:43Z" name="beforeClass" finished-at="2019-12-04T06:34:43Z" duration-ms="0" status="PASS">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-03-16T07:12:27Z" finished-at="2020-03-16T07:12:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" started-at="2019-12-04T06:34:43Z" name="beforeMethod" finished-at="2019-12-04T06:34:43Z" duration-ms="0" status="PASS">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-03-16T07:12:27Z" finished-at="2020-03-16T07:12:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="beforeMethod" is-config="true" duration-ms="15" started-at="2020-03-16T07:12:27Z" finished-at="2020-03-16T07:12:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyEvents4(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" started-at="2019-12-04T06:34:43Z" name="verifyEvents4" description="TCID_01:TCID_51: Verify whether the &quot;Maximum no. of participants&quot; field accepts alphanumericsTCID_52: Verify whether the &quot;Maximum no. of participants&quot; field accepts special charactersTCID_53: Verify whether the &quot;Maximum no. of participants&quot; field accepts alphabetsTCID_54: Verify whether the alert messgae is disappeared after entering &quot;Maximum no. of participants&quot;TCID_55: Verify whether the &quot;Minimum no. of participants&quot; field accepts numbersTCID_56: Verify whether the &quot;Minimum no. of participants&quot; field accepts alphanumericsTCID_57: Verify whether the &quot;Minimum no. of participants&quot; field accepts special charactersTCID_58: Verify whether the &quot;Minimum no. of participants&quot; field accepts alphabetsTCID_59: Verify whether the alert message is disappeared after entering &#039;Minimum no. of participants&#039;TCID_60: Verify whether the &#039;Waiting List Threshold&#039; field accepts numbers" data-provider="browers" finished-at="2019-12-04T06:40:19Z" duration-ms="336800" status="PASS">
+        <test-method status="PASS" signature="testroles(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="testroles" duration-ms="331945" started-at="2020-03-16T07:12:28Z" description="Roles" data-provider="browers" finished-at="2020-03-16T07:17:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testroles -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="afterMethod" is-config="true" duration-ms="1285" started-at="2020-03-16T07:17:59Z" finished-at="2020-03-16T07:18:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-03-16T07:18:01Z" finished-at="2020-03-16T07:18:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="webTestRolesCheck(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="webTestRolesCheck" duration-ms="267178" started-at="2020-03-16T07:18:01Z" data-provider="browers" finished-at="2020-03-16T07:22:28Z">
           <params>
             <param index="0">
               <value>
@@ -41,24 +68,24 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEvents4 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" started-at="2019-12-04T06:40:19Z" name="afterMethod" finished-at="2019-12-04T06:40:20Z" duration-ms="778" status="PASS">
+        </test-method> <!-- webTestRolesCheck -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="afterMethod" is-config="true" duration-ms="1171" started-at="2020-03-16T07:22:28Z" finished-at="2020-03-16T07:22:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" started-at="2019-12-04T06:40:20Z" name="afterClass" finished-at="2019-12-04T06:40:20Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" started-at="2019-12-04T06:40:20Z" name="afterTest" finished-at="2019-12-04T06:40:20Z" duration-ms="0" status="PASS">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-03-16T07:22:29Z" finished-at="2020-03-16T07:22:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents@6b26e945]" started-at="2019-12-04T06:40:20Z" name="afterSuite" finished-at="2019-12-04T06:40:20Z" duration-ms="5" status="PASS">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-03-16T07:22:29Z" finished-at="2020-03-16T07:22:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement@dc24521]" name="afterSuite" is-config="true" duration-ms="1" started-at="2020-03-16T07:22:29Z" finished-at="2020-03-16T07:22:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents -->
+      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

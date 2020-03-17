@@ -270,7 +270,12 @@ public class ManageContentItemCodesSteps extends FractalBaseStep {
 		page.verifyAdminLearningObjects();
 	}
 	public void editVerifyAdminLearningObjects() {
-		page.editVerifyAdminLearningObjects();
+		try {
+			page.editVerifyAdminLearningObjects();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void verifyAdminCatalogItems(){
 		page.verifyAdminCatalogItems();

@@ -13,9 +13,25 @@ public class ForgotPasswordSteps extends FractalBaseStep{
 	}
 	
 	public void clickForgotPasswordLink() {
-		page.clickForgotPasswordLink();
+		result ="PASSED";
+		   try {
+			   page.clickForgotPasswordLink();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyForgotPasswordLabels() {
-		page.verifyForgotPasswordLabels();
+		result ="PASSED";
+		   try {
+				page.verifyForgotPasswordLabels();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 }
