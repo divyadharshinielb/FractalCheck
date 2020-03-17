@@ -1,0 +1,10 @@
+diff a/src/test/java/com/origin/fractal/testauto/pages/AdminLoginPage.java b/src/test/java/com/origin/fractal/testauto/pages/AdminLoginPage.java	(rejected hunks)
+@@ -51,7 +51,7 @@
+ 		wait(5);
+ 	}
+ 	public void loginToContentAdmin() throws IOException{
+-		enterData("contentadmin@origin.com",tbUserName);
++		enterData("siteadmin@origin.com",tbUserName);//contentadmin@origin.com
+ 	    enterData("P@ssw0rd",tbPassword);//Admin@123
+ 	    click(btnLogin1);
+ 	    wait(5);
