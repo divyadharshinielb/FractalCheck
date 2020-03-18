@@ -9,7 +9,7 @@ import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.VenueSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
-import com.wv.auto.framework.utils.MyScreenRecorder;
+//import com.wv.auto.framework.utils.MyScreenRecorder;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsVenueCreation extends FractalBaseWebTest {
@@ -17,7 +17,7 @@ public class WebTestsVenueCreation extends FractalBaseWebTest {
 	public void ClassroomVenu(String row, String strBrowserName) throws Exception  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		MyScreenRecorder.startRecording("navigationTest");
+		//MyScreenRecorder.startRecording("navigationTest");
 		loginToContentAdmin(driver);
 		VenueSteps venueSteps = new VenueSteps(driver);
 		venueSteps.clickHomeMenu();
@@ -39,7 +39,7 @@ public class WebTestsVenueCreation extends FractalBaseWebTest {
 		venueSteps.mandatoryCheck();
 		Reporter.writeSummary("Venue_003, Verify Venue creation for mandatory fields, " +  venueSteps.getResult() );
 		venueSteps.saveButton();
-		MyScreenRecorder.stopRecording();
+	//	MyScreenRecorder.stopRecording();
 		Reporter.writeSummary("Venue_012, Verify Venue is submitted.," +  venueSteps.getResult() );	
 	}
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Venue creation")
