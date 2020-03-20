@@ -42,15 +42,31 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 		driver.close();  
 
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		fractalInstance = "FractalQadevInstance";
+		fractalInstance = "FractalEHSInstance";
 		runningIndex++;
 		verifyInstanceLogin();
 		driver.close();
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		fractalInstance = "FractalAutomationInstance";
+		fractalInstance = "FractaleWOWInstance";
 		runningIndex++;
 		verifyInstanceLogin();
+		
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		fractalInstance = "FractalFractalInstance";
+		runningIndex++;
+		verifyInstanceLogin();
+		
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		fractalInstance = "FractalJuniperInstance";
+		runningIndex++;
+		verifyInstanceLogin();
+		
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		fractalInstance = "FractalFutureatWorkInstance";
+		runningIndex++;
+		verifyInstanceLogin();
+		
 		
 		if(overallResult > 0) {
 			Assert.verify(false);
