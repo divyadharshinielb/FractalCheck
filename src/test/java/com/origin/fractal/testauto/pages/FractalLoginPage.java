@@ -23,14 +23,15 @@ public class FractalLoginPage extends FractalBasePage {
 	}
 
 	public boolean loginToFractalInstance() throws IOException {
-
+		/*wait(5);
 		if(elementExist(logoDiv)) {
 			return true;
-		}
+		}*/
 		return false;
 	}
 
 	public void verifyUserNameAndPassword() {
+		wait(5);
 		if (elementExist(btnCookies)) {
 			click(btnCookies); 
 			wait(2);
