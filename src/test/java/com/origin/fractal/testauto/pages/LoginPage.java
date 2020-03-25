@@ -52,7 +52,7 @@ public class LoginPage extends FractalBasePage {
 			}
 		wait(5);
 	}
-	public void loginToInstructor() {
+	/*public void loginToInstructor() {
 		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
 	    enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2
 	    click(btnLogin1);
@@ -62,6 +62,21 @@ public class LoginPage extends FractalBasePage {
 		}
 	    wait(5);
 	    click(By.xpath("//div[@class='ci-hover']//button[@class='jss29 jss3 jss5 jss8 circle-hover']"));
+	    wait(5);
+	    click(By.xpath("//button[@class='role-button']"));
+	}*/
+	public void loginToInstructor() {
+		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
+	    enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2
+	//    click(btnLogin1);
+	    wait(2);
+		if(elementExist(btnCookies)) {
+		click(btnCookies);
+		}
+	    wait(5);
+	    click(btnLogin1);
+	    wait(5);
+	    click(By.xpath("//img[contains(@class,'logout-height')]"));
 	    wait(5);
 	    click(By.xpath("//button[@class='role-button']"));
 	}
