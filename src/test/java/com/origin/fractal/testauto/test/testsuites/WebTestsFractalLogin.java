@@ -83,6 +83,5 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 			Assert.verify(false);
 		}
 		driver.close(); 
-		teardown()
 	}
 }
