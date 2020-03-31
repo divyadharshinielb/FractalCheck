@@ -55,7 +55,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		*/
 		Reporter.writeSummary("TCID_MY_LEARN__012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
 		mLSteps.multiplecategorycheck();
-		mLSteps.multiplecategoryhomepage();
+	    mLSteps.multiplecategoryhomepage();
 		mLSteps.clickLogout();
 	}
 
