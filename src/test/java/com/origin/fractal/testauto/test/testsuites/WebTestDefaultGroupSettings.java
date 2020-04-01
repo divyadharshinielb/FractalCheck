@@ -9,6 +9,7 @@ import com.origin.fractal.testauto.steps.DefaultGroupSettingsSteps;
 import com.origin.fractal.testauto.steps.InstructorModuleSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
+import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestDefaultGroupSettings extends FractalBaseWebTest {
 
@@ -31,8 +32,15 @@ public class WebTestDefaultGroupSettings extends FractalBaseWebTest {
 		DefaultGroupSettingsSteps defaultGroupSettingsSteps = new DefaultGroupSettingsSteps(driver);
 		
 		loginToContentAdmin(driver);
+		Reporter.writeSummary("TCID_DefaultGroup__001, Verify login using google button" +  defaultGroupSettingsSteps.getResult() );
 		defaultGroupSettingsSteps.googleBtnRegistration();//completed
+		Reporter.writeSummary("TCID_DefaultGroup__002, Delete the usere created for google button in admin" +  defaultGroupSettingsSteps.getResult() );
+		defaultGroupSettingsSteps.userdeletion_google();
+		Reporter.writeSummary("TCID_DefaultGroup__003, Verify login using facebook button" +  defaultGroupSettingsSteps.getResult() );
 		defaultGroupSettingsSteps.facebookButton();//completed
+		Reporter.writeSummary("TCID_DefaultGroup__004, Delete the usere created for facebook button in admin" +  defaultGroupSettingsSteps.getResult() );
+		defaultGroupSettingsSteps.userdelete_facebook();
+		Reporter.writeSummary("TCID_MY_LEARNNEW__001, Verify MultipleCategory in My Learning page" +  defaultGroupSettingsSteps.getResult() );
 		defaultGroupSettingsSteps.verifyAssignUnassignUser();
 		
 }

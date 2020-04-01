@@ -83,6 +83,9 @@ public class DefaultGroupSettingsPage extends FractalBasePage {
 		wait(2);
 		click(By.xpath("//body//button[contains(text(),'AGREE')]"));
 		wait(5);
+		}
+		public void userdeletion_google() {
+			wait(5);
 		enterData("qasiteadmin@origin.com",tbUserName);//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPassword);//P@ssw0rd
 	    click(btnLogin1);
@@ -91,7 +94,7 @@ public class DefaultGroupSettingsPage extends FractalBasePage {
 		 wait(5);
 		 click(lblgroup);
 		 click(lblgroup);
-		 print("checkkckckckckkckckckkckckckc");
+	//	 print("checkkckckckckkckckckkckckckc");
 		 wait(10);
 			WebElement element = driver.findElement(lblgeneral);
 			Actions actions = new Actions(driver);
@@ -138,6 +141,9 @@ public class DefaultGroupSettingsPage extends FractalBasePage {
 			wait(2);
 			click(By.xpath("//body//button[contains(text(),'AGREE')]"));
 			wait(5);
+		}
+			public void userdelete_facebook() {
+				wait(4);
 			enterData("qasiteadmin@origin.com",tbUserName);//contentadmin@origin.com
 		    enterData("P@ssw0rd",tbPassword);//P@ssw0rd
 		    click(btnLogin1);

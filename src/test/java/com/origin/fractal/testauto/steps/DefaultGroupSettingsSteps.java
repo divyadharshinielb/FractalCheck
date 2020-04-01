@@ -48,5 +48,29 @@ public class DefaultGroupSettingsSteps extends FractalBaseStep {
 		result="FAILED";
 	   }
 }
+	public void userdeletion_google() {
+		 result ="PASSED";
+		   try {
+				page.userdeletion_google();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+
+	public void userdelete_facebook() {
+		 result ="PASSED";
+		   try {
+				page.userdelete_facebook();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+
 }
 
