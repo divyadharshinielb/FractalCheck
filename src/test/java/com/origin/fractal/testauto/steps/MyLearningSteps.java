@@ -180,7 +180,28 @@ public class MyLearningSteps extends FractalBaseStep {
 			result="FAILED";
 		   }
 	}
-
+	public void multiplecategorycheck() {
+		result ="Passed";
+		  try {
+		page.multiplecategorycheck();
+		  }
+		  catch(Exception e)
+		  {
+		e.printStackTrace();   
+		result="FAILED";
+		  }
+		}	
+	public void multiplecategoryhomepage() {
+		result ="Passed";
+		  try {
+		page.multiplecategoryhomepage();
+		  }
+		  catch(Exception e)
+		  {
+		e.printStackTrace();   
+		result="FAILED";
+		  }
+		}
 	public void verifyRatings(){
 		result ="PASSED";
 		   try {
