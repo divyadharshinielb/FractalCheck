@@ -67,7 +67,28 @@ public class MyLearningSteps extends FractalBaseStep {
 			e.printStackTrace();   
 			result="FAILED";
 		   }
-	}
+	}public void multiplecategorycheck() {
+		result ="Passed";
+		  try {
+		page.multiplecategorycheck();
+		  }
+		  catch(Exception e)
+		  {
+		e.printStackTrace();   
+		result="FAILED";
+		  }
+		}	
+	public void multiplecategoryhomepage() {
+		result ="Passed";
+		  try {
+		page.multiplecategoryhomepage();
+		  }
+		  catch(Exception e)
+		  {
+		e.printStackTrace();   
+		result="FAILED";
+		  }
+		}
 	public void verifyCatalogDetails() {
 		result ="PASSED";
 		   try {

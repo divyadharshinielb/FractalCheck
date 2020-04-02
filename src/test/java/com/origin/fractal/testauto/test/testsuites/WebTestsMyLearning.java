@@ -51,6 +51,10 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		//TCID_12: Verify Learning item page contains Course Name,joined on date and time, Description,Validity,Duration
 		mLSteps.verifyCatalogDetails();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
+		mLSteps.multiplecategorycheck();
+		Reporter.writeSummary("TCID_MY_LEARNNEW__001, Verify MultipleCategory in My Learning page" +  mLSteps.getResult() );
+	    mLSteps.multiplecategoryhomepage();
+	    Reporter.writeSummary("TCID_MY_LEARNNEW__002, Verify MultipleCategory in Home page " +  mLSteps.getResult() );
 		mLSteps.clickLogout();
 	}
 

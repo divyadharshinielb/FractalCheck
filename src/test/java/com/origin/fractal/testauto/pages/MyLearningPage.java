@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -60,6 +61,17 @@ public class MyLearningPage extends FractalBasePage {
 	private By lobjCount = By.xpath(".//html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/ng-include[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h3[1]");
 	private By lbloverview = By.xpath("//*[@id='ngview']/div/ng-include/*//div/*//h3[contains(text(),'Overview')]");
 	/*End -added By manju Priya A on Nov-29-18*/
+	private By categorypopupbtn1 =By.xpath("(//span[@class='r-border'])[1]");
+	private By searchbar = By.xpath("//input[contains(@name,'searchterm')]");
+//	private By categorypopuptext1 = By.xpath("//div[contains(text(),'Automation Test, Functional Testing, General, Project, Project Lead, Project Management, Technology, Time Management')]");
+	private By lblhome = By.xpath("//img[contains(@class,'logo-height')]");
+	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");//*[@id='dLabel']/span
+	private By multiplecategorycatalog = By.xpath("//a[contains(text(),'checkmultiplechoice')]");
+	private By categorypopupbtn = By.xpath("//span[@class='r-border']");
+//	private By categorypopuptext = By.xpath("//div[contains(text(),'Automation Test, Project Lead, Project Management, Functional Testing, Time Management, Project, General, Technology')]");
+	private By viewallbtn = By.xpath("//a[contains(text(),'VIEW ALL')]");
+	private By listviewhome = By.xpath("//i[@class='icon-list font-16']");
+	private By multiplecatalogpopup = By.xpath("//div[contains(@class,'pop-updiv zindx')]");
 	public MyLearningPage(WebDriver driver) {
 		super(driver);
 		pageName = "MyLearningPage";
@@ -382,6 +394,60 @@ public class MyLearningPage extends FractalBasePage {
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
 		    }
+		    public void multiplecategorycheck() {
+			 	   //code to search for a catalog in search bar and check for multiplecategories
+			    	wait(2);
+			 	    click(searchbar);
+			 	    enterData("checkmultiplechoice",searchbar);
+			 	    driver.findElement(By.xpath("//input[contains(@name,'searchterm')]")).sendKeys(Keys.ENTER);
+			 	    elementExist(categorypopupbtn);
+			 	    click(categorypopupbtn);
+			 	    wait(2);
+			 	    elementExist(multiplecatalogpopup);
+			 	    driver.navigate().refresh();
+			 	    //code to check for multiplecategories in mylearning completed list view
+			 	    click(lblMyLearning);
+			 	    wait(6);
+			 	    click(lblListView);
+				    wait(5);
+			 	    WebElement element = driver.findElement( By.xpath("(//span[@class='r-border'])[1]")); //div[@id='react-tabs-1']/div[1]/div[1]/div[1]/div[3]/div[1]/a[6]/div[1]/div[1]/div[1]/div[1]
+			 	    wait(4);
+			 	    Actions actions = new Actions(driver); actions.moveToElement(element);
+			 	    actions.perform();
+			 	   wait(5);
+			 	    click(categorypopupbtn1);
+			 	    wait(2);
+			 	    elementExist(multiplecatalogpopup);
+			 	    wait(5);
+			 	    driver.navigate().refresh();
+			 	    }
+			 public  void multiplecategoryhomepage() {
+			    //check for multiple categories in Homepage
+			    wait(2);
+			    click(lblhome);
+			    wait(5);
+			    WebElement element = driver.findElement(viewallbtn); //By.xpath("//div[@class='popular_title title']")
+			    elementExist(viewallbtn);
+			    wait(5);
+			    Actions actions = new Actions(driver);
+			    wait(5);
+			    actions.moveToElement(element).perform();
+			    wait(2);
+			    click(viewallbtn);
+			    wait(3);
+			    click(listviewhome);
+			    wait(2);
+			    elementExist(categorypopupbtn1);
+			    WebElement element1 = driver.findElement(By.xpath("(//span[@class='r-border'])[1]")); //a[17]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[3]//a[1]//h6[1]//span[1]
+			    Actions actions1 = new Actions(driver); actions1.moveToElement(element1);
+			    actions1.perform();
+			    wait(5);
+			    click(categorypopupbtn1);
+			    wait(2);
+			    elementExist(multiplecatalogpopup);
+			    driver.navigate().refresh();
+			 }
+
 
 
 }
