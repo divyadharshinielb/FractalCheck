@@ -4,6 +4,10 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.origin.fractal.testauto.FractalBasePage;
 
 public class FractalLoginPage extends FractalBasePage {
@@ -36,6 +40,8 @@ public class FractalLoginPage extends FractalBasePage {
 			click(btnCookies); 
 			wait(2);
 		}
+		WebDriverWait wait=new WebDriverWait(driver, 20);
+		WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(tbUserNameNewUI));
 		enterData(getLabel("Username"), tbUserNameNewUI);
 		enterData(getLabel("Password"), tbPasswordNewUI);
 		click(btnLoginNewUI);
