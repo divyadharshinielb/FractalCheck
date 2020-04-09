@@ -43,15 +43,16 @@ public class LoginPage extends FractalBasePage {
 		
 	}
 	public void doLogin() {
-		enterData("automation_directuser@originlearning.com",tbUserName);
-		enterData("AutoDU@123",tbPassword);
-		click(btnLogin);
-		wait(2);
 		if(elementExist(btnCookies)) {
 			click(btnCookies);
 			}
 		wait(5);
-	}
+
+		enterData("automation_directuser@originlearning.com",tbUserName);
+		enterData("AutoDU@123",tbPassword);
+		click(btnLogin);
+		wait(2);
+			}
 	/*public void loginToInstructor() {
 		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
 	    enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2

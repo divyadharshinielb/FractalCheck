@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,7 +39,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By boxButton = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]/div[1]");//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
 	/************Newui***************/
 	private By lblCatnameInside = By.xpath(".//div[contains(@class, 'cdescrip tecap')]/../div/span");//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3
-	private By bundleCnt = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]");////Updated Nov-22-18
+	private By bundleCnt = By.xpath("");////Updated Nov-22-18
 	private By lblcourseName = By.xpath(".//span[@class='three-line-clamp']");//Updated Nov-22-18//h1[@class='masonry-bundlename ellipsis padding-t-5']
 	private By lblDuration = By.xpath(".//div/*//span[contains(text(),'Duration')]");
 	private By lblTick = By.xpath(".//button[@class='pl-0 launch_btn www']/../button/img");//round-progress-wrapper
@@ -105,8 +106,12 @@ public class MyLearningPage extends FractalBasePage {
 		wait(5);
 		click(lblMyLearning);
 		wait(5);
-		click(By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div/div[@class='overflow mb-5']/div[2]"));
-		wait(5);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement element = driver.findElement( By.xpath(".//div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')]")); 
+		js.executeScript("arguments[0].scrollIntoView();",element );	
+        wait(5);
+		click(By.xpath(".//div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')]"));
+		wait(5);	
 	//	click(clickCatalog);
 		verifyText(getLabel("lblCatalogName"), lblCatnameInside);
 		wait(2);
@@ -119,7 +124,8 @@ public class MyLearningPage extends FractalBasePage {
 		WebElement element = driver.findElement( By.xpath("//*[@id='react-tabs-1']/div/div/div/div[3]/div/div[1]/a[1]/div")); 
 	    Actions actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
-		click(clickCatalog);
+		//click(clickCatalog);	
+		click(By.xpath(".//div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')]"));
 		/***/
 		verifyPartialLabelText("lblUpdatedOn", lblCatlogCategory);
 	//	verifyPartialLabelText("lbloverview", lbloverview);
