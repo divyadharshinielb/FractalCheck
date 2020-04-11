@@ -5,6 +5,7 @@ import com.wv.auto.framework.BrowserFactory;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,7 +16,7 @@ public class ClassroomEventPage extends FractalBasePage{
 
 	//edited by divya on 1st Oct 2019
 	//private By FirstListItem = By.xpath(".//span[contains(text(),'Added on')]");
-	private By FirstListItem = By.xpath("//span[contains(text(),'Added on')]/../..");
+	private By FirstListItem = By.xpath(".//span[contains(text(),'Added on')]/../..");
 	private By btnAddEvent = By.xpath(".//button[contains(text(),'Add Event')]");//.//h4[contains(text(),'Events')]/../../*//button[contains(text(),'Add Event')]
 	private By eventPageTitle = By.xpath(".//h4[contains(text(),'New Event')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'Continue')]");
@@ -150,7 +151,13 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Instructor selection required",dropdownSelectInstructorAlertMsg);
 	}
 	public void verifySelectVenueDropdownAlertMsg() {
-	click(lblTraditionalClassroom);
+		wait(5);
+		click(lblClose);
+		wait(5);
+		click(btnAddEvent);
+		wait(5);
+	//click(lblTraditionalClassroom);
+	click(btnContinue);
 	WebElement element = driver.findElement( By.xpath(".//div[contains(text(),'Venue selection required.')]")); Actions
 	actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
@@ -161,7 +168,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	WebElement element = driver.findElement( By.xpath(".//div[contains(text(),'Provider selection required.')]")); Actions
 	actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
-	verifyText("Provider selection required",dropdownAlertLink);
+	verifyText("Provider selection required.",dropdownAlertLink);
 
 	}
 
@@ -289,12 +296,17 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyAssignDetailsDisplayed() {
 	click(btnAddEvent);
+	print("dddkdkdkdkdkdkkdkdk");
 	wait(2);
 	click(lblAssignment);
+	wait(2);
+	//click(lblAssignment);
+	wait(2);
 	WebElement element1 = driver.findElement(By.xpath("//button[contains(text(),'Add Assignment')]")); Actions
 	actions1 = new Actions(driver); actions1.moveToElement(element1);
 	actions1.perform();
 	wait(5);
+	click(By.xpath("//button[@id='pre_addAssignment']"));
 	verifyText("Pass score: 50%",lblPassScore);
 	verifyText("Max score: 100",lblMaxScore);
 
@@ -406,6 +418,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	Actions actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
 	}
+	wait(2);
 	click(lblPostSurvey);
 	verifyText("Add Survey",btnPostAddSurvey);
 	}
@@ -480,21 +493,45 @@ public class ClassroomEventPage extends FractalBasePage{
 		wait(5);
 		click(btnAddEvent);
 		fillFirstPage();
-		wait(5);
-		WebElement element = driver.findElement(By.xpath("//li[contains(text(),'Select Instructor')]/../li[2]")); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
-		actions.perform();
-		wait(5);
-		click(dropdownSelectInstructor1);
+		print("divyachecknow");
 		wait(5);
 		click(lblSelectCalendar);
 		wait(2);
 		click(dropdownSelectCalendar);
+		wait(2);
+		WebElement element = driver.findElement(dropdownSelectInstructor); Actions
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
+	//dd	actions.sendKeys(Keys.PAGE_UP).build().perform();
+actions.build().perform();
+		wait(5);
+	
+		//click(dropdownSelectInstructor1);
+		print("dididididiidd");
+		wait(5);
 		enterData("10",lblCalendarHour);
+		wait(5);
 		enterData("50",lblCalendarMinute);
+		wait(5);
 		click(lblPm);
+		click(dropdownSelectInstructor);
+		wait(5);
+		click(dropdownSelectInstructor1);
+		wait(5);
+	/*dd	WebElement element1 = driver.findElement(By.xpath("//span[contains(text(),'Date')]")); Actions
+			actions1 = new Actions(driver); actions1.moveToElement(element1);
+			actions1.perform();
+			wait(5);
+		click(lblSelectCalendar);
+		wait(2);
+		click(dropdownSelectCalendar);dd*/
+	//	h4[contains(text(),'Pre-event Activities')]
+		/*enterData("10",lblCalendarHour);
+		enterData("50",lblCalendarMinute);
+		click(lblPm);*/
 		wait(2);
 		click(btnContinue);
+		wait(2);
 		verifyText("Auto update waiting list on cancellation",lblCompletionCriteria);
 	}
 	public void fillFirstPage() {
@@ -511,8 +548,11 @@ public class ClassroomEventPage extends FractalBasePage{
 //	enterData("35",inpAvgScore);
 //	click(lblSession);
 	wait(2);
-	click(dropdownSelectInstructor);
-	verifyText("Select Instructor",insDropdoenAlertMshg);
+	WebElement element = driver.findElement(By.xpath("//h4[contains(text(),'Pre-event Activities')]")); Actions
+	actions = new Actions(driver); actions.moveToElement(element);
+	actions.perform();
+	//click(dropdownSelectInstructor);
+	verifyText("Instructor selection required.",insDropdoenAlertMshg);
 	}
 	public void verifySecondPageAlertMsgs() {
 	click(btnSave);
@@ -615,6 +655,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	WebElement element = driver.findElement(By.xpath(".//li[contains(text(),'Origin Learning Solutions')]")); Actions
 	actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
+	wait(5);
 	click(selectVenue);
 	wait(5);
 	click(timezoneDropdown);
@@ -623,30 +664,41 @@ public class ClassroomEventPage extends FractalBasePage{
 //	enterData("35",inpAvgScore);
 	click(lblSession);
 	wait(10);
+	click(lblSelectCalendar);
+	wait(5);
+	click(dropdownSelectCalendar);
+	wait(5);
 	WebElement element1 = driver.findElement(By.xpath("//h4[contains(text(),'Pre-event Activities')]")); Actions
 	actions1 = new Actions(driver); actions1.moveToElement(element1);
 	actions1.perform();
+	wait(5);
+	enterData("10", lblCalendarHour);
+	wait(5);
+	enterData("50",lblCalendarMinute);
+	wait(2);
+	click(lblPm);
 	click(dropdownSelectInstructor);
 /*	verifyText("Select Instructor",insDropdoenAlertMshg);
 */	wait(5);
 	click(dropdownSelectInstructor1);
 	wait(5);
-	enterData("10",lblCalendarHour);
+	/*ddenterData("10",lblCalendarHour);
+	wait(5);
 	enterData("50",lblCalendarMinute);
-	click(lblPm);
 	wait(2);
-	JavascriptExecutor js = (JavascriptExecutor) driver;
+	click(lblPm);
+	wait(2);dd*/
+	/*
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+ 
 	WebElement element2 = driver.findElement(By.xpath("//h4[contains(@id,'session_title')]")); 
-	/*Actions
+	Actions
 	actions2 = new Actions(driver); actions2.moveToElement(element2);
 	wait(2);
-	actions2.perform();*/
-	js.executeScript("arguments[0].scrollIntoView();",element2 );
+	actions2.perform();
+	js.executeScript("arguments[0].scrollIntoView();", element2);
+	*/
 
-	click(lblSelectCalendar);
-	wait(5);
-	click(dropdownSelectCalendar);
-	wait(2);
 	click(btnContinue);
 	}
 	public void verifyTickAndPlusMark() {
