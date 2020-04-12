@@ -120,11 +120,13 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(closeModel);
 	}
 	public void clickOnClassroomItem() {
+		wait(5);
 	click(FirstListItem);
 	}
 	public void verifyAddEventPageOpened() {
 	wait(10);
 	click(btnAddEvent);
+	wait(2);
 	verifyText("New Event",eventPageTitle);
 	wait(5);
 	commanFunctionEventPage();
@@ -195,6 +197,7 @@ public class ClassroomEventPage extends FractalBasePage{
 //		verifyText("Average Score Required",avgScoreAlertMsg);
 	}
 	public void verifySessionStartTimeAlertMsg() {
+		wait(5);
 	click(lblSession);
 	verifyText("Start Time Required",startTimeAlertMsg);
 	}
@@ -667,16 +670,21 @@ actions.build().perform();
 	click(lblSelectCalendar);
 	wait(5);
 	click(dropdownSelectCalendar);
-	wait(5);
-	WebElement element1 = driver.findElement(By.xpath("//h4[contains(text(),'Pre-event Activities')]")); Actions
-	actions1 = new Actions(driver); actions1.moveToElement(element1);
-	actions1.perform();
+	print("scroll checkkkk");
+	wait(5);	
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebElement element1 = driver.findElement(lblCalendarMinute); 
+	js.executeScript("arguments[0].scrollIntoView();", element1);
+wait(5);
+	//Actions
+//	actions1 = new Actions(driver); actions1.moveToElement(element1);
+//	actions1.perform();
 	wait(5);
 	enterData("10", lblCalendarHour);
-	wait(5);
 	enterData("50",lblCalendarMinute);
 	wait(2);
 	click(lblPm);
+	wait(2);
 	click(dropdownSelectInstructor);
 /*	verifyText("Select Instructor",insDropdoenAlertMshg);
 */	wait(5);
