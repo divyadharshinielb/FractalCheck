@@ -492,45 +492,99 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	}
 	public void verifySecondPageOpened() {
-		wait(5);
-		click(btnAddEvent);
-		fillFirstPage();
-		wait(5);
-		click(lblSelectCalendar);
-		wait(2);
-		click(dropdownSelectCalendar);
-		wait(2);
-		WebElement element = driver.findElement(dropdownSelectInstructor); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
-		actions.perform();
-	//dd	actions.sendKeys(Keys.PAGE_UP).build().perform();
-actions.build().perform();
-		wait(5);
-	
-		//click(dropdownSelectInstructor1);
-		wait(5);
-		enterData("10",lblCalendarHour);
-		wait(5);
-		enterData("50",lblCalendarMinute);
-		wait(5);
-		click(lblPm);
-		click(dropdownSelectInstructor);
-		wait(5);
-		click(dropdownSelectInstructor1);
-		wait(5);
-	/*dd	WebElement element1 = driver.findElement(By.xpath("//span[contains(text(),'Date')]")); Actions
-			actions1 = new Actions(driver); actions1.moveToElement(element1);
-			actions1.perform();
-			wait(5);
-		click(lblSelectCalendar);
-		wait(2);
-		click(dropdownSelectCalendar);dd*/
-	//	h4[contains(text(),'Pre-event Activities')]
-		/*enterData("10",lblCalendarHour);
-		enterData("50",lblCalendarMinute);
-		click(lblPm);*/
-		wait(2);
-		click(btnContinue);
+	wait(5);
+	//commented by divya as I have updated
+	click(btnAddEvent);
+	//fillFirstPage();
+//		wait(5);
+//		click(lblSelectCalendar);
+//		wait(2);
+//		click(dropdownSelectCalendar);
+//		wait(2);
+//		WebElement element = driver.findElement(dropdownSelectInstructor); Actions
+//		actions = new Actions(driver); actions.moveToElement(element);
+//		actions.perform();
+//	//dd	actions.sendKeys(Keys.PAGE_UP).build().perform();
+//actions.build().perform();
+//		wait(5);
+//	
+//		//click(dropdownSelectInstructor1);
+//		wait(5);
+//		enterData("10",lblCalendarHour);
+//		wait(5);
+//		enterData("50",lblCalendarMinute);
+//		wait(5);
+//		click(lblPm);
+//		click(dropdownSelectInstructor);
+//		wait(5);
+//		click(dropdownSelectInstructor1);
+//		wait(5);
+//	/*dd	WebElement element1 = driver.findElement(By.xpath("//span[contains(text(),'Date')]")); Actions
+//			actions1 = new Actions(driver); actions1.moveToElement(element1);
+//			actions1.perform();
+//			wait(5);
+//		click(lblSelectCalendar);
+//		wait(2);
+//		click(dropdownSelectCalendar);dd*/
+//	//	h4[contains(text(),'Pre-event Activities')]
+//		/*enterData("10",lblCalendarHour);
+//		enterData("50",lblCalendarMinute);
+//		click(lblPm);*/
+//		wait(2);
+	//edi by divya
+	click(lblTraditionalClassroom);wait(10);
+	click(venueDropdown);wait(5);
+	WebElement element = driver.findElement(By.xpath(".//li[contains(text(),'Origin Learning Solutions')]")); Actions
+	actions = new Actions(driver); actions.moveToElement(element);
+	actions.perform();
+	wait(5);
+	click(selectVenue);
+	wait(5);
+	click(timezoneDropdown);
+	wait(5);
+	click(selectTimezone);
+//	enterData("35",inpAvgScore);
+	click(lblSession);
+	wait(10);
+	click(lblSelectCalendar);
+	wait(5);
+	click(dropdownSelectCalendar);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    WebElement Element = driver.findElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]"));
+
+    js.executeScript("arguments[0].scrollIntoView();", Element);
+
+	wait(5);	
+	JavascriptExecutor js1 = (JavascriptExecutor) driver;
+	WebElement element1 = driver.findElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]")); 
+	js1.executeScript("arguments[0].scrollIntoView();", element1);
+   // js.executeScript("window.scrollBy(0,100)");
+
+	wait(5);
+	//Actions
+//	actions1 = new Actions(driver); actions1.moveToElement(element1);
+//	actions1.perform();
+	wait(5);
+	scrollToElement(By.xpath("//div[contains(text(),'Start Time')]"));
+	wait(5);
+	enterData("10", lblCalendarHour);
+	wait(5);
+	scrollToElement(By.xpath("//h4[contains(text(),'Post-event Activities')]"));
+	wait(5);
+	JavascriptExecutor js2 = (JavascriptExecutor) driver;
+    WebElement Element1 = driver.findElement(By.xpath("//div[contains(text(),'Start Time')]"));
+    js2.executeScript("arguments[0].scrollIntoView();", Element1);
+    wait(4);
+	enterData("50",lblCalendarMinute);
+	wait(2);
+	click(lblPm);
+	wait(2);
+	click(dropdownSelectInstructor);
+/*	verifyText("Select Instructor",insDropdoenAlertMshg);
+*/	wait(5);
+	click(dropdownSelectInstructor1);
+	wait(5);
+	click(btnContinue);
 		wait(5);
 		verifyText("Auto update waiting list on cancellation",lblCompletionCriteria);
 	}
@@ -578,6 +632,7 @@ actions.build().perform();
 	}
 	public void verifyMaxNumParticipAcceptAlphaNumeric() {
 		wait(5);
+		elementExist(inpMaxParticipants);
 	enterData("1a@",inpMaxParticipants);
 	elementExist(maxParticipantErr);
 	}
@@ -637,9 +692,9 @@ actions.build().perform();
 	private By lblCalenderClickCancellation = By.xpath(".//md-datepicker[@id='lastdate_cancellation']//button[contains(@class,'md-datepicker-button md-icon-button md-button md-ink-ripple')]");
 	private By lastDateSelectingCancellation = By.xpath(".//span[@class='md-calendar-date-selection-indicator']");
 	private By minExceedMaxErr = By.id("errMinExceedLength");//Minimum limit Should not Exceed the Maximum Limit
-	private By inpMaxParticipants = By.xpath(".//input[contains(@name,'max_participants')]");
-	private By inpMinParticipants = By.xpath(".//input[contains(@name,'min_participants')]");
-	private By inpWaitingThreshold = By.xpath(".//input[contains(@name,'wait_threshold')]");
+	private By inpMaxParticipants = By.xpath("//input[@id='input_27']");//input[contains(@name,'max_participants')]
+	private By inpMinParticipants = By.xpath("//input[@id='input_28']");//input[contains(@name,'min_participants')]
+	private By inpWaitingThreshold = By.xpath("//input[@id='input_29']");//input[contains(@name,'wait_threshold')]
 
 	private By lblCancellationPolicy = By.xpath("//textarea[@name='cancellation_policy']");
 	private By tickMarkBtn = By.xpath(".//i[@id='icon_tick']");
@@ -723,6 +778,7 @@ actions.build().perform();
     	*/
 
 	click(btnContinue);
+	wait(2);
 	}
 	public void verifyTickAndPlusMark() {
 	wait(2);
