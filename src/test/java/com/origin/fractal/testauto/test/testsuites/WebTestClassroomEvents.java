@@ -84,7 +84,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		menuSteps.logout();
 	}
 	
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
 			+ "TCID_11: Verify whether the Venue drop-down is displayed after selecting Physical classroom"
 			+ "TCID_12: Verify whether the Link drop-down is displayed after selecting Virtual classroom"
