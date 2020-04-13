@@ -531,7 +531,7 @@ actions.build().perform();
 		click(lblPm);*/
 		wait(2);
 		click(btnContinue);
-		wait(2);
+		wait(5);
 		verifyText("Auto update waiting list on cancellation",lblCompletionCriteria);
 	}
 	public void fillFirstPage() {
@@ -555,12 +555,22 @@ actions.build().perform();
 	verifyText("Instructor selection required.",insDropdoenAlertMshg);
 	}
 	public void verifySecondPageAlertMsgs() {
+		wait(2);
 	click(btnSave);
-	verifyText("Maximum Participants Required",maxParticipantErr);
-	verifyText("Minimum Participants Required",minParticipantErr);
-	verifyText("Start Date For Registration Required",startDateRegistErr);
-	verifyText("Last Date For Registration Required",lastDateRegistErr);
-	verifyText("Last Date For Cancellation Required",lastDateCancelErr);
+	wait(5);
+	elementExist(maxParticipantErr);
+	wait(2);
+	verifyText("Maximum participants required.",maxParticipantErr);
+	wait(2);
+	verifyText("Minimum participants required.",minParticipantErr);
+	wait(2);
+	verifyText("Start Date For registration required.",startDateRegistErr);
+	wait(2);
+	verifyText("Last Date For registration required.",lastDateRegistErr);
+	wait(2);
+	scrollToElement(By.xpath("//textarea[@id='input_7']"));
+	wait(2);
+	verifyText("Last Date For cancellation required.",lastDateCancelErr);
 	}
 	public void verifyMaxNumParticipAcceptNum() {
 	enterData("12",inpMaxParticipants);
