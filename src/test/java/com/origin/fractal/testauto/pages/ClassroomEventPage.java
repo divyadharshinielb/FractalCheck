@@ -415,12 +415,13 @@ public class ClassroomEventPage extends FractalBasePage{
 */	}
 	public void verifyPostSurveyDetails() {
 	wait(2);
-	WebElement element = driver.findElement( By.id("postsurvey_title")); 
+	scrollToElement(By.id("postsurvey_title"));
+	//WebElement element = driver.findElement( By.id("postsurvey_title")); 
 	//edited by divya on 1st Oct 2019
-	if(BrowserFactory.getOS() == "win") {
-	Actions actions = new Actions(driver); actions.moveToElement(element);
-	actions.perform();
-	}
+//	if(BrowserFactory.getOS() == "win") {
+//	Actions actions = new Actions(driver); actions.moveToElement(element);
+//	actions.perform();
+	//}
 	wait(2);
 	click(lblPostSurvey);
 	verifyText("Add Survey",btnPostAddSurvey);
@@ -570,6 +571,8 @@ actions.build().perform();
 	elementExist(maxParticipantErr);
 	}
 	public void verifyMaxNumParticipAcceptAlphaNumeric() {
+		print("checckckkckc");
+		wait(5);
 	enterData("1a@",inpMaxParticipants);
 	elementExist(maxParticipantErr);
 	}
@@ -671,16 +674,24 @@ actions.build().perform();
 	wait(5);
 	click(dropdownSelectCalendar);
 	print("scroll checkkkk");
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    WebElement Element = driver.findElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]"));
+
+    js.executeScript("arguments[0].scrollIntoView();", Element);
+
 	wait(5);	
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	WebElement element1 = driver.findElement(lblCalendarMinute); 
-	js.executeScript("arguments[0].scrollIntoView();", element1);
-wait(5);
+	JavascriptExecutor js1 = (JavascriptExecutor) driver;
+	WebElement element1 = driver.findElement(By.xpath("//div[contains(text(),'Start Time')]")); 
+	js1.executeScript("arguments[0].scrollIntoView();", element1);
+   // js.executeScript("window.scrollBy(0,100)");
+
+	wait(5);
 	//Actions
 //	actions1 = new Actions(driver); actions1.moveToElement(element1);
 //	actions1.perform();
 	wait(5);
 	enterData("10", lblCalendarHour);
+	wait(5);
 	enterData("50",lblCalendarMinute);
 	wait(2);
 	click(lblPm);
