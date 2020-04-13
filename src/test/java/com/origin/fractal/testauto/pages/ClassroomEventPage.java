@@ -299,7 +299,6 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyAssignDetailsDisplayed() {
 	click(btnAddEvent);
-	print("dddkdkdkdkdkdkkdkdk");
 	wait(2);
 	click(lblAssignment);
 	wait(2);
@@ -423,7 +422,8 @@ public class ClassroomEventPage extends FractalBasePage{
 //	actions.perform();
 	//}
 	wait(2);
-	click(lblPostSurvey);
+	click(By.id("postsurvey_title"));
+	wait(2);
 	verifyText("Add Survey",btnPostAddSurvey);
 	}
 	public void verifyPostAddSurveyButton() {
@@ -450,7 +450,6 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Start Reminder for assignment evaluation days before due date",lblReminderEval);
 	}
 	public void verifyNotifAndReminderFieldsAcceptsAlphabets() {
-		print("check now in safariiiii");
 		wait(10);
 	enterData("abc",inpSendNotif);
 	enterData("abc",inpRepeatNotif);
@@ -474,7 +473,6 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void verifyNotifAndReminderFieldsAcceptsNumbers() {
 		wait(10);
-		print("divyacheck in browser");
 	enterData("123",inpSendNotif);
 	enterData("123",inpRepeatNotif);
 	enterData("123",inpStartReminder);
@@ -497,7 +495,6 @@ public class ClassroomEventPage extends FractalBasePage{
 		wait(5);
 		click(btnAddEvent);
 		fillFirstPage();
-		print("divyachecknow");
 		wait(5);
 		click(lblSelectCalendar);
 		wait(2);
@@ -511,7 +508,6 @@ actions.build().perform();
 		wait(5);
 	
 		//click(dropdownSelectInstructor1);
-		print("dididididiidd");
 		wait(5);
 		enterData("10",lblCalendarHour);
 		wait(5);
@@ -571,7 +567,6 @@ actions.build().perform();
 	elementExist(maxParticipantErr);
 	}
 	public void verifyMaxNumParticipAcceptAlphaNumeric() {
-		print("checckckkckc");
 		wait(5);
 	enterData("1a@",inpMaxParticipants);
 	elementExist(maxParticipantErr);
@@ -673,7 +668,6 @@ actions.build().perform();
 	click(lblSelectCalendar);
 	wait(5);
 	click(dropdownSelectCalendar);
-	print("scroll checkkkk");
     JavascriptExecutor js = (JavascriptExecutor) driver;
     WebElement Element = driver.findElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]"));
 
@@ -681,7 +675,7 @@ actions.build().perform();
 
 	wait(5);	
 	JavascriptExecutor js1 = (JavascriptExecutor) driver;
-	WebElement element1 = driver.findElement(By.xpath("//div[contains(text(),'Start Time')]")); 
+	WebElement element1 = driver.findElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]")); 
 	js1.executeScript("arguments[0].scrollIntoView();", element1);
    // js.executeScript("window.scrollBy(0,100)");
 
@@ -690,8 +684,16 @@ actions.build().perform();
 //	actions1 = new Actions(driver); actions1.moveToElement(element1);
 //	actions1.perform();
 	wait(5);
+	scrollToElement(By.xpath("//div[contains(text(),'Start Time')]"));
+	wait(5);
 	enterData("10", lblCalendarHour);
 	wait(5);
+	scrollToElement(By.xpath("//h4[contains(text(),'Post-event Activities')]"));
+	wait(5);
+	JavascriptExecutor js2 = (JavascriptExecutor) driver;
+    WebElement Element1 = driver.findElement(By.xpath("//div[contains(text(),'Start Time')]"));
+    js2.executeScript("arguments[0].scrollIntoView();", Element1);
+    wait(4);
 	enterData("50",lblCalendarMinute);
 	wait(2);
 	click(lblPm);
@@ -708,15 +710,7 @@ actions.build().perform();
 	click(lblPm);
 	wait(2);dd*/
 	/*
-    JavascriptExecutor js = (JavascriptExecutor) driver;
- 
-	WebElement element2 = driver.findElement(By.xpath("//h4[contains(@id,'session_title')]")); 
-	Actions
-	actions2 = new Actions(driver); actions2.moveToElement(element2);
-	wait(2);
-	actions2.perform();
-	js.executeScript("arguments[0].scrollIntoView();", element2);
-	*/
+    	*/
 
 	click(btnContinue);
 	}
