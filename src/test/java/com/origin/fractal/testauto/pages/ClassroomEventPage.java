@@ -727,7 +727,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(selectVenue);
 	wait(5);
 	click(timezoneDropdown);
-	wait(5);
+	wait(10);
 	click(selectTimezone);
 //	enterData("35",inpAvgScore);
 	click(lblSession);
@@ -762,7 +762,7 @@ public class ClassroomEventPage extends FractalBasePage{
     js2.executeScript("arguments[0].scrollIntoView();", Element1);
     wait(4);
 	enterData("50",lblCalendarMinute);
-	wait(2);
+	wait(5);
 	click(lblPm);
 	wait(2);
 	click(dropdownSelectInstructor);
