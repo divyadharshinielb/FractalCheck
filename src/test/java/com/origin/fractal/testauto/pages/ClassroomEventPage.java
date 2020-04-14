@@ -765,6 +765,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	click(lblPm);
 	wait(2);
+	click(lblPm);
+	wait(2);
 	click(dropdownSelectInstructor);
 /*	verifyText("Select Instructor",insDropdoenAlertMshg);
 */	wait(5);
