@@ -694,9 +694,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblCalenderClickCancellation = By.xpath(".//md-datepicker[@id='lastdate_cancellation']//button[contains(@class,'md-datepicker-button md-icon-button md-button md-ink-ripple')]");
 	private By lastDateSelectingCancellation = By.xpath(".//span[@class='md-calendar-date-selection-indicator']");
 	private By minExceedMaxErr = By.id("errMinExceedLength");//Minimum limit Should not Exceed the Maximum Limit
-	private By inpMaxParticipants = By.xpath("//input[@id='input_27']");//input[contains(@name,'max_participants')]
-	private By inpMinParticipants = By.xpath("//input[@id='input_28']");//input[contains(@name,'min_participants')]
-	private By inpWaitingThreshold = By.xpath("//input[@id='input_29']");//input[contains(@name,'wait_threshold')]
+	private By inpMaxParticipants = By.xpath("//input[contains(@name,'max_participants')]");//input[@id='input_27']
+	private By inpMinParticipants = By.xpath("//input[contains(@name,'min_participants')]");//input[@id='input_28']
+	private By inpWaitingThreshold = By.xpath("//input[contains(@name,'wait_threshold')]");//input[@id='input_29']
 
 	private By lblCancellationPolicy = By.xpath("//textarea[@name='cancellation_policy']");
 	private By tickMarkBtn = By.xpath(".//i[@id='icon_tick']");
