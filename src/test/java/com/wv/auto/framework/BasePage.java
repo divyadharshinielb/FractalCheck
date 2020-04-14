@@ -148,9 +148,9 @@ public int getNumber(String data){
 	}
 
 	public void click(WebElement obj) {
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", obj);
-		//obj.click();
+		//JavascriptExecutor executor = (JavascriptExecutor)driver;
+	//	executor.executeScript("arguments[0].click();", obj);
+		obj.click();
 		print("CLICKED : " + obj.toString());
 	}
 

@@ -150,7 +150,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
 			+ "TCID_24: Verify whether the Assignment details are displayed when clicking assignments label"
 			+ "TCID_25: Verify whether the assignment count maches with the number of assignments displayed"
@@ -298,7 +298,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
 			description="TCID_01:"
 			+ "TCID_51: Verify whether the \"Maximum no. of participants\" field accepts alphanumerics"
 			+ "TCID_52: Verify whether the \"Maximum no. of participants\" field accepts special characters"

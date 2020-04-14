@@ -76,7 +76,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By dropdownSelectCalendar=By.xpath("//td[@class='md-calendar-date md-calendar-date-today md-focus']//span[@class='md-calendar-date-selection-indicator']");//td[@class='md-calendar-date md-calendar-date-today md-calendar-selected-date md-focus'](staging)
 	private By lblCalendarHour=By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-lr-0 display_inFlex11111111 margin-b-20')]//div[1]//input[1]");
 	private By lblCalendarMinute=By.xpath("//div[contains(@class,'expand-collapse-content')]//div[1]//input[2]");
-	private By lblPm=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
+	private By lblPm=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(text(),'AM')]");
 	private By insDropdoenAlertMshg = By.xpath("//h4[@id='session_title']/../../*//div[contains(text(),'Instructor selection required')]");
 	private By lblPostAssessment = By.id("postassignment_title");
 	private By lblAddPostAssessment = By.xpath("//button[@id='post_addAssignment']");
@@ -577,7 +577,7 @@ public class ClassroomEventPage extends FractalBasePage{
     wait(4);
 	enterData("50",lblCalendarMinute);
 	wait(2);
-	click(By.xpath("//select[@name='starttime_zone']"));
+	click(By.xpath("//select[contains(@name,'starttime_zone')]//option[2]"));
 	wait(2);
 	click(lblPm);
 	wait(2);
@@ -732,18 +732,18 @@ public class ClassroomEventPage extends FractalBasePage{
 //	enterData("35",inpAvgScore);
 	click(lblSession);
 	wait(10);
-	click(lblSelectCalendar);
+   click(lblSelectCalendar);
 	wait(5);
 	click(dropdownSelectCalendar);
-    JavascriptExecutor js = (JavascriptExecutor) driver;
-    WebElement Element = driver.findElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]"));
-
-    js.executeScript("arguments[0].scrollIntoView();", Element);
-
-	wait(5);	
-	JavascriptExecutor js1 = (JavascriptExecutor) driver;
-	WebElement element1 = driver.findElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]")); 
-	js1.executeScript("arguments[0].scrollIntoView();", element1);
+//    JavascriptExecutor js = (JavascriptExecutor) driver;
+//    WebElement Element = driver.findElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]"));
+//
+//    js.executeScript("arguments[0].scrollIntoView();", Element);
+//
+//	wait(5);	
+//	JavascriptExecutor js1 = (JavascriptExecutor) driver;
+//	WebElement element1 = driver.findElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]")); 
+//	js1.executeScript("arguments[0].scrollIntoView();", element1);
    // js.executeScript("window.scrollBy(0,100)");
 
 	wait(5);
@@ -751,19 +751,20 @@ public class ClassroomEventPage extends FractalBasePage{
 //	actions1 = new Actions(driver); actions1.moveToElement(element1);
 //	actions1.perform();
 	wait(5);
-	scrollToElement(By.xpath("//div[contains(text(),'Start Time')]"));
+//dd	scrollToElement(By.xpath("//div[contains(text(),'Start Time')]"));
+	
+	scrollToElement(lblCalendarHour);
 	wait(5);
+	//click(lblPm);
 	enterData("10", lblCalendarHour);
 	wait(5);
-	scrollToElement(By.xpath("//h4[contains(text(),'Post-event Activities')]"));
-	wait(5);
-	JavascriptExecutor js2 = (JavascriptExecutor) driver;
-    WebElement Element1 = driver.findElement(By.xpath("//div[contains(text(),'Start Time')]"));
-    js2.executeScript("arguments[0].scrollIntoView();", Element1);
-    wait(4);
 	enterData("50",lblCalendarMinute);
 	wait(2);
-	click(lblPm);
+	//click(By.className("custm_time ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched"));
+	wait(5);
+	click(By.xpath("//select[contains(@name,'starttime_zone')]"));
+	wait(2);
+	click(By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'AM')]"));
 	wait(2);
 	click(dropdownSelectInstructor);
 /*	verifyText("Select Instructor",insDropdoenAlertMshg);
