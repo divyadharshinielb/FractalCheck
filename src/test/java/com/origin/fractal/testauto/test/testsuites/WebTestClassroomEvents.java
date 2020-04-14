@@ -25,7 +25,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		};
 	}
 	//Event
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
 			+ "TCID_01: Verify Add new event page is opened on clicking the Ads Event button"
 			+ "TCID_02: Verify on clicking SAVE, throws the alert for all mandatory fields"
@@ -84,7 +84,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		menuSteps.logout();
 	}
 	
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
 			+ "TCID_11: Verify whether the Venue drop-down is displayed after selecting Physical classroom"
 			+ "TCID_12: Verify whether the Link drop-down is displayed after selecting Virtual classroom"
@@ -150,7 +150,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="TCID_01:"
 			+ "TCID_24: Verify whether the Assignment details are displayed when clicking assignments label"
 			+ "TCID_25: Verify whether the assignment count maches with the number of assignments displayed"
@@ -364,7 +364,7 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		wait(10);
 		menuSteps.logout();
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, 
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, 
 			description="")
 	public void verifyEvents5(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
