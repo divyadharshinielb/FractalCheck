@@ -22,7 +22,7 @@ public class InstructorModulePage extends FractalBasePage {
 	private By lblReschedulePopupText= By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]");//h4[contains(text(),'Request to Reschedule')]
 	private By lblRejectPopupText= By.xpath("//p[contains(text(),'Are you sure you want to Reject the Event Invite')]");
 	private By lblcloseBtn= By.xpath("//button[@class='styles_closeButton__20ID4']");
-	private By lblEventInsideClick= By.xpath("//div[@class='row insslider top-bar-list margin-lr-0']//li[@class='slider-slide slide-visible']");//li[@class='slider-slide slide-visible']//div[@class='row br padding-lr-10 padding-t-10']
+	private By lblEventInsideClick= By.xpath("//span[text()='Classroom']");//li[@class='slider-slide slide-visible']//div[@class='row br padding-lr-10 padding-t-10']
 	private By lblPreEvent= By.xpath("//span[contains(text(),'Pre-event')]");
 	private By lblSessions= By.xpath("//span[contains(@class,'bstyle')][contains(text(),'Session')]");
 	private By lblPostEvent= By.xpath("//span[contains(text(),'Post-event')]");
@@ -128,16 +128,18 @@ public class InstructorModulePage extends FractalBasePage {
 		click(lblEventInsideClick);
     }
 	public void verifyLabelsInsideEventDetailsPage(){
-		wait(2);
-		WebElement element = driver.findElement(By.xpath("//p[contains(@class,'font-size-16 font-weight-bolder evnt_std_clr line-height-15')]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		wait(2);
+		wait(5);
+		scrollToElement(By.xpath("//span[contains(text(),'References')]"));
 		verifyText("Sessions",lblSessions);
 		wait(2);
 		verifyText("Post - Event",lblPostEvent);
 		wait(2);
 		verifyText("Pre - Event",lblPreEvent);
 		wait(2);
+		WebElement element = driver.findElement(By.xpath("//p[contains(@class,'font-size-16 font-weight-bolder evnt_std_clr line-height-15')]"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		wait(2);
+	
 		verifyText("References",lblReference);
 		wait(2);
 		verifyText("Terms & Conditions",lblTermsAndConditions);
