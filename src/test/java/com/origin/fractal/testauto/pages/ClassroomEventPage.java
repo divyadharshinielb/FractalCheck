@@ -77,6 +77,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblCalendarHour=By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-lr-0 display_inFlex11111111 margin-b-20')]//div[1]//input[1]");
 	private By lblCalendarMinute=By.xpath("//div[contains(@class,'expand-collapse-content')]//div[1]//input[2]");
 	private By lblPm=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(text(),'AM')]");
+	private By lblPm1=By.xpath("//select[contains(@name,'starttime_zone')]");
+	//private By lblPm=By.xpath("//body[@id='target']//div[contains(text(),'Start Time')]/../select/option[@value='PM']");//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]
 	private By insDropdoenAlertMshg = By.xpath("//h4[@id='session_title']/../../*//div[contains(text(),'Instructor selection required')]");
 	private By lblPostAssessment = By.id("postassignment_title");
 	private By lblAddPostAssessment = By.xpath("//button[@id='post_addAssignment']");
@@ -694,9 +696,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblCalenderClickCancellation = By.xpath(".//md-datepicker[@id='lastdate_cancellation']//button[contains(@class,'md-datepicker-button md-icon-button md-button md-ink-ripple')]");
 	private By lastDateSelectingCancellation = By.xpath(".//span[@class='md-calendar-date-selection-indicator']");
 	private By minExceedMaxErr = By.id("errMinExceedLength");//Minimum limit Should not Exceed the Maximum Limit
-	private By inpMaxParticipants = By.xpath("//input[@id='input_27']");//input[contains(@name,'max_participants')]
-	private By inpMinParticipants = By.xpath("//input[@id='input_28']");//input[contains(@name,'min_participants')]
-	private By inpWaitingThreshold = By.xpath("//input[@id='input_29']");//input[contains(@name,'wait_threshold')]
+	private By inpMaxParticipants = By.xpath("//input[contains(@name,'max_participants')]");//input[@id='input_27']
+	private By inpMinParticipants = By.xpath("//input[contains(@name,'min_participants')]");//input[@id='input_28']
+	private By inpWaitingThreshold = By.xpath("//input[contains(@name,'wait_threshold')]");//input[@id='input_29']
 
 	private By lblCancellationPolicy = By.xpath("//textarea[@name='cancellation_policy']");
 	private By tickMarkBtn = By.xpath(".//i[@id='icon_tick']");
@@ -727,7 +729,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(selectVenue);
 	wait(5);
 	click(timezoneDropdown);
-	wait(5);
+	wait(10);
 	click(selectTimezone);
 //	enterData("35",inpAvgScore);
 	click(lblSession);
@@ -759,6 +761,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	enterData("10", lblCalendarHour);
 	wait(5);
 	enterData("50",lblCalendarMinute);
+	wait(5);
+	//click(lblPm1);
 	wait(2);
 	//click(By.className("custm_time ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched"));
 	wait(5);
