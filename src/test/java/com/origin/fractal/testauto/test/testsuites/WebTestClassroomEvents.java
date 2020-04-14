@@ -284,7 +284,8 @@ public class WebTestClassroomEvents extends FractalBaseWebTest{
 		classSteps.verifyTermsConditions();
 		Reporter.writeSummary("TCID_Event_048,  Verify whether the 2nd page is opened on clicking continue button after filling all the mandatory fields, " +  classSteps.getResult() );
 		//TCID_48: Verify whether the 2nd page is opened on clicking continue button after filling all the mandatory fields.
-		classSteps.verifySecondPageOpened();
+	//dd	classSteps.verifySecondPageOpened();
+		classSteps.verifyAddEventPageOpened();
 		Reporter.writeSummary("TCID_Event_049, Verfy whether the alert message is thrown for all the Mandatory fields if Save button is clicked without filling any fields, " +  classSteps.getResult() );
 		//TCID_49: Verfy whether the alert message is thrown for all the Mandatory fields, if Save button is clicked without filling any fields
 		classSteps.verifySecondPageAlertMsgs();

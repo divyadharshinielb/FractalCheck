@@ -577,6 +577,8 @@ public class ClassroomEventPage extends FractalBasePage{
     wait(4);
 	enterData("50",lblCalendarMinute);
 	wait(2);
+	click(By.xpath("//select[@name='starttime_zone']"));
+	wait(2);
 	click(lblPm);
 	wait(2);
 	click(dropdownSelectInstructor);
