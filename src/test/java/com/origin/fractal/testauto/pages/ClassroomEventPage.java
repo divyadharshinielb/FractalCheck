@@ -76,7 +76,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By dropdownSelectCalendar=By.xpath("//td[@class='md-calendar-date md-calendar-date-today md-focus']//span[@class='md-calendar-date-selection-indicator']");//td[@class='md-calendar-date md-calendar-date-today md-calendar-selected-date md-focus'](staging)
 	private By lblCalendarHour=By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-lr-0 display_inFlex11111111 margin-b-20')]//div[1]//input[1]");
 	private By lblCalendarMinute=By.xpath("//div[contains(@class,'expand-collapse-content')]//div[1]//input[2]");
-	private By lblPm=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
+	private By lblPm=By.xpath("//body[@id='target']//div[contains(text(),'Start Time')]/../select/option[@value='PM']");//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]
 	private By insDropdoenAlertMshg = By.xpath("//h4[@id='session_title']/../../*//div[contains(text(),'Instructor selection required')]");
 	private By lblPostAssessment = By.id("postassignment_title");
 	private By lblAddPostAssessment = By.xpath("//button[@id='post_addAssignment']");
