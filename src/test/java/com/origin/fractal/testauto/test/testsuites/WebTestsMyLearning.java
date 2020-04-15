@@ -46,16 +46,16 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.verifyComplStatus();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__001, Verify COmpletion Status(% Coverage), " +  mLSteps.getResult() );
 		//TCID_11: Verify learning item page is opened when any of the particular course catalog item is clicked
-		mLSteps.verifyCatalogname();//newui
+	/*	mLSteps.verifyCatalogname();//newui15/4/2020
 		Reporter.writeSummary("TCID_MY_LEARN__011, Verify learning item page is opened when any of the particular course catalog item is clicked, " +  mLSteps.getResult() );
-		//TCID_12: Verify Learning item page contains Course Name,joined on date and time, Description,Validity,Duration
+	*/	//TCID_12: Verify Learning item page contains Course Name,joined on date and time, Description,Validity,Duration
 		mLSteps.verifyCatalogDetails();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
 		mLSteps.multiplecategorycheck();
 		Reporter.writeSummary("TCID_MY_LEARNNEW__001, Verify MultipleCategory in My Learning page" +  mLSteps.getResult() );
-	    mLSteps.multiplecategoryhomepage();
+	/*    mLSteps.multiplecategoryhomepage(); 15/4/2020
 	    Reporter.writeSummary("TCID_MY_LEARNNEW__002, Verify MultipleCategory in Home page " +  mLSteps.getResult() );
-		mLSteps.clickLogout();
+	*/	mLSteps.clickLogout();
 	}
 
 	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_16,20,21,22: "
@@ -72,9 +72,9 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		// Test moves to MyLearning page
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		// To Verify the bundleContents 
-		mLSteps.verifyCourseInBundle();//newui
+	/*	mLSteps.verifyCourseInBundle();//newui 15/4/2020
 		Reporter.writeSummary("TCID_MY_LEARN__016,Verify course name, " + mLSteps.getResult() );
-		homeSteps.clickOnMyLearning();//newui
+	*/	homeSteps.clickOnMyLearning();//newui
 		//TCID_20:Verify All filter
 		mLSteps.verifyAllFilter();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__020,Verify All filter, " + mLSteps.getResult() );
@@ -127,7 +127,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		mLSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_17,18,23,27 : "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_17,18,23,27 : "
 			+ "17: Verify Bundle Details after clicking" + "18: Verify course Details after clicking"
 			+ "23: Verify the learnig objeck launch" + "27: Verify the top arrow button")
 	public void testMyLearningPage3(String row, String strBrowserName) {
@@ -157,7 +157,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_MY_LEARN__027,Checking whether the page is moving upwards when ^ button is clicked , " +  mLSteps.getResult() );
 */		mLSteps.clickLogout();
 	}
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description ="")
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description ="")
 	public void testMyLearningPageClassroom(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
