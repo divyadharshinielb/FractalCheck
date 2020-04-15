@@ -40,7 +40,7 @@ public class FractalLoginPage extends FractalBasePage {
 			click(btnCookies); 
 			wait(2);
 		}
-		WebDriverWait wait=new WebDriverWait(driver, 40);
+		WebDriverWait wait=new WebDriverWait(driver, 60);
 		WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(tbUserNameNewUI));
 		enterData(getLabel("Username"), tbUserNameNewUI);
 		enterData(getLabel("Password"), tbPasswordNewUI);
