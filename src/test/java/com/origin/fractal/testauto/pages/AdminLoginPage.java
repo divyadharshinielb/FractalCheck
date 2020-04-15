@@ -28,6 +28,7 @@ public class AdminLoginPage extends FractalBasePage {
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord= {"","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
+	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
 	public AdminLoginPage(WebDriver driver) throws IOException {
 		super(driver);
 		pageName ="LoginPage"; 
@@ -51,14 +52,24 @@ public class AdminLoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void loginToContentAdmin() throws IOException{
-	    click(btnLogin1);
+	   click(btnLogin1);
 		//updating the credentials of siteadmin as settings icon is present only for siteadmin
-				enterData("automation_siteadmin@origin.com",tbUserName);
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+	
+		enterData("automation_siteadmin@origin.com",tbUserName);
 			    enterData("AutoSA@123",tbPassword);
-			    print("ddiffufifuifiufiu");
+			//    print("ddiffufifuifiufiu");
 			    wait(5);
 	    click(btnLogin1);
 	    wait(5);
+	    click(By.xpath("//span[@class='loggeduserbg ng-binding']"));
+	    wait(2);
+	    click(By.xpath("//button[contains(text(),'siteadmin')]"));
+	    wait(5);
+	  //  click(By.xpath(""));
 	}
 	public void doLogin1() throws IOException {
 		enterData(getGobal("user"),tbUserName);
