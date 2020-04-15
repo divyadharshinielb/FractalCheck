@@ -12,8 +12,8 @@
 	<test thread-count="19" name="Test" >
 		<classes><class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
-		       <class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" /> 
+		<!--       <class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" /> -->
 				<class
 				 name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 				<class
@@ -26,8 +26,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
+		<!--		<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" /> -->
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
 				<class
