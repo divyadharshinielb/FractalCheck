@@ -54,7 +54,7 @@ public class WebTestsVenueCreation extends FractalBaseWebTest {
 		venueSteps.clickMenu();
 	venueSteps.invalidValidVenue();
 	Reporter.writeSummary("Venue_005, Verify Venue creation with invalid venue., " +  venueSteps.getResult() );
-	venueSteps.invalidBuildingName();
+/*	venueSteps.invalidBuildingName(); 15/4/2020
 	Reporter.writeSummary("Venue_009, Verify Venue creation with blank building block name," +  venueSteps.getResult() );
 	venueSteps.invalidStreetName();
 	Reporter.writeSummary("Venue_011, Verify Venue creation with blank street area ," +  venueSteps.getResult() );
@@ -62,7 +62,7 @@ public class WebTestsVenueCreation extends FractalBaseWebTest {
 	Reporter.writeSummary("Venue_013, Verify the cancellation of Venue details on clicking Cancel button," +  venueSteps.getResult() );
 	venueSteps.searchFunction();
 	Reporter.writeSummary("Venue_014, Verify the Search functionality, " +  venueSteps.getResult() );
-	venueSteps.editVenue();
+*/	venueSteps.editVenue();
 	Reporter.writeSummary("Venue_016, verify whether the admin is able to edit the venue by clicking the edit icon., " +  venueSteps.getResult() );
 	venueSteps.deleteVenue();
 	Reporter.writeSummary("Venue_015, verify whether the admin is able to delete the venue by clicking the delete icon., " +  venueSteps.getResult() );
