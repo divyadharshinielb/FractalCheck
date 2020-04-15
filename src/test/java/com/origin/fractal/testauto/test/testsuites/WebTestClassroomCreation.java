@@ -64,7 +64,7 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
         Reporter.writeSummary("TCID_CLASS_028, Verify the user is able to view the Classroom details of a  Classroom," +  cSteps.getResult() );
 	}
         
-		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = true,description="")
+		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = false,description="")
     	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
     	
     		driver = BrowserFactory.getBrowser(strBrowserName);
