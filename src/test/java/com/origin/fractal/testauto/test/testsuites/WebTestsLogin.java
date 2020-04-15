@@ -37,10 +37,10 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		loginSteps.inValid();
 		Reporter.writeSummary("TCID_LOGIN_038, Verify the login page with invalid user name and invalid password, " +  loginSteps.getResult() );
 		//TCID_72:Verify the Remember me function*/
-		loginSteps.rememberMe();
+	/*	loginSteps.rememberMe(); 15/4/2020
 		Reporter.writeSummary("TCID_LOGIN_072,  Verify the Remember me function, " +  loginSteps.getResult() );
 		Reporter.writeSummary("TCID_LOGIN_019,  Verify the Remember me function - By checking the radio button, " +  loginSteps.getResult() );
-		//TCID_74:Verification of Register link  function 
+	*/	//TCID_74:Verification of Register link  function 
 		loginSteps.registerFunction();
 		Reporter.writeSummary("TCID_LOGIN_074, Verification of Register link  function, " +  loginSteps.getResult() );
 	 }
