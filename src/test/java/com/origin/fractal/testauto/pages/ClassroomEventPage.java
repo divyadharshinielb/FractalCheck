@@ -571,12 +571,14 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	enterData("10", lblCalendarHour);
 	wait(5);
-	scrollToElement(By.xpath("//h4[contains(text(),'Post-event Activities')]"));
+//	scrollToElement(By.xpath("//h4[contains(text(),'Post-event Activities')]"));
 	wait(5);
-	JavascriptExecutor js2 = (JavascriptExecutor) driver;
-    WebElement Element1 = driver.findElement(By.xpath("//div[contains(text(),'Start Time')]"));
-    js2.executeScript("arguments[0].scrollIntoView();", Element1);
+//	JavascriptExecutor js2 = (JavascriptExecutor) driver;
+ //   WebElement Element1 = driver.findElement(By.xpath("//div[contains(text(),'Start Time')]"));
+ //   js2.executeScript("arguments[0].scrollIntoView();", Element1);
     wait(4);
+	elementExist(lblCalendarMinute);
+	wait(4);
 	enterData("50",lblCalendarMinute);
 	wait(2);
 //	click(By.xpath("//select[contains(@name,'starttime_zone')]//option[2]"));
