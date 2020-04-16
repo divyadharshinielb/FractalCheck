@@ -65,10 +65,10 @@ public class AdminLoginPage extends FractalBasePage {
 			    wait(5);
 	    click(btnLogin1);
 	    wait(5);
-	    click(By.xpath("//span[@class='loggeduserbg ng-binding']"));
+	/*    click(By.xpath("//span[@class='loggeduserbg ng-binding']"));
 	    wait(2);
 	    click(By.xpath("//button[contains(text(),'siteadmin')]"));
-	    wait(5);
+	    wait(5);*/
 	  //  click(By.xpath(""));
 	}
 	public void doLogin1() throws IOException {
