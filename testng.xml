@@ -18,8 +18,8 @@
 				 name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
-				<class
-				 name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
+		<!--		<class
+				 name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" /> -->
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" /> 
 				<class
