@@ -630,7 +630,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(2);
 	verifyText("Last Date For registration required.",lastDateRegistErr);
 	wait(2);
-	scrollToElement(By.xpath("//textarea[@id='input_7']"));
+	scrollToElement(lastDateCancelErr);
 	wait(2);
 	verifyText("Last Date For cancellation required.",lastDateCancelErr);
 	}
