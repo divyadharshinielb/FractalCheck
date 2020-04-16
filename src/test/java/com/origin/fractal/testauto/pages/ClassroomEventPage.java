@@ -759,6 +759,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 //dd	scrollToElement(By.xpath("//div[contains(text(),'Start Time')]"));
 scrollToElement(By.xpath("//h4[contains(text(),'Terms & Conditions')]"));
+wait(5);
 	scrollToElement(By.xpath("//div[contains(text(),'Start Time')]"));
 		wait(5);
 	//click(lblPm);
