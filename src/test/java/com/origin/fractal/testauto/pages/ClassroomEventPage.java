@@ -272,7 +272,11 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(btnAddEvent);
 	wait(2);
 	click(lblAssignment);
-	wait(2);
+	wait(5);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebElement Element= driver.findElement(lblAddAssignment);
+	js.executeScript("arguments[0].scrollIntoView();", Element);
+	wait(5);
 	click(lblAddAssignment);
 	wait(2);
 	verifyText("Pass score",lblPassScore);
@@ -440,6 +444,11 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(lblSelectCalendar);
 	wait(2);
 	click(dropdownSelectCalendar);
+	wait(2);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebElement Element= driver.findElement(lblCalendarHour);
+	js.executeScript("arguments[0].scrollIntoView();", Element);
+	wait(2);
 	enterData("10",lblCalendarHour);
 	enterData("50",lblCalendarMinute);
 	click(lblPm);
@@ -575,20 +584,26 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(selectTimezone);
 //		enterData("35",inpAvgScore);
 	click(lblSession);
-	wait(10);
-	click(dropdownSelectInstructor);
-	/*	verifyText("Select Instructor",insDropdoenAlertMshg);
-	*/	wait(5);
-	click(dropdownSelectInstructor1);
 	wait(5);
 	click(lblSelectCalendar);
 	wait(5);
 	click(dropdownSelectCalendar);
 	wait(5);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebElement Element= driver.findElement(lblCalendarHour);
+	js.executeScript("arguments[0].scrollIntoView();", Element);
+	wait(5);
 	enterData("10",lblCalendarHour);
+	wait(5);
 	enterData("50",lblCalendarMinute);
+	wait(5);
 	click(lblPm);
-	wait(2);
+	wait(5);
+	click(dropdownSelectInstructor);
+	/*	verifyText("Select Instructor",insDropdoenAlertMshg);
+	*/	wait(5);
+	click(dropdownSelectInstructor1);
+	wait(5);
 	click(btnContinue);
 	}
 	public void verifyTickAndPlusMark() {
