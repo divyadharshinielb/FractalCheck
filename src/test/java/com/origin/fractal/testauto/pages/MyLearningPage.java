@@ -26,7 +26,7 @@ public class MyLearningPage extends FractalBasePage {
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath("//*[@class='masonry-bundlename two-line-clamp'])[1]");//Updated on Nov-22-18 //div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')] //div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
+	private By clickCatalog = By.xpath("//h1[@class='masonry-bundlename ellipsis_1camp']");//Updated on Nov-22-18 //div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')] //div[contains(@class,'mylearn')]/../div[3]/a[1]/*//a
 
 	private By lblCatlogCategory = By.xpath(".//div[contains(text(),'Category')]");
 	private By lblLanguage = By.xpath(".//div[contains(text(),'Language')]");
@@ -134,12 +134,14 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyCourseInBundle() {
+		if(elementExist(lblBundles)) {
 		click(lblBundles);
 		wait(3);
 		click(lblListView);
 		wait(5);
 		click(bundleCnt);
 		verifyLabel("lblCourseNameText", lblcourseName);
+		}
 	}
 
 	public void verifyAllFilter() {
@@ -153,28 +155,35 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyBundleFilter() {
 		click(lblAll);
 		wait(5);
+		if(elementExist(lblBundles)) {
 		click(lblBundles);
 		wait(5);
 		click(lblListView);
 		verifyFilterType(boxBtn, boxCatType, "bundle");
+		}
 	}
 
 	public void verifyCourseFilter() {
 		click(lblAll);
 		wait(5);
+		if(elementExist(lblCourses)) {
+			wait(2);
 		click(lblCourses);
 		wait(5);
 		click(lblListView);
 		verifyFilterType(boxBtn, boxCatType, "course");
+		}
 	}
 
 	public void verifyResourceFilter() {
 		click(lblAll);
 		wait(5);
+		if(elementExist(lblResources)) {
 		click(lblResources);
 		wait(5);
 		click(lblListView);
 		verifyFilterType(boxBtn, boxCatType, "resource");
+		}
 	}
 
 	public void verifyTickmark() {
@@ -232,6 +241,7 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyBundleContents() {
+		if(elementExist(lblBundles)) {
 		click(lblBundles);
 		wait(5);
 		click(lblListView);
@@ -239,7 +249,8 @@ public class MyLearningPage extends FractalBasePage {
 		click(clickCatalog);
 		wait(5);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
-	}
+		}
+		}
 	public void verifyCourseContents() {
 		click(lblCourses);
 		wait(5);
@@ -276,7 +287,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By classroomlblTime=By.xpath("//div[contains(@class,'margin-t-0')]//p[2]");
     private By classroomlblLocation=By.xpath("//div[contains(@class,'display-box')]");
     private By lblAssignedClassroom=By.xpath("//h1[contains(text(),'Automation classroom')]");
-    private By classroomlblEvent=By.xpath("//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[1]");
+    private By classroomlblEvent=By.xpath("//div[@class='font-18 padding-t-10 padding-lr-5 head-boldcolor one-line-clamp']");
     private By classroomlblEventDate=By.xpath("//div[contains(@class,'col-lg-2 col-md-2 col-sm-2 col-xs-2 height-115 event-bg')]");
     private By classroomlblEventTime=By.xpath("//div[contains(@class,'display-box')]//div[contains(@class,'padding-t-5')]");
     private By classroomlblEventLocation=By.xpath("//div[contains(@class,'font-14 padding-l-10 padding-t-20 color6f')]");
@@ -405,11 +416,14 @@ public class MyLearningPage extends FractalBasePage {
 			    	wait(2);
 			 	    click(searchbar);
 			 	    enterData("checkmultiplechoice",searchbar);
+			 	    wait(2);
 			 	    driver.findElement(By.xpath("//input[contains(@name,'searchterm')]")).sendKeys(Keys.ENTER);
 			 	    elementExist(categorypopupbtn);
+			 	    wait(2);
 			 	    click(categorypopupbtn);
 			 	    wait(2);
 			 	    elementExist(multiplecatalogpopup);
+			 	    wait(4);
 			 	    driver.navigate().refresh();
 			 	    //code to check for multiplecategories in mylearning completed list view
 			 	    click(lblMyLearning);
