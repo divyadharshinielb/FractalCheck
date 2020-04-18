@@ -67,6 +67,11 @@ public class LoginPage extends FractalBasePage {
 	    click(By.xpath("//button[@class='role-button']"));
 	}*/
 	public void loginToInstructor() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
 	    enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2
 	//    click(btnLogin1);
@@ -82,17 +87,32 @@ public class LoginPage extends FractalBasePage {
 	    click(By.xpath("//button[@class='role-button']"));
 	}
 	public void loginToContentAdmin() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData("contentadmin@origin.com",tbUserName);
 	    enterData("P@ssw0rd",tbPassword);
 	    click(btnLogin1);
 	    wait(5);
 	}
 	public void doLogin1() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin1);
 	}
 	public void loginPageVerification() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		wait(5);
 		elementExist(logoSymbol);
 		elementExist(btnLogin);
@@ -101,6 +121,11 @@ public class LoginPage extends FractalBasePage {
 		elementExist(rememberMe);
 	}
 	public void rememberMe() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
 		wait(10);
@@ -123,6 +148,7 @@ public class LoginPage extends FractalBasePage {
 		click(logOutButton);
 		wait(10);
 		click(btnLogin);	
+		wait(2);
 		elementExist(blankPassword);
 		}
 	//Starts - Added by Mahesh on Feb_06_19
@@ -133,7 +159,7 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://origin.originfractal.com/";
+		String baseUrl = "https://automation-origin.originfractal.com/";
 		goTo(baseUrl);
 		wait(10);
 		click(registerButton);
@@ -141,6 +167,11 @@ public class LoginPage extends FractalBasePage {
 	}
 	
 	public void blankPasswordVerification() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData (userName[1],tbUserName);
 		enterData (passWord[0],tbPassword);
 		click(btnLogin1);
@@ -149,6 +180,12 @@ public class LoginPage extends FractalBasePage {
 		
 	}
 	public void blankUserName() {
+		
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData (userName[0],tbUserName);
 		enterData (passWord[1],tbPassword);
 		click(btnLogin1);
@@ -156,6 +193,11 @@ public class LoginPage extends FractalBasePage {
 		elementExist(blankUserName);
 	}
 	public void mandatoryField() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData (userName[0],tbUserName);
 		enterData (passWord[0],tbPassword);
 		click(btnLogin1);
@@ -163,6 +205,11 @@ public class LoginPage extends FractalBasePage {
 		elementExist(blankUserName);
 	}
 	public void inValid() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData (userName[2],tbUserName);
 		enterData (passWord[2],tbPassword);
 		click(btnLogin1);
@@ -171,6 +218,11 @@ public class LoginPage extends FractalBasePage {
 		}
 
 	public void inValidPassword() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("Origin",tbPassword);
 		click(btnLogin1);

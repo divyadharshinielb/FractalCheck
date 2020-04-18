@@ -58,6 +58,7 @@ public class RolesManagementPage extends FractalBasePage {
 	//eyt to use after discussion with team
 	private By searchfielduser = By.xpath("//input[@id='searchAllUsersName']");
 	private By usernameforLEarningadmin = By.xpath("//div[contains(text(),'contentadmin@origin.com')]");
+	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
 	public RolesManagementPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -66,6 +67,11 @@ public class RolesManagementPage extends FractalBasePage {
 	}
 	//direct user with learning admin role and instructor role
 	public void DirectuserwithLearningadminandinsrole() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
+
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
 		wait(2);
@@ -122,6 +128,11 @@ public class RolesManagementPage extends FractalBasePage {
 		//instructor mapping to directuser check
 		public void InstructorwithDirectuserrole() {
 			wait(2);
+			if(elementExist(btnCookies)) {
+				click(btnCookies);
+				}
+			wait(5);
+
 			enterData("automation_instructor@origin.com",tbUserName);
 			enterData("P@ssw0rd",tbPassword);
 			click(btnLogin);
