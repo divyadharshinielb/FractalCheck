@@ -39,7 +39,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By boxButton = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]/div[1]");//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
 	/************Newui***************/
 	private By lblCatnameInside = By.xpath(".//div[contains(@class, 'cdescrip tecap')]/../div/span");//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3
-	private By bundleCnt = By.xpath("");////Updated Nov-22-18
+	private By bundleCnt = By.xpath("//span[contains(@class,'box_img_cnt pl-2')]");////Updated Nov-22-18
 	private By lblcourseName = By.xpath(".//span[@class='three-line-clamp']");//Updated Nov-22-18//h1[@class='masonry-bundlename ellipsis padding-t-5']
 	private By lblDuration = By.xpath(".//div/*//span[contains(text(),'Duration')]");
 	private By lblTick = By.xpath(".//button[@class='pl-0 launch_btn www']/../button/img");//round-progress-wrapper
@@ -121,10 +121,12 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyCatalogDetails() {
 		/**added here 1/30/2019**/
 		wait(5);
-		WebElement element = driver.findElement( By.xpath("//*[@id='react-tabs-1']/div/div/div/div[3]/div/div[1]/a[1]/div")); 
-	    Actions actions = new Actions(driver); actions.moveToElement(element);
-		actions.perform();
+//		WebElement element = driver.findElement( By.xpath("//*[@id='react-tabs-1']/div/div/div/div[3]/div/div[1]/a[1]/div")); 
+//	    Actions actions = new Actions(driver); actions.moveToElement(element);
+//		actions.perform();
 		//click(clickCatalog);	
+		scrollToElement(By.xpath("//*[@id='react-tabs-1']/div/div/div/div[3]/div/div[1]/a[1]/div"));
+		wait(5);
 		click(By.xpath(".//div[contains(@class, 'mylearn')]/*//p[contains(@class, 'icon-heading')]"));
 		/***/
 		verifyPartialLabelText("lblUpdatedOn", lblCatlogCategory);
@@ -138,6 +140,8 @@ public class MyLearningPage extends FractalBasePage {
 		click(lblBundles);
 		wait(3);
 		click(lblListView);
+		wait(5);
+		scrollToElement(bundleCnt);
 		wait(5);
 		click(bundleCnt);
 		verifyLabel("lblCourseNameText", lblcourseName);
@@ -246,6 +250,8 @@ public class MyLearningPage extends FractalBasePage {
 		wait(5);
 		click(lblListView);
 		wait(2);
+		scrollToElement(clickCatalog);
+		wait(5);
 		click(clickCatalog);
 		wait(5);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
@@ -253,6 +259,8 @@ public class MyLearningPage extends FractalBasePage {
 		}
 	public void verifyCourseContents() {
 		click(lblCourses);
+		wait(5);
+		scrollToElement(clickCatalog);
 		wait(5);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
@@ -348,6 +356,8 @@ public class MyLearningPage extends FractalBasePage {
 		  
 			public void	verifyClassrooomLabels(){
 			wait(2);
+			click(lblMyLearning);
+			wait(5);
 		    WebElement element = driver.findElement( By.xpath(".//a[text()='Automation Learningpath']")); Actions 
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
