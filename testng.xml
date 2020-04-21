@@ -9,7 +9,7 @@
 			class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 	<!-- End of reportNg modification -->
-	<test thread-count="19" name="Test" >
+	<test thread-count="18" name="Test" >
 		<classes><class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 		<!--       <class
@@ -36,10 +36,10 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
 			  <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
-		<!--		<class
+				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" />
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" /> -->
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
 		 		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 				<class
