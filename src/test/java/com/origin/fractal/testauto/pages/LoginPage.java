@@ -17,7 +17,7 @@ public class LoginPage extends FractalBasePage {
 	private By lblProfile = By.xpath(".//img[contains(@class,'logout-height')]");
 	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]");
 	/***added on 08/02/19***/
-	private By registerButton = By.xpath("//a[@class='cursor-pointer text-uppercase']");
+	private By registerButton = By.xpath("//a[@href='/register']");//a[@class='cursor-pointer text-uppercase']
 	/***here**/
 	private By resigstrationPage = By.xpath(".//*[contains(text(), 'I want to register as')]");
 	private By blankPassword = By.xpath(".//*[contains(text(), 'Password field should not be empty')]");
@@ -104,9 +104,13 @@ public class LoginPage extends FractalBasePage {
 		//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
-		String baseUrl = "https://automation-origin.originfractal.com/admin/index.php";
+		String baseUrl = "https://automation-origin.originfractal.com";
 		goTo(baseUrl);
 		wait(10);
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
+		wait(5);
 		click(registerButton);
 		elementExist(resigstrationPage);
 	}
