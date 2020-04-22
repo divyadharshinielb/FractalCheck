@@ -35,7 +35,7 @@ public class AdminLoginPage extends FractalBasePage {
 		// Go to Home Page
 //*******************************added by mahesh 08/04/2019****************************//	
 	//	String baseUrl=getGobal("webtesturl");
-		String baseUrl = "https://automation-origin.originfractal.com/admin"; //https://dev-huron.originfractal.com;
+		String baseUrl = "https://automation-origin.originfractal.com"; //https://dev-huron.originfractal.com;
 		goTo(baseUrl);
 		
 	}
@@ -59,11 +59,11 @@ public class AdminLoginPage extends FractalBasePage {
 			}
 		wait(5);
 	
-		enterData("automation_siteadmin@origin.com",tbUserName);
-			    enterData("AutoSA@123",tbPassword);
+		enterData("automation_siteadmin@origin.com",tbUserNameNewUI);
+			    enterData("AutoSA@123",tbPasswordNewUI);
 			//    print("ddiffufifuifiufiu");
 			    wait(5);
-	    click(btnLogin1);
+	    click(btnLoginNewUI);
 	    wait(5);
 	/*    click(By.xpath("//span[@class='loggeduserbg ng-binding']"));
 	    wait(2);
