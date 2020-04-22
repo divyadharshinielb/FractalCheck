@@ -120,7 +120,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickEditCClblQualifyPrecentage() 
 	{
-		click(EditclasslblCCQualifyPrecentage);
+	//	click(EditclasslblCCQualifyPrecentage);
 		wait(5);
 		click(lblCCQualifyPrecentage);
 		wait(5);
@@ -210,11 +210,12 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickEditCClblSubdate_Qualify() 
 	{
+	    wait(2);
 		click(EditclasslblCCAssDuedate);
 		wait(5);
-		click(EditclasslblCCQualifyPrecentage);
+	//	click(EditclasslblCCQualifyPrecentage);
 		wait(5);
-		enterData("35",EditclassInputCCQualifyPrecentage);
+		enterData("35",InputCCQualifyPrecentage);
 		wait(5);
 		click(EditclassCancelbtn);
 		wait(5);
@@ -238,10 +239,11 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 
 	public void ClickEditCClblQualify_feedbackdate() 
-	{
-		click(EditclasslblCCQualifyPrecentage);
+	{   
+	    wait(2);
+	//	click(EditclasslblCCQualifyPrecentage);
 		wait(5);
-		enterData("35",EditclassInputCCQualifyPrecentage);
+		enterData("35",InputCCQualifyPrecentage);
 		wait(5);
 		click(EditclasslblCCFeedbackDuedate);
 		wait(5);
@@ -402,7 +404,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 	
 	public boolean verifyEditCCAssDuedateLabels() {
-		
+		wait(2);
 		booleanresult = false;
 		if (verifyText("Submission of all assignments before due date",EditclasslblCCAssDuedate) == true)
 		{
@@ -428,7 +430,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 	
 	public boolean verifyEditCCQualifyPrecentageLabels() {
-		
+		wait(2);
 		booleanresult = false;
 		if (verifyText("% Qualifying score in graded assignments",EditclasslblCCQualifyPrecentage) == true)
 		{
@@ -454,6 +456,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 	
 	public boolean verifyEditCCFeedbackDuedateLabels() {
+		wait(2);
 		booleanresult = false;
 		if (verifyText("Submission of session/event feedback before due date",EditclasslblCCFeedbackDuedate) == true)
 		{
@@ -465,6 +468,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 	
 	public boolean verifyCCManualCompletionLabels() {
+		wait(2);
 		click(AddClassbtn);
 		wait(5);
 		booleanresult = false;
@@ -478,6 +482,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 	
 	public boolean verifyEditCCManualCompletionLabels() {
+		wait(2);
 		booleanresult = false;
 		if (verifyText("Manual completion marking",EditclasslblCCManualCompletion) == true)
 		{
