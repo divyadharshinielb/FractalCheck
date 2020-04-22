@@ -224,7 +224,8 @@ public class ClassroomCCPage extends FractalBasePage {
 
 
 	public void ClickCClblQualify_feedbackdate() 
-	{
+	{   
+	    wait(2)
 		click(AddClassbtn);
 		wait(5);
 		click(lblCCQualifyPrecentage);
