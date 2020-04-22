@@ -52,7 +52,7 @@ public class AdminLoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void loginToContentAdmin() throws IOException{
-	   click(btnLogin1);
+	   //click(btnLogin1);
 		//updating the credentials of siteadmin as settings icon is present only for siteadmin
 		if(elementExist(btnCookies)) {
 			click(btnCookies);
