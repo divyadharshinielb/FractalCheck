@@ -56,7 +56,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void GotoEditClassroom() 
 	{
-		wait(5);
+		wait(10);
 		click(EditClassroomicon);
 		wait(5);
 		print("In Admin side, Edit Classroom is opened");
@@ -422,7 +422,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 	
 	public boolean verifyCCQualifyPrecentageLabels() {
-		wait(5);
+		wait(2);
 		click(AddClassbtn);
 		wait(5);
 		booleanresult = false;
