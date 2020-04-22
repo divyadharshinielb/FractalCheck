@@ -194,7 +194,8 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 
 	public void ClickCClblSubdate_Qualify() 
-	{
+	{   
+	    wait(2);
 		click(AddClassbtn);
 		wait(5);
 		click(lblCCAssDuedate);
@@ -225,7 +226,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickCClblQualify_feedbackdate() 
 	{   
-	    wait(2)
+	    wait(2);
 		click(AddClassbtn);
 		wait(5);
 		click(lblCCQualifyPrecentage);
@@ -254,7 +255,8 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 
 	public void ClickCClblfeedbackdate_Manualcomp() 
-	{
+	{   
+	    wait(2);
 		click(AddClassbtn);
 		wait(5);
 		click(lblCCFeedbackDuedate);
@@ -267,7 +269,8 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 
 	public void ClickEditCClblfeedbackdate_Manualcomp() 
-	{
+	{   
+	    wait(2);
 		click(EditclasslblCCFeedbackDuedate);
 		wait(5);
 		click(EditclasslblCCManualCompletion);
@@ -278,7 +281,8 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 
 	public void ClickCClblManualcomp_Allsession() 
-	{
+	{   
+	    wait(2);
 		click(AddClassbtn);
 		wait(5);
 		click(lblCCManualCompletion);
@@ -291,7 +295,8 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 
 	public void ClickEditCClblManualcomp_Allsession() 
-	{
+	{   
+	    wait(2);
 		click(EditclasslblCCManualCompletion);
 		wait(5);
 //		click(EditclasslblCCAllsession);
