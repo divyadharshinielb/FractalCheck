@@ -506,6 +506,8 @@ public class ClassroomCCPage extends FractalBasePage {
 		wait(5);
 		click(AddClassbtn);
 		wait(5);
+		click(lblCCQualifyPrecentage);
+		wait(5);
 		enterData("5",InputCCQualifyPrecentage);
 		wait(5);
 		click(lblCCQualifyPrecentage);
@@ -518,10 +520,10 @@ public class ClassroomCCPage extends FractalBasePage {
 	public void EditCClblQualifySinglePrecentage() 
 	{
 		
-//		click(EditclasslblCCQualifyPrecentage);
+/*		click(EditclasslblCCQualifyPrecentage);
 		wait(5);
 		enterData("5",EditclassInputCCQualifyPrecentage);
-		wait(5);
+*/		wait(5);
 		click(EditclassCancelbtn);
 		wait(5);
 		click(EditClassroomicon);
