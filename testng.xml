@@ -10,13 +10,14 @@
 	</listeners>
 	<!-- End of reportNg modification -->
 	<test thread-count="18" name="Test" >
-		<classes><class
+		<classes>
+		  <!--     <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
-		<!--       <class
+		       <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" /> -->
 				<class
 				 name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
-				<class
+		<!--		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
 				<class
 				 name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
@@ -45,7 +46,7 @@
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" /> -->
 				
 		</classes>
 	</test> <!-- Test -->
