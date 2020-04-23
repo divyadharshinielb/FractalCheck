@@ -54,7 +54,7 @@ public class AdminLoginPage extends FractalBasePage {
 		enterData("siteadmin@origin.com",tbUserNameNewUI);//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPasswordNewUI);//Admin@123
 	    click(btnLoginNewUI);
-	    wait(5);
+	    wait(6);
 	}
 	public void doLogin1() throws IOException {
 		enterData(getGobal("user"),tbUserName);
