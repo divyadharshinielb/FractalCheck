@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.steps.NotificationSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
@@ -23,7 +24,7 @@ public class WebTestNotification extends FractalBaseWebTest{
 	}
 	
 	
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
+	@Test(dataProviderClass = DataManager.class, groups= {"pilot"}, enabled= true, description = "")
 
 	public void WebTestEmailNotification(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);

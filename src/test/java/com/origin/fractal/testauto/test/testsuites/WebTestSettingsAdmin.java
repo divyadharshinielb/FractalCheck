@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.LoginSteps;
 import com.origin.fractal.testauto.steps.ManageContentSteps;
@@ -24,7 +25,7 @@ public class WebTestSettingsAdmin extends FractalBaseWebTest{
 		};
 	}
 	
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "TCID_009:Dynamic payment configurations should appear in the User purchase page.")
+	@Test(dataProviderClass = DataManager.class, groups= {"pilot"}, enabled= true, description = "TCID_009:Dynamic payment configurations should appear in the User purchase page.")
 
 public void WebTestSettingsAdminPaymentConfig(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);

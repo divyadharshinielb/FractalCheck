@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.ClassroomSteps;
 import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
@@ -23,7 +24,7 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
 //		 new Object[] { "4", "ie11" }
 		};
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
+	@Test(dataProviderClass = DataManager.class, groups= {"pilot"}, enabled= true, description="")
 	public void testVerifyClassroomCreation(String row, String strBrowserName) throws IOException {
 	
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -64,7 +65,7 @@ public class WebTestClassroomCreation extends FractalBaseWebTest {
         Reporter.writeSummary("TCID_CLASS_028, Verify the user is able to view the Classroom details of a  Classroom," +  cSteps.getResult() );
 	}
         
-		@Test(dataProvider = "browers", groups = { "pilot"}, enabled = false,description="")
+		@Test(dataProviderClass = DataManager.class, groups = { "pilot"}, enabled = false,description="")
     	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
     	
     		driver = BrowserFactory.getBrowser(strBrowserName);
