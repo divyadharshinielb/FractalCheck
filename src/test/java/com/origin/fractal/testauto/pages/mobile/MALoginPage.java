@@ -99,6 +99,7 @@ public class MALoginPage extends FractalAppPage {
 	}
 	//***mahesh start****//
 		public void clickYesBtn() {
+		wait(5);
 			click(getObj(menuBtn));
 			wait(5);
 			click(getObj(btnLogout));
@@ -156,6 +157,7 @@ public class MALoginPage extends FractalAppPage {
 //*****end*********//
 
 		public void clickOnLogout() {
+		wait(2);
 			click(lblTitle);
 			click(btnLogout);
 			click(lblYes);
