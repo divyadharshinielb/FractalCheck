@@ -25,9 +25,9 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
-		<!--		<class
+				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" />
-			<class
+		<!--	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" /> -->
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
