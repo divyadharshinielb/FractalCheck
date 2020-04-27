@@ -89,6 +89,7 @@ click(viewAll);
 }
 
 public void clickOnsettings() {
+	wait(5);
 click(settings);
 }
 
