@@ -216,6 +216,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 		elementExist(catalogName);
 	}
 	public void clickCompleted() {
+		wait(5);
 		click(getObj(tabCompleted));
 		wait(5);
 	}
@@ -226,9 +227,10 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	}
 	
 	public void verifyInProgress() {
-		wait(3);
+		wait(10);
 		click(btnMenu);
 		click(linkMyLearning);
+		wait(5);
 		verifyText("IN PROGRESS", getObj(lblInprogress));
 	}
 	public void clickNotification() {
@@ -330,13 +332,13 @@ public class MAMyLearningInProPage extends FractalAppPage {
 		return status;
 	}
 	public void verifyGridView() {
-		wait(5);
+		wait(10);
 		click(getObj(gridView));
 		wait(5);
 		elementExist(gridViewCheck);
 	}
 	public void verifyListView() {
-		wait(5);
+		wait(10);
 		click(getObj(listView));
 		wait(5);
 		elementExist(listViewCheck);
