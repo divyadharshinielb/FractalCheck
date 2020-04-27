@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -77,10 +78,9 @@ public class AccountPage extends FractalBasePage {
 		wait(5);
 		enterData(getLabel("newPass"), txtboxNewPass);
 		wait(5);
-		WebElement element = driver.findElement(By.xpath(".//input[contains(@class,'save-button')]")); 
-		Actions actions = new Actions(driver); 
-		actions.moveToElement(element);
-		actions.perform();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(By.xpath(".//input[contains(@class,'save-button')]"));
+		js.executeScript("arguments[0].scrollIntoView();", Element);
 		wait(5);
 		click(btnSave);
 		verifyErrorMessage();
@@ -114,10 +114,9 @@ public class AccountPage extends FractalBasePage {
 		String[] inpArray= {"1111","!@#"};
 		for(int i=0;i<inpArray.length;i++) {
 			enterData(inpArray[i], objLoc);
-			WebElement element = driver.findElement(By.xpath(".//input[contains(@class,'save-button')]")); 
-			Actions actions = new Actions(driver); 
-			actions.moveToElement(element);
-			actions.perform();
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			WebElement Element= driver.findElement(By.xpath(".//input[contains(@class,'save-button')]"));
+			js.executeScript("arguments[0].scrollIntoView();", Element);
 			wait(5);
 			click(btnSave);
 			status=elementExist(fNameErrorOnlyLetters);
