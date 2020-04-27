@@ -12,18 +12,10 @@ import com.origin.fractal.testauto.steps.GlobalSteps;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestGlobalSearch extends FractalBaseWebTest {
-	@DataProvider
-	public  Object[][] browers() {
-		return new Object[][] {
-			new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" } 
-//		 new Object[] { "4", "ie11" }
-		};
-	}
+	
 
 	
-	@Test(dataProviderClass = DataManager.class, groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify Global Search with catalog Items and Learning Objects")
 	public void GlobalSearchUsingCatalogandLearningObjects(String row, String strBrowserName) {
