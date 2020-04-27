@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class ClassroomEventPage extends FractalBasePage{
 
-	private By FirstListItem = By.xpath(".//a[contains(text(), 'Automation classroom')]");//span[contains(text(),'Added on')]
+	private By FirstListItem = By.xpath(".//a[contains(text(),'Neet Training')]");//a[contains(text(), 'Automation classroom')]//span[contains(text(),'Added on')]
 	private By btnAddEvent = By.xpath(".//button[contains(text(),'Add Event')]");//.//h4[contains(text(),'Events')]/../../*//button[contains(text(),'Add Event')]
 	private By eventPageTitle = By.xpath(".//h4[contains(text(),'New Event')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'Continue')]");//button[contains(text(),'Continue')]
@@ -371,10 +371,12 @@ public class ClassroomEventPage extends FractalBasePage{
 */ }
 	public void verifyPostSurveyDetails() {
 	wait(2);
-	WebElement element = driver.findElement( By.id("postsurvey_title")); Actions
-	actions = new Actions(driver); actions.moveToElement(element);
-	actions.perform();
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebElement Element= driver.findElement(By.id("postsurvey_title"));
+	js.executeScript("arguments[0].scrollIntoView();", Element);
+	wait(5);
 	click(lblPostSurvey);
+	wait(2);
 	verifyText("Add Survey",btnPostAddSurvey);
 	}
 	public void verifyPostAddSurveyButton() {
@@ -401,6 +403,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Start Reminder for assignment evaluation days before due date",lblReminderEval);
 	}
 	public void verifyNotifAndReminderFieldsAcceptsAlphabets() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(inpSendNotif);
+		js.executeScript("arguments[0].scrollIntoView();", Element);
 	enterData("abc",inpSendNotif);
 	enterData("abc",inpRepeatNotif);
 	enterData("abc",inpStartReminder);
@@ -469,6 +474,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(selectTimezone);
 //		enterData("35",inpAvgScore);
 //		click(lblSession);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebElement Element= driver.findElement(dropdownSelectInstructor);
+	js.executeScript("arguments[0].scrollIntoView();", Element);
 	wait(2);
 	click(dropdownSelectInstructor);
 	verifyText("Select Instructor",insDropdoenAlertMshg);
