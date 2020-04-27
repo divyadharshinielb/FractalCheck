@@ -58,7 +58,16 @@ public class MASelectInstancePage extends FractalAppPage {
 	}
 	
 	public void selectFractal() {
-		if(elementExist(insFractal))
+		for(int i=1;i<=6;i++)
+		{
+			try {
+				click(getObj(insFractal));
+			}
+			catch(Exception e) {
+				swipeInstances();
+			}
+		}
+	/*	if(elementExist(insFractal))
 		{
 		click(getObj(insFractal));
 		}
@@ -90,7 +99,7 @@ public class MASelectInstancePage extends FractalAppPage {
 	}
 
 		
-	}
+	*/}
 	
 	public void selectFractalDemo() {
 		wait(3);
