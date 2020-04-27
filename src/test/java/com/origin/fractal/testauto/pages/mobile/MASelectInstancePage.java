@@ -16,6 +16,10 @@ public class MASelectInstancePage extends FractalAppPage {
 	private By insFractalDemo = By.xpath("//android.widget.ImageView[@content-desc='Fractal Demo']");
 	private By insCogScale= By.xpath("//android.widget.ImageView[@content-desc=\"CognitiveU\"]");
 	private By insMuleSoft = By.xpath("//android.widget.ImageView[@content-desc=\"MuleSoft\"]");
+	private By insWV= By.xpath("//android.widget.ImageView[@content-des=\"Winvinaya Foundation\"]");
+	private By insGE= By.xpath("//android.widget.ImageView[@content-des=\"EHS\"]");
+	private By inseWOW=By.xpath("//android.widget.ImageView[@content-des=\"eWOW\"]");
+	private By insJuniper= By.xpath("//android.widget.ImageView[@content-des=\"DT:Juniper\"]");
 	private By lblMyLearning = By.id("com.originkonnect.app:id/action");
 	private By btnMenu = By.id("com.originkonnect.app:id/action_bar_back");
 	private By insChangeBtn = By.id("com.originkonnect.app:id/change_client");
@@ -97,6 +101,32 @@ public class MASelectInstancePage extends FractalAppPage {
 			wait(5);
 			}
 			print("Mulesoft");
+		}
+		else if(elementExist(insWV))
+		{
+		swipeInstances();
+		if(elementExist(insGE))
+		{
+			swipeInstances();
+		}
+		else
+		{
+			click(getObj(insCogScale));
+			wait(5);
+		}
+		}
+		else if(elementExist(inseWOW))
+		{
+			swipeInstances();
+			if(elementExist(insJuniper))
+			{
+				swipeInstances();
+			}
+			else
+			{
+				click(getObj(insCogScale));
+				wait(5);
+			}
 		}
 		/*else {
 			click(getObj(insCogScale));
