@@ -74,13 +74,8 @@ public class MASelectInstancePage extends FractalAppPage {
 	public void selectCogscale() {
 		for(int i=1;i<=6;i++) {
 			try {
-				if(elementExist(insCogScale))
-				{
-					click(getObj(insCogScale));
-				}
-				else {
-					print("element not there");
-				}
+				
+			 click(getObj(insCogScale));
 			}
 			catch(Exception e) {
 				swipeInstances();
