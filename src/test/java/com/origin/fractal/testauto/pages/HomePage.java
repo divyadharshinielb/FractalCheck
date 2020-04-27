@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -336,10 +337,9 @@ public class HomePage extends FractalBasePage {
 	/*	wait(5);
 		click(homeLink);
 	*/	
-	WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'VIEW ALL')]"));
-	Actions actions = new Actions(driver);
-	actions.moveToElement(element);
-	actions.perform();
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	WebElement Element= driver.findElement(By.xpath(".//a[contains(text(),'VIEW ALL')]"));
+	js.executeScript("arguments[0].scrollIntoView();", Element);
 	wait(5);
 		click(whatsNewLinkViewAll);
 		wait(5);
@@ -363,10 +363,10 @@ public class HomePage extends FractalBasePage {
 		verifyLabel("lblPrivacy",privacyLink);
 		verifyLabel("lblTerms",termsLink);
 		verifyLabel("lblContacts",contactsLink);
-		WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
-		Actions actions = new Actions(driver);
-		actions.moveToElement(element);
-		actions.perform();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		wait(5);
 		wait(10);
 /*		
 		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
@@ -380,20 +380,20 @@ public class HomePage extends FractalBasePage {
 		click(contactsLink);
 		verifyLabel("contactsPage",contactsPage);
 		wait(5);
-		WebElement element1 = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
-		Actions actions1= new Actions(driver);
-		actions.moveToElement(element1);
-		actions1.perform();
+		JavascriptExecutor js1 = (JavascriptExecutor) driver;
+		WebElement Element1= driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]"));
+		js1.executeScript("arguments[0].scrollIntoView();", Element1);
+		wait(5);
 		wait(5);
 		click(privacyLink);
 		verifyLabel("privacyPage",privacyPage);
 	}
 	/*Ends- added by Manju Priya A on Nov-29-18*/
 	public void	whatsNewSectionAttributes() {
-		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'VIEW ALL')]"));
-		Actions actions= new Actions(driver);
-		actions.moveToElement(element);
-		actions.perform();
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(By.xpath(".//a[contains(text(),'VIEW ALL')]"));
+		js.executeScript("arguments[0].scrollIntoView();", Element);
 		wait(5);
 		click(lblViewAllRcntAdded);
 		wait(2);

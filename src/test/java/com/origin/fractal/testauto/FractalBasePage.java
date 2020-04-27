@@ -532,9 +532,10 @@ click(wishListBtn);
 }
 
 public void verifyMyLearningPage() {
-WebElement element = driver.findElement( By.xpath("//a[contains(text(),'MY LEARNING')]")); Actions
-actions = new Actions(driver); actions.moveToElement(element);
-actions.perform();
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+WebElement Element= driver.findElement(By.xpath("//a[contains(text(),'MY LEARNING')]"));
+js.executeScript("arguments[0].scrollIntoView();", Element);
 wait(5);
 click(lblMyLearning);
 System.out.println("MyLearning page is displayed");
