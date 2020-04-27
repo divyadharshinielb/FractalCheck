@@ -426,10 +426,9 @@ public class HomePage extends FractalBasePage {
 	
 	public void verifyNextBtn() {
 		
-		WebElement element = driver.findElement(By.xpath("//div[@class='slider-control-centerright']//div//img"));
-		Actions actions = new Actions(driver);
-		actions.moveToElement(element);
-		actions.perform();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(By.xpath("//div[@class='slider-control-centerright']//div//img"));
+		js.executeScript("arguments[0].scrollIntoView();", Element);
 		wait(10);
 		click(nextButton);
     }
