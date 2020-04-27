@@ -72,7 +72,21 @@ public class MASelectInstancePage extends FractalAppPage {
 		click(getObj(insFractalDemo));	
 	}
 	public void selectCogscale() {
-		if(elementExist(insCogScale))
+		for(int i=1;i<=6;i++) {
+			try {
+				if(elementExist(insCogScale))
+				{
+					click(getObj(insCogScale));
+				}
+				else {
+					print("element not there");
+				}
+			}
+			catch(Exception e) {
+				swipeInstances();
+			}
+		}
+	/*	if(elementExist(insCogScale))
 			{
 			click(getObj(insCogScale));
 			}
@@ -135,7 +149,7 @@ public class MASelectInstancePage extends FractalAppPage {
 			click(getObj(insCogScale));
 			wait(5);
 		}
-		/*else {
+	*/	/*else {
 			click(getObj(insCogScale));
 		}*/
 		
