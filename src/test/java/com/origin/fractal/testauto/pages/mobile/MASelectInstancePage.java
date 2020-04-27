@@ -78,16 +78,18 @@ public class MASelectInstancePage extends FractalAppPage {
 			}
 		
 		else if(elementExist(insFractal))
-			{
+		{
 				swipeInstances();
-				if (elementExist(insMuleSoft))
+			if (elementExist(insMuleSoft))
 				{
 				swipeInstances();
 				}
+			else {
 				click(getObj(insCogScale));
 				wait(5);
 				print("Fractal");
-			}
+			    }
+		}
 		else if(elementExist(insMuleSoft))
 		{
 			swipeInstances();
@@ -104,29 +106,34 @@ public class MASelectInstancePage extends FractalAppPage {
 		}
 		else if(elementExist(insWV))
 		{
-		swipeInstances();
-		if(elementExist(insGE))
-		{
-			swipeInstances();
-		}
-		else
-		{
-			click(getObj(insCogScale));
-			wait(5);
-		}
+		        swipeInstances();
+				if(elementExist(insGE))
+				{
+					swipeInstances();
+				}
+				else
+				{
+					click(getObj(insCogScale));
+					wait(5);
+				}
 		}
 		else if(elementExist(inseWOW))
 		{
-			swipeInstances();
-			if(elementExist(insJuniper))
-			{
 				swipeInstances();
-			}
-			else
-			{
-				click(getObj(insCogScale));
-				wait(5);
-			}
+				if(elementExist(insJuniper))
+				{
+					swipeInstances();
+				}
+				else
+				{
+					click(getObj(insCogScale));
+					wait(5);
+				}
+		}
+		else {
+			swipeInstances();
+			click(getObj(insCogScale));
+			wait(5);
 		}
 		/*else {
 			click(getObj(insCogScale));
