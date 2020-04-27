@@ -88,12 +88,24 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifySubMenu() {
-
+         wait(5);
 		verifyLabel("lblAll", lblAll);
+		if(elementExist(lblCourses)) {
 		verifyLabel("lblCourses", lblCourses);
+		}
+		  wait(5);
+		if(elementExist(lblResources)) {
 		verifyLabel("lblResources", lblResources);
+		}
+		  wait(5);
+		if(elementExist(lblBundles)) {
 		verifyLabel("lblBundles", lblBundles);
+		}
+		  wait(5);
+		if(elementExist(lblLearningpath)) {
 		verifyLabel("lblLearningPaths",lblLearningpath);
+		}
+		  wait(5);
 	}
 
 	
@@ -258,13 +270,15 @@ public class MyLearningPage extends FractalBasePage {
 		}
 		}
 	public void verifyCourseContents() {
+		if(elementExist(lblCourses)) {
 		click(lblCourses);
 		wait(5);
 		scrollToElement(clickCatalog);
 		wait(5);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
-	}
+		}
+		}
 
 	public void verifyLaunch() {
 		click(clickCatalog);

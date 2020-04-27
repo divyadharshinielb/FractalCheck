@@ -18,7 +18,7 @@ public class ClassroomPage extends FractalBasePage {
 	private By categoriesDropDown = By.xpath("//li[contains(text(),'All Categories')]");
 	private By addClassroomBtn = By.xpath("//button[contains(text(),'Add Classroom')]");
 	private By lblNoRecordsFoundText = By.xpath("//div[contains(text(),'No Records Found')]");
-	private By closeBtn = By.xpath("//html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/button[1]/i[1]");
+	private By closeBtn = By.xpath("//i[contains(@class,'text-right font-size-35 padding-r-30 padding-t-10')]");
 	private By addEventBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[@title='Add Event']");
 	private By editBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[@title='Edit']");
 	private By deleteBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[ @title='Delete']");
@@ -141,10 +141,10 @@ public class ClassroomPage extends FractalBasePage {
 		wait(5);
 		click(mandatoryOkBtn);
 		wait(5);
-		verifyText("Classroom Title required",classroomNameReqText);
-		verifyText("Traditional classroom venue selection required",venueNameReqText);
-		verifyText("Classroom category selection required",classroomCategoryReqText);
-		verifyText("Classroom description required",classroomDescriptionReqText);
+		verifyText("Classroom title required.",classroomNameReqText);
+		verifyText("Traditional classroom venue selection required.",venueNameReqText);
+		verifyText("Classroom category selection required.",classroomCategoryReqText);
+		verifyText("Classroom description required.",classroomDescriptionReqText);
 		wait(5);	
 		click(closeBtn);
 		wait(5);
@@ -316,6 +316,8 @@ public class ClassroomPage extends FractalBasePage {
 		wait(2);
 		enterData("qwetewtwr",lblDescription);
 		wait(2);
+		//scrollToElement(lblVirtualClassroom);
+		wait(2);
 		click(lblSelectVenue);
 		wait(5);
 		click(classroomDropDown1);
@@ -348,7 +350,6 @@ public class ClassroomPage extends FractalBasePage {
 //		wait(2);
 //		click(classroomDropDown5);
 //        wait(5);
-    
 		wait(2);
 		click(classroomDropDown5);
 		wait(2);

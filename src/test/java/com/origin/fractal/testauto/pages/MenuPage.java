@@ -17,13 +17,13 @@ public class MenuPage extends FractalBasePage{
 	private By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[contains(@title,'Menu')]");
 	private By btnPayment = By.xpath("//a[@href='#payment/settings']//i[@data-icon='P']");
 	private By btnScroll= By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/ng-include[1]/div[2]/ul[1]/li[7]/ul[1]/div[1]/div[2]/div[1]");
-	private By btnDropDown1 =By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div[1]/md-input-container[1]/div[1]");
-	private By btnPaypal = By.xpath("//md-input-container[1]/div[1]/ul/li[@data-value='paypal']");
-	private By btnSave =By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div/*/button[contains(text(),'Save')]");
+	private By btnDropDown1 =By.xpath("//span[contains(text(),'Paytm')]");
+	private By btnPaypal = By.xpath("//li[contains(text(),'PayPal')]");//md-input-container[1]/div[1]/ul/li[@data-value='paypal']
+	private By btnSave =By.xpath("//button[@id='submit']");//html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div/*/button[contains(text(),'Save')]
 	private By btnSettings=By.xpath("//div[@class='icon dripicons-gear']");
-	private By clientText=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div[3]/md-input-container[1]/input[1]");
-	private By emailText=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div[4]/md-input-container[1]/input[1]");
-	private By clientSecretText=By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div[5]/md-input-container[1]/input[1]");
+	private By clientText=By.xpath("//input[contains(@name,'username')]"); //html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div[3]/md-input-container[1]/input[1]
+	private By emailText=By.xpath("//input[contains(@name,'email')]"); //html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div[4]/md-input-container[1]/input[1]
+	private By clientSecretText=By.xpath("//input[contains(@name,'password')]");//html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div[5]/md-input-container[1]/input[1]
 	private By globalSearch=By.xpath("//input[@placeholder='Search']");
 	private By lblErrorMsg=By.xpath("//div[contains(@class,'text-danger ng-scope')]");
 	private String reboxBtn="//ng-include[1]/div[1]/div[2]/div";
@@ -47,12 +47,15 @@ public class MenuPage extends FractalBasePage{
 		click(manageContents);
 	}
 	public void gotoPaymentConfiguration() {
+		wait(5);
 		click(btnSettings);
 		//	click(btnScroll);
 		  wait(2);
-		    WebElement element = driver.findElement( By.xpath("//a[@href='#payment/settings']//i[@data-icon='P']")); Actions
-		    actions = new Actions(driver); actions.moveToElement(element);
-		    actions.perform();
+//		    WebElement element = driver.findElement( By.xpath("//a[@href='#payment/settings']//i[@data-icon='P']")); Actions
+//		    actions = new Actions(driver); actions.moveToElement(element);
+//		    actions.perform();
+		    wait(2);
+		    scrollToElement(By.xpath("//a[@href='#payment/settings']//i[@data-icon='P']"));
 		    wait(2);
 			click(btnPayment);
 			wait(10);
@@ -61,9 +64,14 @@ public class MenuPage extends FractalBasePage{
 			click(btnPaypal);
 			wait(10);
 			enterData("AYgAXxd1WKn1QKyhdpesNV2jqY5eQqIyN7f5ywO3dy4eRAoQSvXwIKajXkw6ZFlFBvaixe56TKa-RFz8",clientText);
-		    enterData("rashim-facilitator@gmail.com",emailText);
+		   wait(5);
+			enterData("rashim-facilitator@gmail.com",emailText);
+			wait(5);
 		    enterData("EMKzG8XxRDcFb0ckn4raTWnJde9JG_LQVgzYOeFw7a2O7fLM_PoFu7cXlqZ53PsgmozsVINVPEN_UknH",clientSecretText);
-			click(btnSave);
+			wait(5);
+			scrollToElement(btnSave);
+			wait(5);
+		    click(btnSave);
 	}
 	//****Devlopement in progress***//
 	public void searchFieldAsset() {
