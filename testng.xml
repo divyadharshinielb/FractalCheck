@@ -11,7 +11,7 @@
 	<!-- End of reportNg modification -->
 	<test thread-count="19" name="Test" >
 		<classes>
-				<class
+			<!--	<class
 name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
@@ -24,8 +24,6 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
-<class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
@@ -33,7 +31,7 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" />
 name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
-<!--<class
+<class
 name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
@@ -42,9 +40,12 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" />
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />-->
+name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
+name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />-->
+<class
+name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
+
 				
 		</classes>
 	</test> <!-- Test -->
