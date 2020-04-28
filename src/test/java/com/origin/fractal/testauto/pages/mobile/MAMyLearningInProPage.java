@@ -222,14 +222,15 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	}
 	
 	public void clickMenu() {
-	    wait(10);
+	    wait(25);
 		click(getObj(btnMenu));
 		wait(5);
 	}
 	
 	public void verifyInProgress() {
-		wait(10);
+		wait(25);
 		click(btnMenu);
+		wait(5);
 		click(linkMyLearning);
 		wait(5);
 		verifyText("IN PROGRESS", getObj(lblInprogress));
@@ -333,13 +334,13 @@ public class MAMyLearningInProPage extends FractalAppPage {
 		return status;
 	}
 	public void verifyGridView() {
-		wait(10);
+		wait(25);
 		click(getObj(gridView));
 		wait(5);
 		elementExist(gridViewCheck);
 	}
 	public void verifyListView() {
-		wait(10);
+		wait(25);
 		click(getObj(listView));
 		wait(5);
 		elementExist(listViewCheck);
