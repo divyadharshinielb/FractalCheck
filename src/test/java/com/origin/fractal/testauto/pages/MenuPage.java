@@ -12,7 +12,7 @@ public class MenuPage extends FractalBasePage{
 	private By userIcon = By.xpath(".//a[@id='dLabel']");
 	private By lblLogout = By.xpath(".//a[contains(text(),'Logout')]");
 	private By manageContents = By.xpath("//span[contains(text(),'Manage Content')]");
-	private By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[contains(@title,'Menu')]");
+	private By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[@class='menu-icon']");
 	private By btnPayment = By.xpath("//a[@href='#payment/settings']//i[@data-icon='P']");
 	private By btnScroll= By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/ng-include[1]/div[2]/ul[1]/li[7]/ul[1]/div[1]/div[2]/div[1]");
 	private By btnDropDown1 =By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/form[1]/div[1]/div[1]/md-input-container[1]/div[1]");
@@ -39,12 +39,14 @@ public class MenuPage extends FractalBasePage{
 		click(lblLogout);
 	}
 	public void clickMenu() {
+		wait(5);
 		click(btnMenu);
 	}
 	public void gotoManageContents() {
 		click(manageContents);
 	}
 	public void gotoPaymentConfiguration() {
+		wait(5);
 		click(btnSettings);
 		//	click(btnScroll);
 		    wait(2);
