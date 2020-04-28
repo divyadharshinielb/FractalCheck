@@ -608,6 +608,10 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	enterData("10",lblCalendarHour);
 	wait(5);
+	JavascriptExecutor js1 = (JavascriptExecutor) driver;
+	WebElement Element1= driver.findElement(lblCalendarMinute);
+	js1.executeScript("arguments[0].scrollIntoView();", Element1);
+	wait(5);
 	enterData("50",lblCalendarMinute);
 	wait(5);
 	click(lblPm);
