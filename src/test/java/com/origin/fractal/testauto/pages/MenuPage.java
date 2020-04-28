@@ -39,7 +39,7 @@ public class MenuPage extends FractalBasePage{
 		click(lblLogout);
 	}
 	public void clickMenu() {
-		wait(5);
+		wait(10);
 		click(btnMenu);
 	}
 	public void gotoManageContents() {
