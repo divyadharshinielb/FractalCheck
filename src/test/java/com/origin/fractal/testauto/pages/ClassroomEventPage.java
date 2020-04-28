@@ -113,6 +113,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	click(closeModel);
 	}
 	public void clickOnClassroomItem() {
+		wait(5);
 	click(FirstListItem);
 	}
 	public void verifyAddEventPageOpened() {
@@ -455,6 +456,10 @@ public class ClassroomEventPage extends FractalBasePage{
 	js.executeScript("arguments[0].scrollIntoView();", Element);
 	wait(2);
 	enterData("10",lblCalendarHour);
+	JavascriptExecutor js1 = (JavascriptExecutor) driver;
+	WebElement Element1= driver.findElement(lblCalendarMinute);
+	js1.executeScript("arguments[0].scrollIntoView();", Element1);
+	wait(2);
 	enterData("50",lblCalendarMinute);
 	click(lblPm);
 	wait(2);
