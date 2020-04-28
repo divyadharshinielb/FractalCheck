@@ -94,7 +94,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 	}
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_27,28,29,30,31,32,61:"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_27,28,29,30,31,32,61:"
 			+ "Verification of My Learning page"
 			+ "27: Verify whether the user able be  to access the My Learning page"
 			+ "28:Verify whether the user able be  to navigate correctly in both In progress and Completed Tabs."
@@ -136,7 +136,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 	}
-	@Test(groups = { "pilot" }, enabled = false, description = "TCID_:Verification of My Account page"
+	@Test(groups = { "pilot" }, enabled = true, description = "TCID_:Verification of My Account page"
 			+ "61: Verifying whether the user details are displayed correctly in the My Account page"
 			+ "62: Verifying whether the first  and last name accespts space"
 			+ "63: Verifying whether the first  and last name accespts number"
