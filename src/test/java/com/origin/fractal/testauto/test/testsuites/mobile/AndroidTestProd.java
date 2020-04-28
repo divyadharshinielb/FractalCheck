@@ -39,7 +39,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_078,Verifying whether the user can able to logout successfully on clicking the logout button, " +  mAMnuSteps.getResult() );
 		
 	}
-	@Test(groups = { "LoginPage0" }, enabled = true, description = "Combined mobile test")
+	@Test(groups = { "LoginPage0" }, enabled = false, description = "Combined mobile test")
 	public void LoginPage() {
 		System.out.println("TCID_002,003,004,005,006: Verification of Login Page");
 		appDriver = AppFactory.getAndroidApp();
@@ -70,7 +70,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		maForgotPasswordSteps.verifyForgotPassword();
 		Reporter.writeSummary("TCID_006, Verify forgot password link available on login page, " +  maForgotPasswordSteps.getResult());
 	}
-	@Test(groups = { "pilot" }, enabled = false, description = "TCID_25:Verification of Menus page"
+	@Test(groups = { "pilot" }, enabled = true, description = "TCID_25:Verification of Menus page"
 			+ "25: Verify the Menu functionality is working fine")
 	public void verifyMenuPage() {
 		appDriver = AppFactory.getAndroidApp();
