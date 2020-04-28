@@ -18,7 +18,7 @@ import io.appium.java_client.MobileElement;
 
 public class AndroidTestProd extends FractalBaseAppTest{
 	private AppiumDriver<MobileElement> appDriver;
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_01:Verification of Splash Screen"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_01:Verification of Splash Screen"
 		+ "TCID_01: Verify the splash screen after login to the application,")
 		public void verifySplashScreen() {
 		System.out.println("---------------------------------------verifySplashScreen-------------------------------");
@@ -39,7 +39,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_078,Verifying whether the user can able to logout successfully on clicking the logout button, " +  mAMnuSteps.getResult() );
 		
 	}
-	@Test(groups = { "LoginPage0" }, enabled = false, description = "Combined mobile test")
+	@Test(groups = { "LoginPage0" }, enabled = true, description = "Combined mobile test")
 	public void LoginPage() {
 		System.out.println("TCID_002,003,004,005,006: Verification of Login Page");
 		appDriver = AppFactory.getAndroidApp();
