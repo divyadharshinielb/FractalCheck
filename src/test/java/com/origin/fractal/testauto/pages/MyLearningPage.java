@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -114,6 +115,10 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyCatalogDetails() {
 		/**added here 1/30/2019**/
 		wait(5);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(clickCatalog);
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		wait(2);
 		click(clickCatalog);
 		/***/
 		verifyPartialLabelText("lblUpdatedOn", lblCatlogCategory);
@@ -221,6 +226,10 @@ public class MyLearningPage extends FractalBasePage {
 		if(elementExist(lblBundles)) {
 		click(lblBundles);
 		wait(5);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(clickCatalog);
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
 		}
@@ -228,11 +237,19 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyCourseContents() {
 		click(lblCourses);
 		wait(5);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(clickCatalog);
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
 	}
 
 	public void verifyLaunch() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(clickCatalog);
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		wait(2);
 		click(clickCatalog);
 		launchCheck(lobjpath1,lobjpath2,lobjName);
 	}
