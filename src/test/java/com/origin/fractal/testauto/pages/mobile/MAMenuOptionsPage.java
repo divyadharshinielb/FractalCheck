@@ -76,9 +76,9 @@ public class MAMenuOptionsPage extends FractalAppPage {
 	}
 	
 	public void clickOnLogout() {
-		wait(3);
+		wait(10);
 		click(getObj(btnLogout));
-		wait(5);
+		wait(10);
 		click(getObj(btnLogoutYes));
 
 	}

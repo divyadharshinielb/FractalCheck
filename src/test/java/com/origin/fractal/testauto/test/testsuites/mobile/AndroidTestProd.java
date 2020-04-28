@@ -29,6 +29,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		maLoginSteps.doLogin();	
 		mASIS.selectFractal();
+		wait(5);
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen
@@ -56,6 +57,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		wait(5);
 		maLoginSteps.doLogin();
 		mASIS.selectFractal();
+		wait(5);
 		Reporter.writeSummary("TCID_002,  Verify user is able to login for origin fractal app with valid user name and password., " +  maLoginSteps.getResult() );
 		
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
@@ -83,6 +85,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		wait(5);
 		//mAWNS.clickLater();
 		mASIS.selectFractal();
+		wait(5);
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
@@ -112,6 +115,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mASIS.swipeInstances();*/
 
 		mASIS.selectFractal();
+		wait(5);
 		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		mAWNS.validateWhatsNewPage();
 		mAWNS.clickLater();
@@ -146,12 +150,13 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		maLoginSteps.doLogin();		
 		mASIS.selectFractal();
+		wait(5);
 		// Select Instance Screen
 		//mASIS.selectFractalDemo();
 		// What's New Screen MAWhatsNewSteps
 		MAWhatsNewSteps mAWNS = new MAWhatsNewSteps(appDriver);
 		wait(5);
-	//	mAWNS.clickLater();
+		mAWNS.clickLater();
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen
@@ -195,6 +200,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		maLoginSteps.doLogin();	
 		mASIS.selectFractal();
+		wait(5);
 		// My Learning Screen
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen
