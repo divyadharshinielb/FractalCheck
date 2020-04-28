@@ -33,6 +33,7 @@ public class MAWhatsNewPage extends FractalAppPage {
 		wait(3);
 		verifyText("WHAT'S NEW?", getObj(txtWhatsNew));
 		click(getObj(btnLater));
+		System.out.println("clicked");
 		}
 
 	}
