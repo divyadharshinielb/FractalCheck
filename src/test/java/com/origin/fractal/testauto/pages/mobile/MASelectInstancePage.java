@@ -11,7 +11,7 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class MASelectInstancePage extends FractalAppPage {
 	private By txtSelectSub = By.id("com.originkonnect.app:id/textView3");
-	private By insFractal = By.xpath("//android.widget.ImageView[@content-desc='Fractal']");
+	private By insFractal = By.xpath("//android.widget.ImageView[@content-desc='Origin Learning']");
 	
 	private By insFractalDemo = By.xpath("//android.widget.ImageView[@content-desc='Fractal Demo']");
 	private By insCogScale= By.xpath("//android.widget.ImageView[@content-desc=\"CognitiveU\"]");
