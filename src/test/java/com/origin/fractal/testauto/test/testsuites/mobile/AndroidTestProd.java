@@ -128,12 +128,12 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_030,Verify the Catalog items are displayed in an Grid View format on clicking the Grid view icon, " +  mAMLS.getResult() );
 		mAMLS.verifyListView();
 		Reporter.writeSummary("TCID_029,Verify the Catalog items are displayed in an List View format on clicking the List view icon, " +  mAMLS.getResult() );
-	//	mAMLS.clickCompleted();
+		mAMLS.clickCompleted();
 		Reporter.writeSummary("TCID_031,Verify the  content which are not completed is displayed in the In Progress Tab, " +  mAMLS.getResult() );
 		
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 		wait(5);
-		mAMLS.clickMenu();
+		mAMLS.clickMenu1();
 		mAMnuSteps.clickOnLogout();
 	}
 	@Test(groups = { "pilot" }, enabled = true, description = "TCID_:Verification of My Account page"
@@ -161,7 +161,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
-		mAMLS.clickMenu();
+		mAMLS.clickMenu1();
 		mAMnuSteps.clickOnMyAccount();
 		//My Account Screen
 		MAMyAccountSteps mMyAcc = new MAMyAccountSteps(appDriver);

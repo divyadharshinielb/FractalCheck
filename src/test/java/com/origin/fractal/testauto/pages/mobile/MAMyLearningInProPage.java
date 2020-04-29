@@ -230,6 +230,12 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	    click(getObj(btnMenu));
 		wait(5);
 	}
+	public void clickMenu1() {
+		wait(5);
+		click(getObj(btnMenu));
+		wait(5);
+	}
+	
 	
 	public void verifyInProgress() {
 		wait(25);

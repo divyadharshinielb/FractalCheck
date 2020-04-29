@@ -45,6 +45,15 @@ public class MAMyLearningInProSteps extends FractalBaseStep{//extends by Jan_16_
 			e.printStackTrace();
 		}
 	}
+	public void clickMenu1() {
+		result="Passed";
+		try {
+			page.clickMenu1();
+		}catch(Exception e) {
+			result = "FAILED";
+		 e.printStackTrace();
+		}
+	}
 	public void verifyInProgress() {
 		result = "Passed";
 		try {
