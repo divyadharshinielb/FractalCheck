@@ -425,9 +425,11 @@ public class MyLearningPage extends FractalBasePage {
 			 	    //code to check for multiplecategories in mylearning completed list view
 			 	    click(lblMyLearning);
 			 	    wait(6);
-			 	    click(lblListView);
+			 	   click(searchbar);
+			 	    enterData("checkmultiplechoice",searchbar);
+			 	/*    click(lblListView);
 				    wait(5);
-			 	    WebElement element = driver.findElement( By.xpath("(//span[@class='r-border'])[1]")); //div[@id='react-tabs-1']/div[1]/div[1]/div[1]/div[3]/div[1]/a[6]/div[1]/div[1]/div[1]/div[1]
+			 	 */   WebElement element = driver.findElement( By.xpath("(//span[@class='r-border'])[1]")); //div[@id='react-tabs-1']/div[1]/div[1]/div[1]/div[3]/div[1]/a[6]/div[1]/div[1]/div[1]/div[1]
 			 	    wait(4);
 			 	    Actions actions = new Actions(driver); actions.moveToElement(element);
 			 	    actions.perform();
