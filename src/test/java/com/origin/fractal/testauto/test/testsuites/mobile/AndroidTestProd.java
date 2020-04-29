@@ -70,7 +70,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		maForgotPasswordSteps.verifyForgotPassword();
 		Reporter.writeSummary("TCID_006, Verify forgot password link available on login page, " +  maForgotPasswordSteps.getResult());
 	}
-	@Test(groups = { "pilot" }, enabled = true, description = "TCID_25:Verification of Menus page"
+	@Test(groups = { "pilot" }, enabled = false, description = "TCID_25:Verification of Menus page"
 			+ "25: Verify the Menu functionality is working fine")
 	public void verifyMenuPage() {
 		appDriver = AppFactory.getAndroidApp();
