@@ -226,7 +226,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	    if(elementExist(By.id("com.originkonnect.app:id/r1"))) {
 	    click(By.id("com.originkonnect.app:id/empty_space_top"));
 	    }
-        wait(10);
+        wait(20);
 	    click(getObj(btnMenu));
 		wait(5);
 	}
