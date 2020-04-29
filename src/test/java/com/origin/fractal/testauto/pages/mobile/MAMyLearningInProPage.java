@@ -222,8 +222,10 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	}
 	
 	public void clickMenu() {
-	    wait(25);
-		click(getObj(btnMenu));
+	    wait(10);
+	    click(By.id("com.originkonnect.app:id/empty_space_top"));
+        wait(15);
+	    click(getObj(btnMenu));
 		wait(5);
 	}
 	
