@@ -205,7 +205,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
-		mAMLS.clickMenu();
+		mAMLS.clickMenu3();
 		mAMnuSteps.clickOnLogout();
 		Reporter.writeSummary("TCID_078,Verifying whether the user can able to logout successfully on clicking the logout button, " +  mAMnuSteps.getResult() );
 		
