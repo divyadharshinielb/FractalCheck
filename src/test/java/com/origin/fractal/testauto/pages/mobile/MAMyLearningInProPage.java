@@ -34,7 +34,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	private By catalogName = By.id("com.originkonnect.app:id/contentname");
 	
 	private By btnNotification = By.id("com.originkonnect.app:id/notification");
-	private By  txtWhatsnew= By.id("com.originkonnect.app:id/textView1");
+	//private By  txtWhatsnew= By.id("com.originkonnect.app:id/textView1");
 	private By  btnMore= By.id("com.originkonnect.app:id/more");
 	private By  elements= By.xpath(".//android.widget.ListView/android.widget.RelativeLayout");
 	private By  btnBack= By.id("com.originkonnect.app:id/imageView15");
@@ -170,7 +170,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 			tabCompleted = By.id("COMPLETED");
 			btnMenu = By.xpath("//XCUIElementTypeImage[@name='menuButton']/../XCUIElementTypeButton[1]");
 			/*Starts - added by Manju Priya A on Dec-26-18*/
-			txtWhatsnew = By.xpath("//XCUIElementTypeImage[@name=\"notification_bg\"]/../XCUIElementTypeStaticText[2]");
+	//		txtWhatsnew = By.xpath("//XCUIElementTypeImage[@name=\"notification_bg\"]/../XCUIElementTypeStaticText[2]");
 			btnNotification = By.xpath("//XCUIElementTypeButton[contains(@name,'notificationIcon grey')]");
 			btnMore = By.xpath("//XCUIElementTypeStaticText[contains(@value,'MORE')]");
 			elements = By.xpath("//XCUIElementTypeStaticText[@name='NOTIFICATIONS']/../../XCUIElementTypeTable/XCUIElementTypeCell");
@@ -245,7 +245,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	}
 	public void verifyNotification() {
 		wait(3);
-		verifyText("WHAT'S NEW?", getObj(txtWhatsnew));
+	//	verifyText("WHAT'S NEW?", getObj(txtWhatsnew));
 	}
 
 	public void verifyMoreButton() {
