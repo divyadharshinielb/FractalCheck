@@ -12,10 +12,10 @@
 	<test thread-count="18" name="Test" >
 		<classes>
 		  <!--     <class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" /> -->
 		       <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" /> 
-				<class
+			<!--	<class
 				 name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />  -->
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
