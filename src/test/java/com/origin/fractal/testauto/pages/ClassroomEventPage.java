@@ -377,10 +377,11 @@ public class ClassroomEventPage extends FractalBasePage{
 	js.executeScript("arguments[0].scrollIntoView();", Element);
 	wait(5);
 	click(lblPostSurvey);
-	wait(2);
+	wait(10);
 	verifyText("Add Survey",btnPostAddSurvey);
 	}
 	public void verifyPostAddSurveyButton() {
+		wait(2);
 	verifyText("Add Survey",btnPostAddSurvey);
 	}
 	public void verifyPostAddSurveyFormFields() {
