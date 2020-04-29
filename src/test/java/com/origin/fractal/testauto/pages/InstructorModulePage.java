@@ -170,6 +170,7 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(lblUpcoming);
 		wait(2);
+		if (elementExist(lblUpcomingEvent)) {
 		click(lblUpcomingEvent);
 		verifyText("Pre - Event",lblPreEvent);
 		wait(2);
@@ -179,6 +180,7 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		verifyText("References",lblInprogressReference);
 		wait(2);
+		}
 //		verifyText("Terms & Conditions",lblInprogressTermsAndConditions);
 	}
 	public void verifyCompletedEvent() {

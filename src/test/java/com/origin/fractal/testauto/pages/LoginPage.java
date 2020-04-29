@@ -50,9 +50,9 @@ public class LoginPage extends FractalBasePage {
 		click(btnCookies);
 		}
 	    wait(5);
-	    click(By.xpath("//div[@class='ci-hover']//button[@class='jss29 jss3 jss5 jss8 circle-hover']"));
+	    click(By.xpath("//img[@class='logout-height']"));
 	    wait(5);
-	    click(By.xpath("//button[@class='role-button']"));
+	    click(By.xpath("//button[contains(text(),'Instructor')]"));//button[@class='role-button']
 	}
 	public void loginToContentAdmin() {
 		enterData("contentadmin@origin.com",tbUserName);
