@@ -15,7 +15,7 @@ public class RolesManagementPage extends FractalBasePage {
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");
 	private By instructorroleBtn = By.xpath("//button[contains(text(),'Instructor')]");
 	private By learningadminroleBtn = By.xpath("//button[contains(text(),'Learning Admin')]");
-	private By siteadminroleBtn = By.xpath("//button[contains(text(),'Site Admin')]");
+	private By siteadminroleBtn = By.xpath("//button[contains(text(),'siteadmin')]");
 	private By businessadminroleBtn = By.xpath("//button[contains(text(),'Bussiness Admin')]");
 	private By instructorcheck = By.xpath("//span[contains(text(),'Total events')]");
 	private By learnerrolecheckbtn = By.xpath("//button[contains(text(),'Direct User')]");
