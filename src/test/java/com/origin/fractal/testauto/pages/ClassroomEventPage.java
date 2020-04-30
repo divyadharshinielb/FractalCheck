@@ -423,7 +423,7 @@ public class ClassroomEventPage extends FractalBasePage{
 //	Actions actions = new Actions(driver); actions.moveToElement(element);
 //	actions.perform();
 	//}
-	wait(2);
+	wait(5);
 	click(By.id("postsurvey_title"));
 	wait(2);
 	verifyText("Add Survey",btnPostAddSurvey);
