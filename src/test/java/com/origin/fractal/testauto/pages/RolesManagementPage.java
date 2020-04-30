@@ -29,7 +29,7 @@ public class RolesManagementPage extends FractalBasePage {
 	private By manageUser = By.xpath("//li[@title='Manage Users']//a");//li[@title='Manage Users']//a//span[contains(text(),'Manage Users')]
 	    private By businessUser = By.xpath("//span[contains(text(),'Businessuser Automation')]");
 	    private By buInstructor = By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-all-0 padding-b-40 padding-t-20 min-height-500 ng-scope')]//div[contains(@class,'ng-scope')]//div[1]//div[1]//div[1]//div[4]//div[2]");
-	    private By instructorUser = By.xpath("//span[contains(text(),'Automation Instructor')]");
+	    private By instructorUser = By.xpath("//span[contains(text(),'Registered on 30 January, 2020')]/../*/h3/span");
 	    private By instructorDirectUser = By.xpath("//div[contains(text(),'Direct User')]");
 	    private By businessAdmin = By.xpath("//span[contains(text(),'Automation Business Admin')]");
 	    private By businessAdminBusinessUser = By.xpath("//div[contains(text(),'Business User')]");
