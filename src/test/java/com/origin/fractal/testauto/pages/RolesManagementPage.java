@@ -59,6 +59,7 @@ public class RolesManagementPage extends FractalBasePage {
 	private By searchfielduser = By.xpath("//input[@id='searchAllUsersName']");
 	private By usernameforLEarningadmin = By.xpath("//div[contains(text(),'contentadmin@origin.com')]");
 	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
+	private By businessuserbtn = By.xpath("//button[contains(text(),'Business User')]");
 	public RolesManagementPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -206,8 +207,8 @@ public class RolesManagementPage extends FractalBasePage {
 			wait(2);
 			elementExist(wishlisticon);
 			click(userIcon);
-			elementExist(learnerrolecheckbtn);
-			click(learnerrolecheckbtn);
+			elementExist(businessuserbtn);
+			click(businessuserbtn);
 			wait(10);
 			elementExist(mylearningcheck);
 			click(mylearningcheck);
