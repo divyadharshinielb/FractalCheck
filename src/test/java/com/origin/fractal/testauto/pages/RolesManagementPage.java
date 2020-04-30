@@ -46,7 +46,7 @@ public class RolesManagementPage extends FractalBasePage {
 	   private By insdropdown1 = By.xpath("//li[contains(text(),'Businessuser Automation')]");
 	   private By insdropdown2 = By.xpath("//li[contains(text(),'Automation directuser')]");
 	   private By insdropdown3 = By.xpath("//li[contains(text(),'Automation Instructor')]");
-	   private By closeBtn = By.xpath("//html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/button[1]/i[1]");
+	   private By closeBtn = By.xpath("//i[contains(@class,'text-right font-size-35 padding-r-30 padding-t-10')]");//html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/button[1]/i[1]
 	   private By classroomediticon = By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-all-0 ng-scope')]//div[1]//div[1]//div[1]//div[5]//i[2]");
 	  private By editselectSingleInstructor  = By.xpath("//div[contains(@class,'col-lg-2 col-md-2 col-sm-2 col-xs-2 padding-tb-15')]//div[contains(@class,'nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required')]");
 	  private By settingsIcon =By.xpath("//div[@class='icon dripicons-gear']"); 
