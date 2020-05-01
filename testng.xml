@@ -22,15 +22,13 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
-<class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" /> 
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" /> -->
+name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" /> 
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
 <class
@@ -44,7 +42,10 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
+name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />-->
+<class
+name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
+
 
 				
 		</classes>
