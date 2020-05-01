@@ -320,6 +320,8 @@ public class ClassroomPage extends FractalBasePage {
 		wait(2);
 		click(lblSelectVenue);
 		wait(5);
+        scrollToElement(classroomDropDown1);
+        wait(5);
 		click(classroomDropDown1);
 	/*	wait(5);
 		enterData("40",lblAvgScore);
