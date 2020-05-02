@@ -70,7 +70,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		maForgotPasswordSteps.verifyForgotPassword();
 		Reporter.writeSummary("TCID_006, Verify forgot password link available on login page, " +  maForgotPasswordSteps.getResult());
 	}
-	@Test(groups = { "pilot" }, priority=4,enabled = true, description = "TCID_25:Verification of Menus page"
+	@Test(groups = { "pilot" }, priority=2,enabled = true, description = "TCID_25:Verification of Menus page"
 			+ "25: Verify the Menu functionality is working fine")
 	public void verifyMenuPage() {
 		appDriver = AppFactory.getAndroidApp();
@@ -94,7 +94,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 	}
-	@Test(groups = { "pilot" },priority=2, enabled = true, description = "TCID_27,28,29,30,31,32,61:"
+	@Test(groups = { "pilot" },priority=3, enabled = true, description = "TCID_27,28,29,30,31,32,61:"
 			+ "Verification of My Learning page"
 			+ "27: Verify whether the user able be  to access the My Learning page"
 			+ "28:Verify whether the user able be  to navigate correctly in both In progress and Completed Tabs."
@@ -136,7 +136,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mAMLS.clickMenu1();
 		mAMnuSteps.clickOnLogout();
 	}
-	@Test(groups = { "pilot" },priority=5, enabled = true, description = "TCID_:Verification of My Account page"
+	@Test(groups = { "pilot" },priority=4, enabled = true, description = "TCID_:Verification of My Account page"
 			+ "61: Verifying whether the user details are displayed correctly in the My Account page"
 			+ "62: Verifying whether the first  and last name accespts space"
 			+ "63: Verifying whether the first  and last name accespts number"
@@ -189,7 +189,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mAMLS.clickMenu1();
 		mAMnuSteps.clickOnLogout();
 	}
-	@Test(groups = { "pilot" }, priority=3,enabled = true, description = "TCID_20,21:Verification of Select client page"
+	@Test(groups = { "pilot" }, priority=5,enabled = true, description = "TCID_20,21:Verification of Select client page"
 			+ "20: Verify that assigned clients are listed for user"
 			+ "21: Verify that user able to select their 'Learning site' ")
 	public void verifySelectClientPage() {
