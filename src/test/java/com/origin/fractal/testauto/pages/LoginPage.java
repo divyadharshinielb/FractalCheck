@@ -151,6 +151,9 @@ public class LoginPage extends FractalBasePage {
 		enterData ("abcdef",searchLink);
 	}
 	public void loginToInstructor() {
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+		}
 		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
 		   enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2
 		   click(btnLogin1);
