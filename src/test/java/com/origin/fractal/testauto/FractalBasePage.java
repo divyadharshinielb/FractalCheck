@@ -60,7 +60,7 @@ verifier = new FractalVerifier(driver);
 
 // Actions common across all pages
 public void clickOnMyLearning() {
-	wait(2);
+	wait(5);
 click(lblMyLearning);
 }
 

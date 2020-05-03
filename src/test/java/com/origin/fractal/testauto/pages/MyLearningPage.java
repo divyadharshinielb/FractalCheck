@@ -62,7 +62,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By lobjCount = By.xpath(".//html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/ng-include[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h3[1]");
 	private By lbloverview = By.xpath("//*[@id='ngview']/div/ng-include/*//div/*//h3[contains(text(),'Overview')]");
 	/*End -added By manju Priya A on Nov-29-18*/
-	private By categorypopupbtn1 =By.xpath("(//span[@class='r-border'])[1]");
+	private By categorypopupbtn1 =By.xpath("//span[@class='r-border'][1]");
 	private By searchbar = By.xpath("//input[contains(@name,'searchterm')]");
 //	private By categorypopuptext1 = By.xpath("//div[contains(text(),'Automation Test, Functional Testing, General, Project, Project Lead, Project Management, Technology, Time Management')]");
 	private By lblhome = By.xpath("//img[contains(@class,'logo-height')]");
@@ -427,13 +427,14 @@ public class MyLearningPage extends FractalBasePage {
 			 	    wait(6);
 			 	   click(searchbar);
 			 	    enterData("checkmultiplechoice",searchbar);
+			 	   driver.findElement(By.xpath("//input[contains(@name,'searchterm')]")).sendKeys(Keys.ENTER);
 			 	/*    click(lblListView);
 				    wait(5);
-			 	 */   WebElement element = driver.findElement( By.xpath("(//span[@class='r-border'])[1]")); //div[@id='react-tabs-1']/div[1]/div[1]/div[1]/div[3]/div[1]/a[6]/div[1]/div[1]/div[1]/div[1]
-			 	    wait(4);
-			 	    Actions actions = new Actions(driver); actions.moveToElement(element);
-			 	    actions.perform();
-			 	   wait(5);
+			 	 */  
+			 	  JavascriptExecutor js = (JavascriptExecutor) driver;
+			 		WebElement Element= driver.findElement(By.xpath("//span[@class='r-border'][1]"));
+			 		js.executeScript("arguments[0].scrollIntoView();", Element);
+			 		wait(5);
 			 	    click(categorypopupbtn1);
 			 	    wait(2);
 			 	    elementExist(multiplecatalogpopup);
