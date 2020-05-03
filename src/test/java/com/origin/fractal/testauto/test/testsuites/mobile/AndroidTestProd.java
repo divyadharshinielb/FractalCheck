@@ -133,7 +133,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 		wait(5);
-		mAMLS.clickMenu1();
+		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 	}
 	@Test(groups = { "pilot" },priority=4, enabled = true, description = "TCID_:Verification of My Account page"
@@ -186,7 +186,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_073,Verifying whether the details are getting updated successfully if the New password and Confirm password have only numbers with 8 characters length, " +  mMyAcc.getResult() );
 		/*Ends - added by Manju Priya A on Jan-22-19*/
 		//For Logout
-		mAMLS.clickMenu1();
+		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 	}
 	@Test(groups = { "pilot" }, priority=5,enabled = true, description = "TCID_20,21:Verification of Select client page"
@@ -205,7 +205,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
-		mAMLS.clickMenu3();
+		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 		Reporter.writeSummary("TCID_078,Verifying whether the user can able to logout successfully on clicking the logout button, " +  mAMnuSteps.getResult() );
 		
