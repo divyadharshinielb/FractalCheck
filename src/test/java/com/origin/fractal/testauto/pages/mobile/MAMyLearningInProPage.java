@@ -12,6 +12,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	private By txtTitleMyLrn = By.id("com.originkonnect.app:id/action");
 	private By tabCompleted = By.xpath("//android.support.v7.app.ActionBar.Tab[2]/android.widget.TextView");
 	private By btnMenu = By.id("com.originkonnect.app:id/action_bar_back");
+	private By btnMenu1=By.id("com.originkonnect.app:id/new_menu");
 	private By lblInprogress = By.xpath(".//*[@resource-id='com.originkonnect.app:id/tablayout']/android.widget.LinearLayout/android.support.v7.app.ActionBar.Tab[1]/android.widget.TextView");
 
 	private By listView = By.id("com.originkonnect.app:id/list_icon");
@@ -237,7 +238,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	}
 	public void clickMenu1() {
 		wait(10);
-		click(getObj(btnMenu));
+		click(getObj(btnMenu1));
 		wait(5);
 	}
 	public void clickMenu3() {

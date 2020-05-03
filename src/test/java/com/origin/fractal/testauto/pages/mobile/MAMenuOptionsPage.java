@@ -121,6 +121,7 @@ public class MAMenuOptionsPage extends FractalAppPage {
 	public void verifyMyLearningMenu() {
 		wait(10);
 		click(btnMenu);
+		wait(2);
 		click(btnMyLearning);
 		verifyMenuPage("MY LEARNING",lblTitle);
 	}
