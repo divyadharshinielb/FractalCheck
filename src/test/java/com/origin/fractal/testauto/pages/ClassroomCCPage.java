@@ -49,6 +49,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void GotoClassroom() 
 	{
+		wait(10);
 		click(Classroomicon);
 		wait(5);
 		print("In Admin side, Classroom is opened");
