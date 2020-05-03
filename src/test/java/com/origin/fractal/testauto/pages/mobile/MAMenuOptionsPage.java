@@ -13,6 +13,7 @@ public class MAMenuOptionsPage extends FractalAppPage {
 	private By btnLogout = By.id("com.originkonnect.app:id/logout");
 	private By btnLogoutYes = By.id("com.originkonnect.app:id/btnAdd1");
 	private By btnMenu = By.id("com.originkonnect.app:id/action_bar_back");
+	private By btnMenu1=By.id("com.originkonnect.app:id/new_menu");
 	private By btnChange = By.id("com.originkonnect.app:id/change_client");
 	private By btnCatalog = By.id("com.originkonnect.app:id/catalog_text");
 	private By btnMyLearning = By.id("com.originkonnect.app:id/mylearning_text");
@@ -120,7 +121,7 @@ public class MAMenuOptionsPage extends FractalAppPage {
 	}
 	public void verifyMyLearningMenu() {
 		wait(10);
-		click(btnMenu);
+		click(btnMenu1);
 		wait(2);
 		click(btnMyLearning);
 		verifyMenuPage("MY LEARNING",lblTitle);
