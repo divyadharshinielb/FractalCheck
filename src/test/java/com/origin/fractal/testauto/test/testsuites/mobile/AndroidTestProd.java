@@ -18,7 +18,7 @@ import io.appium.java_client.MobileElement;
 
 public class AndroidTestProd extends FractalBaseAppTest{
 	private AppiumDriver<MobileElement> appDriver;
-	@Test(groups = { "pilot" },priority= 0, enabled = true, description = "TCID_01:Verification of Splash Screen"
+	@Test(groups = { "pilot" },priority= 0, enabled = false, description = "TCID_01:Verification of Splash Screen"
 		+ "TCID_01: Verify the splash screen after login to the application,")
 		public void verifySplashScreen() {
 		System.out.println("---------------------------------------verifySplashScreen-------------------------------");
@@ -39,7 +39,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_078,Verifying whether the user can able to logout successfully on clicking the logout button, " +  mAMnuSteps.getResult() );
 		
 	}
-	@Test(groups = { "LoginPage0" }, priority =1,enabled = true, description = "Combined mobile test")
+	@Test(groups = { "LoginPage0" }, priority =1,enabled = false, description = "Combined mobile test")
 	public void LoginPage() {
 		System.out.println("TCID_002,003,004,005,006: Verification of Login Page");
 		appDriver = AppFactory.getAndroidApp();
@@ -70,7 +70,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		maForgotPasswordSteps.verifyForgotPassword();
 		Reporter.writeSummary("TCID_006, Verify forgot password link available on login page, " +  maForgotPasswordSteps.getResult());
 	}
-	@Test(groups = { "pilot" }, priority=2,enabled = true, description = "TCID_25:Verification of Menus page"
+	@Test(groups = { "pilot" }, priority=2,enabled = false, description = "TCID_25:Verification of Menus page"
 			+ "25: Verify the Menu functionality is working fine")
 	public void verifyMenuPage() {
 		appDriver = AppFactory.getAndroidApp();
@@ -94,7 +94,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 	}
-	@Test(groups = { "pilot" },priority=3, enabled = true, description = "TCID_27,28,29,30,31,32,61:"
+	@Test(groups = { "pilot" },priority=3, enabled = false, description = "TCID_27,28,29,30,31,32,61:"
 			+ "Verification of My Learning page"
 			+ "27: Verify whether the user able be  to access the My Learning page"
 			+ "28:Verify whether the user able be  to navigate correctly in both In progress and Completed Tabs."
@@ -136,7 +136,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 	}
-	@Test(groups = { "pilot" },priority=4, enabled = true, description = "TCID_:Verification of My Account page"
+	@Test(groups = { "pilot" },priority=4, enabled = false, description = "TCID_:Verification of My Account page"
 			+ "61: Verifying whether the user details are displayed correctly in the My Account page"
 			+ "62: Verifying whether the first  and last name accespts space"
 			+ "63: Verifying whether the first  and last name accespts number"
@@ -161,7 +161,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		// Menu Options Screen
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
-		mAMLS.clickMenu1();
+		mAMLS.clickMenu();
 		mAMnuSteps.clickOnMyAccount();
 		//My Account Screen
 		MAMyAccountSteps mMyAcc = new MAMyAccountSteps(appDriver);
@@ -189,7 +189,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		mAMLS.clickMenu();
 		mAMnuSteps.clickOnLogout();
 	}
-	@Test(groups = { "pilot" }, priority=5,enabled = true, description = "TCID_20,21:Verification of Select client page"
+	@Test(groups = { "pilot" }, priority=5,enabled = false, description = "TCID_20,21:Verification of Select client page"
 			+ "20: Verify that assigned clients are listed for user"
 			+ "21: Verify that user able to select their 'Learning site' ")
 	public void verifySelectClientPage() {
