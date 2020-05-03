@@ -133,7 +133,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 		wait(5);
-		mAMLS.clickMenu();
+		mAMLS.clickMenu1();
 		mAMnuSteps.clickOnLogout();
 	}
 	@Test(groups = { "pilot" },priority=4, enabled = true, description = "TCID_:Verification of My Account page"
