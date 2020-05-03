@@ -91,7 +91,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		MAMenuOptionsSteps mAMnuSteps = new MAMenuOptionsSteps(appDriver);
 		mAMnuSteps.verifyMenusFunctionality();
 		Reporter.writeSummary("TCID_025,Verify the Menu functionality is working fine, " +  mAMnuSteps.getResult() );
-		mAMLS.clickMenu();
+		mAMLS.clickMenu1();
 		mAMnuSteps.clickOnLogout();
 	}
 	@Test(groups = { "pilot" },priority=3, enabled = true, description = "TCID_27,28,29,30,31,32,61:"
@@ -186,7 +186,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_073,Verifying whether the details are getting updated successfully if the New password and Confirm password have only numbers with 8 characters length, " +  mMyAcc.getResult() );
 		/*Ends - added by Manju Priya A on Jan-22-19*/
 		//For Logout
-		mAMLS.clickMenu();
+		mAMLS.clickMenu1();
 		mAMnuSteps.clickOnLogout();
 	}
 	@Test(groups = { "pilot" }, priority=5,enabled = true, description = "TCID_20,21:Verification of Select client page"
