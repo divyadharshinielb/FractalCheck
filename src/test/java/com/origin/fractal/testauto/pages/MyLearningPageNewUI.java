@@ -11,7 +11,7 @@ public class MyLearningPageNewUI extends FractalBasePage {
 	private By lblCourses = By.xpath("//button[contains(text(),'COURSE')]");
 	private By lblResources = By.xpath("//button[contains(text(),'RESOURCE')]");
 	private By lblBundles = By.xpath("//button[contains(text(),'BUNDLE')]");
-	private By lblLearningPath = By.xpath("//button[contains(text(),'LEARNING PATH')]");
+	private By lblLearningPath = By.xpath("//button[contains(text(),'LEARNING PATHS')]");
 	private By lblCatnameInside = By.xpath("//span[@class='three-line-clamp']");
 	private By lobjCount = By.xpath("//span[@class='obj_count']");
 	private By lblDurationInCat = By.xpath("//div[contains(@class,'flcolor')]//i[@class='drip_icon'][contains(text(),'a')]");
