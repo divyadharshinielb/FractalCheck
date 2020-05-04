@@ -53,7 +53,7 @@ public class WebTestRolesManagement extends FractalBaseWebTest {
 	public void testroles(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		RolesManagementSteps rolesmngmtsteps = new RolesManagementSteps(driver);
-        rolesmngmtsteps.DirectuserwithLearningadminandinsrole();
+       rolesmngmtsteps.DirectuserwithLearningadminandinsrole();
 	   Reporter.writeSummary("TCID_RolesManagement_007, Verify direct user with learning admin and instructor role, " +  rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.Checkdirectuserinsandlearningadminmapping();
 		Reporter.writeSummary("TCID_RolesManagement_008, Verify direct user mapping with learning admin and instructor role, " +  rolesmngmtsteps.getResult() );

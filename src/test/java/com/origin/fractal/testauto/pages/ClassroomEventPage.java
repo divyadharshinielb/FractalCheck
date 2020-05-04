@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class ClassroomEventPage extends FractalBasePage{
 
-	private By FirstListItem = By.xpath(".//a[contains(text(),'test2 Classroom')]");//a[contains(text(), 'Automation classroom')]//span[contains(text(),'Added on')]
+	private By FirstListItem = By.xpath(".//a[contains(text(),'Block Chain introduction')]");//a[contains(text(), 'Automation classroom')]//span[contains(text(),'Added on')]
 	private By btnAddEvent = By.xpath(".//button[contains(text(),'Add Event')]");//.//h4[contains(text(),'Events')]/../../*//button[contains(text(),'Add Event')]
 	private By eventPageTitle = By.xpath(".//h4[contains(text(),'New Event')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'Continue')]");//button[contains(text(),'Continue')]
