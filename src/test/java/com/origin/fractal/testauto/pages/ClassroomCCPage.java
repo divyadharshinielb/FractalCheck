@@ -216,6 +216,7 @@ public class ClassroomCCPage extends FractalBasePage {
 		click(EditclasslblCCAssDuedate);
 		wait(5);
 	//	click(EditclasslblCCQualifyPrecentage);
+		click(lblCCQualifyPrecentage);
 		wait(5);
 		enterData("35",InputCCQualifyPrecentage);
 		wait(5);
@@ -257,7 +258,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickCClblfeedbackdate_Manualcomp() 
 	{   
-	    wait(2);
+	    wait(5);
 		click(AddClassbtn);
 		wait(5);
 		click(lblCCFeedbackDuedate);
@@ -505,7 +506,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	{
 //		click(AddClassbtn);
 		wait(5);
-		click(lblCCQualifyPrecentage);
+//		click(lblCCQualifyPrecentage);
 		wait(5);
 		enterData("5",InputCCQualifyPrecentage);
 		wait(5);
@@ -534,6 +535,8 @@ public class ClassroomCCPage extends FractalBasePage {
 		click(EditclassCancelbtn);
 		wait(5);
 		click(EditClassroomicon);
+		wait(2);
+		click(lblCCQualifyPrecentage);
 		wait(5);
 		enterData("5",EditclassInputCCQualifyPrecentage);
 		wait(5);
