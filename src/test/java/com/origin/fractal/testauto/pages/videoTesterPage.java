@@ -13,7 +13,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class videoTesterPage extends FractalBasePage{
 	private By searchfieldUser= By.xpath("//input[@id='theInput']");
-	private By Iblvideo=By.xpath("(//*[text()='AutoTC_Itemcode_Video'])[3]");
+	private By Iblvideo=By.xpath("//h1[contains(text(),'Video 1')]");//*[text()='AutoTC_Itemcode_Video'])[3]
 	private By videoPlayer=By.xpath("//*[@class=\"vjs-big-play-button\"]");
 	private By play= By.xpath("//*[@title=\"Play\"]");
 	private By pause= By.xpath("//*[@title=\"Pause\"]");
@@ -30,13 +30,15 @@ public class videoTesterPage extends FractalBasePage{
 		Actions	actions = new Actions(driver); 
 		clear(searchfieldUser);
 		wait(3);
-		enterData("AutoTC_Itemcode_Video", searchfieldUser);
+		enterData("Video", searchfieldUser);//AutoTC_Itemcode_Video
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
+		wait(5);
+		click(By.xpath("//button[contains(text(),'PODCASTS')]"));
 		wait(5);
 		WebElement element = driver.findElement(Iblvideo);
 		actions.moveToElement(element).perform();
 		click(Iblvideo);
-		wait(5);
+		wait(10);
 		driver.switchTo().frame(0);
 		click(videoPlayer);
 		wait(5);
