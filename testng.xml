@@ -13,8 +13,8 @@
 		<classes>
 							<class
 				name="com.origin.fractal.testauto.test.testsuites.WebProductionTests" /> 
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestVersionCheck" /> 
+			<!--	<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestVersionCheck" /> -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
