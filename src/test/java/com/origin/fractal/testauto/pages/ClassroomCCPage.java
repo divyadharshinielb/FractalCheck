@@ -108,7 +108,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickCClblQualifyPrecentage() 
 	{
-		click(AddClassbtn);
+	//	click(AddClassbtn);
 		wait(5);
 		click(lblCCQualifyPrecentage);
 		wait(5);
@@ -122,7 +122,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	public void ClickEditCClblQualifyPrecentage() 
 	{
 	//	click(EditclasslblCCQualifyPrecentage);
-		wait(5);
+		wait(10);
 		click(lblCCQualifyPrecentage);
 		wait(5);
 	/*	clear(EditclassInputCCQualifyPrecentage);
@@ -164,6 +164,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 	public void ClickEditCClblManualCompletion() 
 	{
+		wait(5);
 		click(EditclasslblCCManualCompletion);
 		wait(5);
 		click(EditclassCancelbtn);
@@ -244,8 +245,9 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickEditCClblQualify_feedbackdate() 
 	{   
-	    wait(2);
+	    wait(5);
 	//	click(EditclasslblCCQualifyPrecentage);
+	    click(lblCCQualifyPrecentage);
 		wait(5);
 		enterData("35",InputCCQualifyPrecentage);
 		wait(5);
@@ -399,7 +401,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public boolean verifyCCAssDuedateLabels() {
 		wait(5);
-		click(AddClassbtn);
+	//	click(AddClassbtn);
 		wait(5);
 		booleanresult = false;
 		if (verifyText("Submission of all assignments before due date",lblCCAssDuedatetxt) == true)
@@ -451,7 +453,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	
 	public boolean verifyCCFeedbackDuedateLabels() {
 		wait(5);
-		click(AddClassbtn);
+	//	click(AddClassbtn);
 		wait(5);
 		booleanresult = false;
 		if (verifyText("Submission of session/event feedback before due date",lblCCFeedbackDuedatetxt) == true)
@@ -477,7 +479,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	
 	public boolean verifyCCManualCompletionLabels() {
 		wait(2);
-		click(AddClassbtn);
+	//	click(AddClassbtn);
 		wait(5);
 		booleanresult = false;
 		if (verifyText("Manual completion marking",lblCCManualCompletiontxt) == true)
@@ -535,7 +537,7 @@ public class ClassroomCCPage extends FractalBasePage {
 		click(EditclassCancelbtn);
 		wait(5);
 		click(EditClassroomicon);
-		wait(2);
+		wait(5);
 		click(lblCCQualifyPrecentage);
 		wait(5);
 		enterData("5",EditclassInputCCQualifyPrecentage);

@@ -52,7 +52,8 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.EditCClblAssDuedate();
 		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-003,Select/Unselect Assignment Due date in criteria (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
+		
+		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.CClblQualifyPrecentage();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.EditCClblQualifyPrecentage();
@@ -112,6 +113,7 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 	//	ClassroomSteps.verifyEditCCsessionLabels();
 	//	Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012a,Verify the text in CC -All Sessions (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
       /*end here*/
+		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyCCAssDuedateLabels();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCAssDuedateLabels();
@@ -121,7 +123,8 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCQualifyPrecentageLabels();
 		Reporter.writeSummary("TC_Admin_Add_Classroom and Edit_classroom_CC-012c,Verify the text in CC-qualification percentage (on Add_Classroom and Edit_classroom), " +  ClassroomSteps.getResult() );
-
+		
+		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyCCFeedbackDuedateLabels();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCFeedbackDuedateLabels();
