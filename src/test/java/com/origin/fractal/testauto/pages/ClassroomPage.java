@@ -72,7 +72,7 @@ public class ClassroomPage extends FractalBasePage {
     private By eventCautionText1=By.xpath("//div[contains(text(),'Venue selection required')]");
     private By eventCautionText2=By.xpath("//div[contains(text(),'Timezone selection required')]");
     private By eventCautionText3=By.xpath("//div[contains(text(),'Instructor selection required')]");
-    private By clickClassroomCreationPage=By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]");
+    private By clickClassroomCreationPage=By.xpath(".//span[contains(text(),'Added on')]/../..");
     private By editTextBtn=By.xpath("//div[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-all-0 ng-scope']//div[1]//div[1]//div[1]//div[5]//i[2]");//button[@type='button'][contains(text(),'Edit')]
     private By viewDetails=By.xpath("//div[contains(text(),'View Details')]");
     private By categoryText=By.xpath("//span[contains(text(),'Category :')]");
@@ -363,6 +363,8 @@ public class ClassroomPage extends FractalBasePage {
 	public void	durationNumericValue() {
 		classroomCommonFunction();
 		wait(5);
+		scrollToElement(lblSession);
+		wait(5);
 		click(lblSession);
 		wait(2);
 		WebElement element = driver.findElement(By.xpath("//input[@type='number']")); 
@@ -441,7 +443,8 @@ public class ClassroomPage extends FractalBasePage {
 	    click(closeBtn);
 	}
 	public void classroomListedPage() {
-	click(clickClassroomCreationPage);
+   click(clickClassroomCreationPage);
+		
 	wait(5);
 /*	click(editTextBtn);
 	wait(5);

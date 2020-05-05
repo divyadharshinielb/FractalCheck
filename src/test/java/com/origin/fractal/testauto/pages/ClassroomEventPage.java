@@ -415,7 +415,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	verifyText("Assignment Description",getAttributeValue(inpPostAssignDesc));
 */	}
 	public void verifyPostSurveyDetails() {
-	wait(2);
+	wait(5);
 	scrollToElement(By.id("postsurvey_title"));
 	//WebElement element = driver.findElement( By.id("postsurvey_title")); 
 	//edited by divya on 1st Oct 2019
