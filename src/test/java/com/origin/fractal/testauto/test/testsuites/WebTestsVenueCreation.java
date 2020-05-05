@@ -13,7 +13,7 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsVenueCreation extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Venue creation")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false, description = "Venue creation")
 	public void ClassroomVenu(String row, String strBrowserName) throws Exception  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -42,7 +42,7 @@ public class WebTestsVenueCreation extends FractalBaseWebTest {
 	//	MyScreenRecorder.stopRecording();
 		Reporter.writeSummary("Venue_012, Verify Venue is submitted.," +  venueSteps.getResult() );	
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Venue creation")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= false, description = "Venue creation")
 	public void invalidTests(String row, String strBrowserName) throws IOException  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -54,7 +54,7 @@ public class WebTestsVenueCreation extends FractalBaseWebTest {
 		venueSteps.clickMenu();
 	venueSteps.invalidValidVenue();
 	Reporter.writeSummary("Venue_005, Verify Venue creation with invalid venue., " +  venueSteps.getResult() );
-/*	venueSteps.invalidBuildingName(); 15/4/2020
+	venueSteps.invalidBuildingName(); //15/4/2020
 	Reporter.writeSummary("Venue_009, Verify Venue creation with blank building block name," +  venueSteps.getResult() );
 	venueSteps.invalidStreetName();
 	Reporter.writeSummary("Venue_011, Verify Venue creation with blank street area ," +  venueSteps.getResult() );
@@ -62,7 +62,7 @@ public class WebTestsVenueCreation extends FractalBaseWebTest {
 	Reporter.writeSummary("Venue_013, Verify the cancellation of Venue details on clicking Cancel button," +  venueSteps.getResult() );
 	venueSteps.searchFunction();
 	Reporter.writeSummary("Venue_014, Verify the Search functionality, " +  venueSteps.getResult() );
-*/	venueSteps.editVenue();
+	venueSteps.editVenue();
 	Reporter.writeSummary("Venue_016, verify whether the admin is able to edit the venue by clicking the edit icon., " +  venueSteps.getResult() );
 	venueSteps.deleteVenue();
 	Reporter.writeSummary("Venue_015, verify whether the admin is able to delete the venue by clicking the delete icon., " +  venueSteps.getResult() );

@@ -132,7 +132,9 @@ public class VenuePage extends FractalBasePage{
 		elementExist(blankVenue);
 		}
 	public void invalidBuildingName() {
-		wait(5);
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(selectCountry);
+		js.executeScript("arguments[0].scrollIntoview();", Element);
 		click(selectCountry);
 		wait(5);
 		click(selectIndia);
