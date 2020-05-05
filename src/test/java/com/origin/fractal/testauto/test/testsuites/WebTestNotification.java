@@ -13,18 +13,9 @@ import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 public class WebTestNotification extends FractalBaseWebTest{
-	@DataProvider
-	public Object[][] browers() {
-		return new Object[][] {
-			new Object[] { "1", "chrome" }
-//		, new Object[] { "2", "firefox" }
-//		, new Object[] { "3", "msedge" } 
-//		 new Object[] { "4", "ie11" }
-		};
-	}
 	
 	
-	@Test(dataProviderClass = DataManager.class, groups= {"pilot"}, enabled= true, description = "")
+	@Test(dataProviderClass = DataManager.class,dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
 
 	public void WebTestEmailNotification(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -46,9 +37,9 @@ public class WebTestNotification extends FractalBaseWebTest{
 		Reporter.writeSummary("EmailTem_005, Verify whether template for validity expired template is working fine , " +  notificationSteps.getResult() );
         notificationSteps.verifyContentAssignment();
         Reporter.writeSummary("EmailTem_006,Verify whethercontent assignment template is working fine , " +  notificationSteps.getResult() );
-   */     notificationSteps.verifyBusinessUserRegistration();
+        notificationSteps.verifyBusinessUserRegistration();
         Reporter.writeSummary("EmailTem_007, Verify whether business user template is working fine , " +  notificationSteps.getResult() );
-    }
+   */ }
 
 
 	
