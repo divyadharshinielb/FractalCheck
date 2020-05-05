@@ -303,7 +303,7 @@ public class RolesManagementPage extends FractalBasePage {
 			verifyText("Direct User",learningAdminDirectUser);
 		}
 		public void clickMenu() {
-			wait(2);
+			wait(10);
 			click(btnMenu);
 		}
 		public void editclassroomcheck() {
