@@ -13,32 +13,32 @@ public class ClassroomCCPage extends FractalBasePage {
 	//Add classroom
 	private By lblCCAllsession = By.xpath("//div[@class='col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60']//div[2]//label[1]");
 	private By lblCCAssDuedate = By.xpath("//*[contains(@class, 'col-sm-5')]/div[3]/label");
-	private By lblCCQualifyPrecentage = By.xpath("//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label");
-	private By InputCCQualifyPrecentage = By.xpath("//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label/div/div/md-input-container/input");
+	private By lblCCQualifyPrecentage = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[4]//label[1]");
+	private By InputCCQualifyPrecentage = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[4]//label[1]/div/div/md-input-container/input");
 	private By lblCCFeedbackDuedate = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[5]//label[1]");
 	private By lblCCManualCompletion= By.xpath("//div[6]//label[1]");
-	private By Cancelbtn= By.xpath("//button[@class='btn btn-cancel btn_radius ng-binding text-left']");
+	private By Cancelbtn= By.xpath("//i[contains(@class,'text-right font-size-35 padding-r-30 padding-t-10')]");
 
 	//Add classroom cc text
 	private By lblCCAllsessiontxt= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[2]/label[1]");
-	private By lblCCAssDuedatetxt = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[3]/label[1]");
-	private By lblCCQualifyPrecentagetxt = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[4]/label[1]");
-	private By lblCCFeedbackDuedatetxt = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[5]/label[1]");
-	private By lblCCManualCompletiontxt= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[6]/label[1]");
+	private By lblCCAssDuedatetxt = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[3]//label[1]");
+	private By lblCCQualifyPrecentagetxt = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[4]//label[1]");
+	private By lblCCFeedbackDuedatetxt = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[5]//label[1]");
+	private By lblCCManualCompletiontxt= By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[6]//label[1]");
 
 	//Edit classroom
-	private By EditClassroomicon = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[5]/i[2]");
+	private By EditClassroomicon = By.xpath("//div[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-all-0 ng-scope']//div[1]//div[1]//div[1]//div[5]//i[2]");
 	private By EditclasslblCCAllsession = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[2]/label[1]");
-	private By EditclasslblCCAssDuedate = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[3]/label[1]");
-	private By EditclasslblCCQualifyPrecentage = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[4]/label[1]");
-	private By EditclassInputCCQualifyPrecentage = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[4]/label[1]/div[1]/div[1]/md-input-container[1]/input[1]");
-	private By EditclasslblCCFeedbackDuedate = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[5]/label[1]");
-	private By EditclasslblCCManualCompletion= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[6]/label[1]");
-	private By EditclassCancelbtn= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[2]/span[1]/div[1]/button[1]");
+	private By EditclasslblCCAssDuedate = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[3]//label[1]");
+	private By EditclasslblCCQualifyPrecentage = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[4]//label[1]");
+	private By EditclassInputCCQualifyPrecentage = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[4]//label[1]/div/div/md-input-container/input");
+	private By EditclasslblCCFeedbackDuedate = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[5]//label[1]");
+	private By EditclasslblCCManualCompletion= By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[6]//label[1]");
+	private By EditclassCancelbtn= By.xpath("//i[contains(@class,'text-right font-size-35 padding-r-30 padding-t-10')]");
 
 
 	private By HeaderAClogo= By.xpath("//span[contains(@class,'loggeduserbg ng-binding')]");
-	private By logout= By.xpath("//html/body/div/div/div/ng-include/div/div/div[2]/div/div/ul/div/div[3]");
+	private By logout= By.xpath("//a[contains(text(),'Logout')]");
 	public boolean booleanresult;
 
 	public ClassroomCCPage(WebDriver driver) 
