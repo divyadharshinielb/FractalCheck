@@ -130,7 +130,7 @@ public class HomePage extends FractalBasePage {
 	}
 	
 	public void verifyBellNotification() {
-		wait(5);
+		wait(10);
 		clickOnBellIcon();
 		wait(2);
 		/*verifyLabel("lblNotification",lblNotification );
