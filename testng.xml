@@ -31,6 +31,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
 	 		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
 				<class
@@ -39,8 +41,6 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
 		 		<class
