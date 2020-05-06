@@ -136,7 +136,7 @@ public class VenuePage extends FractalBasePage{
 		WebElement element1 = driver.findElement(By.xpath("//input[@id='input_3']")); Actions
 		actions = new Actions(driver); actions.moveToElement(element1);
 		actions.perform();
-		wait(5);
+		wait(10);
 		click(selectCountry);
 		wait(5);
 		click(selectIndia);
