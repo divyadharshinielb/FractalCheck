@@ -272,7 +272,7 @@ public class MyLearningPage extends FractalBasePage {
 	/*End - Moved from FractalBasePage by Manju Priya A on Nov-29-18*/
 	private By clickClassroomCatalog=By.xpath(".//a[contains(text(),'Automation Learningpath')]");
 	private By globalSearch=By.xpath(".//input[@id='theInput']");
-	private By lbldetails=By.xpath("//button[contains(text(),'DETAILS')]");//div[5]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[contains(text(),'Details')]
+	private By lbldetails=By.xpath("//div[2]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[1]");//button[contains(text(),'DETAILS')]//div[5]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[contains(text(),'Details')]
 	private By classroomlblDate=By.xpath("//p[contains(@class,'timebox-li margin-b-7')]");
 	private By classroomlblTime=By.xpath("//div[contains(@class,'margin-t-0')]//p[2]");
     private By classroomlblLocation=By.xpath("//div[contains(@class,'display-box')]");
@@ -304,10 +304,12 @@ public class MyLearningPage extends FractalBasePage {
 				action.sendKeys("learning path check").sendKeys(Keys.ENTER).build().perform();
 				 wait(15);
 			 
-			 WebElement element = driver.findElement( By.xpath(".//a[contains(text(),'learning path check')]")); Actions 
+			 WebElement element = driver.findElement(clickClassroomCatalog); Actions 
 				actions = new Actions(driver); actions.moveToElement(element);
 				actions.perform();
-			*/	wait(5);
+			*/	WebElement element = driver.findElement(clickClassroomCatalog);
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+				wait(5);
 		    	click(clickClassroomCatalog);
 			  wait(5);
 		    }
@@ -338,12 +340,15 @@ public class MyLearningPage extends FractalBasePage {
 		  
 			public void	verifyClassrooomLabels(){
 				wait(2);
-				WebElement element = driver.findElement( By.xpath("//a[text()='Automation Learningpath']")); Actions
-				actions = new Actions(driver); actions.moveToElement(element);
-				actions.perform();
+				WebElement element = driver.findElement(By.xpath("//a[text()='Automation Learningpath']"));
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+				wait(5);
 				wait(2);
 				  click(breadcrumLink);
 				  wait(2);
+				  WebElement element1 = driver.findElement(lblAssignedClassroom2);
+					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
+					wait(5);
 			click(lblAssignedClassroom2);
 			//  verifyText("Pre-event Activities",lblPreeventActivities);
 			if(elementExist(lblReference)) {
@@ -358,6 +363,9 @@ public class MyLearningPage extends FractalBasePage {
 			  verifyText("Are you sure you want to cancel your registration?",registrationCancelText);
 			  click(btnNO);
 		*/	  wait(2);
+		WebElement element2 = driver.findElement(By.xpath("//a[text()='Automation Learningpath']"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element2);
+		wait(5);
 			  click(breadcrumLink);
 			  scrollBar();
 			  wait(5);
@@ -407,9 +415,12 @@ public class MyLearningPage extends FractalBasePage {
 				  }
 			}
 		    public void scrollBar() {
-		    WebElement element = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom 1')]")); Actions
+		   /* WebElement element = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom 1')]")); Actions
 			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
+			actions.perform();*/
+			WebElement element = driver.findElement(By.xpath("//h1[contains(text(),'checking for classroom 1')]"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			wait(5);
 		    }
 		    public void multiplecategorycheck() {
 			 	   //code to search for a catalog in search bar and check for multiplecategories

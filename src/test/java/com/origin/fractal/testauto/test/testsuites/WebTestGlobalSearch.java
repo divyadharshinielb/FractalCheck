@@ -71,8 +71,8 @@ public class WebTestGlobalSearch extends FractalBaseWebTest {
 		globalSteps.GlobalSearchwithUnavailableKeyword();
 		Reporter.writeSummary("TCI_Global_16,Verify Global Search with unavailable keyword,"+globalSteps.getResult());
 		//TCID_: Verify Global Search with double and tab Space
-	/*	globalSteps.GlobalSearchwithDoubleandTabspace();  15/4/2020
+		globalSteps.GlobalSearchwithDoubleandTabspace(); // 15/4/2020
 		Reporter.writeSummary("TCI_Global_17,Verify Global Search with double and tab Space,"+globalSteps.getResult());
-	*/	
+		
 		}
 }
