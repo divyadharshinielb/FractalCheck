@@ -73,6 +73,7 @@ public abstract class FractalBasePage extends BasePage {
 	}
 
 	public void clickOnBellIcon() {
+	    wait(5);
 		click(btnBellIcon);
 	}
 
