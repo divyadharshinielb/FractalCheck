@@ -129,12 +129,14 @@ public class VenuePage extends FractalBasePage{
 		wait(5);
 		enterData("",venueName);
 		click(saveBtn);
+		wait(5);
 		elementExist(blankVenue);
 		}
 	public void invalidBuildingName() {
-		JavascriptExecutor js=(JavascriptExecutor) driver;
-		WebElement Element= driver.findElement(selectCountry);
-		js.executeScript("arguments[0].scrollIntoview();", Element);
+		WebElement element1 = driver.findElement(By.xpath("//input[@id='input_3']")); Actions
+		actions = new Actions(driver); actions.moveToElement(element1);
+		actions.perform();
+		wait(5);
 		click(selectCountry);
 		wait(5);
 		click(selectIndia);
