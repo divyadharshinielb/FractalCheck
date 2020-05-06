@@ -27,13 +27,13 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" />
-			<class
+	<!--  		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" /> -->
 			<!-- 	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" /> -->
-	 		<class
+	 <!-- 		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" />
@@ -46,7 +46,7 @@
 		 		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" /> 
+				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" /> -->
 				
 		</classes>
 	</test> <!-- Test -->
