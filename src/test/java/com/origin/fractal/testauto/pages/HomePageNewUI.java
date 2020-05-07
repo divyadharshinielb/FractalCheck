@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,8 +35,8 @@ public class HomePageNewUI extends FractalBasePage {
 		public void commonFunction() {
 			WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]")); 
 			if(BrowserFactory.getOS() == "win") {
-			Actions actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView();", element);
 			wait(5);
 			}
 			}
