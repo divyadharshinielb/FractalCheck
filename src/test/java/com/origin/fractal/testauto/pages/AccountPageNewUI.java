@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -88,9 +89,11 @@ public class AccountPageNewUI  extends FractalBasePage{
 			WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); 
 			
 			if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-				Actions actions = new Actions(driver); 
+			/*	Actions actions = new Actions(driver); 
 				actions.moveToElement(element);
 				actions.perform();
+			*/	JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].scrollIntoView();", element);
 			}
 			
 			wait(5);
@@ -127,8 +130,10 @@ public class AccountPageNewUI  extends FractalBasePage{
 		enterData(getLabel("newPass"), inpNewPass);
 		WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); 
 		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-		Actions actions = new Actions(driver); actions.moveToElement(element);
+	/*	Actions actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
+	*/	JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", element);
 		}
 		wait(5);
 		click(btnSave);
@@ -144,6 +149,7 @@ public class AccountPageNewUI  extends FractalBasePage{
 	public void afterChangePassword() {
 		wait(10);
 		enterData("P@ssw0rd1",inpNewPass);
+		wait(2);
 		enterData("P@ssw0rd1",inpConfirmPass);
 		wait(5);
 		WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); 
@@ -172,8 +178,8 @@ public class AccountPageNewUI  extends FractalBasePage{
 		wait(5);
 		WebElement element2 = driver.findElement(By.xpath("//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]")); 
 		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-		Actions actions2 = new Actions(driver); actions2.moveToElement(element2);
-		actions2.perform();
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView();", element2);
 		}
 		wait(5);
 		click(lblProfile);

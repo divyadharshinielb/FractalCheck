@@ -16,7 +16,7 @@ public abstract class FractalBasePage extends BasePage {
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");//For new Ui.//*[@id='dLabel']/span
 	private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
 	private By btnCategory = By.xpath(".//*[@id='header']/*//button");
-	private By btnBellIcon = By.xpath(".//div[contains(@class,'pad-hover-67 notify-box')]//img[contains(@class,'cp')]");//div[@class='jss1']//div//img[@class='cp']//For new UI.//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
+	private By btnBellIcon = By.xpath(".//div[contains(@class,'pad-hover-67 notify-box')]//span[@class='jss4']");//div[@class='jss1']//div//img[@class='cp']//For new UI.//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 	private By viewAll = By.xpath(".//p[@class='mb-0 mt-0']");//For New UI.//*[@id='notification-dropdown']/div[2]/div[2]/a
 	private By settings = By.xpath(".//a[contains(text(),'Settings')]");
 	private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
