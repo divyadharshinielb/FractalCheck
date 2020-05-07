@@ -13,7 +13,7 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsVenueCreation extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Venue creation")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, priority=1,enabled= true, description = "Venue creation")
 	public void ClassroomVenu(String row, String strBrowserName) throws Exception  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -42,7 +42,7 @@ public class WebTestsVenueCreation extends FractalBaseWebTest {
 	//	MyScreenRecorder.stopRecording();
 		Reporter.writeSummary("Venue_012, Verify Venue is submitted.," +  venueSteps.getResult() );	
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "Venue creation")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups= {"pilot"},priority=0, enabled= true, description = "Venue creation")
 	public void invalidTests(String row, String strBrowserName) throws IOException  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
