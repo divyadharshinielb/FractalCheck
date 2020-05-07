@@ -210,6 +210,7 @@ public class RolesManagementPage extends FractalBasePage {
 			elementExist(wishlisticon);
 			click(userIcon);
 			elementExist(businessUser);
+			wait(5);
 			click(businessUser);
 			wait(10);
 			elementExist(mylearningcheck);
@@ -226,7 +227,9 @@ public class RolesManagementPage extends FractalBasePage {
 		public void Businessuserwithinsrole() {
 			wait(2);
 			enterData("staging_businessuser@origin.com",tbUserName);
+			wait(2);
 			enterData("P@ssw0rd",tbPassword);
+			wait(2);
 			click(btnLogin);
 			wait(10);
 			click(By.xpath("//img[@class='logout-height']"));

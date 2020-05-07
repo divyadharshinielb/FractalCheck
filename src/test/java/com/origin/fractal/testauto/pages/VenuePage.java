@@ -137,6 +137,7 @@ public class VenuePage extends FractalBasePage{
 		actions = new Actions(driver); actions.moveToElement(element1);
 		actions.perform();
 		wait(10);
+		if(elementExist(selectCountry)) {
 		click(selectCountry);
 		wait(5);
 		click(selectIndia);
@@ -144,6 +145,7 @@ public class VenuePage extends FractalBasePage{
 		click(selectCity);
 		click(selectChennai);
 		enterData("No.39",buildingNo);
+		}
 		WebElement element = driver.findElement(By.name("streetName"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		}
