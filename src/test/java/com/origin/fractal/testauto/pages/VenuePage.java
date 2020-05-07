@@ -139,6 +139,12 @@ public class VenuePage extends FractalBasePage{
 		}
 	public void invalidBuildingName() {
 		wait(5);
+		click(By.xpath("//i[contains(@class,'text-right font-size-35')]"));
+		wait(5);
+		click(addVenue);
+		wait(5);
+		scrollToElement(selectCountry);
+		wait(5);
 		click(selectCountry);
 		wait(5);
 		click(selectIndia);

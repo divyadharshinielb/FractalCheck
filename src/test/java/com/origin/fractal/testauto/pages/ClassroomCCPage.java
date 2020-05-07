@@ -434,7 +434,9 @@ public class ClassroomCCPage extends FractalBasePage {
 	public boolean verifyEditCCQualifyPrecentageLabels() {
 		
 		booleanresult = false;
-		if (verifyText("% qualifying score in graded assignments",EditclasslblCCQualifyPrecentage) == true)
+		print("divyadhdhdhdhd");
+		verifyText("% Obtaining qualifying scores in all graded assignments",EditclasslblCCQualifyPrecentage);
+		if (verifyText("% Obtaining qualifying scores in all graded assignments",EditclasslblCCQualifyPrecentage) == true)
 		{
 			booleanresult = true;
 		}
