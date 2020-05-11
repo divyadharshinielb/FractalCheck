@@ -214,6 +214,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	//click(btnBack);//Should remove
 	click(lblTraditionalClassroom);
 	verifyText("Venue selection required.",venueAlertMsg);
+	wait(5);
 	click(venueDropdown);
 	wait(6);
 	click(selectVenue);
