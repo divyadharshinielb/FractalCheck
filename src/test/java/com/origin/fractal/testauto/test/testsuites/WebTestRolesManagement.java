@@ -63,10 +63,9 @@ public class WebTestRolesManagement extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_RolesManagement_010, Verify siteadmin with direct role mapping, " + rolesmngmtsteps.getResult() );
 		rolesmngmtsteps.LearningadminwithDirectuserrole();
 		Reporter.writeSummary("TCID_RolesManagement_011, Verify learning admin with Direct role mapping, " +  rolesmngmtsteps.getResult() );
-		rolesmngmtsteps.BusinessadminwithbusinessuserRole();
-		
+	//	rolesmngmtsteps.BusinessadminwithbusinessuserRole(); //11/5/2020
 		Reporter.writeSummary("TCID_RolesManagement_012, Verify business admin with Business user, " +  rolesmngmtsteps.getResult() );
-		rolesmngmtsteps.Businessuserwithinsrole();
+	//	rolesmngmtsteps.Businessuserwithinsrole();           //11/5/2020
 		Reporter.writeSummary("TCID_RolesManagement_013, Verify Business user with Instructor role, " +  rolesmngmtsteps.getResult() );
 		
 	}
