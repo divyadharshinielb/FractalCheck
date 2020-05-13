@@ -130,17 +130,37 @@ public class VenuePage extends FractalBasePage{
 		enterData("",venueName);
 		click(saveBtn);
 		wait(5);
-		WebElement element = driver.findElement(By.xpath("input[@id='input_10']"));
-		js.executeScript("arguments[0].scrollIntoview();", element);
+//		WebElement element = driver.findElement(venueName);
+//		js.executeScript("arguments[0].scrollIntoview();", element);
+		wait(5);
+		scrollToElement(venueName);
 		wait(5);
 		elementExist(blankVenue);
 		}
 	public void invalidBuildingName() {
-		WebElement element1 = driver.findElement(By.xpath("//input[@id='input_3']")); Actions
-		actions = new Actions(driver); actions.moveToElement(element1);
-		actions.perform();
-		wait(10);
-		if(elementExist(selectCountry)) {
+//		WebElement element1 = driver.findElement(By.xpath("//input[@id='input_3']")); Actions
+//		actions = new Actions(driver); actions.moveToElement(element1);
+//		actions.perform();
+//		wait(10);
+//		if(elementExist(selectCountry)) {
+//		click(selectCountry);
+//		wait(5);
+//		click(selectIndia);
+//		wait(5);
+//		click(selectCity);
+//		click(selectChennai);
+//		enterData("No.39",buildingNo);
+//		}
+//		WebElement element = driver.findElement(By.name("streetName"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+//		}
+		wait(5);
+		click(By.xpath("//i[contains(@class,'text-right font-size-35')]"));
+		wait(5);
+		click(addVenue);
+		wait(5);
+		scrollToElement(selectCountry);
+		wait(5);
 		click(selectCountry);
 		wait(5);
 		click(selectIndia);
@@ -148,7 +168,6 @@ public class VenuePage extends FractalBasePage{
 		click(selectCity);
 		click(selectChennai);
 		enterData("No.39",buildingNo);
-		}
 		WebElement element = driver.findElement(By.name("streetName"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		}
