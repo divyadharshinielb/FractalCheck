@@ -5,10 +5,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;
+import com.origin.fractal.testauto.FractalBaseStep;
 import com.origin.fractal.testauto.steps.RolesManagementSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
+
+import jxl.common.Assert;
 public class WebTestRolesManagement extends FractalBaseWebTest {
 
 	@DataProvider
@@ -68,6 +71,13 @@ public class WebTestRolesManagement extends FractalBaseWebTest {
 	//	rolesmngmtsteps.Businessuserwithinsrole();           //11/5/2020
 		Reporter.writeSummary("TCID_RolesManagement_013, Verify Business user with Instructor role, " +  rolesmngmtsteps.getResult() );
 		
+	}
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	public void checkOverallTestNGResult(String row, String strBrowserName) {
+		print("Number of Test cases Failed ="+ FractalBaseStep.overallTestNGResult );
+		if(FractalBaseStep.overallTestNGResult > 0) {
+			Assert.verify(false);
+		}
 	}
 }
 	

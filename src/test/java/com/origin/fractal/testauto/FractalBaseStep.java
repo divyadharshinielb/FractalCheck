@@ -5,7 +5,11 @@ import com.wv.auto.framework.BaseStep;
 public class FractalBaseStep extends BaseStep {
 	protected FractalBasePage fBPage=null; 
 	public String result= "Passed";
+	public static int overallTestNGResult=0;
 	public String getResult() {
+		if(result.equalsIgnoreCase("FAILED")) {
+			overallTestNGResult++;
+		}
 		return result;
 		}
 
