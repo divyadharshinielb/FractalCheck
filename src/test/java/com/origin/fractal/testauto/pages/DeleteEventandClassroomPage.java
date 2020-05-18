@@ -232,8 +232,9 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		super(driver);
 	}
 public void Classroomcreate() throws FindFailed {
+wait(5);
 	click(addClassroomBtn);
-	enterData("IOTCEHCK",titleCaution);
+	enterData("IOTCEHCxxxxK",titleCaution);
 	wait(5);
 	enterData("IOTCEHCK",lblDescription);
 	wait(2);
