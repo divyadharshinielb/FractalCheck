@@ -270,7 +270,7 @@ public void Classroomcreate() throws FindFailed {
 	wait(4);
 	click(continueBtn);
 	wait(5);
-	scrollToElement(By.xpath("//input[contains(@name,'session_name')]"));
+	/*scrollToElement(By.xpath("//input[contains(@name,'session_name')]"));
 	wait(5);
 	enterData("fafafsdadfdas", By.xpath("//input[contains(@name,'session_name')]"));
 	wait(4);
@@ -279,7 +279,7 @@ public void Classroomcreate() throws FindFailed {
 	enterData("11",By.xpath("//input[contains(@placeholder,'hh')]"));
 	wait(4);
 	enterData("11",By.xpath("//input[contains(@placeholder,'mm')]"));
-	wait(4);
+	wait(4);*/
 	scrollToElement(By.xpath("//label[@class='btn btn-tertiary btn-file padding-lr-30']"));
 	wait(5);
 	//click(By.xpath("//label[@class='btn btn-tertiary btn-file padding-lr-30']"));
@@ -290,13 +290,13 @@ public void Classroomcreate() throws FindFailed {
 	wait(5);
 	driver.findElement(By.id("Value")).sendKeys(Keys.ENTER); 
 	wait(5);;*/
-	String filepath = "C:\\Users\\Dharani Babu\\Music\\";
-	String inputfilepath = "C:\\Users\\Dharani Babu\\Music\\";
+	String filepath = "C:\\Users\\origin.automation\\Desktop";
+	String inputfilepath = "C:\\Users\\origin.automation\\Desktop";
 	Screen s = new Screen();
 	Pattern fileInputTextBox = new Pattern(filepath + "filetext.png");
 	Pattern openButton = new Pattern(filepath + "open.png");
 	s.wait(fileInputTextBox, 20);
-    s.type(fileInputTextBox, inputfilepath + "FileTextBox.png");
+    s.type(fileInputTextBox, inputfilepath + "filetext.png");
     s.click(openButton);
 scrollToElement(By.xpath("//h4[contains(@class,'custm_tpo')]"));
  wait(5);
