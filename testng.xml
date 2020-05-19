@@ -11,10 +11,10 @@
 	<!-- End of reportNg modification -->
 	<test thread-count="18" name="Test" >
 		<classes>
-		     	<class
+		  <!--   	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" />
 			    <class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> -->
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
 				<class
@@ -25,8 +25,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> 
+		<!--		<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> -->
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" /> 
 				
