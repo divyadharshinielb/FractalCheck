@@ -14,11 +14,11 @@
 		  <!--   	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" />
 			    <class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> -->
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" /> 
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" /> 
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" /> -->
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" /> 
 				<class
