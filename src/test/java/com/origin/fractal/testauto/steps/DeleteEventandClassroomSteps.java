@@ -46,4 +46,69 @@ public class DeleteEventandClassroomSteps extends FractalBaseStep{
 		   }	// TODO Auto-generated method stub
 		
 	}
+	public void instructorAccept() {
+		result ="PASSED";
+		   try {
+			page.instructorAccept();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }	// TODO Auto-generated method stub
+		
+		// TODO Auto-generated method stub
+		
+	}
+	public void accepteventDelete() {
+		result ="PASSED";
+		   try {
+			page.accepteventDelete();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }	// TODO Auto-generated method stub
+		
+		// TODO Auto-generated method stub
+		
+	}
+	public void eventDeletebeforeaccept() {
+		result ="PASSED";
+		   try {
+			page.eventDeletebeforeaccept();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }	
+	}
+	public void classroomDelete() {
+		
+		result ="PASSED";
+		   try {
+			page.classroomDelete();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }	
+
+	}
+	public void logoutAdmin() {
+		result ="PASSED";
+		   try {
+			page.logoutAdmin();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }	
+
+		
+	}
 }
