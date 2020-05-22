@@ -203,12 +203,15 @@ public class RolesManagementPage extends FractalBasePage {
 		public void BusinessadminwithbusinessuserRole() {
 			enterData("automation_businessadmin@origin.com",tbUserName);
 			enterData("P@ssw0rd",tbPassword);
+			if (elementExist(btnCookies)) {
+			click(btnCookies);
+			}
 			click(btnLogin);
 			wait(2);
 			elementExist(wishlisticon);
 			click(userIcon);
-			elementExist(businessuserbtn);
-			click(businessuserbtn);
+			elementExist(learnerrolecheckbtn);
+			click(learnerrolecheckbtn);
 			wait(10);
 			elementExist(mylearningcheck);
 			click(mylearningcheck);
