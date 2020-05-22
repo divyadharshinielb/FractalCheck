@@ -79,6 +79,7 @@ public class RolesManagementPage extends FractalBasePage {
 		click(btnLogin);
 		wait(2);
 		elementExist(mylearningcheck);
+		wait(2);
 		click(mylearningcheck);
 		wait(2);
 		click(lblProfile);
