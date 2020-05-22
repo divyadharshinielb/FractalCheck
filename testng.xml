@@ -26,9 +26,9 @@
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" /> 
 		<!--		<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> -->
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" /> 
 				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" /> 
+				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" /> -->
 				
 		</classes>
 	</test> <!-- Test -->
