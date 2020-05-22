@@ -18,7 +18,7 @@ public class RolesManagementPage extends FractalBasePage {
 	private By siteadminroleBtn = By.xpath("//button[contains(text(),'siteadmin')]");
 	private By businessadminroleBtn = By.xpath("//button[contains(text(),'Bussiness Admin')]");
 	private By instructorcheck = By.xpath("//span[contains(text(),'Total events')]");
-	private By learnerrolecheckbtn = By.xpath("//button[contains(text(),'Direct User')]");
+	private By learnerrolecheckbtn = By.xpath("//button[contains(text(),'Learner')]");
 	private By mylearningcheck = By.xpath("//a[contains(text(),'MY LEARNING')]");
 	private By btnMenu = By.xpath("//div[@class='menu-icon']");//ng-include[@id='header1']/*//div[contains(@title,'Menu')]
 	private By userIcon = By.xpath(".//div[contains(@class, 'pull-right padding-r-0 ng-scope')]");
