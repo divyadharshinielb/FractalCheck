@@ -450,6 +450,10 @@ public class ClassroomEventPage extends FractalBasePage{
 	fillFirstPage();
 	wait(5);
 	click(dropdownSelectInstructor1);
+	wait(5);
+	JavascriptExecutor js2 = (JavascriptExecutor) driver;
+	WebElement Element2= driver.findElement(lblSelectCalendar);
+	js2.executeScript("arguments[0].scrollIntoView();", Element2);
 	click(lblSelectCalendar);
 	wait(2);
 	click(dropdownSelectCalendar);
