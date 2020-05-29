@@ -6,6 +6,7 @@ import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.InstructorModuleSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
+import com.wv.auto.framework.utils.MyScreenRecorder;
 import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestInstructorModule extends FractalBaseWebTest {
@@ -23,7 +24,8 @@ public class WebTestInstructorModule extends FractalBaseWebTest {
 	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "")
-	public void testInstructorPage(String row, String strBrowserName) {
+	public void testInstructorPage(String row, String strBrowserName) throws Exception {
+		MyScreenRecorder.startRecording("navigationTest");
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToInstructor(driver);
 		InstructorModuleSteps instructorModuleSteps = new InstructorModuleSteps(driver);
@@ -61,5 +63,6 @@ public class WebTestInstructorModule extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_Instructor_015,Verify whether the Review buttons  are present in the INVITES AND REMAINDERS page while we clicking view all button,"+  instructorModuleSteps.getResult() );
 		instructorModuleSteps.verifyReviewInsideLabels();
 	    Reporter.writeSummary("TCID_Instructor_017,Verify whether the  below labels are present in the Review details page:ALL REVIEW COMPLETED REVIEW PENDING Description,"+  instructorModuleSteps.getResult() );
+	    MyScreenRecorder.stopRecording();
 	}
 }
