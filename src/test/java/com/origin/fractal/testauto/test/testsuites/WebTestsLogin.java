@@ -86,4 +86,18 @@ public class WebTestsLogin extends FractalBaseWebTest {
 		//fpassSteps.verifyOTPSentPopup();
 		//fpassSteps.verifyOTPReceivedToEmail();
 	}
+	/***Added by mahesh for google and facebook 23-01-2020***/
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "")
+	public void GoogleAndFacebook(String row, String strBrowserName) {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			LoginSteps loginSteps = new LoginSteps(driver);
+			login(driver);
+			HomeSteps homeSteps = new HomeSteps(driver);
+			ForgotPasswordSteps fpassSteps = new ForgotPasswordSteps(driver);
+			homeSteps.clickLogout();
+	    	loginSteps.googleBtn();
+	    	Reporter.writeSummary("TCID_SocialLogin_001, Verify the google login page function, " +  loginSteps.getResult() );
+			loginSteps.facebookButton();
+	    	Reporter.writeSummary("TCID_SocialLogin_002, Verify the face book login page function, " +  loginSteps.getResult() );
+	}
 }

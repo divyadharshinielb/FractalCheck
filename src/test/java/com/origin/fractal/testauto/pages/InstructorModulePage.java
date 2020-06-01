@@ -35,26 +35,26 @@ public class InstructorModulePage extends FractalBasePage {
 	private By lblInprogressReference= By.xpath("//span[contains(text(),'References')]");
 	private By lblInprogressTermsAndConditions= By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']");//p[contains(text(),'Terms & Conditions')]
 	private By lblCompeletdEvent= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/a[1]/div[1]");//div[contains(@class,'ins_eve_div')]
-	private By dashBoardIcon= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]");
+	private By dashBoardIcon= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]//i");
 	private By eventTab= By.xpath("//i[contains(text(),';')]");
 	private By lblInprogress= By.xpath("//li[@id='react-tabs-0']");
 	private By lblUpcoming= By.xpath("//li[@id='react-tabs-2']");
 	private By lblCompleted= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[3]");//li[@id='react-tabs-4']
 	private String SkillSetBox1 ="//select[@name='skillfilter']//option";
-    private String SkillSetBox2 ="]";
-    private By lblActivitiesText= By.xpath("//li[contains(text(),'Activities & Materials')]");
-    private By lblRosterText= By.xpath("//li[contains(text(),'Roster')]");
-    private By preEventDetailsBtn= By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12')]//div[2]//dl[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[3]//p[1]//button[1]");
-    private By sessionDetailsBtn= By.xpath("//div[4]//dl[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[3]//p[1]//button[1]");
-    private By invitesReminderViewallBtn= By.xpath("//h2[contains(text(),'Invites & Reminders')]//a[contains(text(),'View all')]");//h2[contains(text(),'Invites & Reminders')]//a[@class='filter-link cursor-pointer font-size-14 text-capitalize margin-r-0'][contains(text(),'View all')]
-    private By breadCrumLink= By.xpath("//button[contains(@class,'btn btn active cp pl-0')]//a[1]");
-    private By reviewButton= By.xpath("//a[@class='ins_rev_button']");
-    private By nextEventViewAll= By.xpath("//h2[@class='nxtevt']//a[contains(text(),'View all')]");
-    private By lblAll= By.xpath(" //button[contains(text(),'ALL')]");
-    private By lblReviewCompleted= By.xpath("//button[contains(text(),'REVIEW COMPLETED')]");
-    private By lblReviewPending= By.xpath("//button[contains(text(),'REVIEW PENDING')]");
-    private By lblDescription= By.xpath("//span[contains(text(),'Description')]");
-    public InstructorModulePage(WebDriver driver) {
+	private String SkillSetBox2 ="]";
+	private By lblActivitiesText= By.xpath("//li[contains(text(),'Activities & Materials')]");
+	private By lblRosterText= By.xpath("//li[contains(text(),'Roster')]");
+	private By preEventDetailsBtn= By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12')]//div[2]//dl[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[3]//p[1]//button[1]");
+	private By sessionDetailsBtn= By.xpath("//div[4]//dl[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[3]//p[1]//button[1]");
+	private By invitesReminderViewallBtn= By.xpath("//h2[contains(text(),'Invites & Reminders')]//a[contains(text(),'View all')]");//h2[contains(text(),'Invites & Reminders')]//a[@class='filter-link cursor-pointer font-size-14 text-capitalize margin-r-0'][contains(text(),'View all')]
+	private By breadCrumLink= By.xpath("//button[contains(@class,'btn btn active cp pl-0')]//a[1]");
+	private By reviewButton= By.xpath("//a[@class='ins_rev_button']");
+	private By nextEventViewAll= By.xpath("//h2[@class='nxtevt']//a[contains(text(),'View all')]");
+	private By lblAll= By.xpath(" //button[contains(text(),'ALL')]");
+	private By lblReviewCompleted= By.xpath("//button[contains(text(),'REVIEW COMPLETED')]");
+	private By lblReviewPending= By.xpath("//button[contains(text(),'REVIEW PENDING')]");
+	private By lblDescription= By.xpath("//span[contains(text(),'Description')]");
+	public InstructorModulePage(WebDriver driver) {
 		super(driver);
 		pageName ="InstructorModulePage"; 
 	}
@@ -66,11 +66,13 @@ public class InstructorModulePage extends FractalBasePage {
 	}
 	public void verifyEventSectionLabels(){
 		wait(2);
-		click(nextEventViewAll);
-		wait(2);
-		verifyText("UPCOMING",lblUpcomingLabel);
-		verifyText("IN PROGRESS",lblInprogressLabel);
-		verifyText("COMPLETED",lblCompletedLabel);
+		if(elementExist(nextEventViewAll)) {
+			click(nextEventViewAll);
+			wait(2);
+			verifyText("UPCOMING",lblUpcomingLabel);
+			verifyText("IN PROGRESS",lblInprogressLabel);
+			verifyText("COMPLETED",lblCompletedLabel);
+		}
 	}
 	public void verifyButtons() {
 		wait(2);
@@ -79,34 +81,36 @@ public class InstructorModulePage extends FractalBasePage {
 		click(invitesReminderViewallBtn);
 		wait(2);
 		if(elementExist(btnAccept)) {
-		verifyText("ACCEPT",btnAccept );
-		verifyText("REJECT",btnCancel );
-		wait(2);
-		verifyText("Request To Reschedule",btnReschedule );
+			verifyText("ACCEPT",btnAccept );
+			verifyText("REJECT",btnCancel );
+			wait(2);
+			verifyText("Request To Reschedule",btnReschedule );
 		}
 	}
 	public void verifyPopupButtons() {
 		if(elementExist(btnReschedule)) {
-		click(btnReschedule);
-		wait(2);
-		verifyText("Request to Reschedule",lblReschedulePopupText);
-		wait(2);
-		click(lblcloseBtn);
-		wait(2);
-		click(btnCancel);
-		wait(2);
-		verifyText("Are you sure you want to Reject the Event Invite",lblRejectPopupText);
-		wait(2);
-		click(lblcloseBtn);
+			click(btnReschedule);
+			wait(2);
+			verifyText("Request to Reschedule",lblReschedulePopupText);
+			wait(2);
+			click(lblcloseBtn);
+			wait(2);
+			click(btnCancel);
+			wait(2);
+			verifyText("Are you sure you want to Reject the Event Invite",lblRejectPopupText);
+			wait(2);
+			click(lblcloseBtn);
 		}
 	}
 	public void verifyNextEventSectionViewAll() {
-		WebElement element = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]"));
+		WebElement element = driver.findElement(dashBoardIcon);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		click(dashBoardIcon);
 		wait(2);
-		click(nextEventViewAll);
+		if(elementExist(nextEventViewAll)) {
+			click(nextEventViewAll);
+		}
 	}
 	public void verifyInvitesReminderViewAll() {
 		wait(2);
@@ -122,13 +126,18 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("COMPLETED(1)",lblCompleted);
 	}
 	public void verifyEventsInvitesClick() {
+		WebElement element = driver.findElement(dashBoardIcon);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		click(dashBoardIcon);
 		wait(2);
+		if (elementExist(lblEventInsideClick)) {
 		click(lblEventInsideClick);
-    }
+		}
+	}
 	public void verifyLabelsInsideEventDetailsPage(){
 		wait(2);
+		if (elementExist(lblSessions)) {
 		WebElement element = driver.findElement(By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
@@ -141,7 +150,8 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("References",lblReference);
 		wait(2);
 		verifyText("Terms & Conditions",lblTermsAndConditions);
-	
+		}
+
 	}
 	public void verifyInprogressEvent() {
 		WebElement element = driver.findElement(By.xpath("//i[contains(text(),';')]"));
@@ -151,7 +161,7 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(lblInprogress);
 		wait(2);
-	/*	click(lblInprogressEvent);
+		/*	click(lblInprogressEvent);
 		verifyText("Pre - Event",lblPreEvent);
 		wait(2);
 		verifyText("Session",lblInprogressSessions);
@@ -161,7 +171,7 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("References",lblInprogressReference);
 		wait(2);
 		verifyText("Terms & Conditions",lblInprogressTermsAndConditions);
-	*/}
+		 */}
 	public void verifyUpcomingEvent(){
 		WebElement element = driver.findElement(By.xpath("//i[contains(text(),';')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -171,17 +181,17 @@ public class InstructorModulePage extends FractalBasePage {
 		click(lblUpcoming);
 		wait(2);
 		if (elementExist(lblUpcomingEvent)) {
-		click(lblUpcomingEvent);
-		verifyText("Pre - Event",lblPreEvent);
-		wait(2);
-		verifyText("Session",lblInprogressSessions);
-		wait(2);
-		verifyText("Post-Event",lblInprogressPostEvent);
-		wait(2);
-		verifyText("References",lblInprogressReference);
-		wait(2);
+			click(lblUpcomingEvent);
+			verifyText("Pre - Event",lblPreEvent);
+			wait(2);
+			verifyText("Session",lblInprogressSessions);
+			wait(2);
+			verifyText("Post-Event",lblInprogressPostEvent);
+			wait(2);
+			verifyText("References",lblInprogressReference);
+			wait(2);
 		}
-//		verifyText("Terms & Conditions",lblInprogressTermsAndConditions);
+		//		verifyText("Terms & Conditions",lblInprogressTermsAndConditions);
 	}
 	public void verifyCompletedEvent() {
 		WebElement element= driver.findElement(By.xpath("//i[contains(text(),';')]"));
@@ -220,8 +230,8 @@ public class InstructorModulePage extends FractalBasePage {
 		String[] SkillTypes =verifySearchCataloItems(SkillSetBox1,SkillSetBox2);
 		for(String a:SkillTypes) {
 			System.out.println("---->"+a);
-	    }
-	
+		}
+
 	}
 	public void verifyEvalutionDueDateReachingEvent(){
 		wait(2);
@@ -270,14 +280,14 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(By.xpath("//div[contains(@class,'maindiv insdash container')]//div[2]//a[1]//div[1]//div[4]//button[1]"));
 		wait(2);
-/*		verifyText("ALL",lblAll);
+		/*		verifyText("ALL",lblAll);
 		wait(2);
 		verifyText("REVIEW COMPLETED",lblReviewCompleted);
 		wait(2);
 		verifyText("REVIEW PENDING",lblReviewPending);
 		wait(2);
 		verifyText("Description",lblDescription);
-		
-*/	}
+
+		 */	}
 }
-	
+
