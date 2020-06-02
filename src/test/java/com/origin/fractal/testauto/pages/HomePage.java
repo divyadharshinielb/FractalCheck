@@ -87,7 +87,7 @@ public class HomePage extends FractalBasePage {
 	private By wlblLpath = By.xpath(".//button[contains(text(),'LEARNING PATHS')]");
 	private By wlblcourse = By.xpath(".//button[contains(text(),'COURSES')]");
 	private By wlblResource = By.xpath(".//button[contains(text(),'RESOURCES')]");
-	private By lblAllLanuages = By.xpath("//div[contains(text(),'ALL LANGUAGES')]");//select[@name='langfilter']//option[contains(text(),'ALL LANGUAGES')]
+	private By lblAllLanuages = By.xpath("//div[contains(text(),'English')]");//select[@name='langfilter']//option[contains(text(),'ALL LANGUAGES')]
 	private By iconListView = By.xpath(".//i[@class='icon-list font-16']");//div/ng-include/*//div/a[contains(@data-icon,'î��')]
 	private By btnLoadMore = By.xpath(".//a[contains(text(),'LOAD MORE')]");
 	private By homeLink = By.xpath(".//img[@class='logo-height']");
@@ -351,6 +351,7 @@ public class HomePage extends FractalBasePage {
 		if(elementExist(wlblLpath)){
 		verifyText(getLabel("vlblLearningPath"), wlblLpath);
 		}
+		wait(5);
 		verifyText(getLabel("vlblAllLanuages"), lblAllLanuages);
 		elementExist(iconListView);
 		elementExist(iconGridView);
