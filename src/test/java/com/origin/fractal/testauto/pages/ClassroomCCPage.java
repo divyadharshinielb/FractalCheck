@@ -59,6 +59,7 @@ public class ClassroomCCPage extends FractalBasePage {
 		wait(5);
 		click(EditClassroomicon);
 		wait(5);
+		print("DIVYADFFHFHDSFHDHSFHSDFHDSHFHDShfSDfd");
 		print("In Admin side, Edit Classroom is opened");
 	}
 
@@ -212,7 +213,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	{
 		click(EditclasslblCCAssDuedate);
 		wait(5);
-		click(lblCCQualifyPrecentage);
+		//click(lblCCQualifyPrecentage);
 		wait(2);
 		click(lblCCQualifyPrecentage);
 		wait(2);
@@ -243,7 +244,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	{
 		click(EditclasslblCCQualifyPrecentage);
 		wait(5);
-		click(lblCCQualifyPrecentage);
+	//ddclick(lblCCQualifyPrecentage);
 		wait(2);
 		enterData("35",InputCCQualifyPrecentage);
 		wait(5);
@@ -502,7 +503,7 @@ public class ClassroomCCPage extends FractalBasePage {
 		wait(5);
 		click(lblCCQualifyPrecentage);
 		wait(5);
-		click(lblCCQualifyPrecentage);
+		//ddclick(lblCCQualifyPrecentage);
 		wait(2);
 		enterData("5",InputCCQualifyPrecentage);
 		wait(5);
@@ -526,7 +527,7 @@ public class ClassroomCCPage extends FractalBasePage {
 		
 	//	click(EditclasslblCCQualifyPrecentage);
 		wait(5);
-		click(lblCCQualifyPrecentage);
+	//dd	click(lblCCQualifyPrecentage);
 		wait(5);
 		click(lblCCQualifyPrecentage);
 		wait(2);
@@ -538,7 +539,7 @@ public class ClassroomCCPage extends FractalBasePage {
 		wait(5);
 		click(EditclasslblCCQualifyPrecentage);
 		wait(2);
-		click(lblCCQualifyPrecentage);
+	//dd	click(lblCCQualifyPrecentage);
 		wait(2);
 		enterData("5",EditclassInputCCQualifyPrecentage);
 		wait(5);
