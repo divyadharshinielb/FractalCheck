@@ -14,13 +14,13 @@ public class RolesManagementPage extends FractalBasePage {
 	private By btnLogin = By.xpath("//input[@type='submit']");//button[@id='login_btn']
 	private By btnLogin1 = By.xpath(".//input[contains(@type,'submit')]");  //button[@id='btn']
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");
-	private By lblProfile1 = By.xpath("//span[@title='Automation']");
+	private By lblProfile1 = By.xpath("//div[@class='logout-profile-pic']");//span[@title='Automation']
 	private By instructorroleBtn = By.xpath("//button[contains(text(),'Instructor')]");
 	private By learningadminroleBtn = By.xpath("//button[contains(text(),'Learning Admin')]");
 	private By siteadminroleBtn = By.xpath("//button[contains(text(),'Site Admin')]");
 	private By businessadminroleBtn = By.xpath("//button[contains(text(),'Bussiness Admin')]");
 	private By instructorcheck = By.xpath("//span[contains(text(),'Total events')]");
-	private By learnerrolecheckbtn = By.xpath("//button[contains(text(),'Learning Adminstrator')]");
+	private By learnerrolecheckbtn = By.xpath("//button[contains(text(),'Learner')]");//button[contains(text(),'Learning Adminstrator')]
 	private By directrolecheckbtn = By.xpath("//button[contains(text(),'Direct User')]");
 	private By mylearningcheck = By.xpath("//a[contains(text(),'MY LEARNING')]");
 	private By menucheck = By.xpath("//li[1]//a[1]//div[1]");
@@ -90,7 +90,7 @@ public class RolesManagementPage extends FractalBasePage {
 		click(instructorroleBtn);
 		wait(10);
 		elementExist(instructorcheck);
-		wait(5);
+		wait(10);
 		click(lblProfile);
 		elementExist(learnerrolecheckbtn);
 		elementExist(learningadminroleBtn);
@@ -118,7 +118,7 @@ public class RolesManagementPage extends FractalBasePage {
 			click(userIcon);
 			elementExist(learnerrolecheckbtn);
 			elementExist(instructorroleBtn);
-			click(directrolecheckbtn);
+			click(learnerrolecheckbtn);
 			wait(10);
 			elementExist(mylearningcheck);
 			click(mylearningcheck);
@@ -140,7 +140,7 @@ public class RolesManagementPage extends FractalBasePage {
 			click(lblProfile);
 			elementExist(learnerrolecheckbtn);
 			wait(2);
-			click(directrolecheckbtn);
+			click(learnerrolecheckbtn);
 			wait(2);
 			wait(15);
 			elementExist(mylearningcheck);
@@ -162,7 +162,7 @@ public class RolesManagementPage extends FractalBasePage {
 			click(btnMenu);
 			click(userIcon);
 			elementExist(directrolecheckbtn);
-			click(directrolecheckbtn);
+			click(learnerrolecheckbtn);
 			wait(10);
 			elementExist(mylearningcheck);
 			click(mylearningcheck);
@@ -310,7 +310,7 @@ public class RolesManagementPage extends FractalBasePage {
 			click(btnMenu);
 		}
 		public void editclassroomcheck() {
-			wait(2);
+			wait(5);
 			click(classroomediticon);
 			wait(2);
 			JavascriptExecutor js = (JavascriptExecutor) driver;
