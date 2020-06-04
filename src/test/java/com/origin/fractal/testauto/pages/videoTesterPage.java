@@ -15,6 +15,7 @@ public class videoTesterPage extends FractalBasePage{
 	private By play= By.xpath("//*[@title=\"Play\"]");
 	private By pause= By.xpath("//*[@title=\"Pause\"]");
 	private By replay= By.xpath("//*[@title=\"Replay\"]");
+	private By mylearningRadioBtn=By.xpath("//div[contains(@class,'text-right')]//div[1]//label[1]");
 	
 	public videoTesterPage(WebDriver driver) {
 		super(driver);
@@ -25,15 +26,17 @@ public class videoTesterPage extends FractalBasePage{
 			wait(3);
 			enterData("Video", searchfieldUser);//AutoTC_Itemcode_Video
 			driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
-			wait(5);
-			
+			wait(6);
 			click(By.xpath("//button[contains(text(),'PODCASTS')]"));
+			wait(5);
+			click(mylearningRadioBtn);
 			wait(5);
 			WebElement element = driver.findElement(Iblvideo);
 			actions.moveToElement(element).perform();
 			click(Iblvideo);
 		wait(10);
 		driver.switchTo().frame(0);
+		wait(5);
 		click(videoPlayer);
 		print("Video is playing.");
 		wait(5);
