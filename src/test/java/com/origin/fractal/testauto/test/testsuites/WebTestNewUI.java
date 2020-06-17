@@ -10,6 +10,7 @@ import com.origin.fractal.testauto.steps.HomeStepsNewUI;
 import com.origin.fractal.testauto.steps.LoginSteps;
 import com.origin.fractal.testauto.steps.MyLearningSteps;
 import com.origin.fractal.testauto.steps.MyLearningStepsNewUI;
+import com.origin.fractal.testauto.steps.VideoTesterSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
@@ -100,5 +101,16 @@ public class WebTestNewUI extends FractalBaseWebTest {
 	 homeSteps.verifyLogoImg();
 	 Reporter.writeSummary("TCID_084, Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());  
 	 homeSteps.clickLogout();
+	}
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,
+			description = "video testing")
+	public void verifyvideo(String row, String strBrowserName) throws InterruptedException {
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		
+		login(driver);
+		VideoTesterSteps VideoTesterSteps=new VideoTesterSteps(driver);
+		VideoTesterSteps.verifyVideoTester(); //15/4/2020
+		Reporter.writeSummary("TCID_Video, Verify the video gets launched succesfully," +  VideoTesterSteps.getResult() );
+	
 	}
  }
