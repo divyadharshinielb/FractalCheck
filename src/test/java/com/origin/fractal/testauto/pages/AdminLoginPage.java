@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalUtils;
 public class AdminLoginPage extends FractalBasePage {
 	private By tbUserNameNewUI = By.xpath("//input[@name='username']");
 	private By tbPasswordNewUI = By.xpath("//input[@name='password']");
-	private By btnLoginNewUI = By.xpath("//input[@value='Login']");
+	private By btnLoginNewUI = By.xpath("//input[@type='submit']");
 	private By tbUserName = By.xpath(".//input[@id='uname']");//*[@name='uname']
 	private By tbPassword = By.xpath(".//*[@name='userpassword']");//*[@name='userpassword']
 	private By btnLogin = By.xpath(".//*[@id='login_btn']");//*[@id='login_btn']
