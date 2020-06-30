@@ -42,11 +42,11 @@ name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
  <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />-->
+name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
 <class
 name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
 <class
-name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
+name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />-->
 				
 		</classes>
 	</test> <!-- Test -->
