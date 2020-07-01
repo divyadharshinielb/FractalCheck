@@ -13,7 +13,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	//Add classroom
 	private By lblCCAllsession = By.xpath("//div[@class='col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60']//div[2]//label[1]");
 	private By lblCCAssDuedate = By.xpath("//*[contains(@class, 'col-sm-5')]/div[3]/label");
-	private By lblCCQualifyPrecentage = By.xpath("//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label");
+	private By lblCCQualifyPrecentage = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[4]//label[1]");//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label
 	private By InputCCQualifyPrecentage = By.xpath("//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label/div/div/md-input-container/input");
 	private By lblCCFeedbackDuedate = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[5]//label[1]");
 	private By lblCCManualCompletion= By.xpath("//div[6]//label[1]");
@@ -27,7 +27,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	private By lblCCManualCompletiontxt= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[6]/label[1]");
 
 	//Edit classroom
-	private By EditClassroomicon = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[5]/i[2]");
+	private By EditClassroomicon = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[5]/i[2]");
 	private By EditclasslblCCAllsession = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[2]/label[1]");
 	private By EditclasslblCCAssDuedate = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[3]/label[1]");
 	private By EditclasslblCCQualifyPrecentage = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[4]/label[1]");
@@ -98,6 +98,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickEditCClblAssDuedate() 
 	{
+		wait(5);
 		click(EditclasslblCCAssDuedate);
 		wait(5);
 		click(EditclassCancelbtn);
@@ -109,9 +110,10 @@ public class ClassroomCCPage extends FractalBasePage {
 	public void ClickCClblQualifyPrecentage() 
 	{
 	//	click(AddClassbtn);
-		wait(5);
+		wait(6);
+		print("clicked");
 		click(lblCCQualifyPrecentage);
-		wait(5);
+		wait(6);
 		enterData("35",InputCCQualifyPrecentage);
 		wait(5);
 		click(Cancelbtn);
@@ -247,8 +249,9 @@ public class ClassroomCCPage extends FractalBasePage {
 	public void ClickEditCClblQualify_feedbackdate() 
 	{   
 	    wait(5);
-	//	click(EditclasslblCCQualifyPrecentage);
-	    click(lblCCQualifyPrecentage);
+		click(EditclasslblCCQualifyPrecentage);
+		wait(5);
+	//    click(lblCCQualifyPrecentage);
 		wait(5);
 		enterData("35",InputCCQualifyPrecentage);
 		wait(5);
@@ -531,22 +534,28 @@ public class ClassroomCCPage extends FractalBasePage {
 	public void EditCClblQualifySinglePrecentage() 
 	{
 		
-/*		click(EditclasslblCCQualifyPrecentage);
-		wait(5);
-		enterData("5",EditclassInputCCQualifyPrecentage);
-*/		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
-		click(EditClassroomicon);
-		wait(5);
-		click(lblCCQualifyPrecentage);
-		wait(5);
-		enterData("5",EditclassInputCCQualifyPrecentage);
-		wait(5);
-		click(EditclasslblCCQualifyPrecentage);
-		wait(5);
-		click(EditclassCancelbtn);
-		wait(5);
+//		click(EditclasslblCCQualifyPrecentage);
+			wait(5);
+		//dd	click(lblCCQualifyPrecentage);
+			wait(5);
+			click(lblCCQualifyPrecentage);
+			wait(2);
+			enterData("5",EditclassInputCCQualifyPrecentage);
+			wait(5);
+			click(EditclassCancelbtn);
+			wait(5);
+			click(EditClassroomicon);
+			wait(5);
+			click(EditclasslblCCQualifyPrecentage);
+			wait(2);
+		//dd	click(lblCCQualifyPrecentage);
+			wait(2);
+			enterData("5",EditclassInputCCQualifyPrecentage);
+			wait(5);
+			click(EditclasslblCCQualifyPrecentage);
+			wait(5);
+			click(EditclassCancelbtn);
+			wait(5);
 		
 	}
 
