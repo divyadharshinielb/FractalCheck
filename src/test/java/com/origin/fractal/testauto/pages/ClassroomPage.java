@@ -20,7 +20,7 @@ public class ClassroomPage extends FractalBasePage {
 	private By closeBtn = By.xpath("//html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/button[1]/i[1]");
 	private By addEventBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[@title='Add Event']");
 	private By editBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[@title='Edit']");
-	private By deleteBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[2]/div[1]//i[ @title='Delete']");
+	private By deleteBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[@title='Delete']");
 	private By cancelBtn = By.xpath("//span[contains(text(),'Cancel')]");
 	private By continueBtn = By.xpath("//button[contains(text(),'Continue')]");
 	private By classroomNameReqText = By.xpath("//div[contains(text(),'Classroom title required.')]");//div[contains(text(),'Classroom Title required')]
