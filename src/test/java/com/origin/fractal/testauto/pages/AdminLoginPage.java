@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalUtils;
 public class AdminLoginPage extends FractalBasePage {
 	private By tbUserNameNewUI = By.xpath("//input[@name='username']");
 	private By tbPasswordNewUI = By.xpath("//input[@name='password']");
-	private By btnLoginNewUI = By.xpath("//input[@value='Login']");
+	private By btnLoginNewUI = By.xpath("//input[@type='submit']");
 	private By tbUserName = By.xpath(".//input[@id='uname']");//*[@name='uname']
 	private By tbPassword = By.xpath(".//*[@name='userpassword']");//*[@name='userpassword']
 	private By btnLogin = By.xpath(".//*[@id='login_btn']");//*[@id='login_btn']
@@ -35,7 +35,7 @@ public class AdminLoginPage extends FractalBasePage {
 		// Go to Home Page
 //*******************************added by mahesh 08/04/2019****************************//	
 	//	String baseUrl=getGobal("webtesturl");
-		String baseUrl = "https://automation-origin.originfractal.com"; //https://dev-huron.originfractal.com;
+		String baseUrl = "https://automation-origin.originfractal.com/login"; //https://dev-huron.originfractal.com;
 		goTo(baseUrl);
 		
 	}
@@ -60,7 +60,7 @@ public class AdminLoginPage extends FractalBasePage {
 		wait(5);
 	
 		enterData("automation_siteadmin@origin.com",tbUserNameNewUI);
-			    enterData("AutoSA@123",tbPasswordNewUI);
+		enterData("AutoSA@123",tbPasswordNewUI);
 			//    print("ddiffufifuifiufiu");
 			    wait(5);
 	    click(btnLoginNewUI);
