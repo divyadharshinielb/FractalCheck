@@ -11,7 +11,7 @@
 	<!-- End of reportNg modification -->
 	<test thread-count="19" name="Test">
 		<classes>
-			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" 
+			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" 
@@ -29,9 +29,9 @@
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" 
-				/> -->
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
+				/> 
+		<!--  	<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />  -->
 
 		</classes>
 	</test> <!-- Test -->
