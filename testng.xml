@@ -29,6 +29,7 @@
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" 
 				/> 
 		<!--  	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />  -->
