@@ -13,7 +13,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 public class FractalLoginPage extends FractalBasePage {
 	private By tbUserNameNewUI = By.xpath("//input[@name='username']");
 	private By tbPasswordNewUI = By.xpath("//input[@name='password']");
-	private By btnLoginNewUI = By.xpath("//input[@value='Login']");
+	private By btnLoginNewUI = By.xpath("//input[@value='LOGIN']");
 	private By logoDiv = By.xpath("//*[contains(@class, 'logo')]");
 	// private By signInWith=By.xpath("//*[text()='Sign in with']");
 	// private By loginDiv = By.xpath("//html/body/div/div/main/div/div/div/div[2]/div/div[2]");
@@ -35,7 +35,7 @@ public class FractalLoginPage extends FractalBasePage {
 	}
 
 	public void verifyUserNameAndPassword() {
-		wait(5);
+		//wait(5);
 		if (elementExist(btnCookies)) {
 			click(btnCookies); 
 			wait(2);
@@ -45,6 +45,6 @@ public class FractalLoginPage extends FractalBasePage {
 		enterData(getLabel("Username"), tbUserNameNewUI);
 		enterData(getLabel("Password"), tbPasswordNewUI);
 		click(btnLoginNewUI);
-		wait(5);
+	//	wait(5);
 	}
 }
