@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.sikuli.script.FindFailed;
 import com.origin.fractal.testauto.FractalBasePage;
 /* File Name: DeleteEventandClassroomPage.java
  * Purpose: Check notification for instructor on deleting event and classroom -FR1-2078
@@ -19,12 +18,11 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	private By clickSingleInstructorBtn = By.xpath("//label[contains(text(),'Single Instructor')]");
 	private By selectSingleInstructor = By.xpath("//div[@class='select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20']//span[@class='current'][contains(text(),'Select')]");
 	private By classroomvenuedropdown = By.xpath("//li[contains(text(),'Origin Learning Solutions')]");
-	private By classroomskillsetdropdown = By.xpath("//span[contains(text(),'Classroom Organization.')]");
+	private By classroomskillsetdropdown = By.xpath("//span[text()[normalize-space()='Classroom Management.']]");
 	private By classroomskillsetselect = By.xpath("//input[@placeholder='Select']");
 	private By classroominstructorselect = By.xpath("//li[contains(text(),'Automation directuser')]");
 	private By lblSelect =By.xpath("//md-input-container[@class='flex']//span[@class='current'][contains(text(),'Select')]");
 	private By lblSelectVenue= By.xpath("//form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[7]/div[2]/div[1]/md-input-container[1]/div[1]/span[1]");
-	private By lblVirtualClassroom= By.xpath("//label[contains(text(),'Zoom')]");
 	private By lblDescription=By.xpath("//textarea[@name='classroom_description']");
 	private By FirstListItem = By.xpath(".//span[contains(text(),'Added on')]/../..");
 	private By btnAddEvent = By.xpath(".//button[contains(text(),'Add Event')]");
@@ -85,7 +83,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	private By lblPM = By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
 	private By venueoption = By.xpath(".//li[contains(text(),'Origin Learning Solutions')]");
 	private By instructorselectdropdown = By.xpath("//div[@class='select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20']//span[@class='current'][contains(text(),'Select')]");
-	private By instructornotification = By.xpath("By.xpath(\"//p[contains(@class,'mb-0 mt-0')]\")");
+	private By instructornotification = By.xpath("//p[contains(@class,'mb-0 mt-0')]");
 	private By instructornotificationcheck = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h1[1]");
 	private By backtoclasslbl = By.xpath("//div[contains(text(),'Back to Classroom List')]");
 	String filename = "C:\\Users\\Dharani Babu\\Music\\filetext.png";
@@ -94,16 +92,15 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		pageName = "DeleteEventandClassroomPage";
 	}
 	/*
-	 * Function name:Classroomcreate
+	 * Function name:Classroomcreate()
 	 * Covers:It covers creation of a classroom
 	 */
-	public void Classroomcreate() throws FindFailed {
+	public void Classroomcreate()  {
 		wait(5);
 		click(addClassroomBtn);
 		wait(3);
 		enterData(getLabel("title"),titleCaution);
 		wait(5);
-		wait(2);
 		click(lblSelect);
 		wait(5);
 		click(categoryoption);
@@ -117,8 +114,9 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(classroomvenuedropdown);
 		//click(lblVirtualClassroom);
 		wait(5);
-		WebElement element = driver.findElement(instructorselectdropdown); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
+		WebElement element = driver.findElement(instructorselectdropdown); 
+		Actions actions = new Actions(driver); 
+		actions.moveToElement(element);
 		actions.perform();
 		wait(2);
 		click(classroomskillsetselect);
@@ -157,7 +155,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		wait(5);
 	}
 	/*
-	 * Function: eventCreation
+	 * Function: eventCreation()
 	 * Covers: Creation of a event
 	 */
 	public void eventCreation() {
@@ -165,10 +163,12 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(btnAddEvent);
 		wait(2); 
 		verifyText(getLabel("neweventtext"),eventPageTitle);
-		click(lblTraditionalClassroom);wait(10);
+		click(lblTraditionalClassroom);
+		wait(10);
 		click(venueDropdown);wait(5);
-		WebElement element = driver.findElement(venueoption); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
+		WebElement element = driver.findElement(venueoption); 
+		Actions actions = new Actions(driver); 
+		actions.moveToElement(element);
 		actions.perform();
 		wait(5);
 		click(selectVenue);
@@ -193,7 +193,6 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		scrollToElement(lblstarttime);
 		wait(5);
 		enterData(getLabel("durationmin"),lblCalendarMinute);
-		wait(5);
 		wait(5);
 		click(lbldurationsel);
 		wait(2);
@@ -254,7 +253,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		logoutAdmin();
 	}
 	/*
-	 * Function: instructorLogin
+	 * Function: instructorLogin()
 	 * Covers: Login as a instructor and check for new notification
 	 */
 
@@ -275,7 +274,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(logOutButton);
 	}
 	/*
-	 * Function: instructorAccept
+	 * Function: instructorAccept()
 	 * Covers: Login as instructor and accept the event
 	 */
 
@@ -298,7 +297,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(logOutButton);
 	}
 	/*
-	 * Function: Event Deletion
+	 * Function: accepteventDelete()
 	 * Covers: Publish and delete the accepted event
 	 */
 
@@ -313,7 +312,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		logoutAdmin();
 	}
 	/*
-	 * Function: Event Deletion before accepting
+	 * Function: eventDeletebeforeaccept()
 	 * Covers: Delete the event and logout 
 	 */
 
@@ -325,7 +324,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		logoutAdmin();
 	}
 	/*
-	 * Function: Classroom Delete
+	 * Function: classroomDelete()
 	 * Covers: Delete the classroom 
 	 */
 
@@ -336,5 +335,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(deletebtnclassroom);
 		wait(5);
 		click(deleteokbtn);
+		logoutAdmin();
+		
 	}
 } 

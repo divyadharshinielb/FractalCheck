@@ -17,7 +17,7 @@ public class DeleteEventandClassroomSteps extends FractalBaseStep{
 		fBPage = page;
 	}
 	/*
-	 * function: Classroomcreate
+	 * function: Classroomcreate()
 	 * covers: It covers navigation of classroomcreate function in DeleteEventandClassroomPage
 	 */
 	public void Classroomcreate() {
@@ -32,7 +32,7 @@ public class DeleteEventandClassroomSteps extends FractalBaseStep{
 		}
 	}
 	/*
-	 * function:  eventCreation
+	 * function:  eventCreation()
 	 * covers: It covers navigation of eventCreation function in DeleteEventandClassroomPage
 	 */
 	public void eventCreation() {
@@ -47,7 +47,7 @@ public class DeleteEventandClassroomSteps extends FractalBaseStep{
 		}
 	}
 	/*
-	 * function: instructorLogin
+	 * function: instructorLogin()
 	 * covers: It covers navigation of instructorLogin function in DeleteEventandClassroomPage
 	 */
 	public void instructorLogin() {
@@ -62,7 +62,7 @@ public class DeleteEventandClassroomSteps extends FractalBaseStep{
 		}
 	}
 	/*
-	 * function: instructorAccept
+	 * function: instructorAccept()
 	 * covers: It covers navigation of instructorAccept function in DeleteEventandClassroomPage
 	 */
 	public void instructorAccept() {
@@ -77,7 +77,7 @@ public class DeleteEventandClassroomSteps extends FractalBaseStep{
 		}	
 	}
 	/*
-	 * function: accepteventDelete
+	 * function: accepteventDelete()
 	 * covers: It covers navigation of accepteventDelete function in DeleteEventandClassroomPage
 	 */
 	public void accepteventDelete() {
@@ -92,7 +92,7 @@ public class DeleteEventandClassroomSteps extends FractalBaseStep{
 		}		
 	}
 	/*
-	 * function: eventDeletebeforeaccept
+	 * function: eventDeletebeforeaccept()
 	 * covers: It covers navigation of eventDeletebeforeaccept function in DeleteEventandClassroomPage
 	 */
 	public void eventDeletebeforeaccept() {
@@ -107,7 +107,7 @@ public class DeleteEventandClassroomSteps extends FractalBaseStep{
 		}	
 	}
 	/*
-	 * function : classroomDelete 
+	 * function : classroomDelete() 
 	 * covers: It covers navigation of classroomDelete function in DeleteEventandClassroomPage
 	 */
 	public void classroomDelete() {
@@ -124,7 +124,7 @@ public class DeleteEventandClassroomSteps extends FractalBaseStep{
 
 	}
 	/*
-	 * function:  logoutAdmin
+	 * function:  logoutAdmin()
 	 * covers: It covers navigation of logoutAdmin function in DeleteEventandClassroomPage
 	 */
 	public void logoutAdmin() {
