@@ -33,6 +33,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" /> 
 			<!-- 	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" /> -->
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" />
 	  		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
 				<class
@@ -47,8 +49,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" /> 
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" /> 
+				 
 					
 		</classes>
 	</test> <!-- Test -->
