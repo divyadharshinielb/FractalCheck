@@ -86,7 +86,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	private By instructornotification = By.xpath("//p[contains(@class,'mb-0 mt-0')]");
 	private By instructornotificationcheck = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h1[1]");
 	private By backtoclasslbl = By.xpath("//div[contains(text(),'Back to Classroom List')]");
-	String filename = "C:\\Users\\Dharani Babu\\Music\\filetext.png";
+	String filename = "C:\\sample file\\Sample.xlsx";
 	public DeleteEventandClassroomPage(WebDriver driver) {
 		super(driver);
 		pageName = "DeleteEventandClassroomPage";
