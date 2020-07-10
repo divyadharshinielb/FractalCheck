@@ -47,7 +47,9 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" /> 
-				
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" /> 
+					
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
