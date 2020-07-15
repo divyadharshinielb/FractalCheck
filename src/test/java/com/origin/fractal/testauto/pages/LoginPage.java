@@ -29,11 +29,15 @@ public class LoginPage extends FractalBasePage {
 	private By inValid = By.xpath(".//*[contains(text(),'Username/Password is incorrect')]");
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord={ "","originfractal","","originfractal"};
-	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
+//	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
 	//edit by divya 
 	// 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
 
 	private By searchLink = By.xpath(".//input[contains(@id, 'theInput')]"); //ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]
+	//ADDED by vignesh(wvi) on 8/Apr/20
+	public By btnCookies = By.xpath("//button[@id='CookieAccept']");
+	public By qaLoginBtn = By.xpath("//input[@type='submit']");
+	//Ends
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -249,4 +253,44 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 		click(facebookButton);
 		}
+	//Added by vignesh(WVI) on 8-April-20
+		public void siteAdminLoginwithcookies() {
+			//for Qa site admin
+			if(elementExist(btnCookies)) {
+				click(btnCookies);
+			}
+			siteAdminLogin();
+		}
+		//Updated by vignesh on 19/June/20
+		public void siteAdminLogin() {
+			//for Qa site admin
+//			enterData("qasiteadmin@origin.com",tbUserName);
+//			enterData("P@ssw0rd",tbPassword);
+			//for Automation Site
+			        wait(6);
+					enterData("automation_siteadmin@origin.com",tbUserName);
+					wait(2);
+					enterData("AutoSA@123",tbPassword);
+					wait(2);
+			//for staging site
+			//		enterData("siteadmin@origin.com",tbUserName);
+			//		enterData("P@ssw0rd",tbPassword);
+
+
+			click(qaLoginBtn);	
+		}
+		public void loginInstructorwithCookies(String instUserID,String instPassword){
+			if(elementExist(btnCookies)) {
+				click(btnCookies);
+			}
+			loginInstructor(instUserID,instPassword);
+		} 
+		public void loginInstructor(String instUserID,String instPassword){
+			wait(5);
+			enterData(instUserID,tbUserName); 
+			enterData(instPassword,tbPassword);
+			click(btnLogin);
+			wait(5);
+		} 
+		//Ends
 }

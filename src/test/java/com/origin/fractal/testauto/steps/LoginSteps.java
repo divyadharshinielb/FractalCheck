@@ -183,4 +183,18 @@ public class LoginSteps extends FractalBaseStep {
 		result="FAILED";
 		  }
 	}
+	//Added by vignesh (WVI) on 10/April/20
+		public void siteAdminLoginwithcookies() {
+			page.siteAdminLoginwithcookies();
+		}
+		public void siteAdminLogin() {
+			page.siteAdminLogin();
+		}
+		public void loginInstructorwithCookies(String instUserID,String instPassword) {
+			page.loginInstructorwithCookies(instUserID,instPassword);
+		}
+		public void loginInstructor(String instUserID,String instPassword) {
+			page.loginInstructor(instUserID,instPassword);
+		}
+		//Ends
 }

@@ -894,6 +894,178 @@ wait(5);
 	click(lastDateSelectingCancellation);
 	elementExist(lastDateRegistErr);
 	}
+	// Starts here - Vigneshwaran R (WVI)
+		/* Desc.: xapth variables added to support FR1-2164 - Instructor calendar.
+		 * Added Date: 4-June-2020
+		 * Created by: Vigneshwaran R (WVI)
+		 */
+		public By searchClassRoomName=By.xpath("//input[@id='searchClassroom']");
+		public By firstRowClassRoomList = By.xpath("(//*[@ng-click='viewObject(classroom_list)'])[1]");
+		public By selectzoomLink = By.xpath("(.//li[contains(text(),'Zoom')])[1]");
+		public By calendarUpcomingDate = By.xpath("(//*[@class='md-calendar-date'])[4]");//(//*[@class='md-calendar-date-selection-indicator'])[3]
+		public By selectTimeAMPM=By.xpath("//select[@name='starttime_zone']");
+		public By eventRegStartDate=By.xpath("(//span[contains(@class,'md-calendar-date-selection-indicator')])[1]");
+		public By eventRegEndDate=By.xpath("(//span[contains(@class,'md-calendar-date-selection-indicator')])[3]");
+		public By eventInstructor=By.xpath("//div[@class='col-lg-6 col-md-6 col-sm-6 col-xs-6 padding-lr-20 padding-t-20 padding-b-20 margin-b-15 border']//div[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required']");
+		public By selectEventInstructor1=By.xpath("//*[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//li[text()='Instructor WVF 1']");//("//li[@class='option selected focus']");
+		public By deleteBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[ @title='Delete']");
+		public By deleteConformBtn=By.xpath("//*[contains(@class, 'md-confirm-button')]");
+		public By worningMsg=By.xpath("//div[@class='text-danger font-size-12 padding-l-5 ng-binding ng-scope']");
+		public By clickISTTime=By.xpath("//*[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//*[contains(text(), 'CET European Central Time (GMT+1:00)')]");
+		public static String EventType=null;
+
+		public void clickClassroom() {
+			moveElementFocusandClick(searchClassRoomName);
+			clear(searchClassRoomName);
+			enterData(getLabel("classRoomName"),searchClassRoomName);
+			wait(2);
+			click(firstRowClassRoomList);
+			wait(2);
+		}
+
+		/* Function name: classroomEventCreation()
+		 * Action: Create an Virtual Classroom/Traditional Classroom event and save
+		 * Return Type: void
+		 */
+		public void classroomEventCreation() {
+			click(btnAddEvent);
+			wait(3);
+			if(EventType.equalsIgnoreCase("Virtual Classroom")) {
+				click(lblVirtualClassroom);
+				wait(2);
+				click(linkDropdown);
+				wait(2);
+				click(selectzoomLink);
+				wait(2);
+			}
+			else if (EventType.equalsIgnoreCase("Traditional Classroom")) {
+				click(lblTraditionalClassroom);
+				wait(2);
+				click(venueDropdown);
+				wait(2);
+				click(selectVenue);
+				wait(2);
+			}
+			else {
+				click(lblTraditionalClassroom);
+				click(venueDropdown);
+				click(selectVenue);
+			}
+			click(timezoneDropdown);
+			wait(1);
+			moveElementFocusandClick(clickISTTime);
+			click(lblSession);
+			click(lblSelectCalendar);
+			wait(1);
+			moveElementFocusandClick(dropdownSelectCalendar);
+			moveElementFocusandClick(lblCalendarHour);
+			enterData(getLabel("eventTimeHour"),lblCalendarHour);
+			moveElementFocusandClick(lblCalendarMinute);
+			enterData(getLabel("eventTimeMins"),lblCalendarMinute);
+			click(selectTimeAMPM);
+			click(lblPm);
+			click(eventInstructor);
+			wait(1);
+			moveElementFocusandClick(selectEventInstructor1);
+			click(btnContinue);
+			wait(1);
+			click(inpMaxParticipants);
+			enterData(getLabel("maxParticipants"),inpMaxParticipants);
+			click(inpMinParticipants);
+			enterData(getLabel("minParticipants"),inpMinParticipants);
+			click(lblCalenderClickStart);
+			//wait(1);
+			moveElementFocusandClick(eventRegStartDate);
+			//wait(1);
+			moveElementFocusandClick(lblCalenderClickLast);
+			//wait(1);
+			moveElementFocusandClick(eventRegStartDate);
+			//wait(1);
+			moveElementFocusandClick(lblCalenderClickCancellation);
+			//wait(1);
+			moveElementFocusandClick(eventRegStartDate);
+			//wait(1);
+			click(btnSave);
+			wait(10);
+			click(closeModel);
+			wait(2);
+		}
+
+		/* Function name: deleteEvent()
+		 * Action: delete an Virtual Classroom/Traditional Classroom event in classroom
+		 * Return Type: void
+		 */
+		public void deleteEvent() {
+			if(elementExist(deleteBtn)) {
+				click(deleteBtn);
+				wait(1);
+				click(deleteConformBtn);
+				wait(2);
+			}
+		}
+
+		/*
+		 * Method name: instructorWarningMessage()
+		 * Created by: Vignesh 
+		 * Created date: 8/Jun/2020
+		 * Return type: void
+		 * Desc: Admin is able to see the Warning Message when he creates an event Same time and Same Instructor 
+		 */
+		public void instructorWarningMessage() { 
+			click(btnAddEvent);
+			wait(3);
+			if(EventType.equalsIgnoreCase("Virtual Classroom")) {
+				click(lblVirtualClassroom);
+				wait(2);
+				click(linkDropdown);
+				wait(2);
+				click(selectzoomLink);
+				wait(2);
+			}
+			else if (EventType.equalsIgnoreCase("Traditional Classroom")) {
+				//click(lblTraditionalClassroom);
+				wait(2);
+				click(venueDropdown);
+				wait(2);
+				click(selectVenue);
+				wait(2);
+			}
+			else {
+				click(lblTraditionalClassroom);
+				click(venueDropdown);
+				click(selectVenue);
+			}
+			click(timezoneDropdown);
+			wait(1);
+			moveElementFocusandClick(clickISTTime);
+			click(lblSession);
+			click(lblSelectCalendar);
+			wait(1);
+			moveElementFocusandClick(dropdownSelectCalendar);
+			moveElementFocusandClick(lblCalendarHour);
+			enterData(getLabel("eventTimeHour"),lblCalendarHour);
+			moveElementFocusandClick(lblCalendarMinute);
+			enterData(getLabel("eventTimeMins"),lblCalendarMinute);
+			click(selectTimeAMPM);
+			click(lblPm);
+			click(eventInstructor);
+			wait(2);
+			moveElementFocusandClick(selectEventInstructor1);
+			wait(2);
+		}
+
+		/*
+		 * Method name: ClickCloseXBtn()
+		 * Created by: Vignesh 
+		 * Created date: 8/Jun/2020
+		 * Return type: void
+		 * Desc: Click On close X button
+		 */
+		public void ClickCloseXBtn() {
+			click(closeModel);
+			wait(2);
+		}	
+		// Ends here - Vigneshwaran R (WVI)
 
 
 }
