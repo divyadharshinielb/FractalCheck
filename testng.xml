@@ -53,7 +53,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
-
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
