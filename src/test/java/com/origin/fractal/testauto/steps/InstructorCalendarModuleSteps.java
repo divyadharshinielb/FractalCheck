@@ -74,17 +74,17 @@ public class InstructorCalendarModuleSteps extends FractalBaseStep {
 		}
 	}
 
-	/* Method name: verifyResucheduleTimeZoneInInstructorSide()
+	/* Method name: verifyRescheduleTimeZoneInInstructorSide() 
 	 * Created by: Vignesh 
 	 * Created date: 5/Jun/2020
 	 * Return type: void
 	 * Desc: Instructor Calendar Event- Verify Resuchedule Invite notification or accept a notification is present
 	 */
-	public void verifyResucheduleTimeZoneInInstructorSide() {
+	public void verifyRescheduleTimeZoneInInstructorSide() {
 		result="FAILED";
 		InstructorModule.gotoInstructorCalendar();
 		try {
-			if(InstructorModule.verifyResucheduleTimeZoneInInstructorSide()==true) {
+			if(InstructorModule.verifyRescheduleTimeZoneInInstructorSide()==true) {
 				result="PASSED";
 			}}
 		catch(Exception e){

@@ -14,7 +14,8 @@ import com.wv.auto.framework.utils.Reporter;
  * Description: FR1-2017 -Instructor side test 
  * Number of Test cases covered: 10
  * Developed By: Vigneshwaran R
- * Updated Date: 4-June-20
+ * created Date: 4-June-20
+ * Updated Date: 15-July-20
  */
 public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
@@ -24,7 +25,7 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
 		siteAdminLoginwithcookies(driver);
-		instbellnotiSteps.prerequisite("instructor2","rescheduleEvent2",instbellnotiPage.getLabel("classroomName"));
+		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
 	}
 	
 	/*
@@ -36,35 +37,37 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-		loginInstructorwithCookies(driver,instbellnotiPage.getLabel("instructorEmailID"),instbellnotiPage.getLabel("instructorPassword"));
+		loginInstructorwithCookies(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
 		instbellnotiSteps.verifyEmptyNotification(); 
-		Reporter.writeSummary("FR1-2017 TC-01,Verify the text No notifications found," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC01,Verify the text No notifications found," +instbellnotiSteps.getResult() );
+		siteAdminLoginwithcookies(driver);
+		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",instbellnotiPage.classroomName);
+		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+		instbellnotiSteps.verifyInviteNotification();	 
+		instbellnotiSteps.instLogout();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC02,Verify the instructor1 able to get invite notification (admin invites instructor1)," +instbellnotiSteps.getResult() );
 		siteAdminLogin(driver);
-		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1EmailID","instructor1Name","instructor1",instbellnotiPage.getLabel("classroomName"));
-		loginInstructor(driver,instbellnotiPage.getLabel("instructor1EmailID"),instbellnotiPage.getLabel("instructor1Password"));
-		instbellnotiSteps.verifyInviteNotification();	
-		Reporter.writeSummary("FR1-2017 TC-02,Verify the instructor1 able to get invite notification (admin invites instructor1)," +instbellnotiSteps.getResult() );
-		siteAdminLogin(driver);
-		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2EmailID","instructor2Name","instructor2",instbellnotiPage.getLabel("classroomName"));
-		loginInstructor(driver,instbellnotiPage.getLabel("instructor2EmailID"),instbellnotiPage.getLabel("instructor2Password"));
+		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2",instbellnotiPage.classroomName);
+		loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password);
 		instbellnotiSteps.verifyInviteNotification();
-		Reporter.writeSummary("FR1-2017 TC-03,Verify the instructor2 able to get invite notification (admin invites instructor2)," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC03,Verify the instructor2 able to get invite notification (admin invites instructor2)," +instbellnotiSteps.getResult() );
+		instbellnotiSteps.instLogout();
 		siteAdminLogin(driver);
-		instbellnotiSteps.adminRescheduledEvent("rescheduleEvent1",instbellnotiPage.getLabel("classroomName"));
-		loginInstructor(driver,instbellnotiPage.getLabel("instructor2EmailID"),instbellnotiPage.getLabel("instructor2Password"));
+		instbellnotiSteps.adminRescheduledEvent("CETTime",instbellnotiPage.classroomName);
+		loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password); 
 		instbellnotiSteps.verifyRescheduledNotification();
-		Reporter.writeSummary("FR1-2017 TC-04,Verify the instructor gets reschedule notification (admin changes the timezone)," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC04,Verify the instructor gets reschedule notification (admin changes the timezone)," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyandclickMoreBtn();
-		Reporter.writeSummary("FR1-2017 TC-05,Verify the instructor sees and clicks MORE notification (when more than 3 notifications)," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC05,Verify the instructor sees and clicks MORE (when more than 3 notifications)," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyNotificationViewallPage();
-		Reporter.writeSummary("FR1-2017 TC-06,Verify when instructor clicks MORE notification CTA it lands on View more notifications page," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC06,Verify when instructor clicks MORE CTA it lands on View more notifications page," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyBreadcrumbMoreNotification();
-		Reporter.writeSummary("FR1-2017 TC-07,Verify the instructor sees all notifications page and breadcrumb," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC07,Verify the instructor sees all notifications page and breadcrumb," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyLastNoticationmatch();
-		Reporter.writeSummary("FR1-2017 TC-08,Verify the notification details are matching with view all notifications page," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC08,Verify the notification details are matching with view all notifications page," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyClickNotification();
-		Reporter.writeSummary("FR1-2017 TC-09,Verify the click notification details should redirect to Event page," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC09,Verify the click notification details should redirect to Event page," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyclickHomeaction();
-		Reporter.writeSummary("FR1-2017 TC-10,Verify click Back or Home in breadcrumb- it should redirect to dashboard page," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC10,Verify click Back or Home in breadcrumb- it should redirect to dashboard page," +instbellnotiSteps.getResult() );
 	}
 }  

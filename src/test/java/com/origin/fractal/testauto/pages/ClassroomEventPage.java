@@ -894,9 +894,11 @@ wait(5);
 	click(lastDateSelectingCancellation);
 	elementExist(lastDateRegistErr);
 	}
-	// Starts here - Vigneshwaran R (WVI)
+	
+	// Started here - Vigneshwaran R (WVI)
 		/* Desc.: xapth variables added to support FR1-2164 - Instructor calendar.
 		 * Added Date: 4-June-2020
+		 * Updated on: 14-Jul-2020 
 		 * Created by: Vigneshwaran R (WVI)
 		 */
 		public By searchClassRoomName=By.xpath("//input[@id='searchClassroom']");
@@ -912,12 +914,21 @@ wait(5);
 		public By deleteConformBtn=By.xpath("//*[contains(@class, 'md-confirm-button')]");
 		public By worningMsg=By.xpath("//div[@class='text-danger font-size-12 padding-l-5 ng-binding ng-scope']");
 		public By clickISTTime=By.xpath("//*[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//*[contains(text(), 'CET European Central Time (GMT+1:00)')]");
+		public By selectPM=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
 		public static String EventType=null;
+		
+		public String classRoomName = "Automation instructor Module classroom";
+		public String eventSessionName = "Automation instructor Module classroom";
+		public String eventTimeHour = "11";
+		public String eventTimeMins = "15";
+		public String maxParticipants= "10";
+		public String minParticipants= "02";
+		public String rescheduleTimeZone= "IST";
 
 		public void clickClassroom() {
 			moveElementFocusandClick(searchClassRoomName);
 			clear(searchClassRoomName);
-			enterData(getLabel("classRoomName"),searchClassRoomName);
+			enterData(classRoomName,searchClassRoomName);
 			wait(2);
 			click(firstRowClassRoomList);
 			wait(2);
@@ -959,22 +970,22 @@ wait(5);
 			wait(1);
 			moveElementFocusandClick(dropdownSelectCalendar);
 			moveElementFocusandClick(lblCalendarHour);
-			enterData(getLabel("eventTimeHour"),lblCalendarHour);
+			enterData(eventTimeHour,lblCalendarHour);
 			moveElementFocusandClick(lblCalendarMinute);
-			enterData(getLabel("eventTimeMins"),lblCalendarMinute);
+			enterData(eventTimeMins,lblCalendarMinute);
 			click(selectTimeAMPM);
-			click(lblPm);
+			click(selectPM);
 			click(eventInstructor);
 			wait(1);
 			moveElementFocusandClick(selectEventInstructor1);
 			click(btnContinue);
 			wait(1);
 			click(inpMaxParticipants);
-			enterData(getLabel("maxParticipants"),inpMaxParticipants);
+			enterData(maxParticipants,inpMaxParticipants);
 			click(inpMinParticipants);
-			enterData(getLabel("minParticipants"),inpMinParticipants);
+			enterData(minParticipants,inpMinParticipants);
 			click(lblCalenderClickStart);
-			//wait(1);
+			wait(3);
 			moveElementFocusandClick(eventRegStartDate);
 			//wait(1);
 			moveElementFocusandClick(lblCalenderClickLast);
@@ -1043,13 +1054,13 @@ wait(5);
 			wait(1);
 			moveElementFocusandClick(dropdownSelectCalendar);
 			moveElementFocusandClick(lblCalendarHour);
-			enterData(getLabel("eventTimeHour"),lblCalendarHour);
+			enterData(eventTimeHour,lblCalendarHour);
 			moveElementFocusandClick(lblCalendarMinute);
-			enterData(getLabel("eventTimeMins"),lblCalendarMinute);
+			enterData(eventTimeMins,lblCalendarMinute);
 			click(selectTimeAMPM);
-			click(lblPm);
+			click(selectPM);
 			click(eventInstructor);
-			wait(2);
+			wait(1);
 			moveElementFocusandClick(selectEventInstructor1);
 			wait(2);
 		}
@@ -1066,6 +1077,5 @@ wait(5);
 			wait(2);
 		}	
 		// Ends here - Vigneshwaran R (WVI)
-
 
 }
