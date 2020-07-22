@@ -13,6 +13,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -547,4 +548,47 @@ public int getNumber(String data){
 			return compareStringsIgnorecase(expText, actText);
 		}
 		//End- vignesh 
+		
+		//Starts here - Vignesh (Wvi) on 16/May/20
+		/*
+		 * Method name: moveElementFocusandClick()
+		 * Created by: Vignesh 
+		 * Created date: 16/May/2020
+		 * Return type: void
+		 * Desc: Moves the focus to the specified element and clicks on the element
+		 */		
+		public void moveElementFocusandClick(By elementLoc) {
+			WebElement element=driver.findElement(elementLoc);
+			Actions actions= new Actions(driver);
+			actions.moveToElement(element).perform();
+			click(elementLoc);
+			print("The element: "+elementLoc+" is Clicked.");
+			wait(2);
+		}
+		
+		/*
+		 * Method name: getAttributeValue()
+		 * Desc: Gets the attribute value
+		 * Return type: String
+		 * Created by: Veeresh 
+		 * Created date: 5/June/2020
+		 */
+		public String getAttributeValue(By objLoc,String name) {
+			String value = driver.findElement(objLoc).getAttribute(name);
+			return value;
+		}
+
+		/* Method name: moveElementFocus()
+		 * Created by: Vignesh 
+		 * Created date: 5/June/2020
+		 * Return type: void
+		 * Desc: Moves the focus to the specified element
+		 */
+		public void moveElementFocus(By elementLoc) {
+			WebElement element=driver.findElement(elementLoc);
+			Actions actions= new Actions(driver);
+			actions.moveToElement(element).perform();
+			wait(2);
+		}
+		// Ends here - Vignesh (Wvi) on 16/May/20
 }
