@@ -40,12 +40,6 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 		runningIndex++;
 		verifyInstanceLogin();
 		driver.quit();
-
-		driver = BrowserFactory.getBrowser(strBrowserName);
-		fractalInstance = "FractalEHSInstance";
-		runningIndex++;
-		verifyInstanceLogin();
-		driver.quit();
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		fractalInstance = "FractaleWOWInstance";
@@ -58,6 +52,16 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 		runningIndex++;
 		verifyInstanceLogin();
 		driver.quit();
+
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		fractalInstance = "FractalEHSInstance";
+		runningIndex++;
+		verifyInstanceLogin();
+		driver.quit();
+		
+		
+		
+		
 		
 	/*	driver = BrowserFactory.getBrowser(strBrowserName);
 		fractalInstance = "FractalJuniperInstance";
