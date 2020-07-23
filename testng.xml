@@ -31,7 +31,10 @@
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" 
 				/> 
 				<class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
-				/> 
+				/>
+				 <class name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" 
+				/>
+				
 			<!--	<class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification0" 
 				/>
 				<class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" 
