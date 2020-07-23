@@ -10,7 +10,9 @@
 	</listeners>
 	<!-- End of reportNg modification -->
 	<test thread-count="20" name="Test">
+	
 		<classes>
+		<!-- 
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 			<class
@@ -31,9 +33,10 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
+				-->
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
 				/> -->
-			<class
+			<!-- <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
@@ -55,6 +58,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
+				-->
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
 			<class

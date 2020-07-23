@@ -162,11 +162,11 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 */
 	public void editEvent(String searchclassroom, String edit,String instructor,String timeZone) {
 		enterData(searchclassroom,searchClassRoomName);
-		wait(5);
+		wait(8);
 		click(classRoomList);
-		wait(5);
+		wait(8);
 		click(editIcon);
-		wait(5);
+		wait(8);
 		switch (edit) {
 		case "editInstructor": 
 			selectInstructor(instructor);

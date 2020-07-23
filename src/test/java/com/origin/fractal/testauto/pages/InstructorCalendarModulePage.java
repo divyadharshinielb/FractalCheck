@@ -104,7 +104,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 			wait(1);
 			click(acceptOKBtn);
 			//click(closeIcon); //QADEV - It looks like there is close button
-			wait(2);
+			wait(5);
 			gotoInstructorCalendar();
 			return elementExist(UpcomingDetailsInEventTab);		
 		}
