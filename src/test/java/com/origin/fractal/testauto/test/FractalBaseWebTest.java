@@ -56,4 +56,35 @@ public class FractalBaseWebTest extends FractalBaseTest {
 		wait(5);
 
 		}
+	
+	//Added by vignesh (WVI) on 10/April/2020
+			protected void siteAdminLoginwithcookies(WebDriver driver) {
+				print("Inside testLogin");
+				LoginSteps loginSteps = new LoginSteps(driver);
+				print("Inside testLogin - Page Opened");
+				loginSteps.siteAdminLoginwithcookies();
+				wait(5);
+			}
+			protected void siteAdminLogin(WebDriver driver) {
+				print("Inside testLogin");
+				LoginSteps loginSteps = new LoginSteps(driver);
+				print("Inside testLogin - Page Opened");
+				loginSteps.siteAdminLogin();
+				wait(5);
+			}
+			protected void loginInstructorwithCookies(WebDriver driver,String instUserID,String instPassword) {
+				print("Inside testLogin");
+				LoginSteps loginSteps = new LoginSteps(driver);
+				print("Inside testLogin - Page Opened");
+				loginSteps.loginInstructorwithCookies(instUserID,instPassword);
+				wait(5);
+			}
+			protected void loginInstructor(WebDriver driver,String instUserID,String instPassword) {
+				print("Inside testLogin");
+				LoginSteps loginSteps = new LoginSteps(driver);
+				print("Inside testLogin - Page Opened");
+				loginSteps.loginInstructor(instUserID,instPassword);
+				wait(5);
+			}
+		//Ends
 }

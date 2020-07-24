@@ -34,11 +34,15 @@ public class LoginPage extends FractalBasePage {
 	// 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
 
 	private By searchLink = By.xpath(".//input[contains(@id, 'theInput')]"); //ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]
+
+	//ADDED by vignesh(wvi) on 8/Apr/20
+	public By qaLoginBtn = By.xpath("//input[@type='submit']");
+	//Ends
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://qadev.originfractal.com"; //https://automation-origin.originfractal.com/#/login
+		String baseUrl = "https://qadev.originfractal.com/login"; //https://automation-origin.originfractal.com/#/login
 		goTo(baseUrl);
 		
 	}
@@ -166,4 +170,45 @@ public class LoginPage extends FractalBasePage {
 		   wait(5);
 		   click(By.xpath("//button[@class='role-button']"));
 }
+	
+	//Added by vignesh(WVI) on 8-April-20
+			public void siteAdminLoginwithcookies() {
+				//for Qa site admin
+				if(elementExist(btnCookies)) {
+					click(btnCookies);
+				}
+				siteAdminLogin();
+			}
+			//Updated by vignesh on 19/June/20
+			public void siteAdminLogin() {
+				//for QADEV site admin
+				enterData("qasiteadmin@origin.com",tbUserName);
+				enterData("P@ssw0rd",tbPassword);
+				//for Automation Site
+//				        wait(6);
+//						enterData("automation_siteadmin@origin.com",tbUserName);
+//						wait(2);
+//						enterData("AutoSA@123",tbPassword);
+//						wait(2);
+				//for staging site
+				//		enterData("siteadmin@origin.com",tbUserName);
+				//		enterData("P@ssw0rd",tbPassword);
+
+
+				click(qaLoginBtn);	
+			}
+			public void loginInstructorwithCookies(String instUserID,String instPassword){
+				if(elementExist(btnCookies)) {
+					click(btnCookies);
+				}
+				loginInstructor(instUserID,instPassword);
+			} 
+			public void loginInstructor(String instUserID,String instPassword){
+				wait(5);
+				enterData(instUserID,tbUserName); 
+				enterData(instPassword,tbPassword);
+				click(btnLogin);
+				wait(5);
+			} 
+			//Ends
 }
