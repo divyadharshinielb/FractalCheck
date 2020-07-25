@@ -760,11 +760,11 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void clickClassroom() {
 		moveElementFocusandClick(searchClassRoomName);
 		clear(searchClassRoomName);
-		wait(3);
+		wait(5);
 		enterData(classRoomName,searchClassRoomName);
-		wait(5);
+		wait(10);
 		click(firstRowClassRoomList);
-		wait(5);
+		wait(10);
 	}
 
 	/* Function name: classroomEventCreation()
@@ -843,7 +843,7 @@ public class ClassroomEventPage extends FractalBasePage{
 		wait(5);
 		if(elementExist(deleteBtn)) {
 			click(deleteBtn);
-			wait(2);
+			wait(3);
 			click(deleteConformBtn);
 			wait(3);
 		}

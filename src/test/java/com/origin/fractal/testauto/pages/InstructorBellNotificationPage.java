@@ -72,6 +72,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void instLogout() {
+		wait(2);
 		element=driver.findElement(instAccountLogo);
 		actions=new Actions(driver);
 		actions.moveToElement(element).click().perform();
@@ -86,6 +87,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void adminLogout() {
+		wait(2);
 		element = driver.findElement(adminAccountLogo); 
 		actions = new Actions(driver); 
 		actions.moveToElement(element).click().perform();

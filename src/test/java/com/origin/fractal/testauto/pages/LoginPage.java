@@ -218,7 +218,6 @@ public class LoginPage extends FractalBasePage {
 		enterData(instUserID,tbUserName); 
 		enterData(instPassword,tbPassword);
 		click(btnLogin);
-		wait(5);
 	} 
 	//Ends
 }

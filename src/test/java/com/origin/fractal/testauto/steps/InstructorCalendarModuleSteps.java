@@ -25,7 +25,10 @@ public class InstructorCalendarModuleSteps extends FractalBaseStep {
 	 * Desc: Admin adds an event in classroom
 	 */	
 	public void deleteOldEventAndAddNewEvent() {
-		InstructorModule.deleteOldEventAndAddNewEvent();
+		try{InstructorModule.deleteOldEventAndAddNewEvent();
+		}catch(Exception e){
+			result="FAILED";
+		}
 	}
 
 	/* Method name: adminDeleteEvent()
@@ -35,7 +38,11 @@ public class InstructorCalendarModuleSteps extends FractalBaseStep {
 	 * Desc: Admin delete an event in classroom
 	 */	
 	public void adminDeleteEvent() {
-		InstructorModule.adminDeleteEvent();
+		try {
+			InstructorModule.adminDeleteEvent();
+		}catch(Exception e){
+			result="FAILED";
+		}
 	}
 
 	/* Method name: verifyAdminInviteAndInstructorAcceptevent()
@@ -45,12 +52,11 @@ public class InstructorCalendarModuleSteps extends FractalBaseStep {
 	 * Desc: Instructor Calendar Event- Invite notification and accept a notification
 	 */	
 	public void verifyAdminInviteAndInstructorAcceptevent() {
-		result="FAILED";
+		try {result="FAILED";
 		InstructorModule.gotoInstructorCalendar();
-		try {
-			if(InstructorModule.verifyAdminInviteAndInstructorAcceptevent()==true) {
-				result="PASSED";
-			}}
+		if(InstructorModule.verifyAdminInviteAndInstructorAcceptevent()==true) {
+			result="PASSED";
+		}}
 		catch(Exception e){
 			result="FAILED";
 		}
@@ -63,9 +69,9 @@ public class InstructorCalendarModuleSteps extends FractalBaseStep {
 	 * Desc: Instructor Calendar Event- Verify Invite notification or accept a notification is present
 	 */	
 	public void verifyAdminReAssignOrDeletetheEvent() {
-		result="FAILED";
-		InstructorModule.gotoInstructorCalendar();
 		try {
+			result="FAILED";
+			InstructorModule.gotoInstructorCalendar();
 			if(InstructorModule.verifyAdminReAssignOrDeletetheEvent()==true) {
 				result="PASSED";
 			}}
@@ -81,9 +87,9 @@ public class InstructorCalendarModuleSteps extends FractalBaseStep {
 	 * Desc: Instructor Calendar Event- Verify Resuchedule Invite notification or accept a notification is present
 	 */
 	public void verifyRescheduleTimeZoneInInstructorSide() {
-		result="FAILED";
-		InstructorModule.gotoInstructorCalendar();
 		try {
+			result="FAILED";
+			InstructorModule.gotoInstructorCalendar();
 			if(InstructorModule.verifyRescheduleTimeZoneInInstructorSide()==true) {
 				result="PASSED";
 			}}
@@ -99,7 +105,11 @@ public class InstructorCalendarModuleSteps extends FractalBaseStep {
 	 * Desc: Instructor Calendar Event- Verify Reject the Invite notification 
 	 */
 	public void instructorRejectEvent() {
-		InstructorModule.instructorRejectEvent();
+		try {InstructorModule.instructorRejectEvent();
+		}
+		catch(Exception e){
+			result="FAILED";
+		}
 	}
 
 	/* Method name: verifyAdminSeeInstructorWarningMessage()

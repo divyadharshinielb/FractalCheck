@@ -18,8 +18,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated Date: 15-July-20
  */
 public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, priority = 0 ,
-			description = "")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,description = "")
 	public void InstructorBellNotificationPrerequiredsite (String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
@@ -31,7 +30,7 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 	/*
 	 * Test NG for Instructor side bell notifications
 	 */
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 1 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
 			description = "")
 	public void InstructorBellNotification (String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
