@@ -31,12 +31,12 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	public By UpcomingEvent=By.xpath("(//*[@class='ins_ins_ins_ins_name ins_classroom_invite_name ins_ins_ins_event_circle_upcoming '])[1]");
 	public By eventTabTimeZone=By.xpath("(//*[@class='ins_ins_time_zone_ist'])[1]");
 	public By warningMessage=By.xpath("//*[contains(@class,'select-background form-group')]//*[contains(@class,'text-danger')][contains(text(),'already has an event')]");
-	
+
 	public InstructorCalendarModulePage(WebDriver driver) {
 		super(driver);
 		eventPage=new ClassroomEventPage(driver);
 	}
-	
+
 	/*
 	 * Method name: deleteOldEventAndAddNewEvent()
 	 * Created by: Vignesh 
@@ -54,7 +54,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 			print("Admin NOT able to create an event / Instructor already has an event on the selected date. So admin NOT able to create an event on same day ");
 		}
 	}
-	
+
 	/*
 	 * Method name: adminDeleteEvent()
 	 * Created by: Vignesh 
@@ -66,7 +66,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		eventPage.clickClassroom();
 		eventPage.deleteEvent();
 	}
-	
+
 	/*
 	 * Method name: gotoInstructorCalendar()
 	 * Created by: Vignesh 
@@ -76,10 +76,11 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 */	
 	public void gotoInstructorCalendar() {
 		click(instructorBurgerBtn);
+		wait(2);
 		click(instructorCalendar);
 		wait(2);
 	}
-	
+
 	/*
 	 * Method name: verifyAdminInviteAndInstructorAcceptevent()
 	 * Created by: Vignesh 
@@ -94,23 +95,22 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
 		wait(2);
 		moveElementFocus(inviteDetailsInEventTab);
-		
 		/* To check and accept the event invite*/
 		if(getAttributeValue(inviteDotOnSameDay,"title").contains(eventPage.classRoomName) && elementExist(inviteDetailsInEventTab) ) 
 		{
 			click(inviteDetailsInEventTab);
 			wait(3);
 			click(acceptBtn);
-			wait(1);
+			wait(2);
 			click(acceptOKBtn);
-			//click(closeIcon); //QADEV - It looks like there is close button
 			wait(5);
 			gotoInstructorCalendar();
+			wait(2);
 			return elementExist(UpcomingDetailsInEventTab);		
 		}
 		return false;
 	}
-	
+
 	/*
 	 * Method name: verifyAdminReAssignOrDeletetheEvent()
 	 * Created by: Vignesh 
@@ -123,14 +123,14 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		By UpcomingDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_ins_name ins_classroom_invite_name ins_ins_ins_event_circle_upcoming')][text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
-		wait(3);
+		wait(5);
 		if(verifyNonExistense(UpcomingDetailsInEventTab) && verifyNonExistense(inviteDetailsInEventTab)) {
 			print("PASSED: Event details are NOT present in Instructor side when admin delete/reassign/Instructor reject an event");
 			return true;
 		}
 		return false;	
 	}
-	
+
 	/*
 	 * Method name: verifyResucheduleTimeZoneInInstructorSide()
 	 * Created by: Vignesh 
@@ -145,7 +145,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		}
 		return false;
 	}
-	
+
 	/*
 	 * Method name: instructorRejectEvent()
 	 * Created by: Vignesh 
@@ -160,16 +160,18 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
 		wait(3);
 		moveElementFocus(inviteDetailsInEventTab);
+		wait(3);
 		click(inviteDetailsInEventTab);
 		wait(5);
 		click(rejectBtn);
 		wait(3);
 		enterData(eventPage.eventSessionName,rejectCommentTextarea);
 		click(rejectYesBtn);
-		wait(3);
+		wait(5);
 		driver.navigate().refresh();
+		wait(5);
 	}
-	
+
 	/*
 	 * Method name: verifyAdminSeeInstructorWarningMessage()
 	 * Created by: Vignesh 

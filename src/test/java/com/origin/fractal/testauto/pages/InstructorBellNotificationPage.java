@@ -14,7 +14,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  */
 public class InstructorBellNotificationPage extends FractalBasePage{
 	LoginPage loginpage;
-		public By instBellIcon = By.xpath("//*[contains(@class, 'click-hover')]");
+	public By instBellIcon = By.xpath("//*[contains(@class, 'click-hover')]");
 	public By notificationNotFound = By.xpath("//ul[contains(@class,'popupunderline')]//li//div//p");
 	public By spanNotification = By.xpath("(//*[@role=\"menuitem\"])[1]/div/p");
 	public By IblMoreNotification = By.xpath("//p[text()='MORE']");
@@ -64,7 +64,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public InstructorBellNotificationPage(WebDriver driver) {
 		super(driver);
 		loginpage= new LoginPage(driver);
-				pageName="InstructorBellNotification";
+		pageName="InstructorBellNotification";
 	}
 
 	/* Function name: instLogout()
@@ -100,9 +100,11 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void goToclassroom() {
+		wait(3);
 		click(btnMenu);
-		click(classroomBtn);
 		wait(2);
+		click(classroomBtn);
+		wait(5);
 	}
 
 
@@ -111,6 +113,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void selectInstructor(String instructor) {
+		wait(5);
 		click(eventSession);
 		wait(2);
 		moveElementFocusandClick(eventInstructor);
@@ -162,11 +165,11 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 */
 	public void editEvent(String searchclassroom, String edit,String instructor,String timeZone) {
 		enterData(searchclassroom,searchClassRoomName);
-		wait(8);
+		wait(15);
 		click(classRoomList);
-		wait(8);
+		wait(15);
 		click(editIcon);
-		wait(8);
+		wait(15);
 		switch (edit) {
 		case "editInstructor": 
 			selectInstructor(instructor);
