@@ -18,7 +18,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated Date: 15-July-20
  */
 public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, priority = 0 ,
 			description = "")
 	public void InstructorBellNotificationPrerequiredsite (String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -27,20 +27,22 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		siteAdminLoginwithcookies(driver);
 		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
 	}
-	
+
 	/*
 	 * Test NG for Instructor side bell notifications
 	 */
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 1 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
 			description = "")
 	public void InstructorBellNotification (String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-		loginInstructorwithCookies(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
+		siteAdminLoginwithcookies(driver);
+		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
+		loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
 		instbellnotiSteps.verifyEmptyNotification(); 
 		Reporter.writeSummary("FR1-2017_InstrBell_TC01,Verify the text No notifications found," +instbellnotiSteps.getResult() );
-		siteAdminLoginwithcookies(driver);
+		siteAdminLogin(driver);
 		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		instbellnotiSteps.verifyInviteNotification();	 

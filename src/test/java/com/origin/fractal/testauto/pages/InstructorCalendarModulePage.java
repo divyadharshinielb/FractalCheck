@@ -75,7 +75,9 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 * Desc: goto Instructor Calendar 
 	 */	
 	public void gotoInstructorCalendar() {
+		wait(2);
 		click(instructorBurgerBtn);
+		wait(2);
 		click(instructorCalendar);
 		wait(2);
 	}
@@ -101,10 +103,10 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 			click(inviteDetailsInEventTab);
 			wait(3);
 			click(acceptBtn);
-			wait(1);
+			wait(2);
 			click(acceptOKBtn);
 			//click(closeIcon); //QADEV - It looks like there is close button
-			wait(2);
+			wait(3);
 			gotoInstructorCalendar();
 			return elementExist(UpcomingDetailsInEventTab);		
 		}
@@ -163,11 +165,12 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		click(inviteDetailsInEventTab);
 		wait(5);
 		click(rejectBtn);
-		wait(3);
+		wait(5);
 		enterData(eventPage.eventSessionName,rejectCommentTextarea);
 		click(rejectYesBtn);
-		wait(3);
+		wait(5);
 		driver.navigate().refresh();
+		wait(5);
 	}
 	
 	/*

@@ -102,6 +102,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 */
 	public void goToclassroom() {
 		click(btnMenu);
+		wait(3);
 		click(classroomBtn);
 		wait(2);
 	}
