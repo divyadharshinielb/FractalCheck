@@ -55,7 +55,9 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
-		</classes>
+		<class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+				/> 
+				</classes>
 
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
