@@ -31,6 +31,8 @@
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" 
 				/> 
+				<class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+				/> 
 				
 				<class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
 				/> 
