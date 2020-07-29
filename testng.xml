@@ -11,6 +11,7 @@
 	<!-- End of reportNg modification -->
 	<test thread-count="19" name="Test">
 		<classes>
+		
 		 	 <class name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" 
@@ -30,17 +31,19 @@
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" 
 				/> 
-				<class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
-				/>
-				 <class name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" 
-				/>
+				<class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+				/> 
 				
-			<!--	<class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification0" 
+				<class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
+				/> 
+			<class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" 
 				/>
 				<class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" 
-				/> -->
-		<!--  	<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />  -->
+				/>
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
+		  	<!--<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />  -->
 
 		</classes>
 	</test> <!-- Test -->

@@ -75,7 +75,9 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 * Desc: goto Instructor Calendar 
 	 */	
 	public void gotoInstructorCalendar() {
+		wait(2);
 		click(instructorBurgerBtn);
+		wait(2);
 		click(instructorCalendar);
 		wait(2);
 	}
@@ -88,23 +90,23 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 * Desc: Instructor Calendar Event- Invite notification and accept a notification
 	 */	
 	public boolean verifyAdminInviteAndInstructorAcceptevent() {
-		By UpcomingDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_ins_name ins_classroom_invite_name ins_ins_ins_event_circle_upcoming')][text()='"+eventPage.getLabel("eventSessionName")+"']");
-		By inviteDetailsInEventTab=By.xpath("//*[@class='ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.getLabel("eventSessionName")+"']");
+		By UpcomingDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_ins_name ins_classroom_invite_name ins_ins_ins_event_circle_upcoming')][text()='"+eventPage.eventSessionName+"']");
+		By inviteDetailsInEventTab=By.xpath("//*[@class='ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
-		enterData(eventPage.getLabel("eventSessionName"),searchDataInEventTab);
+		enterData(eventPage.eventSessionName,searchDataInEventTab);
 		wait(2);
 		moveElementFocus(inviteDetailsInEventTab);
 		
 		/* To check and accept the event invite*/
-		if(getAttributeValue(inviteDotOnSameDay,"title").contains(eventPage.getLabel("classRoomName")+"\n"+eventPage.getLabel("eventTimeHour")+":"+eventPage.getLabel("eventTimeMins"))
-				&& elementExist(inviteDetailsInEventTab) ) {
+		if(getAttributeValue(inviteDotOnSameDay,"title").contains(eventPage.classRoomName) && elementExist(inviteDetailsInEventTab) ) 
+		{
 			click(inviteDetailsInEventTab);
 			wait(3);
 			click(acceptBtn);
-			wait(1);
-			click(acceptOKBtn);
-			click(closeIcon);
 			wait(2);
+			click(acceptOKBtn);
+			//click(closeIcon); //QADEV - It looks like there is close button
+			wait(3);
 			gotoInstructorCalendar();
 			return elementExist(UpcomingDetailsInEventTab);		
 		}
@@ -116,13 +118,13 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 * Created by: Vignesh 
 	 * Created date: 4/May/2020
 	 * Return type: void
-	 * Desc: Instructor Calendar Event- Verify Invite notification or accept a notification is present
+	 * Desc: Instructor Calendar Event- Verify Invite notification or accept notification is present
 	 */	
 	public boolean verifyAdminReAssignOrDeletetheEvent() {
-		By inviteDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.getLabel("eventSessionName")+"']");
-		By UpcomingDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_ins_name ins_classroom_invite_name ins_ins_ins_event_circle_upcoming')][text()='"+eventPage.getLabel("eventSessionName")+"']");
+		By inviteDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.eventSessionName+"']");
+		By UpcomingDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_ins_name ins_classroom_invite_name ins_ins_ins_event_circle_upcoming')][text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
-		enterData(eventPage.getLabel("eventSessionName"),searchDataInEventTab);
+		enterData(eventPage.eventSessionName,searchDataInEventTab);
 		wait(3);
 		if(verifyNonExistense(UpcomingDetailsInEventTab) && verifyNonExistense(inviteDetailsInEventTab)) {
 			print("PASSED: Event details are NOT present in Instructor side when admin delete/reassign/Instructor reject an event");
@@ -136,11 +138,11 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 * Created by: Vignesh 
 	 * Created date: 5/May/2020
 	 * Return type: void
-	 * Desc: Instructor Calendar Event- Verify Resuchedule Invite notification or accept a notification is present
+	 * Desc: Instructor Calendar Event- Verify Reschedule Invite notification or accept notification is present
 	 */
-	public boolean verifyResucheduleTimeZoneInInstructorSide() {
-		if(getText(eventTabTimeZone).equalsIgnoreCase(eventPage.getLabel("rescheduleTimeZone"))) {
-			print("PASSED: The Resuchedle time Zone is shown in Instructor side");
+	public boolean verifyRescheduleTimeZoneInInstructorSide() {
+		if(getText(eventTabTimeZone).equalsIgnoreCase(eventPage.rescheduleTimeZone)) {
+			print("PASSED: The Reschedule time Zone is shown in Instructor side");
 			return true;
 		}
 		return false;
@@ -155,19 +157,20 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 */
 	public void instructorRejectEvent() {
 		gotoInstructorCalendar();
-		By inviteDetailsInEventTab=By.xpath("//*[@class='ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.getLabel("eventSessionName")+"']");
+		By inviteDetailsInEventTab=By.xpath("//*[@class='ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
-		enterData(eventPage.getLabel("eventSessionName"),searchDataInEventTab);
+		enterData(eventPage.eventSessionName,searchDataInEventTab);
 		wait(3);
 		moveElementFocus(inviteDetailsInEventTab);
 		click(inviteDetailsInEventTab);
 		wait(5);
 		click(rejectBtn);
-		wait(3);
-		enterData(eventPage.getLabel("eventSessionName"),rejectCommentTextarea);
+		wait(5);
+		enterData(eventPage.eventSessionName,rejectCommentTextarea);
 		click(rejectYesBtn);
-		wait(3);
+		wait(5);
 		driver.navigate().refresh();
+		wait(5);
 	}
 	
 	/*

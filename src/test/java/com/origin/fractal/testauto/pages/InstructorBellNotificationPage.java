@@ -8,7 +8,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 /* File/Class name: InstructorBellNotificationPage.java
  * Created by: Vignesh 
  * Created on: 06-Apr-2020
- * Updated on: 31-May-2020
+ * Updated Date: 15-July-20
  * Purpose: Check Instructor side Bell notification
  */
 public class InstructorBellNotificationPage extends FractalBasePage{
@@ -50,168 +50,125 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]/div[5]");
 	Actions actions;
 	WebElement element;
-	
+	public String classroomName="AUTO INSTRUCTOR BELL NOTIFICATION";
+	public String emptyNotification="No notifications found";
+	public String inviteNotification="Hi! Please indicate your availability";
+	public String rescheduledNotification="rescheduled to";
+	public String instructorEmailID="xxyz08614@gmail.com";
+	public String instructorPassword="Welcome@123&";
+	public String instructor1EmailID="guestOl1.user@winvinayafoundation.org";
+	public String instructor1Password="Welcome@123";
+	public String instructor2EmailID="fractalqaautomation@gmail.com";
+	public String instructor2Password="Welcome@123&";
+
 	public InstructorBellNotificationPage(WebDriver driver) {
 		super(driver);
 		loginpage= new LoginPage(driver);
 		classroomSettingsPage=new ClassroomSettingsInstructorPage(driver);
 		pageName="InstructorBellNotification";
 	}
-	
-	/* Function name: checkInstructorExists()
-	 * Action: To check the the instructor is Exist
-	 * Return Type: null
-	 */
-	public boolean checkInstructorExists(String mailID) {
-		classroomSettingsPage.gotoClassroomSettings();
-		if(classroomSettingsPage.checkInstructorExists("instructor1EmailID") && classroomSettingsPage.checkInstructorExists("instructor2EmailID")) {
-			return true;
-		}
-		return false;
-	}
-	
+
 	/* Function name: instLogout()
 	 * Action: Do Log out instructor page
-	 * Return Type: null
+	 * Return Type: void
 	 */
 	public void instLogout() {
-		System.out.println("mahesh");
 		element=driver.findElement(instAccountLogo);
 		actions=new Actions(driver);
 		actions.moveToElement(element).click().perform();
-		wait(2);
+		wait(3);
 		element=driver.findElement(instLogout);
-		actions=new Actions(driver);
 		actions.moveToElement(element).click().perform();
+		wait(3);
 	}
-	
+
 	/* Function name: adminLogout()
 	 * Action: Do Log out admin page
-	 * Return Type: null
+	 * Return Type: void
 	 */
 	public void adminLogout() {
 		element = driver.findElement(adminAccountLogo); 
 		actions = new Actions(driver); 
 		actions.moveToElement(element).click().perform();
-		wait(2);
+		wait(3);
 		element = driver.findElement(adminLogout); 
-		actions = new Actions(driver); 
 		actions.moveToElement(element).click().perform();
+		wait(3);
 	}
-	
+
 	/* Function name: goToclassroom()
 	 * Action: click the classroom icon in menu
-	 * Return Type: null
+	 * Return Type: void
 	 */
 	public void goToclassroom() {
 		click(btnMenu);
+		wait(3);
 		click(classroomBtn);
 		wait(2);
 	}
-	
-	/* Function name: editClassroom()
-	 * Action: search specific classroom and add a instructor in classroom
-	 * Return Type: null
-	 */
-	public void editClassroom(String instructorName) {
-		enterData(getLabel("classroomName"),searchClassRoomName);
-		wait(3);
-		click(editIcon);
-		wait(3);
-		element=driver.findElement(addInstructor);
-		actions=new Actions(driver);
-		actions.moveToElement(element).perform();
-		click(addInstructor);
-		enterData(getLabel(instructorName),addInstructor);
-		wait(2);
-		click(selectInstructor);
-		wait(2);
-		click(btnContinue);
-		wait(3);
-		click(btnUpdate);
-		wait(5);
-		click(btnBackToList);
-		wait(2);
-	}
-	
+
+
 	/* Function name: selectInstructor()
 	 * Action: change the instructor1 to instructor2 in classroom
-	 * Return Type: null
+	 * Return Type: void
 	 */
 	public void selectInstructor(String instructor) {
 		click(eventSession);
 		wait(2);
-		element=driver.findElement(eventInstructor);
-		actions=new Actions(driver);
-		actions.moveToElement(element).perform();
-		click(eventInstructor);
+		moveElementFocusandClick(eventInstructor);
 		wait(2);
-		switch (getLabel(instructor)) {
-		case ("instructor2"):
-			element=driver.findElement(selectEventInstructor2);
-		actions=new Actions(driver);
-		actions.moveToElement(element).perform();
-		click(selectEventInstructor2);
-		break;
-		case ("instructor1"):
-			element=driver.findElement(selectEventInstructor1);
-		actions=new Actions(driver);
-		actions.moveToElement(element).perform();
-		click(selectEventInstructor1);
-		break;
-		default:break;
+		if (instructor.equalsIgnoreCase("instructor2")) {
+			moveElementFocusandClick(selectEventInstructor2);
+
+		}
+		else if (instructor.equalsIgnoreCase("instructor1")) {
+			moveElementFocusandClick(selectEventInstructor1);
 		}
 	}
-	
+
 	/* Function name: selectTimeZone()
 	 * Action: change the timezone1 to timezone2 in classroom
-	 * Return Type: null
+	 * Return Type: void
 	 */
 	public void selectTimeZone(String timeZone) {
-		element=driver.findElement(changeTimeZone);
-		actions=new Actions(driver);
-		actions.moveToElement(element).perform();
-		click(changeTimeZone);
+		moveElementFocusandClick(changeTimeZone);
 		wait(2);
-		switch (getLabel(timeZone)) {
-		case "timezone2":
+		if( timeZone.equalsIgnoreCase("CETTime")){
 			element=driver.findElement(clickCETTime);
-			actions=new Actions(driver);
+			Actions actions= new Actions(driver);
 			actions.moveToElement(element).perform();
+			wait(2);
 			click(clickCETTime);
-			wait(2);
-			break;
-		case "timezone1":
+		}
+		else if( timeZone.equalsIgnoreCase("ISTTime")){
 			element=driver.findElement(clickISTTime);
-			actions=new Actions(driver);
+			Actions actions= new Actions(driver);
 			actions.moveToElement(element).perform();
-			click(clickISTTime);
 			wait(2);
-			break;
-		default:break;
+			click(clickISTTime);
 		}
 	}
-	
+
 	/* Function name: preRequired()
 	 * Action: Select suitable instructor and timezone before execution starts
-	 * Return Type: null
+	 * Return Type: void
 	 */
-	public void preRequired(String instructor,String timeZone) {
+	public void prerequisite(String instructor,String timeZone) {
 		selectInstructor(instructor);
 		selectTimeZone(timeZone);
 	}
-	
+
 	/* Function name: editEvent()
 	 * Action: Admin search specific classroom and add a instructor & time zone in classroom
-	 * Return Type: null
+	 * Return Type: void
 	 */
 	public void editEvent(String searchclassroom, String edit,String instructor,String timeZone) {
 		enterData(searchclassroom,searchClassRoomName);
-		wait(3);
+		wait(5);
 		click(classRoomList);
-		wait(3);
+		wait(5);
 		click(editIcon);
-		wait(2);
+		wait(5);
 		switch (edit) {
 		case "editInstructor": 
 			selectInstructor(instructor);
@@ -219,8 +176,8 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		case "editTimeZone":
 			selectTimeZone(timeZone);
 			break;
-		case "prerequired":
-			preRequired(instructor,timeZone);
+		case "prerequisite":
+			prerequisite(instructor,timeZone);
 			break;
 		default: break;
 		}
@@ -231,10 +188,10 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		click(closeXIcon);
 		wait(1);
 	}
-	
+
 	/* Function name: clickInstBellIcon()
 	 * Action: To click bell icon in instructor side
-	 * Return Type: null
+	 * Return Type: void
 	 */
 	public void clickInstBellIcon() {
 		element=driver.findElement(instBellIcon); 
@@ -243,21 +200,21 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		click(instBellIcon);
 		wait(2);
 	}
-	
+
 	/* Function name: verifyEmptyNotification()
 	 * Action: instructor side - Verify No notification found text in bell icon
 	 * Return Type: boolean
 	 */
 	public boolean verifyEmptyNotification() {
 		clickInstBellIcon();
-		if(getText(notificationNotFound).equalsIgnoreCase(getLabel("emptyNotification"))) {
+		if(getText(notificationNotFound).equalsIgnoreCase(emptyNotification)) {
 			print("PASSED: The NO NOTIFICATION FOUND text is present.");
 			return true;
 		}
 		print("FAILED: The NO NOTIFICATION FOUND text is NOT present.");
 		return false;
 	}
-	
+
 	/* Function name: verifyInviteNotification()
 	 *Action: instructor side - Verify invite notification in bell icon
 	 * Return Type: boolean
@@ -266,14 +223,14 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		clickInstBellIcon();
 		String rescheduledNotitificationText = getText(spanNotification);
 		print("Actual Notitification Text: "+rescheduledNotitificationText);
-		if(getText(spanNotification).contains(getLabel("inviteNotification"))) {
+		if(getText(spanNotification).contains(inviteNotification)) {
 			print("PASSED: The instructor got a invite notification.");
 			return true;
 		}
 		print("FAILED: The instructor NOT got any invite notification");
 		return false;
 	}
-	
+
 	/* Function name: verifyRescheduledNotification()
 	 *Action: instructor side - Verify rescheduled notification in bell icon
 	 * Return Type: boolean
@@ -282,14 +239,14 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		clickInstBellIcon();
 		String rescheduledNotitificationText = getText(spanNotification);
 		print("Actual Notitification Text: "+rescheduledNotitificationText);
-		if(getText(spanNotification).contains(getLabel("rescheduledNotification"))) {
+		if(getText(spanNotification).contains(rescheduledNotification)) {
 			print("PASSED: The instructor got a rescheduled notification.");
 			return true;
 		}
 		print("FAILED: The instructor NOT got any rescheduled notification.");
 		return false;
 	}
-	
+
 	/* Function name: verifyandclickMoreBtn()
 	 *Action: instructor side -  click more button in bell icon
 	 * Return Type: boolean
@@ -303,7 +260,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		print("FAILED: The MORE notification button is NOT found.");
 		return false;
 	}
-	
+
 	/* Function name: verifyNotificationViewallPage()
 	 *Action: instructor side -  Verify notification in view all notification details page
 	 * Return Type: boolean
@@ -316,7 +273,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		print("FAILED: After clicked MORE Notification, The Notification View All page is NOT opened");
 		return false;
 	}
-	
+
 	/* Function name: verifyBreadcrumbMoreNotification()
 	 *Action: instructor side -  Verify breadcrumb in event details page
 	 * Return Type: boolean
@@ -329,20 +286,20 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		print("PASSED: The required breadcrumb is NOT found");
 		return false;
 	}
-	
+
 	/* Function name: verifyLastNoticationmatch()
 	 *Action: instructor side -  Verify the latest notification details is matched
 	 * Return Type: boolean
 	 */
 	public boolean verifyLastNoticationmatch() {
-		if(getText(detailedNotification).equals(getLabel("inviteNotification")) || getText(detailedNotification).contains(getLabel("rescheduledNotification"))) {
-			print("PASSED: The latest notification details is matched");
+		if(getText(detailedNotification).equals(inviteNotification) || getText(detailedNotification).contains(rescheduledNotification)) {
+			print("PASSED: The latest notification details are matching");
 			return true;
 		}
-		print("FAILED: The latest notification details is NOT matched");
+		print("FAILED: The latest notification details are NOT matching");
 		return false;
 	}
-	
+
 	/* Function name: verifyClickNotification()
 	 *Action: instructor side - Click a notification and Verify the action
 	 * Return Type: boolean
@@ -357,7 +314,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		print("FAILED: After clicked the notification, the page NOT redirect to event details page.");
 		return false;
 	}
-	
+
 	/* Function name: verifyclickHomeaction()
 	 *Action: instructor side - Click home in breadcrumb and verify land dashboard
 	 * Return Type: boolean
@@ -365,7 +322,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public boolean verifyclickHomeaction() {
 		click(breadcrumbHome);
 		wait(5);
-		if(driver.getCurrentUrl().equalsIgnoreCase(getLabel("dashboardURL")) || elementExist(lblDashboard)){
+		if(elementExist(lblDashboard)){
 			print("PASSED: After clicked home, the page redirect to Dashboard page.");
 			return true;
 		}
