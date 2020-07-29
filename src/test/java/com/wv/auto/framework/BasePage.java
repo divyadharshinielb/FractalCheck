@@ -14,6 +14,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -588,4 +589,28 @@ public int getNumber(String data){
 			wait(2);
 		}
 		// Ends here - Vignesh (Wvi) on 16/May/20
+		
+		//Added by Vignesh on 04/Dec/19
+		public boolean isClickable(By locater)      
+		{
+			try
+			{
+				WebDriverWait wait = new WebDriverWait(driver, 5);
+				wait.until(ExpectedConditions.elementToBeClickable(locater));
+				print("PASSED: The "+locater.toString()+" element is clickable");
+				return true;
+			}
+			catch (Exception e)
+			{
+				print("FAILED: The "+locater.toString()+" element is NOT clickable");
+				return false;
+			}
+		}
+		//Ends- vignesh on 04/Dec/19
+		//Added by Vignesh on 29/Jan/20
+		public void fileUpload(String filePath, By uploadLink) {
+			WebElement chooseFile = driver.findElement(uploadLink);
+			chooseFile.sendKeys(filePath);
+		}
+		//Ends- vignesh on 29/Jan/20
 }
