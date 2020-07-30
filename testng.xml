@@ -42,8 +42,8 @@
 				/>
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
-		  	<!--<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />  -->
+		  	<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />  
 
 		</classes>
 	</test> <!-- Test -->
