@@ -36,6 +36,12 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 	public void testLogin(String row, String strBrowserName) throws IOException {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
+		fractalInstance = "FractalWvfInstance"; 
+		runningIndex++;
+		verifyInstanceLogin();
+		driver.quit();
+		
+		driver = BrowserFactory.getBrowser(strBrowserName);
 		fractalInstance = "FractalCogScaleInstance";
 		runningIndex++;
 		verifyInstanceLogin();
@@ -72,12 +78,6 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 		
 	    driver = BrowserFactory.getBrowser(strBrowserName);
 		fractalInstance = "FractalFutureatWorkInstance";
-		runningIndex++;
-		verifyInstanceLogin();
-		driver.quit();
-		
-		driver = BrowserFactory.getBrowser(strBrowserName);
-		fractalInstance = "FractalWvfInstance"; 
 		runningIndex++;
 		verifyInstanceLogin();
 		driver.quit();
