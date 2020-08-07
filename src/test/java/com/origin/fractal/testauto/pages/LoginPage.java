@@ -27,12 +27,16 @@ public class LoginPage extends FractalBasePage {
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//input[contains(@id,'theInput')]");
 	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
+	//ADDED by vignesh(wvi) on 8/Apr/20
+
+	public By qaLoginBtn = By.xpath("//input[@type='submit']");
+	//Ends
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://staging-origin.originfractal.com";
+		String baseUrl = "https://staging-origin.originfractal.com/login";
 		goTo(baseUrl);
-		
+
 	}
 	public void doLogin() {
 		wait(5);
@@ -43,22 +47,22 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void loginToInstructor() {
 		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
-	    enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2
-	    click(btnLogin1);
-	    wait(2);
+		enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2
+		click(btnLogin1);
+		wait(2);
 		if(elementExist(btnCookies)) {
-		click(btnCookies);
+			click(btnCookies);
 		}
-	    wait(5);
-	    click(By.xpath("//div[@class='logout-profile-pic']"));//img[@class='logout-height']
-	    wait(5);
-	    click(By.xpath("//button[contains(text(),'Instructor')]"));//button[@class='role-button']
+		wait(5);
+		click(By.xpath("//div[@class='logout-profile-pic']"));//img[@class='logout-height']
+		wait(5);
+		click(By.xpath("//button[contains(text(),'Instructor')]"));//button[@class='role-button']
 	}
 	public void loginToContentAdmin() {
 		enterData("contentadmin@origin.com",tbUserName);
-	    enterData("P@ssw0rd",tbPassword);
-	    click(btnLogin1);
-	    wait(5);
+		enterData("P@ssw0rd",tbPassword);
+		click(btnLogin1);
+		wait(5);
 	}
 	public void doLogin1() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
@@ -95,13 +99,13 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 		click(btnLogin);	
 		elementExist(blankPassword);
-		}
+	}
 	//Starts - Added by Mahesh on Feb_06_19
-		public void verifypasswordField() {	
-			String readPass = getAttributeValuePassword(tbPassword);
-			verifyText("",readPass);
-		}
-		//Starts - Added by Mahesh on Feb_06_19
+	public void verifypasswordField() {	
+		String readPass = getAttributeValuePassword(tbPassword);
+		verifyText("",readPass);
+	}
+	//Starts - Added by Mahesh on Feb_06_19
 
 	public void registerFunction() {
 		String baseUrl = "https://automation-origin.originfractal.com";
@@ -109,12 +113,12 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 		if(elementExist(btnCookies)) {
 			click(btnCookies);
-			}
+		}
 		wait(5);
 		click(registerButton);
 		elementExist(resigstrationPage);
 	}
-	
+
 	public void blankPasswordVerification() {
 		enterData (userName[1],tbUserName);
 		enterData (passWord[0],tbPassword);
@@ -148,7 +152,7 @@ public class LoginPage extends FractalBasePage {
 		click(btnLogin1);
 		wait(5);
 		elementExist(inValid);
-		}
+	}
 
 	public void inValidPassword() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
@@ -156,27 +160,64 @@ public class LoginPage extends FractalBasePage {
 		click(btnLogin1);
 		wait(5);
 		elementExist(inValid);
-		
+
 	}
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
 		driver.findElement(By.id("theInput")).sendKeys(Keys.ENTER);
-		
+
 	}
 	private By googleButton = By.xpath("//div[@class='login-with-google']");
 	private By facebookButton = By.xpath("//div[@class='login-with-facebook']");
-	
+
 	public void googleBtn() {
-	wait(2);
-	elementExist(googleButton);
-	wait(5);
-	click(googleButton);
-	
+		wait(2);
+		elementExist(googleButton);
+		wait(5);
+		click(googleButton);
+
 	}
 	public void facebookButton() {
 		wait(5);
 		elementExist(facebookButton);
 		wait(5);
 		click(facebookButton);
+	}
+	//Added by vignesh(WVI) on 8-April-20
+	public void siteAdminLoginwithcookies() {
+		//for Qa site admin
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
 		}
+		siteAdminLogin();
+	}
+	//Updated by vignesh on 19/June/20
+	public void siteAdminLogin() {
+		//for Qa site admin
+		//				enterData("qasiteadmin@origin.com",tbUserName);
+		//				enterData("P@ssw0rd",tbPassword);
+		//for Automation Site
+		//				        wait(6);
+		//						enterData("automation_siteadmin@origin.com",tbUserName);
+		//						wait(2);
+		//						enterData("AutoSA@123",tbPassword);
+		//						wait(2);
+		//for staging site
+		enterData("siteadmin@origin.com",tbUserName);
+		enterData("P@ssw0rd",tbPassword);
+		click(qaLoginBtn);	
+	}
+	public void loginInstructorwithCookies(String instUserID,String instPassword){
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+		}
+		loginInstructor(instUserID,instPassword);
+	} 
+	public void loginInstructor(String instUserID,String instPassword){
+		wait(5);
+		enterData(instUserID,tbUserName); 
+		enterData(instPassword,tbPassword);
+		click(btnLogin);
+	} 
+	//Ends
 }
