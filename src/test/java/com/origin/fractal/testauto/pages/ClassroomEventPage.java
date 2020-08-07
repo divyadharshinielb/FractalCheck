@@ -929,9 +929,9 @@ wait(5);
 			moveElementFocusandClick(searchClassRoomName);
 			clear(searchClassRoomName);
 			enterData(classRoomName,searchClassRoomName);
-			wait(2);
+			wait(5);
 			click(firstRowClassRoomList);
-			wait(2);
+			wait(5);
 		}
 
 		/* Function name: classroomEventCreation()
@@ -1007,11 +1007,12 @@ wait(5);
 		 * Return Type: void
 		 */
 		public void deleteEvent() {
+			wait(5);
 			if(elementExist(deleteBtn)) {
 				click(deleteBtn);
-				wait(1);
-				click(deleteConformBtn);
 				wait(2);
+				click(deleteConformBtn);
+				wait(3);
 			}
 		}
 
@@ -1023,6 +1024,7 @@ wait(5);
 		 * Desc: Admin is able to see the Warning Message when he creates an event Same time and Same Instructor 
 		 */
 		public void instructorWarningMessage() { 
+			wait(2);
 			click(btnAddEvent);
 			wait(3);
 			if(EventType.equalsIgnoreCase("Virtual Classroom")) {
