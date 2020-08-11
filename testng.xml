@@ -12,7 +12,7 @@
 	<test thread-count="19" name="Test">
 		<classes>
 
-			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" 
+			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" 
@@ -37,7 +37,7 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />-->
+				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
 
