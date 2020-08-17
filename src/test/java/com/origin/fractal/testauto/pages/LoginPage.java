@@ -25,21 +25,59 @@ public class LoginPage extends FractalBasePage {
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
 	private By registerLoginBtn=By.xpath("//div[@class='padding-bp-12 text-center padding-t-5']//a[@class='text-D98040']");
+
+
+
+        private By userNameArea = By.xpath("//input[@id='username']");
+	private By passwordArea = By.xpath("//input[@id='password']");
+	private By loginBtn = By.xpath("//button[@class='fm-btn']");
+	private By homePageElement = By.xpath("//ul[contains(@class,'breadcrumbs')]");
+
+
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		pageName ="LoginPage";
 		// Go to Home Page
-		String baseUrl ="https://origin.originfractal.com/"; 
+		String baseUrl ="https://ehs.originkonnect.com/"; https://origin.originfractal.com/
 		goTo(baseUrl);
 		
 	}
+/* Function Name: goToUrl()
+	 * Purpose: go to URL
+	 * Return type: void
+	 */
+	public void goToUrl() {
+		String URL="https://ehs.originkonnect.com/";
+		goTo(URL);
+	}
+
+	/* Function Name: Login()
+	 * Purpose: do Login
+	 * Return type: void
+	 */
 	public void doLogin() {
+		goToUrl();
+		enterData("QTester",userNameArea);
+		wait(2);
+		enterData("P@ssw0rd",passwordArea);
+		wait(2);
+		click(loginBtn);
+	}
+
+	/* Function Name: verifyLogin()
+	 * Purpose: verify the Login
+	 * Return type: void
+	 */
+	public void verifyLogin() {
+		elementExist(homePageElement);
+	}
+/*	public void doLogin() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin);
 		wait(5);
 	}
-	public void loginToContentAdmin() {
+*/	public void loginToContentAdmin() {
 		enterData("contentadmin@origin.com",tbUserName);
 	    enterData("contentadmin@origin.com",tbPassword);
 	    click(btnLogin);
