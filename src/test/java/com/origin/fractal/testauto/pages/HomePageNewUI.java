@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 import com.wv.auto.framework.BrowserFactory;
 
 public class HomePageNewUI extends FractalBasePage {
-	private By btnContinue = By.xpath("//span[@class='continue_button']");
+	private By btnContinue = By.xpath("//div[@class='resume_learn']//div[@class='row']");//span[@class='continue_button']
 	private By privacyLink = By.xpath("//a[contains(text(),'Privacy')]");
 	private By termsLink = By.xpath(".//div[contains(@class,'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/../div/p/a[2]");//edited by dhanushiya
 	private By contactsLink = By.xpath(".//div[contains(@class,'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/../div/p/a[3]");//edited by dhanushiya
@@ -33,12 +33,13 @@ public class HomePageNewUI extends FractalBasePage {
 	}
 	
 		public void commonFunction() {
-			WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]")); 
-			if(BrowserFactory.getOS() == "win") {
+		//	WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'Privacy')]")); 
+		//	if(BrowserFactory.getOS() == "win") {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].scrollIntoView();", element);
+				WebElement Element= driver.findElement(By.xpath(".//div[contains(@class, 'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/p/a[3]"));
+				js.executeScript("arguments[0].scrollIntoView();", Element);
 			wait(5);
-			}
+		//	}
 			}
 			public void verifyFooterLinks() {
 			commonFunction();

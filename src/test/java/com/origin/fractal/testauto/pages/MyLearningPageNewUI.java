@@ -19,7 +19,7 @@ public class MyLearningPageNewUI extends FractalBasePage {
 	private By overViewMore = By.xpath("//p[contains(@class,'talignr vmore')]");
 	private By lbloverview = By.xpath("//span[@class='pl-30']");
 	private By lblHome = By.xpath("//span[contains(text(),'Home')]");
-	private By lblContinue = By.xpath("//span[@class='continue_button']");
+	private By lblContinue = By.xpath("//div[@class='resume_learn']//div[@class='row']");//span[@class='continue_button']
 	private By lblMyLearning = By.xpath("//a[contains(text(),'MY LEARNING')]");
 	private By lblPodcasts = By.xpath(".//button[contains(text(),'PODCASTS')]");
 	public MyLearningPageNewUI(WebDriver driver) {
