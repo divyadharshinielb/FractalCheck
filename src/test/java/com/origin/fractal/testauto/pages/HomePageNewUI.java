@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 import com.wv.auto.framework.BrowserFactory;
 
 public class HomePageNewUI extends FractalBasePage {
-	private By btnContinue = By.xpath("//span[@class='continue_button']");
+	private By btnContinue = By.xpath("//div[@class='resume_learn']//div[@class='row']");//span[@class='continue_button']
 	private By privacyLink = By.xpath("//a[contains(text(),'Privacy')]");
 	//edit by divya private By termsLink = By.xpath("//a[contains(text(),'| Terms')]");
 	private By termsLink = By.xpath(".//div[contains(@class, 'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/p/a[2]");
@@ -35,14 +36,16 @@ public class HomePageNewUI extends FractalBasePage {
 	
 		public void commonFunction() {
 			//edit by divya WebElement element = driver.findElement(By.xpath("//a[contains(text(),'| Contact')]")); 
-			WebElement element = driver.findElement(By.xpath(".//div[contains(@class, 'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/p/a[3]"));
-			if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-			Actions actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-			}
+		//	WebElement element = driver.findElement(By.xpath(".//div[contains(@class, 'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/p/a[3]"));
+		//	if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			WebElement Element= driver.findElement(By.xpath(".//div[contains(@class, 'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/p/a[3]"));
+			js.executeScript("arguments[0].scrollIntoView();", Element);
+		//	}
 			wait(5);
 			}
 			public void verifyFooterLinks() {
+				wait(5);
 			commonFunction();
 			verifyText(" | Terms",termsLink);
 			verifyText(" | Contact",contactsLink);
