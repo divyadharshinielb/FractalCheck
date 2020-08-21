@@ -11,7 +11,7 @@
 	<!-- End of reportNg modification -->
 	<test thread-count="18" name="Test">
 		<classes>
-			<class
+		<!--	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" />
@@ -55,8 +55,11 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
-		<!--<class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+		<class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
 				/> -->
+				
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningOrientation" />
 				</classes>
 
 	</test> <!-- Test -->
