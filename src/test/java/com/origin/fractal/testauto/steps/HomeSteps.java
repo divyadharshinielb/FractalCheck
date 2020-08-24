@@ -397,7 +397,8 @@ public class HomeSteps extends FractalBaseStep {
     	result ="Passed";
     	try{
     		page.verifyLogoImg();
-    	}catch(Exception e)
+    	}
+    	catch(Exception e)
 		{
     		e.printStackTrace();   
     		result="FAILED";
