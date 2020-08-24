@@ -20,8 +20,10 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By breadcrumbHome= By.xpath("//button[text()='Home']");
 	public By breadcrumbMoreNotification = By.xpath("//*[contains(@class, 'breadcrumbs')]/div[2]/button");
 	public By lblDashboard=By.xpath("//span[text()='Dashboard']");
+	//Updated by vignesh on 24/Aug/20
 	public By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[contains(@title,'Menu')]");
-	public By classroomBtn = By.xpath("//span[contains(text(),'classroom')]");
+	public By classroomBtn = By.xpath("//li[@class='menu_li ng-scope']//span[contains(text(),'classroom')]");
+	//Ends
 	public By searchClassRoomName=By.xpath("//input[@id='searchClassroom']");
 	public By editIcon=By.xpath("(//*[@title='Edit'])[1]");
 	public By addInstructor=By.xpath("//div[@name='trainer_list']//div//input[@class='ui-select-search input-xs ng-pristine ng-untouched ng-valid ng-empty']");
@@ -99,9 +101,11 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void goToclassroom() {
+		wait(5);
 		click(btnMenu);
+		wait(5);
 		click(classroomBtn);
-		wait(2);
+		wait(5);
 	}
 
 
@@ -110,6 +114,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void selectInstructor(String instructor) {
+		wait(5);
 		click(eventSession);
 		wait(2);
 		moveElementFocusandClick(eventInstructor);

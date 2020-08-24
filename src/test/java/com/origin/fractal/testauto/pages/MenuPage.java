@@ -27,7 +27,9 @@ public class MenuPage extends FractalBasePage{
 	private String reboxBtn="//ng-include[1]/div[1]/div[2]/div";
     private String reboxCatTitle="]/div[1]/div[1]/div[2]/h3[1]";
     private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
-    private By classroomBtn = By.xpath("//span[contains(text(),'classroom')]");
+    // Updated by Vignesh on 24 Aug 20
+    private By classroomBtn = By.xpath("//li[@class='menu_li ng-scope']//span[contains(text(),'classroom')]");
+    //ends   
     private By btnNotification = By.xpath("//a[@href='#notification/settings']//div[@class='icon']");
     
     public MenuPage(WebDriver driver) {
