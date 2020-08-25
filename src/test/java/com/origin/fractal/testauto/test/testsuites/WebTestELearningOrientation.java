@@ -23,12 +23,12 @@ public class WebTestELearningOrientation extends FractalBaseWebTest{
 		siteAdminLoginwithcookies(driver); 	
 		ElearningOrientationSteps eLearningOrientation= new ElearningOrientationSteps(driver);
 		eLearningOrientation.verifyELearningOrientation();
-		Reporter.writeSummary("FR1-2539 TC-001, Verify the admin able to see orientation Modes Auto/Landscape/Portrait in elearning," +  eLearningOrientation.getResult()); 
+		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-001, Verify the admin able to see orientation Modes Auto/Landscape/Portrait in elearning," +  eLearningOrientation.getResult()); 
 		eLearningOrientation.verifyOrientationSelection();
-		Reporter.writeSummary("FR1-2539 TC-002, Verify the admin able to select the orientation Auto/Landscape/Portrait in elearning," +  eLearningOrientation.getResult()); 
+		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-002, Verify the admin able to select the orientation Auto/Landscape/Portrait in elearning," +  eLearningOrientation.getResult()); 
 		eLearningOrientation.verifyScormOrientation();
-		Reporter.writeSummary("FR1-2539 TC-003, Verify the admin able to select the orientation Auto/Landscape/Portrait and save the elearning with Scrome1.2 package," +  eLearningOrientation.getResult()); 
+		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-003, Verify the admin able to select the orientation Auto/Landscape/Portrait and save the elearning with Scrome1.2 package," +  eLearningOrientation.getResult()); 
 		eLearningOrientation.verifyXapiOrientation();
-		Reporter.writeSummary("FR1-2539 TC-004, Verify the admin able to select the orientation Auto/Landscape/Portrait and save the elearning with Xapi package," +  eLearningOrientation.getResult()); 
+		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-004, Verify the admin able to select the orientation Auto/Landscape/Portrait and save the elearning with Xapi package," +  eLearningOrientation.getResult()); 
 	}
 }
