@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!-- Groups - Pilor, Phase 1.2, Account, Settings, MyLearning, Home -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<!-- The following listeners added for reportNG -->
-	<listeners>
-		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener
-			class-name="org.uncommons.reportng.JUnitXMLReporter" />
-	</listeners>
-	<!-- End of reportNg modification -->
-	<test thread-count="20" name="Test">
-
+	<test thread-count="5" name="Test">
 		<classes>
-			<class
+		<!-- 	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
@@ -32,10 +23,10 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
-
+				 -->
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
 				/> -->
-
+				<!-- 
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" />
 			<class
@@ -58,16 +49,18 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
-
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
-			<class
+			-->
+			<!--  <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
-            <class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" />
-
+				-->
+			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+				/> -->
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningOrientation" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
