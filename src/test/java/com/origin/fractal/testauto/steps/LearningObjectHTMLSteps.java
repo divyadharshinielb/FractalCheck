@@ -86,7 +86,7 @@ public class LearningObjectHTMLSteps extends FractalBaseStep {
 		try{result="FAILED";
 		if(HTMLPage.userSearchHTMLLOAndLaunchHTML()==true) {
 			result="PASSED";
-			HTMLPage.userLogout();
+//			HTMLPage.userLogout();
 		}}
 		catch(Exception e) {
 			result="FAILED";

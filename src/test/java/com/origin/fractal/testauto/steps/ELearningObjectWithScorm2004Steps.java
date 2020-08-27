@@ -78,7 +78,7 @@ public class ELearningObjectWithScorm2004Steps extends FractalBaseStep {
 		try{result="FAILED";
 		Scorm2004Page.createandEditCatalogBundleWithscorm2004(action);
 		result="PASSED";
-		HTMLPage.adminLogout();
+		//		HTMLPage.adminLogout();
 		}
 		catch(Exception e) {
 			result="FAILED";
@@ -105,7 +105,7 @@ public class ELearningObjectWithScorm2004Steps extends FractalBaseStep {
 		try{result="FAILED";
 		Scorm2004Page.userSearchElearningobjectWithscorm2004AndLaunch();
 		result="PASSED";
-		HTMLPage.userLogout();
+		//		HTMLPage.userLogout();
 		}
 		catch(Exception e) {
 			result="FAILED";
