@@ -75,7 +75,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 * Desc: goto Instructor Calendar 
 	 */	
 	public void gotoInstructorCalendar() {
-		wait(3);
+		wait(5);
 		click(instructorBurgerBtn);
 		wait(2);
 		click(instructorCalendar);
@@ -94,13 +94,13 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		By inviteDetailsInEventTab=By.xpath("//*[@class='ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
-		wait(5);
+		wait(10);
 		moveElementFocus(inviteDetailsInEventTab);
 		/* To check and accept the event invite*/
 		if(getAttributeValue(inviteDotOnSameDay,"title").contains(eventPage.classRoomName) && elementExist(inviteDetailsInEventTab) ) 
 		{
 			click(inviteDetailsInEventTab);
-			wait(3);
+			wait(5);
 			click(acceptBtn);
 			wait(2);
 			click(acceptOKBtn);
@@ -163,9 +163,9 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		moveElementFocus(inviteDetailsInEventTab);
 		wait(3);
 		click(inviteDetailsInEventTab);
-		wait(5);
+		wait(15);
 		click(rejectBtn);
-		wait(5);
+		wait(10);
 		enterData(eventPage.eventSessionName,rejectCommentTextarea);
 		click(rejectYesBtn);
 		wait(10);

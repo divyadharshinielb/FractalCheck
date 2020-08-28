@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<test thread-count="5" name="Test">
 		<classes>
-		<!--	<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
@@ -23,9 +23,9 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
-			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
+			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
 				/> -->
-		<!--	<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
@@ -55,7 +55,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningOrientation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
-			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
 				/> -->
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" />
