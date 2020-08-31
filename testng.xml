@@ -24,9 +24,9 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
-				/> -->
+				/> 
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" />-->
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
 			<class
