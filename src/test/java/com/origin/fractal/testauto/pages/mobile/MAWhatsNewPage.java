@@ -30,7 +30,7 @@ public class MAWhatsNewPage extends FractalAppPage {
 	public void validateWhatsNewPage() {
 		if(elementExist(txtWhatsNew))
 		{
-		wait(3);
+		wait(5);
 		verifyText("WHAT'S NEW?", getObj(txtWhatsNew));
 		click(getObj(btnLater));
 		}
