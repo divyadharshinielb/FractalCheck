@@ -194,6 +194,9 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void clickInstBellIcon() {
+		//Wating time added on 3-Sep-20
+		wait(2);
+		//ends
 		element=driver.findElement(instBellIcon); 
 		actions=new Actions(driver);
 		actions.moveToElement(element).perform();
@@ -320,6 +323,9 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: boolean
 	 */
 	public boolean verifyclickHomeaction() {
+		//Wating time added on 3-Sep-20
+		wait(2);
+		//ends
 		click(breadcrumbHome);
 		wait(5);
 		if(elementExist(lblDashboard)){

@@ -59,7 +59,9 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */	
 	public void clickCloseXbutton() {
 		click(closeXBtn);
-		wait(3);
+		//03-Sep-2020: Waiting time increased from 3 to 5.
+		wait(5);
+		//Ends
 	}
 
 	/* Method name: verifyELearningOrientation()
@@ -103,6 +105,9 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: click on elearning item type filter and search a name
 	 */
 	public void clickeLearningItemFilter(String Name) {
+		//Waiting time added on 3-Sep-20
+		wait(5);
+		//Ends
 		enterData(getLabel(Name),searchFieldLearnObj);	
 		wait(5);
 		click(editBtn);
@@ -143,7 +148,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 		click(newVersionReqNoBtn);
 		wait(3);
 		click(updateagainNoBtn);
-		wait(3);
+		wait(5);
 	}
 
 	/* Method name: selectAuto()

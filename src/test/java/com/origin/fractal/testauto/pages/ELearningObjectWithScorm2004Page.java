@@ -155,11 +155,16 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void createandEditCatalogBundleWithscorm2004(String action) {
+		//03-Sep-2020: Waiting time increased from 3 to 5.
 		wait(5);
+		// End
 		click(lblCatalogTab);
-		wait(2);
-		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
 		wait(5);
+		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
+		//03-Sep-2020: Waiting time increased from 5 to 10.
+		wait(10);
+		//ended
+		//End
 		click(catEditBtn);
 		wait(2);
 		click(continueBtn);

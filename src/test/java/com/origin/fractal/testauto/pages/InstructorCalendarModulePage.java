@@ -124,6 +124,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		By inviteDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.eventSessionName+"']");
 		By UpcomingDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_ins_name ins_classroom_invite_name ins_ins_ins_event_circle_upcoming')][text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
+		wait(3);
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
 		wait(3);
 		if(verifyNonExistense(UpcomingDetailsInEventTab) && verifyNonExistense(inviteDetailsInEventTab)) {
