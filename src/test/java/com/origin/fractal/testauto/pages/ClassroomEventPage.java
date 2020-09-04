@@ -749,8 +749,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	public By selectPM=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
 	public static String EventType=null;
 
-	public String classRoomName = "Automation instructor Module classroom";
-	public String eventSessionName = "Automation instructor Module classroom";
+	public String classRoomName = "AUTO_INSTRUCTOR_CALENDAR_CR";
+	public String eventSessionName = "AUTO_INSTRUCTOR_CALENDAR_CR";
 	public String eventTimeHour = "11";
 	public String eventTimeMins = "15";
 	public String maxParticipants= "10";
@@ -758,6 +758,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	public String rescheduleTimeZone= "IST";
 
 	public void clickClassroom() {
+		//added on 4Sep20
+		wait(5);
+		//ends
 		moveElementFocusandClick(searchClassRoomName);
 		clear(searchClassRoomName);
 		wait(5);
@@ -772,6 +775,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void classroomEventCreation() {
+		//added on 4Sep20
+		wait(5);
+		//ends
 		click(btnAddEvent);
 		wait(5);
 		if(EventType.equalsIgnoreCase("Virtual Classroom")) {
@@ -896,7 +902,7 @@ public class ClassroomEventPage extends FractalBasePage{
 		click(eventInstructor);
 		wait(1);
 		moveElementFocusandClick(selectEventInstructor1);
-		wait(2);
+		wait(5);
 	}
 
 	/*

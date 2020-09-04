@@ -50,7 +50,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]/div[5]");
 	Actions actions;
 	WebElement element;
-	public String classroomName="AUTO INSTRUCTOR BELL NOTIFICATION";
+	public String classroomName="AUTO_INSTRUCTOR_BELL NOTIFI";
 	public String emptyNotification="No notifications found";
 	public String inviteNotification="Hi! Please indicate your availability";
 	public String rescheduledNotification="rescheduled to";
@@ -102,11 +102,17 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void goToclassroom() {
-		wait(3);
-		click(btnMenu);
-		wait(2);
-		click(classroomBtn);
+		//4-Sep-20: waiting time increased - 3 to 5
 		wait(5);
+		//ends
+		click(btnMenu);
+		//4-Sep-20: waiting time increased - 2 to 5
+		wait(5);
+		//ends
+		click(classroomBtn);
+		//4-Sep-20: waiting time increased - 5 to 10
+		wait(10);
+		//ends
 	}
 
 
@@ -166,12 +172,21 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void editEvent(String searchclassroom, String edit,String instructor,String timeZone) {
+		//waiting time added on 4-Sep-20
+		wait(10);
+		//ends
 		enterData(searchclassroom,searchClassRoomName);
-		wait(15);
+		//4-sep-20: waiting time increased - 15 to 20 
+		wait(20);
+		//ends
 		click(classRoomList);
-		wait(15);
+		//4-sep-20: waiting time increased - 15 to 20 
+		wait(20);
+		//ends
 		click(editIcon);
-		wait(15);
+		//4-sep-20: waiting time increased - 15 to 20 
+		wait(20);
+		//ends
 		switch (edit) {
 		case "editInstructor": 
 			selectInstructor(instructor);
@@ -189,7 +204,9 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		click(btnUpdate);
 		wait(10);
 		click(closeXIcon);
-		wait(1);
+		//Waiting time increased on 4Sep20
+		wait(5);
+		//Ends
 	}
 
 	/* Function name: clickInstBellIcon()
@@ -197,11 +214,12 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void clickInstBellIcon() {
+		wait(5);
 		element=driver.findElement(instBellIcon); 
 		actions=new Actions(driver);
 		actions.moveToElement(element).perform();
 		click(instBellIcon);
-		wait(2);
+		wait(5);
 	}
 
 	/* Function name: verifyEmptyNotification()
