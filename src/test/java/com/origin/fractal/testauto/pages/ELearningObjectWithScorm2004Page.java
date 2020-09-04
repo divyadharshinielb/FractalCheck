@@ -64,6 +64,9 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public boolean verifyDeleteELearnignobjectWithscorm2004() {
 		By scormLOName=By.xpath("//*[contains(text(),'"+getLabel("eLearningName")+"')]");
 		ManageContentItemCodesPage.goToManagecontent();
+		//3 Sep 20: waiting time added
+		wait(3);
+		//ends
 		createandEditCatalogBundleWithscorm2004("Remove LO");
 		click(LearningObjectHTMLPage.learningObjectTab);
 		wait(2);
