@@ -65,6 +65,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningObjectWithScorm2004" />
+				
 		</classes>
 
 	</test> <!-- Test -->
