@@ -116,7 +116,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void clickOnClassroomItem() {
 		wait(5);
 		enterData("checking for classroom1",searchClassroom);
-		wait(10);
+		wait(15);
 		click(FirstListItem);
 	}
 	public void verifyAddEventPageOpened() {
