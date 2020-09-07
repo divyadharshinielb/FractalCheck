@@ -64,7 +64,9 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public boolean verifyDeleteELearnignobjectWithscorm2004() {
 		By scormLOName=By.xpath("//*[contains(text(),'"+getLabel("eLearningName")+"')]");
 		ManageContentItemCodesPage.goToManagecontent();
-		createandEditCatalogBundleWithscorm2004("Remove LO");
+		//commented on 7-Sep-20
+		//		createandEditCatalogBundleWithscorm2004("Remove LO");
+		//ends
 		click(LearningObjectHTMLPage.learningObjectTab);
 		wait(2);
 		click(filterELearning);
@@ -136,7 +138,9 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		click(editBtn);
 		wait(2);
 		enterData(getLabel("editeLearningName"),eLeatningTitleTextArea);
-		wait(2);
+		//waiting time increased on 7-Sep-20
+		wait(5);
+		//ends
 		click(updateBtn);
 		wait(2);
 		click(newVersionReqNoBtn);
@@ -157,9 +161,11 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public void createandEditCatalogBundleWithscorm2004(String action) {
 		wait(5);
 		click(lblCatalogTab);
-		wait(2);
+		//Waiting time increased on 7-Sep-20
+		wait(10);
+		//ends
 		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
-		wait(5);
+		wait(10);
 		click(catEditBtn);
 		wait(2);
 		click(continueBtn);
@@ -259,7 +265,9 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		enterData("Check Invalid scorm2004 file",discriTextArea);
 		wait(2);
 		enterData("Check Invalid",LearningObjectHTMLPage.htmlItemcodetab);
-		wait(5);
+		//waiting time increased on 7-Sep-20
+		wait(10);
+		//Ends
 		enterData(LearningObjectHTMLPage.getLabel("DurationHH"),LearningObjectHTMLPage.htmlDurationHH);
 		enterData(LearningObjectHTMLPage.getLabel("DurationMM"),LearningObjectHTMLPage.htmlDurationMM);
 		wait(2);
