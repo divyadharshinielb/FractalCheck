@@ -22,7 +22,7 @@ private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//span[@class='jss4
 private By viewAll = By.xpath(".//p[contains(text(),'MORE')]");//*[@id='notification-dropdown']/div[2]/div[2]/a
 private By settings = By.xpath(".//li[contains(text(),'Settings')]");
 private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
-private By btnContinue = By.xpath(".//span[@class='continue_button']");//button[contains(text(),'CONTINUE')]
+private By btnContinue = By.xpath(".//div[@class='resume_container']");//button[contains(text(),'CONTINUE')]
 private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
 private By btnTopArr = By.xpath(".//img[@class='scrollup-image']");//i[contains(@class,'icon topArr')]
 
