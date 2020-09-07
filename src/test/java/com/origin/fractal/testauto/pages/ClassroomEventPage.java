@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class ClassroomEventPage extends FractalBasePage{
 
-	private By FirstListItem = By.xpath(".//a[contains(text(),'checking for classroom 1')]");//a[contains(text(), 'Automation classroom')]//span[contains(text(),'Added on')]
+	private By FirstListItem = By.xpath(".//a[contains(text(),'checking for classroom1')]");//a[contains(text(), 'Automation classroom')]//span[contains(text(),'Added on')]
 	private By btnAddEvent = By.xpath(".//button[contains(text(),'Add Event')]");//.//h4[contains(text(),'Events')]/../../*//button[contains(text(),'Add Event')]
 	private By eventPageTitle = By.xpath(".//h4[contains(text(),'New Event')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'Continue')]");//button[contains(text(),'Continue')]
@@ -101,7 +101,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblTermsConditions = By.xpath("//h4[contains(text(),'Terms & Conditions')]");
 	private By lblCompletionCriteria = By.id("completion_criteria_checkbox");
 	private By lblClose = By.xpath("//button[@class='close padding-t-20']//i[@class='icon text-right font-size-35 padding-r-30 padding-t-10']");
-
+	private By searchClassroom = By.xpath("//input[@id='searchClassroom']");
+	
 	/*private By eventPageTitle = By.xpath("");
 	private By eventPageTitle = By.xpath("");
 	private By eventPageTitle = By.xpath("");
@@ -114,6 +115,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void clickOnClassroomItem() {
 		wait(5);
+		enterData("checking for classroom1",searchClassroom);
+		wait(10);
 		click(FirstListItem);
 	}
 	public void verifyAddEventPageOpened() {
