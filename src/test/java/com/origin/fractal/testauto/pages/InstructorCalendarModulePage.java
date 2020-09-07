@@ -79,7 +79,9 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		click(instructorBurgerBtn);
 		wait(2);
 		click(instructorCalendar);
-		wait(3);
+		//Waiting time increased on 4Sep20
+		wait(5);
+		//ends
 	}
 
 	/*
@@ -94,7 +96,9 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		By inviteDetailsInEventTab=By.xpath("//*[@class='ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
-		wait(10);
+		//Waiting time increased on 4Sep20
+		wait(15);
+		//ends
 		moveElementFocus(inviteDetailsInEventTab);
 		/* To check and accept the event invite*/
 		if(getAttributeValue(inviteDotOnSameDay,"title").contains(eventPage.classRoomName) && elementExist(inviteDetailsInEventTab) ) 
@@ -124,7 +128,9 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		By UpcomingDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_ins_name ins_classroom_invite_name ins_ins_ins_event_circle_upcoming')][text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
-		wait(5);
+		//Waiting time increased on 4Sep20
+		wait(15);
+		//ends
 		if(verifyNonExistense(UpcomingDetailsInEventTab) && verifyNonExistense(inviteDetailsInEventTab)) {
 			print("PASSED: Event details are NOT present in Instructor side when admin delete/reassign/Instructor reject an event");
 			return true;
