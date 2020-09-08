@@ -15,13 +15,13 @@ public abstract class FractalBasePage extends BasePage {
 protected FractalVerifier verifier;
 
 private By lblMyLearning = By.xpath("//a[contains(text(),'MY LEARNING')]");
-private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");//*[@id='dLabel']/span
+private By lblProfile = By.xpath(".//button[@class='jss29 jss3 jss5 jss8 circle-hover']//span[@class='jss4']");//*[@id='dLabel']/span
 private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
 private By btnCategory = By.xpath(".//*[@id='header']/*//button");
 private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//span[@class='jss4']");//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 private By viewAll = By.xpath(".//p[contains(text(),'MORE')]");//*[@id='notification-dropdown']/div[2]/div[2]/a
 private By settings = By.xpath(".//li[contains(text(),'Settings')]");
-private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
+private By lblHome= By.xpath("//img[contains(@class,'logo-height')]");//span[contains(text(),'Home')]
 private By btnContinue = By.xpath(".//div[@class='resume_container']");//button[contains(text(),'CONTINUE')]
 private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
 private By btnTopArr = By.xpath(".//img[@class='scrollup-image']");//i[contains(@class,'icon topArr')]

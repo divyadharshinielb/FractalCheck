@@ -334,13 +334,13 @@ public class HomePage extends FractalBasePage {
 		myLearning.verifyMyLearningLabels();
 	}
 	public void verifyViewAllPage() {
-	/*	wait(5);
+		wait(5);
 		click(homeLink);
-	*/	
+/*		wait(10);
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-	WebElement Element= driver.findElement(By.xpath(".//a[contains(text(),'VIEW ALL')]"));
+	WebElement Element= driver.findElement(By.xpath(".//div[@class='popular_title title']"));//a[contains(text(),'VIEW ALL')]
 	js.executeScript("arguments[0].scrollIntoView();", Element);
-	wait(5);
+*/	wait(5);
 		click(whatsNewLinkViewAll);
 		wait(5);
 		verifyText(getLabel("vlblAll"), wlblAll);
