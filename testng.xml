@@ -45,14 +45,10 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
-		<!--	<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" /> -->
+			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestImportExport" 
+				/> -->
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
 			<class
@@ -60,12 +56,17 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningOrientation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningObjectWithScorm2004" />
+				
 		</classes>
-		
+
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
