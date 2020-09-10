@@ -306,12 +306,23 @@ public class RolesManagementPage extends FractalBasePage {
 			click(btnMenu);
 		}
 		public void editclassroomcheck() {
+			wait(5);
+			elementExist(classroomediticon);
 			wait(2);
 			click(classroomediticon);
 			wait(2);
-			WebElement element = driver.findElement(By.xpath("//div[contains(@class,'col-lg-2 col-md-2 col-sm-2 col-xs-2 padding-tb-15')]//div[contains(@class,'nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required')]")); 
+		/*	if(elementExist()) {}
+			else {scrollToElement(By.xpath("//label[contains(text(),'Single Instructor')]"))
+				click(By.xpath("//label[contains(text(),'Single Instructor')]"));}
+			//div[contains(@class,'col-lg-2 col-md-2 col-sm-2 col-xs-2 padding-tb-15')]//div[contains(@class,'nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required')]
+			*/
+			/*WebElement element = driver.findElement(By.xpath("//label[contains(text(),'Single Instructor')]")); 
 			Actions actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
+			actions.perform();*/
+			scrollToElement(By.xpath("//label[contains(text(),'Single Instructor')]"));
+			wait(2);
+			click(By.xpath("//label[contains(text(),'Single Instructor')]"));
+			wait(2);
 			click(editselectSingleInstructor);
 			elementExist(insdropdown1);
 			elementExist(insdropdown2);
@@ -321,9 +332,10 @@ public class RolesManagementPage extends FractalBasePage {
 		public void addclassroomcheck() {
 			click(addClassroomBtn);
 			wait(2);
-			WebElement element = driver.findElement(By.xpath("//div[@class='select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20']//span[@class='current'][contains(text(),'Select')]")); 
+		/*	WebElement element = driver.findElement(By.xpath("//div[@class='select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20']//span[@class='current'][contains(text(),'Select')]")); 
 		    Actions actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform(); 
+			actions.perform(); */
+			scrollToElement(By.xpath("//div[@class='select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20']//span[@class='current'][contains(text(),'Select')]"));
 			click(selectSingleInstructor);
 			elementExist(insdropdown1);
 			elementExist(insdropdown2);
