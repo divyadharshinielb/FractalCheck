@@ -92,7 +92,8 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	private By  insideLpathBackBtn= By.id("");
 	private By  resourceCatalogTitle= By.id("");
 	private By  courseCatalogTitle= By.id("//XCUIElementTypeImage[contains(@name,'course_White')]/../XCUIElementTypeStaticText[1]");
-
+	private By btnLater = By.name("LATER");
+	
 	public MAMyLearningInProPage(AppiumDriver<MobileElement> appDriver) {
 		super(appDriver);
 		this.setLocators();
@@ -193,7 +194,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 			bundleTitle = By.xpath("//XCUIElementTypeButton[contains(@name,'iconBack white')]/../XCUIElementTypeStaticText[1]");
 			resourceCatalogTitle = By.xpath("//XCUIElementTypeButton[contains(@name,'iconBack white')]/../XCUIElementTypeStaticText[1]");
 			courseCatalogTitle= By.xpath("//XCUIElementTypeImage[contains(@name,'course_White')]/../XCUIElementTypeStaticText[1]");
-			btnLater = By.name("LATER");
+			
 			//lpathCatalogLogo = By.xpath("");
 			//lpathTitle = By.xpath("");
 			
