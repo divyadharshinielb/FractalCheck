@@ -193,6 +193,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 			bundleTitle = By.xpath("//XCUIElementTypeButton[contains(@name,'iconBack white')]/../XCUIElementTypeStaticText[1]");
 			resourceCatalogTitle = By.xpath("//XCUIElementTypeButton[contains(@name,'iconBack white')]/../XCUIElementTypeStaticText[1]");
 			courseCatalogTitle= By.xpath("//XCUIElementTypeImage[contains(@name,'course_White')]/../XCUIElementTypeStaticText[1]");
+			btnLater = By.name("LATER");
 			//lpathCatalogLogo = By.xpath("");
 			//lpathTitle = By.xpath("");
 			
@@ -228,7 +229,10 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	}
 	
 	public void verifyInProgress() {
-		wait(10);
+		wait(15);
+		if(elementExist(btnLater)){
+			click(getObj(btnLater));
+		}
 		click(btnMenu);
 		click(linkMyLearning);
 		wait(5);
