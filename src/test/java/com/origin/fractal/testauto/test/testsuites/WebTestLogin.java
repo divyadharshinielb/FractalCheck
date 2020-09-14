@@ -26,7 +26,7 @@ public class WebTestLogin extends FractalBaseWebTest {
 		steps.verifyAdminLogin();
 	/*	login(driver);
 		steps.verifyLogin();
-	*/	Reporter.writeSummary("TC-01,Verify the Login is working," +steps.getResult() );
+	*/	Reporter.writeSummary("TC-01,Verify the Admin Login is working," +steps.getResult() );
 		
 	}
 }
