@@ -139,4 +139,26 @@ public class LoginSteps extends FractalBaseStep {
 		result="FAILED";
 		  }
 	}
+	/* Function Name: verifyLogin()
+	 * Purpose: verify the Login
+	 * Return type: void
+	 */
+	public void verifyLogin() {
+		try{result="FAILED";
+		page.verifyLogin();
+		result="PASSED";
+		}catch (Exception e) {
+			result="FAILED";
+			print("Login is NOT working");
+		}
+	}
+	public void verifyAdminLogin() {
+		try{result="FAILED";
+		page.verifyAdminLogin();
+		result="PASSED";
+		}catch (Exception e) {
+			result="FAILED";
+			print("Login is NOT working");
+		}
+	}
 }

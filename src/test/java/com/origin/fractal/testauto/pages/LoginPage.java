@@ -25,11 +25,14 @@ public class LoginPage extends FractalBasePage {
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
 	private By registerLoginBtn=By.xpath("//div[@class='padding-bp-12 text-center padding-t-5']//a[@class='text-D98040']");
+	private By lblUser = By.xpath("//img[@class='logout-height']");
+	private By lblAdmin = By.xpath("//span[@title='Origin']");
+	private By lblAdminLogout = By.xpath("//a[@href='#'][contains(text(),'Logout')]");
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		pageName ="LoginPage";
 		// Go to Home Page
-		String baseUrl ="https://origin.originfractal.com/"; 
+		String baseUrl ="https://staging-origin.originfractal.com/login"; //https://origin.originfractal.com/
 		goTo(baseUrl);
 		
 	}
@@ -39,9 +42,21 @@ public class LoginPage extends FractalBasePage {
 		click(btnLogin);
 		wait(5);
 	}
+	public void verifyLogin() {
+		elementExist(lblUser);
+		wait(5);
+		click(lblUser);
+	}
+	public void verifyAdminLogin() {
+		elementExist(lblAdmin);
+		wait(5);
+		click(lblAdmin);
+		wait(5);
+		click(lblAdminLogout);
+	}
 	public void loginToContentAdmin() {
-		enterData("contentadmin@origin.com",tbUserName);
-	    enterData("contentadmin@origin.com",tbPassword);
+		enterData("siteadmin@origin.com",tbUserName);//contentadmin@origin.com
+	    enterData("P@ssw0rd",tbPassword);//contentadmin@origin.com
 	    click(btnLogin);
 	    wait(5);
 	}
