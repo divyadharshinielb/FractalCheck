@@ -89,6 +89,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	private By  iconVoiceAssistant= By.id("com.originkonnect.app:id/chatbot_img");
 	private By  btnDeny= By.id("com.android.packageinstaller:id/permission_deny_button");
 	private By  btnAllow= By.id("com.android.packageinstaller:id/permission_allow_button");
+	private By btnLater = By.name("LATER");
 	
 	private By  insideLpathBackBtn= By.id("");
 	private By  resourceCatalogTitle= By.id("");
@@ -249,7 +250,10 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	
 	
 	public void verifyInProgress() {
-		wait(25);
+		wait(15);
+		if(elementExist(btnLater)){
+			click(getObj(btnLater));
+		}
 		click(btnMenu);
 		wait(5);
 		click(linkMyLearning);

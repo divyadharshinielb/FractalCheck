@@ -53,7 +53,7 @@ public void setPlatform(WebDriver driver) {
 	
 	public MobileElement getObj(By objLoc) {
 		print("In AppBasePage getObj " + objLoc.toString());
-		
+		wait(2);
 		MobileElement me = (MobileElement)driver.findElement(objLoc);
 		return me;
 	}
