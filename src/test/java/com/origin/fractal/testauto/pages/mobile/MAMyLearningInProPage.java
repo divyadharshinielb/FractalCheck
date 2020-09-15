@@ -235,6 +235,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 			click(getObj(btnLater));
 		}
 		click(btnMenu);
+		wait(5);
 		click(linkMyLearning);
 		wait(5);
 		verifyText("IN PROGRESS", getObj(lblInprogress));
