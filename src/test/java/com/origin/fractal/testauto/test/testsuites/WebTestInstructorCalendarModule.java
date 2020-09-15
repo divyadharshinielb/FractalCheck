@@ -54,7 +54,10 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		instbellnotiSteps.adminLogout();
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyAdminInviteAndInstructorAcceptevent();
-		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-"+(++number)+",Verify the Admin invites the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+		//Added and updated on 14Sep20
+		Reporter.writeSummary("FR1-113_InstrSessionDetails_"+ClassroomEventPage.EventType+",Verify the Admin is able to view the assigned session details in the calendar," +InstructorModuleSteps.getResult());
+		Reporter.writeSummary("FR1-114_InstrSessionDetails & FR1-2164_InstrCalendar_TC-"+(++number)+",Verify the Admin invites the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+		//Ends
 		instbellnotiSteps.instLogout();
 		siteAdminLogin(driver);
 		instbellnotiSteps.adminRescheduledEvent("ISTTime",eventPage.classRoomName);

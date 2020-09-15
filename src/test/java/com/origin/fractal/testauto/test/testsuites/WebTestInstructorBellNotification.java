@@ -41,14 +41,17 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
 		instbellnotiSteps.verifyEmptyNotification(); 
+		//Added on 14-Sep-20
+		Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login," +instbellnotiSteps.getResult() );
+		//ends
 		Reporter.writeSummary("FR1-2017_InstrBell_TC01,Verify the text No notifications found," +instbellnotiSteps.getResult() );
 		siteAdminLogin(driver);
 		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		instbellnotiSteps.verifyInviteNotification();	 
 		instbellnotiSteps.instLogout();
-		Reporter.writeSummary("FR1-2017_InstrBell_TC02,Verify the instructor1 able to get invite notification (admin invites instructor1)," +instbellnotiSteps.getResult() );
-		siteAdminLogin(driver);
+		Reporter.writeSummary("FR1-112_InstrIntimation & FR1-2017_InstrBell_TC02,Verify the instructor1 able to get invite notification (admin invites instructor1)," +instbellnotiSteps.getResult() );
+		siteAdminLogin(driver);	
 		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password);
 		instbellnotiSteps.verifyInviteNotification();
@@ -58,7 +61,9 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		instbellnotiSteps.adminRescheduledEvent("CETTime",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password); 
 		instbellnotiSteps.verifyRescheduledNotification();
-		Reporter.writeSummary("FR1-2017_InstrBell_TC04,Verify the instructor gets reschedule notification (admin changes the timezone)," +instbellnotiSteps.getResult() );
+		//Updated on 14Sep20 
+		Reporter.writeSummary("FR-117_InstrRescheduledNoti & FR1-2017_InstrBell_TC04,Verify the instructor gets reschedule notification (admin changes the timezone)," +instbellnotiSteps.getResult() );
+		//Ends
 		instbellnotiSteps.verifyandclickMoreBtn();
 		Reporter.writeSummary("FR1-2017_InstrBell_TC05,Verify the instructor sees and clicks MORE (when more than 3 notifications)," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyNotificationViewallPage();
