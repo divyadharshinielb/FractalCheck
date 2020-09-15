@@ -105,13 +105,13 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: click on elearning item type filter and search a name
 	 */
 	public void clickeLearningItemFilter(String Name) {
-		//Waiting time added on 3-Sep-20
-		wait(5);
+		//Waiting time added on 3-Sep-20 & updated on 14-Sep-20
+		wait(3);
 		//Ends
 		enterData(getLabel(Name),searchFieldLearnObj);	
 		wait(5);
 		click(editBtn);
-		wait(5);
+		wait(3);
 	}
 
 	/* Method name: editLOandselectUploadFilePackageType()
@@ -148,7 +148,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 		click(newVersionReqNoBtn);
 		wait(3);
 		click(updateagainNoBtn);
-		wait(5);
+		wait(3);
 	}
 
 	/* Method name: selectAuto()
@@ -235,4 +235,22 @@ public class ElearningOrientationPage extends FractalBasePage {
 			return false;
 		}
 	}
+
+	//Added on 14Sep20
+	/* Method name: preRequisite()
+	 * Return type: void
+	 * Desc: preRequisite- Click Portrait orientation and Update the Learning Object
+	 */
+	public void preRequisite(String Name) {
+				clickeLearningItemFilter(Name);
+		if(getObj(PortraitOrientationSelected).isSelected()==true) {
+			click(closeXBtn);
+			wait(3);
+		}
+		else {
+			moveElementFocusandClick(lblOritationPortrait);
+			updateAnElearning();
+		}
+	}
+	//Ends
 }
