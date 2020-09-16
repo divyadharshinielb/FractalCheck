@@ -234,6 +234,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 		if(elementExist(btnLater)){
 			click(getObj(btnLater));
 		}
+		wait(5);
 		click(btnMenu);
 		wait(5);
 		click(linkMyLearning);
