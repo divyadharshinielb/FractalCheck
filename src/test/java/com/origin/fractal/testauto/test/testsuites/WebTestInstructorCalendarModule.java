@@ -96,6 +96,7 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		Reporter.writeSummary("FR-526_DeleteEvent & FR1-2164_InstrCalendar_TC-"+(++number)+",Verify the action Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
 		//Added
 		instbellnotiSteps.VerifyEventCancellationNotification(By.xpath("//p[contains(.,'is cancelled.')]"));
+		Reporter.writeSummary("FR-115_SessionCancelNofi,Verify the Instructor will receive the notification about the cancellation of the scheduled session for "+ClassroomEventPage.EventType+"," +InstructorModuleSteps.getResult());
 		driver.close();
 	}
 }
