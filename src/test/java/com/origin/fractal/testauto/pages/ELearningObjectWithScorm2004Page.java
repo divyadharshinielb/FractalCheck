@@ -32,7 +32,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public By InvalidScorm = By.xpath("//*[text()='Invalid scorm package']");
 	ArrayList<String> winHandles;
 	public By closeXBtn = By.xpath ("//*[(@class='close')]");
-	public By updateSaveBtn=By.xpath("(//*[@class='btn_yes_12'])[2]//button[text()='Save']");
+	public By updateSaveBtn=By.xpath("//*[@ng-click='submitting=true;'][text()='Save']");//Updated on 15-Sep-20
 	public By NoLOFound = By.xpath("//*[text()='No records found']");
 	public By deleteOKBtn = By.xpath("//*[contains(@class, 'md-confirm-button')]");
 	public By btnCancel = By.xpath(".//button[contains(text(),'Cancel')]");

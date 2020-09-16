@@ -335,4 +335,20 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		print("FAILED: After clicked home, the page NOT redirect to Dashboard page.");
 		return false;
 	}
+
+	/*Added on 16-Sep-20
+	 * Function name: VerifyEventCancellationNotification()
+	 * Action: instructor side - Verify cancelled notification in bell icon
+	 * Return Type: boolean
+	 */
+	public boolean VerifyEventCancellationNotification(By Notification) {
+		clickInstBellIcon();
+		if(elementExist(Notification)) {
+			print("PASSED: The instructor got event cancellation notification.");
+			return true;
+		}
+		print("FAILED: The instructor Not got event cancellation notification.");
+		return false;
+	}
+	//Ends
 }

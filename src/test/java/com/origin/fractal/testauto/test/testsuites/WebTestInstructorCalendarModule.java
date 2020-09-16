@@ -2,6 +2,7 @@ package com.origin.fractal.testauto.test.testsuites;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;
@@ -49,18 +50,24 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		menuSteps.clickMenu();
 		menuSteps.gotoClassroomCreation();
 		InstructorModuleSteps.deleteOldEventAndAddNewEvent();
+		//Added on 16-Sep-20
+		Reporter.writeSummary("FR-524_AddedEvent,Verify the Admin is able to add the event "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
+		//Ends	
 		InstructorModuleSteps.verifyAdminSeeInstructorWarningMessage();
 		Reporter.writeSummary("FR1-2382_InstrEvent_TC-"+(++number)+",Verify the Admin gets the warning message when he creates "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
 		instbellnotiSteps.adminLogout();
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyAdminInviteAndInstructorAcceptevent();
 		//Added and updated on 14Sep20
-		Reporter.writeSummary("FR1-113_InstrSessionDetails_"+ClassroomEventPage.EventType+",Verify the Admin is able to view the assigned session details in the calendar," +InstructorModuleSteps.getResult());
-		Reporter.writeSummary("FR1-114_InstrSessionDetails & FR1-2164_InstrCalendar_TC-"+(++number)+",Verify the Admin invites the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+		Reporter.writeSummary("FR-113_InstrSessionDetails_"+ClassroomEventPage.EventType+",Verify the Admin is able to view the assigned session details in the calendar," +InstructorModuleSteps.getResult());
+		Reporter.writeSummary("FR-114_InstrSessionDetails & FR1-2164_InstrCalendar_TC-"+(++number)+",Verify the Admin invites the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
 		//Ends
 		instbellnotiSteps.instLogout();
 		siteAdminLogin(driver);
 		instbellnotiSteps.adminRescheduledEvent("ISTTime",eventPage.classRoomName);
+		//Added on 16-Sep-20
+		Reporter.writeSummary("FR-525_EditEvent,Verify the admin can edit the event for the "+ClassroomEventPage.EventType+"," +InstructorModuleSteps.getResult());
+		//Ends	
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyRescheduleTimeZoneInInstructorSide();
 		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-"+(++number)+",Verify the Admin Reschedules the event for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
@@ -85,7 +92,10 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		instbellnotiSteps.adminLogout();
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-"+(++number)+",Verify the action Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+		//Updated on 16-Sep-20
+		Reporter.writeSummary("FR-526_DeleteEvent & FR1-2164_InstrCalendar_TC-"+(++number)+",Verify the action Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+		//Added
+		instbellnotiSteps.VerifyEventCancellationNotification(By.xpath("//p[contains(.,'is cancelled.')]"));
 		driver.close();
 	}
 }

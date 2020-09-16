@@ -25,7 +25,13 @@ public class InstructorCalendarModuleSteps extends FractalBaseStep {
 	 * Desc: Admin adds an event in classroom
 	 */	
 	public void deleteOldEventAndAddNewEvent() {
+		//Added on 16-Sep-20
+		result="FAILED";
+		//ends
 		try{InstructorModule.deleteOldEventAndAddNewEvent();
+		//Added on 16-Sep-20
+		result="PASSED";
+		//ends
 		}
 		catch(Exception e) {
 			result="FAILED";
