@@ -51,7 +51,9 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		menuSteps.gotoClassroomCreation();
 		InstructorModuleSteps.deleteOldEventAndAddNewEvent();
 		//Added on 16-Sep-20
-		Reporter.writeSummary("FR-524_AddedEvent,Verify the Admin is able to add the event "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
+		Reporter.writeSummary("FR-524_AddedEvent,Verify the Admin is able to add the event "+ClassroomEventPage.EventType+ " event," +InstructorModuleSteps.getResult());
+		//Added on 17-Sep-20
+		Reporter.writeSummary("FR-134_CreateSession,Verify the Admin is able to create a session for "+ClassroomEventPage.EventType+ "," +InstructorModuleSteps.getResult());
 		//Ends	
 		InstructorModuleSteps.verifyAdminSeeInstructorWarningMessage();
 		Reporter.writeSummary("FR1-2382_InstrEvent_TC-"+(++number)+",Verify the Admin gets the warning message when he creates "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
@@ -67,7 +69,9 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		instbellnotiSteps.adminRescheduledEvent("ISTTime",eventPage.classRoomName);
 		//Added on 16-Sep-20
 		Reporter.writeSummary("FR-525_EditEvent,Verify the admin can edit the event for the "+ClassroomEventPage.EventType+"," +InstructorModuleSteps.getResult());
-		//Ends	
+		//Added on 17-Sep-20
+		Reporter.writeSummary("FR-135_EditSession,Verify the Admin is able to Edit the session for "+ClassroomEventPage.EventType+ "," +InstructorModuleSteps.getResult());
+		//Ends
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyRescheduleTimeZoneInInstructorSide();
 		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-"+(++number)+",Verify the Admin Reschedules the event for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
