@@ -37,4 +37,14 @@ public class FractalLoginSteps extends FractalBaseStep {
 			result = "FAILED";
 		}
 	}
+	public void verifyUserNameAndPassword1() {
+		result = "FAILED";
+		try {
+			page.verifyUserNameAndPassword1();
+			result = "PASSED";
+		} catch (Exception e) {
+			e.printStackTrace();
+			result = "FAILED";
+		}
+	}
 }

@@ -19,6 +19,8 @@ public class FractalLoginPage extends FractalBasePage {
 	// private By loginDiv = By.xpath("//html/body/div/div/main/div/div/div/div[2]/div/div[2]");
 	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
 	private By lblUser = By.xpath("//img[@class='logout-height']");
+	private By btnLoginNewUI1 = By.xpath("//button[@class='fm-btn']");
+	private By lblUser1= By.xpath("//img[@id='userAvatar']");
 
 	public FractalLoginPage(WebDriver driver, String fractalInst, String fractInstUrl) throws IOException {
 		super(driver);
@@ -48,6 +50,21 @@ public class FractalLoginPage extends FractalBasePage {
 		click(btnLoginNewUI);
 		wait(5);
 		click(lblUser);
+		
+	}
+	public void verifyUserNameAndPassword1() {
+		//wait(5);
+		if (elementExist(btnCookies)) {
+			click(btnCookies); 
+			wait(2);
+		}
+		WebDriverWait wait=new WebDriverWait(driver, 300);
+		WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(tbUserNameNewUI));
+		enterData(getLabel("Username"), tbUserNameNewUI);
+		enterData(getLabel("Password"), tbPasswordNewUI);
+		click(btnLoginNewUI1);
+		wait(5);
+		click(lblUser1);
 		
 	}
 }

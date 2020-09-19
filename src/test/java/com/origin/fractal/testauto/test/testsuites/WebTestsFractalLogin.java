@@ -31,6 +31,19 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TC-0" + runningIndex + "-" + fractalInstance +","+ " Verify the " + fractalInstance + " URL and User Login," +  fractalLoginSteps.getResult()); 
 
 	}
+	public void verifyInstanceLogin1() throws IOException {
+
+		FractalLoginSteps fractalLoginSteps = new FractalLoginSteps(driver, fractalInstance,fractalInstanceUrl);
+		//fractalLoginSteps.verifyLogoandText();
+		fractalLoginSteps.verifyUserNameAndPassword1();
+
+		if(fractalLoginSteps.getResult().equalsIgnoreCase("FAILED")) {
+			overallResult++;
+			print("Running index " + runningIndex);
+		}
+		Reporter.writeSummary("TC-0" + runningIndex + "-" + fractalInstance +","+ " Verify the " + fractalInstance + " URL and User Login," +  fractalLoginSteps.getResult()); 
+
+	}
 
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0", "pilot" }, enabled = true, description = "Fractal Login Page")
 	public void testLogin(String row, String strBrowserName) throws IOException {
@@ -86,7 +99,7 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 	    fractalInstance = "FractalEHSOldKonnectInstance";
 		runningIndex++;
-		verifyInstanceLogin();
+		verifyInstanceLogin1();
 		driver.quit();
 		
 		
