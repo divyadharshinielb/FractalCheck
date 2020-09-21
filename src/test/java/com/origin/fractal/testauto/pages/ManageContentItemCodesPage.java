@@ -52,8 +52,8 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 	private By updateAlertMsgEditlearnObject1 =  By.xpath("//div[@class = 'col-lg-12 col-sm-12 col-md-12 col-xs-12 height-400']//div[2]");	//*[@id="target"]/div[3]/div/div/div[2]/md-dialog-content/div/div[1]/div/div[2]
 	private By updateAlertMsgEditlearnObject2 =  By.xpath("//*[@class='padding-t-20 text-743917 font-size-25 ng-pristine ng-untouched ng-valid ng-binding ng-not-empty']");
 
-	private By adminAccountLogo =By.xpath("//*[@title='LMS']");
-	private By adminLogout =By.xpath("//*[@class='dropdown-menu menu-myaccount']//div[3]");
+	private By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']");// Updated on 21-Sep-20
+	private By adminLogout =By.xpath("//*[@class='dropdown-menu menu-myaccount']//*[contains(text(),'Logout')]");// Updated on 21-Sep-20
 	private By userAccountLogo =By.xpath("//div[@class='logout_pop']");
 	private By userLogout =By.xpath("//*[text()='Logout']");
 	//Catalog
@@ -116,7 +116,7 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 	public void goToManagecontent() {
 		menusteps.clickMenu();
 		menusteps.gotoManageContents();
-		wait(waitingSec);
+		wait(5);//Updated by 21-09-2020
 	}
 	//Learning Objects Itemcode verification - Admin side
 	public void verifyAdminLearnObjItemcodes() {
