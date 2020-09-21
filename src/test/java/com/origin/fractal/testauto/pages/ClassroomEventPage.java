@@ -31,7 +31,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By closeModel = By.xpath("//button/i/..");//button/i/.., .//button [contains(@class,' list-catalog')]
 	private By venueDropdown = By.xpath("//form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/md-input-container[1]/div[1]/span[1]");
 	private By linkDropdown = By.xpath(".//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-t-15 ng-scope')]//span[contains(@class,'current')][contains(text(),'Select')]");
-	private By selectVenue = By.xpath(".//li[contains(text(),'Origin Learning Solutions')]");
+	//private By selectVenue = By.xpath(".//li[contains(text(),'Origin Learning Solutions')]");//commented by vignesh on 21-sep
+	private By selectVenue = By.xpath(".//li[contains(text(),'Learning')]");//Updated on 21-Sep-20 by vignesh 
 	private By venueAlertMsg = By.xpath(".//h4[contains(text(),'Venue')]/../md-input-container/div[contains(@class,'text-danger')]");
 	private By linkAlertMsg = By.xpath("//div[contains(text(),'Provider selection required')]");
 	private By selectLink = By.xpath(".//li[contains(text(),'Zoom Origin')]");
@@ -102,7 +103,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblCompletionCriteria = By.id("completion_criteria_checkbox");
 	private By lblClose = By.xpath("//button[@class='close padding-t-20']//i[@class='icon text-right font-size-35 padding-r-30 padding-t-10']");
 	private By searchClassroom = By.xpath("//input[@id='searchClassroom']");
-	
+
 	/*private By eventPageTitle = By.xpath("");
 	private By eventPageTitle = By.xpath("");
 	private By eventPageTitle = By.xpath("");

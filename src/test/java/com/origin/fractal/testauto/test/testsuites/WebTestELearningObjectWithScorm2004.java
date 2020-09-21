@@ -42,7 +42,7 @@ public class WebTestELearningObjectWithScorm2004 extends FractalBaseWebTest{
 		//commented on 7-Sep-20
 		//Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-005,Verify that Site admin is able Delete an eLearning object with Scorm 2004," +scorm2004.getResult());
 		//Ends
-		Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-007,Verify that Site admin is able Delete an eLearning object with Scorm 2004," +scorm2004.getResult());
+		Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-005,Verify that Site admin is able Delete an eLearning object with Scorm 2004," +scorm2004.getResult());
 		
 	}
 }

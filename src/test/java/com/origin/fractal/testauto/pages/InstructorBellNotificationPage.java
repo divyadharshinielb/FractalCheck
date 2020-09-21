@@ -57,7 +57,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public String instructorEmailID="xxyz08614@gmail.com";
 	public String instructorPassword="Welcome@123&";
 	public String instructor1EmailID="guestOl1.user@winvinayafoundation.org";
-	public String instructor1Password="Welcome@123";
+	public String instructor1Password="Welcome@123&";
 	public String instructor2EmailID="fractalqaautomation@gmail.com";
 	public String instructor2Password="Welcome@123&";
 
