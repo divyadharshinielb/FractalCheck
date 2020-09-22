@@ -77,6 +77,19 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 		}
 	}
 	
-	
+	//Added on 22Sep20
+		/* Method name: preRequisite()
+		 * Desc: preRequisite- Click Portrait orientation and Update the Learning Object
+		 */
+		public void preRequisite() {
+			try {result="FAILED";
+			elearningOrientation.preRequisite("eLearningWithScorm");
+			wait(3);
+			elearningOrientation.preRequisite("eLearningWithXapi");
+			}catch(Exception e) {
+				result="FAILED";
+			}
+		}
+		//Ends
 
 }

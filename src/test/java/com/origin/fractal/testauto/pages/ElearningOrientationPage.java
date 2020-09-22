@@ -233,4 +233,23 @@ public class ElearningOrientationPage extends FractalBasePage {
 			return false;
 		}
 	}
+
+	//Added on 22Sep20
+	/* Method name: preRequisite()
+	 * Return type: void
+	 * Desc: preRequisite- Click Portrait orientation and Update the Learning Object
+	 */
+	public void preRequisite(String Name) {
+		clickeLearningItemFilter(Name);
+		if(getObj(PortraitOrientationSelected).isSelected()==true) {
+			click(closeXBtn);
+			wait(3);
+		}
+		else {
+			moveElementFocusandClick(lblOritationPortrait);
+			updateAnElearning();
+		}
+	}
+	//Ends
+
 }
