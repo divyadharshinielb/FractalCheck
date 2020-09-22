@@ -98,8 +98,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		enterData(getLabel("eLearningName"),eLeatningTitleTextArea);
 		click(LearningObjectHTMLPage.htmlSelectCatagory);
 		moveElementFocusandClick(LearningObjectHTMLPage.htmlGenaralCatagory);
-		click(LearningObjectHTMLPage.htmlLangdropbox);
-		click(LearningObjectHTMLPage.htmlLangEnglish);
+//		click(LearningObjectHTMLPage.htmlLangdropbox);//commented on 22-Sep-20
+//		click(LearningObjectHTMLPage.htmlLangEnglish);
 		click(lblscormOption);
 		fileUpload(getLabel("scormFileLocation"),uploadPackage);
 		wait(2);
@@ -255,8 +255,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		enterData("CheckInvalidScorm2004file",eLeatningTitleTextArea);
 		click(LearningObjectHTMLPage.htmlSelectCatagory);
 		moveElementFocusandClick(LearningObjectHTMLPage.htmlGenaralCatagory);
-		click(LearningObjectHTMLPage.htmlLangdropbox);
-		click(LearningObjectHTMLPage.htmlLangEnglish);
+//		click(LearningObjectHTMLPage.htmlLangdropbox);//commented on 22-Sep-20
+//		click(LearningObjectHTMLPage.htmlLangEnglish);
 		click(lblscormOption); 
 		fileUpload(getLabel("invaildScormLocation"),uploadPackage);
 		wait(2);

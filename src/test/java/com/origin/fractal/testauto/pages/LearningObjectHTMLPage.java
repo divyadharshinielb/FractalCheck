@@ -94,8 +94,9 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		enterData(getLabel("HtmlName"),htmlTitleTextArea);
 		click(htmlSelectCatagory);
 		moveElementFocusandClick(htmlGenaralCatagory);
-		click(htmlLangdropbox);
-		click(htmlLangEnglish);
+		//commented on 21-Sep-20
+		//		click(htmlLangdropbox);
+		//		click(htmlLangEnglish);
 		fileUpload(getLabel("HtmlFileLocation"),htmlFile);
 		wait(2);
 		moveElementFocusandClick(htmlAttemptsdropBox);
@@ -174,6 +175,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void createandEditCatalogBundleWithHTML(String action) {
+		goToManagecontent();
 		click(lblCatalogTab);
 		wait(2);
 		enterData(getLabel("HtmlBundleName"),searchFieldCatItem);
@@ -190,8 +192,9 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		}
 		click(searchResultAddModle);
 		wait(2);
-		click(continueBtn1);
-		wait(5);
+		//commented on 22-Sep-20
+//		click(continueBtn1);
+//		wait(5);
 		click(saveBtn);
 		wait(3);
 		click(allUsersUpdateSelectionBtn);
