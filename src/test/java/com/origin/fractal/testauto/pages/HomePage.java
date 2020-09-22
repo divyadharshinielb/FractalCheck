@@ -37,7 +37,7 @@ public class HomePage extends FractalBasePage {
 	private By lblViewAllRcntAdded= By.xpath("//a[contains(text(),'VIEW ALL')]");//div/ng-include[1]/div/div/div[2]/div/a[contains(text(),'View All')]
 	
 	/************Newui***************/
-	private By whlblAll = By.xpath(".//button[contains(text(),'ALL')]");
+	private By whlblAll = By.xpath("//button[contains(text(),'ALL')]");
 	private By whlblCourses = By.xpath(".//button[contains(text(),'COURSES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'courses')]
 	private By whlblResources = By.xpath(".//button[contains(text(),'RESOURCES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'resources')]
 	private By whlblBundles = By.xpath(".//button[contains(text(),'BUNDLES')]");//h2[contains(text(),'Recently Added')]/../div/*//a/span[contains(text(),'bundles')]
@@ -391,9 +391,9 @@ public class HomePage extends FractalBasePage {
 	}
 	/*Ends- added by Manju Priya A on Nov-29-18*/
 	public void	whatsNewSectionAttributes() {
-		
+		wait(10);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement Element= driver.findElement(By.xpath("//a[contains(text(),'VIEW ALL')]"));
+		WebElement Element= driver.findElement(By.xpath("//div[@class='popular_title title']"));
 		js.executeScript("arguments[0].scrollIntoView();", Element);
 		wait(5);
 		click(lblViewAllRcntAdded);
