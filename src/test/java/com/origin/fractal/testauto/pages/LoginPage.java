@@ -53,6 +53,7 @@ public class LoginPage extends FractalBasePage {
 		click(lblAdmin);
 		wait(5);
 		click(lblAdminLogout);
+		wait(10);
 	}
 	public void loginToContentAdmin() {
 		enterData("siteadmin@origin.com",tbUserName);//contentadmin@origin.com
