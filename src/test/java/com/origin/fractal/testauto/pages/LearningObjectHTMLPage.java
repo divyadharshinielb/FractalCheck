@@ -247,28 +247,36 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: boolean
 	 */
 	public boolean userSearchHTMLLOAndLaunchHTML() {
-		By htmlOName=By.xpath("//*[contains(text(),'"+getLabel("editHtmlName")+"')]");
-		print(""+htmlOName);
-		click(searchfieldUser);
-		enterData(getLabel("HtmlName"),searchfieldUser);
-		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
-		wait(3);
-		moveElementFocusandClick(htmlOName);
-		wait(3);
-		driver.switchTo().frame(0);
-		click(launchBtn);
-		wait(2);
-		winHandles = new ArrayList<String>(driver.getWindowHandles());
-		if(winHandles.size()==2) {
-			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
-			driver.close();
-			wait(5);
+		try{
+			By htmlOName=By.xpath("//*[contains(text(),'"+getLabel("editHtmlName")+"')]");
+			print(""+htmlOName);
+			click(searchfieldUser);
+			enterData(getLabel("HtmlName"),searchfieldUser);
+			driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
+			wait(3);
+			moveElementFocusandClick(htmlOName);
+			wait(3);
+			driver.switchTo().frame(0);
+			click(launchBtn);
+			wait(2);
 			winHandles = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
-			driver.switchTo().parentFrame();
-			click(closeXBtn);
-			return true;
+			if(winHandles.size()==2) {
+				driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
+				driver.close();
+				wait(5);
+				winHandles = new ArrayList<String>(driver.getWindowHandles());
+				driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
+				driver.switchTo().parentFrame();
+				print("PASSED: Html Learning object is working");// added on 21-Sep-20
+				click(closeXBtn);
+				return true;
+			}
+			print("FAILED: Html Learning object is NOT working");// added on 21-Sep-20
+			return false;
 		}
-		return false;
+		catch(Exception e) {
+			print("FAILED: Html Learning object is NOT working");// added on 21-Sep-20
+			return false;
+		}
 	}
 }

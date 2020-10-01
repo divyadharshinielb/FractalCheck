@@ -26,6 +26,9 @@ public class WebTestELearningOrientation extends FractalBaseWebTest{
 		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-001, Verify the admin able to see orientation Modes Auto/Landscape/Portrait in elearning," +  eLearningOrientation.getResult()); 
 		eLearningOrientation.verifyOrientationSelection();
 		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-002, Verify the admin able to select the orientation Auto/Landscape/Portrait in elearning," +  eLearningOrientation.getResult()); 
+		// Added on 14-Sep-20
+		eLearningOrientation.preRequisite();
+		//ends
 		eLearningOrientation.verifyScormOrientation();
 		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-003, Verify the admin able to select the orientation Auto/Landscape/Portrait and save the elearning with Scrome1.2 package," +  eLearningOrientation.getResult()); 
 		eLearningOrientation.verifyXapiOrientation();

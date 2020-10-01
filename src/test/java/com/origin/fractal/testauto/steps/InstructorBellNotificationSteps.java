@@ -1,5 +1,6 @@
 package com.origin.fractal.testauto.steps;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBaseStep;
@@ -198,12 +199,32 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void prerequisite(String Instnumber,String changezone, String Searchclassroom) {
+		//Added on 16-Sep-20
+		result="FAILED";
+		//ends
 		try{instbellnoti.goToclassroom();
 		instbellnoti.editEvent(Searchclassroom,"prerequisite",Instnumber,changezone);
 		adminLogout();
+		//Added on 16-Sep-20
+		result="PASSED";
+		//end
 		}
 		catch(Exception e) {
 			result="FAILED";
 		}
 	}
+
+	/*Added on 16-Sep-20
+	 * Function name: VerifyEventCancellationNotification()
+	 * Action: instructor side - Verify cancelled notification in bell icon
+	 */
+	public void VerifyEventCancellationNotification(By location) {
+		result="FAILED";
+		try {	instbellnoti.VerifyEventCancellationNotification(location);
+		result="PASSED";
+		}		catch(Exception e) {
+			result="FAILED";
+		}
+	}
+	//Ends
 }

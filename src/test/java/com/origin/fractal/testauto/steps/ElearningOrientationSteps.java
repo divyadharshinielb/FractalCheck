@@ -45,7 +45,7 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 		}
 	}
 
-	
+
 	/* Method name: verifyScromeOrientation()
 	 * Return type: bool
 	 * Desc: Click auto/landscape/Portrait orientation with scorm package and Update the Learning Object
@@ -76,7 +76,20 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 			result="FAILED";
 		}
 	}
-	
-	
+
+	//Added on 14Sep20
+	/* Method name: preRequisite()
+	 * Desc: preRequisite- Click Portrait orientation and Update the Learning Object
+	 */
+	public void preRequisite() {
+		try {result="FAILED";
+		elearningOrientation.preRequisite("eLearningWithScorm");
+		wait(3);
+		elearningOrientation.preRequisite("eLearningWithXapi");
+		}catch(Exception e) {
+			result="FAILED";
+		}
+	}
+	//Ends
 
 }
