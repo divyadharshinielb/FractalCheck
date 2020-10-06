@@ -135,7 +135,24 @@ status = compareStrings(actualFilType, expType.toLowerCase());
 }
 return status;
 }
-
+// To get the count and check whetherr the element is present or not in admin side
+public int getCount(String objPath1, String objpath2, int count, int index) {
+	int countnew = 0;
+	String wholeObjPath = "";
+	for (int i = index; i < count; i++) {
+	wholeObjPath = objPath1 + i + objpath2;
+	if(elementExist(By.xpath(wholeObjPath))) {
+		countnew++;	
+		count++;
+	}
+	else {
+		break;
+	}
+	
+}
+	print("The number of items is " + countnew);
+	return countnew;
+}
 public void clickOnContinueBtn() {
 click(btnContinue);
 }
