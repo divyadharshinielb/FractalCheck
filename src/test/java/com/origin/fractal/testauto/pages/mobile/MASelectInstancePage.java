@@ -72,7 +72,7 @@ public class MASelectInstancePage extends FractalAppPage {
 		click(getObj(insFractalDemo));	
 	}
 	public void selectCogscale() {
-		for(int i=1;i<=7;i++) {
+		for(int i=1;i<=8;i++) {
 			try {
 				
 			 click(getObj(insCogScale));
