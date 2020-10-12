@@ -39,6 +39,7 @@ public class MAWhatsNewPage extends FractalAppPage {
 
 
 	public void clickLater() {
+		wait(10);
 		if(elementExist(btnLater)){
 			click(getObj(btnLater));
 		}
