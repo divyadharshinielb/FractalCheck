@@ -2,30 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="323010" started-at="2020-03-24T07:43:40Z" finished-at="2020-03-24T07:49:03Z">
+  <suite name="Default suite" duration-ms="247637" started-at="2020-10-15T09:27:23Z" finished-at="2020-10-15T09:31:31Z">
     <groups>
       <group name="pilot">
-        <method signature="WebTestsFractalLogin.testLogin(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="testLogin" class="com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin"/>
+        <method signature="WebTestOriginLearningLoad.TestHeaderElementPageLoading(java.lang.String, java.lang.String)[pri:0, instance:com.origin.originweb.testauto.test.testsuites.WebTestOriginLearningLoad@78dd667e]" name="TestHeaderElementPageLoading" class="com.origin.originweb.testauto.test.testsuites.WebTestOriginLearningLoad"/>
       </group> <!-- pilot -->
-      <group name="Phase1.0">
-        <method signature="WebTestsFractalLogin.testLogin(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="testLogin" class="com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin"/>
-      </group> <!-- Phase1.0 -->
     </groups>
-    <test name="Default test" duration-ms="323010" started-at="2020-03-24T07:43:40Z" finished-at="2020-03-24T07:49:03Z">
-      <class name="com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="beforeSuite" is-config="true" duration-ms="17" started-at="2020-03-24T07:43:40Z" finished-at="2020-03-24T07:43:40Z">
+    <test name="Default test" duration-ms="247637" started-at="2020-10-15T09:27:23Z" finished-at="2020-10-15T09:31:31Z">
+      <class name="com.origin.originweb.testauto.test.testsuites.WebTestOriginLearningLoad">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.origin.originweb.testauto.test.testsuites.WebTestOriginLearningLoad@78dd667e]" name="beforeSuite" is-config="true" duration-ms="63" started-at="2020-10-15T09:27:23Z" finished-at="2020-10-15T09:27:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="beforeTest" is-config="true" duration-ms="0" started-at="2020-03-24T07:43:40Z" finished-at="2020-03-24T07:43:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="beforeClass" is-config="true" duration-ms="0" started-at="2020-03-24T07:43:40Z" finished-at="2020-03-24T07:43:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String)[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="testLogin" duration-ms="322405" started-at="2020-03-24T07:43:40Z" description="Fractal Login Page" data-provider="browers" finished-at="2020-03-24T07:49:02Z">
+        <test-method status="PASS" signature="TestHeaderElementPageLoading(java.lang.String, java.lang.String)[pri:0, instance:com.origin.originweb.testauto.test.testsuites.WebTestOriginLearningLoad@78dd667e]" name="TestHeaderElementPageLoading" duration-ms="243736" started-at="2020-10-15T09:27:23Z" data-provider="browsers" finished-at="2020-10-15T09:31:27Z">
           <params>
             <param index="0">
               <value>
@@ -40,28 +29,20 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-03-24T07:43:40Z" finished-at="2020-03-24T07:43:40Z">
+        </test-method> <!-- TestHeaderElementPageLoading -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.origin.originweb.testauto.test.testsuites.WebTestOriginLearningLoad@78dd667e]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-10-15T09:27:23Z" finished-at="2020-10-15T09:27:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="afterMethod" is-config="true" duration-ms="579" started-at="2020-03-24T07:49:02Z" finished-at="2020-03-24T07:49:03Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.origin.originweb.testauto.test.testsuites.WebTestOriginLearningLoad@78dd667e]" name="afterMethod" is-config="true" duration-ms="3816" started-at="2020-10-15T09:31:27Z" finished-at="2020-10-15T09:31:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-03-24T07:49:03Z" finished-at="2020-03-24T07:49:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="afterTest" is-config="true" duration-ms="0" started-at="2020-03-24T07:49:03Z" finished-at="2020-03-24T07:49:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin@3d36e4cd]" name="afterSuite" is-config="true" duration-ms="2" started-at="2020-03-24T07:49:03Z" finished-at="2020-03-24T07:49:03Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.origin.originweb.testauto.test.testsuites.WebTestOriginLearningLoad@78dd667e]" name="afterSuite" is-config="true" duration-ms="2" started-at="2020-10-15T09:31:31Z" finished-at="2020-10-15T09:31:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.origin.fractal.testauto.test.testsuites.WebTestsFractalLogin -->
+      </class> <!-- com.origin.originweb.testauto.test.testsuites.WebTestOriginLearningLoad -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

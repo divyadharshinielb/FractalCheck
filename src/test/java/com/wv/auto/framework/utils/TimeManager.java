@@ -5,13 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TimeManager {
+	public static Float seconds =null;
 
 	private static Timestamp timeAtEvent = null;
 	public static Timestamp getCurrententTimeStamp() {
 		java.util.Date date1 = new java.util.Date();
 		Timestamp timestamp = new Timestamp(date1.getTime());
 		return timestamp;
-}
+	}
 	public static String getCurrentDateTime() {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
@@ -28,13 +29,13 @@ public class TimeManager {
 		seconds = (seconds % 3600) % 60;
 		return hours + " Hours" + minutes + " Minutes " + seconds + " Seconds";
 	}
-	public static String getTimeDiffInSecs(Timestamp timestamp1, Timestamp timestamp2) {
-		// get time difference in seconds
-		long milliseconds = timestamp2.getTime() - timestamp1.getTime();
-		int centiseconds = (int) milliseconds / 10;
-		Short seconds = new Short((short) (centiseconds/100));
-		return seconds.toString();
-	}
+//	public static String getTimeDiffInSecs(Timestamp timestamp1, Timestamp timestamp2) {
+//		// get time difference in seconds
+//		long milliseconds = timestamp2.getTime() - timestamp1.getTime();
+//		int centiseconds = (int) milliseconds / 10;
+//		seconds = new Short((short) (centiseconds/100));
+//		return seconds.toString();
+//	}
 	public static void setTimeAtEvent() {
 		timeAtEvent = getCurrententTimeStamp();
 	}
@@ -45,4 +46,5 @@ public class TimeManager {
 		Short seconds = new Short((short) (centiseconds/100));
 		return seconds.toString();
 	}
+
 }

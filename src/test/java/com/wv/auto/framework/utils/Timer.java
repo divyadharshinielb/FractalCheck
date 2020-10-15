@@ -6,7 +6,6 @@ public class Timer {
 			int msec = sec * 1000;
 			Thread.sleep(msec);
 		} catch (InterruptedException e) {
-
 			e.printStackTrace();
 		}
 	}

@@ -1,7 +1,8 @@
 package com.wv.auto.framework.utils;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Timestamp;
 
 import com.opencsv.CSVWriter;
 
@@ -9,45 +10,69 @@ public class Reporter {
 	private static CSVWriter repWriter;
 	private static CSVWriter repWriterDetail;
 	private static CSVWriter repWriterFailure;
-	private static String strBrowserAppOS = "IOS";
-	private static String strEnv = "Production";
+	private static String strBrowserAppOS = "Chrome";
+	private static String strEnv = "OriginLearning - WebSite";
 
-	public static void createReports() {
+	public static void createReports() throws IOException {
 		createReport();
 		createDetailReport();
 		createFailureReport();
 	}
 
-	public static void createReport() {
+	public static void createReport() throws IOException {
 
 		// This will create the report file call this before start of testing
 		String reportFile = "target/TestReport.csv";
-		if (repWriter == null)
-			repWriter = CSVManager.getCSVWriter(reportFile);
-		writeHeader();
+		File file=new File(reportFile);
+		if(file.exists()) {
+			if (repWriter == null) {
+				repWriter = CSVManager.getCSVWriter(reportFile);
+				writeHeader();
+			}else {
+				repWriter = new CSVWriter(new FileWriter(reportFile));
+				repWriter = CSVManager.getCSVWriter(reportFile);
+				writeHeader();
+			}
+		}
 	}
 
-	public static void createDetailReport() {
+	public static void createDetailReport() throws IOException {
 
 		// This will create the report file call this before start of testing
 		String reportFile = "target/TestDetailReport.csv";
-		if (repWriterDetail == null)
-			repWriterDetail = CSVManager.getCSVWriter(reportFile);
-		writeDetailHeader();
+		File file=new File(reportFile);
+		if(file.exists()) {
+			if (repWriterDetail == null) {
+				repWriterDetail = CSVManager.getCSVWriter(reportFile);
+				writeDetailHeader();
+			}else {
+				repWriter = new CSVWriter(new FileWriter(reportFile));
+				repWriter = CSVManager.getCSVWriter(reportFile);
+				writeHeader();
+			}
+		}
 	}
 
-	public static void createFailureReport() {
+	public static void createFailureReport() throws IOException {
 
 		// This will create the report file call this before start of testing
 		String reportFile = "target/TestFailureReport.csv";
-		if (repWriterFailure == null)
-			repWriterFailure = CSVManager.getCSVWriter(reportFile);
-		writeFailureHeader();
+		File file=new File(reportFile);
+		if(file.exists()) {
+			if (repWriterFailure == null) {
+				repWriterFailure = CSVManager.getCSVWriter(reportFile);
+				writeFailureHeader();
+			}
+		}else {
+			repWriter = new CSVWriter(new FileWriter(reportFile));
+			repWriter = CSVManager.getCSVWriter(reportFile);
+			writeHeader();
+		}
 	}
 
 	private static void writeHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME STAMP".split(",");
+		String[] record = "BROWSER, ENVIRONMENTAL, TCID/AREA, TEST DESCRIPTION, LOADING TIME (Sec), TEST RESULT ,TIME STAMP".split(",");
 		TimeManager.setTimeAtEvent();
 		// Write the record to file
 		if (repWriter != null)
@@ -56,7 +81,7 @@ public class Reporter {
 
 	private static void writeDetailHeader() {
 		// Create record
-		String[] record = "TCID, TEST DESCRIPTION, TEST RESULT".split(",");
+		String[] record = "TCID/AREA, TEST DESCRIPTION, LOAEDING TIME (Sec), TEST RESULT".split(",");
 		// Write the record to file
 		if (repWriterDetail != null)
 			repWriterDetail.writeNext(record);
@@ -64,8 +89,8 @@ public class Reporter {
 
 	private static void writeFailureHeader() {
 		// Create record
-		String[] record = "Browser/App, Environment, TCID, TEST DESCRIPTION, TEST RESULT ,TIME TAKEN(SEC),TIME STAMP".split(",");
-	
+		String[] record = "BROWSER, ENVIRONMENTAL, TCID/AREA, TEST DESCRIPTION, LOADING TIME (Sec), TEST RESULT, TIME STAMP".split(",");
+
 		// Write the record to file
 		if (repWriterFailure != null)
 			repWriterFailure.writeNext(record);
@@ -73,7 +98,7 @@ public class Reporter {
 
 	public static void writeSummary(String strLine) {
 
-		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeManager.getTimeDiffFromPrevEventInSecs()+","+TimeManager.getCurrentDateTime();
+		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeManager.getCurrentDateTime();
 		TimeManager.setTimeAtEvent();
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
@@ -81,9 +106,9 @@ public class Reporter {
 		if (strReportWithBrowserEnvDetails.contains("FAILED"))
 			writeFailure(strReportWithBrowserEnvDetails);
 	}
-	
+
 	public static void writeSummary(String strLine,String TimeTaken,String TimeStamp) {
-		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeTaken+","+TimeStamp;
+		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + ","+ strLine+","+TimeTaken+","+TimeStamp;
 
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
@@ -109,7 +134,6 @@ public class Reporter {
 			try {
 				repWriter.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
@@ -134,5 +158,5 @@ public class Reporter {
 		strBrowserAppOS = strBrwAppOS;
 	}
 
-	
+
 }

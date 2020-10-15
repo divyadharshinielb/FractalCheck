@@ -22,10 +22,10 @@ public class PropertyReader {
 			propValue = prop.getProperty(property);
 			System.out.println("The requested value is " + propValue);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("The propertices file is NOT FOUND.");
+						e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println("The variable is NOT FOUND in property.");
 			e.printStackTrace();
 		} finally {
 			if (fIS != null) {
@@ -36,7 +36,6 @@ public class PropertyReader {
 				}
 			}
 		}
-		// return the propValue
 		return propValue;
 	}
 }
