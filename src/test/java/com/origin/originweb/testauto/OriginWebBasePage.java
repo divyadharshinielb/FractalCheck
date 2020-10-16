@@ -96,4 +96,26 @@ public abstract class OriginWebBasePage extends BasePage {
 			return false;
 		}
 	}
+	
+	public boolean clickAnd40SecLoading(By clickelement, By checkelement) {
+		preMilliseconds = TimeManager.getCurrententTimeStamp().getTime();
+		driver.findElement(clickelement).click();
+		//		wait(2);
+		postMilliseconds = TimeManager.getCurrententTimeStamp().getTime();
+		milliseconds = postMilliseconds - preMilliseconds;
+		TimeManager.seconds = new Float((milliseconds/1000));
+		//TimeManager.seconds = new Short((short) (milliseconds/1000));
+		if(elementExist(checkelement) && TimeManager.seconds<=20){
+			print("PASSED: Page load times takes less than 20 sec");
+			return true;
+		}
+		else if(elementExist(checkelement) && TimeManager.seconds<=40){
+			print("PASSED: Page loading time takes less than 40 Sec");
+			return true;
+		}
+		else {
+			print("FAILED: Page loading time takes more than 40 Sec");
+			return false;
+		}
+	}
 }

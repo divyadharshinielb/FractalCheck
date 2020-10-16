@@ -114,7 +114,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderCareer(){
-		return clickAndcheckLoading(headerCareer,topBanner);
+		return clickAnd40SecLoading(headerCareer,topBanner);
 	}
 
 	/* Function Name: verifyHeaderContact()
@@ -128,7 +128,6 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyContentSubMenu() {
-
 		moveElementFocus(headerCont);
 		return clickAndcheckLoading(contentSubMenu,banner);
 	}
