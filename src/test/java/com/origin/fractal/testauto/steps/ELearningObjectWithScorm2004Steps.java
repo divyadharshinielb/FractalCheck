@@ -54,7 +54,7 @@ public class ELearningObjectWithScorm2004Steps extends FractalBaseStep {
 			result="PASSED";
 		}}
 		catch(Exception e) {
-			result="PASSED";
+			result="FAILED";
 		}
 	}
 
@@ -76,12 +76,19 @@ public class ELearningObjectWithScorm2004Steps extends FractalBaseStep {
 	 */ 
 	public void createandEditCatalogBundleWitheLearningWithscorm2004(String action) {
 		try{result="FAILED";
-		Scorm2004Page.createandEditCatalogBundleWithscorm2004(action);
-		result="PASSED";
-		//		HTMLPage.adminLogout();
+		if(Scorm2004Page.createandEditCatalogBundleWithscorm2004(action)==true) {
+			result="PASSED";
+			HTMLPage.adminLogout(); //Updated on 21-Sep-20
+			wait(5);//Updated on 21-Sep-20
+		}
+		result="FAILED";
+		HTMLPage.adminLogout(); //Updated on 21-Sep-20
+		wait(5);//Updated on 21-Sep-20
 		}
 		catch(Exception e) {
 			result="FAILED";
+			HTMLPage.adminLogout(); //Updated on 21-Sep-20
+			wait(5);//Updated on 21-Sep-20
 		}
 	}
 
