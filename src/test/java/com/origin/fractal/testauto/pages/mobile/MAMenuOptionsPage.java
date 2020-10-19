@@ -22,6 +22,7 @@ public class MAMenuOptionsPage extends FractalAppPage {
 	private By insFractalDemo = By.xpath("//android.widget.ImageView[@content-desc='Fractal Demo']");
 	private By lblTitle = By.id("com.originkonnect.app:id/action");//MY LEARNING//CATALOG//MY ACCOUNT
 	private By btnNo = By.id("com.originkonnect.app:id/btnAdd");
+	private By btnLater = By.id("com.originkonnect.app:id/close_btn");
 	
 	private By lblTitleMyAccount = By.xpath("com.originkonnect.app:id/action");;//Added By manju Priya A on Jan_02_18 for IOS
 	private By btnMenuMyAcc = By.xpath("com.originkonnect.app:id/action_bar_back");//Added By manju Priya A on Jan_02_18 for IOS
@@ -92,6 +93,10 @@ public class MAMenuOptionsPage extends FractalAppPage {
 		click(btnClose);
 	}
 	public void verifyMenusFunctionality() {
+		wait(15);
+		if(elementExist(btnLater)){
+			click(getObj(btnLater));
+		}
 		wait(5);
 		//verifyChangeInsMenu();
 		verifyMyLearningMenu();
