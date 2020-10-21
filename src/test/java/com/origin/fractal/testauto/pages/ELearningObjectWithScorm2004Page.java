@@ -23,7 +23,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public By filterELearning = By.xpath("//a[contains(text(),'eLearning')]");
 	public By btnElearning = By.xpath(".//button/span[contains(text(),'eLearning')]");
 	public By eLeatningTitleTextArea=By.xpath("//*[@name='elearningName']");
-	public By lblscormOption=By.xpath("//label[contains(text(),'Scorm')]");
+	public By lblscormOption=By.xpath("(//label[contains(text(),'Scorm')])[1]");
 	public By uploadPackage=By.xpath("//input[@id='elearningFile']");
 	public By discriTextArea=By.xpath("//*[contains(@name,'description')]");
 	public By deleteLOBtn = By.xpath("(*//i[@role='button'])[3]");
@@ -32,7 +32,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public By InvalidScorm = By.xpath("//*[text()='Invalid scorm package']");
 	ArrayList<String> winHandles;
 	public By closeXBtn = By.xpath ("//*[(@class='close')]");
-	public By updateSaveBtn=By.xpath("//*[@ng-click='submitting=true;'][text()='Save']");//Updated on 15-Sep-20
+	public By updateSaveBtn=By.xpath("(//*[text()='Save'])[2]");//Updated on 21-Sep-20
 	public By NoLOFound = By.xpath("//*[text()='No records found']");
 	public By deleteOKBtn = By.xpath("//*[contains(@class, 'md-confirm-button')]");
 	public By btnCancel = By.xpath(".//button[contains(text(),'Cancel')]");
@@ -67,7 +67,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		//3 Sep 20: waiting time added
 		wait(3);
 		//ends
-		createandEditCatalogBundleWithscorm2004("Remove LO");
+		if(createandEditCatalogBundleWithscorm2004("Remove LO")== true) 
+			wait(3);// Added on 17-Oct-20
 		click(LearningObjectHTMLPage.learningObjectTab);
 		wait(2);
 		click(filterELearning);
@@ -81,7 +82,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		if(elementExist(NoLOFound)) {
 			return true;
 		}
-		return false;		
+		return false;
+
 	}
 
 	/* Function Name: verifyCreateELearningObjectWithscorm2004()
@@ -155,9 +157,9 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 
 	/* Function Name: createandEditCatalogBundleWithscorm2004()
 	 * Action: Create a Bundle with e-learning object with scorm2004
-	 * Return type: void
+	 * Return type: boolean
 	 */
-	public void createandEditCatalogBundleWithscorm2004(String action) {
+	public boolean createandEditCatalogBundleWithscorm2004(String action) {
 		//03-Sep-2020: Waiting time increased from 3 to 5.
 		wait(5);
 		// End
@@ -181,8 +183,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 			wait(2);
 		}
 		click(LearningObjectHTMLPage.searchResultAddModle);
-//		wait(2);
-//		click(continueBtn1);
+		//		wait(2);
+		//		click(continueBtn1);
 		wait(2);
 		click(saveBtn);
 		wait(5);
@@ -190,8 +192,14 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		wait(3);
 		click(updateSaveBtn);
 		wait(3);
-		click(backcatalogBtn);
+		if(elementExist(backcatalogBtn)) {
+			click(backcatalogBtn);// added on 17/Oct/20
+			wait(3);// added on 17/Oct/20
+			return true;
+		}
+		click(closeModel);
 		wait(2);
+		return false;
 	}
 
 	/* Function Name: verifyPreviewscorm2004()
