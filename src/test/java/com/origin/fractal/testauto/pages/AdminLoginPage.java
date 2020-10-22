@@ -28,6 +28,7 @@ public class AdminLoginPage extends FractalBasePage {
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord= {"","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
+	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
 	public AdminLoginPage(WebDriver driver) throws IOException {
 		super(driver);
 		pageName ="LoginPage"; 
@@ -51,6 +52,9 @@ public class AdminLoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void loginToContentAdmin() {
+		wait(5);
+		click(prelogin);
+		wait(6);
 		enterData("siteadmin@origin.com",tbUserNameNewUI);//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPasswordNewUI);//Admin@123
 	    wait(10);
