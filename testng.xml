@@ -66,16 +66,17 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningObjectWithScorm2004" />
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogVersioning" />
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
-				<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
-			<!-- <class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestAdaptIntegration" /> 
-				 -->
+			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestAdaptIntegration" 
+				/> -->
 		</classes>
 
 	</test> <!-- Test -->
