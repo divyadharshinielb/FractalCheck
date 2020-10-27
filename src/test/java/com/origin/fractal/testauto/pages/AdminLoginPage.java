@@ -34,7 +34,9 @@ public class AdminLoginPage extends FractalBasePage {
 		// Go to Home Page
 //*******************************added by mahesh 08/04/2019****************************//	
 	//	String baseUrl=getGobal("webtesturl");
-		String baseUrl = "https://qadev.originfractal.com//admin/index.php#/login"; //https://dev-huron.originfractal.com;https://staging-origin.originfractal.com
+		//updated by vignesh on 25-Sep-20
+		String baseUrl = "https://qadev.originfractal.com/login"; //https://dev-huron.originfractal.com;https://staging-origin.originfractal.com
+		//Ends
 		goTo(baseUrl);
 		
 	}
