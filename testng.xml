@@ -61,6 +61,8 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogVersioning" />
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" />
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
 
 		</classes>

@@ -29,7 +29,9 @@ public class MenuPage extends FractalBasePage{
     private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
     private By classroomBtn = By.xpath("//span[contains(text(),'classroom')]");
     private By btnNotification = By.xpath("//a[@href='#notification/settings']//div[@class='icon']");
-    
+  //Added by vignesh on (2/Mar/2020)
+  	private By manageUsers = By.xpath ("//span[contains(text(),'Manage User')]");
+  	//ended - Vignesh
     public MenuPage(WebDriver driver) {
 		super(driver);
 	}
@@ -117,4 +119,12 @@ public class MenuPage extends FractalBasePage{
 		click(btnNotification);
 		wait(10);
 	}
+	
+	//Added by vignesh on (2/Mar/2020)
+			public void gotoManageUsers() {
+				clickMenu();
+				click(manageUsers);
+				wait(3);
+			}
+			//ended - Vignesh
 }

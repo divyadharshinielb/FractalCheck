@@ -617,6 +617,31 @@ public int getNumber(String data){
 		}
 		//Ends- vignesh on 29/Jan/20
 	
+		/* Method name: dragAndDrop()
+		 * Created by: Vignesh
+		 * Created date: 12/Sep/2020
+		 * Return type: void
+		 * Desc: Drag And Drop elements in one place other place
+		 */
+		public boolean dragAndDrop(By Loc1, By Loc2){
+			try{
+				//Element which we need to drag.
+				WebElement From = driver.findElement(Loc1);
+
+				//Element on which we need to drop.
+				WebElement To = driver.findElement(Loc2);
+
+				//Drag and drop action
+				Actions act=new Actions(driver);
+				act.dragAndDrop(From, To).build().perform();
+				wait(5);
+
+				return true;
+			}catch(Exception e) {
+				return false;
+			}
+		}
+		//ends
 
 	
 		
