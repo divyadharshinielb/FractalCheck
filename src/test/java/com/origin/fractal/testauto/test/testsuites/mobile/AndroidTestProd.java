@@ -130,6 +130,7 @@ public class AndroidTestProd extends FractalBaseAppTest{
 
 		MAMyLearningInProSteps mAMLS = new MAMyLearningInProSteps(appDriver);
 		Reporter.writeSummary("TCID_027,Verify whether the user able be  to access the My Learning page, " +  mAMLS.getResult() );
+		mAMLS.verifyCompletedAndInprogressTab();
 		mAMLS.verifyInProgress();
 		Reporter.writeSummary("TCID_028,Verify whether the user able be  to navigate correctly in both In progress and Completed Tabs., " +  mAMLS.getResult() );
 		mAMLS.verifyGridView();
