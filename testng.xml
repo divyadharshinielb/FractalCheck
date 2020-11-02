@@ -79,6 +79,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDownloadContent" />
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestAdaptIntegration" 
 				/> -->
 		</classes>
