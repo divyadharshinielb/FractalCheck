@@ -65,6 +65,7 @@ public class MAMyLearningInProSteps extends FractalBaseStep{//extends by Jan_16_
 		}
 	}
 	
+	
 	public void clickNotification() {
 		result = "Passed";
 		try {
