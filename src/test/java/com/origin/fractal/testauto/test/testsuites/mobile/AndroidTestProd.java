@@ -124,6 +124,8 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_027,Verify whether the user able be  to access the My Learning page, " +  mAMLS.getResult() );
 		mAMLS.verifyInProgress();
 		Reporter.writeSummary("TCID_028,Verify whether the user able be  to navigate correctly in both In progress and Completed Tabs., " +  mAMLS.getResult() );
+		mAMLS.verifyCompletedAndInprogressTab();
+		Reporter.writeSummary("TCID_032,Verify and click the In progress and Completed Tabs., " +  mAMLS.getResult() );
 		mAMLS.verifyGridView();
 		Reporter.writeSummary("TCID_030,Verify the Catalog items are displayed in an Grid View format on clicking the Grid view icon, " +  mAMLS.getResult() );
 		mAMLS.verifyListView();
