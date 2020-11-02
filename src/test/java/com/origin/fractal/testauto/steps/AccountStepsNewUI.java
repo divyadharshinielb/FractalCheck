@@ -21,7 +21,7 @@ private AccountPageNewUI page=null;
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 
 	}
@@ -33,7 +33,7 @@ private AccountPageNewUI page=null;
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 
 	}
@@ -45,7 +45,7 @@ private AccountPageNewUI page=null;
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 	}
 	public void verifyEmptyProfileValidation() {
@@ -56,7 +56,7 @@ private AccountPageNewUI page=null;
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 	
 	}
@@ -69,7 +69,7 @@ private AccountPageNewUI page=null;
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 	}
 	public void afterChangePassword() {
@@ -80,7 +80,7 @@ private AccountPageNewUI page=null;
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }		
 	}
 }

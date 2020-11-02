@@ -23,7 +23,7 @@ public class AccountSteps extends FractalBaseStep {
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 
 	}
@@ -35,7 +35,7 @@ public class AccountSteps extends FractalBaseStep {
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 
 	}
@@ -47,7 +47,7 @@ public class AccountSteps extends FractalBaseStep {
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 	
 	}
@@ -60,7 +60,7 @@ public class AccountSteps extends FractalBaseStep {
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 
 	}
@@ -72,7 +72,7 @@ public class AccountSteps extends FractalBaseStep {
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 	
 	}
@@ -84,7 +84,7 @@ public class AccountSteps extends FractalBaseStep {
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 	
 	}
@@ -96,7 +96,7 @@ public class AccountSteps extends FractalBaseStep {
 		   catch(Exception e)
 		   {
 			e.printStackTrace();   
-			result="FAILED";
+			result="Failed";
 		   }
 	
 		
