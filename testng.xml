@@ -68,10 +68,12 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" />
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUserInfoImportAndExport" />
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
-				<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
 		</classes>
 

@@ -38,8 +38,8 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 	private By ZeroExportUsers= By.xpath("(//*[text()='Export Users(0)'])[1]");
 	private By btnExportsubmit= By.xpath("//button[@type='submit'][text()='EXPORT']");
 	private String importedUserName="AutoTest";
-	private String fileLocallocation="C:\\Users\\Dell_WVF\\Desktop\\UserInfoFile.xlsx";
-	private String invalidFile="C:\\Users\\Dell_WVF\\Desktop\\InvalidEmptyfile.xlsx";
+	private String fileLocallocation="C:\\sample file\\UserInfoFile.xlsx";
+	private String invalidFile="C:\\sample file\\InvalidEmptyfile.xlsx";
 
 	public UserInfoImportAndExportPage(WebDriver driver) {
 		super(driver);
