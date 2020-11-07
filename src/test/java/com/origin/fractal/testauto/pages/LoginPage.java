@@ -57,6 +57,13 @@ public class LoginPage extends FractalBasePage {
 		click(btnLogin);
 		wait(2);
 			}
+	//Added by vignesh on 5-Nov-20
+		public void doLoginUser() {
+			enterData("wintestersbassvikianu01@gmail.com",tbUserName);
+			enterData("Welcome@123&",tbPassword);
+			click(btnLogin1);
+		}
+		//Ends
 	/*public void loginToInstructor() {
 		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
 	    enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2

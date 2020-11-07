@@ -6,7 +6,7 @@ import com.origin.fractal.testauto.FractalBaseStep;
 import com.origin.fractal.testauto.pages.LoginPage;
 
 public class LoginSteps extends FractalBaseStep {
-	
+
 	private LoginPage page;
 
 	public LoginSteps(WebDriver driver) {
@@ -19,182 +19,196 @@ public class LoginSteps extends FractalBaseStep {
 	}
 	public void loginPageVerification() {
 		result ="PASSED";
-		   try {
+		try {
 			page.loginPageVerification();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 
 	public void rememberMe() {
 		result ="PASSED";
-		   try {
+		try {
 			page.rememberMe();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 	public void registerFunction() {
 		result ="PASSED";
-		   try {
+		try {
 			page.registerFunction();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 	public void blankPasswordVerification() {
 		result ="PASSED";
-		   try {
+		try {
 			page.blankPasswordVerification();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 
 	public void blankUserName() {
 		result ="PASSED";
-		   try {
-		   page.blankUserName();
-		   }
-		   catch(Exception e)
-		   {
+		try {
+			page.blankUserName();
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 
 	public void inValid() {
 		result ="PASSED";
-		   try {
-		   page.inValid();
-		   }
-		   catch(Exception e)
-		   {
+		try {
+			page.inValid();
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 
 	public void doLogin1() {
 		result ="PASSED";
-		   try {
-		   page.doLogin1();
-		   }
-		   catch(Exception e)
-		   {
+		try {
+			page.doLogin1();
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
-		
+		}
+
 	}
 
 	public void inValidPassword() {
 		result ="PASSED";
-		  try {
-		  page.inValidPassword();
-		  }
-		  catch(Exception e)
-		  {
-		e.printStackTrace();   
-		result="FAILED";
-		  }
-		
+		try {
+			page.inValidPassword();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+
 	}
 	public void verifySearchLink() {
 		result ="PASSED";
-		  try {
-		  page.verifySearchLink();
-		  }
-		  catch(Exception e)
-		  {
-		e.printStackTrace();   
-		result="FAILED";
-		  }
+		try {
+			page.verifySearchLink();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
 	}
 
 	public void loginToContentAdmin() {
 		result ="PASSED";
-		  try {
-		  page.loginToContentAdmin();
-		  }
-		  catch(Exception e)
-		  {
-		e.printStackTrace();   
-		result="FAILED";
-		  }
-		
+		try {
+			page.loginToContentAdmin();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+
 	}
 	public void loginToInstructor() {
 		result ="PASSED";
-		  try {
-		  page.loginToInstructor();
-		  }
-		  catch(Exception e)
-		  {
-		e.printStackTrace();   
-		result="FAILED";
-		  }
-		
+		try {
+			page.loginToInstructor();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+
 	}
 
 	public void verifypasswordField() {
 		result ="PASSED";
-		  try {
-		  page.verifypasswordField();
-		  }
-		  catch(Exception e)
-		  {
-		e.printStackTrace();   
-		result="FAILED";
-		  }
-		
+		try {
+			page.verifypasswordField();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+
 	}
 	public void googleBtn() {
 		result ="PASSED";
-		  try {
-		  page.googleBtn();
-		  }
-		  catch(Exception e)
-		  {
-		e.printStackTrace();   
-		result="FAILED";
-		  }
+		try {
+			page.googleBtn();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
 	}
 	public void facebookButton() {
 		result ="PASSED";
-		  try {
-		  page.facebookButton();
-		  }
-		  catch(Exception e)
-		  {
-		e.printStackTrace();   
-		result="FAILED";
-		  }
+		try {
+			page.facebookButton();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
 	}
 	//Added by vignesh (WVI) on 10/April/20
-		public void siteAdminLoginwithcookies() {
-			page.siteAdminLoginwithcookies();
+	public void siteAdminLoginwithcookies() {
+		page.siteAdminLoginwithcookies();
+	}
+	public void siteAdminLogin() {
+		page.siteAdminLogin();
+	}
+	public void loginInstructorwithCookies(String instUserID,String instPassword) {
+		page.loginInstructorwithCookies(instUserID,instPassword);
+	}
+	public void loginInstructor(String instUserID,String instPassword) {
+		page.loginInstructor(instUserID,instPassword);
+	}
+	//Ends
+
+	//Added by vignesh on 5-Nov-20
+	public void doLoginUser() {
+		result ="FAILED";
+		try {
+			page.doLoginUser();
+			result="PASSED";
 		}
-		public void siteAdminLogin() {
-			page.siteAdminLogin();
+		catch(Exception e)
+		{
+			result="FAILED";
 		}
-		public void loginInstructorwithCookies(String instUserID,String instPassword) {
-			page.loginInstructorwithCookies(instUserID,instPassword);
-		}
-		public void loginInstructor(String instUserID,String instPassword) {
-			page.loginInstructor(instUserID,instPassword);
-		}
-		//Ends
+	}
+	//Ends
 }

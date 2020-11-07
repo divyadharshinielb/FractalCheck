@@ -12,7 +12,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  */
 public class ReorderingCatalogItemsPage extends FractalBasePage{
 	MenuPage menuPage = null;
-	private String userName = "automation_directuser@originlearning.com";
+	private String userName = "wintestersbassvikianu01@gmail.com";//Updated on 7-Nov
 	private By allUserSearchArea=By.xpath("//*[@id='searchAllUsersName']");
 	private By assignContentIcon=By.xpath("//*[@title='Assign Content']");
 	private By expandModules=By.xpath("//*[contains(text(),'Add Content')]");

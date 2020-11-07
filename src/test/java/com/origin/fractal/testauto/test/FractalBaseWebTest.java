@@ -85,4 +85,13 @@ public class FractalBaseWebTest extends FractalBaseTest {
 			wait(5);
 		}
 	//Ends
+		//Added by vignesh on 5-Nov-20
+		protected void doLoginUser(WebDriver driver) {
+			print("change testLogin");
+			LoginSteps loginSteps = new LoginSteps(driver);
+			print("Inside testLogin - Page Opened");
+			loginSteps.doLoginUser();
+			wait(5);	
+		}
+		//Ends
 }
