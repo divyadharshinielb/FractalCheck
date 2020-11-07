@@ -24,19 +24,19 @@ public class WebTestUserInfoImportAndExport extends FractalBaseWebTest {
 		siteAdminLoginwithcookies(driver);
 		UserInfoImportAndExportSteps adminSteps=new UserInfoImportAndExportSteps(driver);
 		adminSteps.verifyDownloadTemplate();
-		Reporter.writeSummary("FR1-2359_AdminImportExport_TC-001,Verify admin is able to download the sample template .xlsx file," +adminSteps.getResult());
+		Reporter.writeSummary("FR1-2356_AdminImportExport_TC-001,Verify admin is able to download the sample template .xlsx file," +adminSteps.getResult());
 		adminSteps.verifyUserRadioBtn();
-		Reporter.writeSummary("FR1-2359_AdminImportExport_TC-002,Verify admin is able to select the user type," +adminSteps.getResult());	
+		Reporter.writeSummary("FR1-2356_AdminImportExport_TC-002,Verify admin is able to select the user type," +adminSteps.getResult());	
 		adminSteps.verifyUploadTemplate();
-		Reporter.writeSummary("FR1-2359_AdminImportExport_TC-003,Verify admin is able to upload the template .xlsx file," +adminSteps.getResult());	
+		Reporter.writeSummary("FR1-2356_AdminImportExport_TC-003,Verify admin is able to upload the template .xlsx file," +adminSteps.getResult());	
 		adminSteps.verifyInvalidUploadTemplate();
-		Reporter.writeSummary("FR1-2359_AdminImportExport_TC-004,Verify admin is able to see the warning message. When upload the invalid template .xlsx file," +adminSteps.getResult());	
+		Reporter.writeSummary("FR1-2356_AdminImportExport_TC-004,Verify admin is able to see the warning message. When upload the invalid template .xlsx file," +adminSteps.getResult());	
 		adminSteps.verifyExportTemplate();
-		Reporter.writeSummary("FR1-2359_AdminImportExport_TC-005,Verify admin is able to Export the template .xlsx file," +adminSteps.getResult());	
+		Reporter.writeSummary("FR1-2356_AdminImportExport_TC-005,Verify admin is able to Export the template .xlsx file," +adminSteps.getResult());	
 		adminSteps.verifyBtnExportTemplate();
-		Reporter.writeSummary("FR1-2359_AdminImportExport_TC-006,Verify admin is NOT able to Export the template .xlsx file. when the users list is Zero," +adminSteps.getResult());	
+		Reporter.writeSummary("FR1-2356_AdminImportExport_TC-006,Verify admin is NOT able to Export the template .xlsx file. when the users list is Zero," +adminSteps.getResult());	
 		adminSteps.DeleteUser();
-		Reporter.writeSummary("FR1-2359_AdminImportExport_TC-007,Verify admin is able to delete the imported user," +adminSteps.getResult());	
+		Reporter.writeSummary("FR1-2356_AdminImportExport_TC-007,Verify admin is able to delete the imported user," +adminSteps.getResult());	
 
 	}
 }
