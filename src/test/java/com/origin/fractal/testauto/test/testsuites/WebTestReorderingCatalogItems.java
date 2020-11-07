@@ -32,7 +32,7 @@ public class WebTestReorderingCatalogItems extends FractalBaseWebTest {
 		wait(5);
 		bellSteps.adminLogout();
 		wait(5);
-		login1(driver);
+		doLoginUser(driver);
 		reorder.verifyReorderUserMyLearning();
 		Reporter.writeSummary("FR1-2771_Reordering_TC-004,Verify the user is able to see the latest order items in My Learning tab," +reorder.getResult());
 	}	
