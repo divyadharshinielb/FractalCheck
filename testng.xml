@@ -70,6 +70,8 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" />
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUserInfoImportAndExport" />
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
@@ -79,7 +81,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
-				<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestAdaptIntegration" 
 				/> -->
