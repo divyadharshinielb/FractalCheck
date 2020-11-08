@@ -43,7 +43,7 @@ public class VideoFractalPage extends FractalBasePage{
 	private By okBtn = By.xpath("//button/span[contains(text(),'OK')]");
 //	private By uploadBtn = By.xpath("//label[contains(text(),'Upload Video')]");
 	private By uploadFile = By.xpath("//label[contains(text(),'Upload Video')]/input");
-	String filename = "C:\\sampleVideo3MB.mp4";
+	String filename = "C:\\sample file\\sampleVideo3MB.mp4";
 	public VideoFractalPage(WebDriver driver) {
 		super(driver);
 	}
@@ -67,9 +67,12 @@ public class VideoFractalPage extends FractalBasePage{
 	 * cause: Check for validation of Fields present in video creation
 	 */
 public void videoFormatCheck() {
+	wait(2);
 	enterData("Auto_VideoFormatCheck",videoTitle);
+	if(elementExist(selectLanguageDropdown)) {
 	click(selectLanguageDropdown);
 	click(englishLanguage);
+	}
 	click(selectCategory);
 	click(generalCategory);
 	elementExist(uploadField);
