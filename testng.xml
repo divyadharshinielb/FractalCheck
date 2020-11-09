@@ -83,6 +83,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestAdaptIntegration" 
 				/> -->
 		</classes>
