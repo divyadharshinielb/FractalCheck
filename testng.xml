@@ -72,6 +72,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

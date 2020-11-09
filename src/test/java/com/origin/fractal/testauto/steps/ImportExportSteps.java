@@ -1,10 +1,13 @@
 package com.origin.fractal.testauto.steps;
 
 import org.openqa.selenium.WebDriver;
-
 import com.origin.fractal.testauto.FractalBaseStep;
 import com.origin.fractal.testauto.pages.ImportExportPage;
 
+/* File/class name: ImportExportSteps.java
+ * Developed By: Mahesh G
+ * completed Date: 28/10/2020
+ */
 public class ImportExportSteps extends FractalBaseStep {
 	private ImportExportPage page=null;
 
@@ -13,6 +16,43 @@ public class ImportExportSteps extends FractalBaseStep {
 		page = new ImportExportPage(driver);
 		fBPage = page;
 	}
+	/* Function name:Import() Covers:It navigates to the Import page*/
+	public void Import() {
+		result ="PASSED";
+		try {
+			page.Import();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+	}
+	/* Function name:contentImport() Covers:It navigates to the contentImport page*/
+	public void contentImport() {
+		result ="PASSED";
+		try {
+			page.contentImport();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+	}
+	/* Function name:selectcatalog() Covers:It navigates to the selectcatalog page*/
+	public void selectcatalog() {
+		result ="PASSED";
+		try {
+			page.selectCatalog();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+	}
+	
 	/* Function name:GotoImportExport() Covers:It navigates to the import and export page*/
 	public void GotoImportExport() {
 		result ="PASSED";
@@ -122,10 +162,10 @@ public class ImportExportSteps extends FractalBaseStep {
 		}
 	}
 	/* Function name:NotStartedStatus() Covers:It navigates to NotStartedStatus function in import and export page  */
-	public void NotStartedStatus(){
+	public void notStartedStatus(){
 		result ="PASSED";
 		try {
-			page.NotStartedStatus();
+			page.notStartedStatus();
 		}
 		catch(Exception e)
 		{
@@ -134,10 +174,10 @@ public class ImportExportSteps extends FractalBaseStep {
 		}
 	}
 	/* Function name:InprogressStatus() Covers:It navigates to InprogressStatus function in import and export page  */
-	public void InprogressStatus(){
+	public void inprogressStatus(){
 		result ="PASSED";
 		try {
-			page.InprogressStatus();
+			page.inprogressStatus();
 		}
 		catch(Exception e)
 		{
@@ -146,10 +186,10 @@ public class ImportExportSteps extends FractalBaseStep {
 		}
 	}
 	/* Function name:CompletedStatus() Covers:It navigates to CompletedStatus function in import and export page  */
-	public void CompletedStatus(){
+	public void completedStatus(){
 		result ="PASSED";
 		try {
-			page.CompletedStatus();
+			page.completedStatus();
 		}
 		catch(Exception e)
 		{
@@ -255,10 +295,10 @@ public class ImportExportSteps extends FractalBaseStep {
 		}
 	}
 	/* Function name:InvalidCatalogTypNotStarted() Covers:It navigates to InvalidCatalogTypNotStarted function in import and export page  */
-	public void InvalidCatalogTypNotStarted(){
+	public void invalidCatalogTypNotStarted(){
 		result ="PASSED";
 		try {
-			page.InvalidCatalogTypNotStarted();
+			page.invalidCatalogTypNotStarted();
 		}
 		catch(Exception e)
 		{
@@ -267,10 +307,10 @@ public class ImportExportSteps extends FractalBaseStep {
 		}
 	}
 	/* Function name:InvalidCatalogTypInprogress() Covers:It navigates to InvalidCatalogTypInprogress function in import and export page  */
-	public void InvalidCatalogTypInprogress(){
+	public void invalidCatalogTypInprogress(){
 		result ="PASSED";
 		try {
-			page.InvalidCatalogTypInprogress();
+			page.invalidCatalogTypInprogress();
 		}
 		catch(Exception e)
 		{
@@ -291,10 +331,10 @@ public class ImportExportSteps extends FractalBaseStep {
 		}
 	}
 	/* Function name:InvalidCatalogNameNotStarted() Covers:It navigates to InvalidCatalogNameNotStarted function in import and export page  */
-	public void InvalidCatalogNameNotStarted(){
+	public void invalidCatalogNameNotStarted(){
 		result ="PASSED";
 		try {
-			page.InvalidCatalogNameNotStarted();
+			page.invalidCatalogNameNotStarted();
 		}
 		catch(Exception e)
 		{
