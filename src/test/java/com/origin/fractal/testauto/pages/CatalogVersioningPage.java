@@ -80,8 +80,8 @@ public class CatalogVersioningPage extends FractalBasePage {
 		enterData(getLabel("learningObjectName"),htmlTitleTextArea);
 		click(htmlSelectCatagory);
 		moveElementFocusandClick(htmlGenaralCatagory);
-//		click(htmlLangdropbox);
-//		click(htmlLangEnglish);
+		//		click(htmlLangdropbox);
+		//		click(htmlLangEnglish);
 		fileUpload(learningPage.getLabel("HtmlFileLocation"),htmlFile);
 		wait(2);
 		moveElementFocusandClick(htmlAttemptsdropBox);
@@ -106,7 +106,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void createVersioningLearningObject() {
-				enterData(getLabel("learningObjectName"),searchFieldLearnObj);
+		enterData(getLabel("learningObjectName"),searchFieldLearnObj);
 		wait(5);
 		click(editBtn);
 		wait(3);		
@@ -133,18 +133,36 @@ public class CatalogVersioningPage extends FractalBasePage {
 		try{
 			wait(3);
 			click(lblCatalogTab);
-			wait(3);
+			//			wait(10);//Updated on 9Nov20
 			if(catalog.equalsIgnoreCase("Ver2")) {
 				enterData(getLabel("catalogNamePartofLP"),searchFieldCatItem);
-				wait(2);
+				//added on 9-Nov-20
+				wait(5);
+				//				clear(searchFieldCatItem);
+				//				wait(2);
+				//				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
+				//				//ends
+				//				wait(10);//Updated on 9Nov20
 			}
 			else if (catalog.equalsIgnoreCase("Ver1")) {
 				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
-				wait(2);
+				//added on 9-Nov-20
+				wait(5);
+				//				clear(searchFieldCatItem);
+				//				wait(2);
+				//				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
+				//				//				//ends
+				//				wait(10);//Updated on 9Nov20
 			}
 			else {
 				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
-				wait(2);
+				//added on 9-Nov-20
+				//				wait(5);
+				//				clear(searchFieldCatItem);
+				////				wait(2);
+				//				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
+				//				//ends
+				//				wait(10);//Updated on 9Nov20
 			}
 			wait(5);
 			click(catEditBtn);
