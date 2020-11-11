@@ -137,7 +137,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 			if(catalog.equalsIgnoreCase("Ver2")) {
 				enterData(getLabel("catalogNamePartofLP"),searchFieldCatItem);
 				//added on 9-Nov-20
-				wait(5);
+				wait(2);
 				//				clear(searchFieldCatItem);
 				//				wait(2);
 				//				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
@@ -147,7 +147,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 			else if (catalog.equalsIgnoreCase("Ver1")) {
 				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
 				//added on 9-Nov-20
-				wait(5);
+				wait(2);
 				//				clear(searchFieldCatItem);
 				//				wait(2);
 				//				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
