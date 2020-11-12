@@ -24,15 +24,15 @@ public class Reporter {
 		// This will create the report file call this before start of testing
 		String reportFile = "target/TestReport.csv";
 		File file=new File(reportFile);
-		if(file.exists()) {
-			if (repWriter == null) {
-				repWriter = CSVManager.getCSVWriter(reportFile);
-				writeHeader();
-			}else {
-				repWriter = new CSVWriter(new FileWriter(reportFile));
-				repWriter = CSVManager.getCSVWriter(reportFile);
-				writeHeader();
-			}
+		//		if(file.exists()) {
+		if (repWriter == null) {
+			repWriter = CSVManager.getCSVWriter(reportFile);
+			writeHeader();
+		}else {
+			repWriter = new CSVWriter(new FileWriter(reportFile));
+			repWriter = CSVManager.getCSVWriter(reportFile);
+			writeHeader();
+			//			}
 		}
 	}
 
@@ -41,15 +41,15 @@ public class Reporter {
 		// This will create the report file call this before start of testing
 		String reportFile = "target/TestDetailReport.csv";
 		File file=new File(reportFile);
-		if(file.exists()) {
-			if (repWriterDetail == null) {
-				repWriterDetail = CSVManager.getCSVWriter(reportFile);
-				writeDetailHeader();
-			}else {
-				repWriter = new CSVWriter(new FileWriter(reportFile));
-				repWriter = CSVManager.getCSVWriter(reportFile);
-				writeHeader();
-			}
+		//		if(file.exists()) {
+		if (repWriterDetail == null) {
+			repWriterDetail = CSVManager.getCSVWriter(reportFile);
+			writeDetailHeader();
+		}else {
+			repWriter = new CSVWriter(new FileWriter(reportFile));
+			repWriter = CSVManager.getCSVWriter(reportFile);
+			writeHeader();
+			//			}
 		}
 	}
 
@@ -58,11 +58,11 @@ public class Reporter {
 		// This will create the report file call this before start of testing
 		String reportFile = "target/TestFailureReport.csv";
 		File file=new File(reportFile);
-		if(file.exists()) {
-			if (repWriterFailure == null) {
-				repWriterFailure = CSVManager.getCSVWriter(reportFile);
-				writeFailureHeader();
-			}
+		//		if(file.exists()) {
+		if (repWriterFailure == null) {
+			repWriterFailure = CSVManager.getCSVWriter(reportFile);
+			writeFailureHeader();
+			//			}
 		}else {
 			repWriter = new CSVWriter(new FileWriter(reportFile));
 			repWriter = CSVManager.getCSVWriter(reportFile);
