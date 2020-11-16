@@ -20,9 +20,9 @@ public class videoTesterPage extends FractalBasePage{
 	private By tabCatalogItem= By.xpath("//md-tab-item//span[contains(text(),'Catalog Items')]");
 	private By bundleClick= By.xpath("//span[@title='Auto_Bundle']");
 	private By learningPathClick= By.xpath("//span[@title='Auto_LearningPath']");
-	private By videoClick= By.xpath("//h3[@title='Auto_MP4']");
+	private By videoClick= By.xpath("//h3[@title='Video']");
 	private By homeLink=By.xpath("//a[contains(text(),'Catalog Items')]");
-	private By closeBtn=By.xpath("//i[@class='icon dripicons-cross icon30 font-size-30 ng-scope']");
+	private By closeBtn=By.xpath("//body[1]/div[4]/md-dialog[1]/md-toolbar[1]/div[1]/button[1]/i");//i[@class='icon dripicons-cross icon30 font-size-30 ng-scope']
 	private By searchCatalog=By.xpath("//input[@id='searchCatalog']");
 	public videoTesterPage(WebDriver driver) {
 		super(driver);
@@ -86,9 +86,9 @@ public class videoTesterPage extends FractalBasePage{
 				print("Video is playing.");
 				wait(20);
 				if(elementExist(adminPause)) {
-					element = driver.findElement(adminPause);
+					WebElement	element6 = driver.findElement(adminPause);
 					actions1 = new Actions(driver); 
-					actions1.moveToElement(element1).perform();
+					actions1.moveToElement(element6).perform();
 					click(adminPause);
 					print("Video is paused.");
 					wait(10);

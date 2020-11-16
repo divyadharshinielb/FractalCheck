@@ -107,6 +107,7 @@ public class AccountPage extends FractalBasePage {
 		verifyFnameField(lblFName);
 		clear(lblFName);
 		clear(lblLName);
+		wait(5);
 		verifyLnameField(lblLName);
 	}
 	public boolean verifyFnameField(By objLoc){

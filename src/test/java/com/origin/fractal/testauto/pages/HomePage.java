@@ -111,7 +111,7 @@ public class HomePage extends FractalBasePage {
     private By CatalogPrice = By.xpath(".//ng-include[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]");
    
     /*******new ui***************/
-	private By nextButton=By.xpath(".//div[@class='slider-control-centerright']//div//img");//div/ng-include/div//div//div/slick/button[contains(text(),'Next')]
+	private By nextButton=By.xpath(".//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[4]/div[1]/img[1]");//div[@class='slider-control-centerright']//div//img//div/ng-include/div//div//div/slick/button[contains(text(),'Next')]
     private By PreviousButton=By.xpath(".//div[@class='slider-control-centerleft']//div//img");//div/ng-include/div//div//div/slick/button[contains(text(),'Previous')]
     private By whFirstCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
     private By whSecondCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
@@ -428,7 +428,7 @@ public class HomePage extends FractalBasePage {
 	public void verifyNextBtn() {
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement Element= driver.findElement(By.xpath("//div[@class='slider-control-centerright']//div//img"));
+		WebElement Element= driver.findElement(By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[4]/div[1]/img[1]"));//div[@class='slider-control-centerright']//div//img
 		js.executeScript("arguments[0].scrollIntoView();", Element);
 		wait(10);
 		click(nextButton);

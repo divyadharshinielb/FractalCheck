@@ -23,7 +23,7 @@ public class WebTestVideoTester extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_Video, Verify the User video gets launched succesfully," +  VideoTesterSteps.getResult() );
 	
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 1 ,
 			description = "video testing")
 	public void verifyAdminvideo(String row, String strBrowserName) throws InterruptedException, IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -33,7 +33,6 @@ public class WebTestVideoTester extends FractalBaseWebTest {
 		menuSteps.clickMenu();
 		VideoTesterSteps.verifyAdminVideoTester();
 		Reporter.writeSummary("TCID_Video, Verify the Admin video gets launched succesfully," +  VideoTesterSteps.getResult() );
-	
 	}
 }
 
