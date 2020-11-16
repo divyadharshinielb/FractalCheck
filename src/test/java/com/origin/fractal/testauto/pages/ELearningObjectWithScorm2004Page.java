@@ -76,7 +76,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		click(deleteLOBtn);
 		wait(2);
 		click(deleteOKBtn);
-		wait(3);
+		wait(5);//Updated on 16-Nov-20
 		if(elementExist(NoLOFound)) {
 			return true;
 		}
@@ -262,6 +262,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		wait(2);
 		moveElementFocusandClick(LearningObjectHTMLPage.htmlAttemptsdropBox);
 		moveElementFocusandClick(LearningObjectHTMLPage.htmlUnlimtedAttempts);
+		moveElementFocusandClick(discriTextArea);// entered on 16-Nov-20
 		enterData("Check Invalid scorm2004 file",discriTextArea);
 		wait(2);
 		enterData("Check Invalid",LearningObjectHTMLPage.htmlItemcodetab);

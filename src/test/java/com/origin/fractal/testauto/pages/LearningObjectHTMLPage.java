@@ -107,7 +107,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		enterData(getLabel("DurationMM"),htmlDurationMM);
 		wait(10);
 		click(btnSave);
-		wait(5);
+		wait(10);//Updated on 16-Nov-29
 		if(elementExist(sucessfullyNotification)) {
 			click(backToLOBtn);
 			wait(2);
@@ -134,7 +134,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		By editedhtmlOName=By.xpath("//*[text()='"+getLabel("editHtmlName")+"']");
 		wait(2);
 		click(editBtn);
-		wait(5);
+		wait(10);//Updated on 16-Nov-20
 		click(btnCancel);
 		wait(5);
 		click(editBtn);
