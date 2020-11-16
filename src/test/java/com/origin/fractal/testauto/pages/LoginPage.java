@@ -54,7 +54,7 @@ public class LoginPage extends FractalBasePage {
 			click(btnCookies);
 		}
 		wait(5);
-		click(By.xpath("//div[@class='logout-profile-pic']"));//img[@class='logout-height']
+		click(By.xpath("//img[contains(@class,'logout-height')]"));//img[@class='logout-height']
 		wait(5);
 		click(By.xpath("//button[contains(text(),'Instructor')]"));//button[@class='role-button']
 	}

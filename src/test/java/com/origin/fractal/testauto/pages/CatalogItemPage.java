@@ -61,6 +61,7 @@ public class CatalogItemPage extends FractalBasePage {
 	private By bellicon = By.xpath("//div[contains(@class,'pad-hover-67 notify-box')]//button[contains(@class,'jss29 jss3 jss5 jss8 circle-hover click-hover-09')]");
 	private By dueNoti  = By.xpath("//li[1]//div[1]//p[1]");
 	private By moreBtn = By.xpath("//button[contains(text(),'MORE')]");
+	private By saveBtn = By.xpath("//button[contains(text(),'Save')]");
 	public CatalogItemPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -207,7 +208,15 @@ public class CatalogItemPage extends FractalBasePage {
 		click(pricefreeclick);
 		wait(5);
 		contentAssign();
+		if(elementExist(continuebtn2)) {
+			click(continuebtn2);
+			wait(2);
+			click(saveBtn);
+			
+		}
+		else {
 		click(continuebtn1);
+		}
 		wait(5);
 		//commented as ibm competency is not enabled
 	//	click(btnsave);
@@ -221,7 +230,7 @@ public class CatalogItemPage extends FractalBasePage {
 	public void contentAssign() {
 		click(plusbutton);
 		wait(5);
-		enterData("Automation_AudioCheck",catalogSearch);
+		enterData("Sample Audio",catalogSearch);
 		click(asscontent);
 		wait(5);
 	}

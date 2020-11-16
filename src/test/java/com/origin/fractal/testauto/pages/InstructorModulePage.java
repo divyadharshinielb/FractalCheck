@@ -39,7 +39,7 @@ public class InstructorModulePage extends FractalBasePage {
 	private By eventTab= By.xpath("//i[contains(text(),';')]");
 	private By lblInprogress= By.xpath("//li[@id='react-tabs-0']");
 	private By lblUpcoming= By.xpath("//li[@id='react-tabs-2']");
-	private By lblCompleted= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[3]");//li[@id='react-tabs-4']
+	private By lblCompleted= By.xpath("//li[@id='react-tabs-4']");//li[@id='react-tabs-4']
 	private String SkillSetBox1 ="//select[@name='skillfilter']//option";
 	private String SkillSetBox2 ="]";
 	private By lblActivitiesText= By.xpath("//li[contains(text(),'Activities & Materials')]");
