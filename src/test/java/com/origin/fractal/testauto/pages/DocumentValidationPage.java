@@ -48,6 +48,7 @@ public class DocumentValidationPage extends FractalBasePage {
 	private By closeIcon = By.xpath("//i[@class='icon dripicons-cross icon30 font-size-30 ng-scope']/..");
 	private By catalogTitle = By.xpath("//textarea[@id='catalogItemName']");
 	private By continuebtn1 = By.xpath("//span[contains(text(),'Save')]/..");
+	private By saveBtn = By.xpath("//button[contains(text(),'Save')]");
 	private By priceclick = By.xpath("//span[contains(text(),'Price category')]");
 	private By pricefreeclick = By.xpath("//ul[contains(@class,'list')]/li[contains(text(),'Free')]");
 	private By plusbutton = By.xpath("//i[contains(@class,'icon pointer dripicons-plus icon-circle-fill font-size-30 expand_menu_list map_content padding-t-0 tp-50')]");
@@ -91,6 +92,7 @@ public class DocumentValidationPage extends FractalBasePage {
 	//private String filename2 ="C:\\sample-large-zip-file";
 	private String filename3 = "C:\\sample file\\Auto_Document.pdf"; //C:\\Auto_Document.pdf  /Users/origin/Downloads/sample.pdf
 	private String filename4 = "C:\\sample file\\testcase count.xlsx"; //C:\\testcase count.xlsx /Users/origin/Downloads/TestReport.xls
+	private By backtoCatalogBtn = By.xpath("//button[contains(text(),'Back to Catalog Items')]");
 	public DocumentValidationPage(WebDriver driver) {
 		super(driver);
 		page=new CatalogItemPage(driver);
@@ -195,7 +197,7 @@ public class DocumentValidationPage extends FractalBasePage {
 	 */
 	public void documentDelete() {
 		enterData("Document_Check1",searchLO);
-		wait(5);
+		wait(10);
 		click(deleteIcon);
 		wait(2);
 		click(deletecourseokbtn);
@@ -256,7 +258,7 @@ public class DocumentValidationPage extends FractalBasePage {
 
 	public void editDocument() {
 		enterData("Document_Check1",searchLO);
-		wait(5);
+		wait(10);
 		click(editIcon);
 		wait(5);
 		verifyText("TestReport.xls",testcountFile);
@@ -370,13 +372,18 @@ public class DocumentValidationPage extends FractalBasePage {
 		enterData("Document_Check1",catalogSearch);
 		click(asscontent);
 		wait(5);
-		if(elementExist(continuebtn2)) {
+		//commenting as creation of catalog item is not required
+		/*if(elementExist(continuebtn2)) {
 			click(continuebtn2);
 			wait(2);
-			click(continuebtn2);
-		}else {
+			click(saveBtn);
+			
+		}
+		else {
 		click(continuebtn1);
 		}
+		wait(10);
+		elementExist(backtoCatalogBtn);
 		wait(10);
 		click(closebtn);
 		wait(5);
@@ -384,7 +391,7 @@ public class DocumentValidationPage extends FractalBasePage {
 		wait(5);
 		click(deletecoursebtn);
 		wait(5);
-		click(deletecourseokbtn);
+		click(deletecourseokbtn);*/
 	}
 	/*
 	 *function: linkFieldsCheck()

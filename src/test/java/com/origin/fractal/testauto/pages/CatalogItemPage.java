@@ -27,6 +27,7 @@ public class CatalogItemPage extends FractalBasePage {
 	private By resourcebtn = By.xpath("//button/*/span[contains(text(),'Resource')]");
 	private By podcastbtn  = By.xpath("//button/*/span[contains(text(),'PODCAST')]");
 	private By continuebtn = By.xpath("//button[contains(text(),'Continue')]");
+	private By continuebtn2 = By.xpath("//span[contains(text(),'Continue')]");
 	private By continuebtn1 = By.xpath("//span[contains(text(),'Save')]/..");
 	private By catalogTitle = By.xpath("//textarea[@id='catalogItemName']");//label[contains(text(),'Bundle Title')]/../div/textarea
 	private By selectlanguage = By.xpath("//span[contains(text(),'Select Language')]");
@@ -144,9 +145,11 @@ public class CatalogItemPage extends FractalBasePage {
 	 * cause: Creation of Catalog item first page
 	 */
 	public void catalogCreation() {
+		if(elementExist(selectlanguage)) {
 		click(selectlanguage);
 		wait(2);
 		click(languageEnglish);
+		}
 		click(selectcategory);
 		wait(5);
 		click(selcatgegoryitem);
