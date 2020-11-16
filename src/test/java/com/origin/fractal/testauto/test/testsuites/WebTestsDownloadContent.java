@@ -23,7 +23,7 @@ public class WebTestsDownloadContent extends FractalBaseWebTest{
 			//		 new Object[] { "4", "ie11" }
 		};
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "")
 	public void DownloadContent(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -51,7 +51,7 @@ public class WebTestsDownloadContent extends FractalBaseWebTest{
 		DownloadContentSteps downloadContentSteps = new DownloadContentSteps(driver);
 		login(driver);
 		downloadContentSteps.verifyAudio();
-		Reporter.writeSummary("FR1-2773_DownloadContent_TC-002,In User Login, Verify Download option visible in the Content Player Page for audio once enabled by admin," +downloadContentSteps.getResult());
+		Reporter.writeSummary("FR1-2773_DownloadContent_TC-002,In User Login Verify Download option visible in the Content Player Page for audio once enabled by admin," +downloadContentSteps.getResult());
 	}
 
 }

@@ -15,6 +15,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  * covers:This page covers all basic functions and Xpath of the import/Export page 
  * Name of developer:Mahesh G
  * Completed date:25/5/2020
+ * completed date:28/1/2020
  */
 
 public class ImportExportPage extends FractalBasePage {
@@ -24,7 +25,7 @@ public class ImportExportPage extends FractalBasePage {
 	private By lblUserTab = By.xpath("//md-tab-item[@class='md-tab ng-scope ng-isolate-scope md-ink-ripple md-active']//span[@id='step-7']");
 	private By selectUserDropDown = By.xpath("//div[@class='nice-select selectUser ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required']");//h4[contains(text(),'Select User')]/../select
 	private By IndividualUser = By.xpath("//li[contains(text(),'Individual User')]");
-	private By browseFileBtn = By.xpath("//label[contains(text(),'Browse file')]//input[@type='file']");
+	private By browseFileBtn = By.xpath("//div//label[contains(text(),'Browse')]//input");//label[contains(text(),'Browse file')]//input[@type='file']
 	private By settingsIcon =By.xpath("//div[@class='icon dripicons-gear']");
 	private By groupCheckBox =By.xpath("//label[@id='completion_criteria_checkbox'][@for='groupId']");
 	private By learningHistoryCheckBox =By.xpath("//label[@id='completion_criteria_checkbox'][@for='learningId']");
@@ -44,8 +45,21 @@ public class ImportExportPage extends FractalBasePage {
 	private By errorformatText= By.xpath("//div[contains(text(),'Invalid file format!')]");
 	private By uploadErrorText=By.xpath("//div[contains(text(),'The uploaded Excel file is not matching with the template Excel file. Please check.')]");
 	private By clickHereLink=By.xpath("//a[contains(text(),'here')]");
-
-	private String filename="C:\\\\sample file\\\\Sample.xlsx";
+	//div[@class='icon dripicons']//img
+	private By importBtn=By.xpath("//button[contains(text(),'Import')]");
+	private By contentDropDown=By.xpath("//span[contains(text(),'Select Content *')]");
+	private By lblBundle=By.xpath("//li[contains(text(),'Bundle')]");
+	private By uploadBtn=By.xpath("//div//label[contains(text(),'Browse')]//input");//label[contains(text(),'Browse')]//input[@type='file']
+	
+	private By contentIcon=By.xpath("//span[contains(text(),'Manage Content')]");
+	private By catalogTab=By.xpath("//md-tabs[1]/md-tabs-wrapper[1]/md-tabs-canvas[1]/md-pagination-wrapper[1]/md-tab-item//span[contains(text(),'Catalog Items')]");
+	private By ImportBtn=By.xpath("//button[contains(text(),'Import')]");
+	private By selectContent=By.xpath("//span[contains(text(),'Select Content *')]");
+	private By lblBundleSelect=By.xpath("//li[contains(text(),'Bundle')]");
+	private By lblOk=By.xpath("//button[contains(text(),'OK')]");
+	
+	
+	private String filename="C:\\\\sample file\\\\New Course name.xlsx";
 	private String filename2="C:\\sample file\\Sample2.xlsx";
 	private String filename3="C:\\\\sample file\\\\LHwithNOTSTARTED.xlsx";
 	private String filename4="C:\\sample file\\LHwithINPROGRESS.xlsx";
@@ -72,6 +86,49 @@ public class ImportExportPage extends FractalBasePage {
 	/*
 	 * Function name:GotoImportExport()
 	 * Covers:It redirects to the import and export page
+	 */
+	public void Import()
+	{
+		wait(5);
+		click(importBtn);
+		wait(5);
+		click(contentDropDown);
+		wait(5);
+		click(lblBundle);
+		wait(5);
+		driver.manage().window().maximize();
+		driver.findElement(uploadBtn).sendKeys(filename);
+		wait(10);
+	}
+	/*
+	 * Function name:ContentImport()
+	 * Covers:It redirects to the ContentImport page
+	 */
+	public void contentImport() 
+	{
+		wait(5);
+		click(contentIcon);
+		wait(5);
+		click(catalogTab);
+		wait(5);
+		click(ImportBtn);
+		
+	}
+	/*
+	 * Function name:SelectCatalog()
+	 * Covers:It redirects to the SelectCatalog
+	 */
+	public void selectCatalog() {
+		wait(5);
+		click(selectContent);
+		wait(5);
+		click(lblBundleSelect);
+		wait(2);
+		
+	}
+	/*
+	 * Function name:GotoImportExport()
+	 * Covers:It redirects to the GotoImportExport page
 	 */
 	public void GotoImportExport() 
 	{
@@ -197,45 +254,39 @@ public class ImportExportPage extends FractalBasePage {
 		wait(2);
 		uploadBrowseFileSample1();
 		wait(10);
-		//	click(Importbtn);
 		wait(2);
 	}
 	/*
 	 * Function name:NotStartedStatus()
 	 * Covers:It covers both learning history selection check box and upload not started status file
 	 */
-	public void NotStartedStatus() {
-		selectIndividualUser();
-		selectGroups();
+	public void notStartedStatus() {
 		wait(2);
-		click(learningHistoryCheckBox);
-		wait(2);
-		click(learningHistoryCheckBox);
-		wait(2);
-		click(learningHistoryCheckBox);
 		uploadBrowseFile(filename3);
-		//	click(Importbtn);
 		wait(2);
+		click(lblOk);
 	}
 	/*
 	 * Function name:InprogressStatus()
 	 * Covers:It uploads inprogress status file
 	 */
-	public void InprogressStatus() {
-		selectIndividualUser();
-		uploadBrowseFile(filename4);
-		//	click(Importbtn);
+	public void inprogressStatus() {
+		selectCatalog();
 		wait(2);
+		uploadBrowseFile(filename4);
+		wait(2);
+		click(lblOk);
 	}
 	/*
 	 * Function name:CompletedStatus()
 	 * Covers:It uploads completed status file
 	 */
-	public void CompletedStatus() {
-		selectIndividualUser();
-		uploadBrowseFile(filename5);
-		//	click(Importbtn);
+	public void completedStatus() {
+		selectCatalog();
 		wait(2);
+		uploadBrowseFile(filename5);
+		wait(2);
+		click(lblOk);
 	}
 	/*
 	 * Function name:ParticularGroupName()
@@ -332,29 +383,49 @@ public class ImportExportPage extends FractalBasePage {
 	 * Function name:InvalidCatalogTypNotStarted()
 	 * Covers:It uploads InvalidCatalogTypNotStarted file
 	 */
-	public void InvalidCatalogTypNotStarted(){
+	public void invalidCatalogTypNotStarted(){
+		wait(2);
+		selectCatalog();
+		wait(2);
 		uploadBrowseFile(filename14);
+		wait(2);
+		click(lblOk);
 	}
 	/*
 	 * Function name:InvalidCatalogTypInprogress()
 	 * Covers:It uploads InvalidCatalogTypInprogress file
 	 */
-	public void InvalidCatalogTypInprogress(){
+	public void invalidCatalogTypInprogress(){
+		wait(2);
+		selectCatalog();
+		wait(2);
 		uploadBrowseFile(filename15);
+		wait(2);
+		click(lblOk);
 	}
 	/*
 	 * Function name:InvalidCatalogTypCompleted()
 	 * Covers:It uploads InvalidCatalogTypCompleted file
 	 */
 	public void InvalidCatalogTypCompleted(){
+		wait(2);
+		selectCatalog();
+		wait(2);
 		uploadBrowseFile(filename16);
+		wait(2);
+		click(lblOk);
 	}
 	/*
 	 * Function name:InvalidCatalogTypCompleted()
 	 * Covers:It uploads InvalidCatalogNameNotStarted file
 	 */
-	public void InvalidCatalogNameNotStarted(){
+	public void invalidCatalogNameNotStarted(){
+		wait(2);
+		selectCatalog();
+		wait(2);
 		uploadBrowseFile(filename17);
+		wait(2);
+		click(lblOk);
 	}
 	/*
 	 * Function name:InvalidCatalogTypCompleted()

@@ -48,17 +48,18 @@ public class WebTestImportExport extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_005, Verify import button for business user and business admin after upload one file and multiple file, " +  importExportSteps.getResult() );
 
 		//**20/5/2020**//
-		importExportSteps.NotStartedStatus();
+		importExportSteps.notStartedStatus();
 		Reporter.writeSummary("TCID_006, Verify that Site admin is be able to assign Catalog item with Not started status by clicking on Import button, " +  importExportSteps.getResult() );
-		importExportSteps.InprogressStatus();
+		importExportSteps.inprogressStatus();
 		Reporter.writeSummary("TCID_007, Verify that Site admin is be able to assign Catalog item with In progress status by clicking on Import button, " +  importExportSteps.getResult() );
-		importExportSteps.CompletedStatus();
+		importExportSteps.completedStatus();
 		Reporter.writeSummary("TCID_008, Verify that Site admin is be able to assign Catalog item with Completed status by clicking on Import button, " +  importExportSteps.getResult() );
 		importExportSteps.allDirectUsers();
 		Reporter.writeSummary("TCID_009, Verify that Site admin is be able to assign Catalog item for all direct users, " +  importExportSteps.getResult() );
 		importExportSteps.ParticularGroupName();
 		importExportSteps.allBusinessUsers();
 		Reporter.writeSummary("TCID_010, Verify that when Site admin selects Business user under all business user groups, " +  importExportSteps.getResult() );
+		
 		//**21/5/2020**//
 		importExportSteps.uploadFilesValidation();
 		Reporter.writeSummary("TCID_011, Verify  error message on uploading files with invalid file formats, " +  importExportSteps.getResult() );
@@ -69,13 +70,13 @@ public class WebTestImportExport extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_013, Verify error message for learning history in first and second sheet, " +  importExportSteps.getResult() );
 		importExportSteps.clickHereLink();
 		Reporter.writeSummary("TCID_014, Verify the presence of clickhere, " +  importExportSteps.getResult() );
-		importExportSteps.InvalidCatalogTypNotStarted();
+		importExportSteps.invalidCatalogTypNotStarted();
 		Reporter.writeSummary("TCID_015, Verify that Site admin is able to assign Catalog type with Not started status by clicking on Import button, " +  importExportSteps.getResult() );
-		importExportSteps.InvalidCatalogTypInprogress();
+		importExportSteps.invalidCatalogTypInprogress();
 		Reporter.writeSummary("TCID_016, Verify that Site admin is able to assign Catalog type with In progress status by clicking on Import button, " +  importExportSteps.getResult() );
 		importExportSteps.InvalidCatalogTypCompleted();
 		Reporter.writeSummary("TCID_017, Verify that Site admin is able to assign Catalog type with Completed status by clicking on Import button, " +  importExportSteps.getResult() );
-		importExportSteps.InvalidCatalogNameNotStarted();
+		importExportSteps.invalidCatalogNameNotStarted();
 		Reporter.writeSummary("TCID_018, Verify that Site admin is able to assign Catalog name with Not started status by clicking on Import button, " +  importExportSteps.getResult() );
 		importExportSteps.InvalidCatalogNameInprogress();
 		Reporter.writeSummary("TCID_019, Verify that Site admin is able to assign Catalog name with Not started status by clicking on Import button, " +  importExportSteps.getResult() );

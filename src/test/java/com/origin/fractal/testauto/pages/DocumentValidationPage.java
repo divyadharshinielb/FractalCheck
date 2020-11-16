@@ -76,20 +76,21 @@ public class DocumentValidationPage extends FractalBasePage {
 	private By closeLOBtn = By.xpath("//body/div[@id='addObject']/div[1]/div[1]/div[1]/button[1]/i[1]");//i[@class='icon  text-right font-size-35']
 	private By deleteIcon = By.xpath("//i[@class='icon text-left font-size-16 bold cursor-pointer gray-85 padding-l-0 ng-scope']");
 	private By editIcon = By.xpath("//i[@data-template-url1='editObj.html']");
-	private By testcountFile = By.xpath("//span[contains(text(),'testcase count.xlsx')]");
+	private By testcountFile = By.xpath("//span[contains(text(),'TestReport.xls')]");
 	private By changeFileBtn = By.xpath("//label[contains(text(),'Change')]");
 	private By updateBtn = By.xpath("//button[contains(text(),'Update')]");
 	private By noBtn = By.xpath("//button/span[contains(text(),'No')]"); 
 	private By noUpdateBtn = By.xpath("//button[contains(text(),'No')]");
 	private By scormzipFile = By.xpath("//span[contains(text(),'Scorm2004videofile.zip')]");
+	private By continuebtn2 = By.xpath("//span[contains(text(),'Continue')]");
 	private By editCloseBtn = By.xpath("//button[@class='close']/i");
 	private By previewTitle = By.xpath("//h2[contains(text(),'Document_Check1')]");
 	private By previewDownloadBtn = By.xpath("//div[contains(text(),'Download')]");
 	private By searchCatalog = By.xpath("//input[@id='searchCatalog']");
-	private String filename1="C:\\Scorm2004videofile.zip";
-	private String filename2 ="C:\\sample-large-zip-file";
-	private String filename3 = "C:\\Auto_Document.pdf";
-	private String filename4 = "C:\\testcase count.xlsx";
+	private String filename1="C:\\sample file\\Scorm2004videofile.zip";  //C:\\Scorm2004videofile.zip/Users/origin/Downloads/Scorm2004videofile.zip
+	//private String filename2 ="C:\\sample-large-zip-file";
+	private String filename3 = "C:\\sample file\\Auto_Document.pdf"; //C:\\Auto_Document.pdf  /Users/origin/Downloads/sample.pdf
+	private String filename4 = "C:\\sample file\\testcase count.xlsx"; //C:\\testcase count.xlsx /Users/origin/Downloads/TestReport.xls
 	public DocumentValidationPage(WebDriver driver) {
 		super(driver);
 		page=new CatalogItemPage(driver);
@@ -116,7 +117,10 @@ public class DocumentValidationPage extends FractalBasePage {
 		wait(5);
 		click(lblSave);
 		verifyText("Title should not be empty",titleError);
+		wait(2);
+		if(elementExist(languageError)) {
 		verifyText("Language should not be empty",languageError);
+		}
 		verifyText("Category should not be empty",categoryError);
 		scrollToElement(durationError);
 		verifyText("No. of pages should not be empty",pagesError);
@@ -142,10 +146,12 @@ public class DocumentValidationPage extends FractalBasePage {
 		wait(2);
 		click(lblGeneral);
 		wait(2);
+		if(elementExist(selectLanguage)) {
 		click(selectLanguage);
 		wait(2);
 		click(lblEnglish);
 		wait(2);
+		}
 	}
 	/*
 	 *function: documentTillDuration()
@@ -250,9 +256,10 @@ public class DocumentValidationPage extends FractalBasePage {
 
 	public void editDocument() {
 		enterData("Document_Check1",searchLO);
-		wait(2);
+		wait(5);
 		click(editIcon);
-		verifyText("testcase count.xlsx",testcountFile);
+		wait(5);
+		verifyText("TestReport.xls",testcountFile);
 		wait(2);
 		uploadBrowseFile(filename1);
 		wait(2);
@@ -363,7 +370,13 @@ public class DocumentValidationPage extends FractalBasePage {
 		enterData("Document_Check1",catalogSearch);
 		click(asscontent);
 		wait(5);
+		if(elementExist(continuebtn2)) {
+			click(continuebtn2);
+			wait(2);
+			click(continuebtn2);
+		}else {
 		click(continuebtn1);
+		}
 		wait(10);
 		click(closebtn);
 		wait(5);
