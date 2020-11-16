@@ -160,7 +160,7 @@ public class DocumentValidationPage extends FractalBasePage {
 	 * cause: Document Creation - Till Duration
 	 */
 	public void documentTillDuration() {
-		WebElement element = driver.findElement(lblMM); Actions
+		WebElement element = driver.findElement(lblpages); Actions
 		actions = new Actions(driver); actions.moveToElement(element);
 		actions.perform();
 		wait(2);
