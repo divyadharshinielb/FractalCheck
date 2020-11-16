@@ -10,7 +10,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class videoTesterPage extends FractalBasePage{
 	private By searchfieldUser= By.xpath("//input[@id='theInput']");
-	private By Iblvideo=By.xpath("(//*[text()='Sample video'])[3]");
+	private By Iblvideo=By.xpath("//div[contains(text(),'Sample Video 1')]");//*[text()='Sample video'])[3]
 	private By videoPlayer=By.xpath("//*[@class=\"vjs-big-play-button\"]");
 	private By play= By.xpath("//*[@title=\"Play\"]");
 	private By pause= By.xpath("//*[@title=\"Pause\"]");
