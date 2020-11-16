@@ -88,10 +88,10 @@ public class DocumentValidationPage extends FractalBasePage {
 	private By previewTitle = By.xpath("//h2[contains(text(),'Document_Check1')]");
 	private By previewDownloadBtn = By.xpath("//div[contains(text(),'Download')]");
 	private By searchCatalog = By.xpath("//input[@id='searchCatalog']");
-	private String filename1="/Users/origin/Downloads/Scorm2004videofile.zip";  //C:\\Scorm2004videofile.zip/Users/origin/Downloads/Scorm2004videofile.zip
+	private String filename1="C:\\sample file\\Scorm2004videofile.zip";  //C:\\sample file\\Scorm2004videofile.zip /Users/origin/Downloads/Scorm2004videofile.zip
 	//private String filename2 ="C:\\sample-large-zip-file";
-	private String filename3 = "/Users/origin/Downloads/sample.pdf"; //C:\\Auto_Document.pdf  /Users/origin/Downloads/sample.pdf
-	private String filename4 = "/Users/origin/Downloads/TestReport.xls"; //C:\\testcase count.xlsx /Users/origin/Downloads/TestReport.xls
+	private String filename3 = "C:\\sample file\\Auto_Document.pdf"; //C:\\Auto_Document.pdf  /Users/origin/Downloads/sample.pdf
+	private String filename4 = "C:\\sample file\\TestReport.xls"; //C:\\testcase count.xlsx /Users/origin/Downloads/TestReport.xls
 	private By backtoCatalogBtn = By.xpath("//button[contains(text(),'Back to Catalog Items')]");
 	public DocumentValidationPage(WebDriver driver) {
 		super(driver);
