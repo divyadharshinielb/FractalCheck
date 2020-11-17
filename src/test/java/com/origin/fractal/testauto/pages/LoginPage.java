@@ -28,15 +28,19 @@ public class LoginPage extends FractalBasePage {
 	private By lblUser = By.xpath("//img[@class='logout-height']");
 	private By lblAdmin = By.xpath("//span[@title='Origin']");
 	private By lblAdminLogout = By.xpath("//a[@href='#'][contains(text(),'Logout')]");
+	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		pageName ="LoginPage";
 		// Go to Home Page
-		String baseUrl ="https://staging-origin.originfractal.com/login"; //https://origin.originfractal.com/
+		String baseUrl ="https://staging-origin.originfractal.com"; //https://origin.originfractal.com/
 		goTo(baseUrl);
 		
 	}
 	public void doLogin() {
+		wait(10);
+		click(prelogin);
+		wait(6);
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin);
@@ -56,10 +60,14 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 	}
 	public void loginToContentAdmin() {
+		wait(10);
+		click(prelogin);
+		wait(6);
 		enterData("siteadmin@origin.com",tbUserName);//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPassword);//contentadmin@origin.com
-	    click(btnLogin);
 	    wait(5);
+	    click(btnLogin);
+	    wait(10);
 	}
 	public void doLogin1() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
