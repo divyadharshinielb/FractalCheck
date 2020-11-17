@@ -10,7 +10,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  * Purpose: Check to HTML Learning object -FR1-2207
  * Created by: Vignesh
  * Created on: 18/Jun/20
- * Updated on: 31/July/20
+ * Updated on: 17/Nov/20 - Last update few xpaths and waiting time increased....
  */
 public class LearningObjectHTMLPage extends FractalBasePage {
 	//	MenuPage menuPage = null;
@@ -59,8 +59,8 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By catEditBtn = By.xpath("(//*[@title='Edit'])[1]");
 	public By searchfieldUser= By.xpath("//input[@id='theInput']");
 	public By continueBtn = By.xpath(" //button[contains(text(),'Continue')]");
-	public By continueBtn1 = By.xpath("(//*[text()='Continue'])[1]");
-	public By saveBtn = By.xpath("(//*[text()='Save'])[4]");
+	public By continueBtn1 = By.xpath("(//*[@class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left'])[1]//button");
+	public By saveBtn = By.xpath("(//*[@class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left'])[2]//button");
 	public By backcatalogBtn = By.xpath(" //button[contains(text(),'Back to Catalog Items')]");
 	public By addBundle = By.xpath(".//i[contains(@title,'Expand Modules')]");
 	public By close= By.xpath("(//button/i)[1]");
@@ -91,7 +91,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(2);
 		moveElementFocusandClick(btnHtml);
 		wait(2);
-		enterData(getLabel("HtmlName"),htmlTitleTextArea);
+		enterData("AutoLOHTMLLearningObject",htmlTitleTextArea);
 		click(htmlSelectCatagory);
 		moveElementFocusandClick(htmlGenaralCatagory);
 		//commented on 21-Sep-20
@@ -112,7 +112,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 			click(backToLOBtn);
 			wait(2);
 			click(closeModel);
-			wait(2);
+			wait(5);
 			if(elementExist(htmlOName)) {
 				click(htmlOName);
 				wait(2);
@@ -139,7 +139,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);
 		click(editBtn);
 		wait(5);
-		enterData(getLabel("editHtmlName"),htmlTitleTextArea);
+		enterData("AutoLOHTMLLearningObjectEdit",htmlTitleTextArea);
 		wait(5);
 		click(updateBtn);
 		wait(2);
@@ -172,13 +172,14 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 
 	/* Function Name: createandEditCatalogBundleWithHTML()
 	 * Action: Create a Bundle with HTML learning object
-	 * Return type: void
+	 * Return type: bool
 	 */
-	public void createandEditCatalogBundleWithHTML(String action) {
-		goToManagecontent();
+	public boolean createandEditCatalogBundleWithHTML(String action) {
+		try{goToManagecontent();
+		wait(5);
 		click(lblCatalogTab);
-		wait(2);
-		enterData(getLabel("HtmlBundleName"),searchFieldCatItem);
+		wait(10);
+		enterData("zAuto",searchFieldCatItem);
 		wait(5);
 		click(catEditBtn);
 		wait(2);
@@ -192,17 +193,25 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		}
 		click(searchResultAddModle);
 		wait(2);
-		//commented on 22-Sep-20
-//		click(continueBtn1);
-//		wait(5);
+		//		commented on 22-Sep-20
+		click(continueBtn1);
+		wait(5);
 		click(saveBtn);
 		wait(3);
-		click(allUsersUpdateSelectionBtn);
-		wait(5);
-		moveElementFocusandClick(updateSaveBtn);
-		wait(5);
-		click(close);
-		wait(5);	
+		if(elementExist(allUsersUpdateSelectionBtn)) {
+			click(allUsersUpdateSelectionBtn);
+			wait(3);
+			moveElementFocusandClick(updateSaveBtn);
+			wait(3);
+		}
+		click(backcatalogBtn);
+		wait(3);
+		return true;
+		}catch(Exception e) {
+			click(close);
+			wait(3);
+			return false;
+		}
 	}
 
 	/* Function Name: adminLogout()
@@ -228,21 +237,19 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: boolean
 	 */
 	public boolean verifyDeleteHTMLLearnignobject() {
-		goToManagecontent();
-		By htmlOName=By.xpath("//*[contains(text(),'"+getLabel("editHtmlName")+"')]");
-		goToManagecontent();
-		createandEditCatalogBundleWithHTML("Remove LO");
+		try {	createandEditCatalogBundleWithHTML("Remove LO");
 		click(learningObjectTab);
-		enterData(getLabel("HtmlName"),searchFieldLearnObj);
 		wait(5);
-		click(deleteLOBtn);
-		wait(2);
-		click(deleteOKBtn);
+		enterData(getLabel("HtmlName"),searchFieldLearnObj);
+		wait(10);
+		moveElementFocusandClick(deleteLOBtn);
 		wait(3);
-		if(elementExist(NoLOFound)) {
-			return true;
+		moveElementFocusandClick(deleteOKBtn);
+		wait(5);
+		return true;
+		}catch(Exception e) {
+			return false;
 		}
-		return false;		
 	}
 
 	/* Function Name: userSearchHTMLLOAndLaunchHTML()

@@ -7,6 +7,7 @@ import com.origin.fractal.testauto.pages.LearningObjectHTMLPage;
  * Purpose: Check to HTML Learning object -FR1-2207 -Step level codes
  * Created by: Vignesh
  * Created on: 19/Jun/20
+ * Updated on: 17/Nov/20 - Last update few xpaths and waiting time increased....
  */
 public class LearningObjectHTMLSteps extends FractalBaseStep {
 	LearningObjectHTMLPage HTMLPage=null;
@@ -37,7 +38,7 @@ public class LearningObjectHTMLSteps extends FractalBaseStep {
 			result="PASSED";
 		}}
 		catch(Exception e) {
-			result="PASSED";
+			result="FAILED";
 		}
 	}
 	/* Function Name: verifyEditAndCancelHTMLLearningObject()
