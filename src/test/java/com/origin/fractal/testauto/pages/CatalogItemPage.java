@@ -41,7 +41,7 @@ public class CatalogItemPage extends FractalBasePage {
 	private By priceclick = By.xpath("//span[contains(text(),'Price category')]");
 	private By pricefreeclick = By.xpath("//ul[contains(@class,'list')]/li[contains(text(),'Free')]");
 	private By plusbutton = By.xpath("//i[contains(@class,'icon pointer dripicons-plus icon-circle-fill font-size-30 expand_menu_list map_content padding-t-0 tp-50')]");
-	private By asscontent = By.xpath("//span[@title='Automation_AudioCheck']"); //div[contains(@class,'ng-scrollbars padding-b-20 ng-isolate-scope mCustomScrollbar _mCS_14')]/div/div[1]/div/div[1]/div[contains(@class,'whole')]/div[contains(@class,'col-lg-12 col-md-12 col-xs-12 col-sm-12 border-tb margin-r-10 padding-tb-15 padding-lr-0')]
+	private By asscontent = By.xpath("//span[contains(text(),'Sample Audio')]"); //div[contains(@class,'ng-scrollbars padding-b-20 ng-isolate-scope mCustomScrollbar _mCS_14')]/div/div[1]/div/div[1]/div[contains(@class,'whole')]/div[contains(@class,'col-lg-12 col-md-12 col-xs-12 col-sm-12 border-tb margin-r-10 padding-tb-15 padding-lr-0')]
 	private By btnsave = By.xpath("//button[contains(text(),'Save')]");
 	private By deletecoursebtn = By.xpath("//span[contains(text(),'CatalogItemwithDueDate')]/../../../*/div[3]/i");
 	private By deletecourseokbtn = By.xpath("//button/span[contains(text(),'OK')]");
@@ -71,11 +71,11 @@ public class CatalogItemPage extends FractalBasePage {
 	 * cause: Click Manage contents icon 
 	 */
 	public void clickManageContents() {
-		wait(7);
+		wait(5);
 		click(btnMenu);
-		wait(5);
+		wait(3);
 		click(manageContents);
-		wait(5);
+		wait(3);
 	}
 	/*
 	 *function: clickCatalogitem()
@@ -92,9 +92,8 @@ public class CatalogItemPage extends FractalBasePage {
 	 */
 	public void addBundle() {
 		click(addcatalogbtn);
-		wait(5);
+		wait(3);
 		click(bundlebtn);
-		wait(5);
 	}
 	/*
 	 *function: addLearnPath()
@@ -102,7 +101,7 @@ public class CatalogItemPage extends FractalBasePage {
 	 */
 	public void addLearnPath() {
 		click(addcatalogbtn);
-		wait(5);
+		wait(3);
 		click(learpathbtn);
 	}
 	/*
@@ -111,7 +110,7 @@ public class CatalogItemPage extends FractalBasePage {
 	 */
 	public void  addCourse() {
 		click(addcatalogbtn);
-		wait(5);
+		wait(3);
 		click(coursebtn);
 	}
 	/*
@@ -120,7 +119,7 @@ public class CatalogItemPage extends FractalBasePage {
 	 */
 	public void addResource() {
 		click(addcatalogbtn);
-		wait(5);
+		wait(3);
 		click(resourcebtn);
 	}
 	/*
@@ -129,7 +128,7 @@ public class CatalogItemPage extends FractalBasePage {
 	 */
 	public void addPodcast() {
 		click(addcatalogbtn);
-		wait(5);
+		wait(3);
 		click(podcastbtn);
 	}
 	/*
@@ -139,7 +138,7 @@ public class CatalogItemPage extends FractalBasePage {
 	public void catalogTitle() {
 		click(catalogTitle);
 		enterData("CatalogItemwithDueDate", catalogTitle);
-		wait(5); 
+		wait(2); 
 	}
 	/*
 	 *function: catalogCreation()
@@ -152,19 +151,19 @@ public class CatalogItemPage extends FractalBasePage {
 		click(languageEnglish);
 		}
 		click(selectcategory);
-		wait(5);
+		wait(2);
 		click(selcatgegoryitem);
 		click(addtaglabel);
 		enterData("Catalog_itemdue", addtaglabel);
-		wait(5);
+		wait(2);
 		click(itemcodelabel);
-		enterData("Catalog_due", itemcodelabel);
+		enterData("Catalog_due1", itemcodelabel);
 		driver.switchTo().frame(0);
 		click(descriptiontxt);
 		enterData("Description for catalog", descriptiontxt);
 		driver.switchTo().defaultContent();
+		wait(3);
 		elementExist(continuebtn);
-		wait(2);
 		click(continuebtn);
 		wait(5);
 	}
@@ -193,12 +192,12 @@ public class CatalogItemPage extends FractalBasePage {
 		enterData("7",duedateInput);
 		click(validityDays);
 		enterData("5",validityDays);
-		wait(5);
-		click(continuebtn1);
+		wait(3);
+		click(continuebtn2);
 		elementExist(duedateError);
 		verifyText("Please select any content",selectcontentError);
 		verifyText("Due date should not be greater than validity",duedateError);
-		wait(5);
+		wait(3);
 		clear(duedateInput);
 		enterData("5",duedateInput);
 		scrollToElement(priceclick);
@@ -217,7 +216,6 @@ public class CatalogItemPage extends FractalBasePage {
 		else {
 		click(continuebtn1);
 		}
-		wait(5);
 		//commented as ibm competency is not enabled
 	//	click(btnsave);
 		wait(5);
@@ -229,10 +227,10 @@ public class CatalogItemPage extends FractalBasePage {
 	}
 	public void contentAssign() {
 		click(plusbutton);
-		wait(5);
+		wait(2);
 		enterData("Sample Audio",catalogSearch);
 		click(asscontent);
-		wait(5);
+		wait(3);
 	}
 	/*
 	 *function: courseCreation()
@@ -243,22 +241,24 @@ public class CatalogItemPage extends FractalBasePage {
 		click(descriptiontxt);
 		enterData("Check", descriptiontxt);
 		driver.switchTo().defaultContent();
-		scrollToElement(selectlanguage);
+		
+		scrollToElement(selectcategory);
+		if(elementExist(selectlanguage)) {
 		click(selectlanguage);
-		wait(10);
+		wait(2);
 		click(languageEnglish);
-		wait(5);
+		wait(2);
+		}
 		click(selectcategory);
-		wait(5);
+		wait(2);
 		click(selcatgegoryitem);
-		wait(5);
+		wait(2);
 		click(addtaglabel);
 		enterData("Catalog_item", addtaglabel);
-		wait(5);
+		wait(2);
 		click(itemcodelabel);
 		enterData("Catalog_item", itemcodelabel);
 		wait(5);
-		wait(2);
 		driver.switchTo().frame(1);
 		wait(3);
 		click(descriptiontxt);
@@ -266,7 +266,6 @@ public class CatalogItemPage extends FractalBasePage {
 		driver.switchTo().defaultContent();
 		wait(5);
 		elementExist(continuebtn);
-		wait(2);
 		click(continuebtn);
 		wait(5);
 		catalogSecondPage();

@@ -34,7 +34,7 @@ public class InstructorModulePage extends FractalBasePage {
 	private By lblInprogressPostEvent= By.xpath("//span[contains(text(),'Post-event')]");
 	private By lblInprogressReference= By.xpath("//span[contains(text(),'References')]");
 	private By lblInprogressTermsAndConditions= By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']");//p[contains(text(),'Terms & Conditions')]
-	private By lblCompeletdEvent= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/a[1]/div[1]");//div[contains(@class,'ins_eve_div')]
+	private By lblCompeletdEvent= By.xpath("//p[text()='Classroom']");//div[contains(@class,'ins_eve_div')]
 	private By dashBoardIcon= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]//i");
 	private By eventTab= By.xpath("//i[contains(text(),';')]");
 	private By lblInprogress= By.xpath("//li[@id='react-tabs-0']");
@@ -203,6 +203,8 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(lblCompeletdEvent);
 		verifyText("Pre - Event",lblPreEvent);
+		wait(2);
+		scrollToElement(lblInprogressTermsAndConditions);
 		wait(2);
 		verifyText("Session",lblInprogressSessions);
 		wait(2);
