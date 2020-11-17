@@ -7,7 +7,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 /* File/Class name: CatalogVersioningPage.java
  * Created by: Vignesh 
  * Created on: 28-Aug-2020
- * Updated Date: 10-Sep-20
+ * Updated Date: 16-Nov-20
  * Purpose: Check FR1-2772 Catalog version
  */
 public class CatalogVersioningPage extends FractalBasePage {
@@ -17,21 +17,21 @@ public class CatalogVersioningPage extends FractalBasePage {
 
 	private By btnSave = By.xpath(".//button[contains(text(),'Save')]");
 	public By closeModel = By.xpath(".//button[contains(@class,'close')]");
-	private By versionCount  = By.xpath("(//*[@class='version-length ng-binding'])[1]");
+	private By versionCount  = By.xpath("(//button[@id='popover0']//span)[1]");
 	private By versionDelete = By.xpath("((//*[@class='popover version-pop version_popover ng-scope am-flip-x right'])//i)[4]");
 	private By versionclose = By.xpath("((//*[@class='popover version-pop version_popover ng-scope am-flip-x right'])//i)[1]");
 	private By newVersionReqYesBtn = By.xpath("//*[text()='Yes']");
 	private By lblCatalogTab = By.xpath("//md-tab-item[2]/span[contains(text(),'Catalog Items')]");
 	private By catEditBtn = By.xpath("(//*[@title='Edit'])[1]");
-	private By continueBtn = By.xpath(" //button[contains(text(),'Continue')]"); 
-	private By continueBtn1 = By.xpath("(//*[text()='Continue'])[1]"); //for QA
-	private By saveBtn = By.xpath("//button[contains(@ng-disabled,'ibmw_status == false && !updatecatalogForm.$dirty && !update_disable')]");//Updated on 22Sep20
+	private By continueBtn = By.xpath("//button[contains(text(),'Continue')]"); 
+	private By continueBtn1 = By.xpath("(//*[@class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left'])[1]//button"); //for QA
+	private By saveBtn = By.xpath("(//*[@class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left'])[2]//button");//Updated on 16Nov20
 	private By backcatalogBtn = By.xpath(" //button[contains(text(),'Back to Catalog Items')]");
 	private By addmodule= By.xpath(".//i[contains(@title,'Expand Modules')]");
 	private By deleteLOInCatalog=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[4]/div[1]/div/div/div)[1]//div[3]//i)[1]");
 	private By searchResultAddModle=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[5])/div/div/div/div)[1]");
 	private By allUsersUpdateSelectionBtn=By.xpath("(//*[@id='item_completion'])[2]");
-	private By updateSaveBtn=By.xpath("(//button[contains(@ng-click,'submitting=true;')])[1]");//updated on 22Sep20
+	private By updateSaveBtn=By.xpath("(//*[@class='btn btn-primary btn_radius margin-l-20 ng-binding right-version-no btn_save12'][@type='submit'][text()='Save'])[2]");//Updated on 16Nov20
 	private By close= By.xpath("(//button/i)[1]");
 	private By searchFieldCatItem = By.xpath("//*[@id='searchCatalog']");
 	private By LOSearchCatalogAddModule=By.xpath("(//input[@placeholder='Search'])[4]");
@@ -44,8 +44,8 @@ public class CatalogVersioningPage extends FractalBasePage {
 	private By versioingAlertLOClose= By.xpath("//*[contains(@class, 'dialogBtn')]//*[@class='closeBtn']");
 	private By btnHtml = By.xpath(".//button/span[contains(text(),'HTML')]");
 	private By htmlTitleTextArea=By.xpath("//*[@name='htmlName']");
-	private By htmlLangdropbox=By.xpath("//span[text()='Select Language']");
-	private By htmlLangEnglish=By.xpath("(//*[@class='list']//li[text()='English'])[3]");
+	//	private By htmlLangdropbox=By.xpath("//span[text()='Select Language']");
+	//	private By htmlLangEnglish=By.xpath("(//*[@class='list']//li[text()='English'])[3]");
 	private By htmlSelectCatagory=By.xpath("//input[contains(@placeholder,'Select Category')]");
 	private By htmlGenaralCatagory=By.xpath("(//*[@class='ng-binding ng-scope'][contains(text(),'General')])[3]");
 	private By htmlFile=By.xpath("//input[@id='htmlFile']");
@@ -56,7 +56,6 @@ public class CatalogVersioningPage extends FractalBasePage {
 	private By htmlDurationHH = By.xpath("//input[contains(@placeholder,'HH')]");
 	private By htmlDurationMM = By.xpath("//input[contains(@placeholder,'MM')]");
 	private By updateBtn = By.xpath("//*[@type='submit'][text()='Update']");// updated on 23-Oct-20
-
 
 	public CatalogVersioningPage(WebDriver driver) {
 		super(driver);
@@ -118,11 +117,11 @@ public class CatalogVersioningPage extends FractalBasePage {
 		wait(3);
 		click(close);
 		wait(3);
-		elementExist(versionCount);
-		click(versionCount);
-		wait(2);
-		click(versionclose);
-		wait(2);
+//		elementExist(versionCount);
+//		click(versionCount);
+//		wait(3);
+//		click(versionclose);
+//		wait(2);
 	}
 
 	/* Function Name: editCatalogToIncludeLearningObject()
@@ -131,73 +130,46 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 */
 	public boolean editCatalogToIncludeLearningObject(String action, String catalog) {
 		try{
+			ManageContentItemCodesPage.goToManagecontent();
 			wait(3);
 			click(lblCatalogTab);
-			//			wait(10);//Updated on 9Nov20
-			if(catalog.equalsIgnoreCase("Ver2")) {
-				enterData(getLabel("catalogNamePartofLP"),searchFieldCatItem);
-				//added on 9-Nov-20
-				wait(2);
-				//				clear(searchFieldCatItem);
-				//				wait(2);
-				//				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
-				//				//ends
-				//				wait(10);//Updated on 9Nov20
-			}
-			else if (catalog.equalsIgnoreCase("Ver1")) {
-				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
-				//added on 9-Nov-20
-				wait(2);
-				//				clear(searchFieldCatItem);
-				//				wait(2);
-				//				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
-				//				//				//ends
-				//				wait(10);//Updated on 9Nov20
-			}
-			else {
-				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
-				//added on 9-Nov-20
-				//				wait(5);
-				//				clear(searchFieldCatItem);
-				////				wait(2);
-				//				enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
-				//				//ends
-				//				wait(10);//Updated on 9Nov20
-			}
+			wait(5);//Updated on 16Nov20
+			enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
+			wait(3);
 			wait(5);
-			click(catEditBtn);
-			wait(2);
+			moveElementFocusandClick(catEditBtn);
+			wait(3);
 			click(continueBtn);
 			wait(2);
 			moveElementFocusandClick(deleteLOInCatalog);
 			click(addmodule);
-			if (action.equalsIgnoreCase("ADD") && catalog.equalsIgnoreCase("Ver2")) {
-				enterData(getLabel("learningObjectNameVersion"),LOSearchCatalogAddModule);
-			}
-			else if (action.equalsIgnoreCase("ADD") && catalog.equalsIgnoreCase("Ver1")) {
+			if (action.equalsIgnoreCase("ADD") && catalog.equalsIgnoreCase("Ver")) {
 				enterData(getLabel("learningObjectName"),LOSearchCatalogAddModule);
+				click(searchResultAddModle);
+				enterData(getLabel("learningObjectNameVersion"),LOSearchCatalogAddModule);
+				click(searchResultAddModle);
 			}
 			else {
 				wait(2);
+				moveElementFocusandClick(deleteLOInCatalog);
+				wait(5);
 				enterData("m",LOSearchCatalogAddModule);
-				wait(2);
+				click(searchResultAddModle);
 			}
-			click(searchResultAddModle);
 			wait(3);
-			//for QA site
-			//			click(continueBtn1);
-			//			wait(5);
+			click(continueBtn1);
+			wait(3);
 			click(saveBtn);
-			wait(5);
+			wait(3);
 			//If user enrolled the catalog item 
 			if(elementExist(allUsersUpdateSelectionBtn)) {
 				click(allUsersUpdateSelectionBtn);
-				wait(5);
+				wait(3);
 				moveElementFocusandClick(updateSaveBtn);
-				wait(5);
+				wait(3);
 			}
 			click(backcatalogBtn);
-			wait(2);
+			wait(3);
 			return true;
 		}catch(Exception e) {
 			click(close);
@@ -215,9 +187,9 @@ public class CatalogVersioningPage extends FractalBasePage {
 		editCatalogToIncludeLearningObject(action,catalog);
 		click(learningObjectTab);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
-		wait(5);
-		click(versionCount);
-		wait(5);
+		wait(7);
+		moveElementFocusandClick(versionCount);
+		wait(3);
 		click(versionDelete);
 		wait(2);
 		click(deleteOKBtn);
@@ -230,14 +202,16 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 */
 	public void deleteLearningObject(String action, String catalog) {
 		learningPage.goToManagecontent();
-		editCatalogToIncludeLearningObject(action,catalog);
+//		editCatalogToIncludeLearningObject(action,catalog);
 		click(learningObjectTab);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
 		wait(5);
+		if(verifyNonExistense(versionCount)) {
 		click(deleteLOBtn);
 		wait(2);
 		click(deleteOKBtn);
 		wait(3);
+		}
 	}
 
 	/* Function Name: verifyAssignedCatalogDetails()
@@ -245,7 +219,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public boolean verifyAssignedCatalogDetails() {
-		learningPage.goToManagecontent();
+//		learningPage.goToManagecontent();
 		click(learningObjectTab);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
 		wait(5);
