@@ -44,6 +44,7 @@ public class VenueSteps extends FractalBaseStep{
 		   }
 	}
 	public void createVenue() {
+		result ="PASSED";
 		   try {
 			     page.createVenue();
 			   }
@@ -174,6 +175,7 @@ public class VenueSteps extends FractalBaseStep{
 		
 	}
 	public void invalidStreetName() {
+		result ="PASSED";
 		try {
 		     page.invalidStreetName();
 		   }
@@ -184,6 +186,7 @@ public class VenueSteps extends FractalBaseStep{
 		   }
 	}
 	public void saveButton() {
+		result ="PASSED";
 		try {
 		     page.saveButton();
 		   }
@@ -195,6 +198,7 @@ public class VenueSteps extends FractalBaseStep{
 		
 	}
 	public void cancelButton() {
+		result ="PASSED";
 		try {
 		     page.cancelButton();
 		   }
@@ -206,6 +210,7 @@ public class VenueSteps extends FractalBaseStep{
 		
 	}
 	public void searchFunction() {
+		result ="PASSED";
 		try {
 		     page.searchFunction();
 		   }

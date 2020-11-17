@@ -12,7 +12,7 @@ public class ClassroomSteps extends FractalBaseStep{
 		fBPage = page;
 	}
 	public void fieldValidation() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.fieldValidation();
 		   }
