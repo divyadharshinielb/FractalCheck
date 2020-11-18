@@ -9,7 +9,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
-		<!-- 	<class
+		 	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
@@ -69,7 +69,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
-			
+			<!--
 			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
 				/>  <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
 				/> -->
