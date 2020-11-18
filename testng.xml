@@ -77,6 +77,13 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest"/>
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting"/>
+					<class
+				name="com.origin.fractal.testauto.test.testsuites.DefaultGroupSettingstestInstructorPage"/>
+				
 		</classes>
 
 	</test> <!-- Test -->

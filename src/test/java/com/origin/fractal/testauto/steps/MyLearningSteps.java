@@ -373,4 +373,18 @@ public class MyLearningSteps extends FractalBaseStep {
 		result="FAILED";
 		  }
 		}
+	
+	//Added by vignesh 03-Nov-20
+		/* Function Name: verifyCertification()
+		 * Action: Verifying certificate module
+		 */
+		public void verifyCertification(){
+			try {result="FAILED";
+			if(page.verifyCertificateModule() ==true) {
+				result="PASSED";
+			}}catch(Exception e) {
+				result="FAILED";
+			}
+		}
+		//Ends
 }

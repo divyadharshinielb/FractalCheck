@@ -187,7 +187,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void prerequisite(String Instnumber,String changezone, String Searchclassroom) {
-		instbellnoti.goToclassroom();
+//		instbellnoti.goToclassroom();
 		instbellnoti.editEvent(Searchclassroom,"prerequisite",Instnumber,changezone);
 		adminLogout();
 	}

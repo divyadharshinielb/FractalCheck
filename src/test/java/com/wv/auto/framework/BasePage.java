@@ -550,7 +550,7 @@ public abstract class  BasePage {
 		return count;
 	}
 
-	//Starts here - Vignesh (Wvi) on 16/May/20
+	//Start - Vignesh (Wvi) on 16/May/20
 	/*
 	 * Method name: moveElementFocusandClick()
 	 * Created by: Vignesh 
@@ -564,8 +564,21 @@ public abstract class  BasePage {
 		actions.moveToElement(element).perform();
 		click(elementLoc);
 		print("The element: "+elementLoc+" is Clicked.");
+		wait(3);
+	}
+	/* Method name: moveElementFocus()
+	 * Created by: Vignesh 
+	 * Created date: 5/June/2020
+	 * Return type: void
+	 * Desc: Moves the focus to the specified element
+	 */
+	public void moveElementFocus(By elementLoc) {
+		WebElement element=driver.findElement(elementLoc);
+		Actions actions= new Actions(driver);
+		actions.moveToElement(element).perform();
 		wait(2);
 	}
+	//Ends - Vignesh (Wvi)
 
 	/*
 	 * Method name: getAttributeValue()
@@ -579,18 +592,7 @@ public abstract class  BasePage {
 		return value;
 	}
 
-	/* Method name: moveElementFocus()
-	 * Created by: Vignesh 
-	 * Created date: 5/June/2020
-	 * Return type: void
-	 * Desc: Moves the focus to the specified element
-	 */
-	public void moveElementFocus(By elementLoc) {
-		WebElement element=driver.findElement(elementLoc);
-		Actions actions= new Actions(driver);
-		actions.moveToElement(element).perform();
-		wait(2);
-	}
+
 	// Ends here - Vignesh (Wvi) on 16/May/20
 
 	//Added by Vignesh on 04/Dec/19
