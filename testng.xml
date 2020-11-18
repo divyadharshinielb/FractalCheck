@@ -3,13 +3,17 @@
 <suite name="Suite">
 	<test thread-count="40" name="Test">
 		<classes>
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
-				<class
+		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
-		 	<class
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
+		<!-- <class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
@@ -39,8 +43,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
+			
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
 			<class
@@ -69,9 +72,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
-			<!--
-			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
-				/>  <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+			<class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
 				/> -->
 		</classes>
 	</test> <!-- Test -->
