@@ -183,7 +183,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void deleteVersionLearningObject(String action, String catalog) {
-		learningPage.goToManagecontent();
+//		learningPage.goToManagecontent();
 		editCatalogToIncludeLearningObject(action,catalog);
 		click(learningObjectTab);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
@@ -201,7 +201,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void deleteLearningObject(String action, String catalog) {
-		learningPage.goToManagecontent();
+//		learningPage.goToManagecontent();
 //		editCatalogToIncludeLearningObject(action,catalog);
 		click(learningObjectTab);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
@@ -222,7 +222,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 //		learningPage.goToManagecontent();
 		click(learningObjectTab);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
-		wait(5);
+		wait(2);
 		click(editBtn);
 		wait(3);
 		if(elementExist(versioingAlertLO)) {
