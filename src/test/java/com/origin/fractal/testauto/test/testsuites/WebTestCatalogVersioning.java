@@ -18,7 +18,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated Date: 16-Nov-20
  */
 public class WebTestCatalogVersioning extends FractalBaseWebTest{
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1, description = "Verification for all the 31 email templates")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1)
 	public void TestCatalogVersioning(String row, String strBrowserName) throws IOException{
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLoginwithcookies(driver); 
