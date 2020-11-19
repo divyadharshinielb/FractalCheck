@@ -75,15 +75,15 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
-				<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest"/>
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting"/>
-					<class
-				name="com.origin.fractal.testauto.test.testsuites.DefaultGroupSettingstestInstructorPage"/>
-				
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDefaultGroupSettings" />
+
 		</classes>
 
 	</test> <!-- Test -->
