@@ -27,7 +27,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 		page.loginToContentAdmin();
 	}
 	public void loginPageVerification() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.loginPageVerification();
 		   }
@@ -39,7 +39,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 	}
 	//Starts - Added by Mahesh on Feb_06_19
 		public void verifypasswordField() {
-			result ="Passed";
+			result ="PASSED";
 			try {
 				page.verifypasswordField();
 			}
@@ -52,7 +52,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 		//end
 
 	public void rememberMe() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.rememberMe();
 		   }
@@ -63,7 +63,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 		   }
 	}
 	public void registerFunction() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.registerFunction();
 		   }
@@ -86,7 +86,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 	}
 
 	public void blankUserName() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 		   page.blankUserName();
 		   }
@@ -98,7 +98,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 	}
 
 	public void inValid() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 		   page.inValid();
 		   }
@@ -110,7 +110,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 	}
 
 	public void doLogin1() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 		   page.doLogin1();
 		   }
@@ -123,7 +123,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 	}
 
 	public void inValidPassword() {
-		result ="Passed";
+		result ="PASSED";
 		  try {
 		  page.inValidPassword();
 		  }
@@ -135,7 +135,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 		
 	}
 	public void verifySearchLink() {
-		result ="Passed";
+		result ="PASSED";
 		  try {
 		  page.verifySearchLink();
 		  }

@@ -22,14 +22,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 	 */
 
 	public void clickManageContents() {
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.clickManageContents();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -38,14 +38,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 	 */
 
 	public void clickCatalogitem() {
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.clickCatalogitem();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -54,14 +54,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 	 */
 
 	public void addBundle() {
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.addBundle();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -70,14 +70,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 	 */
 
 	public void catalogCreation() {
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.catalogCreation();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -87,14 +87,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void catalogTitle() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.catalogTitle();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -104,14 +104,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void courseCreation() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.courseCreation();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -121,14 +121,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void addLearnPath() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.addLearnPath();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -138,14 +138,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void addPodcast() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.addPodcast();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -155,14 +155,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void addCourse() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.addCourse();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -172,14 +172,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void addResource() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.addResource();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -189,14 +189,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void clickBothlbl() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.clickBothlbl();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -206,14 +206,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void clickPartOfCatalogLbl() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.clickPartOfCatalogLbl();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -222,14 +222,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 	 */
 	public void catalogSecondPage() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.catalogSecondPage();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -239,14 +239,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void bundleDueDateCheck() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.bundleDueDateCheck();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 	/*
@@ -256,14 +256,14 @@ public class CatalogItemSteps extends FractalBaseStep {
 
 	public void bellNotificationDueCheck() {
 
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.bellNotificationDueCheck();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();   
-			result="Failed";
+			result="FAILED";
 		}
 	}
 }

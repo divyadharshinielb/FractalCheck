@@ -15,7 +15,7 @@ public class SettingsSteps extends FractalBaseStep {
 	}
 
 	public void clickOnSwitch() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			page.clickOnSwitch();
 		   }

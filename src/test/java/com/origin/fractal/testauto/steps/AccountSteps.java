@@ -16,7 +16,7 @@ public class AccountSteps extends FractalBaseStep {
 	}
 
 	public void verifyAccountPageLabels() {
-		 result ="Passed";
+		 result ="PASSED";
 		   try {
 				page.verifyAccountPageLabels();
 		   }
