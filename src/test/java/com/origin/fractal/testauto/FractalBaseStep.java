@@ -4,7 +4,7 @@ import com.wv.auto.framework.BaseStep;
 
 public class FractalBaseStep extends BaseStep {
 	protected FractalBasePage fBPage=null; 
-	public String result= "Passed";
+	public String result= "PASSED";
 	public static int overallTestNGResult=0;
 	public String getResult() {
 		if(result.equalsIgnoreCase("FAILED")) {
@@ -14,7 +14,7 @@ public class FractalBaseStep extends BaseStep {
 		}
 
 	public void clickOnMyLearning() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   fBPage.clickOnMyLearning();
 		   }
@@ -25,7 +25,7 @@ public class FractalBaseStep extends BaseStep {
 		   }
 	}
 	public void clickOnProfile() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   fBPage.clickOnProfile();
 		   }
@@ -37,7 +37,7 @@ public class FractalBaseStep extends BaseStep {
 	}
 	
 	public void clickOnMyAccount() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   fBPage.clickOnMyAccount();
 		   }
@@ -50,7 +50,7 @@ public class FractalBaseStep extends BaseStep {
 	
 
 	public void clickOnsettings() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   fBPage.clickOnsettings();
 		   }
@@ -62,7 +62,7 @@ public class FractalBaseStep extends BaseStep {
 	}
 	
 	public void clickLogout() {
-		result ="Passed";
+		result ="PASSED";
 		   try {
 			   fBPage.clickLogout();
 		   }

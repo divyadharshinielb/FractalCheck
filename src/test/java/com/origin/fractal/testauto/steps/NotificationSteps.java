@@ -16,16 +16,49 @@ public class NotificationSteps extends FractalBaseStep{
 		page.gotoEmailNotificationTab();
 	}
 	public void verifyPasswordChangedTemplate() {
+		result ="PASSED";
+	try {
 		page.verifyPasswordChangedTemplate();
 	}
+	catch(Exception e)
+	{
+		e.printStackTrace();   
+		result="FAILED";
+	}
+  }
+		
 	public void verifyPurchaseMailTemplate() {
-		page.verifyPurchaseMailTemplate();
+		result ="PASSED";
+		try {
+			page.verifyPurchaseMailTemplate();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
 	}
 	public void verifyUnAssignTemplate() {
-		page.verifyUnAssignTemplate();
+		result ="PASSED";
+		try {
+			page.verifyUnAssignTemplate();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}	
 	}
 	public void verifyUsersForgotPasswordMail() {
-		page.verifyUsersForgotPasswordMail();
+		result ="PASSED";
+		try {
+			page.verifyUsersForgotPasswordMail();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}	
 	}
 	public void verifyTemplateForValidityExpired() {
 		page.verifyTemplateForValidityExpired();

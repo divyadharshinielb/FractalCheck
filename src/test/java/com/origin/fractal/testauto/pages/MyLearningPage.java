@@ -272,7 +272,7 @@ public class MyLearningPage extends FractalBasePage {
 	/*End - Moved from FractalBasePage by Manju Priya A on Nov-29-18*/
 	private By clickClassroomCatalog=By.xpath(".//a[contains(text(),'Automation Learningpath')]");
 	private By globalSearch=By.xpath(".//input[@id='theInput']");
-	private By lbldetails=By.xpath("//div[2]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[1]");//button[contains(text(),'DETAILS')]//div[5]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[contains(text(),'Details')]
+	private By lbldetails=By.xpath("//button[@class='detail_btn']");//div[2]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[1]//button[contains(text(),'DETAILS')]//div[5]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[contains(text(),'Details')]
 	private By classroomlblDate=By.xpath("//p[contains(@class,'timebox-li margin-b-7')]");
 	private By classroomlblTime=By.xpath("//div[contains(@class,'margin-t-0')]//p[2]");
     private By classroomlblLocation=By.xpath("//div[contains(@class,'display-box')]");
@@ -287,8 +287,8 @@ public class MyLearningPage extends FractalBasePage {
     private By lblRegisterText=By.xpath("//p[contains(@class,'margin-tb-50 destext myfont text_center line-ht')]//p[1]");
     private By lblEventCalendarText=By.xpath("//button[contains(@class,'margin-t-10')]");
     private By btnCancelRegistration=By.xpath(".//button[contains(text(),'CANCEL REGISTRATION')]");
-    private By lblAssignedClassroom2=By.xpath("//h1[contains(text(),'checking for classroom event')]");//h1[contains(text(),'App_notification_check')]
-    private By lblAssignedClassroom3=By.xpath(" //h1[contains(text(),'checking for classroom 1')]");
+    private By lblAssignedClassroom2=By.xpath("//h1[contains(text(),'checking for classroomevent')]");//h1[contains(text(),'App_notification_check')]
+    private By lblAssignedClassroom3=By.xpath(" //h1[contains(text(),'checking for classroom1')]");
     private By lblPreeventActivities=By.xpath("//span[contains(text(),'Pre-event Activities')]");
     private By lblReference=By.xpath(" //span[contains(text(),'Reference')]");
     private By lblPosteventActivities=By.xpath("//span[contains(text(),'Post-event Activities')]");
@@ -320,7 +320,7 @@ public class MyLearningPage extends FractalBasePage {
 					}
 			  
 			  public void	verifyDetailsBtn(){
-				  verifyText("DETAILS",lbldetails);
+				  verifyText("Details",lbldetails);
 					}
 		    
 			//TC:4  the  Details button should be getting displayed on classroom asset.
@@ -418,7 +418,7 @@ public class MyLearningPage extends FractalBasePage {
 		   /* WebElement element = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom 1')]")); Actions
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();*/
-			WebElement element = driver.findElement(By.xpath("//h1[contains(text(),'checking for classroom 1')]"));
+			WebElement element = driver.findElement(By.xpath("//h1[contains(text(),'checking for classroom1')]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			wait(5);
 		    }
