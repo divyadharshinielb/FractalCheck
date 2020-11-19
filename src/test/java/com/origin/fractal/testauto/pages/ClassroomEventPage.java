@@ -749,7 +749,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	public By deleteBtn = By.xpath("//*[@title='Delete']");//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[ @title='Delete']
 	public By deleteConformBtn=By.xpath("//*[contains(@class, 'md-confirm-button')]");
 	public By worningMsg=By.xpath("//div[@class='text-danger font-size-12 padding-l-5 ng-binding ng-scope']");
-	public By clickISTTime=By.xpath("//*[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//*[contains(text(), 'CET European Central Time (GMT+1:00)')]");
+	public By clickCETTime=By.xpath("//*[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//*[contains(text(), 'CET European Central Time (GMT+1:00)')]");
+	public By clickISTTime=By.xpath("//li[contains(text(), 'IST India Standard Time (GMT+5:30)')]");
+	
 	public By selectPM=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
 	public static String EventType=null;
 
@@ -807,7 +809,7 @@ public class ClassroomEventPage extends FractalBasePage{
 		}
 		click(timezoneDropdown);
 		wait(1);
-		moveElementFocusandClick(clickISTTime);
+		moveElementFocusandClick(clickCETTime);
 		click(lblSession);
 		click(lblSelectCalendar);
 		wait(1);
@@ -892,7 +894,7 @@ public class ClassroomEventPage extends FractalBasePage{
 		}
 		click(timezoneDropdown);
 		wait(1);
-		moveElementFocusandClick(clickISTTime);
+		moveElementFocusandClick(clickCETTime);
 		click(lblSession);
 		click(lblSelectCalendar);
 		wait(1);
