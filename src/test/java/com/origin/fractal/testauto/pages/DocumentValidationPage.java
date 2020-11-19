@@ -377,7 +377,7 @@ public class DocumentValidationPage extends FractalBasePage {
 		click(asscontent);
 		wait(5);
 		//commenting as creation of catalog item is not required
-		/*if(elementExist(continuebtn2)) {
+		if(elementExist(continuebtn2)) {
 			click(continuebtn2);
 			wait(2);
 			click(saveBtn);
@@ -395,7 +395,7 @@ public class DocumentValidationPage extends FractalBasePage {
 		wait(5);
 		click(deletecoursebtn);
 		wait(5);
-		click(deletecourseokbtn);*/
+		click(deletecourseokbtn);
 	}
 	/*
 	 *function: linkFieldsCheck()
@@ -423,6 +423,8 @@ public class DocumentValidationPage extends FractalBasePage {
 		enterData("CatalogItemWithDocument", catalogTitle);
 		wait(5); 
 		page.catalogCreation();
+		wait(5);
+		click(plusbutton);
 		wait(5);
 		enterData("Document_Check1",catalogSearch);
 		elementExist(noItemMsg);

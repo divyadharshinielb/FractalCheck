@@ -37,11 +37,11 @@ public class RolesManagementPage extends FractalBasePage {
 	    private By instructorDirectUser = By.xpath("//div[contains(text(),'Direct User')]");
 	    private By businessAdmin = By.xpath("//div[contains(text(),'Business User')]/../../*/div/*/span");
 	    private By businessAdminBusinessUser = By.xpath("//div[contains(text(),'Business User')]");
-	    private By siteAdmin = By.xpath("//div[contains(text(),'Site Administrator')]");
+	    private By siteAdmin = By.xpath("//div[contains(text(),'Site Administraor')]");
 	    private By siteAdminDirectUser = By.xpath("//div[contains(text(),'Direct User')]");
 	    private By directUser = By.xpath("//div[contains(text(),'Direct User')]");
 	    private By directInstructorUser = By.xpath("//div[contains(text(),'Instructor')]");
-	    private By directLearningAdmin = By.xpath("//div[contains(text(),'Learning Adminstrator')]");
+	    private By directLearningAdmin = By.xpath("//div[contains(text(),'Learning Administrator')]");
 	    private By learningAdmin= By.xpath("//div[contains(text(),'Learning Adminstrator')]");
 	    private By learningAdminDirectUser= By.xpath("//div[contains(text(),'Direct User')]");
 	    private By classroomBtn = By.xpath("//span[contains(text(),'classroom')]");
@@ -62,6 +62,7 @@ public class RolesManagementPage extends FractalBasePage {
 	//eyt to use after discussion with team
 	private By searchfielduser = By.xpath("//input[@id='searchAllUsersName']");
 	private By usernameforLEarningadmin = By.xpath("//div[contains(text(),'contentadmin@origin.com')]");
+	private By preloginBtn = By.xpath("//a[contains(text(),'LOGIN')]");
 	public RolesManagementPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -103,7 +104,7 @@ public class RolesManagementPage extends FractalBasePage {
 	}
 		public void Checkdirectuserandlearningadminmapping() {
 			wait(5);
-			click(lblProfile1);
+			click(lblProfile);
 			elementExist(instructorroleBtn);
 			click(instructorroleBtn);
 			wait(2);
@@ -131,6 +132,8 @@ public class RolesManagementPage extends FractalBasePage {
 		//instructor mapping to directuser check
 		public void InstructorwithDirectuserrole() {
 			wait(2);
+			//prelogin page code added here
+			click(preloginBtn);
 			enterData("staging_instructor@origin.com",tbUserName);
 			enterData("P@ssw0rd",tbPassword);
 			click(btnLogin);
@@ -174,6 +177,10 @@ public class RolesManagementPage extends FractalBasePage {
 		}
 		//siteadmin with directuserrole
 		public void SiteadminwithDirectuserRole() {
+			wait(2);
+			wait(2);
+			//prelogin page code added here
+			click(preloginBtn);
 			wait(2);
 			enterData("siteadmin@origin.com",tbUserName);
 			enterData("P@ssw0rd",tbPassword);
@@ -278,7 +285,7 @@ public class RolesManagementPage extends FractalBasePage {
 			    actions = new Actions(driver); actions.moveToElement(element);
 			    actions.perform();*/
 			click(searchfielduser);
-			enterData("Site Admin", searchfielduser);
+			enterData("Site", searchfielduser);
 			wait(7);
 			verifyText("Site Admin",siteAdmin);
 			wait(5);
@@ -288,9 +295,9 @@ public class RolesManagementPage extends FractalBasePage {
 		}
 		public void directUserRole() {
 			click(searchfielduser);
-			enterData("Automation Direct User", searchfielduser);
+			enterData("Automation Direct", searchfielduser);
 			wait(10);
-			verifyText("Automation Direct User",directUser);
+			verifyText("Direct User",directUser);
 			wait(2);
 			verifyText("Instructor",directInstructorUser);
 			wait(2);
