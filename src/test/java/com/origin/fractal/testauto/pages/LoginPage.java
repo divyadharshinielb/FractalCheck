@@ -38,7 +38,12 @@ public class LoginPage extends FractalBasePage {
 	//ADDED by vignesh(wvi) on 8/Apr/20
 	public By qaLoginBtn = By.xpath("//input[@type='submit']");
 	//Ends
-	
+	//Added by vignesh on 16-Nov-20
+		private By userAccountLogo=By.xpath("//div[@class='logout_pop']");
+		private By userLogout=By.xpath("//li[normalize-space()='Logout']");
+		private By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']"); 
+		private By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]/div[5]");
+		//Ends
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
@@ -211,11 +216,37 @@ public class LoginPage extends FractalBasePage {
 				loginInstructor(instUserID,instPassword);
 			} 
 			public void loginInstructor(String instUserID,String instPassword){
-				wait(5);
+				wait(7);
 				enterData(instUserID,tbUserName); 
 				enterData(instPassword,tbPassword);
 				click(btnLogin);
 				wait(5);
 			} 
+			//Ends
+			//Added by vignesh on 16-Nov-20
+			/* Function name: logOutUser()
+			 * Action: User logout
+			 * Return Type: void
+			 */
+			public void logOutUser(){
+				wait(5);
+				moveElementFocusandClick(userAccountLogo);
+				wait(3);
+				moveElementFocusandClick(userLogout);
+				wait(5);
+			} 
+			
+			/* Function name: adminLogout()
+			 * Action: Do Log out admin page
+			 * Return Type: void
+			 */
+			public void adminLogout() {
+				wait(5);
+				moveElementFocusandClick(adminAccountLogo);
+				wait(3);
+				moveElementFocusandClick(adminLogout);
+				wait(5);
+			}
+			
 			//Ends
 }

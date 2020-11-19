@@ -49,8 +49,8 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		menuSteps.clickMenu();
 		menuSteps.gotoClassroomCreation();
 		InstructorModuleSteps.deleteOldEventAndAddNewEvent();
-		InstructorModuleSteps.verifyAdminSeeInstructorWarningMessage();
-		Reporter.writeSummary("FR1-2382_InstrEvent_TC-"+(++number)+",Verify the Admin gets the warning message when he creates "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
+//		InstructorModuleSteps.verifyAdminSeeInstructorWarningMessage();
+//		Reporter.writeSummary("FR1-2382_InstrEvent_TC-"+(++number)+",Verify the Admin gets the warning message when he creates "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
 		instbellnotiSteps.adminLogout();
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyAdminInviteAndInstructorAcceptevent();

@@ -140,10 +140,11 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 * Desc: Instructor Calendar Event- Verify Reschedule Invite notification or accept notification is present
 	 */
 	public boolean verifyRescheduleTimeZoneInInstructorSide() {
-		if(getText(eventTabTimeZone).equalsIgnoreCase(eventPage.rescheduleTimeZone)) {
+		if(getText(eventTabTimeZone).equalsIgnoreCase(eventPage.rescheduleTimeZone) || getText(eventTabTimeZone).equalsIgnoreCase(eventPage.rescheduleTimeZone1)) {
 			print("PASSED: The Reschedule time Zone is shown in Instructor side");
 			return true;
 		}
+		print("FAILED: The Reschedule time Zone is NOT shown in Instructor side");
 		return false;
 	}
 	

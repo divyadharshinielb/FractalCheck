@@ -267,6 +267,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
 			driver.switchTo().parentFrame();
 			click(closeXBtn);
+			wait(2);
 			return true;
 		}
 		return false;

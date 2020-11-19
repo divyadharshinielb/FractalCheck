@@ -175,4 +175,26 @@ public class LoginSteps extends FractalBaseStep {
 		page.loginInstructor(instUserID,instPassword);
 	}
 	//Ends
+	//Added by vignesh (WVI) on 16-Nov-20
+	public void logOutUser() {
+		try {
+			page.logOutUser();
+		}catch(Exception e) {
+			print("Logout issue found");
+		}
+		wait(3);
+	}
+	
+	/* Function name: adminLogout()
+	 * Action: admin logout
+	 * Return Type: void
+	 */
+	public void adminLogout() {
+		try{page.adminLogout();
+		wait(5);
+		}catch(Exception e){
+			result="FAILED";
+		}
+	}
+	//Ends
 }

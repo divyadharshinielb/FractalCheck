@@ -778,7 +778,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	public By deleteBtn = By.xpath("//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[ @title='Delete']");
 	public By deleteConformBtn=By.xpath("//*[contains(@class, 'md-confirm-button')]");
 	public By worningMsg=By.xpath("//div[@class='text-danger font-size-12 padding-l-5 ng-binding ng-scope']");
-	public By clickISTTime=By.xpath("//*[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//*[contains(text(), 'CET European Central Time (GMT+1:00)')]");
+	public By clickCETTime=By.xpath("//*[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//*[contains(text(), 'CET European Central Time (GMT+1:00)')]");
+	public By clickISTTime=By.xpath("//li[contains(text(), 'IST India Standard Time (GMT+5:30)')]");
+	
 	public By selectPM=By.xpath("//select[@name='starttime_zone']//*[@value='PM']");
 	public static String EventType=null;
 
@@ -789,7 +791,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	public String maxParticipants= "10";
 	public String minParticipants= "02";
 	public String rescheduleTimeZone= "IST";
-
+	public String rescheduleTimeZone1= "CET";
 	public void clickClassroom() {
 		moveElementFocusandClick(searchClassRoomName);
 		clear(searchClassRoomName);
@@ -829,7 +831,7 @@ public class ClassroomEventPage extends FractalBasePage{
 		}
 		click(timezoneDropdown);
 		wait(1);
-		moveElementFocusandClick(clickISTTime);
+		moveElementFocusandClick(clickCETTime);
 		click(lblSession);
 		click(lblSelectCalendar);
 		wait(1);
@@ -878,7 +880,7 @@ public class ClassroomEventPage extends FractalBasePage{
 		moveElementFocusandClick(eventRegStartDate);
 		//wait(1);
 		click(btnSave);
-		wait(10);
+		wait(15);
 		click(closeModel);
 		wait(2);
 	}
@@ -929,7 +931,7 @@ public class ClassroomEventPage extends FractalBasePage{
 		}
 		click(timezoneDropdown);
 		wait(1);
-		moveElementFocusandClick(clickISTTime);
+		moveElementFocusandClick(clickCETTime);
 		click(lblSession);
 		click(lblSelectCalendar);
 		wait(1);
