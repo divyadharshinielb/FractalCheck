@@ -38,15 +38,19 @@ public class LoginPage extends FractalBasePage {
 	private By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']"); 
 	private By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]/div[5]");
 	//Ends
+	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// Go to Home Page
-		String baseUrl = "https://staging-origin.originfractal.com/login";
+		String baseUrl = "https://staging-origin.originfractal.com/home";
 		goTo(baseUrl);
 
 	}
 	public void doLogin() {
 		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+			}
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin1);

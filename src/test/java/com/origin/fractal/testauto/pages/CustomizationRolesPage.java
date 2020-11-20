@@ -26,7 +26,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 	private By rolenameinput = By.xpath("//label[contains(text(),'Role name')]/../input");
 	private By errormsg = By.xpath("//div[@class='text-danger ng-scope']");
 	private By guestuseroption = By.xpath("//li[contains(text(),'Guest User')]");
-	private By learnadminoption = By.xpath("//li[contains(text(),'Learning Adminstrator')]");
+	private By learnadminoption = By.xpath("//li[contains(text(),'Learning Administrator')]");
 	private By managecontentlbl = By.xpath("//label[contains(text(),'Manage Content')]");
 	private By manageuserlbl = By.xpath("//label[contains(text(),'Manage Users')]");
 	private By managereportlbl = By.xpath("//label[contains(text(),'Manage Reports')]");

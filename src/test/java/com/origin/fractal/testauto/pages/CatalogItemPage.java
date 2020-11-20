@@ -256,6 +256,8 @@ public class CatalogItemPage extends FractalBasePage {
 		click(addtaglabel);
 		enterData("Catalog_item", addtaglabel);
 		wait(2);
+		scrollToElement(itemcodelabel);
+		wait(2);
 		click(itemcodelabel);
 		enterData("Catalog_item", itemcodelabel);
 		wait(5);

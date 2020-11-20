@@ -35,7 +35,7 @@ public class AdminLoginPage extends FractalBasePage {
 		// Go to Home Page
 //*******************************added by mahesh 08/04/2019****************************//	
 	//	String baseUrl=getGobal("webtesturl");
-		String baseUrl = "https://staging-origin.originfractal.com"; //https://dev-huron.originfractal.com;
+		String baseUrl = "https://staging-origin.originfractal.com/home"; //https://dev-huron.originfractal.com;
 		goTo(baseUrl);
 		
 	}
@@ -53,7 +53,9 @@ public class AdminLoginPage extends FractalBasePage {
 	}
 	public void loginToContentAdmin() {
 		wait(5);
+		if(elementExist(prelogin)) {
 		click(prelogin);
+		}
 		wait(6);
 		enterData("siteadmin@origin.com",tbUserNameNewUI);//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPasswordNewUI);//Admin@123
