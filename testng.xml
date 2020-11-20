@@ -59,12 +59,12 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
 			<!--<class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
 				/> -->
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" />
+
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningObjectWithScorm2004" />
-			<!--<class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogVersioning" 
-			/> -->
+			<!--<class name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogVersioning" 
+				/> -->
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" />
 			<class

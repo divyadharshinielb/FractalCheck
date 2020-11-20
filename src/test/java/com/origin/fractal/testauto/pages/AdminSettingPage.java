@@ -25,9 +25,9 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By categoryName = By.xpath("//input[@ng-model='category.name']");
 	private By categoryDescription = By.xpath("//*[@ng-model='category.description']");
 	private By categoryCreateBtn = By.xpath("//*[text()='Create'][@type='submit']");
-	private String cateName = "checkCategory";
+	private String cateName = "createCategories";
 	private String cateDescri = "CreateDescription";
-	private By createdCategory=By.xpath("//*[contains(text(),'CreateCatagory')]");
+	private By createdCategory=By.xpath("//*[contains(text(),'"+cateName+"')]");// updated on 20-Nov-20
 	private By deleteCategory=By.xpath("(//*[@title='Delete'])[1]");
 	private By deleteOKBtn=By.xpath("//button//*[text()='OK']");
 	private By manageRole = By.xpath("//li[@class='settings']//a[@href='#manageRoles']");
@@ -78,9 +78,9 @@ public class AdminSettingPage extends FractalBasePage  {
 		enterData(cateName,categoryName);
 		wait(2);
 		enterData(cateDescri,categoryDescription);
-		wait(2);
-		click(categoryCreateBtn);
 		wait(5);
+		click(categoryCreateBtn);
+		wait(3);
 		if(elementExist(createdCategory)==true) {
 			moveElementFocusandClick(deleteCategory);
 			wait(2);
@@ -202,7 +202,7 @@ public class AdminSettingPage extends FractalBasePage  {
 		elementExist(Logo);
 		elementExist(socialLogin);
 		click(popupNotificationSettings);
-		wait(2);
+		wait(5);
 		click(SaveBtn);
 		wait(1);
 		return elementExist(updatedText);
