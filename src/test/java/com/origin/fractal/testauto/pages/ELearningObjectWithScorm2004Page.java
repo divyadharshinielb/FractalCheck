@@ -155,6 +155,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void createandEditCatalogBundleWithscorm2004(String action) {
+		ManageContentItemCodesPage.goToManagecontent();
 		wait(5);
 		click(lblCatalogTab);
 		wait(2);

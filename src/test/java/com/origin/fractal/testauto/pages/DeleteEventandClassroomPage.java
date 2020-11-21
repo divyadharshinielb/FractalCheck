@@ -336,6 +336,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		wait(5);
 		click(deleteokbtn);
 		logoutAdmin();
-		
 	}
+
+	
 } 
