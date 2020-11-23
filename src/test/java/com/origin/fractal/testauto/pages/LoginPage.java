@@ -31,7 +31,7 @@ public class LoginPage extends FractalBasePage {
 
 	public By qaLoginBtn = By.xpath("//input[@type='submit']");
 	//Ends
-	
+
 	//Added by vignesh on 16-Nov-20
 	private By userAccountLogo=By.xpath("//*[@class='logout_pop']");
 	private By userLogout=By.xpath("(//*[@class='logout_pop']//span)[6]");
@@ -50,38 +50,54 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 		if(elementExist(prelogin)) {
 			click(prelogin);
-			}
+		}
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin1);
 		wait(5);
 	}
 	public void loginToInstructor() {
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
 		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
 		enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2
 		click(btnLogin1);
 		wait(2);
-		if(elementExist(btnCookies)) {
-			click(btnCookies);
-		}
+//		if(elementExist(btnCookies)) {
+//			click(btnCookies);
+//		}
 		wait(5);
 		click(By.xpath("//img[contains(@class,'logout-height')]"));//img[@class='logout-height']
 		wait(5);
 		click(By.xpath("//button[contains(text(),'Instructor')]"));//button[@class='role-button']
 	}
 	public void loginToContentAdmin() {
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+			}
 		enterData("contentadmin@origin.com",tbUserName);
 		enterData("P@ssw0rd",tbPassword);
 		click(btnLogin1);
 		wait(5);
 	}
 	public void doLogin1() {
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin1);
 	}
-	//Added by vignesh on 5-Nov-20
+	//Added by vignesh on 5-Nov-20 & updated on 23-Nov-20
 	public void doLoginUser() {
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
 		enterData("wintestersbassvikianu01@gmail.com",tbUserName);
 		enterData("Welcome@123&",tbPassword);
 		click(btnLogin1);
@@ -203,7 +219,6 @@ public class LoginPage extends FractalBasePage {
 	}
 	//Added by vignesh(WVI) on 8-April-20
 	public void siteAdminLoginwithcookies() {
-		//for Qa site admin
 		if(elementExist(btnCookies)) {
 			click(btnCookies);
 		}
@@ -211,21 +226,20 @@ public class LoginPage extends FractalBasePage {
 	}
 	//Updated by vignesh on 19/June/20
 	public void siteAdminLogin() {
-		//for Qa site admin
-		//				enterData("qasiteadmin@origin.com",tbUserName);
-		//				enterData("P@ssw0rd",tbPassword);
-		//for Automation Site
-		//				        wait(6);
-		//						enterData("automation_siteadmin@origin.com",tbUserName);
-		//						wait(2);
-		//						enterData("AutoSA@123",tbPassword);
-		//						wait(2);
-		//for staging site
+		//Added on 23-Nov-20
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
 		enterData("siteadmin@origin.com",tbUserName);
 		enterData("P@ssw0rd",tbPassword);
 		click(qaLoginBtn);	
 	}
 	public void loginInstructorwithCookies(String instUserID,String instPassword){
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
 		if(elementExist(btnCookies)) {
 			click(btnCookies);
 		}
@@ -233,35 +247,39 @@ public class LoginPage extends FractalBasePage {
 	} 
 	public void loginInstructor(String instUserID,String instPassword){
 		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
+		wait(5);
 		enterData(instUserID,tbUserName); 
 		enterData(instPassword,tbPassword);
 		click(btnLogin);
 	} 
 	//Ends
 	//Added by vignesh on 16-Nov-20
-		/* Function name: logOutUser()
-		 * Action: User logout
-		 * Return Type: void
-		 */
-		public void logOutUser(){
-			wait(5);
-			moveElementFocusandClick(userAccountLogo);
-			wait(3);
-			moveElementFocusandClick(userLogout);
-			wait(5);
-		} 
-		
-		/* Function name: adminLogout()
-		 * Action: Do Log out admin page
-		 * Return Type: void
-		 */
-		public void adminLogout() {
-			wait(5);
-			moveElementFocusandClick(adminAccountLogo);
-			wait(3);
-			moveElementFocusandClick(adminLogout);
-			wait(5);
-		}
-		
-		//Ends
+	/* Function name: logOutUser()
+	 * Action: User logout
+	 * Return Type: void
+	 */
+	public void logOutUser(){
+		wait(5);
+		moveElementFocusandClick(userAccountLogo);
+		wait(3);
+		moveElementFocusandClick(userLogout);
+		wait(5);
+	} 
+
+	/* Function name: adminLogout()
+	 * Action: Do Log out admin page
+	 * Return Type: void
+	 */
+	public void adminLogout() {
+		wait(5);
+		moveElementFocusandClick(adminAccountLogo);
+		wait(3);
+		moveElementFocusandClick(adminLogout);
+		wait(5);
+	}
+
+	//Ends
 }
