@@ -188,6 +188,7 @@ public class CatalogItemPage extends FractalBasePage {
 	public void catalogSecondPage() {
 		//due date field check
 		//	click(validityunlimited);
+		wait(5);
 		elementExist(duedateLbl);
 		enterData("7",duedateInput);
 		click(validityDays);
