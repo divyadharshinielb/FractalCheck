@@ -40,7 +40,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 	private By searchUsers = By.xpath("//input[@id='searchAllUsersName']");	
 	private By clickroles = By.xpath("//input[@type='search']");
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");  //*[@id='dLabel']/span
-	private By directuserlbl = By.xpath("//span[text()[normalize-space()='Automation directuser']]");
+	private By directuserlbl = By.xpath("//span[text()[normalize-space()='Automation Directuser']]");
 	private By circleicon = By.xpath("//div[@class='gototopCircle']");
 	private By roledeleteicon = By.xpath("//span[@class='close ui-select-match-close']/../../../span[5]/span/span[@class='close ui-select-match-close']");
 	private By editusericon = By.xpath("//i[@class='icon text-right text-gray font-size-18 pointer']");

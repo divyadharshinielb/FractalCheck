@@ -103,6 +103,7 @@ public class LanguageDefaultPage extends FractalBasePage{
 			wait(2);
 			verifyText("English",englishtext);
 			click(closebtn);
+			wait(2);
 			click(btnaddlearnobj);
 			wait(2);
 			click(btnvideo);
@@ -158,11 +159,11 @@ public class LanguageDefaultPage extends FractalBasePage{
 	 */
 
 	public void whatsnewEnglishCheck() {
-
-		scrollToElement(whatsnewviewall);
-		wait(5);
+		wait(7);
 		elementExist(whatsnewviewall);
 		wait(2);
+		scrollToElement(whatsnewviewall);
+		wait(5);
 		click(whatsnewviewall);
 		wait(5);
 		elementExist(whatsnewdropdown);
