@@ -11,11 +11,16 @@ public class ForgotPasswordPage extends FractalBasePage{
 	private By btnSend  = By.xpath(".//input[contains(@class,'btn w100 primary-colr send_btn reset')]");
 	//private By forgotPasswordLink  = By.xpath("");
 	//private By forgotPasswordLink  = By.xpath("");
+	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
 	public ForgotPasswordPage(WebDriver driver) {
 		super(driver);
 		pageName ="ForgotPasswordPage";
 	}
 	public void clickForgotPasswordLink() {
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
 		wait(5);
 		String ForgotPasswordLink=getText(forgotPasswordLink);
 		verifyText(ForgotPasswordLink,forgotPasswordLink);

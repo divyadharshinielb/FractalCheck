@@ -47,8 +47,8 @@ public class HomePage extends FractalBasePage {
 	/*******************/
 	private String rlblFilterLink = ".//h2[contains(text(),'Recently Added')]/../div/*//a";
 	/************Newui***************/
-	private String rboxBtn= "./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/a";
-	private String rboxCatType= "]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6";
+	private String rboxBtn= "/html[1]/body[1]/div[2]/div[1]/main[1]/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li";//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/a
+	private String rboxCatType= "]/a[1]/div[1]/div[1]/div[2]/div[1]/p[1]";//]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6
 	/*******************/
 	//for recommended filters//
 	private By relblAll = By.xpath(".//h2[contains(text(),'Recommended')]/../div/*//a[contains(text(),'ALL')]");
@@ -118,6 +118,7 @@ public class HomePage extends FractalBasePage {
     private By poFirstCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
     private By poSecondCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
     /*************/
+    private By viewAll=By.xpath("//a[contains(text(),'VIEW ALL')]");
     
     public HomePage(WebDriver driver) {
 		super(driver);
@@ -187,7 +188,14 @@ public class HomePage extends FractalBasePage {
 	}
 
 	public void verifyAllFilterWhatsNew() {
+	/*	JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(viewAll);
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		wait(5);
+	click(viewAll);
+	*/wait(5);
 		click(whlblAll);
+		wait(2);
 		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
 	     
 	}

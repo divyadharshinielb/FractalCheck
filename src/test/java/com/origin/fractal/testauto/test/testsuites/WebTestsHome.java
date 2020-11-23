@@ -125,7 +125,7 @@ public class WebTestsHome extends FractalBaseWebTest {
   //	Reporter.writeSummary("TCID_HOME_055, Checking whether two catalog items displayed in whats new section matches with the first 2 items in the Most popular content section, " +   homeSteps.getResult() );
 		/****till here**/
 		//Verify the function of  Recently Added section attributes 
-		homeSteps.whatsNewSectionAttributes();//newui
+	//	homeSteps.whatsNewSectionAttributes();//newui
 		Reporter.writeSummary("TCID_HOME_082,  Verify the function of  What's New section attributes , " +   homeSteps.getResult() );
 		// rep.report(strTCID, Severity, Module, strTCDesc, strResult);TCID_33:Checking whether the coverage percentage is shown with the text \"Coverage\"
 		//TCID_42:The data should be shown under the topic Recently Added when All is clicked

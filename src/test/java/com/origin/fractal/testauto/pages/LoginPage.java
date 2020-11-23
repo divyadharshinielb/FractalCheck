@@ -136,6 +136,10 @@ public class LoginPage extends FractalBasePage {
 	}
 	//Starts - Added by Mahesh on Feb_06_19
 	public void verifypasswordField() {	
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
 		String readPass = getAttributeValuePassword(tbPassword);
 		verifyText("",readPass);
 	}
@@ -189,6 +193,10 @@ public class LoginPage extends FractalBasePage {
 	}
 
 	public void inValidPassword() {
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("Origin",tbPassword);
 		click(btnLogin1);
@@ -205,6 +213,10 @@ public class LoginPage extends FractalBasePage {
 	private By facebookButton = By.xpath("//div[@class='login-with-facebook']");
 
 	public void googleBtn() {
+		wait(5);
+		if(elementExist(prelogin)) {
+			click(prelogin);
+		}
 		wait(2);
 		elementExist(googleButton);
 		wait(5);

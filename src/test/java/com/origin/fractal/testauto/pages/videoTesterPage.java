@@ -72,10 +72,11 @@ public class videoTesterPage extends FractalBasePage{
 			click(tabCatalogItem);
 			wait(2);
 			enterData("Auto_Bundle", searchCatalog);
-			wait(5);
+			wait(10);
 			WebElement element = driver.findElement(bundleClick);
 			actions1.moveToElement(element).perform();
 			click(bundleClick);
+			wait(5);
 				WebElement element1 = driver.findElement(videoClick);
 				actions1.moveToElement(element1).perform();
 				click(videoClick);
