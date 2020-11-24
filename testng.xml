@@ -3,12 +3,13 @@
 <suite name="Suite">
 	<test thread-count="40" name="Test">
 		<classes>
+		<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
+				<!-- 
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
-		<!-- 	<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
 			 <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
 			<class

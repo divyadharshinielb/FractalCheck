@@ -42,16 +42,16 @@ public class CustomizationRolesPage extends FractalBasePage{
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");  //*[@id='dLabel']/span
 	private By directuserlbl = By.xpath("//span[text()[normalize-space()='Automation Directuser']]");
 	private By circleicon = By.xpath("//div[@class='gototopCircle']");
-	private By roledeleteicon = By.xpath("//span[@class='close ui-select-match-close']/../../../span[5]/span/span[@class='close ui-select-match-close']");
-	private By editusericon = By.xpath("//i[@class='icon text-right text-gray font-size-18 pointer']");
+	private By roledeleteicon = By.xpath("//span[@class='close ui-select-match-close']/../../../span/span/span/span[contains(text(),'Automationrolecheck')]/../../span[contains(@class,'close ui-select-match-close')]");//span[@class='close ui-select-match-close']/../../../span[5]/span/span[@class='close ui-select-match-close']
+	private By editusericon = By.xpath("//span[text()[normalize-space()='Automation Directuser']]/../../../../div/div/i[contains(@title,'Edit')]");//div/i[@class='icon text-right text-gray font-size-18 pointer']
 	private By roleaddbtn = By.xpath("//span[contains(text(),'Automationrolecheck')]");
 	private By manageroledeleteicon = By.xpath("//span[contains(text(),'Automationrolecheck')]/../../../../div[4]/i[3]");
 	private By manageroleokbtn = By.xpath("//span[contains(text(),'OK')]/..");
 	private By adminprofile = By.xpath("//span[@class='loggeduserbg ng-binding']");
 	private By adminLogout = By.xpath("//a[contains(text(),'Logout')]");
 	private By automationrolebtn = By.xpath("//button[contains(text(),'Automationrolecheck')]");
-	private By automationuserdiv = By.xpath("//span[text()[normalize-space()='Automation directuser']]");
-	private By manageuserediticon = By.xpath("//i[@class='icon text-right text-gray font-size-18 pointer']");
+	private By automationuserdiv = By.xpath("//span[text()[normalize-space()='Automation Directuser']]");
+	private By manageuserediticon = By.xpath("//span[text()[normalize-space()='Automation Directuser']]/../../../../div/div/i[contains(@title,'Edit')]");
 	private By btnHome = By.xpath("//span[contains(text(),'Home')]");
 	public CustomizationRolesPage(WebDriver driver) {
 		super(driver);
@@ -174,14 +174,18 @@ public class CustomizationRolesPage extends FractalBasePage{
 	public void roleMappingToDirectUser() {
 		wait(5);
 		click(btnMenu);
+		wait(2);
 		click(manageuserlist);
+		wait(2);
 		click(searchUsers);
-		enterData("Automation Directuser",searchUsers);
-		wait(5);
-		click(directuserlbl);
+		wait(7);
+		enterData("automation",searchUsers);
+		wait(10);
+		//click(directuserlbl);
 		wait(2);
 		click(editusericon);
-		wait(2);
+		//click(editusericon);
+		wait(7);
 		click(clickroles);
 		wait(2);
 		click(roleaddbtn);
@@ -248,10 +252,11 @@ public class CustomizationRolesPage extends FractalBasePage{
 
 		click(btnMenu);
 		click(manageuserlist);
+		wait(7);
 		click(searchUsers);
 		enterData("Automation Directuser",searchUsers);
-		wait(5);
-		click(automationuserdiv);
+		wait(10);
+	//	click(automationuserdiv);
 		wait(2);
 		click(manageuserediticon);
 		wait(2);
