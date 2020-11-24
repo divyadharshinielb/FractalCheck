@@ -18,7 +18,7 @@ public class VenuePage extends FractalBasePage{
 	private By selectCountry = By.xpath(".//span[contains(text(),'Select Country')]");
 	private By selectIndia = By.xpath(".//li[contains(text(),'India')]");
 	private By selectCity = By.xpath(".//span[contains(text(),'Select City')]");
-	private By selectChennai = By.xpath(".//li[contains(text(),'Chennai')]");
+	private By selectChennai = By.xpath("//li[contains(text(),'Chennai')]");
 	private By selectBangalore = By.xpath(".//li[contains(text(),'Bangalore')]");
 	private By buildingNo = By.name("buildingName");
 	private By streetName = By.name("streetName");
@@ -166,7 +166,9 @@ public class VenuePage extends FractalBasePage{
 		click(selectIndia);
 		wait(5);
 		click(selectCity);
+		wait(5);
 		click(selectChennai);
+		wait(5);
 		enterData("No.39",buildingNo);
 		WebElement element = driver.findElement(By.name("streetName"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);

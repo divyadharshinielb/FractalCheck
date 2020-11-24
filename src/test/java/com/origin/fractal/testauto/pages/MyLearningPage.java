@@ -297,20 +297,21 @@ public class MyLearningPage extends FractalBasePage {
     private By registrationCancelText=By.xpath("//p[@class='f-s-20 margin-tb-10 heading2text myfont text_center boldText']");
     private By btnNO=By.xpath("//button[contains(text(),'NO')]");
 	 public void  verifyClassroomDetails() {
-			/*	wait(5);
+				wait(5);
 				click(globalSearch);
 				wait(10);	
 				Actions action=new Actions(driver);
-				action.sendKeys("learning path check").sendKeys(Keys.ENTER).build().perform();
+				action.sendKeys("Automation Learningpath").sendKeys(Keys.ENTER).build().perform();
 				 wait(15);
 			 
 			 WebElement element = driver.findElement(clickClassroomCatalog); Actions 
 				actions = new Actions(driver); actions.moveToElement(element);
 				actions.perform();
-			*/	WebElement element = driver.findElement(clickClassroomCatalog);
+				wait(10);
+		   /*   WebElement element = driver.findElement(clickClassroomCatalog);
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-				wait(5);
-		    	click(clickClassroomCatalog);
+				wait(10);
+		    */	click(clickClassroomCatalog);
 			  wait(5);
 		    }
 			  public void	verifyAssignedClassroom(){

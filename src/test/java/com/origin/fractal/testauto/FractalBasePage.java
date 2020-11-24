@@ -18,7 +18,7 @@ private By lblMyLearning = By.xpath("//a[contains(text(),'MY LEARNING')]");
 private By lblProfile = By.xpath(".//button[@class='jss29 jss3 jss5 jss8 circle-hover']//span[@class='jss4']");//*[@id='dLabel']/span
 private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
 private By btnCategory = By.xpath(".//*[@id='header']/*//button");
-private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//span[@class='jss4']");//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
+private By btnBellIcon = By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[3]//div//div//button//span[@class='jss4']");//div[@class='jss1']//div//span[@class='jss4']//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 private By viewAll = By.xpath(".//p[contains(text(),'MORE')]");//*[@id='notification-dropdown']/div[2]/div[2]/a
 private By settings = By.xpath(".//li[contains(text(),'Settings')]");
 private By lblHome= By.xpath("//img[contains(@class,'logo-height')]");//span[contains(text(),'Home')]
@@ -40,8 +40,8 @@ private By btnGrid = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/a[
 private By lblcontents = By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/..");
 private String lblNavBtn=".//div/h2[contains(text(),'Recently Added')]/../../following-sibling::div/*//div/slick/ul/li[";
 
-private By cartItemBtn=By.xpath(".//div[@class='log_cart']");//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]
-private By wishListBtn=By.xpath(".//div[@class='log_wishlist']");//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]
+private By cartItemBtn=By.xpath("//div[@class='jss1']//div//button//span//img");//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]
+private By wishListBtn=By.xpath("//div[@class='jss48']//div//button//span//img");//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]
 private By logoImg=By.xpath("//img[@class='logo-height']");//div/ng-include//div/img   
 private By logOut=By.xpath("//li[contains(text(),'Logout')]");//a[@class='pointer padding-l-15']
 private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
@@ -79,6 +79,7 @@ click(btnCategory);
 }
 
 public void clickOnBellIcon() {
+	wait(5);
 click(btnBellIcon);
 }
 
@@ -145,6 +146,7 @@ click(lblRcntAdded_Courses);
 public void clickOnTopArrBtn() {
 wait(5);
 click(btnTopArr);
+wait(5);
 }
 public String[] verifyAllLanguage(String objBox) {
 System.out.println("Taking all links:");
@@ -529,7 +531,7 @@ return status;
 
 
 public void verifyWishListBtn() {
-click(wishListBtn);
+elementExist(wishListBtn);
 }
 
 public void verifyMyLearningPage() {
@@ -549,7 +551,7 @@ System.out.println("logoImg is clicked");
 
 }
 public void verifyCartItemBtn() {
-click(cartItemBtn);
+elementExist(cartItemBtn);
 }
 
 public void verifyCartItemBtn1() {
