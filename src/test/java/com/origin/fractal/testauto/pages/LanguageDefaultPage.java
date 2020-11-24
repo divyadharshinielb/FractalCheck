@@ -119,6 +119,7 @@ public class LanguageDefaultPage extends FractalBasePage{
 	 */
 
 	public void catalogitemLanguageCheck() {
+		wait(2);
 		click(catalogitemlbl);
 		wait(2);
 		if(elementExist(allLanguageLbl)==true)
@@ -160,9 +161,8 @@ public class LanguageDefaultPage extends FractalBasePage{
 
 	public void whatsnewEnglishCheck() {
 		wait(7);
-		elementExist(whatsnewviewall);
-		wait(2);
-		scrollToElement(whatsnewviewall);
+	//	elementExist(whatsnewviewall);
+		scrollToElement(By.xpath("//div[@class='slider-control-centerright']/div"));
 		wait(5);
 		click(whatsnewviewall);
 		wait(5);
@@ -211,7 +211,7 @@ public class LanguageDefaultPage extends FractalBasePage{
 	 */
 	public void Languagecheck() {
 		if(elementExist(engmylearningdropdown)==true) {
-			scrollToElement(engmylearningdropdown);
+			//scrollToElement(engmylearningdropdown);
 			wait(2);
 			elementExist(engmylearningdropdown);
 			wait(2);
@@ -222,7 +222,7 @@ public class LanguageDefaultPage extends FractalBasePage{
 			elementExist(engmylearningdropdown);
 		}
 		else if((elementExist(alllanguagewhatsnewdropdown)==true)){
-			scrollToElement(alllanguagewhatsnewdropdown);
+		//	scrollToElement(alllanguagewhatsnewdropdown);
 			wait(2);
 			elementExist(alllanguagewhatsnewdropdown);
 			wait(2);

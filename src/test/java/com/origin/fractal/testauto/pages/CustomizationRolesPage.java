@@ -71,7 +71,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 		click(btnMenu);
 		wait(10);
 		js.executeScript("window.scrollBy(0,1000)");
-		click(settingsIcon);
+		//click(settingsIcon);
 		wait(5);
 
 	}
@@ -80,7 +80,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 	 * cause: Click manageroles icon and check for manage role header
 	 */
 	public void clickManageroles() {
-	//	click(settingsIcon);
+		click(settingsIcon);
 		wait(5);
 		click(settingsSelection);
 		wait(10);
@@ -123,12 +123,14 @@ public class CustomizationRolesPage extends FractalBasePage{
 		elementExist(errormsg);
 		verifyText("The Role name should be in alphabets",errormsg);
 		click(closeicon);
+		wait(2);
 	}
 	/*
 	 * function - roleCreationwithLearningadmin()
 	 * cause - Creation of custom role with Learning admin as parent role
 	 */
 	public void roleCreationwithLearningadmin() {
+		wait(2);
 		click(addrolebtn);
 		enterData(getLabel("rolename"),rolenameinput);
 		wait(5);
