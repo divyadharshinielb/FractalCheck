@@ -18,10 +18,10 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated on: 03-Nov-2020
  */
 public class WebTestUserInfoImportAndExport extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1)
 	public void AdminImportExport(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		siteAdminLoginwithcookies(driver);
+		siteAdminLogin(driver);
 		UserInfoImportAndExportSteps adminSteps=new UserInfoImportAndExportSteps(driver);
 		adminSteps.verifyDownloadTemplate();
 		Reporter.writeSummary("FR1-2356_AdminImportExport_TC-001,Verify admin is able to download the sample template .xlsx file," +adminSteps.getResult());

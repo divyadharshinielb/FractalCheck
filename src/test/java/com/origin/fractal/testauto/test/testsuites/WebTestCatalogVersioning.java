@@ -21,7 +21,7 @@ public class WebTestCatalogVersioning extends FractalBaseWebTest{
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1)
 	public void TestCatalogVersioning(String row, String strBrowserName) throws IOException{
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		siteAdminLoginwithcookies(driver); 
+		siteAdminLogin(driver); 
 		LoginSteps login= new LoginSteps(driver);
 		CatalogVersioningSteps steps = new CatalogVersioningSteps(driver);
 		steps.createLearningObject();

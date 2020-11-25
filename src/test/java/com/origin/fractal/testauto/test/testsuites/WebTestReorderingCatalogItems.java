@@ -13,16 +13,16 @@ import com.wv.auto.framework.utils.Reporter;
  * Number of Testcases: 04
  * Developed By: Vigneshwaran R
  * created on: 23-Sep-20
- * Updated Date: 15-Oct-20
+ * Updated Date: 25-Nov-20
  */
 public class WebTestReorderingCatalogItems extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 1 ,
 			description = "")
 	public void TestReOrdering (String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InstructorBellNotificationSteps bellSteps = new InstructorBellNotificationSteps(driver);
 		ReorderingCatalogItemsSteps reorder= new ReorderingCatalogItemsSteps(driver);
-		siteAdminLoginwithcookies(driver);
+		siteAdminLogin(driver);
 		reorder.verifyDragAndDrop();
 		Reporter.writeSummary("FR1-2771_Reordering_TC-001,Verify the admin is able to Drag and drop the items for changing the order of the Catalog items," +reorder.getResult());
 		reorder.verifyExistedandNewOrder();

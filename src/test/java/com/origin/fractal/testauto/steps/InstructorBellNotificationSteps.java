@@ -8,7 +8,7 @@ import com.origin.fractal.testauto.pages.InstructorBellNotificationPage;
 /* File/class name: InstructorBellNotificationSteps.java
  * Developed By: Vigneshwaran R
  * created on: 5-Jun-20
- * Updated Date: 15-July-20
+ * Updated Date: 25-Nov-20
  */
 public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	InstructorBellNotificationPage instbellnoti;
@@ -22,6 +22,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void instLogout() {
+		result="PASSED";
 		try{instbellnoti.instLogout();
 		wait(5);
 		}catch(Exception e){
@@ -34,6 +35,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminLogout() {
+		result="PASSED";
 		try{instbellnoti.adminLogout();
 		wait(5);
 		}catch(Exception e){
@@ -167,6 +169,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminCheckAndInvitesInstructor(String Instnumber, String Searchclassroom) {
+		result="PASSED";
 		try{
 			instbellnoti.goToclassroom();
 			instbellnoti.editEvent(Searchclassroom,"editInstructor",Instnumber,"");
@@ -181,6 +184,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminRescheduledEvent(String changezone, String Searchclassroom){
+		result="PASSED";
 		try{instbellnoti.goToclassroom();
 		instbellnoti.editEvent(Searchclassroom,"editTimeZone","",changezone);
 		adminLogout();
@@ -194,6 +198,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void prerequisite(String Instnumber,String changezone, String Searchclassroom) {
+		result="PASSED";
 		try {	instbellnoti.goToclassroom();
 		instbellnoti.editEvent(Searchclassroom,"prerequisite",Instnumber,changezone);
 		adminLogout();

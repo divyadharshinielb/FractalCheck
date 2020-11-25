@@ -761,8 +761,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	public String eventTimeMins = "15";
 	public String maxParticipants= "10";
 	public String minParticipants= "02";
-	public String rescheduleTimeZone= "IST";
-
+	public String rescheduleTimeZoneIST= "IST";
+	public String rescheduleTimeZoneCET= "CET";
+	
 	public void clickClassroom() {
 		//added on 4Sep20
 		wait(5);

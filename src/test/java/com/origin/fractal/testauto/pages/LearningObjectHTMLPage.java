@@ -262,7 +262,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		click(searchfieldUser);
 		enterData(getLabel("HtmlName"),searchfieldUser);
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
-		wait(3);
+		wait(5);
 		moveElementFocusandClick(htmlOName);
 		wait(3);
 		driver.switchTo().frame(0);

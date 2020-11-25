@@ -18,10 +18,10 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated on: 17/Nov/20 - Last update few xpaths and waiting time increased....
  */
 public class WebTestLearningObjectHTML extends FractalBaseWebTest{
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1, description = "Verification for all the 31 email templates")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1)
 	public void TestHTMLlearningObjectCreation(String row, String strBrowserName) throws IOException{
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		siteAdminLoginwithcookies(driver); 
+		siteAdminLogin(driver); 
 		LoginSteps login= new LoginSteps(driver);
 		LearningObjectHTMLSteps HTMLSteps= new LearningObjectHTMLSteps(driver);
 		HTMLSteps.verifyCreateHtmlLearningObject();
@@ -42,6 +42,5 @@ public class WebTestLearningObjectHTML extends FractalBaseWebTest{
 		siteAdminLogin(driver); 
 		HTMLSteps.verifyDeleteHTMLLearnignobject();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-006,Verify that Site admin is able to Delete HTML Learning object," +HTMLSteps.getResult());
-
 	}
 }

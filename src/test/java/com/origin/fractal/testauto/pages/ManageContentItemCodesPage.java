@@ -115,7 +115,9 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 		pageName = "ManageContentItemCodePage";
 	}
 	public void goToManagecontent() {
+		wait(5); //added by vignesh on 25-Nov 20
 		menusteps.clickMenu();
+		wait(5); //added by vignesh on 25-Nov 20
 		menusteps.gotoManageContents();
 		wait(waitingSec);
 	}

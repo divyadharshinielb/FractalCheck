@@ -203,41 +203,64 @@ public class LoginSteps extends FractalBaseStep {
 		}
 	}
 
-	//Added by vignesh (WVI) on 10/April/20
+	//Added by vignesh (WVI) on 10/April/20 and Updated on 25-Nov-20
 	public void siteAdminLoginwithcookies() {
-		page.siteAdminLoginwithcookies();
+		result ="PASSED";
+		try{
+			page.siteAdminLoginwithcookies();
+		}catch(Exception e){
+			result="FAILED";
+		}
 	}
 	public void siteAdminLogin() {
-		page.siteAdminLogin();
+		result ="PASSED";
+		try{
+			page.siteAdminLogin();
+		}catch(Exception e){
+			result="FAILED";
+		}
 	}
 	public void loginInstructorwithCookies(String instUserID,String instPassword) {
-		page.loginInstructorwithCookies(instUserID,instPassword);
+		result ="PASSED";
+		try{
+			page.loginInstructorwithCookies(instUserID,instPassword);
+		}catch(Exception e){
+			result="FAILED";
+		}
 	}
 	public void loginInstructor(String instUserID,String instPassword) {
-		page.loginInstructor(instUserID,instPassword);
+		result ="PASSED";
+		try{
+			page.loginInstructor(instUserID,instPassword);
+		}catch(Exception e){
+			result="FAILED";
+		}
 	}
 	//Ends
-	
-	//Added by vignesh (WVI) on 16-Nov-20
-		public void logOutUser() {
-			try {
-				page.logOutUser();
-			}catch(Exception e) {
-				print("Logout issue found");
-			}
-			wait(3);
+
+	//Added by vignesh (WVI) on 16-Nov-20 and Updated on 25-Nov-20
+	public void logOutUser() {
+		result ="PASSED";
+		try {
+			page.logOutUser();
+		}catch(Exception e) {
+			print("Logout issue found");
+			result="FAILED";
 		}
-		
-		/* Function name: adminLogout()
-		 * Action: admin logout
-		 * Return Type: void
-		 */
-		public void adminLogout() {
-			try{page.adminLogout();
-			wait(5);
-			}catch(Exception e){
-				result="FAILED";
-			}
+		wait(3);
+	}
+
+	/* Function name: adminLogout()
+	 * Action: admin logout
+	 * Return Type: void
+	 */
+	public void adminLogout() {
+		result ="PASSED";
+		try{page.adminLogout();
+		wait(5);
+		}catch(Exception e){
+			result="FAILED";
 		}
-		//Ends
+	}
+	//Ends
 }

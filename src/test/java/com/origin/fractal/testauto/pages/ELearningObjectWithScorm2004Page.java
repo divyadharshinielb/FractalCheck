@@ -105,7 +105,9 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		wait(2);
 		moveElementFocusandClick(LearningObjectHTMLPage.htmlAttemptsdropBox);
 		moveElementFocusandClick(LearningObjectHTMLPage.htmlUnlimtedAttempts);
-		enterData(getLabel("eLearningName"),discriTextArea);
+		moveElementFocus(discriTextArea);
+		enterData(getLabel("eLearningName"),discriTextArea);//Added on 25-Nov-20
+		moveElementFocus(LearningObjectHTMLPage.htmlItemcodetab);//Added on 25-Nov-20
 		enterData(getLabel("eLearningName"),LearningObjectHTMLPage.htmlItemcodetab);
 		enterData(LearningObjectHTMLPage.getLabel("DurationHH"),LearningObjectHTMLPage.htmlDurationHH);
 		enterData(LearningObjectHTMLPage.getLabel("DurationMM"),LearningObjectHTMLPage.htmlDurationMM);

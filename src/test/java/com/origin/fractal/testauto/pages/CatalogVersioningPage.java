@@ -190,9 +190,9 @@ public class CatalogVersioningPage extends FractalBasePage {
 		wait(7);
 		moveElementFocusandClick(versionCount);
 		wait(3);
-		click(versionDelete);
+		moveElementFocusandClick(versionDelete);
 		wait(2);
-		click(deleteOKBtn);
+		moveElementFocusandClick(deleteOKBtn);
 		wait(3);
 	}
 

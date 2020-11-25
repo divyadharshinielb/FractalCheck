@@ -6,7 +6,6 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;
-import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.steps.ClassroomCCSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
@@ -14,7 +13,7 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsClassroomCC extends FractalBaseWebTest {
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, 
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, priority = 1,
 			description = "TC_Admin_Classroom_CC_ 001 - 015 ")
 	public void testClassroom(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);

@@ -21,7 +21,7 @@ public class WebTestELearningObjectWithScorm2004 extends FractalBaseWebTest{
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1)
 	public void Testscorme2004(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		siteAdminLoginwithcookies(driver);
+		siteAdminLogin(driver);
 		LoginSteps login= new LoginSteps(driver);
 		ELearningObjectWithScorm2004Steps scorm2004= new ELearningObjectWithScorm2004Steps(driver);
 		scorm2004.verifyCreateELearningObjectWithscorm2004();
