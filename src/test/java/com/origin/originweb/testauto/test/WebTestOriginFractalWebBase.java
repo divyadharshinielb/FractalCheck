@@ -20,6 +20,7 @@ public class WebTestOriginFractalWebBase extends OriginFractalWebBaseTest {
 	public void afterMethod() {
 		print("This is Origin Fractal Web Test afterMethod");
 		if(driver!=null)
+
 			driver.quit();
 	}
 

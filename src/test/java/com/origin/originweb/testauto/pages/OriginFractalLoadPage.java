@@ -11,8 +11,11 @@ import com.origin.originweb.testauto.OriginFractalWebBasePage;
  * Created on: 10-Nov-2020
  */
 public class OriginFractalLoadPage extends OriginFractalWebBasePage {
-	private By cookiesBtn=By.xpath("//*[@id='euCookieAcceptWP']");
+	private By cookiesBtn=By.xpath("//a[text()='Accept']");//Updated on 26-Nov-20
+	private By btnUnderstand=By.xpath("//button[text()='I Understand']"); //Added on 26-Nov-20
 	private By headerLogo=By.xpath("//*[@class='logo']");
+	private By newsSlider=By.xpath("//*[@id='normal-slidedown']");//Added on 26-Nov-20
+	private By btnCancelnewsSlider=By.xpath("//*[@id='normal-slidedown']//button[text()='Cancel']");//Added on 26-Nov-20
 	// Heading 
 	private By headerFeature	= By.xpath("(//UL[@class='navigation clearfix']//a)[1]");
 	private By headerPricing	= By.xpath("(//UL[@class='navigation clearfix']//a)[2]");
@@ -49,6 +52,12 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 		goTo(getLabel("webUrl"));
 		if(elementExist(cookiesBtn)) {
 			click(cookiesBtn);
+			wait(2);
+			click(btnUnderstand);
+		}
+		//Added on 26-Nov-20
+		if(elementExist(newsSlider)) {
+			click(btnCancelnewsSlider);
 		}
 		wait(2);
 	}
@@ -87,14 +96,14 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	public boolean verifyHeaderTrail() {
 		return clickAndcheckLoading(headerTrailSign,getLabel("trialUrl"));
 	}
-	
+
 	/* Function Name: verifyHeaderBlog()
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderBlog(){
 		return clickAndcheckLoading(headerBlog,getLabel("blogUrl"));
 	}
-	
+
 	/* Function Name: verfiySearchFunction()
 	 * Purpose: Search and Verify the page loading time
 	 */
@@ -110,21 +119,21 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	public boolean verifyHeaderPhilosophy() {
 		return clickAndcheckLoading(headerPhilosophy,getLabel("philosophyUrl"));
 	}	
-	
+
 	/* Function Name: verifyHeaderAbout()
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderAbout(){
 		return clickAndcheckLoading(headerAboutUs,getLabel("aboutUsUrl"));
 	}
-	
+
 	/* Function Name: verifyHeaderContact()
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderContact(){
 		return clickAndcheckLoading(headerContact,getLabel("contactUrl"));
 	}
-	
+
 	/* Function Name: verifyPostBlog1()
 	 * Purpose: Verify the page loading time
 	 */
@@ -147,7 +156,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 		moveElementFocus(postedBlog3);
 		return clickAndcheckLoading(postedBlog3,banner);
 	}
-	
+
 	/* Function Name: verifylblHome()
 	 * Purpose: Verify the page loading time
 	 */
@@ -155,7 +164,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 		moveElementFocus(lblHome);
 		return clickAndcheckLoading(lblHome,getLabel("webUrl"));
 	}
-	
+
 	/* Function Name: verifylblLxpLearners()
 	 * Purpose: Verify the page loading time
 	 */
@@ -163,7 +172,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 		moveElementFocus(lblLXPLearner);
 		return clickAndcheckLoading(lblLXPLearner,txtLearner);
 	}
-	
+
 	/* Function Name: verifylblLxpEnterprises()
 	 * Purpose: Verify the page loading time
 	 */
@@ -172,7 +181,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 		moveElementFocus(lblLXPEnterPrises);
 		return clickAndcheckLoading(lblLXPEnterPrises,txtEnterPrise);
 	}
-	
+
 	/* Function Name: verifylblLxpDomain()
 	 * Purpose: Verify the page loading time
 	 */
@@ -181,7 +190,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 		moveElementFocus(lblLXPDomainExp);
 		return clickAndcheckLoading(lblLXPDomainExp,txtDomain);
 	}
-	
+
 	/* Function Name: verifyAndroidPlayStore()
 	 * Purpose: Verify the page loading time
 	 */
@@ -189,7 +198,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 		moveElementFocus(linkAppAndroid);
 		return clickAndcheckLoadingOtherTab(linkAppAndroid,getLabel("playStoreUrl"));
 	}
-	
+
 	/* Function Name: verifyiOSAppStore()
 	 * Purpose: Verify the page loading time
 	 */
