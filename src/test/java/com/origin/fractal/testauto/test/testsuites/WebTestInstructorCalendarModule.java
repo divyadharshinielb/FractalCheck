@@ -67,14 +67,14 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2",eventPage.classRoomName);
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the action Admin changes the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin changes the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
 		instbellnotiSteps.instLogout();
 		siteAdminLogin(driver);
 		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",eventPage.classRoomName);
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.instructorRejectEvent();
 		InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the action Instructor rejects a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Instructor rejects a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
 		instbellnotiSteps.instLogout();
 		siteAdminLogin(driver);
 		menuSteps.clickMenu();
@@ -83,7 +83,7 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		instbellnotiSteps.adminLogout();
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the action Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
 		instbellnotiSteps.instLogout();
 		driver.close();
 	}
