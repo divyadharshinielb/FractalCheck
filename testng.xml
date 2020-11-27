@@ -83,12 +83,15 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
-				<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
-				<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" />
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestAdaptIntegration" 
 				/> -->
+
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting" />
 		</classes>
 
 	</test> <!-- Test -->
