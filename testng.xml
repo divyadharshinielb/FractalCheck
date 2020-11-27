@@ -5,7 +5,9 @@
 		<classes>
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
-			<class
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
+		<!-- 	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
@@ -48,17 +50,15 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
-			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
-			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
+			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
-				/> -->
-			<!-- -->
+				/> 
+			
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 			<class
@@ -77,7 +77,12 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserInfoImportAndExport" />
-			<!-- -->
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
+				 -->
+			
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

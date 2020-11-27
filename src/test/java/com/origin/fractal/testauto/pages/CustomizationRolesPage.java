@@ -139,7 +139,9 @@ public class CustomizationRolesPage extends FractalBasePage{
 		elementExist(learnadminoption);
 		wait(2);
 		elementExist(guestuseroption);
+		wait(2);
 		click(learnadminoption);
+		wait(5);
 		click(managecontentlbl);
 		click(manageuserlbl);
 		click(managereportlbl);
@@ -253,6 +255,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 	public void unassignRole() {
 
 		click(btnMenu);
+		wait(5);
 		click(manageuserlist);
 		wait(7);
 		click(searchUsers);
