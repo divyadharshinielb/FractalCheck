@@ -199,7 +199,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 		login(driver);
 		MyLearningSteps steps= new MyLearningSteps(driver);
 		steps.verifyCertification();
-		Reporter.writeSummary("FR1_1574, Verify the Course completion certificate is present with download button," +steps.getResult() );
+		Reporter.writeSummary("FR1_1574_Certificate_TC-001, Verify the Course completion certificate is present with download button," +steps.getResult() );
 	}
 	//Ends
 }

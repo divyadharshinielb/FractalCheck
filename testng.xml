@@ -91,7 +91,11 @@
 				/> -->
 
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDefaultGroupSettings" />
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
 		</classes>
 
 	</test> <!-- Test -->
