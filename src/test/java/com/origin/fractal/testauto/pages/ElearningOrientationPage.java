@@ -6,10 +6,11 @@ import org.openqa.selenium.WebDriver;
 import com.origin.fractal.testauto.FractalBasePage;
 /*
  * File/Class name: ElearningOrientationPage.java
+ * Purpose: To check FR1-2539 - e-learning Orientation
  * Created by: Vignesh 
  * Created on: 10-July-2020
- * Updated on: 24-Aug-2020
- * Purpose: To check FR1-2539 - e-learning Orientation
+ * Updated on: 30/Nov/20
+ * 
  */
 public class ElearningOrientationPage extends FractalBasePage {
 	ManageContentPage ManageContentPage = null;
@@ -59,9 +60,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */	
 	public void clickCloseXbutton() {
 		click(closeXBtn);
-		//03-Sep-2020: Waiting time increased from 3 to 5.
-		wait(5);
-		//Ends
+		wait(3);
 	}
 
 	/* Method name: verifyELearningOrientation()
@@ -105,13 +104,13 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: click on elearning item type filter and search a name
 	 */
 	public void clickeLearningItemFilter(String Name) {
-		//Waiting time added on 3-Sep-20 & updated on 14-Sep-20
-		wait(3);
-		//Ends
-		enterData(getLabel(Name),searchFieldLearnObj);	
 		wait(5);
+		click(eLearningitemFilter);
+		wait(5);
+		enterData(getLabel(Name),searchFieldLearnObj);	
+		wait(10);
 		click(editBtn);
-		wait(3);
+		wait(5);
 	}
 
 	/* Method name: editLOandselectUploadFilePackageType()
@@ -236,13 +235,13 @@ public class ElearningOrientationPage extends FractalBasePage {
 		}
 	}
 
-	//Added on 14Sep20
+	//Added on 22Sep20
 	/* Method name: preRequisite()
 	 * Return type: void
 	 * Desc: preRequisite- Click Portrait orientation and Update the Learning Object
 	 */
 	public void preRequisite(String Name) {
-				clickeLearningItemFilter(Name);
+		clickeLearningItemFilter(Name);
 		if(getObj(PortraitOrientationSelected).isSelected()==true) {
 			click(closeXBtn);
 			wait(3);
@@ -253,4 +252,5 @@ public class ElearningOrientationPage extends FractalBasePage {
 		}
 	}
 	//Ends
+
 }

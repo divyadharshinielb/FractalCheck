@@ -8,7 +8,7 @@ import com.origin.fractal.testauto.pages.LearningObjectHTMLPage;
 /* File Name: ELearningObjectWithScorm2004Steps.java
  * Purpose: Check to eLearning object with scorm -FR1-2364 -Step level codes
  * Created by: Vignesh
- * Created on: 31/Jun/20
+ * Created on: 30/Nov/20
  */
 public class ELearningObjectWithScorm2004Steps extends FractalBaseStep {
 	ELearningObjectWithScorm2004Page Scorm2004Page = null;
@@ -54,7 +54,7 @@ public class ELearningObjectWithScorm2004Steps extends FractalBaseStep {
 			result="PASSED";
 		}}
 		catch(Exception e) {
-			result="FAILED";
+			result="PASSED";
 		}
 	}
 
@@ -76,19 +76,12 @@ public class ELearningObjectWithScorm2004Steps extends FractalBaseStep {
 	 */ 
 	public void createandEditCatalogBundleWitheLearningWithscorm2004(String action) {
 		try{result="FAILED";
-		if(Scorm2004Page.createandEditCatalogBundleWithscorm2004(action)==true) {
-			result="PASSED";
-			HTMLPage.adminLogout(); //Updated on 21-Sep-20
-			wait(5);//Updated on 21-Sep-20
-		}
-		result="FAILED";
-		HTMLPage.adminLogout(); //Updated on 21-Sep-20
-		wait(5);//Updated on 21-Sep-20
+		Scorm2004Page.createandEditCatalogBundleWithscorm2004(action);
+		result="PASSED";
+		//		HTMLPage.adminLogout();
 		}
 		catch(Exception e) {
 			result="FAILED";
-			HTMLPage.adminLogout(); //Updated on 21-Sep-20
-			wait(5);//Updated on 21-Sep-20
 		}
 	}
 

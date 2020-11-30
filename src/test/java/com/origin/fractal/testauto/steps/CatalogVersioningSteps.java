@@ -8,7 +8,7 @@ import com.origin.fractal.testauto.pages.CatalogVersioningPage;
  * Purpose: Check FR1-2772 Catalog version -Step level codes
  * Created by: Vignesh
  * Created on: 28/Aug/20
- * Updated on 10/Sep/20
+ * Updated on 30/Nov/20
  */
 
 public class CatalogVersioningSteps extends FractalBaseStep {
