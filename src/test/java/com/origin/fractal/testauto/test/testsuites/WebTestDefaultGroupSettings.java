@@ -31,8 +31,8 @@ public class WebTestDefaultGroupSettings extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		DefaultGroupSettingsSteps defaultGroupSettingsSteps = new DefaultGroupSettingsSteps(driver);
 		
-		//		loginToContentAdmin(driver); // comment by vignesh 5-oct20
-		siteAdminLoginwithcookies(driver);//Adde by vignesh on 5- Oct-20
+		//		loginToContentAdmin(driver); // comment by vignesh 30-Nov-20
+		siteAdminLoginwithcookies(driver);//Adde by vignesh on 30- Nov-20
 		// Added by vignesh
 		defaultGroupSettingsSteps.assignContentsToGroup();
 		Reporter.writeSummary("FR1-1576_Assign content_TC-001, Verify admin is able to Assign content to the Groups," +  defaultGroupSettingsSteps.getResult() );

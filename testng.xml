@@ -19,10 +19,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
-
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
-
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" />
 			<class
@@ -59,7 +57,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
 				/> -->
-
+			<!-- -->
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 			<class

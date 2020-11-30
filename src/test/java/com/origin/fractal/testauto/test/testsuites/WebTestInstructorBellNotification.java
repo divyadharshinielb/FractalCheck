@@ -49,8 +49,7 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		classroomRoster.verifyAssignmentScore();
 		Reporter.writeSummary("FR-147_Scoring_TC-001, Admin can give scores to the assignment.," +classroomRoster.getResult() );
 		//ends		
-
-		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
+ 		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
 		instbellnotiSteps.verifyEmptyNotification(); 
 		//Added on 15-Sep-20
