@@ -111,7 +111,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		enterData(getLabel("eLearningName"),LearningObjectHTMLPage.htmlItemcodetab);
 		enterData(LearningObjectHTMLPage.getLabel("DurationHH"),LearningObjectHTMLPage.htmlDurationHH);
 		enterData(LearningObjectHTMLPage.getLabel("DurationMM"),LearningObjectHTMLPage.htmlDurationMM);
-		wait(5);
+		wait(10);// Updated pn 26-Nov-20
 		click(btnSave);
 		wait(50);
 		if(elementExist(LearningObjectHTMLPage.sucessfullyNotification)) {

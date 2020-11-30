@@ -480,6 +480,52 @@ public class MyLearningPage extends FractalBasePage {
 			    driver.navigate().refresh();
 			 }
 
+				//Added by vignesh on 30-Nov-20
+				private By viewCertiBtn=By.xpath("(//*[contains(@class, 'certifycheck3')]/a)");//Updated on 9-Oct-20
+
+				private By certificateModule = By.xpath("//*[@class='cert_rect']");
+				private By txtCongratulations = By.xpath("//*[@class='cert_font'][contains(text(),'Congratulations')]");
+				private By txtUserFirstName = By.xpath("//*[@class='KARTHIK__S no-printme']//*[@class='resultname1']");
+				private By certifDownloadBtn = By.xpath("//*[@id='printPageButton']");
+				private By ratingOverLay = By.xpath("(//*[@class='my-masonry-grid_column'])[1]//*[@class='overlay']");
+				private By ratingStars = By.xpath("(//*[@class='my-masonry-grid_column'])[1]//*[@class='overlay']//*[@class='star']//*[@class='dv-star-rating']");
+				private By ratingDonebtn = By.xpath("(//*[@class='my-masonry-grid_column'])[1]//*[@class='overlay']//button[text()='DONE']");
+				//				private By completedItem= By.xpath("(//*[@class='my-masonry-grid_column'])[1]");
+				private By completedItem= By.xpath	("//*[@class='mylearn']/div/div/a");
+				private By tabMyLearning = By.xpath("//*[@href='/mylearning']");//Added on 9_oct-20
+				private By certificationIcon= By.xpath("(//*[@class='detail_icon_Certify'])");
+
+				/* Function Name: verifyCertificateModule()
+				 * Action: Verifying certificate module
+				 * Return type: boolean
+				 */
+				public boolean verifyCertificateModule() {
+					click(tabMyLearning);
+					wait(3);
+					click(lblCompleted);
+					wait(3);
+//					if(elementExist(ratingOverLay)) {
+//						click(ratingStars);
+//						click(ratingDonebtn);
+//						wait(3);
+//					}
+					moveElementFocusandClick(completedItem);
+					wait(10);
+					if(elementExist(certificationIcon) && elementExist(viewCertiBtn)) {
+						moveElementFocusandClick(viewCertiBtn);
+						wait(5);
+						if(elementExist(certificateModule) && elementExist(txtCongratulations) 
+								&& elementExist(txtUserFirstName) && elementExist(certifDownloadBtn)) {
+							print("PASSED: Certificate Module is working fine");
+							return true;
+						}
+					}
+					else {
+						print("FAILED: Catalog item do not have a certificate");
+					}
+					return false;
+				}
+				//Ends
 
 
 }
