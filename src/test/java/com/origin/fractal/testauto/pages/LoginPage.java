@@ -29,6 +29,7 @@ public class LoginPage extends FractalBasePage {
 	private By lblAdmin = By.xpath("//span[@title='Origin']");
 	private By lblAdminLogout = By.xpath("//a[@href='#'][contains(text(),'Logout')]");
 	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
+	private By lblSubscriptionPage= By.xpath("//p[@class='choose-right-plan']");
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		pageName ="LoginPage";
@@ -47,9 +48,14 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void verifyLogin() {
-		elementExist(lblUser);
+		if (elementExist(lblUser)) {
 		wait(5);
 		click(lblUser);
+	}
+	else{
+		wait(2);
+		elementExist(lblSubscriptionPage);
+	}
 	}
 	public void verifyAdminLogin() {
 		elementExist(lblAdmin);
