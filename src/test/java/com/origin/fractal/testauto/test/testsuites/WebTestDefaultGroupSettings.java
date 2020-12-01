@@ -31,17 +31,22 @@ public class WebTestDefaultGroupSettings extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		DefaultGroupSettingsSteps defaultGroupSettingsSteps = new DefaultGroupSettingsSteps(driver);
 		
-		loginToContentAdmin(driver);
-		Reporter.writeSummary("TCID_DefaultGroup__001, Verify login using google button" +  defaultGroupSettingsSteps.getResult() );
-		defaultGroupSettingsSteps.googleBtnRegistration();//completed
-		Reporter.writeSummary("TCID_DefaultGroup__002, Delete the usere created for google button in admin" +  defaultGroupSettingsSteps.getResult() );
-		defaultGroupSettingsSteps.userdeletion_google();
-		Reporter.writeSummary("TCID_DefaultGroup__003, Verify login using facebook button" +  defaultGroupSettingsSteps.getResult() );
-		defaultGroupSettingsSteps.facebookButton();//completed
-		Reporter.writeSummary("TCID_DefaultGroup__004, Delete the usere created for facebook button in admin" +  defaultGroupSettingsSteps.getResult() );
-		defaultGroupSettingsSteps.userdelete_facebook();
-		Reporter.writeSummary("TCID_DefaultGroup__005, Verify whether we can assign and unassign users in General group" +  defaultGroupSettingsSteps.getResult() );
-		defaultGroupSettingsSteps.verifyAssignUnassignUser();
+		//		loginToContentAdmin(driver); // comment by vignesh 30-Nov-20
+		siteAdminLoginwithcookies(driver);//Adde by vignesh on 30- Nov-20
+		// Added by vignesh
+		defaultGroupSettingsSteps.assignContentsToGroup();
+		Reporter.writeSummary("FR1-1576_Assign content_TC-001, Verify admin is able to Assign content to the Groups," +  defaultGroupSettingsSteps.getResult() );
+		// Ends		
+//		Reporter.writeSummary("TCID_DefaultGroup__001, Verify login using google button" +  defaultGroupSettingsSteps.getResult() );
+//		defaultGroupSettingsSteps.googleBtnRegistration();//completed
+//		Reporter.writeSummary("TCID_DefaultGroup__002, Delete the usere created for google button in admin" +  defaultGroupSettingsSteps.getResult() );
+//		defaultGroupSettingsSteps.userdeletion_google();
+//		Reporter.writeSummary("TCID_DefaultGroup__003, Verify login using facebook button" +  defaultGroupSettingsSteps.getResult() );
+//		defaultGroupSettingsSteps.facebookButton();//completed
+//		Reporter.writeSummary("TCID_DefaultGroup__004, Delete the usere created for facebook button in admin" +  defaultGroupSettingsSteps.getResult() );
+//		defaultGroupSettingsSteps.userdelete_facebook();
+//		Reporter.writeSummary("TCID_DefaultGroup__005, Verify whether we can assign and unassign users in General group" +  defaultGroupSettingsSteps.getResult() );
+//		defaultGroupSettingsSteps.verifyAssignUnassignUser();
 		
 }
 }

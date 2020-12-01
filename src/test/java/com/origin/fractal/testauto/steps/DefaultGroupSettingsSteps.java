@@ -72,5 +72,20 @@ public class DefaultGroupSettingsSteps extends FractalBaseStep {
 		   }
 	}
 
+	// Added by vignesh on 30-Nov-20
+		/* Function Name: assignContentsToGroup()
+		 * purpose: Assign the catalog items to group
+		 */
+		public void assignContentsToGroup() {
+			result="FAILED";
+			try {
+				page.assignContentsToGroup();
+				result ="PASSED";
+			}
+			catch(Exception e)
+			{
+				result="FAILED";
+			}
+		}
 }
 

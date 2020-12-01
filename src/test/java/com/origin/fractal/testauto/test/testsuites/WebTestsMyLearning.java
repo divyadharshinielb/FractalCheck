@@ -4,6 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.MyLearningSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
@@ -187,5 +188,15 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 */	mLSteps.verifyClassrooomLabels();//newui
 	Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
 }
+	//Added by vignesh on 27-Nov-2020
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true)
+		public void CourseCompletionMail (String row, String strBrowserName) throws Exception {
+			driver = BrowserFactory.getBrowser(strBrowserName);
+			login(driver);
+			MyLearningSteps steps= new MyLearningSteps(driver);
+			steps.verifyCertification();
+			Reporter.writeSummary("FR1_1574_Certificate_TC-001, Verify the Course completion certificate is present with download button," +steps.getResult() );
+		}
+		//Ends
 }
 

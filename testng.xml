@@ -5,9 +5,9 @@
 		<classes>
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
-				<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
-		<!-- 	<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
@@ -19,10 +19,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
-
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
-
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" />
 			<class
@@ -55,10 +53,11 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
-			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
-				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
-				/> 
-			
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
+			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+				/> -->
+			<!-- -->
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 			<class
@@ -77,12 +76,19 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserInfoImportAndExport" />
-				<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
-				 -->
-			
+
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDefaultGroupSettings" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
+
+
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
