@@ -53,6 +53,7 @@ public class VideoFractalPage extends FractalBasePage{
 	 */
 
 	public void goToVideoLO() {
+		wait(2);
 		click(btnMenu);
 		wait(2);
 		click(manageContent);

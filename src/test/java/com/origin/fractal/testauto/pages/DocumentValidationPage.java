@@ -160,17 +160,21 @@ public class DocumentValidationPage extends FractalBasePage {
 	 * cause: Document Creation - Till Duration
 	 */
 	public void documentTillDuration() {
-		/*WebElement element = driver.findElement(lblpages); Actions
-		actions = new Actions(driver); actions.moveToElement(element);
-		actions.perform();
-		wait(2);*/
+	/*	WebElement element = driver.findElement(lblpages); 
+		Actions actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();*/
 		wait(2);
 		elementExist(lblpages);
-		scrollToElement(lblpages);
+		//scrollToElement(By.xpath("//div/h6[contains(text(),'If checked, a DOWNLOAD button will appear for this content in the player.')]"));
+		/*JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");*/
+		//scrollToElement(lblpages);
 		wait(2);
 		enterData("abc",lblDescription);
 		wait(2);
 		enterData("Document123",lblItemCode);
+		wait(2);
+		scrollToElement(lblHH);
 		wait(2);
 		enterData("00",lblHH);
 		wait(2);

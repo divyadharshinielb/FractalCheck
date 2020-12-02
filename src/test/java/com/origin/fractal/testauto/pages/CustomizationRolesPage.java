@@ -149,6 +149,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 		click(submitbtn);
 		elementExist(newrolelbl);
 		elementExist(backrolebtn);
+		wait(2);
 		click(backrolebtn);
 	}
 	/*
@@ -259,15 +260,17 @@ public class CustomizationRolesPage extends FractalBasePage{
 		click(manageuserlist);
 		wait(7);
 		click(searchUsers);
+		wait(2);
 		enterData("Automation Directuser",searchUsers);
 		wait(10);
 	//	click(automationuserdiv);
 		wait(2);
 		click(manageuserediticon);
-		wait(2);
+		wait(5);
 		click(roledeleteicon);
-		wait(2);
+		wait(5);
 		click(submitbtn);
+		wait(2);
 
 	}
 }
