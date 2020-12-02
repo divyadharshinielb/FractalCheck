@@ -44,7 +44,7 @@ public class CatalogItemPage extends FractalBasePage {
 	private By asscontent = By.xpath("//span[contains(text(),'Sample Audio')]"); //div[contains(@class,'ng-scrollbars padding-b-20 ng-isolate-scope mCustomScrollbar _mCS_14')]/div/div[1]/div/div[1]/div[contains(@class,'whole')]/div[contains(@class,'col-lg-12 col-md-12 col-xs-12 col-sm-12 border-tb margin-r-10 padding-tb-15 padding-lr-0')]
 	private By btnsave = By.xpath("//button[contains(text(),'Save')]");
 	private By deletecoursebtn = By.xpath("//span[contains(text(),'CatalogItemwithDueDate')]/../../../*/div[3]/i");
-	private By deletecourseokbtn = By.xpath("//button/span[contains(text(),'OK')]");
+	private By deletecourseokbtn = By.xpath("//span[contains(text(),'OK')]/..");
 	private By closebtn = By.xpath("//button[contains(@class,'close padding-t-20')]/i ");
 	private By catalogSearch = By.xpath("//input[@id='quoteSearch']");
 	private By duedateError = By.xpath("//div[contains(@class,'text-danger duedate')]");
@@ -194,7 +194,7 @@ public class CatalogItemPage extends FractalBasePage {
 		click(validityDays);
 		enterData("5",validityDays);
 		wait(3);
-		click(continuebtn2);
+		click(continuebtn1);
 		elementExist(duedateError);
 		verifyText("Please select any content",selectcontentError);
 		verifyText("Due date should not be greater than validity",duedateError);
@@ -225,6 +225,8 @@ public class CatalogItemPage extends FractalBasePage {
 		click(deletecoursebtn);
 		wait(5);
 		click(deletecourseokbtn);
+	//	click(deletecourseokbtn);
+		wait(2);
 	}
 	public void contentAssign() {
 		click(plusbutton);
