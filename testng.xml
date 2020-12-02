@@ -3,7 +3,11 @@
 <suite name="Suite">
 	<test thread-count="40" name="Test">
 		<classes>
+		<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
+		<!-- 	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
@@ -56,8 +60,8 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
-				/> -->
-			<!-- -->
+				/> 
+		
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 			<class
@@ -77,18 +81,13 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserInfoImportAndExport" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
-
-			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDefaultGroupSettings" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
 
-
+ -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
