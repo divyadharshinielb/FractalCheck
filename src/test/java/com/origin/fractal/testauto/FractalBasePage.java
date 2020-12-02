@@ -156,7 +156,24 @@ System.out.println("---->"+a);
       }
 return linkTypes;
 }
-
+//To get the count and check whetherr the element is present or not in admin side
+public int getCount(String objPath1, String objpath2, int count, int index) {
+	int countnew = 0;
+	String wholeObjPath = "";
+	for (int i = index; i < count; i++) {
+	wholeObjPath = objPath1 + i + objpath2;
+	if(elementExist(By.xpath(wholeObjPath))) {
+		countnew++;	
+		count++;
+	}
+	else {
+		break;
+	}
+	
+}
+	print("The number of items is " + countnew);
+	return countnew;
+}
 public boolean verifyAllFilterTypeRcntAdded(String objBox, String objBoxtype, String objFilterLink) {
 System.out.println("Taking all links:");
 String[] linkTypes = getFilterLinks(objFilterLink);
