@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<test thread-count="40" name="Test">
+	<test thread-count="50" name="Test">
 		<classes>
-		<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
-		<!-- 	<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
@@ -59,9 +59,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
-			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
-				/> 
-		
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 			<class
@@ -87,7 +86,7 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
 
- -->
+
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
