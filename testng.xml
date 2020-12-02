@@ -59,7 +59,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
-			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
 				/> 
 		
 			<class
