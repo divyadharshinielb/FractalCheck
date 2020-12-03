@@ -135,11 +135,11 @@ public class CustomizationRolesPage extends FractalBasePage{
 		enterData(getLabel("rolename"),rolenameinput);
 		wait(5);
 		click(selectrolefield);
-		wait(2);
+		wait(5);
 		elementExist(learnadminoption);
-		wait(2);
+		wait(5);
 		elementExist(guestuseroption);
-		wait(2);
+		wait(5);
 		click(learnadminoption);
 		wait(5);
 		click(managecontentlbl);
@@ -149,8 +149,9 @@ public class CustomizationRolesPage extends FractalBasePage{
 		click(submitbtn);
 		elementExist(newrolelbl);
 		elementExist(backrolebtn);
-		wait(2);
+		wait(5);
 		click(backrolebtn);
+		wait(5);
 	}
 	/*
 	 * function - RoleCreationwithGuestuser()
