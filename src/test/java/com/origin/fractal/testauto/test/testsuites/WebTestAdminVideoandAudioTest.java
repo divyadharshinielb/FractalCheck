@@ -13,11 +13,11 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated: Updated by vignesh on 30-Nov-20 (Added Admin audio test)
  */
 public class WebTestAdminVideoandAudioTest extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 1 ,
 			description = "Admin video and audio player testing")
 	public void verifyvideo(String row, String strBrowserName) throws InterruptedException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		siteAdminLoginwithcookies(driver);
+		siteAdminLogin(driver);
 		AdminVideoandAudioTestSteps AdminVideoTestSteps=new AdminVideoandAudioTestSteps(driver);
 //		AdminVideoTestSteps.verifyVideoTester();
 //		print("Admin side video is working fine");

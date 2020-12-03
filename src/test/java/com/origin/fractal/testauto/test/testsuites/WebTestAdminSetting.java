@@ -16,11 +16,11 @@ import com.wv.auto.framework.utils.Reporter;
  * Number of Test cases: 07
  */
 public class WebTestAdminSetting extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,priority=1)
 	public void AdminSetting(String row, String strBrowserName) throws InterruptedException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		AdminSettingSteps adminsettings=new AdminSettingSteps(driver);
-		siteAdminLoginwithcookies(driver); 
+		siteAdminLogin(driver); 
 		adminsettings.verifyWhiteLabel();
 		Reporter.writeSummary("OKA32-4_Admin_White labeling_TC-001, Verify Admin is able to configure the branding details in white labeling," +  adminsettings.getResult());	adminsettings.verifyCreateandDeleteCategory();
 		Reporter.writeSummary("FR-55_Admin_ManageCategory_TC-001, Verify Admin is able to create and delete the categories," +  adminsettings.getResult()); 

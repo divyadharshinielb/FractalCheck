@@ -243,7 +243,7 @@ public class LoginPage extends FractalBasePage {
 		if(elementExist(prelogin)) {
 			click(prelogin);
 		}
-		wait(3);
+		wait(5); //Updated on 3-Dec-20
 		enterData("siteadmin@origin.com",tbUserName);
 		enterData("P@ssw0rd",tbPassword);
 		wait(3);

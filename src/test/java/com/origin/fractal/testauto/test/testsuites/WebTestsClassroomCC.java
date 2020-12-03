@@ -17,7 +17,7 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 			description = "TC_Admin_Classroom_CC_ 001 - 015 ")
 	public void testClassroom(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		loginToContentAdmin(driver);
+		siteAdminLogin(driver); //Updated on 3-Dec-20
 		ClassroomCCSteps ClassroomSteps = new ClassroomCCSteps(driver);
 			
 		ClassroomSteps.GotoClassroom();

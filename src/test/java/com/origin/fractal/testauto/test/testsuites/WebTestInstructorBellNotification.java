@@ -24,7 +24,7 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-		siteAdminLoginwithcookies(driver);
+		siteAdminLogin(driver);
 		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
 	}
 
@@ -37,10 +37,10 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-		siteAdminLoginwithcookies(driver);
+		siteAdminLogin(driver);//Updated on 3-Dec-20
 		//Added by vignesh 26-Sep-20 This for Roster test 
 		ClassRoomRosterSteps classroomRoster=new ClassRoomRosterSteps(driver);
-		instbellnotiPage.goToclassroom();
+		instbellnotiSteps.gotoClassRoom();//Updated on 3-Dec-20
 		classroomRoster.verifyClassroomRoster();
 		Reporter.writeSummary("FR-145_Scoring-ClassRoomRoster_TC-001, Admin can manage the roster.," +classroomRoster.getResult() );
 		Reporter.writeSummary("FR-2365_ClassRoomRoster_TC-001, Classroom admin roster page fixes," +classroomRoster.getResult() );

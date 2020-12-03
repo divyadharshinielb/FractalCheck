@@ -102,8 +102,8 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void goToclassroom() {
-		//4-Sep-20: waiting time increased - 3 to 5
-		wait(5);
+		//2-Dec-20: waiting time increased - 5 to 10
+		wait(10);
 		//ends
 		click(btnMenu);
 		//4-Sep-20: waiting time increased - 2 to 5

@@ -24,15 +24,15 @@ public class WebTestDefaultGroupSettings extends FractalBaseWebTest {
 //		 new Object[] { "4", "ie11" }
 		};
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,priority=1,
 			// description="Verify categories are available as expected" )
 			description = "")
 	public void DefaultGroupSettingstestInstructorPage(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		DefaultGroupSettingsSteps defaultGroupSettingsSteps = new DefaultGroupSettingsSteps(driver);
 		
-		//		loginToContentAdmin(driver); // comment by vignesh 30-Nov-20
-		siteAdminLoginwithcookies(driver);//Adde by vignesh on 30- Nov-20
+		//		loginToContentAdmin(driver); // commented by vignesh 30-Nov-20
+		siteAdminLogin(driver);//Added by vignesh on 30- Nov-20
 		// Added by vignesh
 		defaultGroupSettingsSteps.assignContentsToGroup();
 		Reporter.writeSummary("FR1-1576_Assign content_TC-001, Verify admin is able to Assign content to the Groups," +  defaultGroupSettingsSteps.getResult() );
