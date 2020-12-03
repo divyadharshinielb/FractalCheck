@@ -23,7 +23,7 @@ public abstract class OriginFractalWebBasePage extends BasePage {
 		String lblValue = OriginFractalWebUtils.getPageLabel(propKey);
 		return lblValue;
 	}
-	
+
 	public boolean clickAndcheckLoading(By clickelement, String checkUrl) {
 		preMilliseconds = TimeManager.getCurrententTimeStamp().getTime();
 		driver.findElement(clickelement).click();
@@ -32,19 +32,25 @@ public abstract class OriginFractalWebBasePage extends BasePage {
 		milliseconds = postMilliseconds - preMilliseconds;
 		TimeManager.seconds = (milliseconds/1000);
 		if(driver.getCurrentUrl().contains(checkUrl) && TimeManager.seconds<=time5Sec){
+			print("Excepted URL = "+ checkUrl);//Added on 3-Dec-20
+			print("Current URL = "+ driver.getCurrentUrl());//Added on 3-Dec-20
 			print("PASSED: Page load times takes less than 5 sec");
 			return true;
 		}
 		else if(driver.getCurrentUrl().contains(checkUrl) && TimeManager.seconds<=time10Sec){
+			print("Excepted URL = "+ checkUrl);//Added on 3-Dec-20
+			print("Current URL = "+ driver.getCurrentUrl());//Added on 3-Dec-20
 			print("PASSED: Page loading time takes less than 10 Sec");
 			return true;
 		}
 		else {
-			print("FAILED: Page loading time takes more than 10 Sec");
+			print("Excepted URL = "+ checkUrl);//Added on 3-Dec-20
+			print("Current URL = "+ driver.getCurrentUrl());//Added on 3-Dec-20
+			print("FAILED: Page loading time takes more than 10 Sec or other Exception");//Updated on 3-Dec-20
 			return false;
 		}
 	}
-	
+
 	public boolean clickAndcheckLoading(By clickelement, By checkElement) {
 		preMilliseconds = TimeManager.getCurrententTimeStamp().getTime();
 		driver.findElement(clickelement).click();
@@ -61,7 +67,7 @@ public abstract class OriginFractalWebBasePage extends BasePage {
 			return true;
 		}
 		else {
-			print("FAILED: Page loading time takes more than 10 Sec");
+			print("FAILED: Page loading time takes more than 10 Sec or other Exception");//Updated on 3-Dec-20
 			return false;
 		}
 	}
@@ -71,6 +77,8 @@ public abstract class OriginFractalWebBasePage extends BasePage {
 		driver.findElement(clickelement).click();
 		switchToNewTab();
 		if(driver.getCurrentUrl().contains(checkUrl)){
+			print("Excepted URL = "+ checkUrl);//Added on 3-Dec-20
+			print("Current URL = "+ driver.getCurrentUrl());//Added on 3-Dec-20
 			flag=true;
 		}
 		closeNewTabandgoToMainTab();
@@ -86,7 +94,7 @@ public abstract class OriginFractalWebBasePage extends BasePage {
 			flag = true;
 		}
 		else {
-			print("FAILED: Page loading time takes more than 10 Sec");
+			print("FAILED: Page loading time takes more than 10 Sec or other Exception");//Updated on 3-Dec-20
 			flag = false;
 		}
 		return flag;

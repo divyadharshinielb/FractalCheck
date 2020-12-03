@@ -160,8 +160,9 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		try{
 			if(loadPage.verifyPostBlog1()==true) {
 				result="PASSED";
-				loadPage.ClickHome();
+				//loadPage.ClickHome();//Updated on 3-Dec-20
 			}
+			loadPage.ClickHome();//Updated on 3-Dec-20
 		}catch (Exception e) {
 			result="FAILED";
 			loadPage.ClickHome();
@@ -176,8 +177,9 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		try{
 			if(loadPage.verifyPostBlog2()==true) {
 				result="PASSED";
-				loadPage.ClickHome();
+				//loadPage.ClickHome();//Updated on 3-Dec-20
 			}
+			loadPage.ClickHome();//Updated on 3-Dec-20
 		}catch (Exception e) {
 			result="FAILED";
 			loadPage.ClickHome();
@@ -192,8 +194,9 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		try{
 			if(loadPage.verifyPostBlog3()==true) {
 				result="PASSED";
-				loadPage.ClickHome();
+				//loadPage.ClickHome();//Updated on 3-Dec-20
 			}
+			loadPage.ClickHome();//Updated on 3-Dec-20
 		}catch (Exception e) {
 			result="FAILED";
 			loadPage.ClickHome();
@@ -214,7 +217,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			loadPage.ClickHome();
 		}
 	}
-	
+
 	/* Function Name: verifylblLxpLearners()
 	 * Purpose: Verify the page loading time
 	 */
@@ -229,7 +232,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			loadPage.ClickHome();
 		}
 	}
-	
+
 	/* Function Name: verifylblLxpEnterprises()
 	 * Purpose: Verify the page loading time
 	 */
@@ -244,7 +247,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			loadPage.ClickHome();
 		}
 	}
-	
+
 	/* Function Name: verifylblLxpDomain()
 	 * Purpose: Verify the page loading time
 	 */
@@ -259,7 +262,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			loadPage.ClickHome();
 		}
 	}
-	
+
 	/* Function Name: verifyAndroidPlayStore()
 	 * Purpose: Verify the page loading time
 	 */
@@ -274,7 +277,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			loadPage.ClickHome();
 		}
 	}
-	
+
 	/* Function Name: verifyiOSAppStore()
 	 * Purpose: Verify the page loading time
 	 */
@@ -289,6 +292,6 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			loadPage.ClickHome();
 		}
 	}
-	
+
 
 }

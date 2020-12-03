@@ -178,7 +178,7 @@ public abstract class  BasePage {
 		wait(3);
 		click(elementLoc);
 		print("The element: "+elementLoc+" is Clicked.");
-		wait(2);
+//		wait(2);
 	}
 	public boolean isDisplayed(By element) {
 		if(driver.findElement(element).isDisplayed()) {

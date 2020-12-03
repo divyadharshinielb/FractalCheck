@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.originweb.testauto.OriginFractalWebBasePage;
+import com.wv.auto.framework.utils.TimeManager;
 /* File Name: OriginFractalLoadPage.java
  * Purpose: https://originfractal.com/ - Verifying page loading time
  * Created by: Vigneshwaran R
@@ -30,7 +31,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By postedBlog3 		= By.xpath("(//*[@class='entry-thumb-wrapper'])[3]");
 	private By banner 			= By.xpath("//*[@class='page-title page-titlex']");
 	//Blog page
-	private By search 			= By.xpath("(//input)[2]");
+	private By search 			= By.xpath("(//input)[1]");
 	//Footer
 	private By lblHome			= By.xpath("(//*[@class='widgets_wrapper']//a)[1]");
 	private By lblLXPLearner	= By.xpath("(//*[@class='widgets_wrapper']//a)[7]");
@@ -110,7 +111,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	public boolean verfiySearchFunction() {
 		enterData("Fractal",search);
 		driver.findElement(search).sendKeys(Keys.RETURN);
-		return elementExist(banner);
+		return elementExist(banner) && TimeManager.seconds<=20; //Updated on 3-Dec-20
 	}
 
 	/* Function Name: verifyHeaderPhilosophy()
