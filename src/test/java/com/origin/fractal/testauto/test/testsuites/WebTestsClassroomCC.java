@@ -13,7 +13,7 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsClassroomCC extends FractalBaseWebTest {
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, priority = 1,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true,
 			description = "TC_Admin_Classroom_CC_ 001 - 015 ")
 	public void testClassroom(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);

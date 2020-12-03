@@ -16,7 +16,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated Date: 25-Nov-20
  */
 public class WebTestReorderingCatalogItems extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 1 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
 			description = "")
 	public void TestReOrdering (String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);

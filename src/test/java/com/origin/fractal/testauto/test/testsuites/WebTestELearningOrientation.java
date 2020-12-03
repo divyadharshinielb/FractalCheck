@@ -17,7 +17,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated Date: 10-July-20
  * */
 public class WebTestELearningOrientation extends FractalBaseWebTest{
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
 	public void TestELearningOrientation(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLogin(driver); 	

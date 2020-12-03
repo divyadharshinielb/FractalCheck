@@ -24,7 +24,7 @@ public class WebTestDefaultGroupSettings extends FractalBaseWebTest {
 //		 new Object[] { "4", "ie11" }
 		};
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,priority=1,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,priority=0,
 			// description="Verify categories are available as expected" )
 			description = "")
 	public void DefaultGroupSettingstestInstructorPage(String row, String strBrowserName) throws IOException {

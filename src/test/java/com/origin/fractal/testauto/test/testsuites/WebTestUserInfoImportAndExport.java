@@ -18,7 +18,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated on: 03-Nov-2020
  */
 public class WebTestUserInfoImportAndExport extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
 	public void AdminImportExport(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLogin(driver);

@@ -14,7 +14,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	private By lblCCAllsession = By.xpath("//div[@class='col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60']//div[2]//label[1]");
 	private By lblCCAssDuedate = By.xpath("//*[contains(@class, 'col-sm-5')]/div[3]/label");
 	private By lblCCQualifyPrecentage = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[4]//label[1]");//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label
-	private By InputCCQualifyPrecentage = By.xpath("//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label/div/div/md-input-container/input");
+	private By InputCCQualifyPrecentage = By.xpath("//html/body/div[4]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label/div/div/md-input-container/input");
 	private By lblCCFeedbackDuedate = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[5]//label[1]");
 	private By lblCCManualCompletion= By.xpath("//div[6]//label[1]");
 	private By Cancelbtn= By.xpath("//button[@class='btn btn-cancel btn_radius ng-binding text-left']");
@@ -512,7 +512,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	{
 //		click(AddClassbtn);
 //		wait(5);
-//		click(lblCCQualifyPrecentage);
+		click(lblCCQualifyPrecentage); //Updated on 3-Dec-20
 		wait(5);
 		enterData("5",InputCCQualifyPrecentage);
 		wait(3);

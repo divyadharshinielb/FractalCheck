@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<test thread-count="50" name="Test">
 		<classes>
-			<class
+		 	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
@@ -61,9 +61,6 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" />
-			<!-- -->
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
 			<class
@@ -86,7 +83,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
-			<!-- -->
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 
 
 		</classes>
