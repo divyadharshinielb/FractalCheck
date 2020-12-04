@@ -117,7 +117,7 @@ public class UserPaginationPage extends FractalBasePage{
 	 *cause:Check pagination for category 
 	 */
 	public void categoryLoadMore() {
-		wait(2);
+		wait(5);
 		click(categoriesLbl);
 		wait(2);
 		click(generalLbl);

@@ -3,10 +3,10 @@
 <suite name="Suite">
 	<test thread-count="50" name="Test">
 		<classes>
-		 	<class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
 			<class
@@ -85,7 +85,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
-
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" />
 
 		</classes>
 	</test> <!-- Test -->
