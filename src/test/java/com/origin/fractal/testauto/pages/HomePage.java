@@ -142,8 +142,7 @@ public class HomePage extends FractalBasePage {
 	
 	public void verifyBellNotification() {
 		wait(10);
-		clickOnBellIcon();
-		wait(2);
+	//	clickOnBellIcon();
 	//	verifyLabel("lblNotification",lblNotification );
 		if(elementExist(Check)) {
 			String ntnIntroGST=getText(Check);
@@ -194,10 +193,10 @@ public class HomePage extends FractalBasePage {
 		wait(5);
 	click(viewAll);
 	*/wait(5);
-		click(whlblAll);
+/*		click(whlblAll);
 		wait(2);
 		verifyAllFilterTypeRcntAdded(rboxBtn,rboxCatType,whlblFilterLink);
-	     
+	*/     
 	}
 	public void verifyBundleFilterWhatsNew() {
 		click(whlblAll);
