@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TimeManager {
-	public static Float seconds =null;
+	public static double seconds;
 
 	private static Timestamp timeAtEvent = null;
 	public static Timestamp getCurrententTimeStamp() {
