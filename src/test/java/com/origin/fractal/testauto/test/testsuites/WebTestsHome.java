@@ -87,7 +87,7 @@ public class WebTestsHome extends FractalBaseWebTest {
 //		homeSteps.verifyTopArrBtn();//newui
 		Reporter.writeSummary("TCID_HOME_015,  Verify the functionality of ^ > < symbol, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of ">" symbol
-		homeSteps.verifyNextBtn();//newui
+	//	homeSteps.verifyNextBtn();//newui
 	//	Reporter.writeSummary("TCID_015,  Verify the functionality of > symbol, " +  result );
 		//TCID_15: Verify the functionality of "<" symbol
 		//dhanu homeSteps.verifyPreviousBtn();//newui
@@ -96,10 +96,10 @@ public class WebTestsHome extends FractalBaseWebTest {
 /*		homeSteps.verifyRcntAdded_CoursesText();
 		Reporter.writeSummary("TCID_043,  Verify  Recently Added courses displayed, " + homeSteps.getResult() );
 */		//TCID_80:Verify the function of  Wish list icon
-		//dhanu homeSteps.verifyWishListBtn();//newui
+		homeSteps.verifyWishListBtn();//newui
 		Reporter.writeSummary("TCID_HOME_080, Verify the function of  Wish list icon, " +  homeSteps.getResult() );
 		//TCID_79:Verify the function of  Cart  icon
-		//dhanu homeSteps.verifyCartItemBtn();//newui
+		homeSteps.verifyCartItemBtn();//newui
 		Reporter.writeSummary("TCID_HOME_079,  Verify the function of  Cart  icon, " + homeSteps.getResult() );
 		//TCID_3:Verify My Learning page is displayed after logging to app.
 		homeSteps.verifyMyLearningPage();//newui
