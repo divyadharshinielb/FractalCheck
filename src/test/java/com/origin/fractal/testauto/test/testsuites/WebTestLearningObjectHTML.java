@@ -18,7 +18,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated on: 17/Nov/20 - Last update few xpaths and waiting time increased....
  */
 public class WebTestLearningObjectHTML extends FractalBaseWebTest{
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
 	public void TestHTMLlearningObjectCreation(String row, String strBrowserName) throws IOException{
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLogin(driver); 

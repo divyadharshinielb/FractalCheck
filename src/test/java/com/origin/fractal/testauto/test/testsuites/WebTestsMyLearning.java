@@ -189,7 +189,7 @@ public class WebTestsMyLearning extends FractalBaseWebTest {
 	Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
 }
 	//Added by vignesh on 27-Nov-2020
-		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true)
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,priority=0)
 		public void CourseCompletionMail (String row, String strBrowserName) throws Exception {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			login(driver);
