@@ -45,7 +45,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By allNotificationPage=By.xpath("//span[text()='NOTIFICATIONS']");
 	public By eventDetailsPage=By.xpath("//span[text()='Event Details']");
 	public By instAccountLogo=By.xpath("//*[@class='ci-hover user-account']");
-	public By instLogout=By.xpath("(//*[contains(@class,'popupunderline')]//li)[3]");// Updated on 4/Jun/20
+	public By instLogout=By.xpath("(//*[contains(@class,'popupunderline')]//li[text()='Logout'])");// Updated on 4/Jun/20
 	public By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']"); 
 	public By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]/div[5]");
 	Actions actions;
@@ -103,7 +103,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 */
 	public void goToclassroom() {
 		//2-Dec-20: waiting time increased - 5 to 10
-		wait(10);
+		wait(15);
 		//ends
 		click(btnMenu);
 		//4-Sep-20: waiting time increased - 2 to 5

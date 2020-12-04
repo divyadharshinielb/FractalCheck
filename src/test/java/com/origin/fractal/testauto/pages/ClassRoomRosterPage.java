@@ -12,7 +12,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  */
 public class ClassRoomRosterPage extends FractalBasePage{
 	private By searchClassRoomName=By.xpath("//input[@id='searchClassroom']");
-	private By classRoomList=By.xpath("(//*[contains(@class, 'border-tb')])[1]");
+	private By classRoomList=By.xpath("((//*[contains(@class, 'border-tb')])[1]//div)[3]");// Updated on 4-Dec-20
 	private By eventList=By.xpath("(//*[contains(@ng-click,'viewEventDetails')])[1]");
 	private By eventRosterTab=By.xpath("(//*[contains(text(),'Roster')])[2]");
 	private By sessionAttendance=By.xpath("//*[contains(@class, 'md-bar')]");
@@ -92,7 +92,7 @@ public class ClassRoomRosterPage extends FractalBasePage{
 	public boolean verifyAssignmentScore() {
 		try{click(eventRosterTab);
 		wait(3);
-		click(userModuleAssignment);
+		moveElementFocusandClick(userModuleAssignment);
 		wait(2);
 		click(userSubmitedAssignment);
 		wait(5);

@@ -34,7 +34,7 @@ public class LoginPage extends FractalBasePage {
 
 	//Added by vignesh on 16-Nov-20
 	private By userAccountLogo=By.xpath("(//*[@class='logout_pop']//div)[1]");//Updated on 25-Nov-20
-	private By userLogout=By.xpath("(//*[@class='logout_pop']//span)[6]");
+	private By userLogout=By.xpath("//*[@role='menu']//li[text()='Logout']");//Updated on 4-Nov-20
 	private By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']"); 
 	private By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]/div[5]");
 	//Ends
@@ -239,10 +239,11 @@ public class LoginPage extends FractalBasePage {
 	//Updated by vignesh on 19/June/20
 	public void siteAdminLogin() {
 		//Added on 23-Nov-20
-		wait(5);
-		if(elementExist(prelogin)) {
-			click(prelogin);
-		}
+//		wait(5);
+//		if(elementExist(prelogin)) {
+//			click(prelogin);
+//		}
+		goTo("https://staging-origin.originfractal.com/login");
 		wait(5); //Updated on 3-Dec-20
 		enterData("siteadmin@origin.com",tbUserName);
 		enterData("P@ssw0rd",tbPassword);
@@ -251,9 +252,10 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void loginInstructorwithCookies(String instUserID,String instPassword){
 		wait(5);
-		if(elementExist(prelogin)) {
-			click(prelogin);
-		}
+//		if(elementExist(prelogin)) {
+//			click(prelogin);
+//		}
+		goTo("https://staging-origin.originfractal.com/login");
 		if(elementExist(btnCookies)) {
 			click(btnCookies);
 		}
@@ -261,9 +263,10 @@ public class LoginPage extends FractalBasePage {
 	} 
 	public void loginInstructor(String instUserID,String instPassword){
 		wait(5);
-		if(elementExist(prelogin)) {
-			click(prelogin);
-		}
+//		if(elementExist(prelogin)) {
+//			click(prelogin);
+//		}
+		goTo("https://staging-origin.originfractal.com/login");
 		wait(5);
 		enterData(instUserID,tbUserName); 
 		enterData(instPassword,tbPassword);

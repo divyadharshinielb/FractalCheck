@@ -32,4 +32,15 @@ public class ManageContentSteps  extends FractalBaseStep{
 	public void verifyCatalogTitleValidation() {
 		page.verifyCatalogTitleValidation();
 	}
+	//Added by vignesh on 4-dec-20
+	
+public void clickOnCreateLobjButton() {
+	try{
+		page.clickOnCreateLobjButton();
+		result="PASSED";
+	}catch(Exception e) {
+		result="FAILED";
+	}
+	//End
+}
 }
