@@ -267,6 +267,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		By htmlOName=By.xpath("//*[@title='"+getLabel("editHtmlName")+"']");//Updated on 4-Dec-20
 		print(""+htmlOName);
 		click(searchfieldUser);
+		wait(5);
 		enterData(getLabel("HtmlName"),searchfieldUser);
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 		wait(5);

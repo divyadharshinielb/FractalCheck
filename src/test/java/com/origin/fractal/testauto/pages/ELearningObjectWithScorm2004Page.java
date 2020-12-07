@@ -67,9 +67,9 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 */
 	public boolean verifyDeleteELearnignobjectWithscorm2004() {
 		By scormLOName=By.xpath("//*[contains(text(),'"+getLabel("eLearningName")+"')]");
-		ManageContentItemCodesSteps.goToManagecontent();
+		//		ManageContentItemCodesSteps.goToManagecontent();
 		//commented on 7-Sep-20
-		//		createandEditCatalogBundleWithscorm2004("Remove LO");
+		createandEditCatalogBundleWithscorm2004("Remove LO");
 		//ends
 		click(LearningObjectHTMLPage.learningObjectTab);
 		wait(2);
@@ -165,13 +165,16 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void createandEditCatalogBundleWithscorm2004(String action) {
+		ManageContentItemCodesSteps.goToManagecontent();
 		wait(5);
 		click(lblCatalogTab);
 		//Waiting time increased on 7-Sep-20
-		wait(10);
+		wait(3);
 		//ends
 		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
-		wait(10);
+		wait(2);
+		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
+		wait(2);
 		click(catEditBtn);
 		wait(2);
 		click(continueBtn);
@@ -181,12 +184,12 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		click(addBundle);
 		wait(2);
 		if (action.equalsIgnoreCase("Add scorm2004")) {
-			enterData(getLabel("eLearningName"),LearningObjectHTMLPage.htmlLOSearchCatalogAddModule);
+			enterData(getLabel("editeLearningName"),LearningObjectHTMLPage.htmlLOSearchCatalogAddModule);
 			wait(2);
 		}
 		click(LearningObjectHTMLPage.searchResultAddModle);
-		wait(2);
-		click(continueBtn1);
+		//		wait(2);
+		//		click(continueBtn1);
 		wait(2);
 		click(saveBtn);
 		wait(5);
@@ -222,6 +225,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 */
 	public boolean userSearchElearningobjectWithscorm2004AndLaunch() {
 		By scormlO=By.xpath("(//*[contains(text(),'"+getLabel("editeLearningName")+"')])[1]");
+		wait(5);
 		click(searchfieldUser);
 		enterData(getLabel("eLearningName"),searchfieldUser);
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
