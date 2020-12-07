@@ -48,7 +48,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 		enterData(userName,allUserSearchArea);
 		wait(10);//Updated on 28-Oct-20
 		moveElementFocusandClick(assignContentIcon);
-		wait(5);
+		wait(10);
 		click(expandModules);
 		wait(2);
 		click(expandModulesSearchResult);
@@ -105,7 +105,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 		//		click(roleLeaner);
 		wait(5);
 		click(userMyLearningTab);
-		wait(5);
+		wait(10);
 		return compareStrings(getText(userMyLearningbox2), existOrder1) && compareStrings(getText(userMyLearningbox1), existOrder2) && compareStrings(getText(userMyLearningbox3), existOrder3);
 	}
 
