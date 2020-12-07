@@ -301,5 +301,16 @@ public class ManageContentItemCodesSteps extends FractalBaseStep {
 	public void itemcoderenameCatalog() {
 		page.itemcoderenamecatalog();
 	}	
+	
+	//Added on 4-Dec-20
+	public void goToManagecontent() {
+		try{
+			page.goToManagecontent();
+		result="PASSED";
+		}catch (Exception e) {
+			result="FAILED";
+		}
+	}
+	//Ends
 
 }

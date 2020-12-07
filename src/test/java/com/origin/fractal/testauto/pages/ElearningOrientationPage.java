@@ -103,11 +103,13 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: click on elearning item type filter and search a name
 	 */
 	public void clickeLearningItemFilter(String Name) {
-		wait(5);
-		click(eLearningitemFilter);
-		wait(5);
+//		wait(5); commented on 4-Dec-20
+//		click(eLearningitemFilter); commented on 4-Dec-20
+		wait(5); 
 		enterData(getLabel(Name),searchFieldLearnObj);	
-		wait(10);
+		wait(5);
+		click(eLearningitemFilter); //Added on 4-Dec-20
+		wait(2);
 		click(editBtn);
 		wait(5);
 	}

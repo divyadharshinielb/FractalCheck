@@ -16,7 +16,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Number of Test cases: 07
  */
 public class WebTestAdminSetting extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,priority=1)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,priority=0)
 	public void AdminSetting(String row, String strBrowserName) throws InterruptedException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		AdminSettingSteps adminsettings=new AdminSettingSteps(driver);
