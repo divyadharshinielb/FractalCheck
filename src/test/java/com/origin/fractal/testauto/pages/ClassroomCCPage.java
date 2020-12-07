@@ -11,10 +11,10 @@ public class ClassroomCCPage extends FractalBasePage {
 	private By AddClassbtn = By.xpath("//button[contains(text(),'Add Classroom')]");//html/body/div/div/div[2]/div[3]/div[3]/div/div/div/div[2]/button
 
 	//Add classroom
-	private By lblCCAllsession = By.xpath("//div[@class='col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60']//div[2]//label[1]");
-	private By lblCCAssDuedate = By.xpath("//*[contains(@class, 'col-sm-5')]/div[3]/label");
-	private By lblCCQualifyPrecentage = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[4]//label[1]");//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label
-	private By InputCCQualifyPrecentage = By.xpath("//html/body/div[4]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label/div/div/md-input-container/input");
+	private By lblCCAllsession = By.xpath("(//*[@id='completion_criteria_checkbox'])[1]");
+	private By lblCCAssDuedate = By.xpath("(//*[@id='completion_criteria_checkbox'])[1]");
+	private By lblCCQualifyPrecentage = By.xpath("(//*[@id='completion_criteria_checkbox'])[2]");//html/body/div[3]/div/div/div/md-dialog-content/div/div/form/div/div[4]/div/div[2]/div[4]/label
+	private By InputCCQualifyPrecentage = By.xpath("(//*[@id='completion_criteria_checkbox'])[2]//div//input");//Updated pn 7-Dec-20
 	private By lblCCFeedbackDuedate = By.xpath("//div[contains(@class,'col-lg-5 col-sm-5 col-xs-5 col-md-5 float-right padding-l-0 padding-t-60')]//div[5]//label[1]");
 	private By lblCCManualCompletion= By.xpath("//div[6]//label[1]");
 	private By Cancelbtn= By.xpath("//button[@class='btn btn-cancel btn_radius ng-binding text-left']");
@@ -28,10 +28,10 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	//Edit classroom
 	private By EditClassroomicon = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[5]/i[2]");
-	private By EditclasslblCCAllsession = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[2]/label[1]");
+	private By EditclasslblCCAllsession = By.xpath("(//*[@id='completion_criteria_checkbox'])[1]");
 	private By EditclasslblCCAssDuedate = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[3]/label[1]");
-	private By EditclasslblCCQualifyPrecentage = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[4]/label[1]");
-	private By EditclassInputCCQualifyPrecentage = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[4]/label[1]/div[1]/div[1]/md-input-container[1]/input[1]");
+	private By EditclasslblCCQualifyPrecentage = By.xpath("(//*[@id='completion_criteria_checkbox'])[2]");
+	private By EditclassInputCCQualifyPrecentage = By.xpath("(//*[@id='completion_criteria_checkbox'])[2]//div//input");//Updated pn 7-Dec-20
 	private By EditclasslblCCFeedbackDuedate = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[5]/label[1]");
 	private By EditclasslblCCManualCompletion= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[2]/div[6]/label[1]");
 	private By EditclassCancelbtn= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[2]/span[1]/div[1]/button[1]");
@@ -49,9 +49,9 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void GotoClassroom() 
 	{
-		wait(15);
+		wait(20);//Updated on 7-Dec-20
 		click(Classroomicon);
-		wait(5);
+		wait(10);
 		print("In Admin side, Classroom is opened");
 	}
 
@@ -76,7 +76,6 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickEditCClblAllsession() 
 	{
-
 		click(EditclasslblCCAllsession);
 		wait(5);
 		click(EditclassCancelbtn);
@@ -109,7 +108,7 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickCClblQualifyPrecentage() 
 	{
-	//	click(AddClassbtn);
+		click(AddClassbtn);
 		wait(6);
 		print("clicked");
 		click(lblCCQualifyPrecentage);
@@ -123,17 +122,17 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void ClickEditCClblQualifyPrecentage() 
 	{
-	//	click(EditclasslblCCQualifyPrecentage);
-		wait(10);
-		click(lblCCQualifyPrecentage);
+		click(EditclasslblCCQualifyPrecentage);
 		wait(3);
-	/*	clear(EditclassInputCCQualifyPrecentage);
+//		click(lblCCQualifyPrecentage);
+//		wait(3);
+		clear(EditclassInputCCQualifyPrecentage);//Updated on 7-Dec-20
 		enterData("35",EditclassInputCCQualifyPrecentage);
-		wait(5);
+		wait(3);
 		click(EditclassCancelbtn);
 		wait(5);
 	
-	*/}
+	}
 
 	public void ClickCClblFeedbackDuedate() 
 	{
@@ -404,8 +403,8 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 
 	public boolean verifyCCAssDuedateLabels() {
-//		wait(5);
-	//	click(AddClassbtn);
+		wait(5);
+		click(AddClassbtn);
 		wait(5);
 		booleanresult = false;
 		if (verifyText("Submission of all assignments before due date",lblCCAssDuedatetxt) == true)
@@ -456,8 +455,8 @@ public class ClassroomCCPage extends FractalBasePage {
 	}
 	
 	public boolean verifyCCFeedbackDuedateLabels() {
-//		wait(5);
-	//	click(AddClassbtn);
+		wait(5);
+		click(AddClassbtn);
 		wait(5);
 		booleanresult = false;
 		if (verifyText("Submission of session/event feedback before due date",lblCCFeedbackDuedatetxt) == true)
@@ -510,12 +509,12 @@ public class ClassroomCCPage extends FractalBasePage {
 	// Qualifying score allows single digit
 	public void ClickCClblQualifySinglePrecentage() 
 	{
-//		click(AddClassbtn);
-//		wait(5);
+		click(AddClassbtn);
+		wait(10);
 		click(lblCCQualifyPrecentage); //Updated on 3-Dec-20
-		wait(5);
+		wait(2);
 		enterData("5",InputCCQualifyPrecentage);
-		wait(3);
+		wait(2);
 		click(Cancelbtn);
 		wait(5);
 		click(AddClassbtn);
@@ -534,11 +533,11 @@ public class ClassroomCCPage extends FractalBasePage {
 	public void EditCClblQualifySinglePrecentage() 
 	{
 		
-//		click(EditclasslblCCQualifyPrecentage);
+		click(EditclasslblCCQualifyPrecentage);
 //			wait(5);
 		//dd	click(lblCCQualifyPrecentage);
 			wait(5);
-			click(lblCCQualifyPrecentage);
+//			click(lblCCQualifyPrecentage);
 			wait(2);
 			enterData("5",EditclassInputCCQualifyPrecentage);
 			wait(3);
