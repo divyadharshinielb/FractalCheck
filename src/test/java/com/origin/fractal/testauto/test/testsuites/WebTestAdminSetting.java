@@ -22,7 +22,8 @@ public class WebTestAdminSetting extends FractalBaseWebTest {
 		AdminSettingSteps adminsettings=new AdminSettingSteps(driver);
 		siteAdminLogin(driver); 
 		adminsettings.verifyWhiteLabel();
-		Reporter.writeSummary("OKA32-4_Admin_White labeling_TC-001, Verify Admin is able to configure the branding details in white labeling," +  adminsettings.getResult());	adminsettings.verifyCreateandDeleteCategory();
+		Reporter.writeSummary("OKA32-4_Admin_White labeling_TC-001, Verify Admin is able to configure the branding details in white labeling," +  adminsettings.getResult());	
+		//		adminsettings.verifyCreateandDeleteCategory();
 		Reporter.writeSummary("FR-55_Admin_ManageCategory_TC-001, Verify Admin is able to create and delete the categories," +  adminsettings.getResult()); 
 		adminsettings.checkClassroomSettings();
 		Reporter.writeSummary("FR-121_Admin_ClassroomSettings_TC-001, Verify Admin is configuring the details for classroom.," +  adminsettings.getResult()); 

@@ -34,7 +34,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By addManageRoleBtn = By.xpath("//*[text()='Add Role']");
 	private By manageRoleTitle = By.xpath("//*[@ng-model='roleName']");
 	private By parentRoleSelect = By.xpath("(//*[text()='Select Role'])[2]");
-	private By parentRoleLearnAdmin = By.xpath("(//*[text()='Learning Adminstrator'])[2]");
+	private By parentRoleLearnAdmin = By.xpath("(//*[text()='Learning Adminstrator'])");
 	private By accessArea = By.xpath("(//label[contains(text(),'Manage Content')])");
 	private By submitBtn = By.xpath("(//*[contains(text(),'Submit')])");
 	private By backToRoleBtn = By.xpath("(//*[contains(text(),'Back to Roles List')])");
@@ -66,36 +66,36 @@ public class AdminSettingPage extends FractalBasePage  {
 		super(driver);
 	}
 
-	/* Function: verifyCreateandDeleteCategory()
-	 * Purpose: Create and delete the Category
-	 */
-	public void verifyCreateandDeleteCategory() throws InterruptedException {
-		wait(5);
-		//		moveElementFocus(btnSettings);
-		moveElementFocusandClick(categorySettings);
-		click(addCategoryBtn);
-		wait(3);
-		enterData(cateName,categoryName);
-		wait(2);
-		enterData(cateDescri,categoryDescription);
-		wait(5);
-		click(categoryCreateBtn);
-		wait(3);
-		if(elementExist(createdCategory)==true) {
-			moveElementFocusandClick(deleteCategory);
-			wait(2);
-			click(deleteOKBtn);
-			wait(5);
-		}
-
-	}
+//	/* Function: verifyCreateandDeleteCategory()
+//	 * Purpose: Create and delete the Category
+//	 */
+//	public void verifyCreateandDeleteCategory() throws InterruptedException {
+//		wait(5);
+//		moveElementFocus(btnSettings);
+//		moveElementFocusandClick(categorySettings);
+//		click(addCategoryBtn);
+//		wait(3);
+//		enterData(cateName,categoryName);
+//		wait(2);
+//		enterData(cateDescri,categoryDescription);
+//		wait(5);
+//		click(categoryCreateBtn);
+//		wait(3);
+//		if(elementExist(createdCategory)==true) {
+//			moveElementFocusandClick(deleteCategory);
+//			wait(2);
+//			click(deleteOKBtn);
+//			wait(5);
+//		}
+//
+//	}
 
 	/* Function: checkClassroomSettings()
 	 * Purpose: check the Admin classroom settings
 	 */
 	public void checkClassroomSettings() {
 		wait(5);
-		//		moveElementFocus(btnSettings);
+		moveElementFocus(btnSettings);
 		moveElementFocusandClick(classroomSettings);
 		elementExist(lblVenueTab);
 		click(lblVenueTab);
@@ -115,7 +115,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: Add and delete the Manage Roles
 	 */
 	public void verifyAddandDeleteManageRole() {
-		//		moveElementFocus(btnSettings);
+		moveElementFocus(btnSettings);
 		moveElementFocusandClick(manageRole);
 		click(addManageRoleBtn);
 		wait(3);
@@ -194,7 +194,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: verify the White label settings
 	 */
 	public void verifyWhiteLabel() {
-		wait(5);
+		wait(10);
 		moveElementFocus(btnSettings);
 		moveElementFocusandClick(whiteLabel);
 		elementExist(brandingTab);
@@ -204,7 +204,7 @@ public class AdminSettingPage extends FractalBasePage  {
 		click(popupNotificationSettings);
 		wait(5);
 		click(SaveBtn);
-		wait(3);
-		elementExist(updatedText);
+		//		wait(3);
+		//		elementExist(updatedText);
 	}
 }

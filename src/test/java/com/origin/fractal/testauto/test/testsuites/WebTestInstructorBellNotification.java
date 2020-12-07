@@ -49,13 +49,13 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		classroomRoster.verifyAssignmentScore();
 		Reporter.writeSummary("FR-147_Scoring_TC-001, Admin can give scores to the assignment.," +classroomRoster.getResult() );
 		//ends		
- 		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
+		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
 		instbellnotiSteps.verifyEmptyNotification(); 
 		//Added on 15-Sep-20
-		Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login & text No notifications found," +instbellnotiSteps.getResult() );
 		//ends
-		Reporter.writeSummary("FR1-2017_InstrBell_TC01,Verify the text No notifications found," +instbellnotiSteps.getResult() );
+		//		Reporter.writeSummary("FR1-2017_InstrBell_TC001,Verify the text No notifications found," +instbellnotiSteps.getResult() );
 		siteAdminLogin(driver); 
 		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
@@ -79,13 +79,13 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		instbellnotiSteps.verifyRescheduledNotification();
 		Reporter.writeSummary("FR1-2017_InstrBell_TC-004,Verify the instructor gets reschedule notification (admin changes the timezone)," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyandclickMoreBtn();
-		Reporter.writeSummary("FR1-2017_InstrBell_TC-05,Verify the instructor sees and clicks MORE (when more than 3 notifications)," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-005,Verify the instructor sees and clicks MORE (when more than 3 notifications)," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyNotificationViewallPage();
 		Reporter.writeSummary("FR1-2017_InstrBell_TC-006,Verify when instructor clicks MORE CTA it lands on View more notifications page," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyBreadcrumbMoreNotification();
 		Reporter.writeSummary("FR1-2017_InstrBell_TC-007,Verify the instructor sees all notifications page and breadcrumb," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyLastNoticationmatch();
-		Reporter.writeSummary("FR1-2017_InstrBell_TC-08,Verify the notification details are matching with view all notifications page," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-008,Verify the notification details are matching with view all notifications page," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyClickNotification();
 		Reporter.writeSummary("FR1-2017_InstrBell_TC-009,Verify the click notification details should redirect to Event page," +instbellnotiSteps.getResult() );
 		instbellnotiSteps.verifyclickHomeaction();
