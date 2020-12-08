@@ -9,7 +9,6 @@ import com.origin.fractal.testauto.pages.ClassroomEventPage;
 import com.origin.fractal.testauto.pages.InstructorBellNotificationPage;
 import com.origin.fractal.testauto.steps.InstructorBellNotificationSteps;
 import com.origin.fractal.testauto.steps.InstructorCalendarModuleSteps;
-import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
@@ -32,8 +31,8 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 	public void TestInstructorcalendarActions(String row, String strBrowserName)throws IOException  {
 		ClassroomEventPage.EventType = "Traditional Classroom";
 		TestInstructorCalendar(row,strBrowserName);
-		ClassroomEventPage.EventType="Virtual Classroom";
-		TestInstructorCalendar(row,strBrowserName);
+		//		ClassroomEventPage.EventType="Virtual Classroom";
+		//		TestInstructorCalendar(row,strBrowserName);
 	}
 
 	/*
@@ -41,17 +40,18 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 	 */
 	public void TestInstructorCalendar(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		MenuSteps menuSteps = new MenuSteps(driver);
+		//		MenuSteps menuSteps = new MenuSteps(driver);
 		ClassroomEventPage eventPage= new ClassroomEventPage(driver);
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
 		InstructorCalendarModuleSteps InstructorModuleSteps=new InstructorCalendarModuleSteps(driver);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
 		siteAdminLogin(driver);
-		menuSteps.clickMenu();
-		menuSteps.gotoClassroomCreation();
+		//		menuSteps.clickMenu();
+		//		menuSteps.gotoClassroomCreation();
+		instbellnotiSteps.gotoClassRoom();
 		InstructorModuleSteps.deleteOldEventAndAddNewEvent();
-//		InstructorModuleSteps.verifyAdminSeeInstructorWarningMessage();
-//		Reporter.writeSummary("FR1-2382_InstrEvent_TC-0"+(++number)+",Verify the Admin gets the warning message when he creates "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
+		//		InstructorModuleSteps.verifyAdminSeeInstructorWarningMessage();
+		//		Reporter.writeSummary("FR1-2382_InstrEvent_TC-0"+(++number)+",Verify the Admin gets the warning message when he creates "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
 		instbellnotiSteps.adminLogout();
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyAdminInviteAndInstructorAcceptevent();
@@ -77,14 +77,15 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Instructor rejects a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
 		instbellnotiSteps.instLogout();
 		siteAdminLogin(driver);
-		menuSteps.clickMenu();
-		menuSteps.gotoClassroomCreation();
+		//		menuSteps.clickMenu();
+		//		menuSteps.gotoClassroomCreation();
+		instbellnotiSteps.gotoClassRoom();
 		InstructorModuleSteps.adminDeleteEvent();
 		instbellnotiSteps.adminLogout();
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
 		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-		instbellnotiSteps.instLogout();
+		//instbellnotiSteps.instLogout();
 		driver.close();
 	}
 }
