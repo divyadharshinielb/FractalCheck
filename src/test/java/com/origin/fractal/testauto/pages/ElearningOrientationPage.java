@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.steps.ManageContentItemCodesSteps;
 /*
  * File/Class name: ElearningOrientationPage.java
  * Created by: Vignesh 
@@ -13,7 +14,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  */
 public class ElearningOrientationPage extends FractalBasePage {
 	ManageContentPage ManageContentPage = null;
-	ManageContentItemCodesPage ManageContentItemCodesPage=null;
+	ManageContentItemCodesSteps ManageContentItemCodesSteps=null;
 	private By btnElearning = By.xpath(".//button/span[contains(text(),'eLearning')]");
 	private By lblOritation= By.xpath("//*[text()='Orientation']");
 	private By lblOritationAuto= By.xpath("//*[text()='Auto']");
@@ -37,7 +38,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	public ElearningOrientationPage(WebDriver driver) {
 		super(driver);
 		ManageContentPage = new ManageContentPage(driver);
-		ManageContentItemCodesPage= new ManageContentItemCodesPage(driver);
+		ManageContentItemCodesSteps= new ManageContentItemCodesSteps(driver);
 		pageName="eLearningOrientation";
 	}
 
@@ -46,7 +47,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: Click on add learning object button and e learning creation
 	 */	
 	public void gotoAddELearning() { 
-		ManageContentItemCodesPage.goToManagecontent();
+		ManageContentItemCodesSteps.goToManagecontent();
 		ManageContentPage.clickOnCreateLobjButton();
 		wait(2);
 		moveElementFocusandClick(btnElearning);

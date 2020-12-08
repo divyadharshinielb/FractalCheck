@@ -13,90 +13,102 @@ public class MenuSteps extends FractalBaseStep{
 	}
 	public void logout() {
 		result ="PASSED";
-		   try {
+		try {
 			page.logout();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 	public void clickMenu() {
 		result ="PASSED";
-		   try {
+		try {
 			page.clickMenu();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 	public void gotoManageContents() {
 		result ="PASSED";
-		   try {
+		try {
 			page.gotoManageContents();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 	public void gotoPaymentConfiguration() {
 		result ="PASSED";
-		   try {
+		try {
 			page.gotoPaymentConfiguration();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 	public void searchFieldAsset() {
 		result ="PASSED";
-		   try {
+		try {
 			page.searchFieldAsset();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 	public void searchFieldItemCode() {
 		result ="PASSED";
-		   try {
+		try {
 			page.searchFieldItemCode();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 	public void gotoClassroomCreation() {
 		result ="PASSED";
-		   try {
+		try {
 			page.gotoClassroomCreation();
-		   }
-		   catch(Exception e)
-		   {
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
 	}
 	public void gotoNotification() {
 		result ="PASSED";
-		   try {
-	    page.gotoNotification();
-		   }
-		   catch(Exception e)
-		   {
+		try {
+			page.gotoNotification();
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();   
 			result="FAILED";
-		   }
+		}
+	}
+
+	//Added by vignesh on (2/Mar/2020)
+	public void gotoManageUsers() {
+		result ="PASSED";
+		try {
+			page.gotoManageUsers();
+		}
+		catch(Exception e)
+		{
+			result="FAILED";
+		}
 	}
 }

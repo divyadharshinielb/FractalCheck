@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.steps.MenuSteps;
 /* File name: ReorderingCatalogItemsPage.java
  * Purpose: FR1-2772 catalog item reordering
  * Developed By: Vigneshwaran R
@@ -11,7 +12,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  * Updated Date: 15-Oct-20
  */
 public class ReorderingCatalogItemsPage extends FractalBasePage{
-	MenuPage menuPage = null;
+	MenuSteps MenuSteps = null;
 	private String userName = "wintestersbassvikianu01@gmail.com";//Updated on 7-Nov
 	private By allUserSearchArea=By.xpath("//*[@id='searchAllUsersName']");
 	private By assignContentIcon=By.xpath("//*[@title='Assign Content']");
@@ -36,14 +37,14 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 	private By userMyLearningbox3=By.xpath("(((//*[@class='my-masonry-grid_column'])[3]//div)[1]//p)[5]");
 	public ReorderingCatalogItemsPage(WebDriver driver) {
 		super(driver);
-		menuPage = new MenuPage(driver);
+		MenuSteps = new com.origin.fractal.testauto.steps.MenuSteps(driver);
 	}
 
 	/* Function Name: verifyDragAndDrop();
 	 * Purpose: Verify the Drag And Drop the item and change the order
 	 */
 	public boolean verifyDragAndDrop() {
-		menuPage.gotoManageUsers();
+		MenuSteps.gotoManageUsers();
 		wait(5);
 		enterData(userName,allUserSearchArea);
 		wait(10);//Updated on 28-Oct-20

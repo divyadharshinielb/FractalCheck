@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.steps.ManageContentItemCodesSteps;
 /* File/Class name: CatalogVersioningPage.java
  * Created by: Vignesh 
  * Created on: 28-Aug-2020
@@ -13,7 +14,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 public class CatalogVersioningPage extends FractalBasePage {
 	LearningObjectHTMLPage learningPage=null;
 	ManageContentPage ManageContentPage = null;
-	ManageContentItemCodesPage ManageContentItemCodesPage=null;
+	ManageContentItemCodesSteps ManageContentItemCodesSteps=null;
 
 	private By btnSave = By.xpath(".//button[contains(text(),'Save')]");
 	public By closeModel = By.xpath(".//button[contains(@class,'close')]");
@@ -61,7 +62,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 		super(driver);
 		ManageContentPage= new ManageContentPage(driver);
 		learningPage= new LearningObjectHTMLPage(driver);
-		ManageContentItemCodesPage= new ManageContentItemCodesPage(driver);
+		ManageContentItemCodesSteps= new ManageContentItemCodesSteps(driver);
 		pageName="catalogVersioning";
 	}
 
@@ -70,7 +71,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void createLearningObject() {
-		ManageContentItemCodesPage.goToManagecontent();
+		ManageContentItemCodesSteps.goToManagecontent();
 		wait(2);
 		ManageContentPage.clickOnCreateLobjButton();
 		wait(2);
@@ -130,7 +131,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 */
 	public boolean editCatalogToIncludeLearningObject(String action, String catalog) {
 		try{
-			ManageContentItemCodesPage.goToManagecontent();
+			ManageContentItemCodesSteps.goToManagecontent();
 			wait(3);
 			click(lblCatalogTab);
 			wait(5);//Updated on 16Nov20
