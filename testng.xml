@@ -17,9 +17,9 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
-			<class
+		<!--	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" />
-			<class
+		-->	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
