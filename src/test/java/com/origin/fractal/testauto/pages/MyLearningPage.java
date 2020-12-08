@@ -226,9 +226,9 @@ public class MyLearningPage extends FractalBasePage {
 		if(elementExist(lblBundles)) {
 		click(lblBundles);
 		wait(5);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement Element= driver.findElement(clickCatalog);
-		js.executeScript("arguments[0].scrollIntoView();", Element);
+		WebElement element = driver.findElement(clickCatalog); Actions 
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
 		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
@@ -237,9 +237,9 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyCourseContents() {
 		click(lblCourses);
 		wait(5);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement Element= driver.findElement(clickCatalog);
-		js.executeScript("arguments[0].scrollIntoView();", Element);
+		WebElement element = driver.findElement(clickCatalog); Actions 
+		actions = new Actions(driver); actions.moveToElement(element);
+		actions.perform();
 		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");

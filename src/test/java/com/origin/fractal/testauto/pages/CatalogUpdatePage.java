@@ -55,8 +55,8 @@ public class CatalogUpdatePage extends FractalBasePage {
 	 * Covers:It redirects to the editCatalog page
 	 */
 	public void editCatalog() {
-		enterData("Catalogupdate for automation testing",searchText);
-		wait(5);
+		enterData("Catalogupdate_for_automation_testing",searchText);
+		wait(10);
 		click(editIcon);
 		wait(6);
 		click(closeBtn);
@@ -67,11 +67,13 @@ public class CatalogUpdatePage extends FractalBasePage {
 	 * Covers:It covers text for new user,in progress user and all user
 	 */
 	public void updateEditCatalog() {
-		enterData("Assigned catalog update for auttomation testing",searchText);
-		wait(10);
+		click(By.xpath("//span[contains(text(),'bundles')]"));
+		wait(5);
+		enterData("Assigned_catalog_update_for_auttomation_testing",searchText);
+		wait(20);
 		click(editIcon);
 		wait(5);
-		enterData("Assigned catalog update for auttomation testing1",catalogTitleTextArea);
+		enterData("Assigned_catalog_update_for_auttomation_testing1",catalogTitleTextArea);
 		wait(2);
 		click(continueBtn);
 		wait(2);
@@ -89,11 +91,11 @@ public class CatalogUpdatePage extends FractalBasePage {
 	 * Covers:It clicks radio button for allusers and in progress
 	 */
 	public void radioBtnchecked() {
-		wait(2);
+		wait(5);
 		click(lblAllUsers);
-		wait(2);
+		wait(5);
 		click(lblInprogressUsers);
-		wait(2);
+		wait(5);
 
 	}
 	/*
@@ -101,8 +103,11 @@ public class CatalogUpdatePage extends FractalBasePage {
 	 * Covers:It redirects to the user login page
 	 */
 	public void userLogIn() {
+		wait(5);
 		enterData("automation_directuser@originlearning.com",tbUserName);
+		wait(5);
 		enterData("AutoDU@123",tbPassword);
+		wait(5);
 		click(btnLogin);
 	}
 	/*
@@ -144,7 +149,9 @@ public class CatalogUpdatePage extends FractalBasePage {
 	 * Covers:It deletes catalog item and checks the save validation
 	 */
 	public void saveValidation() {
+		wait(5);
 		catalogTab();
+		wait(5);
 		enterData("Auto_Bundle Check HTML Learning object",searchText);
 		wait(10);
 		click(editIcon);
