@@ -42,7 +42,7 @@ public class ClassRoomRosterPage extends FractalBasePage{
 	 */
 	public boolean verifyClassroomRoster() {
 		enterData("Auto_Roster_Check",searchClassRoomName);
-		wait(5);
+		wait(10);
 		click(classRoomList);
 		wait(5);
 		click(eventList);
