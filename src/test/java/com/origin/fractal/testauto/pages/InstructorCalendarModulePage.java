@@ -47,7 +47,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	public void deleteOldEventAndAddNewEvent() {
 		try {
 			eventPage.clickClassroom();
-			eventPage.deleteEvent();
+//			eventPage.deleteEvent();
 			eventPage.classroomEventCreation();
 		}
 		catch(Exception e) {
@@ -75,12 +75,12 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 * Desc: goto Instructor Calendar 
 	 */	
 	public void gotoInstructorCalendar() {
-		wait(5);
+		wait(3);
 		click(instructorBurgerBtn);
 		wait(2);
 		click(instructorCalendar);
 		//Waiting time increased on 4Sep20
-		wait(5);
+		wait(3);
 		//ends
 	}
 
@@ -97,18 +97,18 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		click(searchIconEventInEventTab);
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
 		//Waiting time increased on 4Sep20
-		wait(15);
+		wait(5);
 		//ends
 		moveElementFocus(inviteDetailsInEventTab);
 		/* To check and accept the event invite*/
 		if(getAttributeValue(inviteDotOnSameDay,"title").contains(eventPage.classRoomName) && elementExist(inviteDetailsInEventTab) ) 
 		{
 			click(inviteDetailsInEventTab);
-			wait(5);
+			wait(3);
 			click(acceptBtn);
 			wait(2);
 			click(acceptOKBtn);
-			wait(5);
+			wait(3);
 			gotoInstructorCalendar();
 			wait(2);
 			return elementExist(UpcomingDetailsInEventTab);		
@@ -129,7 +129,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		click(searchIconEventInEventTab);
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
 		//Waiting time increased on 4Sep20
-		wait(15);
+		wait(7);
 		//ends
 		if(verifyNonExistense(UpcomingDetailsInEventTab) && verifyNonExistense(inviteDetailsInEventTab)) {
 			print("PASSED: Event details are NOT present in Instructor side when admin delete/reassign/Instructor reject an event");
@@ -165,18 +165,18 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		By inviteDetailsInEventTab=By.xpath("//*[@class='ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
-		wait(5);
+		wait(3);
 		moveElementFocus(inviteDetailsInEventTab);
 		wait(3);
 		click(inviteDetailsInEventTab);
-		wait(15);
+		wait(7);
 		click(rejectBtn);
-		wait(10);
+		wait(3);
 		enterData(eventPage.eventSessionName,rejectCommentTextarea);
 		click(rejectYesBtn);
-		wait(10);
+		wait(7);
 		driver.navigate().refresh();
-		wait(10);
+		wait(3);
 	}
 
 	/*

@@ -18,14 +18,14 @@ public class AdminSettingSteps extends FractalBaseStep{
 	/* Function: verifyCreateandDeleteCategory()
 	 * Purpose: Create and delete the Category
 	 */
-//	public void verifyCreateandDeleteCategory() throws InterruptedException {
-//		result="PASSED";
-//		try { 
-//			settingpage.verifyCreateandDeleteCategory();		
-//		}catch(Exception e) {
-//			result="FAILED";
-//		}
-//	}
+	public void verifyCreateandDeleteCategory() throws InterruptedException {
+		result="PASSED";
+		try { 
+			settingpage.verifyCreateandDeleteCategory();		
+		}catch(Exception e) {
+			result="FAILED";
+		}
+	}
 
 	/* Function: checkClassroomSettings()
 	 * Purpose: check the Admin classroom settings

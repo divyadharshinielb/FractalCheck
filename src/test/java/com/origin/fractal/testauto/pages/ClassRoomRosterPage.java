@@ -17,7 +17,7 @@ public class ClassRoomRosterPage extends FractalBasePage{
 	private By eventRosterTab=By.xpath("(//*[contains(text(),'Roster')])[2]");
 	private By sessionAttendance=By.xpath("//*[contains(@class, 'md-bar')]");
 	private By userModuleAssignment=By.xpath("//*[contains(@ng-show, 'active1')]");
-	private By userSubmitedAssignment=By.xpath("//div[contains(@class,'col-lg-2 col-md-2 col-xs-2 col-sm-2 roster_circle_status')]");
+	private By userSubmitedAssignment=By.xpath("//i[@class='icon-togg padding-lr-20 icon text-right font-size-20 bold gray-85 cursor-pointer']");
 	//private By assignmentStatus=By.xpath("//*[contains(text(),'Select')]");
 	private By assignmentStatus=By.xpath("//*[@class='nice-select ng-pristine ng-untouched ng-valid ng-scope ng-isolate-scope ng-empty']");
 	private By assignmentEvalution=By.xpath("//li[contains(text(),'Evaluated')]");
@@ -47,15 +47,15 @@ public class ClassRoomRosterPage extends FractalBasePage{
 		wait(5);
 		click(eventList);
 		wait(3);
-		click(eventRosterTab);
+		moveElementFocusandClick(eventRosterTab);
 //		wait(2);
 //		moveElementFocusandClick(sessionAttendance);
-		wait(5);
-		click(userModuleAssignment);
+		wait(10);
+		moveElementFocusandClick(userModuleAssignment);
 		wait(2);
-		click(userSubmitedAssignment);
+		moveElementFocusandClick(userSubmitedAssignment);
 		wait(5);
-		click(assignmentStatus);
+		moveElementFocusandClick(assignmentStatus);
 		wait(2);
 		elementExist(assignmentEvalution);
 		elementExist(assignmentReject);
@@ -71,7 +71,7 @@ public class ClassRoomRosterPage extends FractalBasePage{
 	public boolean verifyAssignmentDetails() {
 		click(activitiesTab);
 		wait(2);
-		click(preEventActivitiesModule);
+		moveElementFocusandClick(preEventActivitiesModule);
 		wait(2);
 		moveElementFocusandClick(preEventAssignment);
 		wait(5);
@@ -91,14 +91,14 @@ public class ClassRoomRosterPage extends FractalBasePage{
 	 */
 	public boolean verifyAssignmentScore() {
 		try{click(eventRosterTab);
-		wait(3);
+		wait(5);
 		moveElementFocusandClick(userModuleAssignment);
 		wait(2);
-		click(userSubmitedAssignment);
+		moveElementFocusandClick(userSubmitedAssignment);
 		wait(5);
-		click(assignmentStatus);
+		moveElementFocusandClick(assignmentStatus);
 		wait(2);
-		click(assignmentEvalution);
+		moveElementFocusandClick(assignmentEvalution);
 		wait(2);
 		enterData("50",inputAssignmentScore);
 		wait(2);

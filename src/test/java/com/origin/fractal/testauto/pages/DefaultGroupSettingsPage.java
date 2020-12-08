@@ -21,6 +21,7 @@ public class DefaultGroupSettingsPage extends FractalBasePage {
 		private By selectAssignItem= By.xpath("(//*[@ng-if1='(groupusernames <= list.user_left_count) && (username.length <= list.user_left_count)']//div[contains(@class,'row')])[1]");
 		private By okBtn= By.xpath("//*[text()='OK']");
 		private By saveBtn=  By.xpath("//*[text()='Save']");
+		private By expandModules=By.xpath("//*[contains(text(),'Add Content')]");
 		//Ends
 	public DefaultGroupSettingsPage(WebDriver driver) {
 		super(driver);
@@ -191,13 +192,15 @@ public class DefaultGroupSettingsPage extends FractalBasePage {
 	public void assignContentsToGroup() {
 		wait(5);
 		click(lblmanageUserIcon);
-		wait(5);
+		wait(10);
 		click(lblgroup); 
 		wait(5);
 		moveElementFocusandClick(iconAssign);
-		wait(10);
-		click(selectAssignItem);
-		wait(3);
+		wait(5);
+//		click(expandModules);
+//		wait(3);
+//		click(selectAssignItem);
+//		wait(3);
 		click(saveBtn);
 		wait(4);
 	}

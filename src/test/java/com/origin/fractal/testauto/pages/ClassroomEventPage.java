@@ -765,16 +765,19 @@ public class ClassroomEventPage extends FractalBasePage{
 	public String rescheduleTimeZoneCET= "CET";
 	
 	public void clickClassroom() {
-		//added on 4Sep20
-		wait(5);
-		//ends
+	try {	//added on 4Sep20
+		wait(10);
+//		//ends
 		moveElementFocusandClick(searchClassRoomName);
-		clear(searchClassRoomName);
+//		clear(searchClassRoomName);
 		wait(5);
 		enterData(classRoomName,searchClassRoomName);
 		wait(10);
 		click(firstRowClassRoomList);
 		wait(10);
+	}catch(Exception e) {
+		print("FAILED: Classroom is take more waiting time");
+	}
 	}
 
 	/* Function name: classroomEventCreation()
@@ -783,7 +786,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	 */
 	public void classroomEventCreation() {
 		//added on 4Sep20
-		wait(5);
+		try{ wait(5);
 		//ends
 		click(btnAddEvent);
 		wait(5);
@@ -846,6 +849,9 @@ public class ClassroomEventPage extends FractalBasePage{
 		wait(10);
 		click(closeModel);
 		wait(5);
+		}catch(Exception e) {
+			print("FAILED: Classroom creation is take more waiting time");
+		}
 	}
 
 	/* Function name: deleteEvent()
@@ -853,12 +859,15 @@ public class ClassroomEventPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void deleteEvent() {
-		wait(5);
+		try{wait(5);
 		if(elementExist(deleteBtn)) {
 			click(deleteBtn);
 			wait(3);
 			click(deleteConformBtn);
 			wait(3);
+		}
+		}catch(Exception e) {
+			print("FAILED: Delete event is NOT working");
 		}
 	}
 

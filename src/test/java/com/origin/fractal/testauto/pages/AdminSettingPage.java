@@ -34,11 +34,11 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By addManageRoleBtn = By.xpath("//*[text()='Add Role']");
 	private By manageRoleTitle = By.xpath("//*[@ng-model='roleName']");
 	private By parentRoleSelect = By.xpath("(//*[text()='Select Role'])[2]");
-	private By parentRoleLearnAdmin = By.xpath("(//*[text()='Learning Adminstrator'])");
+	private By parentRoleLearnAdmin = By.xpath("//li[text()='Learning Administrator']");
 	private By accessArea = By.xpath("(//label[contains(text(),'Manage Content')])");
 	private By submitBtn = By.xpath("(//*[contains(text(),'Submit')])");
 	private By backToRoleBtn = By.xpath("(//*[contains(text(),'Back to Roles List')])");
-	private By roleDeteleBtn = By.xpath("(//*[@ng-repeat='userslist in dirusers | filter:search']//i[@ng-click='userConfirmDelete(userslist)'])[10]");//Updated on 27-Nov-20
+	private By roleDeteleBtn = By.xpath("(//*[@ng-repeat='userslist in dirusers | filter:search']//i[@ng-click='userConfirmDelete(userslist)'])[8]");//Updated on 27-Nov-20
 	private String roleName="createManageRole";
 	private By roleNameXpath = By.xpath("//*[contains(text(),'"+roleName+"')]");
 	private By currencyMenu = By.xpath("//li[@class='settings']//a[@href='#content/currency']");
@@ -66,29 +66,29 @@ public class AdminSettingPage extends FractalBasePage  {
 		super(driver);
 	}
 
-//	/* Function: verifyCreateandDeleteCategory()
-//	 * Purpose: Create and delete the Category
-//	 */
-//	public void verifyCreateandDeleteCategory() throws InterruptedException {
-//		wait(5);
-//		moveElementFocus(btnSettings);
-//		moveElementFocusandClick(categorySettings);
-//		click(addCategoryBtn);
-//		wait(3);
-//		enterData(cateName,categoryName);
-//		wait(2);
-//		enterData(cateDescri,categoryDescription);
-//		wait(5);
-//		click(categoryCreateBtn);
-//		wait(3);
-//		if(elementExist(createdCategory)==true) {
-//			moveElementFocusandClick(deleteCategory);
-//			wait(2);
-//			click(deleteOKBtn);
-//			wait(5);
-//		}
-//
-//	}
+	/* Function: verifyCreateandDeleteCategory()
+	 * Purpose: Create and delete the Category
+	 */
+	public void verifyCreateandDeleteCategory() throws InterruptedException {
+		wait(20);
+		moveElementFocus(btnSettings);
+		moveElementFocusandClick(categorySettings);
+		click(addCategoryBtn);
+		wait(3);
+		enterData(cateName,categoryName);
+		wait(2);
+		enterData(cateDescri,categoryDescription);
+		wait(5);
+		click(categoryCreateBtn);
+		wait(5);
+		if(elementExist(createdCategory)==true) {
+			moveElementFocusandClick(deleteCategory);
+			wait(2);
+			click(deleteOKBtn);
+			wait(5);
+		}
+
+	}
 
 	/* Function: checkClassroomSettings()
 	 * Purpose: check the Admin classroom settings
@@ -129,7 +129,7 @@ public class AdminSettingPage extends FractalBasePage  {
 		wait(2);
 		click(submitBtn);
 		wait(3);
-		click(backToRoleBtn);
+		click(closeXCurrency);
 		wait(3);
 		if (elementExist(roleNameXpath)==true) {
 			moveElementFocusandClick(roleDeteleBtn);
@@ -168,7 +168,7 @@ public class AdminSettingPage extends FractalBasePage  {
 		click(selectLanguage);
 		wait(2);
 		click(categoryCreateBtn);
-		wait(3);
+		wait(5);
 		if(elementExist(selectLanguage)==true) {
 			click(deleteCategory);
 			wait(2);
@@ -194,7 +194,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: verify the White label settings
 	 */
 	public void verifyWhiteLabel() {
-		wait(10);
+		wait(5);
 		moveElementFocus(btnSettings);
 		moveElementFocusandClick(whiteLabel);
 		elementExist(brandingTab);

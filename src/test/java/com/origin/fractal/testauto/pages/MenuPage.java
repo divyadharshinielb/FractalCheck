@@ -110,7 +110,7 @@ public class MenuPage extends FractalBasePage{
 	public void gotoClassroomCreation() {
 		wait(5);
 		click(classroomBtn);
-		wait(10);
+		wait(5);
 		
 	}
 	public void gotoNotification() {
