@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
 import com.origin.fractal.testauto.steps.ManageContentItemCodesSteps;
+import com.origin.fractal.testauto.steps.ManageContentSteps;
+
 /* File/Class name: CatalogVersioningPage.java
  * Created by: Vignesh 
  * Created on: 28-Aug-2020
@@ -13,7 +15,7 @@ import com.origin.fractal.testauto.steps.ManageContentItemCodesSteps;
  */
 public class CatalogVersioningPage extends FractalBasePage {
 	LearningObjectHTMLPage learningPage=null;
-	ManageContentPage ManageContentPage = null;
+	ManageContentSteps ManageContentSteps = null;
 	ManageContentItemCodesSteps ManageContentItemCodesSteps=null;
 
 	private By btnSave = By.xpath(".//button[contains(text(),'Save')]");
@@ -60,7 +62,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 
 	public CatalogVersioningPage(WebDriver driver) {
 		super(driver);
-		ManageContentPage= new ManageContentPage(driver);
+		ManageContentSteps= new ManageContentSteps(driver);
 		learningPage= new LearningObjectHTMLPage(driver);
 		ManageContentItemCodesSteps= new ManageContentItemCodesSteps(driver);
 		pageName="catalogVersioning";
@@ -73,7 +75,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	public void createLearningObject() {
 		ManageContentItemCodesSteps.goToManagecontent();
 		wait(2);
-		ManageContentPage.clickOnCreateLobjButton();
+		ManageContentSteps.clickOnCreateLobjButton();
 		wait(2);
 		moveElementFocusandClick(btnHtml);
 		wait(2);
@@ -186,17 +188,18 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void deleteVersionLearningObject(String action, String catalog) {
-		//		learningPage.goToManagecontent();
+//		ManageContentItemCodesSteps.goToManagecontent();
 		editCatalogToIncludeLearningObject(action,catalog);
 		click(learningObjectTab);
+		wait(5);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
-		wait(7);
+		wait(5);
 		moveElementFocusandClick(versionCount);
-		wait(3);
+		wait(5);
 		moveElementFocusandClick(versionDelete);
-		wait(2);
-		moveElementFocusandClick(deleteOKBtn);
 		wait(3);
+		moveElementFocusandClick(deleteOKBtn);
+		wait(5);
 	}
 
 	/* Function Name: deleteLearningObject()
@@ -204,9 +207,10 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void deleteLearningObject(String action, String catalog) {
-		//		learningPage.goToManagecontent();
+		//		ManageContentItemCodesSteps.goToManagecontent();
 		//		editCatalogToIncludeLearningObject(action,catalog);
 		click(learningObjectTab);
+		wait(5);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
 		wait(5);
 		if(verifyNonExistense(versionCount)) {
@@ -222,7 +226,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public boolean verifyAssignedCatalogDetails() {
-		//		learningPage.goToManagecontent();
+		//		ManageContentItemCodesSteps.goToManagecontent();
 		click(learningObjectTab);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
 		wait(2);

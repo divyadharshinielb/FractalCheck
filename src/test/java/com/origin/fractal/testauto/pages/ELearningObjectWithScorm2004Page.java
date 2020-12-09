@@ -17,7 +17,6 @@ import com.origin.fractal.testauto.steps.ManageContentSteps;
 
 public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	LearningObjectHTMLPage LearningObjectHTMLPage = null;
-	ManageContentItemCodesPage ManageContentItemCodesPage = null;
 	ManageContentItemCodesSteps	ManageContentItemCodesSteps =null;
 	ManageContentSteps ManageContentSteps = null;
 	public By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
@@ -55,7 +54,6 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public ELearningObjectWithScorm2004Page(WebDriver driver) {
 		super(driver);
 		LearningObjectHTMLPage=new LearningObjectHTMLPage(driver);
-		ManageContentItemCodesPage = new ManageContentItemCodesPage(driver); 
 		ManageContentSteps = new ManageContentSteps(driver);
 		ManageContentItemCodesSteps = new ManageContentItemCodesSteps(driver);
 		pageName="Scorm2004";
@@ -169,12 +167,10 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		wait(5);
 		click(lblCatalogTab);
 		//Waiting time increased on 7-Sep-20
-		wait(3);
+		wait(5);
 		//ends
 		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
-		wait(2);
-		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
-		wait(2);
+		wait(5);
 		click(catEditBtn);
 		wait(2);
 		click(continueBtn);
@@ -283,10 +279,10 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		enterData(LearningObjectHTMLPage.getLabel("DurationMM"),LearningObjectHTMLPage.htmlDurationMM);
 		wait(2);
 		click(btnSave);
-		wait(50);
+		wait(60);
 		if(elementExist(InvalidScorm)) {
 			moveElementFocusandClick(closeXBtn);
-			wait(2);
+			wait(3);
 			return true;
 		}
 		moveElementFocusandClick(closeXBtn);
