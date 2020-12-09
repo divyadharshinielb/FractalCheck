@@ -29,7 +29,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	//	Consulting SubMenu
 	private By consultSubMenu= By.xpath("//*[@id='menu-item-165']");
 	//	Resources SubMenu
-	private By resourceSubMenu = By.xpath("//*[@id='menu-item-365']");
+	private By resourceSubMenu = By.xpath("//*[@id='menu-item-365']//a");//Updated on 9-Dec-12
 	//	AboutUs SubMenus
 	private By AboutUsFirstSubMenu = By.xpath("//*[@id='menu-item-1552']");
 	private By AboutUsSecSubMenu = By.xpath("//*[@id='menu-item-2356']");
