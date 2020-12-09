@@ -8,7 +8,7 @@ import com.wv.auto.framework.BasePage;
 import com.wv.auto.framework.utils.TimeManager;
 
 public abstract class OriginWebBasePage extends BasePage {
-	int time10Sec = 10;//Updated on 3-Dec-20
+	int time10Sec = 15;//Updated on 3-Dec-20
 	int time20Sec = 20;//Updated on 3-Dec-20
 	boolean flag;
 	double preMilliseconds;
@@ -109,8 +109,8 @@ public abstract class OriginWebBasePage extends BasePage {
 			print("PASSED: Page load times takes less than 20 sec");//Updated on 3-Dec-20
 			return true;
 		}
-		else if(elementExist(checkelement) && TimeManager.seconds<=60){//Updated on 3-Dec-20
-			print("PASSED: Page loading time takes less than 60 Sec");//Updated on 3-Dec-20
+		else if(elementExist(checkelement) && TimeManager.seconds<=75){//Updated on 3-Dec-20
+			print("PASSED: Page loading time takes less than 75 Sec");//Updated on 3-Dec-20
 			return true;
 		}
 		else {
