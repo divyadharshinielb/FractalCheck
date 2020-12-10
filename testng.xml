@@ -9,20 +9,19 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
-			<class
+				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
+		<!--	<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
+			
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
-			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" 
+			 <class name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" 
 				/> -->
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 			<class
