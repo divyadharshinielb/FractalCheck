@@ -25,7 +25,7 @@ public class ClassRoomRosterSteps extends FractalBaseStep {
 			if(roster.verifyClassroomRoster()==true)
 				result="PASSED";
 		}catch(Exception e) {
-			result="PASSED";
+			result="FAILED";
 		}
 	}
 	
@@ -38,7 +38,7 @@ public class ClassRoomRosterSteps extends FractalBaseStep {
 			if(roster.verifyAssignmentDetails()==true)
 				result="PASSED";
 		}catch(Exception e) {
-			result="PASSED";
+			result="FAILED";
 		}
 	}
 	

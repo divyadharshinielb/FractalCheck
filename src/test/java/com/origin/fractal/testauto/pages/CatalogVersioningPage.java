@@ -74,9 +74,9 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 */
 	public void createLearningObject() {
 		ManageContentItemCodesSteps.goToManagecontent();
-		wait(2);
+		wait(3);
 		ManageContentSteps.clickOnCreateLobjButton();
-		wait(2);
+		wait(5);
 		moveElementFocusandClick(btnHtml);
 		wait(2);
 		enterData(getLabel("learningObjectName"),htmlTitleTextArea);
@@ -92,7 +92,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 		enterData(getLabel("learningObjectName"),htmlItemcodetab);
 		enterData(learningPage.getLabel("DurationHH"),htmlDurationHH);
 		enterData(learningPage.getLabel("DurationMM"),htmlDurationMM);
-		wait(5);
+		wait(10);
 		click(btnSave);
 		wait(10);
 		if(elementExist(learningPage.sucessfullyNotification)) {
@@ -134,13 +134,13 @@ public class CatalogVersioningPage extends FractalBasePage {
 	public boolean editCatalogToIncludeLearningObject(String action, String catalog) {
 		try{
 			ManageContentItemCodesSteps.goToManagecontent();
-			wait(3);
+			wait(5);
 			click(lblCatalogTab);
-			wait(5);//Updated on 16Nov20
+			wait(10);//Updated on 16Nov20
 			enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
-			wait(3);
+			wait(10);
 			moveElementFocusandClick(catEditBtn);
-			wait(3);
+			wait(5);
 			click(continueBtn);
 			wait(2);
 			moveElementFocusandClick(deleteLOInCatalog);

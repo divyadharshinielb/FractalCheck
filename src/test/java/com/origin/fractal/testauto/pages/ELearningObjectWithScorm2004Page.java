@@ -61,9 +61,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 
 	/* Function Name: verifyDeleteHTMLLearnignobject()
 	 * Action: remove the HTML-LO in bundle and delete the HTML-LO
-	 * Return type: boolean
 	 */
-	public boolean verifyDeleteELearnignobjectWithscorm2004() {
+	public void verifyDeleteELearnignobjectWithscorm2004() {
 		By scormLOName=By.xpath("//*[contains(text(),'"+getLabel("eLearningName")+"')]");
 		//		ManageContentItemCodesSteps.goToManagecontent();
 		//commented on 7-Sep-20
@@ -79,10 +78,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		wait(2);
 		click(deleteOKBtn);
 		wait(5);//Updated on 16-Nov-20
-		if(elementExist(NoLOFound)) {
-			return true;
-		}
-		return false;		
+
 	}
 
 	/* Function Name: verifyCreateELearningObjectWithscorm2004()
@@ -92,11 +88,11 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public boolean verifyCreateELearningObjectWithscorm2004() {
 		By scormLOName=By.xpath("//*[text()='"+getLabel("eLearningName")+"']");
 		ManageContentItemCodesSteps.goToManagecontent();
-		wait(2);
+		wait(3);
 		ManageContentSteps.clickOnCreateLobjButton();
-		wait(2);
+		wait(5);
 		moveElementFocusandClick(btnElearning);
-		wait(2);
+		wait(5);
 		enterData(getLabel("eLearningName"),eLeatningTitleTextArea);
 		click(LearningObjectHTMLPage.htmlSelectCatagory);
 		moveElementFocusandClick(LearningObjectHTMLPage.htmlGenaralCatagory);
@@ -167,10 +163,10 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		wait(5);
 		click(lblCatalogTab);
 		//Waiting time increased on 7-Sep-20
-		wait(5);
+		wait(10);
 		//ends
 		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
-		wait(5);
+		wait(10);
 		click(catEditBtn);
 		wait(2);
 		click(continueBtn);
@@ -178,13 +174,13 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		moveElementFocusandClick(LearningObjectHTMLPage.deleteLOInCatalog);
 		wait(2);
 		click(addBundle);
-		wait(2);
+		wait(5);
 		if (action.equalsIgnoreCase("Add scorm2004")) {
 			enterData(getLabel("editeLearningName"),LearningObjectHTMLPage.htmlLOSearchCatalogAddModule);
-			wait(2);
+			wait(5);
 		}
 		click(LearningObjectHTMLPage.searchResultAddModle);
-		//		wait(2);
+		//		wait();
 		//		click(continueBtn1);
 		wait(2);
 		click(saveBtn);

@@ -52,7 +52,7 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 	 */
 	public void verifyScormOrientation() {
 		try {result="FAILED";
-		if(elearningOrientation.verifyAutoOrientation("eLearningWithScorm")==true | elearningOrientation.verifyLandScapeOrientation("eLearningWithScorm")==true |
+		if(elearningOrientation.verifyAutoOrientation("eLearningWithScorm")==true || elearningOrientation.verifyLandScapeOrientation("eLearningWithScorm")==true ||
 				elearningOrientation.verifyPortraitOrientation("eLearningWithScorm")==true) {
 			result="PASSED";
 			elearningOrientation.clickCloseXbutton();
@@ -68,7 +68,7 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 	 */
 	public void verifyXapiOrientation() {
 		try {result="FAILED";
-		if(elearningOrientation.verifyAutoOrientation("eLearningWithXapi")==true | elearningOrientation.verifyLandScapeOrientation("eLearningWithXapi")==true |
+		if(elearningOrientation.verifyAutoOrientation("eLearningWithXapi")==true || elearningOrientation.verifyLandScapeOrientation("eLearningWithXapi")==true ||
 				elearningOrientation.verifyPortraitOrientation("eLearningWithXapi")==true) {
 			result="PASSED";
 		}

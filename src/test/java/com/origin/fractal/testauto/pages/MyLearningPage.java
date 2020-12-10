@@ -500,11 +500,11 @@ public class MyLearningPage extends FractalBasePage {
 				 * Return type: boolean
 				 */
 				public boolean verifyCertificateModule() {
-					wait(5);
+					wait(10);
 					click(tabMyLearning);
-					wait(3);
+					wait(10);
 					click(lblCompleted);
-					wait(5);
+					wait(10);
 //					if(elementExist(ratingOverLay)) {
 //						click(ratingStars);
 //						click(ratingDonebtn);

@@ -243,14 +243,14 @@ public class LoginPage extends FractalBasePage {
 //		if(elementExist(prelogin)) {
 //			click(prelogin);
 //		}
-		wait(5);//Updated on 9-Dec-20
+		wait(10);//Updated on 9-Dec-20
 		goTo("https://staging-origin.originfractal.com/login");
-		wait(10); //Updated on 9-Dec-20
+		wait(20); //Updated on 9-Dec-20
 		enterData("siteadmin@origin.com",tbUserName);
 		enterData("P@ssw0rd",tbPassword);
 		wait(3);
 		click(qaLoginBtn);	
-		wait(5);//Updated on 9-Dec-20
+		wait(10);//Updated on 9-Dec-20
 	}
 	public void loginInstructorwithCookies(String instUserID,String instPassword){
 		wait(5);

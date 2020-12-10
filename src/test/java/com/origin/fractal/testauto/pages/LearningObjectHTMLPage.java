@@ -92,9 +92,9 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		By htmlOName=By.xpath("//*[text()='"+getLabel("HtmlName")+"']");
 		goToManagecontent();
 		ManageContentSteps.clickOnCreateLobjButton();
-		wait(2);
+		wait(3);
 		moveElementFocusandClick(btnHtml);
-		wait(2);
+		wait(3);
 		enterData("AutoLOHTMLLearningObject",htmlTitleTextArea);
 		click(htmlSelectCatagory);
 		moveElementFocusandClick(htmlGenaralCatagory);

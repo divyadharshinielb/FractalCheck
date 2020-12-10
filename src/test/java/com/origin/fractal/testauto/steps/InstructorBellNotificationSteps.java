@@ -26,7 +26,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	public void gotoClassRoom() {
 		result="PASSED";
 		try{instbellnoti.goToclassroom();
-		wait(5);
+		wait(10);
 		}catch(Exception e){
 			result="FAILED";
 		}
@@ -40,7 +40,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	public void instLogout() {
 		result="PASSED";
 		try{instbellnoti.instLogout();
-		wait(5);
+		wait(10);
 		}catch(Exception e){
 			result="FAILED";
 		}
@@ -53,7 +53,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	public void adminLogout() {
 		result="PASSED";
 		try{instbellnoti.adminLogout();
-		wait(5);
+		wait(10);
 		}catch(Exception e){
 			result="FAILED";
 		}

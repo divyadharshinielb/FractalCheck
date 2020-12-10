@@ -54,12 +54,7 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		instbellnotiSteps.verifyEmptyNotification(); 
 		//Added on 15-Sep-20
 		Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login," +instbellnotiSteps.getResult() );
-//		ends
-//				Reporter.writeSummary("FR1-2017_InstrBell_TC001,Verify the text No notifications found," +instbellnotiSteps.getResult() );
-//		siteAdminLogin(driver); 
-//		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
-//		loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
-//		instbellnotiSteps.verifyEmptyNotification(); 
+		//ends
 		Reporter.writeSummary("FR1-2017_InstrBell_TC-001,Verify the text No notifications found," +instbellnotiSteps.getResult() );
 		siteAdminLogin(driver);
 		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",instbellnotiPage.classroomName);
