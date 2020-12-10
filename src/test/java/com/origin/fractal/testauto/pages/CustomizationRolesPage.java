@@ -80,6 +80,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 	 * cause: Click manageroles icon and check for manage role header
 	 */
 	public void clickManageroles() {
+		wait(5);
 		click(settingsIcon);
 		wait(5);
 		click(settingsSelection);
@@ -231,6 +232,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 	 * cause - Delete the custom role after unassigning the role 
 	 */
 	public void deleteUnassignedRole() {
+		wait(2);
 		scrollToElement(learnercustomrole);
 		elementExist(learnercustomrole);
 		wait(2);
