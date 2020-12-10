@@ -266,4 +266,45 @@ public class CatalogItemSteps extends FractalBaseStep {
 			result="FAILED";
 		}
 	}
+	/*
+	 *function: userCatalogItem()
+	 * cause: Check for completion timeline (whether its clickable or not) in user part
+	 */
+	/*public void userCatalogItem() {		
+		try {
+			page.userCatalogItem();
+			if (page.booleanresult == true) {
+				result ="PASSED";
+
+			}
+			else if (page.booleanresult == false){
+				result ="FAILED";
+			}
+			else {
+				result = "FAILED";
+				
+			}
+	}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+	}
+	/*
+	 *function: logoutUser()
+	 * cause: Click profile and logout in userpart
+	 
+	public void logoutUser() {
+	
+		result ="PASSED";
+		try {
+			page.logoutUser();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+	}*/
 }
