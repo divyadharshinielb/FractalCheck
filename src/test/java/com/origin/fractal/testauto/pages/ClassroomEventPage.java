@@ -766,12 +766,12 @@ public class ClassroomEventPage extends FractalBasePage{
 
 	public void clickClassroom() {
 		try {	//added on 4Sep20
-			wait(10);
+			wait(20);
 			//		//ends
 			moveElementFocusandClick(searchClassRoomName);
-			//		clear(searchClassRoomName);
+			clear(searchClassRoomName);
 			wait(5);
-			//		enterData(classRoomName,searchClassRoomName);
+			enterData(classRoomName,searchClassRoomName);
 			wait(10);
 			click(firstRowClassRoomList);
 			wait(15);
