@@ -861,6 +861,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void deleteEvent() {
 		try{wait(5);
 		if(elementExist(deleteBtn)) {
+			wait(3);
 			click(deleteBtn);
 			wait(3);
 			click(deleteConformBtn);

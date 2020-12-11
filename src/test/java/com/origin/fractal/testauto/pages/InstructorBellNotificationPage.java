@@ -103,22 +103,22 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 */
 	public void goToclassroom() {
 		//2-Dec-20: waiting time increased - 5 to 10
-		wait(15);
+		wait(20);
 		//ends
 		if(driver.findElement(btnMenu).isDisplayed()==true) {
 			click(btnMenu);
 			//4-Sep-20: waiting time increased - 2 to 5
-			wait(10);
+			wait(20);
 			//ends
 			click(classroomBtn);
 			//4-Sep-20: waiting time increased - 5 to 10
-			wait(10);
+			wait(20);
 			//ends
 		}
 		else {
-			wait(10);
+			wait(20);
 			click(btnMenu);
-			wait(3);
+			wait(10);
 			click(classroomBtn);
 			wait(10);
 		}

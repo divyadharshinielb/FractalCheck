@@ -272,10 +272,13 @@ public class LoginPage extends FractalBasePage {
 //		}
 		wait(5);//Updated on 9-Dec-20
 		goTo("https://staging-origin.originfractal.com/login");
-		wait(5);//Updated on 9-Dec-20
-		enterData(instUserID,tbUserName); 
+		wait(10);//Updated on 9-Dec-20
+		enterData(instUserID,tbUserName);
+		wait(3);
 		enterData(instPassword,tbPassword);
+		wait(3);
 		click(btnLogin);
+		wait(10);
 	} 
 	//Ends
 	//Added by vignesh on 16-Nov-20
