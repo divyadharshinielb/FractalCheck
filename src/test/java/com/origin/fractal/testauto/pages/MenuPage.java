@@ -33,6 +33,7 @@ public class MenuPage extends FractalBasePage{
     private By btnNotification = By.xpath("//a[@href='#notification/settings']//div[@class='icon']");
   //Added by vignesh on (2/Mar/2020)
   	private By manageUsers = By.xpath ("//span[contains(text(),'Manage User')]");
+  	private By adminReport = By.xpath ("//a[@href='#reports']//div"); //Added on 23-Nov-20
   	//ended - Vignesh
   	
     public MenuPage(WebDriver driver) {
@@ -127,6 +128,14 @@ public class MenuPage extends FractalBasePage{
 		public void gotoManageUsers() {
 			clickMenu();
 			click(manageUsers);
+			wait(3);
+		}
+		//ended - Vignesh
+		
+		//Added by vignesh on (23/Nov/2020)
+		public void clickReportMenu() {
+			clickMenu();
+			click(adminReport);
 			wait(3);
 		}
 		//ended - Vignesh
