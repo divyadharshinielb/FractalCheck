@@ -49,10 +49,11 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */	
 	public void gotoAddELearning() { 
 		ManageContentItemCodesSteps.goToManagecontent();
-		ManageContentSteps.clickOnCreateLobjButton();
 		wait(3);
+		ManageContentSteps.clickOnCreateLobjButton();
+		wait(10);
 		moveElementFocusandClick(btnElearning);
-		wait(5);
+		wait(10);
 	}
 
 	/* Method name: clickCloseXbutton()
