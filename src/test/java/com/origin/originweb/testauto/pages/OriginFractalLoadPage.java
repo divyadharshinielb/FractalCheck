@@ -31,7 +31,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By postedBlog3 		= By.xpath("(//*[@class='entry-thumb-wrapper'])[3]");
 	private By banner 			= By.xpath("//*[@class='page-title page-titlex']");
 	//Blog page
-	private By search 			= By.xpath("(//input)[1]");
+	private By search 			= By.xpath("//*[@placeholder='Search Here..']");//Added on 14-Dec-12
 	//Footer
 	private By lblHome			= By.xpath("(//*[@class='widgets_wrapper']//a)[1]");
 	private By lblLXPLearner	= By.xpath("(//*[@class='widgets_wrapper']//a)[7]");
@@ -109,6 +109,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	 * Purpose: Search and Verify the page loading time
 	 */
 	public boolean verfiySearchFunction() {
+		wait(3);//Added on 14-Dec-12
 		enterData("Fractal",search);
 		driver.findElement(search).sendKeys(Keys.RETURN);
 		return elementExist(banner) && TimeManager.seconds<=20; //Updated on 3-Dec-20
