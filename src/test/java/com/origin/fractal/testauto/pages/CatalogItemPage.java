@@ -82,7 +82,6 @@ public class CatalogItemPage extends FractalBasePage {
 	 * cause: Click addcatalog item  icon 
 	 */
 	public void clickCatalogitem() {
-		wait(2);
 		click(clkcatalogitem);
 		wait(5);
 	}
@@ -128,7 +127,6 @@ public class CatalogItemPage extends FractalBasePage {
 	 * cause: Click Podcast icon 
 	 */
 	public void addPodcast() {
-		wait(2);
 		click(addcatalogbtn);
 		wait(3);
 		click(podcastbtn);
