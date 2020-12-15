@@ -131,6 +131,7 @@ public class DocumentValidationPage extends FractalBasePage {
 		verifyText("Duration should not be empty",durationError);
 		wait(2);
 		click(closeLOBtn);
+		wait(5);
 	}
 	/*
 	 *function: documentTillLanguageSelect()
@@ -141,7 +142,7 @@ public class DocumentValidationPage extends FractalBasePage {
 		addLearningObjectBtn();
 		wait(5);
 		click(documentBtn);
-		wait(5);
+		wait(7);
 		enterData("Document_Check1",documentInputField);
 		wait(2);
 		click(selectCategory);
@@ -194,7 +195,7 @@ public class DocumentValidationPage extends FractalBasePage {
 		uploadBrowseFile(filename1);
 		documentTillDuration();
 		click(lblSave);
-		wait(2);
+		wait(10);
 		click(closeLOBtn);
 		wait(2);
 		documentDelete();
@@ -380,8 +381,9 @@ public class DocumentValidationPage extends FractalBasePage {
 		enterData("Document_Check1",catalogSearch);
 		click(asscontent);
 		wait(5);
+		click(closebtn);
 		//commenting as creation of catalog item is not required
-		if(elementExist(continuebtn2)) {
+	/*	if(elementExist(continuebtn2)) {
 			click(continuebtn2);
 			wait(2);
 			click(saveBtn);
@@ -399,7 +401,7 @@ public class DocumentValidationPage extends FractalBasePage {
 		wait(5);
 		click(deletecoursebtn);
 		wait(5);
-		click(deletecourseokbtn);
+		click(deletecourseokbtn);*/
 	}
 	/*
 	 *function: linkFieldsCheck()
@@ -421,7 +423,7 @@ public class DocumentValidationPage extends FractalBasePage {
 	 * cause: Check and validate  podcast catalog item
 	 */
 	public void podcastValidation() {
-		page.clickCatalogitem();
+		//page.clickCatalogitem();
 		page.addPodcast();
 		click(catalogTitle);
 		enterData("CatalogItemWithDocument", catalogTitle);
@@ -450,7 +452,7 @@ public class DocumentValidationPage extends FractalBasePage {
 		//verifyText("If checked, a DOWNLOAD button will appear for this content in the player.",downloadtext);
 		wait(3);
 		click(lblSave);
-		wait(2);
+		wait(10);
 		click(closeLOBtn);	
 		wait(2);
 		//documentDelete();

@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.steps.ManageContentItemCodesSteps;
+import com.origin.fractal.testauto.steps.ManageContentSteps;
 /*
  * File/Class name: ElearningOrientationPage.java
  * Created by: Vignesh 
@@ -12,8 +14,8 @@ import com.origin.fractal.testauto.FractalBasePage;
  * Purpose: To check FR1-2539 - e-learning Orientation
  */
 public class ElearningOrientationPage extends FractalBasePage {
-	ManageContentPage ManageContentPage = null;
-	ManageContentItemCodesPage ManageContentItemCodesPage=null;
+	ManageContentSteps ManageContentSteps = null;
+	ManageContentItemCodesSteps ManageContentItemCodesSteps=null;
 	private By btnElearning = By.xpath(".//button/span[contains(text(),'eLearning')]");
 	private By lblOritation= By.xpath("//*[text()='Orientation']");
 	private By lblOritationAuto= By.xpath("//*[text()='Auto']");
@@ -36,8 +38,8 @@ public class ElearningOrientationPage extends FractalBasePage {
 
 	public ElearningOrientationPage(WebDriver driver) {
 		super(driver);
-		ManageContentPage = new ManageContentPage(driver);
-		ManageContentItemCodesPage= new ManageContentItemCodesPage(driver);
+		ManageContentSteps = new ManageContentSteps(driver);
+		ManageContentItemCodesSteps= new ManageContentItemCodesSteps(driver);
 		pageName="eLearningOrientation";
 	}
 
@@ -46,11 +48,12 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: Click on add learning object button and e learning creation
 	 */	
 	public void gotoAddELearning() { 
-		ManageContentItemCodesPage.goToManagecontent();
-		ManageContentPage.clickOnCreateLobjButton();
-		wait(2);
+		ManageContentItemCodesSteps.goToManagecontent();
+		wait(3);
+		ManageContentSteps.clickOnCreateLobjButton();
+		wait(10);
 		moveElementFocusandClick(btnElearning);
-		wait(2);
+		wait(10);
 	}
 
 	/* Method name: clickCloseXbutton()
@@ -83,6 +86,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: Verify the Orientation radio button action in e-learning object
 	 */
 	public boolean verifyOrientationSelection() {
+		wait(3);
 		if (elementExist(lblOritationAuto) && elementExist(lblOritationLandScape) && 
 				elementExist(lblOritationPortrait)) {
 			click(lblOritationAuto);
@@ -107,11 +111,11 @@ public class ElearningOrientationPage extends FractalBasePage {
 //		click(eLearningitemFilter); commented on 4-Dec-20
 		wait(5); 
 		enterData(getLabel(Name),searchFieldLearnObj);	
-		wait(5);
+		wait(10);
 		click(eLearningitemFilter); //Added on 4-Dec-20
-		wait(2);
+		wait(3);
 		click(editBtn);
-		wait(5);
+		wait(10);
 	}
 
 	/* Method name: editLOandselectUploadFilePackageType()
@@ -120,7 +124,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public void editLOandselectUploadFilePackageType(String Package) {
 		click(editBtn);
-		wait(3);
+		wait(5);
 		if(Package.equalsIgnoreCase("scorm1.2")) {
 			click(eLearningScromPackage);
 			wait(2);
@@ -191,6 +195,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public boolean verifyAutoOrientation(String Name) {
 		try{
+			wait(3);
 			selectAuto(Name);
 			if(getObj(AutoOrientationSelected).isSelected()==true) {
 				return true;
@@ -208,6 +213,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public boolean verifyLandScapeOrientation(String Name) {
 		try{
+			wait(3);
 			selectLandscape(Name);
 			if(getObj(LandScapeOrientationSelected).isSelected()==true) {
 				return true;
@@ -225,6 +231,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public boolean verifyPortraitOrientation(String Name) {
 		try{
+			wait(3);
 			selectPortrait(Name);
 			if(getObj(PortraitOrientationSelected).isSelected()==true ) {
 				return true;

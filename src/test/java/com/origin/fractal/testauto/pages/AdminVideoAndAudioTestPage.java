@@ -7,12 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.steps.ManageContentItemCodesSteps;
 /*Created by vignesh on 3-Aug-20
  * Purpose: Admin side audio/video pause/Play check
  * Updated by vignesh on 30-Sep-20 (Added Admin audio test)
  */
 public class AdminVideoAndAudioTestPage  extends FractalBasePage{ 
-	ManageContentItemCodesPage ManageContentItemCodesPage = null;
+	ManageContentItemCodesSteps ManageContentItemCodesSteps = null;
 	public By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
 	private By lblVideoLO=By.xpath("//*[text()='Videos Sample']");
 	private By videoPlayer=By.xpath("//*[@class='vjs-big-play-button']");
@@ -33,7 +34,7 @@ public class AdminVideoAndAudioTestPage  extends FractalBasePage{
 	//Ends
 	public AdminVideoAndAudioTestPage(WebDriver driver) {
 		super(driver);
-		ManageContentItemCodesPage=new ManageContentItemCodesPage(driver);
+		ManageContentItemCodesSteps= new ManageContentItemCodesSteps(driver);
 	}
 	
 	/* Function Name: verifyVideoTester();
@@ -41,7 +42,7 @@ public class AdminVideoAndAudioTestPage  extends FractalBasePage{
 	 */
 	public void verifyVideoTester() throws InterruptedException {
 		Actions	actions = new Actions(driver); 
-		ManageContentItemCodesPage.goToManagecontent();
+		ManageContentItemCodesSteps.goToManagecontent();
 		clear(searchFieldLearnObj);
 		enterData("Video", searchFieldLearnObj);
 		wait(5);
@@ -80,13 +81,13 @@ public class AdminVideoAndAudioTestPage  extends FractalBasePage{
 	 * Purpose: Audio LO checking in Admin side (Inside catalog)
 	 */
 	public boolean verifyAudioTester() throws InterruptedException {
-		ManageContentItemCodesPage.goToManagecontent();
+		ManageContentItemCodesSteps.goToManagecontent();
 		click(catalogItemTab);
 		wait(5);
 		click(catalogPodcastFilter);
 		wait(3);
 		enterData(podcastName, catalogSearchFilter);
-		wait(5);
+		wait(10);
 		click(catalogPodcast);
 		wait(5);
 		click(PodcastLO);
@@ -96,7 +97,7 @@ public class AdminVideoAndAudioTestPage  extends FractalBasePage{
 		click(audioPlay);
 		wait(3);
 		print("Audio is Playing...");
-		return  elementExist(audioPause) | elementExist(audioReplay) | elementExist(audioPlay) ;
+		return  elementExist(audioPause) || elementExist(audioReplay) || elementExist(audioPlay) ;
 	}
 
 

@@ -85,7 +85,7 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
 		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-		//instbellnotiSteps.instLogout();
+		instbellnotiSteps.instLogout();
 		driver.close();
 	}
 }

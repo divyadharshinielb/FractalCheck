@@ -72,7 +72,9 @@ public class AdminSettingPage extends FractalBasePage  {
 	public void verifyCreateandDeleteCategory() throws InterruptedException {
 		wait(20);
 		moveElementFocus(btnSettings);
+		wait(3);
 		moveElementFocusandClick(categorySettings);
+		wait(3);
 		click(addCategoryBtn);
 		wait(3);
 		enterData(cateName,categoryName);
@@ -80,7 +82,7 @@ public class AdminSettingPage extends FractalBasePage  {
 		enterData(cateDescri,categoryDescription);
 		wait(5);
 		click(categoryCreateBtn);
-		wait(5);
+		wait(10);
 		if(elementExist(createdCategory)==true) {
 			moveElementFocusandClick(deleteCategory);
 			wait(2);
@@ -94,8 +96,9 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: check the Admin classroom settings
 	 */
 	public void checkClassroomSettings() {
-		wait(5);
+		wait(2);
 		moveElementFocus(btnSettings);
+		wait(3);
 		moveElementFocusandClick(classroomSettings);
 		elementExist(lblVenueTab);
 		click(lblVenueTab);
@@ -115,7 +118,9 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: Add and delete the Manage Roles
 	 */
 	public void verifyAddandDeleteManageRole() {
+		wait(5);
 		moveElementFocus(btnSettings);
+		wait(3);
 		moveElementFocusandClick(manageRole);
 		click(addManageRoleBtn);
 		wait(3);
@@ -130,7 +135,7 @@ public class AdminSettingPage extends FractalBasePage  {
 		click(submitBtn);
 		wait(3);
 		click(closeXCurrency);
-		wait(3);
+		wait(5);
 		if (elementExist(roleNameXpath)==true) {
 			moveElementFocusandClick(roleDeteleBtn);
 			wait(2);
@@ -143,7 +148,11 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: Verify the currency settings
 	 */
 	public void verifyCurrency() {
+		wait(3);
+		moveElementFocus(btnSettings);
+		wait(2);
 		moveElementFocusandClick(currencyMenu);
+		wait(3);
 		click(editCurrency);
 		wait(3);
 		click(changeCurrency);
@@ -160,7 +169,11 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: Create and delete the language
 	 */
 	public void verifyAddandDeleteLanguage() {
+		wait(3);
+		moveElementFocus(btnSettings);
+		wait(2);
 		moveElementFocusandClick(languageSettings);
+		wait(3);
 		click(languageSelect);
 		wait(3);
 		enterData(lang,languageName);
@@ -181,6 +194,9 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: verify the notification settings
 	 */
 	public void verifyNotificationSettings() {
+		wait(2);
+		moveElementFocus(btnSettings);
+		wait(3);
 		moveElementFocusandClick(notificationSettings);
 		wait(2);
 		elementExist(popupNotificationSettings);
@@ -194,8 +210,9 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: verify the White label settings
 	 */
 	public void verifyWhiteLabel() {
-		wait(5);
+		wait(3);
 		moveElementFocus(btnSettings);
+		wait(2);
 		moveElementFocusandClick(whiteLabel);
 		elementExist(brandingTab);
 		click(brandingTab);

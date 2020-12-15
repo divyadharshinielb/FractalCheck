@@ -49,15 +49,15 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void GotoClassroom() 
 	{
-		wait(20);//Updated on 7-Dec-20
+		wait(25);//Updated on 7-Dec-20
 		click(Classroomicon);
-		wait(10);
+		wait(20);
 		print("In Admin side, Classroom is opened");
 	}
 
 	public void GotoEditClassroom() 
 	{
-		wait(10);
+		wait(20);
 		click(EditClassroomicon);
 		wait(5);
 		print("In Admin side, Edit Classroom is opened");

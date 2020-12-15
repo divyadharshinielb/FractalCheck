@@ -50,9 +50,9 @@ public class ELearningObjectWithScorm2004Steps extends FractalBaseStep {
 	 */
 	public void verifyDeleteELearnignobjectWithscorm2004(){
 		try{result="FAILED";
-		if(Scorm2004Page.verifyDeleteELearnignobjectWithscorm2004()==true) {
-			result="PASSED";
-		}}
+		Scorm2004Page.verifyDeleteELearnignobjectWithscorm2004();
+		result="PASSED";
+		}
 		catch(Exception e) {
 			result="PASSED";
 		}

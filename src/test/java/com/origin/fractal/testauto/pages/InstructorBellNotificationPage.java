@@ -21,8 +21,8 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By breadcrumbHome= By.xpath("//button[text()='Home']");
 	public By breadcrumbMoreNotification = By.xpath("//*[contains(@class, 'breadcrumbs')]/div[2]/button");
 	public By lblDashboard=By.xpath("//span[text()='Dashboard']");
-	public By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[contains(@title,'Menu')]");
-	public By classroomBtn = By.xpath("//span[contains(text(),'classroom')]");
+	public By btnMenu = By.xpath("(//div[@class='menu-icon'][@title='Menu'])[1]");//updated on 10-Dec-20
+	public By classroomBtn = By.xpath("//*[@ng-if=\"(user_role=='COADMIN' && manage_classroom) || (user_role=='CUADMIN' && manage_classroom)\"]/a");
 	public By searchClassRoomName=By.xpath("//input[@id='searchClassroom']");
 	public By editIcon=By.xpath("(//*[@title='Edit'])[1]");
 	public By addInstructor=By.xpath("//div[@name='trainer_list']//div//input[@class='ui-select-search input-xs ng-pristine ng-untouched ng-valid ng-empty']");
@@ -31,7 +31,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By btnUpdate=By.xpath("//button[text()='Update']");
 	public By btnBackToList=By.xpath("//button[text()='Back To Classroom List']");
 	public By classRoomList=By.xpath("(//*[contains(@class, 'border-tb')])[1]");
-	public By eventList=By.xpath("(//*[@ng-click=\"viewEventDetails($event,event_list,'all')\"])[1]");
+	public By eventList=By.xpath("(//*[@ng-click=\"viewEventDetails($event,event_list,'all')\"])[1]");//updated on 10-Dec-20
 	public By eventSession=By.xpath("//*[@id='session_title']/i");
 	public By eventInstructor=By.xpath("//div[@class='col-lg-12 col-md-6 col-sm-6 col-xs-6 padding-t-0 padding-b-0 padding-l-5 padding-r-20 padding-l-10']//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required']");
 	public By selectedInstructor=By.xpath("(//*[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open'])[1]//span");
@@ -103,22 +103,22 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 */
 	public void goToclassroom() {
 		//2-Dec-20: waiting time increased - 5 to 10
-		wait(5);
+		wait(20);
 		//ends
 		if(driver.findElement(btnMenu).isDisplayed()==true) {
 			click(btnMenu);
 			//4-Sep-20: waiting time increased - 2 to 5
-			wait(5);
+			wait(20);
 			//ends
 			click(classroomBtn);
 			//4-Sep-20: waiting time increased - 5 to 10
-			wait(10);
+			wait(20);
 			//ends
 		}
 		else {
-			wait(10);
+			wait(20);
 			click(btnMenu);
-			wait(3);
+			wait(10);
 			click(classroomBtn);
 			wait(10);
 		}

@@ -752,7 +752,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	public By worningMsg=By.xpath("//div[@class='text-danger font-size-12 padding-l-5 ng-binding ng-scope']");
 	public By clickCETTime=By.xpath("//*[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//*[contains(text(), 'CET European Central Time (GMT+1:00)')]");
 	public By clickISTTime=By.xpath("//li[contains(text(), 'IST India Standard Time (GMT+5:30)')]");
-	
+
 	public By selectPM=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
 	public static String EventType=null;
 
@@ -764,21 +764,21 @@ public class ClassroomEventPage extends FractalBasePage{
 	public String minParticipants= "02";
 	public String rescheduleTimeZoneIST= "IST";
 	public String rescheduleTimeZoneCET= "CET";
-	
+
 	public void clickClassroom() {
-	try {	//added on 4Sep20
-		wait(10);
-//		//ends
-		moveElementFocusandClick(searchClassRoomName);
-//		clear(searchClassRoomName);
-		wait(5);
-		enterData(classRoomName,searchClassRoomName);
-		wait(10);
-		click(firstRowClassRoomList);
-		wait(10);
-	}catch(Exception e) {
-		print("FAILED: Classroom is take more waiting time");
-	}
+		try {	//added on 4Sep20
+			wait(20);
+			//		//ends
+			moveElementFocusandClick(searchClassRoomName);
+			clear(searchClassRoomName);
+			wait(5);
+			enterData(classRoomName,searchClassRoomName);
+			wait(10);
+			click(firstRowClassRoomList);
+			wait(15);
+		}catch(Exception e) {
+			print("FAILED: Classroom is take more waiting time");
+		}
 	}
 
 	/* Function name: classroomEventCreation()
@@ -862,6 +862,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	public void deleteEvent() {
 		try{wait(5);
 		if(elementExist(deleteBtn)) {
+			wait(3);
 			click(deleteBtn);
 			wait(3);
 			click(deleteConformBtn);

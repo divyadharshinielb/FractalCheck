@@ -36,7 +36,7 @@ public class LoginPage extends FractalBasePage {
 	private By userAccountLogo=By.xpath("(//*[@class='logout_pop']//div)[1]");//Updated on 25-Nov-20
 	private By userLogout=By.xpath("//*[@role='menu']//li[text()='Logout']");//Updated on 4-Nov-20
 	private By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']"); 
-	private By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]/div[5]");
+	private By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]//*[contains(text(),'Logout')]");
 	//Ends
 	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
 	public LoginPage(WebDriver driver) {
@@ -243,19 +243,23 @@ public class LoginPage extends FractalBasePage {
 //		if(elementExist(prelogin)) {
 //			click(prelogin);
 //		}
+		wait(10);//Updated on 9-Dec-20
 		goTo("https://staging-origin.originfractal.com/login");
-		wait(5); //Updated on 3-Dec-20
+		wait(20); //Updated on 9-Dec-20
 		enterData("siteadmin@origin.com",tbUserName);
 		enterData("P@ssw0rd",tbPassword);
 		wait(3);
 		click(qaLoginBtn);	
+		wait(10);//Updated on 9-Dec-20
 	}
 	public void loginInstructorwithCookies(String instUserID,String instPassword){
 		wait(5);
 //		if(elementExist(prelogin)) {
 //			click(prelogin);
 //		}
+		wait(5);//Updated on 9-Dec-20
 		goTo("https://staging-origin.originfractal.com/login");
+		wait(5);//Updated on 9-Dec-20
 		if(elementExist(btnCookies)) {
 			click(btnCookies);
 		}
@@ -266,11 +270,15 @@ public class LoginPage extends FractalBasePage {
 //		if(elementExist(prelogin)) {
 //			click(prelogin);
 //		}
+		wait(5);//Updated on 9-Dec-20
 		goTo("https://staging-origin.originfractal.com/login");
-		wait(5);
-		enterData(instUserID,tbUserName); 
+		wait(10);//Updated on 9-Dec-20
+		enterData(instUserID,tbUserName);
+		wait(3);
 		enterData(instPassword,tbPassword);
+		wait(3);
 		click(btnLogin);
+		wait(10);
 	} 
 	//Ends
 	//Added by vignesh on 16-Nov-20

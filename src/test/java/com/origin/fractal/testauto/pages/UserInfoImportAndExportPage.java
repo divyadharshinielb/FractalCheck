@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.steps.MenuSteps;
 /*
  * File: UserInfoImportAndExportPage.java
  * Purpose: The Admin able to Import/Export the xlsx file (FR1-2356)
@@ -12,7 +13,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  * Updated on: 03-Nov-2020
  */
 public class UserInfoImportAndExportPage extends FractalBasePage{
-	public MenuPage menu= null;
+	public MenuSteps MenuSteps= null;
 	private By btnImport = By.xpath("(//button[@class='md-raised btn btn-lg btn-default text-uppercase'])[1]"); 
 	private By btnExport = By.xpath("(//button[@class='md-raised btn btn-lg btn-default text-uppercase'])[2]"); 
 	private By downloadTemplate= By.xpath("//a[text()='template']");
@@ -43,13 +44,13 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 
 	public UserInfoImportAndExportPage(WebDriver driver) {
 		super(driver);
-		menu=new MenuPage(driver);
+		MenuSteps=new MenuSteps(driver);
 	}
 	/* Method: verifyDownloadTemplate() 
 	 * purpose: Check the sample template is Available
 	 */
 	public boolean verifyDownloadTemplate() {
-		menu.gotoManageUsers();
+		MenuSteps.gotoManageUsers();
 		elementExist(btnImport);
 		elementExist(btnExport);
 		click(btnImport);

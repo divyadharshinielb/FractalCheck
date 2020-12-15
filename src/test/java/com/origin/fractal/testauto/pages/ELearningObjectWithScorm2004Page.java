@@ -17,7 +17,6 @@ import com.origin.fractal.testauto.steps.ManageContentSteps;
 
 public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	LearningObjectHTMLPage LearningObjectHTMLPage = null;
-	ManageContentItemCodesPage ManageContentItemCodesPage = null;
 	ManageContentItemCodesSteps	ManageContentItemCodesSteps =null;
 	ManageContentSteps ManageContentSteps = null;
 	public By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
@@ -55,7 +54,6 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public ELearningObjectWithScorm2004Page(WebDriver driver) {
 		super(driver);
 		LearningObjectHTMLPage=new LearningObjectHTMLPage(driver);
-		ManageContentItemCodesPage = new ManageContentItemCodesPage(driver); 
 		ManageContentSteps = new ManageContentSteps(driver);
 		ManageContentItemCodesSteps = new ManageContentItemCodesSteps(driver);
 		pageName="Scorm2004";
@@ -63,9 +61,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 
 	/* Function Name: verifyDeleteHTMLLearnignobject()
 	 * Action: remove the HTML-LO in bundle and delete the HTML-LO
-	 * Return type: boolean
 	 */
-	public boolean verifyDeleteELearnignobjectWithscorm2004() {
+	public void verifyDeleteELearnignobjectWithscorm2004() {
 		By scormLOName=By.xpath("//*[contains(text(),'"+getLabel("eLearningName")+"')]");
 		//		ManageContentItemCodesSteps.goToManagecontent();
 		//commented on 7-Sep-20
@@ -81,10 +78,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		wait(2);
 		click(deleteOKBtn);
 		wait(5);//Updated on 16-Nov-20
-		if(elementExist(NoLOFound)) {
-			return true;
-		}
-		return false;		
+
 	}
 
 	/* Function Name: verifyCreateELearningObjectWithscorm2004()
@@ -94,11 +88,11 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public boolean verifyCreateELearningObjectWithscorm2004() {
 		By scormLOName=By.xpath("//*[text()='"+getLabel("eLearningName")+"']");
 		ManageContentItemCodesSteps.goToManagecontent();
-		wait(2);
+		wait(10);
 		ManageContentSteps.clickOnCreateLobjButton();
-		wait(2);
+		wait(10);
 		moveElementFocusandClick(btnElearning);
-		wait(2);
+		wait(5);
 		enterData(getLabel("eLearningName"),eLeatningTitleTextArea);
 		click(LearningObjectHTMLPage.htmlSelectCatagory);
 		moveElementFocusandClick(LearningObjectHTMLPage.htmlGenaralCatagory);
@@ -166,15 +160,13 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 */
 	public void createandEditCatalogBundleWithscorm2004(String action) {
 		ManageContentItemCodesSteps.goToManagecontent();
-		wait(5);
+		wait(10);
 		click(lblCatalogTab);
 		//Waiting time increased on 7-Sep-20
-		wait(3);
+		wait(10);
 		//ends
 		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
-		wait(2);
-		enterData(getLabel("eLearningBundleName"),searchFieldCatItem);
-		wait(2);
+		wait(10);
 		click(catEditBtn);
 		wait(2);
 		click(continueBtn);
@@ -182,13 +174,13 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		moveElementFocusandClick(LearningObjectHTMLPage.deleteLOInCatalog);
 		wait(2);
 		click(addBundle);
-		wait(2);
+		wait(5);
 		if (action.equalsIgnoreCase("Add scorm2004")) {
 			enterData(getLabel("editeLearningName"),LearningObjectHTMLPage.htmlLOSearchCatalogAddModule);
-			wait(2);
+			wait(5);
 		}
 		click(LearningObjectHTMLPage.searchResultAddModle);
-		//		wait(2);
+		//		wait();
 		//		click(continueBtn1);
 		wait(2);
 		click(saveBtn);
@@ -225,7 +217,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 */
 	public boolean userSearchElearningobjectWithscorm2004AndLaunch() {
 		By scormlO=By.xpath("(//*[contains(text(),'"+getLabel("editeLearningName")+"')])[1]");
-		wait(5);
+		wait(10);
 		click(searchfieldUser);
 		enterData(getLabel("eLearningName"),searchfieldUser);
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
@@ -258,10 +250,11 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 */
 	public boolean verifyInvalidscorm2004() {
 		ManageContentItemCodesSteps.goToManagecontent();
+		wait(10);
 		ManageContentSteps.clickOnCreateLobjButton();
-		wait(2);
+		wait(10);
 		moveElementFocusandClick(btnElearning);
-		wait(2);
+		wait(3);
 		enterData("CheckInvalidScorm2004file",eLeatningTitleTextArea);
 		click(LearningObjectHTMLPage.htmlSelectCatagory);
 		moveElementFocusandClick(LearningObjectHTMLPage.htmlGenaralCatagory);
@@ -283,10 +276,10 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		enterData(LearningObjectHTMLPage.getLabel("DurationMM"),LearningObjectHTMLPage.htmlDurationMM);
 		wait(2);
 		click(btnSave);
-		wait(50);
+		wait(60);
 		if(elementExist(InvalidScorm)) {
 			moveElementFocusandClick(closeXBtn);
-			wait(2);
+			wait(3);
 			return true;
 		}
 		moveElementFocusandClick(closeXBtn);

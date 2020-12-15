@@ -92,9 +92,9 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		By htmlOName=By.xpath("//*[text()='"+getLabel("HtmlName")+"']");
 		goToManagecontent();
 		ManageContentSteps.clickOnCreateLobjButton();
-		wait(2);
+		wait(3);
 		moveElementFocusandClick(btnHtml);
-		wait(2);
+		wait(3);
 		enterData("AutoLOHTMLLearningObject",htmlTitleTextArea);
 		click(htmlSelectCatagory);
 		moveElementFocusandClick(htmlGenaralCatagory);
@@ -182,29 +182,29 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 */
 	public boolean createandEditCatalogBundleWithHTML(String action) {
 		try{goToManagecontent();
-		wait(5);
+		wait(20);
 		click(lblCatalogTab);
 		wait(10);
 		enterData("zAuto",searchFieldCatItem);
 		wait(5);
 		click(catEditBtn);
-		wait(2);
+		wait(5);
 		click(continueBtn);
-		wait(2);
+		wait(3);
 		moveElementFocusandClick(deleteLOInCatalog);
+		wait(2);
 		click(addBundle);
 		if (action.equalsIgnoreCase("ADD HTML")) {
 			enterData(getLabel("editHtmlName"),htmlLOSearchCatalogAddModule);
 			wait(2);
 		}
 		click(searchResultAddModle);
-		wait(2);
-		
-				click(continueBtn1);
-				wait(5);
-//		commented on 4-Dec-20
-//		click(saveBtn);
-//		wait(3);
+		wait(3);
+		click(continueBtn1);
+		wait(5);
+		//		commented on 4-Dec-20
+		//		click(saveBtn);
+		//		wait(3);
 		if(elementExist(allUsersUpdateSelectionBtn)) {
 			click(allUsersUpdateSelectionBtn);
 			wait(3);
