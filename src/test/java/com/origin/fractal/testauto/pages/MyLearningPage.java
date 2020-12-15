@@ -491,7 +491,7 @@ public class MyLearningPage extends FractalBasePage {
 				private By ratingStars = By.xpath("(//*[@class='my-masonry-grid_column'])[1]//*[@class='overlay']//*[@class='star']//*[@class='dv-star-rating']");
 				private By ratingDonebtn = By.xpath("(//*[@class='my-masonry-grid_column'])[1]//*[@class='overlay']//button[text()='DONE']");
 				//				private By completedItem= By.xpath("(//*[@class='my-masonry-grid_column'])[1]");
-				private By completedItem= By.xpath	("//*[@class='mylearn']/div/div/a");
+				private By completedItem= By.xpath	("(//*[@class='mylearn']/div/div[2]//a)[3]");
 				private By tabMyLearning = By.xpath("//*[@href='/mylearning']");//Added on 9_oct-20
 				private By certificationIcon= By.xpath("(//*[@class='detail_icon_Certify'])");
 
