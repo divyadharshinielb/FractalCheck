@@ -1,6 +1,6 @@
 package com.wv.auto.framework.utils;
 
-import java.io.File;
+//import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -23,7 +23,7 @@ public class Reporter {
 
 		// This will create the report file call this before start of testing
 		String reportFile = "target/TestReport.csv";
-		File file=new File(reportFile);
+		//		File file=new File(reportFile);
 		//		if(file.exists()) {
 		if (repWriter == null) {
 			repWriter = CSVManager.getCSVWriter(reportFile);
@@ -40,7 +40,7 @@ public class Reporter {
 
 		// This will create the report file call this before start of testing
 		String reportFile = "target/TestDetailReport.csv";
-		File file=new File(reportFile);
+		//		File file=new File(reportFile);
 		//		if(file.exists()) {
 		if (repWriterDetail == null) {
 			repWriterDetail = CSVManager.getCSVWriter(reportFile);
@@ -57,7 +57,7 @@ public class Reporter {
 
 		// This will create the report file call this before start of testing
 		String reportFile = "target/TestFailureReport.csv";
-		File file=new File(reportFile);
+		//		File file=new File(reportFile);
 		//		if(file.exists()) {
 		if (repWriterFailure == null) {
 			repWriterFailure = CSVManager.getCSVWriter(reportFile);

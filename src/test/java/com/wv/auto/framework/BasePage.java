@@ -93,17 +93,6 @@ public abstract class  BasePage {
 			return false;
 		}
 	}
-//	public boolean containsString(String expValue, String actualValue) {
-//		if (actualValue.contains(expValue)) {
-//			print("PASSED: The expected string is " + expValue
-//					+ " , the actual string is " + actualValue);
-//			return true;
-//		} else {
-//			print("FAILED: The expected string is " + expValue
-//					+ " , the actual string is " + actualValue);
-//			return false;
-//		}
-//	}
 	public String getAttributeValue(By objLoc,String attribute) {
 		String value = driver.findElement(objLoc).getAttribute(attribute);
 		return value;
@@ -200,4 +189,6 @@ public abstract class  BasePage {
 			return false;
 		}
 	}
+	
+	
 }
