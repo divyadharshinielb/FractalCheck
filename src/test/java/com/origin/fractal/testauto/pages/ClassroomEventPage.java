@@ -459,7 +459,7 @@ public class ClassroomEventPage extends FractalBasePage{
 		WebElement Element2= driver.findElement(lblSelectCalendar);
 		js2.executeScript("arguments[0].scrollIntoView();", Element2);
 		click(lblSelectCalendar);
-		wait(2);
+		wait(5);
 		click(dropdownSelectCalendar);
 		wait(2);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -498,6 +498,7 @@ public class ClassroomEventPage extends FractalBasePage{
 		verifyText("Select Instructor",insDropdoenAlertMshg);
 	}
 	public void verifySecondPageAlertMsgs() {
+		wait(2);
 		click(btnSave);
 		verifyText("Maximum Participants Required",maxParticipantErr);
 		verifyText("Minimum Participants Required",minParticipantErr);

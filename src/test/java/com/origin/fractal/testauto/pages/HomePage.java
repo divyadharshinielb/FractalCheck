@@ -205,6 +205,7 @@ public class HomePage extends FractalBasePage {
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Bundle");
 	}
 	public void verifyCourseFilterWhatsNew() {
+		wait(2);
 		click(whlblAll);
 		click(whlblCourses);
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Course");

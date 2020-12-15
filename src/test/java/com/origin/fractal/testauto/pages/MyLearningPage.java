@@ -270,13 +270,13 @@ public class MyLearningPage extends FractalBasePage {
 		verifyPartialLabelText("lbloverview", lbloverview);
 	}
 	/*End - Moved from FractalBasePage by Manju Priya A on Nov-29-18*/
-	private By clickClassroomCatalog=By.xpath(".//a[contains(text(),'Automation Learningpath')]");
+	private By clickClassroomCatalog=By.xpath(".//a[contains(text(),'Automation_Learningpath')]");
 	private By globalSearch=By.xpath(".//input[@id='theInput']");
 	private By lbldetails=By.xpath("//button[@class='detail_btn']");//div[2]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[1]//button[contains(text(),'DETAILS')]//div[5]//div[1]//div[1]//div[2]//div[1]//h6[1]//div[1]//button[contains(text(),'Details')]
 	private By classroomlblDate=By.xpath("//p[contains(@class,'timebox-li margin-b-7')]");
 	private By classroomlblTime=By.xpath("//div[contains(@class,'margin-t-0')]//p[2]");
     private By classroomlblLocation=By.xpath("//div[contains(@class,'display-box')]");
-    private By lblAssignedClassroom=By.xpath("//h1[contains(text(),'Automation classroom')]");
+    private By lblAssignedClassroom=By.xpath("//h3[contains(text(),'checking_for_classroom1')]");
     private By classroomlblEvent=By.xpath("//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[1]");
     private By classroomlblEventDate=By.xpath("//div[contains(@class,'col-lg-2 col-md-2 col-sm-2 col-xs-2 height-115 event-bg')]");
     private By classroomlblEventTime=By.xpath("//div[contains(@class,'display-box')]//div[contains(@class,'padding-t-5')]");
@@ -301,7 +301,7 @@ public class MyLearningPage extends FractalBasePage {
 				click(globalSearch);
 				wait(10);	
 				Actions action=new Actions(driver);
-				action.sendKeys("Automation Learningpath").sendKeys(Keys.ENTER).build().perform();
+				action.sendKeys("Automation_Learningpath").sendKeys(Keys.ENTER).build().perform();
 				 wait(15);
 			 
 			 WebElement element = driver.findElement(clickClassroomCatalog); Actions 
@@ -316,8 +316,8 @@ public class MyLearningPage extends FractalBasePage {
 		    }
 			  public void	verifyAssignedClassroom(){
 				  scrollBar();
-				  wait(2);
-				 verifyText("Automation classroom",lblAssignedClassroom);
+				  wait(5);
+				 verifyText("checking_for_classroom1",lblAssignedClassroom);
 					}
 			  
 			  public void	verifyDetailsBtn(){
@@ -419,7 +419,7 @@ public class MyLearningPage extends FractalBasePage {
 		   /* WebElement element = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom 1')]")); Actions
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();*/
-			WebElement element = driver.findElement(By.xpath("//h1[contains(text(),'checking for classroom1')]"));
+			WebElement element = driver.findElement(By.xpath("//h1[contains(text(),'checking_for_classroom1')]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			wait(5);
 		    }
