@@ -194,8 +194,8 @@ public class DefaultGroupSettingsPage extends FractalBasePage {
 		wait(5);
 		moveElementFocusandClick(iconAssign);
 		wait(10);
-		click(selectAssignItem);
-		wait(3);
+//		click(selectAssignItem);
+//		wait(3);
 		click(saveBtn);
 		wait(4);
 	}

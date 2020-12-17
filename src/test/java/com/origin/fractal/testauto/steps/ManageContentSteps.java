@@ -12,24 +12,59 @@ public class ManageContentSteps  extends FractalBaseStep{
 		fBPage = page;
 	}
 	public void verifyAudioCreationPage() {
-		page.verifyAudioCreationPage();
+		result ="PASSED";
+		try{page.verifyAudioCreationPage();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void verifyMandatoryFieldsAlerMessage() {
-		page.verifyMandatoryFieldsAlerMessage();
+		result ="PASSED";
+		try{page.verifyMandatoryFieldsAlerMessage();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void verifyItemCode() {
-		page.verifyItemCode();
+		result ="PASSED";
+		try{page.verifyItemCode();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void clickCatalog() {
-		page.clickCatalog();
+		result ="PASSED";
+		try{page.clickCatalog();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void validity() {
-		page.validity();
+		result ="PASSED";
+		try{page.validity();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void verifyReadMoreLessText() {
-		page.verifyReadMoreLessText();
+		result ="PASSED";
+		try{page.verifyReadMoreLessText();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void verifyCatalogTitleValidation() {
-		page.verifyCatalogTitleValidation();
+		result ="PASSED";
+		try{	page.verifyCatalogTitleValidation();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
+	}
+	public void clickOnCreateLobjButton() {
+		result ="PASSED";
+		try{page.clickOnCreateLobjButton();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 }

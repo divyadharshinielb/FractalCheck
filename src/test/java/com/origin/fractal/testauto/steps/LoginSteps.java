@@ -111,7 +111,7 @@ public class LoginSteps extends FractalBaseStep {
 			result="FAILED";
 		}
 	}
-//Ends
+	//Ends
 	public void inValidPassword() {
 		result ="Passed";
 		try {
@@ -161,18 +161,30 @@ public class LoginSteps extends FractalBaseStep {
 
 	}
 
-	//Added by vignesh (WVI) on 10/April/20
+	//Added by vignesh (WVI) on 10/April/20 and updated on 17-Dec-20
 	public void siteAdminLoginwithcookies() {
-		page.siteAdminLoginwithcookies();
+		try {	page.siteAdminLoginwithcookies();
+		}catch(Exception e) {
+			print("Login issue found");
+		}
 	}
 	public void siteAdminLogin() {
-		page.siteAdminLogin();
+		try {page.siteAdminLogin();
+	}catch(Exception e) {
+		print("Login issue found");
+	}
 	}
 	public void loginInstructorwithCookies(String instUserID,String instPassword) {
-		page.loginInstructorwithCookies(instUserID,instPassword);
+		try {page.loginInstructorwithCookies(instUserID,instPassword);
+	}catch(Exception e) {
+		print("Login issue found");
+	}
 	}
 	public void loginInstructor(String instUserID,String instPassword) {
-		page.loginInstructor(instUserID,instPassword);
+		try {page.loginInstructor(instUserID,instPassword);
+	}catch(Exception e) {
+		print("Login issue found");
+	}
 	}
 	//Ends
 	//Added by vignesh (WVI) on 16-Nov-20
@@ -184,7 +196,7 @@ public class LoginSteps extends FractalBaseStep {
 		}
 		wait(3);
 	}
-	
+
 	/* Function name: adminLogout()
 	 * Action: admin logout
 	 * Return Type: void

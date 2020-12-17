@@ -4,16 +4,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.steps.ManageContentItemCodesSteps;
+import com.origin.fractal.testauto.steps.ManageContentSteps;
 /*
  * File/Class name: ElearningOrientationPage.java
  * Created by: Vignesh 
  * Created on: 10-July-2020
- * Updated on: 14-July-2020
+ * Updated on: 17-Dec-2020
  * Purpose: To check FR1-2539 - e-learning Orientation
  */
 public class ElearningOrientationPage extends FractalBasePage {
-	ManageContentPage ManageContentPage = null;
-	ManageContentItemCodesPage ManageContentItemCodesPage=null;
+	ManageContentSteps ManageContentSteps = null;
+	ManageContentItemCodesSteps ManageContentItemCodesSteps=null;
 	private By btnElearning = By.xpath(".//button/span[contains(text(),'eLearning')]");
 	private By lblOritation= By.xpath("//*[text()='Orientation']");
 	private By lblOritationAuto= By.xpath("//*[text()='Auto']");
@@ -34,10 +36,11 @@ public class ElearningOrientationPage extends FractalBasePage {
 	private By updateBtn = By.xpath("//*[text()='Update']");
 	private By newVersionReqNoBtn = By.xpath("//*[text()='No']");
 	private By updateagainNoBtn = By.xpath("//*[text()='No']");
+	private By btnContinue = By.xpath("//button[contains(text(),'Continue')]"); // Continue button
 	public ElearningOrientationPage(WebDriver driver) {
 		super(driver);
-		ManageContentPage = new ManageContentPage(driver);
-		ManageContentItemCodesPage= new ManageContentItemCodesPage(driver);
+		ManageContentSteps = new ManageContentSteps(driver);
+		ManageContentItemCodesSteps= new ManageContentItemCodesSteps(driver);
 		pageName="eLearningOrientation";
 	}
 
@@ -46,8 +49,8 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: Click on add learning object button and e learning creation
 	 */	
 	public void gotoAddELearning() { 
-		ManageContentItemCodesPage.goToManagecontent();
-		ManageContentPage.clickOnCreateLobjButton();
+		ManageContentItemCodesSteps.goToManagecontent();
+		ManageContentSteps.clickOnCreateLobjButton();
 		wait(2);
 		moveElementFocusandClick(btnElearning);
 		wait(2);
@@ -103,10 +106,17 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: click on elearning item type filter and search a name
 	 */
 	public void clickeLearningItemFilter(String Name) {
+		clear(searchFieldLearnObj);
+		wait(10);
 		enterData(getLabel(Name),searchFieldLearnObj);	
 		wait(5);
 		click(editBtn);
 		wait(5);
+		//Added on 17-Dec-20
+		if(elementExist(btnContinue)==true) {
+			moveElementFocusandClick(btnContinue);
+		}
+		//Ends
 	}
 
 	/* Method name: editLOandselectUploadFilePackageType()

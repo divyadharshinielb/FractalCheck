@@ -25,7 +25,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By categoryName = By.xpath("//input[@ng-model='category.name']");
 	private By categoryDescription = By.xpath("//*[@ng-model='category.description']");
 	private By categoryCreateBtn = By.xpath("//*[text()='Create'][@type='submit']");
-	private String cateName = "createCategories";
+	private String cateName = "createCategoryItem";
 	private String cateDescri = "CreateDescription";
 	private By createdCategory=By.xpath("//*[contains(text(),'"+cateName+"')]");// updated on 20-Nov-20
 	private By deleteCategory=By.xpath("(//*[@title='Delete'])[1]");
@@ -38,7 +38,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By accessArea = By.xpath("(//label[contains(text(),'Manage Content')])");
 	private By submitBtn = By.xpath("(//*[contains(text(),'Submit')])");
 	private By backToRoleBtn = By.xpath("(//*[contains(text(),'Back to Roles List')])");
-	private By roleDeteleBtn = By.xpath("(//*[@ng-repeat='userslist in dirusers | filter:search']//i[@ng-click='userConfirmDelete(userslist)'])[27]");
+	private By roleDeteleBtn = By.xpath("(//*[@ng-repeat='userslist in dirusers | filter:search']//i[@ng-click='userConfirmDelete(userslist)'])[19]");// updated by 17-Dec-20
 	private String roleName="createManageRole";
 	private By roleNameXpath = By.xpath("//*[contains(text(),'"+roleName+"')]");
 	private By currencyMenu = By.xpath("//li[@class='settings']//a[@href='#content/currency']");
@@ -193,7 +193,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	/* Function: verifyWhiteLabel()
 	 * Purpose: verify the White label settings
 	 */
-	public boolean verifyWhiteLabel() {
+	public void verifyWhiteLabel() {
 		wait(5);
 		moveElementFocus(btnSettings);
 		moveElementFocusandClick(whiteLabel);
@@ -205,6 +205,6 @@ public class AdminSettingPage extends FractalBasePage  {
 		wait(5);
 		click(SaveBtn);
 		wait(1);
-		return elementExist(updatedText);
+	 elementExist(updatedText);
 	}
 }

@@ -16,95 +16,95 @@ public class ManageContentItemCodesSteps extends FractalBaseStep {
 	}
 	//Learning Objects Itemcode verification
 	public void verifyLOICeLearn() {
-		page.verifyLOICeLearn();
+		try{page.verifyLOICeLearn();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyLOICVideo() {
-		page.verifyLOICVideo();
+		try{page.verifyLOICVideo();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyLOICDocument() {
-		page.verifyLOICDocument();
+		try{page.verifyLOICDocument();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 
 	public void verifyLOICImage() {
-		page.verifyLOICImage();
+		try{page.verifyLOICImage();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyLOICAssessment() {
-		page.verifyLOICAssessment();
+		try{page.verifyLOICAssessment();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyLOICvLab() {
-		page.verifyLOICvLab();
+		try{page.verifyLOICvLab();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyLOICAudio() {
-		page.verifyLOICAudio();
+		try{page.verifyLOICAudio();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	//Learning Objects Edited Itemcode verification
 	public void editVerifyLOICeLearn() {
-		page.editVerifyLOICeLearn();
+		try{page.editVerifyLOICeLearn();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void editVerifyLOICVideo() {
-		page.editVerifyLOICVideo();
+		try{page.editVerifyLOICVideo();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void editVerifyLOICDocument() {
@@ -112,189 +112,230 @@ public class ManageContentItemCodesSteps extends FractalBaseStep {
 			page.editVerifyLOICDocument();
 			if (page.boolResult == true) {
 				result ="PASSED";
-			}
-			else
-			{ 
+			}else{
 				result ="FAILED";
+			}}	catch(Exception e) {
+				result="FAILED";
 			}
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();   
+	}
+	public void editVerifyLOICImage() {
+		try{page.editVerifyLOICImage();
+		if (page.boolResult == true) {
+			result ="PASSED";
+		}else{
+			result ="FAILED";
+		}}	catch(Exception e) {
 			result="FAILED";
 		}
 	}
-	public void editVerifyLOICImage() {
-		page.editVerifyLOICImage();
-		if (page.boolResult == true) {
-			result ="PASSED";
-		}
-		else
-		{
-			result ="FAILED";
-		}
-	}
 	public void editVerifyLOICAssessment() {
-		page.editVerifyLOICAssessment();
+		try{page.editVerifyLOICAssessment();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void editVerifyLOICvLab() {
-		page.editVerifyLOICvLab();
+		try{page.editVerifyLOICvLab();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void editVerifyLOICAudio() {
-		page.editVerifyLOICAudio();
+		try{page.editVerifyLOICAudio();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	//Catalog Item Itemcode Verifycation
 	public void verifyCIICContBundle() {
-		page.verifyCIICContBundle();
+		try{page.verifyCIICContBundle();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyCIICLearningPath() {
-		page.verifyCIICLearningPath();
+		try{page.verifyCIICLearningPath();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyCIICCourse() {
-		page.verifyCIICCourse();
+		try{page.verifyCIICCourse();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyCIICResource() {
-		page.verifyCIICResource();
+		try{page.verifyCIICResource();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyCIICPodcast() {
-		page.verifyCIICPodcast();
+		try {	page.verifyCIICPodcast();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	//edit Catalog Item Itemcode Verifycation
 	public void editVerifyCIICContBundle() {
-		page.editVerifyCIICContBundle();
+		try{page.editVerifyCIICContBundle();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void editVerifyCIICLearningPath() {
-		page.editVerifyCIICLearningPath();
+		try {	page.editVerifyCIICLearningPath();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void editVerifyCIICCourse() {
-		page.editVerifyCIICCourse();
+		try{page.editVerifyCIICCourse();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void editVerifyCIICResource() {
-		page.editVerifyCIICResource();
+		try{page.editVerifyCIICResource();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void editVerifyCIICPodcast() {
-		page.editVerifyCIICPodcast();
+		try{page.editVerifyCIICPodcast();
 		if (page.boolResult == true) {
 			result ="PASSED";
-		}
-		else
-		{
+		}else{
 			result ="FAILED";
+		}}	catch(Exception e) {
+			result="FAILED";
 		}
 	}
 	public void verifyAdminLearningObjects() {
-		page.verifyAdminLearningObjects();
+		result ="PASSED";
+		try{page.verifyAdminLearningObjects();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void editVerifyAdminLearningObjects() {
-		page.editVerifyAdminLearningObjects();
+		result ="PASSED";
+		try{page.editVerifyAdminLearningObjects();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void verifyAdminCatalogItems(){
-		page.verifyAdminCatalogItems();
+		result ="PASSED";
+		try{page.verifyAdminCatalogItems();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void editVerifyAdminCatalogItems(){
-		page.editVerifyAdminCatalogItems();
+		result ="PASSED";
+		try{page.editVerifyAdminCatalogItems();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void verifyUserLearningObjects() {
-		page.verifyUserLearningObjects();
+		result ="PASSED";
+		try{page.verifyUserLearningObjects();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void editVerifyUserLearningObjects() {
-		page.editVerifyUserLearningObjects();
+		result ="PASSED";
+		try{page.editVerifyUserLearningObjects();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void verifyUserCatalogItems(){
-		page.verifyUserCatalogItems();
+		result ="PASSED";
+		try{page.verifyUserCatalogItems();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void editVerifyUserCatalogItems(){
-		page.editVerifyUserCatalogItems();
+		result ="PASSED";
+		try{page.editVerifyUserCatalogItems();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void itemcoderenameLearningObject() {
-		page.itemcoderenameLearningObject();
+		result ="PASSED";
+		try{page.itemcoderenameLearningObject();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
 	}
 	public void itemcoderenameCatalog() {
-		page.itemcoderenamecatalog();
-	}	
+		result ="PASSED";
+		try{page.itemcoderenamecatalog();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
+	}
+	public void goToManagecontent() {
+		result ="PASSED";
+		try{page.goToManagecontent();
+		}	catch(Exception e) {
+			result="FAILED";
+		}
+	}
 
 }

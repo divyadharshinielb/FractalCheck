@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import com.origin.fractal.testauto.FractalBasePage;
+import com.origin.fractal.testauto.steps.ManageContentItemCodesSteps;
+import com.origin.fractal.testauto.steps.ManageContentSteps;
 /* File Name: LearningObjectHTMLPage.java
  * Purpose: Check to HTML Learning object -FR1-2207
  * Created by: Vignesh
@@ -14,8 +16,8 @@ import com.origin.fractal.testauto.FractalBasePage;
  */
 public class LearningObjectHTMLPage extends FractalBasePage {
 	//	MenuPage menuPage = null;
-	ManageContentPage ManageContentPage = null;
-	ManageContentItemCodesPage ManageContentItemCodesPage=null;
+	ManageContentSteps ManageContentSteps = null;
+	ManageContentItemCodesSteps ManageContentItemCodesSteps=null;
 	public By learningObjectTab = By.xpath("//*[contains(@class, 'learningObjectTab')]/md-tabs-wrapper/md-tabs-canvas/md-pagination-wrapper/md-tab-item/span[text()='Learning Objects']");
 	public By btnHtml = By.xpath(".//button/span[contains(text(),'HTML')]");
 	public By htmlTitleTextArea=By.xpath("//*[@name='htmlName']");
@@ -67,8 +69,8 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public LearningObjectHTMLPage(WebDriver driver) {
 		super(driver);
 		//		menuPage = new MenuPage(driver);
-		ManageContentPage = new ManageContentPage(driver); 
-		ManageContentItemCodesPage= new ManageContentItemCodesPage(driver);
+		ManageContentSteps = new ManageContentSteps(driver); 
+		ManageContentItemCodesSteps= new ManageContentItemCodesSteps(driver);
 		pageName="HtmlLearningObject";
 	}
 
@@ -77,7 +79,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: null
 	 */
 	public void goToManagecontent(){
-		ManageContentItemCodesPage.goToManagecontent();
+		ManageContentItemCodesSteps.goToManagecontent();
 	}
 
 	/* Function Name: createHtmllearningobject()
@@ -87,7 +89,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public boolean verifyCreateHtmlLearningObject() {
 		By htmlOName=By.xpath("//*[text()='"+getLabel("HtmlName")+"']");
 		goToManagecontent();
-		ManageContentPage.clickOnCreateLobjButton();
+		ManageContentSteps.clickOnCreateLobjButton();
 		wait(2);
 		moveElementFocusandClick(btnHtml);
 		wait(2);
@@ -202,23 +204,23 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);	
 	}
 
-	/* Function Name: adminLogout()
-	 * Action: Admin logout
-	 * Return type: void
-	 */
-	public void adminLogout(){
-		ManageContentItemCodesPage.adminLogout();
-		wait(5);
-	}
-
-	/* Function Name: userLogout()
-	 * Action: User logout
-	 * Return type: void
-	 */
-	public void userLogout(){
-		ManageContentItemCodesPage.userLogout();
-		wait(5);
-	}
+//	/* Function Name: adminLogout()
+//	 * Action: Admin logout
+//	 * Return type: void
+//	 */
+//	public void adminLogout(){
+//		ManageContentItemCodesSteps.adminLogout();
+//		wait(5);
+//	}
+//
+//	/* Function Name: userLogout()
+//	 * Action: User logout
+//	 * Return type: void
+//	 */
+//	public void userLogout(){
+//		ManageContentItemCodesSteps.userLogout();
+//		wait(5);
+//	}
 
 	/* Function Name: verifyDeleteHTMLLearnignobject()
 	 * Action: remove the HTML-LO in bundle and delete the HTML-LO

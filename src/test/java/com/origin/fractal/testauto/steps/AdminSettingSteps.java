@@ -100,7 +100,7 @@ public class AdminSettingSteps extends FractalBaseStep{
 	public void verifyWhiteLabel() {
 		result="FAILED";
 		try {
-			if(settingpage.verifyWhiteLabel()==true)
+			settingpage.verifyWhiteLabel();
 				result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";

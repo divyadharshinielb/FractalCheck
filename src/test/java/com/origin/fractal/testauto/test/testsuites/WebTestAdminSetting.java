@@ -20,8 +20,6 @@ public class WebTestAdminSetting extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		AdminSettingSteps adminsettings=new AdminSettingSteps(driver);
 		siteAdminLoginwithcookies(driver); 
-		adminsettings.verifyWhiteLabel();
-		Reporter.writeSummary("OKA32-4_Admin_White labeling_TC-001, Verify Admin is able to configure the branding details in white labeling," +  adminsettings.getResult()); 
 		adminsettings.verifyCreateandDeleteCategory();
 		Reporter.writeSummary("FR-55_Admin_ManageCategory_TC-001, Verify Admin is able to create and delete the categories," +  adminsettings.getResult()); 
 		adminsettings.checkClassroomSettings();
@@ -34,5 +32,7 @@ public class WebTestAdminSetting extends FractalBaseWebTest {
 		Reporter.writeSummary("OKA32-6_Admin_Notification_TC-001, Verify Admin is able to configure the notifications from settings," +  adminsettings.getResult()); 
 		adminsettings.verifyAddandDeleteManageRole();
 		Reporter.writeSummary("FR1-2019_Admin_Create Role_TC-001, Verify Admin is able to create a new role.," +  adminsettings.getResult()); 
-	}
+		adminsettings.verifyWhiteLabel();
+		Reporter.writeSummary("OKA32-4_Admin_White labeling_TC-001, Verify Admin is able to configure the branding details in white labeling," +  adminsettings.getResult()); 
+		}
 }
