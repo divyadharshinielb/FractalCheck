@@ -13,7 +13,7 @@ import com.wv.auto.framework.utils.TimeManager;
 
 /* File Name: WebTestOriginFractalLoad.java
  * Purpose: https://originfractal.in/ - Verifying page loading test
- * Number of Test Cases: 21
+ * Number of Test Cases: 20
  * Created by: Vigneshwaran R
  * Created on: 9-Dec-2020
  */
@@ -50,20 +50,20 @@ public class WebTestOriginFractal extends WebTestOriginFractalWebBase {
 		Steps.verfiyKnowMoreBtn();
 		Reporter.writeSummary("TC-12_HomePage_BtnKnowMore,Verifying the Know more button is Clickable,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verfiyTryPlatForm();
-		Reporter.writeSummary("TC-14_PlatformPage_TryBtn,Verifying the Try button-PlatForm page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-13_PlatformPage_TryBtn,Verifying the Try button-PlatForm page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyiOSapp();
-		Reporter.writeSummary("TC-15_PlatformPage_Appstore Link ,Verifying the app store link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-14_PlatformPage_Appstore Link ,Verifying the app store link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyAndroidapp();
-		Reporter.writeSummary("TC-16_PlatformPage_PlayStore Link,Verifying the play store link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-15_PlatformPage_PlayStore Link,Verifying the play store link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verfiyTryAndContactBtn();
-		Reporter.writeSummary("TC-17_OPMPage_Btn,Verifying the Try and Contact button are Clickable,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-16_OPMPage_Btn,Verifying the Try and Contact button are Clickable,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifySignUpBtn();
-		Reporter.writeSummary("TC-18_FeatureWorkPage_SignUpbtn,Verifying the SignUp button -FeatureWork page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-17_FeatureWorkPage_SignUpbtn,Verifying the SignUp button -FeatureWork page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyTalkToUs();
-		Reporter.writeSummary("TC-19_PhilosophyPage_Link,Verifying the Talk To Us link-Philosophy page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-18_PhilosophyPage_Link,Verifying the Talk To Us link-Philosophy page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyFooterFractalWeb();
-		Reporter.writeSummary("TC-20_Footer_OriginFractalLink,Verifying the OriginFractal link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-19_Footer_OriginFractalLink,Verifying the OriginFractal link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyFooterOriginWeb();
-		Reporter.writeSummary("TC-21_Footer_OriginLearningLink,Verifying the OriginLearning link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-20_Footer_OriginLearningLink,Verifying the OriginLearning link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 	}
 }
