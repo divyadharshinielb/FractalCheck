@@ -40,7 +40,9 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void doLogin() {
 		wait(10);
+		if (elementExist(prelogin)) {
 		click(prelogin);
+		}
 		wait(6);
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
@@ -67,7 +69,9 @@ public class LoginPage extends FractalBasePage {
 	}
 	public void loginToContentAdmin() {
 		wait(10);
+	if(elementExist(prelogin)){
 		click(prelogin);
+		}
 		wait(6);
 		enterData("siteadmin@origin.com",tbUserName);//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPassword);//contentadmin@origin.com
