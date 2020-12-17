@@ -139,4 +139,20 @@ public class MenuPage extends FractalBasePage{
 			wait(3);
 		}
 		//ended - Vignesh
+		
+		//Starts Here - Vignesh 31-May-2020
+		public By btnReports = By.xpath("//a[@href='#reports']//div[@class='icon']"); /* Reports icon button in Admin side menu */
+		/*
+		 * Method name: gotoReports()
+		 * Created by: Vignesh 
+		 * Created date: 31/May/2020
+		 * Return type: void
+		 * Desc: Clicks on the Reports under Admin side menu
+		 */	
+		public void gotoReports() {
+			clickMenu();
+			click(btnReports);
+			wait(3);
+		}
+		//Ends- Vignesh 31-May-2020
 }

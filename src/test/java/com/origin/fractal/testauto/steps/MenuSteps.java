@@ -99,4 +99,15 @@ public class MenuSteps extends FractalBaseStep{
 			result="FAILED";
 		   }
 	}
+	
+	//Added by vignesh on 17-Dec-20
+	public void gotoReports() {
+		result ="PASSED";
+		   try {
+	    page.gotoReports();
+		   } catch(Exception e){  
+			result="FAILED";
+		   }
+	}
+	//ends
 }
