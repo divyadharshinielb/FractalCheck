@@ -1,6 +1,9 @@
 package com.origin.originweb.testauto.pages;
 
+import java.util.Set;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -17,6 +20,8 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By headerLogo=By.xpath("//*[@class='logo']");
 	private By newsSlider=By.xpath("//*[@id='normal-slidedown']");//Added on 26-Nov-20
 	private By btnCancelnewsSlider=By.xpath("//*[@id='normal-slidedown']//button[text()='Cancel']");//Added on 26-Nov-20
+	private By sliderCookies=By.xpath("//*[@id='normal-slidedown']");
+	private By bootomCookies=By.xpath("(//*[@id='ecl-notice'])[2]");
 	// Heading 
 	private By headerFeature	= By.xpath("(//UL[@class='navigation clearfix']//a)[1]");
 	private By headerPricing	= By.xpath("(//UL[@class='navigation clearfix']//a)[2]");
@@ -26,9 +31,9 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By headerAboutUs	= By.xpath("(//UL[@class='navigation clearfix']//a)[6]");
 	private By headerContact	= By.xpath("(//UL[@class='navigation clearfix']//a)[7]");
 	//Home page
-	private By postedBlog1		= By.xpath("((//*[@class='kc-list-item-3'])[1]//a)[1]");//Updated on 18-Dec-20
-	private By postedBlog2		= By.xpath("((//*[@class='kc-list-item-3'])[2]//a)[1]");//Updated on 18-Dec-20
-	private By postedBlog3 		= By.xpath("((//*[@class='kc-list-item-3'])[3]//a)[1]");//Updated on 18-Dec-20
+	private By postedBlog1		= By.xpath("((//*[@class='kc-list-item-3'])[1]//a)[text()='Read more ']");//Updated on 18-Dec-20
+	private By postedBlog2		= By.xpath("((//*[@class='kc-list-item-3'])[2]//a)[text()='Read more ']");//Updated on 18-Dec-20
+	private By postedBlog3 		= By.xpath("((//*[@class='kc-list-item-3'])[3]//a)[text()='Read more ']");//Updated on 18-Dec-20
 	private By banner 			= By.xpath("//*[@class='page-title page-titlex']");
 	//Blog page
 	private By search 			= By.xpath("//*[@placeholder='Search Here..']");//Added on 14-Dec-12
@@ -52,17 +57,22 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	public void goToURL() {
 		goTo(getLabel("webUrl"));
 		wait(10);
-		if(elementExist(cookiesBtn)) {
-			click(cookiesBtn);
-			wait(3);
-			click(btnUnderstand);
-			wait(3);
+		Set<Cookie> allCookies = driver.manage().getCookies();
+		for (Cookie cookie : allCookies) {
+		    driver.manage().deleteCookieNamed(cookie.getName());
 		}
-		driver.manage().deleteAllCookies();
-		//Added on 26-Nov-20
-		if(elementExist(newsSlider)) {
-			click(btnCancelnewsSlider);
-		}
+//		if(elementExist(cookiesBtn)) {
+//			click(cookiesBtn);
+//			wait(3);
+//			click(btnUnderstand);
+//			wait(5);
+//		}
+////		driver.manage().deleteAllCookies();
+//		wait(5);
+//		//Added on 26-Nov-20
+//		if(elementExist(newsSlider)) {
+//			click(btnCancelnewsSlider);
+//		}
 		wait(5);
 	}
 	/*Function Name: gotoHome()
