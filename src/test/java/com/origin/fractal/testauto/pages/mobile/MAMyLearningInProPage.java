@@ -223,7 +223,10 @@ public class MAMyLearningInProPage extends FractalAppPage {
 		wait(5);
 	}
 	public void clickCompletedAndInprogressTab() {
+		wait(10);
+		click(getObj(btnMenu));
 		wait(5);
+		clickMyLearning();
 		click(getObj(tabCompleted));
 		wait(5);
 		click(getObj(lblInprogress));
