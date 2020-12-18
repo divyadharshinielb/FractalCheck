@@ -93,17 +93,17 @@ public abstract class  BasePage {
 			return false;
 		}
 	}
-//	public boolean containsString(String expValue, String actualValue) {
-//		if (actualValue.contains(expValue)) {
-//			print("PASSED: The expected string is " + expValue
-//					+ " , the actual string is " + actualValue);
-//			return true;
-//		} else {
-//			print("FAILED: The expected string is " + expValue
-//					+ " , the actual string is " + actualValue);
-//			return false;
-//		}
-//	}
+	//	public boolean containsString(String expValue, String actualValue) {
+	//		if (actualValue.contains(expValue)) {
+	//			print("PASSED: The expected string is " + expValue
+	//					+ " , the actual string is " + actualValue);
+	//			return true;
+	//		} else {
+	//			print("FAILED: The expected string is " + expValue
+	//					+ " , the actual string is " + actualValue);
+	//			return false;
+	//		}
+	//	}
 	public String getAttributeValue(By objLoc,String attribute) {
 		String value = driver.findElement(objLoc).getAttribute(attribute);
 		return value;
@@ -166,10 +166,11 @@ public abstract class  BasePage {
 		}
 	}
 	public void moveElementFocus(By elementLoc) {
+		wait(5);
 		WebElement element=driver.findElement(elementLoc);
 		Actions actions= new Actions(driver);
 		actions.moveToElement(element).perform();
-		wait(2);
+		wait(5);
 	}
 	public void moveElementFocusandClick(By elementLoc) {
 		WebElement element=driver.findElement(elementLoc);
@@ -178,7 +179,7 @@ public abstract class  BasePage {
 		wait(3);
 		click(elementLoc);
 		print("The element: "+elementLoc+" is Clicked.");
-//		wait(2);
+		//		wait(2);
 	}
 	public boolean isDisplayed(By element) {
 		if(driver.findElement(element).isDisplayed()) {

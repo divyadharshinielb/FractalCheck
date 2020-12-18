@@ -16,6 +16,16 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		loadPage = new OriginFractalLoadPage(driver);
 
 	}
+	
+	public void goToURL() {
+		result="FAILED";
+		try{
+			loadPage.goToURL(); 
+				result="PASSED";
+		}catch (Exception e) {
+			print("URL navactation is problem");
+		}
+	}
 
 	/* Function Name: verifyHomeLogo()
 	 * Purpose: Verify the page loading time

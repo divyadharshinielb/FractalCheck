@@ -5,6 +5,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.origin.originweb.testauto.pages.OriginFractalLoadPage;
+import com.origin.originweb.testauto.steps.OriginFractalLoadSteps;
 
 public class WebTestOriginFractalWebBase extends OriginFractalWebBaseTest {
 	@BeforeMethod
@@ -12,7 +13,7 @@ public class WebTestOriginFractalWebBase extends OriginFractalWebBaseTest {
 	}
 	protected void goToUrl(WebDriver driver) {
 		print("Inside testLogin");
-		OriginFractalLoadPage Page = new OriginFractalLoadPage(driver);
+		OriginFractalLoadSteps Page = new OriginFractalLoadSteps(driver);
 		print("Inside testLogin - Page Opened");
 		Page.goToURL();
 	}

@@ -26,9 +26,9 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By headerAboutUs	= By.xpath("(//UL[@class='navigation clearfix']//a)[6]");
 	private By headerContact	= By.xpath("(//UL[@class='navigation clearfix']//a)[7]");
 	//Home page
-	private By postedBlog1		= By.xpath("(//*[@class='entry-thumb-wrapper'])[1]");
-	private By postedBlog2		= By.xpath("(//*[@class='entry-thumb-wrapper'])[2]");
-	private By postedBlog3 		= By.xpath("(//*[@class='entry-thumb-wrapper'])[3]");
+	private By postedBlog1		= By.xpath("((//*[@class='kc-list-item-3'])[1]//a)[1]");//Updated on 18-Dec-20
+	private By postedBlog2		= By.xpath("((//*[@class='kc-list-item-3'])[2]//a)[1]");//Updated on 18-Dec-20
+	private By postedBlog3 		= By.xpath("((//*[@class='kc-list-item-3'])[3]//a)[1]");//Updated on 18-Dec-20
 	private By banner 			= By.xpath("//*[@class='page-title page-titlex']");
 	//Blog page
 	private By search 			= By.xpath("//*[@placeholder='Search Here..']");//Added on 14-Dec-12
@@ -51,16 +51,19 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	 */
 	public void goToURL() {
 		goTo(getLabel("webUrl"));
-		if(elementExist(cookiesBtn)) {
-			click(cookiesBtn);
-			wait(2);
-			click(btnUnderstand);
-		}
-		//Added on 26-Nov-20
-		if(elementExist(newsSlider)) {
-			click(btnCancelnewsSlider);
-		}
-		wait(2);
+		wait(10);
+//		if(elementExist(cookiesBtn)) {
+//			click(cookiesBtn);
+//			wait(3);
+//			click(btnUnderstand);
+//			wait(3);
+//		}
+		driver.manage().deleteAllCookies();
+//		//Added on 26-Nov-20
+//		if(elementExist(newsSlider)) {
+//			click(btnCancelnewsSlider);
+//		}
+		wait(5);
 	}
 	/*Function Name: gotoHome()
 	 * purpose: Click on home icon
@@ -179,7 +182,6 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifylblLxpEnterprises() {
-		wait(1);
 		moveElementFocus(lblLXPEnterPrises);
 		return clickAndcheckLoading(lblLXPEnterPrises,txtEnterPrise);
 	}
@@ -188,7 +190,6 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifylblLxpDomain() {
-		wait(1);
 		moveElementFocus(lblLXPDomainExp);
 		return clickAndcheckLoading(lblLXPDomainExp,txtDomain);
 	}
