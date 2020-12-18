@@ -44,6 +44,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 */
 	public void goToURL() {
 		goTo(getLabel("webUrl"));
+		wait(5);//Added on 18-Dec-20
 	}
 	/*Function Name: gotoHome()
 	 * purpose: Click on home icon
