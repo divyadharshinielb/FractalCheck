@@ -4,7 +4,7 @@
   <artifactId>aautestauto</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>aautestauto</name>
-  <description>AAU  Test Automation</description>
+  <description>Test Automation</description>
 <!-- Define your dependencies here -->
 	<dependencies>
 		<!-- Selenium Dependency -->
