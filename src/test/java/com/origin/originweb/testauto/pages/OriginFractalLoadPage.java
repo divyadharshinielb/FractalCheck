@@ -52,17 +52,17 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	public void goToURL() {
 		goTo(getLabel("webUrl"));
 		wait(10);
-//		if(elementExist(cookiesBtn)) {
-//			click(cookiesBtn);
-//			wait(3);
-//			click(btnUnderstand);
-//			wait(3);
-//		}
+		if(elementExist(cookiesBtn)) {
+			click(cookiesBtn);
+			wait(3);
+			click(btnUnderstand);
+			wait(3);
+		}
 		driver.manage().deleteAllCookies();
-//		//Added on 26-Nov-20
-//		if(elementExist(newsSlider)) {
-//			click(btnCancelnewsSlider);
-//		}
+		//Added on 26-Nov-20
+		if(elementExist(newsSlider)) {
+			click(btnCancelnewsSlider);
+		}
 		wait(5);
 	}
 	/*Function Name: gotoHome()
