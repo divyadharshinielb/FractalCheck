@@ -64,8 +64,9 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * purpose: Click on home icon
 	 */
 	public void ClickHome() {
+		wait(3);
 		click(hederLogo);
-		wait(2);
+		wait(3);
 	}
 
 	/* Function Name: verifyHomeLogo()
