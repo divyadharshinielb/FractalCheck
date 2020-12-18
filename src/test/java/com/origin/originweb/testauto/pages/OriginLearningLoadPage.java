@@ -10,13 +10,13 @@ import com.origin.originweb.testauto.OriginWebBasePage;
  * Created on: 13-Oct-2020
  */
 public class OriginLearningLoadPage extends OriginWebBasePage {
-	private By cookiesBtn=By.xpath("(//*[@class='cc-window cc-banner cc-type-info cc-theme-block cc-top cc-color-override-358643213 ']//a)[2]");
+	private By cookiesBtn=By.xpath("//*[@aria-label='dismiss cookie message'][text()='Accept & Close']");
 	private By topBanner=By.xpath("(//*[@class='tp-bgimg defaultimg'])[1]");
 	private By banner = By.xpath("(//*[@class='column one column_column'])[1]");
 	private By hederLogo=By.xpath("//header/div[@id='Top_bar']/div[1]/div[1]//*[@id='logo']");
 	// Heading 
-	private By headerCont	= By.xpath("((//*[@class='menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children submenu'])//*[contains(@href,'content')])[1]");
-	private By headerTech	= By.xpath("((//*[@class='menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children submenu'])//*[contains(@href,'technology')])[1]");
+	private By headerCont	= By.xpath("//a[@href='https://originlearning.com/content/']");
+	private By headerTech	= By.xpath("//a[@href='https://originlearning.com/technology/']");
 	private By headerConsult= By.xpath("((//*[@class='menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children submenu'])//*[contains(@href,'consulting')])[1]");
 	private By headerResource = By.xpath("//*[@id='menu-item-166']");
 	private By headerAbout 	= By.xpath("//*[@id='menu-item-312']");
@@ -53,18 +53,22 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Navigate the URL and close the cookies
 	 */
 	public void goToURL() {
-		goTo(getLabel("webUrl"));
-		wait(5);
+	try {	goTo(getLabel("webUrl"));
+		wait(10);
 		if(elementExist(cookiesBtn)) {
 			click(cookiesBtn);
 		}
+//		driver.manage().deleteAllCookies()
 		wait(5);
+	}catch(Exception e) {
+		print("goToURL is problem");
+	}
 	}
 	/*Function Name: gotoHome()
 	 * purpose: Click on home icon
 	 */
 	public void ClickHome() {
-		wait(3);
+	wait(3);
 		click(hederLogo);
 		wait(3);
 	}
@@ -73,6 +77,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHomeLogo() {
+		wait(3);//Added on 18-Dec-20
 		return clickAndcheckLoading(hederLogo,topBanner);
 	}
 
@@ -81,6 +86,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderContent() {
+		wait(3);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerCont,topBanner);
 	}
 
@@ -88,6 +94,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderTechnology() {
+		wait(3);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerTech,topBanner);
 	}
 
@@ -95,6 +102,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderConsulting() {
+		wait(3);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerConsult,topBanner);
 	}
 
@@ -102,6 +110,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderResources() {
+		wait(3);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerResource,topBanner);
 	}
 
@@ -109,6 +118,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderAbout(){
+		wait(3);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerAbout,topBanner);
 	}
 
@@ -116,6 +126,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderCareer(){
+		wait(3);//Added on 18-Dec-20
 		return clickAnd40SecLoading(headerCareer,topBanner);
 	}
 
@@ -123,6 +134,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderContact(){
+		wait(3);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerContact,topBanner);
 	}
 
@@ -130,6 +142,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyContentSubMenu() {
+		wait(3);//Added on 18-Dec-20
 		moveElementFocus(headerCont);
 		return clickAndcheckLoading(contentSubMenu,banner);
 	}
@@ -138,7 +151,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyTechnologySubMenu() {
-
+		wait(3);//Added on 18-Dec-20
 		moveElementFocus(headerTech);
 		return clickAndcheckLoading(techSubMenu,banner);
 	}
@@ -146,6 +159,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyConsultingSubMenu() {
+		wait(3);//Added on 18-Dec-20
 		moveElementFocus(headerConsult);
 		return clickAndcheckLoading(consultSubMenu,banner);
 	}
@@ -153,6 +167,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyResourceSubMenu() {
+		wait(3);//Added on 18-Dec-20
 		moveElementFocus(headerResource);
 		return clickAndcheckLoadingOtherTab(resourceSubMenu,cookiesBtn);
 	}
@@ -161,6 +176,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyAboutSubMenu1() {
+		wait(3);//Added on 18-Dec-20
 		moveElementFocus(headerAbout);
 		return clickAndcheckLoading(AboutUsFirstSubMenu,By.xpath("(//h4)[1]"));
 	}
@@ -169,6 +185,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyAboutSubMenu2() {
+		wait(3);//Added on 18-Dec-20
 		moveElementFocus(headerAbout);
 		return clickAndcheckLoading(AboutUsSecSubMenu,By.xpath("(//h3)[1]"));
 	}
@@ -176,6 +193,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the Search loading time
 	 */
 	public boolean verifySearchFunction() {
+		wait(3);//Added on 18-Dec-20
 		return searchKeyWordAndcheckLoading(searchIcon,searchKey,searchTextArea,searchResult);
 	}
 
@@ -207,7 +225,8 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyrRsourcesCTALink() {
-//		moveElementFocus(resourcesCTALink);
+		wait(3);//Added on 18-Dec-20
+		moveElementFocus(resourcesCTALink);
 		return clickAndcheckLoading(resourcesCTALink,userName);
 	}
 

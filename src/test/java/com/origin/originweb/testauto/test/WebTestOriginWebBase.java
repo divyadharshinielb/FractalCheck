@@ -5,6 +5,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.origin.originweb.testauto.pages.OriginLearningLoadPage;
+import com.origin.originweb.testauto.steps.OriginLearningLoadSteps;
 
 public class WebTestOriginWebBase extends OriginWebBaseTest {
 	@BeforeMethod
@@ -12,9 +13,9 @@ public class WebTestOriginWebBase extends OriginWebBaseTest {
 	}
 	protected void goToUrl(WebDriver driver) {
 		print("Inside testLogin");
-		OriginLearningLoadPage samplePage = new OriginLearningLoadPage(driver);
+		OriginLearningLoadSteps login = new OriginLearningLoadSteps(driver);
 		print("Inside testLogin - Page Opened");
-		samplePage.goToURL();
+		login.goToURL();
 	}
 	@AfterMethod
 	public void afterMethod() {

@@ -17,6 +17,14 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 
 	}
 
+	public void goToURL() {
+		try {
+			loadPage.goToURL();
+		}catch (Exception e) {
+			print("URL navication is issue");
+		}
+	}
+
 	/* Function Name: verifyHomeLogo()
 	 * Purpose: Verify the page loading time
 	 */
@@ -44,6 +52,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 		}catch (Exception e) {
 			result="FAILED";
 			loadPage.ClickHome();
+			print(""+e);
 		}
 	}
 
@@ -191,6 +200,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			if(loadPage.verifyResourceSubMenu()==true) {
 				result="PASSED";
 			}
+			loadPage.ClickHome();
 		}catch (Exception e) {
 			result="FAILED";
 			loadPage.ClickHome();

@@ -93,17 +93,17 @@ public abstract class  BasePage {
 			return false;
 		}
 	}
-//	public boolean containsString(String expValue, String actualValue) {
-//		if (actualValue.contains(expValue)) {
-//			print("PASSED: The expected string is " + expValue
-//					+ " , the actual string is " + actualValue);
-//			return true;
-//		} else {
-//			print("FAILED: The expected string is " + expValue
-//					+ " , the actual string is " + actualValue);
-//			return false;
-//		}
-//	}
+	//	public boolean containsString(String expValue, String actualValue) {
+	//		if (actualValue.contains(expValue)) {
+	//			print("PASSED: The expected string is " + expValue
+	//					+ " , the actual string is " + actualValue);
+	//			return true;
+	//		} else {
+	//			print("FAILED: The expected string is " + expValue
+	//					+ " , the actual string is " + actualValue);
+	//			return false;
+	//		}
+	//	}
 	public String getAttributeValue(By objLoc,String attribute) {
 		String value = driver.findElement(objLoc).getAttribute(attribute);
 		return value;
@@ -113,9 +113,12 @@ public abstract class  BasePage {
 		driver.switchTo().window((String) tabs.get(tabs.size()-1));   
 	} 
 	public void closeNewTabandgoToMainTab() {
-		driver.close();
+		try{driver.close();
 		tabs= new ArrayList<String> (driver.getWindowHandles());
 		driver.switchTo().window((String) tabs.get(tabs.size()-1));
+		}catch(Exception e) {
+			print("Close Tab issue");
+		}
 	}
 
 	public void clear(By objLoc) {
