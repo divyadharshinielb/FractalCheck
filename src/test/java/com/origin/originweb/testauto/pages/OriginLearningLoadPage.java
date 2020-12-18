@@ -54,10 +54,11 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 */
 	public void goToURL() {
 		goTo(getLabel("webUrl"));
+		wait(5);
 		if(elementExist(cookiesBtn)) {
 			click(cookiesBtn);
 		}
-		wait(2);
+		wait(5);
 	}
 	/*Function Name: gotoHome()
 	 * purpose: Click on home icon
