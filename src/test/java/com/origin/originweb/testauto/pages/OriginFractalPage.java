@@ -4,26 +4,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.originweb.testauto.OriginFractalWebBasePage;
-import com.wv.auto.framework.utils.TimeManager;
 /* File Name: OriginFractalLoadPage.java
  * Purpose: https://originfractal.in/ - Verifying page loading time
  * Created by: Vigneshwaran R
  * Created on: 9-Dec-2020
+ * Updated on: 20_Dec-20
  */
 public class OriginFractalPage extends OriginFractalWebBasePage {
-	private By headerLogo=By.xpath("(//*[@id='logo'])[2]/a");
-	// Heading 
-	private By headerPlatform	= By.xpath("(//*[@class='menu-item menu-item-type-post_type menu-item-object-page menu-item-538'])[2]//a");
-	private By headerOPM	= By.xpath("(//*[@class='menu-item menu-item-type-post_type menu-item-object-page menu-item-615'])[2]//a");
-	private By headerFutureWork	= By.xpath("(//*[@class='menu-item menu-item-type-post_type menu-item-object-page menu-item-614'])[2]//a");
-	private By headerPhilosophy	= By.xpath("(//*[@class='menu-item menu-item-type-post_type menu-item-object-page menu-item-613'])[2]//a");
-	private By headerContact	= By.xpath("(//*[@class='menu-item menu-item-type-post_type menu-item-object-page menu-item-687'])[2]//a");
-	private By headerTryPlatform	= By.xpath("(//*[@class='signup_bt menu-item menu-item-type-custom menu-item-object-custom menu-item-583'])[2]//a");
-	private By headerFutureWorkSignUp	= By.xpath("(//*[@class='signup_bt1 menu-item menu-item-type-custom menu-item-object-custom menu-item-589'])[2]//a");
+	private By headerLogo=By.xpath("(//*[@class='container']//*[@id='logo'])[2]");//Updated on 20-Dec-20
+	// Heading - Updated on 18-Dec-20
+	private By headerPlatform	= By.xpath("(//header//*[text()='Platform'])[2]");
+	private By headerOPM	= By.xpath("(//header//*[text()='OPM'])[2]");
+	private By headerFutureWork	= By.xpath("(//header//*[text()='Future@Work'])[2]");
+	private By headerPhilosophy	= By.xpath("(//header//*[text()='Philosophy'])[2]");
+	private By headerContact	= By.xpath("(//header//*[text()='Contact'])[2]");
+	private By headerTryPlatform	= By.xpath("(//header//*[text()='Try Platform'])[2]");
+	private By headerFutureWorkSignUp	= By.xpath("(//header//*[text()='Future@Work Signup'])[2]");
 	//Home page
-	private By postedOption1 = By.xpath("(//*[@class='elementor-section elementor-top-section elementor-element elementor-element-bd6707f elementor-section-boxed elementor-section-height-default elementor-section-height-default']//div//a)[1]");
-	private By postedOption2 = By.xpath("(//*[@class='elementor-section elementor-top-section elementor-element elementor-element-bd6707f elementor-section-boxed elementor-section-height-default elementor-section-height-default']//div//a)[2]");
-	private By postedOption3 = By.xpath("(//*[@class='elementor-section elementor-top-section elementor-element elementor-element-bd6707f elementor-section-boxed elementor-section-height-default elementor-section-height-default']//div//a)[3]");
+	private By postedOption1 = By.xpath("(//*[@class='elementor-column-wrap elementor-element-populated'])[3]//a");
+	private By postedOption2 = By.xpath("(//*[@class='elementor-column-wrap elementor-element-populated'])[7]//a");
+	private By postedOption3 = By.xpath("(//*[@class='elementor-column-wrap elementor-element-populated'])[11]//a");
+	//ends
 	//Footer
 	private By btnPhysicalClassroomsKnowMore= By.xpath("(//*[@class='elementor-button-wrapper']//a)[1]");
 	private By btnDigitalTransformationKnowMore	= By.xpath("(//*[@class='elementor-button-wrapper']//a)[2]");
@@ -43,21 +44,24 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Navigate the URL and close the cookies
 	 */
 	public void goToURL() {
-		goTo(getLabel("webUrl"));
-		wait(5);//Added on 18-Dec-20
+		goTo("https://originfractal.in/");
+		wait(20);//Added on 18-Dec-20
 	}
 	/*Function Name: gotoHome()
 	 * purpose: Click on home icon
 	 */
 	public void ClickHome() {
+//		driver.navigate().refresh();
+		wait(5);//Added on 18-Dec-20
 		moveElementFocusandClick(headerLogo);
-		wait(2);
+		wait(3);
 	}
 
 	/* Function Name: verifyHeaderPlatform()
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderPlatform() {
+		wait(5);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerPlatform,getLabel("platformUrl"));
 	}
 
@@ -65,6 +69,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderOPM() {
+		wait(5);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerOPM,getLabel("opmUrl"));
 	}
 
@@ -72,6 +77,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyFutureWork() {
+		wait(5);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerFutureWork,getLabel("futureworkUrl"));
 	}
 
@@ -79,6 +85,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderPhilosophy() {
+		wait(5);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerPhilosophy,getLabel("philosophyUrl"));
 	}	
 
@@ -86,6 +93,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderContact(){
+		wait(5);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerContact,getLabel("contactUrl"));
 	}
 
@@ -93,7 +101,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderTryPlatform(){
-		wait(2);
+		wait(5);//Added on 18-Dec-20
 		return clickAndcheckLoading(headerTryPlatform,getLabel("signupUrl"));
 	}
 
@@ -101,6 +109,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderFutureWorkSignUp(){
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(headerFutureWorkSignUp);
 		return clickAndcheckLoadingOtherTab(headerFutureWorkSignUp,getLabel("registerUrl"));
 	}
@@ -109,6 +118,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHomeIcon() {
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(headerLogo);
 		return clickAndcheckLoading(headerLogo,getLabel("webUrl"));
 	}
@@ -117,6 +127,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHomePoster1(){
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(postedOption1);
 		return clickAndcheckLoading(postedOption1,getLabel("platformUrl"));
 	}
@@ -125,6 +136,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHomePoster2(){
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(postedOption2);
 		return clickAndcheckLoading(postedOption2,getLabel("opmUrl"));
 	}
@@ -133,6 +145,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHomePoster3(){
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(postedOption3);
 		return clickAndcheckLoading(postedOption3,getLabel("futureworkUrl"));
 	}
@@ -141,6 +154,8 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify Button is clickable
 	 */
 	public boolean verfiyKnowMoreBtn() {
+		flag=true;
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(btnPhysicalClassroomsKnowMore);
 		flag = isClickable(btnPhysicalClassroomsKnowMore) && flag;
 		moveElementFocus(btnDigitalTransformationKnowMore);
@@ -154,7 +169,8 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verfiyTryPlatForm() {
-		moveElementFocus(headerPlatform);
+		wait(5);//Added on 18-Dec-20
+		moveElementFocusandClick(headerPlatform);
 		return clickAndcheckLoading(headerTryPlatform,getLabel("signupUrl"));
 	}
 
@@ -162,7 +178,9 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyiOSapp(){
-		click(headerPlatform);
+		wait(5);//Added on 18-Dec-20
+		moveElementFocusandClick(headerPlatform);
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(appStore);
 		return clickAndcheckLoadingOtherTab(appStore,getLabel("appStoreUrl"));
 	}
@@ -171,7 +189,9 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyAndroidapp(){
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(playStore);
+		wait(5);//Added on 18-Dec-20
 		return clickAndcheckLoadingOtherTab(playStore,getLabel("playStoreUrl"));
 	}
 
@@ -180,7 +200,9 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 */
 	public boolean verfiyTryAndContactBtn() {
 		flag=true;
+		wait(5);//Added on 18-Dec-20
 		moveElementFocusandClick(headerOPM);
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(btnPhysicalClassroomsKnowMore);
 		flag = isClickable(btnPhysicalClassroomsKnowMore) && flag;
 		moveElementFocus(btnDigitalTransformationKnowMore);
@@ -192,6 +214,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifySignUpBtn(){
+		wait(5);//Added on 18-Dec-20
 		moveElementFocusandClick(headerFutureWork);
 		return clickAndcheckLoadingOtherTab(btnPhysicalClassroomsKnowMore,getLabel("registerUrl"));
 	}
@@ -200,6 +223,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyTalkToUs(){
+		wait(5);//Added on 18-Dec-20
 		moveElementFocusandClick(headerPhilosophy);
 		moveElementFocus(txtTalkToUs);
 		return clickAndcheckLoading(txtTalkToUs,getLabel("contactUrl"));
@@ -209,6 +233,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyFooterFractalWeb(){
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(footerOriginFractal);
 		return clickAndcheckLoadingOtherTab(footerOriginFractal,getLabel("fractalUrl"));
 	}
@@ -217,6 +242,7 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyFooterOriginWeb(){
+		wait(5);//Added on 18-Dec-20
 		moveElementFocus(footerOriginLearning);
 		return clickAndcheckLoadingOtherTab(footerOriginLearning,getLabel("originlearningUrl"));
 	}

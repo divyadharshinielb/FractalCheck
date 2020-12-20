@@ -25,6 +25,7 @@ public abstract class OriginFractalWebBasePage extends BasePage {
 
 	public boolean clickAndcheckLoading(By clickelement, String checkUrl) {
 		preMilliseconds = TimeManager.getCurrententTimeStamp().getTime();
+		//		moveElementFocusandClick(clickelement);
 		driver.findElement(clickelement).click();
 		//		wait(2);
 		postMilliseconds = TimeManager.getCurrententTimeStamp().getTime();
