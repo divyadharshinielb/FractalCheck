@@ -57,23 +57,23 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	public void goToURL() {
 		goTo(getLabel("webUrl"));
 		wait(10);
-		Set<Cookie> allCookies = driver.manage().getCookies();
-		for (Cookie cookie : allCookies) {
-		    driver.manage().deleteCookieNamed(cookie.getName());
-		}
-//		if(elementExist(cookiesBtn)) {
-//			click(cookiesBtn);
-//			wait(3);
-//			click(btnUnderstand);
-//			wait(5);
+//		Set<Cookie> allCookies = driver.manage().getCookies();
+//		for (Cookie cookie : allCookies) {
+//		    driver.manage().deleteCookieNamed(cookie.getName());
 //		}
+		if(elementExist(cookiesBtn)) {
+			moveElementFocusandClick(cookiesBtn);
+			wait(3);
+			moveElementFocusandClick(btnUnderstand);
+			wait(5);
+		}
 ////		driver.manage().deleteAllCookies();
 //		wait(5);
-//		//Added on 26-Nov-20
-//		if(elementExist(newsSlider)) {
-//			click(btnCancelnewsSlider);
-//		}
-		wait(5);
+		//Added on 26-Nov-20
+		if(elementExist(newsSlider)) {
+			moveElementFocusandClick(btnCancelnewsSlider);
+		}
+		wait(10);
 	}
 	/*Function Name: gotoHome()
 	 * purpose: Click on home icon

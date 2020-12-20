@@ -16,17 +16,25 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		loadPage = new OriginFractalLoadPage(driver);
 
 	}
-	
+
 	public void goToURL() {
 		result="FAILED";
 		try{
 			loadPage.goToURL(); 
-				result="PASSED";
+			result="PASSED";
 		}catch (Exception e) {
-			print("URL navactation is problem");
+			print("URL navigation is problem");
 		}
 	}
-
+	public void ClickHome() {
+		result="FAILED";
+		try{
+			loadPage.ClickHome();  
+			result="PASSED";
+		}catch (Exception e) {
+			result="FAILED";
+		}
+	}
 	/* Function Name: verifyHomeLogo()
 	 * Purpose: Verify the page loading time
 	 */
@@ -38,7 +46,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -53,7 +61,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -68,7 +76,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -83,7 +91,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -98,7 +106,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -113,7 +121,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -128,7 +136,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -143,7 +151,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -158,7 +166,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -170,12 +178,12 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		try{
 			if(loadPage.verifyPostBlog1()==true) {
 				result="PASSED";
-				//loadPage.ClickHome();//Updated on 3-Dec-20
+				//ClickHome(); //Updated on 3-Dec-20
 			}
-			loadPage.ClickHome();//Updated on 3-Dec-20
+			ClickHome(); //Updated on 3-Dec-20
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -187,12 +195,12 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		try{
 			if(loadPage.verifyPostBlog2()==true) {
 				result="PASSED";
-				//loadPage.ClickHome();//Updated on 3-Dec-20
+				//ClickHome(); //Updated on 3-Dec-20
 			}
-			loadPage.ClickHome();//Updated on 3-Dec-20
+			ClickHome(); //Updated on 3-Dec-20
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -204,12 +212,12 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		try{
 			if(loadPage.verifyPostBlog3()==true) {
 				result="PASSED";
-				//loadPage.ClickHome();//Updated on 3-Dec-20
+				//ClickHome(); //Updated on 3-Dec-20
 			}
-			loadPage.ClickHome();//Updated on 3-Dec-20
+			ClickHome(); //Updated on 3-Dec-20
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -224,7 +232,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -239,7 +247,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -254,7 +262,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -269,7 +277,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -284,7 +292,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
@@ -299,7 +307,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome(); 
 		}
 	}
 
