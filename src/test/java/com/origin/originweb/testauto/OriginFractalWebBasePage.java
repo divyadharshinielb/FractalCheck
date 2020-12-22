@@ -8,8 +8,8 @@ import com.wv.auto.framework.BasePage;
 import com.wv.auto.framework.utils.TimeManager;
 
 public abstract class OriginFractalWebBasePage extends BasePage {
-	int time5Sec = 5;
-	int time10Sec = 10;
+	int time15Sec = 15;
+	int time20Sec = 20;
 	boolean flag;
 	double preMilliseconds;
 	double milliseconds;
@@ -31,22 +31,22 @@ public abstract class OriginFractalWebBasePage extends BasePage {
 		postMilliseconds = TimeManager.getCurrententTimeStamp().getTime();
 		milliseconds = postMilliseconds - preMilliseconds;
 		TimeManager.seconds = (milliseconds/1000);
-		if(driver.getCurrentUrl().contains(checkUrl) && TimeManager.seconds<=time5Sec){
+		if(driver.getCurrentUrl().contains(checkUrl) && TimeManager.seconds<=time15Sec){
 			print("Excepted URL = "+ checkUrl);//Added on 3-Dec-20
 			print("Current URL = "+ driver.getCurrentUrl());//Added on 3-Dec-20
-			print("PASSED: Page load times takes less than 5 sec");
+			print("PASSED: Page load times takes less than 15 sec");
 			return true;
 		}
-		else if(driver.getCurrentUrl().contains(checkUrl) && TimeManager.seconds<=time10Sec){
+		else if(driver.getCurrentUrl().contains(checkUrl) && TimeManager.seconds<=time20Sec){
 			print("Excepted URL = "+ checkUrl);//Added on 3-Dec-20
 			print("Current URL = "+ driver.getCurrentUrl());//Added on 3-Dec-20
-			print("PASSED: Page loading time takes less than 10 Sec");
+			print("PASSED: Page loading time takes less than 20 Sec");
 			return true;
 		}
 		else {
 			print("Excepted URL = "+ checkUrl);//Added on 3-Dec-20
 			print("Current URL = "+ driver.getCurrentUrl());//Added on 3-Dec-20
-			print("FAILED: Page loading time takes more than 10 Sec or other Exception");//Updated on 3-Dec-20
+			print("FAILED: Page loading time takes more than 20 Sec or other Exception");//Updated on 3-Dec-20
 			return false;
 		}
 	}
@@ -58,16 +58,16 @@ public abstract class OriginFractalWebBasePage extends BasePage {
 		postMilliseconds = TimeManager.getCurrententTimeStamp().getTime();
 		milliseconds = postMilliseconds - preMilliseconds;
 		TimeManager.seconds = (milliseconds/1000);
-		if(elementExist(checkElement) && TimeManager.seconds<=time5Sec){
-			print("PASSED: Page load times takes less than 5 sec");
+		if(elementExist(checkElement) && TimeManager.seconds<=time15Sec){
+			print("PASSED: Page load times takes less than 25 sec");
 			return true;
 		}
-		else if(elementExist(checkElement) && TimeManager.seconds<=time10Sec){
-			print("PASSED: Page loading time takes less than 10 Sec");
+		else if(elementExist(checkElement) && TimeManager.seconds<=time20Sec){
+			print("PASSED: Page loading time takes less than 20 Sec");
 			return true;
 		}
 		else {
-			print("FAILED: Page loading time takes more than 10 Sec or other Exception");//Updated on 3-Dec-20
+			print("FAILED: Page loading time takes more than 20 Sec or other Exception");//Updated on 3-Dec-20
 			return false;
 		}
 	}
@@ -85,16 +85,16 @@ public abstract class OriginFractalWebBasePage extends BasePage {
 		postMilliseconds = TimeManager.getCurrententTimeStamp().getTime();
 		milliseconds = postMilliseconds - preMilliseconds;
 		TimeManager.seconds = (milliseconds/1000);
-		if(flag=true && TimeManager.seconds<=time5Sec){
-			print("PASSED: Page load times takes less than 5 sec");
+		if(flag=true && TimeManager.seconds<=time15Sec){
+			print("PASSED: Page load times takes less than 15 sec");
 			flag = true;
 		}
-		else if(flag=true && TimeManager.seconds<=time10Sec){
-			print("PASSED: Page loading time takes less than 10 Sec");
+		else if(flag=true && TimeManager.seconds<=time20Sec){
+			print("PASSED: Page loading time takes less than 20 Sec");
 			flag = true;
 		}
 		else {
-			print("FAILED: Page loading time takes more than 10 Sec or other Exception");//Updated on 3-Dec-20
+			print("FAILED: Page loading time takes more than 20 Sec or other Exception");//Updated on 3-Dec-20
 			flag = false;
 		}
 		return flag;
