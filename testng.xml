@@ -6,6 +6,29 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" />
+<!-- 
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
@@ -13,14 +36,15 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
-			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
+				
+			<class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" 
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" 
-				/> -->
+				/><class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
+				/> 
+				
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" />
 			<class
@@ -36,29 +60,16 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" />
-			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" />
-			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" />
-			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
-				/> -->
+		 
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" />
 			<class
@@ -78,12 +89,8 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
-			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
-
+ -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
