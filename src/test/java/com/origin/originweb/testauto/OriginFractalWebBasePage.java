@@ -7,7 +7,7 @@ import com.wv.auto.framework.BasePage;
 import com.wv.auto.framework.utils.TimeManager;
 
 public abstract class OriginFractalWebBasePage extends BasePage {
-	int time10Sec = 10;
+	int time10Sec = 15;
 	int time20Sec = 20;
 	boolean flag;
 	double preMilliseconds;
