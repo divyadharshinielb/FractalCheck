@@ -24,6 +24,21 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			print("URL navication is issue");
 		}
 	}
+	
+	/*Function Name: gotoHome()
+	 * purpose: Click on home icon
+	 */
+	public void ClickHome() {
+		result="FAILED";
+		try{
+			loadPage.ClickHome(); 
+				result="PASSED";
+		}catch (Exception e) {
+			result="FAILED";
+			ClickHome();
+		}
+		
+	}
 
 	/* Function Name: verifyHomeLogo()
 	 * Purpose: Verify the page loading time
@@ -36,7 +51,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -51,8 +66,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
-			print(""+e);
+			ClickHome();
 		}
 	}
 
@@ -67,7 +81,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -82,7 +96,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -97,7 +111,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -112,7 +126,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -127,7 +141,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -142,7 +156,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -157,7 +171,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -172,7 +186,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -187,7 +201,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -200,10 +214,10 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			if(loadPage.verifyResourceSubMenu()==true) {
 				result="PASSED";
 			}
-			loadPage.ClickHome();
+			ClickHome();
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -218,7 +232,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -233,7 +247,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -248,7 +262,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -263,7 +277,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -278,7 +292,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 
@@ -293,7 +307,7 @@ public class OriginLearningLoadSteps extends OriginWebSteps{
 			}
 		}catch (Exception e) {
 			result="FAILED";
-			loadPage.ClickHome();
+			ClickHome();
 		}
 	}
 }

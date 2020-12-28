@@ -69,7 +69,7 @@ public class OriginLearningLoadPage extends OriginWebBasePage {
 	 */
 	public void ClickHome() {
 	wait(3);
-		click(hederLogo);
+		moveElementFocusandClick(hederLogo);//Updated on 28-Dec-20
 		wait(3);
 	}
 
