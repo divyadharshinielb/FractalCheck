@@ -16,7 +16,20 @@ public class OriginFractalSteps extends OriginFractalWebSteps{
 		loadPage = new OriginFractalPage(driver);
 
 	}
-
+	/* Function Name: ClosePopUp()
+	 * Purpose: close the pop up
+	 */
+	public void closePopUp() {
+		result="FAILED";
+		try{
+			loadPage.closePopUp();
+			result="PASSED";
+		}catch (Exception e) {
+			result="FAILED";
+			print("Login issue found");
+		}
+		
+	}
 	/* Function Name: goToURL()
 	 */
 	public void goToURL() {

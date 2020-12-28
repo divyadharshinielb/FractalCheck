@@ -1,7 +1,9 @@
 package com.origin.originweb.testauto.pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import com.origin.originweb.testauto.OriginFractalWebBasePage;
 /* File Name: OriginFractalLoadPage.java
@@ -34,24 +36,38 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	private By txtTalkToUs	= By.xpath("(//*[@class='hp_link']//*[text()='Talk to us'])[1]");
 	private By appStore	= By.xpath("(//*[@class='elementor-widget-container'])[52]//a");
 	private By playStore	= By.xpath("(//*[@class='elementor-widget-container'])[53]//a");
+	private By popUp	= By.xpath("//map[@name='image-map1']//area[@title='higher education solutions']");
 	boolean flag = true;
 
 	public OriginFractalPage(WebDriver driver) {
 		super(driver);
 		pageName="originFractal";
 	}	
+	/* Function Name: ClosePopUp()
+	 * Purpose: close the pop up
+	 */
+	public void closePopUp() {
+		Actions actions = new Actions(driver);
+		actions.moveByOffset(820, 500).click().perform();
+		wait(5);
+	}
 	/* Function Name: goToURL()
 	 * Purpose: Navigate the URL and close the cookies
 	 */
 	public void goToURL() {
 		goTo("https://originfractal.in/");
-		wait(20);//Added on 18-Dec-20
+		wait(10);//Added on 18-Dec-20
+		closePopUp();
+		driver.manage().deleteAllCookies();
+		//		if(isClickable(popUp)) {
+		//			moveElementFocusandClick(popUp);
+		//		}
 	}
 	/*Function Name: gotoHome()
 	 * purpose: Click on home icon
 	 */
 	public void ClickHome() {
-//		driver.navigate().refresh();
+		//		driver.navigate().refresh();
 		wait(5);//Added on 18-Dec-20
 		moveElementFocusandClick(headerLogo);
 		wait(3);
