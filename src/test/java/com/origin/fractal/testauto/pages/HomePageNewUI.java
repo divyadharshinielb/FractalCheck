@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 import com.wv.auto.framework.BrowserFactory;
 
 public class HomePageNewUI extends FractalBasePage {
-	private By btnContinue = By.xpath("//div[@class='resume_learn']//div[@class='row']");//span[@class='continue_button']
+	private By btnContinue = By.xpath("//div[contains(text(),'RESUME LEARNING')]");//span[@class='continue_button']
 	private By privacyLink = By.xpath("//a[contains(text(),'Privacy')]");
 	//edit by divya private By termsLink = By.xpath("//a[contains(text(),'| Terms')]");
 	private By termsLink = By.xpath(".//div[contains(@class, 'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/p/a[2]");
@@ -30,7 +30,12 @@ public class HomePageNewUI extends FractalBasePage {
 		pageName ="HomePage";
 }
 	public void verifyResumeLearningLabeltext() {
-		click(btnContinue);
+		wait(10);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element= driver.findElement(btnContinue);
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+	//	click(btnContinue);
+		verifyText("RESUME LEARNING",btnContinue);
 	//	myLearning.verifyMyLearningLabels();
 	}
 	
