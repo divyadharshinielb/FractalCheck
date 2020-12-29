@@ -103,9 +103,10 @@ public class Reporter {
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
 		repWriter.writeNext(record);	
-		if (strReportWithBrowserEnvDetails.contains("FAILED"))
+		if (strReportWithBrowserEnvDetails.contains("FAILED")) {
 			writeFailure(strReportWithBrowserEnvDetails);
-		jenkinsMail++;
+			jenkinsMail++;
+		}
 	}
 
 	public static void writeSummary(String strLine,String TimeTaken,String TimeStamp) {
@@ -116,7 +117,7 @@ public class Reporter {
 		repWriter.writeNext(record);		
 		if (strLine.endsWith("FAILED"))
 			writeFailure(strLine);
-		jenkinsMail++;
+
 	}
 
 	public static void writeDetail(String strLine) {
