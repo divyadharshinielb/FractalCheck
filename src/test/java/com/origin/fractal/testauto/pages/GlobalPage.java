@@ -280,7 +280,8 @@ public class GlobalPage extends FractalBasePage{
 			verifyText("Automation Learningpath",automationLearningpath);
 			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
-			enterData(" automation    learningpath",Search);;
+			enterData(" automation    learningpath",Search);
+			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			verifyText("Automation Learningpath",automationLearningpath);	
 		}
