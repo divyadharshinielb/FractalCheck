@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<test thread-count="50" name="Test">
 		<classes>
-			<class
+	<!--		<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" />
@@ -27,8 +27,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" />
-<!-- 
-			<class
+             
+	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
@@ -91,6 +91,9 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
  -->
+            <class
+				name="com.origin.fractal.testauto.test.testsuites.Staging_Daily" />
+		
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
