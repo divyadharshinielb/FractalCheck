@@ -243,9 +243,9 @@ public class LoginPage extends FractalBasePage {
 //		if(elementExist(prelogin)) {
 //			click(prelogin);
 //		}
-		wait(10);//Updated on 9-Dec-20
+		wait(5);//Updated on 9-Dec-20
 		goTo("https://staging-origin.originfractal.com/login");
-		wait(20); //Updated on 9-Dec-20
+		wait(10); //Updated on 9-Dec-20
 		enterData("siteadmin@origin.com",tbUserName);
 		enterData("P@ssw0rd",tbPassword);
 		wait(3);
