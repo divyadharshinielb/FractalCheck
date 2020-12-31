@@ -19,10 +19,10 @@ public class OriginFractalSteps extends OriginFractalWebSteps{
 	/* Function Name: ClosePopUp()
 	 * Purpose: close the pop up
 	 */
-	public void closePopUp() {
+	public void clickPopUp() {
 		result="FAILED";
 		try{
-			loadPage.closePopUp();
+			loadPage.clickPopUp();
 			result="PASSED";
 		}catch (Exception e) {
 			result="FAILED";
@@ -36,6 +36,7 @@ public class OriginFractalSteps extends OriginFractalWebSteps{
 		result="FAILED";
 		try{
 			loadPage.goToURL();
+			clickPopUp();
 			result="PASSED";
 		}catch (Exception e) {
 			result="FAILED";

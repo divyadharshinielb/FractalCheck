@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.asserts.SoftAssert;
 
 import com.origin.originweb.testauto.steps.OriginFractalSteps;
 import com.wv.auto.framework.utils.Reporter;

@@ -1,9 +1,9 @@
 package com.origin.originweb.testauto.pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.WebElement;
 
 import com.origin.originweb.testauto.OriginFractalWebBasePage;
 /* File Name: OriginFractalLoadPage.java
@@ -36,28 +36,30 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	private By txtTalkToUs	= By.xpath("(//*[@class='hp_link']//*[text()='Talk to us'])[1]");
 	private By appStore	= By.xpath("(//*[@class='elementor-widget-container'])[52]//a");
 	private By playStore	= By.xpath("(//*[@class='elementor-widget-container'])[53]//a");
-	private By popUp	= By.xpath("//map[@name='image-map1']//area[@title='higher education solutions']");
+	private By popUp		= By.xpath("//*[@class='fractal-edu']");
 	boolean flag = true;
 
 	public OriginFractalPage(WebDriver driver) {
 		super(driver);
 		pageName="originFractal";
 	}	
-	/* Function Name: ClosePopUp()
-	 * Purpose: close the pop up
+	/* Function Name: clickPopUp()
+	 * Purpose:click PopUp Image using Sukili logic
 	 */
-	public void closePopUp() {
-		Actions actions = new Actions(driver);
-		actions.moveByOffset(820, 500).click().perform();
-		wait(5);
+	public void clickPopUp(){
+		WebElement banner = driver.findElement(By.name("image-map1"));
+		WebElement area = banner.findElement(popUp);
+
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", area);
 	}
+
 	/* Function Name: goToURL()
 	 * Purpose: Navigate the URL and close the cookies
 	 */
 	public void goToURL() {
 		goTo("https://originfractal.in/");
 		wait(10);//Added on 18-Dec-20
-		closePopUp();
 		driver.manage().deleteAllCookies();
 		//		if(isClickable(popUp)) {
 		//			moveElementFocusandClick(popUp);
