@@ -1,7 +1,6 @@
 package com.origin.originweb.testauto;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.wv.auto.framework.BasePage;

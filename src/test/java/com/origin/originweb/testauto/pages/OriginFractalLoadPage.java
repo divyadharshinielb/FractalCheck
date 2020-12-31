@@ -1,11 +1,10 @@
 package com.origin.originweb.testauto.pages;
 
-import java.util.Set;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.origin.originweb.testauto.OriginFractalWebBasePage;
 import com.wv.auto.framework.utils.TimeManager;
@@ -13,15 +12,14 @@ import com.wv.auto.framework.utils.TimeManager;
  * Purpose: https://originfractal.com/ - Verifying page loading time
  * Created by: Vigneshwaran R
  * Created on: 10-Nov-2020
+ * Updated on: 30-Dec-20
  */
 public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By cookiesBtn=By.xpath("//a[text()='Accept']");//Updated on 26-Nov-20
-	private By btnUnderstand=By.xpath("//button[text()='I Understand']"); //Added on 26-Nov-20
+//	private By btnUnderstand=By.xpath("//button[text()='I Understand']"); //Added on 26-Nov-20
 	private By headerLogo=By.xpath("//*[@class='logo']");
 	private By newsSlider=By.xpath("//*[@id='normal-slidedown']");//Added on 26-Nov-20
 	private By btnCancelnewsSlider=By.xpath("//*[@id='normal-slidedown']//button[text()='Cancel']");//Added on 26-Nov-20
-	private By sliderCookies=By.xpath("//*[@id='normal-slidedown']");
-	private By bootomCookies=By.xpath("(//*[@id='ecl-notice'])[2]");
 	// Heading 
 	private By headerFeature	= By.xpath("(//UL[@class='navigation clearfix']//a)[1]");
 	private By headerPricing	= By.xpath("(//UL[@class='navigation clearfix']//a)[2]");
@@ -47,33 +45,37 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By txtDomain		= By.xpath("//h2//strong[text()='Domain Expert or']");
 	private By linkAppAndroid	= By.xpath("(//*[@class='social-app']//a)[1]");
 	private By linkAppiOS		= By.xpath("(//*[@class='social-app']//a)[2]");
+	private By popUp		= By.xpath("//*[@class='fractal-ent']");
 	public OriginFractalLoadPage(WebDriver driver) {
 		super(driver);
 		pageName="originFractal";
 	}	
+
+	/* Function Name: clickPopUp()
+	 * Purpose:click PopUp Image using Sukili logic
+	 */
+	public void clickPopUp() {
+		WebElement banner = driver.findElement(By.name("image-map1"));
+		WebElement area = banner.findElement(popUp);
+
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", area);
+		
+	}
+
 	/* Function Name: goToURL()
 	 * Purpose: Navigate the URL and close the cookies
 	 */
 	public void goToURL() {
 		goTo(getLabel("webUrl"));
-		wait(10);
-//		Set<Cookie> allCookies = driver.manage().getCookies();
-//		for (Cookie cookie : allCookies) {
-//		    driver.manage().deleteCookieNamed(cookie.getName());
-//		}
-		if(elementExist(cookiesBtn)) {
-			moveElementFocusandClick(cookiesBtn);
-			wait(3);
-			moveElementFocusandClick(btnUnderstand);
-			wait(5);
-		}
-////		driver.manage().deleteAllCookies();
-//		wait(5);
-		//Added on 26-Nov-20
+		wait(5);
 		if(elementExist(newsSlider)) {
 			moveElementFocusandClick(btnCancelnewsSlider);
 		}
-		wait(10);
+		if(elementExist(cookiesBtn)) {
+			moveElementFocusandClick(cookiesBtn);
+			//			moveElementFocusandClick(btnUnderstand);
+		}
 	}
 	/*Function Name: gotoHome()
 	 * purpose: Click on home icon
@@ -100,7 +102,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	/* Function Name: verifyHeaderPricing()
 	 * Purpose: Verify the page loading time
 	 */
-	public boolean verifyHeaderPricing() {
+	public boolean verifyHeaderPricing(){
 		return clickAndcheckLoading(headerPricing,getLabel("pricingUrl"));
 	}
 
@@ -138,7 +140,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	/* Function Name: verifyHeaderAbout()
 	 * Purpose: Verify the page loading time
 	 */
-	public boolean verifyHeaderAbout(){
+	public boolean verifyHeaderAbout() {
 		return clickAndcheckLoading(headerAboutUs,getLabel("aboutUsUrl"));
 	}
 
@@ -160,14 +162,14 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	/* Function Name: verifyPostBlog2()
 	 * Purpose: Verify the page loading time
 	 */
-	public boolean verifyPostBlog2() {
+	public boolean verifyPostBlog2(){
 		moveElementFocus(postedBlog2);
 		return clickAndcheckLoading(postedBlog2,banner);
 	}
 	/* Function Name: verifyConsultingSubManu()
 	 * Purpose: Verify the page loading time
 	 */
-	public boolean verifyPostBlog3() {
+	public boolean verifyPostBlog3(){
 		moveElementFocus(postedBlog3);
 		return clickAndcheckLoading(postedBlog3,banner);
 	}
@@ -191,7 +193,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	/* Function Name: verifylblLxpEnterprises()
 	 * Purpose: Verify the page loading time
 	 */
-	public boolean verifylblLxpEnterprises() {
+	public boolean verifylblLxpEnterprises(){
 		moveElementFocus(lblLXPEnterPrises);
 		return clickAndcheckLoading(lblLXPEnterPrises,txtEnterPrise);
 	}

@@ -12,6 +12,7 @@ public class Reporter {
 	private static CSVWriter repWriterFailure;
 	private static String strBrowserAppOS = "Chrome";
 	private static String strEnv = "OriginFractal - WebSite";
+	public static int jenkinsResult=0;//Added on 22/Dec/30
 
 	public static void createReports() throws IOException {
 		createReport();
@@ -97,14 +98,15 @@ public class Reporter {
 	}
 
 	public static void writeSummary(String strLine) {
-
 		String strReportWithBrowserEnvDetails = strBrowserAppOS + "," + strEnv + "," + strLine+","+TimeManager.getCurrentDateTime();
 		TimeManager.setTimeAtEvent();
 		// This is report test result
 		String[] record = strReportWithBrowserEnvDetails.split(",");
 		repWriter.writeNext(record);	
-		if (strReportWithBrowserEnvDetails.contains("FAILED"))
+		if (strReportWithBrowserEnvDetails.contains("FAILED")) {
 			writeFailure(strReportWithBrowserEnvDetails);
+			jenkinsResult++;//Added on 22/Dec/30
+		}
 	}
 
 	public static void writeSummary(String strLine,String TimeTaken,String TimeStamp) {
