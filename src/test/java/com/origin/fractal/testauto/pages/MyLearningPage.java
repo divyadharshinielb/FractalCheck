@@ -341,7 +341,7 @@ public class MyLearningPage extends FractalBasePage {
 		  
 			public void	verifyClassrooomLabels(){
 				wait(2);
-				WebElement element = driver.findElement(By.xpath("//a[text()='Automation Learningpath']"));
+				WebElement element = driver.findElement(By.xpath("//a[text()='Automation_Learningpath']"));
 				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 				wait(5);
 				wait(2);
@@ -375,7 +375,7 @@ public class MyLearningPage extends FractalBasePage {
 			}
 //			  Checking whether the Event is displayed under classroom object
 			  public void verifyEventDisplayClassroomObject(){
-				  click(lblAssignedClassroom3);
+				  click(lblAssignedClassroom);
 			  elementExist(classroomlblEvent);
 			  elementExist(classroomlblEventDate);
 			  elementExist(classroomlblEventTime);
