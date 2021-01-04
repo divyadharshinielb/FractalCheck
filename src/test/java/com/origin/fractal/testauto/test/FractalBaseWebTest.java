@@ -71,14 +71,14 @@ public class FractalBaseWebTest extends FractalBaseTest {
 				LoginSteps loginSteps = new LoginSteps(driver);
 				print("Inside testLogin - Page Opened");
 				loginSteps.siteAdminLoginwithcookies();
-				wait(20);
+				wait(5);
 			}
 			protected void siteAdminLogin(WebDriver driver) {
 				print("Inside testLogin");
 				LoginSteps loginSteps = new LoginSteps(driver);
 				print("Inside testLogin - Page Opened");
 				loginSteps.siteAdminLogin();
-				wait(20);
+				wait(5);
 			}
 			protected void loginInstructorwithCookies(WebDriver driver,String instUserID,String instPassword) {
 				print("Inside testLogin");
