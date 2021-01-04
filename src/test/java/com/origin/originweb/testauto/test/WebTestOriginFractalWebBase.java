@@ -1,7 +1,6 @@
 package com.origin.originweb.testauto.test;
 
 import org.openqa.selenium.WebDriver;
-import org.sikuli.script.FindFailed;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -16,7 +15,7 @@ public class WebTestOriginFractalWebBase extends OriginFractalWebBaseTest {
 	public void beforeMethod() {
 		print("This is Origin Fractal WebSite Load Test beforeMethod");
 	}
-	protected void goToUrl(WebDriver driver) throws  FindFailed  {
+	protected void goToUrl(WebDriver driver)  {
 		print("Inside testLogin");
 		OriginFractalLoadSteps Page = new OriginFractalLoadSteps(driver);
 		print("Inside testLogin - Page Opened");

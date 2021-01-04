@@ -1,7 +1,6 @@
 package com.origin.originweb.testauto.steps;
 
 import org.openqa.selenium.WebDriver;
-import org.sikuli.script.FindFailed;
 
 import com.origin.originweb.testauto.OriginFractalWebSteps;
 import com.origin.originweb.testauto.pages.OriginFractalLoadPage;
@@ -18,7 +17,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 
 	}
 
-	public void clickPopUp() throws  FindFailed  {
+	public void clickPopUp()  {
 		result="FAILED";
 		try{
 			loadPage.clickPopUp(); 
@@ -27,7 +26,7 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			print("URL navigation is problem");
 		}
 	}
-	public void goToURL() throws  FindFailed  {
+	public void goToURL()  {
 		result="FAILED";
 		try{
 			loadPage.goToURL(); 

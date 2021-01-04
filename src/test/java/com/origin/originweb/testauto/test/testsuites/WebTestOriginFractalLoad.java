@@ -2,7 +2,6 @@ package com.origin.originweb.testauto.test.testsuites;
 
 import java.io.IOException;
 
-import org.sikuli.script.FindFailed;
 import org.testng.annotations.Test;
 
 import com.origin.originweb.testauto.DataManager;
@@ -22,7 +21,7 @@ import com.wv.auto.framework.utils.TimeManager;
 public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browsers", groups= {"pilot"}, enabled= true, 
 			description="")
-	public void TestHeaderElementPageLoading(String row, String strBrowserName) throws IOException,FindFailed  {
+	public void TestHeaderElementPageLoading(String row, String strBrowserName) throws IOException  {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		OriginFractalLoadSteps Steps=new OriginFractalLoadSteps(driver);
 		goToUrl(driver);
