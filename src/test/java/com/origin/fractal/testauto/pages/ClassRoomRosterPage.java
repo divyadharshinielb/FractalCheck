@@ -95,7 +95,7 @@ public class ClassRoomRosterPage extends FractalBasePage{
 		try{click(eventRosterTab);
 		wait(10);
 		moveElementFocusandClick(userModuleAssignment);
-		wait(3);
+		wait(10);//Updated on 5-Jan-21
 		moveElementFocusandClick(userSubmitedAssignment);
 		wait(5);
 		moveElementFocusandClick(assignmentStatus);
