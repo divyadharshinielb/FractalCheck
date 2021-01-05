@@ -16,7 +16,7 @@ public class GlobalPage extends FractalBasePage{
     private By noItem = By.xpath(".//span[@class='no-records-found']");//span[contains(text(),'No catalog item available at the moment')]
     private By eLearning = By.xpath(".//span[contains(text(),'eLearning')]");
     private By video = By.xpath(".//div[contains(@class,'course_cnt ml-3 padding-t-6')]/../div/h6");
-    private By automationLearningpath = By.xpath(".//a[contains(text(),'Automation Learningpath')]");
+    private By automationLearningpath = By.xpath("//a[contains(text(),'Automation_Learningpath')]");
     private By automaionLearningpath=By.xpath(".//a[contains(text(),'Automation Learningpath')]");
     private By automationclassroom=By.xpath(".//h1[contains(text(),'Automation classroom')]");
     private By AutomationLearningpath=By.xpath(".//span[contains(text(),'Automation Learningpath')]");

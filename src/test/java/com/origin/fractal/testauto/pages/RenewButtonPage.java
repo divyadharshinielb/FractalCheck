@@ -22,13 +22,13 @@ public class RenewButtonPage extends FractalBasePage{
 	public By whatsNewViewAll = By.xpath("//a[contains(text(),'VIEW ALL')]");//a[contains(text(),'VIEW ALL')]/..
 	public By whatsNewDueDateLbl = By.xpath("//a[contains(text(),'Automation_Renew')]/../../../../p[contains(@class,'due_date myfont')]");
 	public By whatsNewRenewBtn = By.xpath("//a[contains(text(),'Automation_Renew')]/../../../div/div/div/a/button");
-	public By catalogTitle = By.xpath("//a[contains(text(),'Automation_Renew')]");
+	public By catalogTitle = By.xpath("//a[contains(text(),'Automation_Renew')]/..");
 	public By homeLogo = By.xpath("//img[@class='logo-height']");
 	public By categoryBtn = By.xpath("//a[contains(text(),'CATEGORIES')]");
 	public By generalLbl = By.xpath("//a[contains(text(),'Technology')]");
 	public By gridIcon = By.xpath("//i[@class='icon-list font-16']");
 	public By gridDudeDateLbl = By.xpath("//a[contains(text(),'Automation_Renew')]/../../../p[contains(text(),'DUE DATE IS OVER')]");
-	public By gridRenewBtn = By.xpath("//a[contains(text(),'Automation_Renew')]/../../../../../div/p/p/a/button");
+	public By gridRenewBtn = By.xpath("//a[contains(text(),'Automation_Renew')]/../../../../../div/p/a/button[contains(text(),'RENEW')]");
 	public By renewCompletedBtn = By.xpath("//a[contains(text(),'Renew Check1')]/..");
 	public By completedDueDateLbl = By.xpath("//a[contains(text(),'Renew Check1')]/../../../p[contains(text(),'DUE DATE IS OVER')]");
 	public By expiredLbl = By.xpath("//a[contains(text(),'Renew Check1')]/../../../../p[contains(text(),'EXPIRED')]");
@@ -100,8 +100,8 @@ String renewnumber=String.valueOf(numbernew);
 		wait(2);
 		if(elementExist(gridDudeDateLbl)== true) {
 		verifyText("Due date is over",gridDudeDateLbl);}
-		verifyText("RENEW",gridRenewBtn);
-		isClickable(gridRenewBtn);
+	//	verifyText("RENEW",gridRenewBtn);
+		//isClickable(gridRenewBtn);
 	}
 	/*
 	 *function: completedRenewbtnCheck()
@@ -143,7 +143,7 @@ String renewnumber=String.valueOf(numbernew);
 		verifyText("Due date is over",whatsNewDueDateLbl);}
 	//	verifyText("RENEW", whatsNewRenewBtn);
 		click(catalogTitle);
-		wait(2);
+		wait(5);
 		verifyText("RENEW", renewbtnsearch);
 		elementExist(daysleftLbl);
 		click(homeLogo);
