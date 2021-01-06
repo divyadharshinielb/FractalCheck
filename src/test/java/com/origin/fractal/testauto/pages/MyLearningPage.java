@@ -25,7 +25,7 @@ public class MyLearningPage extends FractalBasePage {
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath("./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");//Updated on Nov-22-18
+	private By clickCatalog = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]/div[2]/p[1]/a[1]");//Updated on Nov-22-18
 
 	private By lblCatlogCategory = By.xpath(".//div[contains(@class,'container pl-0 bgcolor')]//div[contains(@class,'category')]//div[1]");//div[contains(text(),'Category :')]
 	private By lblLanguage = By.xpath(".//div[contains(@class,'category')]//div[2]");//div[contains(text(),'Language :')]
@@ -68,7 +68,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By lblhome = By.xpath("//img[contains(@class,'logo-height')]");
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");//*[@id='dLabel']/span
 	private By multiplecategorycatalog = By.xpath("//a[contains(text(),'checkmultiplechoice')]");
-	private By categorypopupbtn = By.xpath("//span[@class='r-border']");
+	private By categorypopupbtn = By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/span[1]");//span[@class='r-border']
 //	private By categorypopuptext = By.xpath("//div[contains(text(),'Automation Test, Project Lead, Project Management, Functional Testing, Time Management, Project, General, Technology')]");
 	private By viewallbtn = By.xpath("//a[contains(text(),'VIEW ALL')]");
 	private By listviewhome = By.xpath("//i[@class='icon-list font-16']");
@@ -137,10 +137,14 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyAllFilter() {
-		click(lblAll);
+		wait(5);
+		if(elementExist(lblAll)){
 		wait(2);
+		click(lblAll);
+		}
 		click(lblListView);
 		verifyAllFilterType(boxBtn, boxCatType, lblFilterLink);
+		
 	}
 
 	public void verifyBundleFilter() {

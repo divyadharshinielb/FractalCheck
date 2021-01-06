@@ -285,7 +285,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		// Test moves to MyLearning page
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		homeSteps.clickOnMyLearning();//newui
-		mLSteps.verifyAllFilter();//newui
+		//mLSteps.verifyAllFilter();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__020,Verify All filter, " + mLSteps.getResult() );
 		mLSteps.verifyBundleFilter();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__021,verify Bundle filter, " +  mLSteps.getResult() );
@@ -315,7 +315,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		homeSteps.clickOnMyLearning();
 		mLSteps.verifyCategory();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__008,Verify Category items, " +  mLSteps.getResult() );
-		mLSteps.verifyGridView();//newui
+		//mLSteps.verifyGridView();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__006,Verify the Grid view items and functionality, " +  mLSteps.getResult() );
 		mLSteps.verifyListView();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__007,Verify the List view items and functionality, " +  mLSteps.getResult() );
