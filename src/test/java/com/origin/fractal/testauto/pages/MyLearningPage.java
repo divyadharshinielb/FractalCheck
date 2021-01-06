@@ -228,26 +228,38 @@ public class MyLearningPage extends FractalBasePage {
 
 	public void verifyBundleContents() {
 		if(elementExist(lblBundles)) {
+			wait(5);
+			WebElement element = driver.findElement(lblBundles); Actions 
+			actions = new Actions(driver); actions.moveToElement(element);
+			actions.perform();
+			wait(5);
 		click(lblBundles);
 		wait(5);
-		WebElement element = driver.findElement(clickCatalog); Actions 
-		actions = new Actions(driver); actions.moveToElement(element);
-		actions.perform();
+		WebElement element1 = driver.findElement(clickCatalog); Actions 
+		actions1 = new Actions(driver); actions.moveToElement(element1);
+		actions1.perform();
 		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
 		}
 	}
 	public void verifyCourseContents() {
+		if(elementExist(lblCourses)) {
+			wait(5);
+			WebElement element = driver.findElement(lblCourses); Actions 
+			actions = new Actions(driver); actions.moveToElement(element);
+			actions.perform();
+			wait(5);
 		click(lblCourses);
 		wait(5);
-		WebElement element = driver.findElement(clickCatalog); Actions 
-		actions = new Actions(driver); actions.moveToElement(element);
-		actions.perform();
+		WebElement element1 = driver.findElement(clickCatalog); Actions 
+		actions1 = new Actions(driver); actions.moveToElement(element1);
+		actions1.perform();
 		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
-	}
+		}
+		}
 
 	public void verifyLaunch() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
