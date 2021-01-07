@@ -470,7 +470,7 @@ public class MyLearningPage extends FractalBasePage {
 		    	   wait(5);
 		    	   driver.navigate().refresh();*/
 		    	   }
-			 	    }
+			 	  //  }
 			 public  void multiplecategoryhomepage() {
 			    //check for multiple categories in Homepage
 			    wait(2);
