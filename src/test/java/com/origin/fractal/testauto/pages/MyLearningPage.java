@@ -68,7 +68,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By lblhome = By.xpath("//img[contains(@class,'logo-height')]");
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");//*[@id='dLabel']/span
 	private By multiplecategorycatalog = By.xpath("//a[contains(text(),'checkmultiplechoice')]");
-	private By categorypopupbtn = By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/span[1]");//span[@class='r-border']
+	private By categorypopupbtn = By.xpath("//span[@class='r-border mtop-5']");
 //	private By categorypopuptext = By.xpath("//div[contains(text(),'Automation Test, Project Lead, Project Management, Functional Testing, Time Management, Project, General, Technology')]");
 	private By viewallbtn = By.xpath("//a[contains(text(),'VIEW ALL')]");
 	private By listviewhome = By.xpath("//i[@class='icon-list font-16']");
@@ -440,34 +440,36 @@ public class MyLearningPage extends FractalBasePage {
 			wait(5);
 		    }
 		    public void multiplecategorycheck() {
-			 	   //code to search for a catalog in search bar and check for multiplecategories
-			    	wait(2);
-			 	    click(searchbar);
-			 	    enterData("checkmultiplechoice",searchbar);
-			 	    driver.findElement(By.xpath("//input[contains(@name,'searchterm')]")).sendKeys(Keys.ENTER);
-			 	    elementExist(categorypopupbtn);
-			 	    click(categorypopupbtn);
-			 	    wait(2);
-			 	    elementExist(multiplecatalogpopup);
-			 	    driver.navigate().refresh();
-			 	    //code to check for multiplecategories in mylearning completed list view
-			 	    click(lblMyLearning);
-			 	    wait(6);
-			 	   click(searchbar);
-			 	    enterData("checkmultiplechoice",searchbar);
-			 	   driver.findElement(By.xpath("//input[contains(@name,'searchterm')]")).sendKeys(Keys.ENTER);
-			 	/*    click(lblListView);
-				    wait(5);
-			 	 */  
-			 	  JavascriptExecutor js = (JavascriptExecutor) driver;
-			 		WebElement Element= driver.findElement(By.xpath("//span[@class='r-border'][1]"));
-			 		js.executeScript("arguments[0].scrollIntoView();", Element);
-			 		wait(5);
-			 	    click(categorypopupbtn1);
-			 	    wait(2);
-			 	    elementExist(multiplecatalogpopup);
-			 	    wait(5);
-			 	    driver.navigate().refresh();
+		    	  //code to search for a catalog in search bar and check for multiplecategories
+		    	    wait(2);
+		    	   click(searchbar);
+		    	   enterData("checkmultiplechoice",searchbar);
+		    	   driver.findElement(By.xpath("//input[contains(@name,'searchterm')]")).sendKeys(Keys.ENTER);
+		    	   elementExist(categorypopupbtn);
+		    	   click(categorypopupbtn);
+		    	   wait(2);
+		    	   elementExist(multiplecatalogpopup);
+		    	   driver.navigate().refresh();
+		    	   //code to check for multiplecategories in mylearning completed list view
+		    	   click(lblMyLearning);
+		    	   wait(6);
+		    	  click(searchbar);
+		    	   enterData("checkmultiplechoice",searchbar);
+		    	  driver.findElement(By.xpath("//input[contains(@name,'searchterm')]")).sendKeys(Keys.ENTER);
+		    	/*    click(lblListView);
+		    	   wait(5);
+		    	*/  
+		    	  //commented as it invloves the search page only again
+		    	/*  JavascriptExecutor js = (JavascriptExecutor) driver;
+		    	WebElement Element= driver.findElement(By.xpath("//span[@class='r-border'][1]"));
+		    	js.executeScript("arguments[0].scrollIntoView();", Element);
+		    	wait(5);
+		    	   click(categorypopupbtn1);
+		    	   wait(2);
+		    	   elementExist(multiplecatalogpopup);
+		    	   wait(5);
+		    	   driver.navigate().refresh();*/
+		    	   }
 			 	    }
 			 public  void multiplecategoryhomepage() {
 			    //check for multiple categories in Homepage
