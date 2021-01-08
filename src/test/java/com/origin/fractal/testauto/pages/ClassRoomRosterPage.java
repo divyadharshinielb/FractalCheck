@@ -93,15 +93,15 @@ public class ClassRoomRosterPage extends FractalBasePage{
 	public boolean verifyAssignmentScore() {
 		wait(2);
 		try{click(eventRosterTab);
-		wait(15);
+		wait(20);//Updated on 8-Jan-21
 		moveElementFocusandClick(userModuleAssignment);
 		wait(20);//Updated on 6-Jan-21
 		moveElementFocusandClick(userSubmitedAssignment);
 		wait(5);
 		moveElementFocusandClick(assignmentStatus);
-		wait(2);
+		wait(5);//Updated on 8-Jan-21
 		moveElementFocusandClick(assignmentEvalution);
-		wait(2);
+		wait(5);//Updated on 8-Jan-21
 		enterData("50",inputAssignmentScore);
 		wait(2);
 		click(backToAssignmentDetails);
