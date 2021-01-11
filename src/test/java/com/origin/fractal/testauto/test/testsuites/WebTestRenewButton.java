@@ -30,11 +30,11 @@ public class WebTestRenewButton extends FractalBaseWebTest {
 		renew.inprogressRenewbtnCheck();
 		Reporter.writeSummary("FR1-2496_Renew_TC-02,Verify renew button in InProgress Page," + renew.getResult() );
 	//	renew.completedRenewbtnCheck();
-		Reporter.writeSummary("FR1-2496_Renew_TC-03,Verify renew button in  Completed page," + renew.getResult() );
+	//	Reporter.writeSummary("FR1-2496_Renew_TC-03,Verify renew button in  Completed page," + renew.getResult() );
 	//	renew.whatsnewRenewBtnCheck();
-		Reporter.writeSummary("FR1-2777_Renew_TC-01,Verify renew button in  WhatsNew and Dashboard page," + renew.getResult() );
+	//	Reporter.writeSummary("FR1-2777_Renew_TC-01,Verify renew button in  WhatsNew and Dashboard page," + renew.getResult() );
 	//	renew.categoryRenewBtnCheck();
-		Reporter.writeSummary("FR1-2777_Renew_TC-02,Verify renew button after selecting category," + renew.getResult() );
+	//	Reporter.writeSummary("FR1-2777_Renew_TC-02,Verify renew button after selecting category," + renew.getResult() );
 	}
 }
 
