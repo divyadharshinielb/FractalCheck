@@ -34,10 +34,12 @@ public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 		//		Steps.verifyHeaderTrail();
 		//		Reporter.writeSummary("TC-03_Header-TrialSignUp,Verifying the trail sign Up page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		//Ends
-		Steps.verifyHeaderBlog();
-		Reporter.writeSummary("TC-04_Header-Blog,Verifying the Blog page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
-		Steps.verfiySearchFunction();
-		Reporter.writeSummary("TC-05_Header-SearchBlog,Verifying the Search Blog loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		//Commented on 12-Jan-2020 (Blog is NOT presenting in the website)
+		//		Steps.verifyHeaderBlog();
+		//	Reporter.writeSummary("TC-04_Header-Blog,Verifying the Blog page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		//		Steps.verfiySearchFunction();
+		//		Reporter.writeSummary("TC-05_Header-SearchBlog,Verifying the Search Blog loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		// Ends
 		Steps.verifyHeaderPhilosophy();
 		Reporter.writeSummary("TC-06_Header-Philosophy,Verifying the Philosophy page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderAbout();
