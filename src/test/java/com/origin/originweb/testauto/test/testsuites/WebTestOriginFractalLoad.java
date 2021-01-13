@@ -16,7 +16,7 @@ import com.wv.auto.framework.utils.TimeManager;
  * Number of Test Cases: 18
  * Created by: Vigneshwaran R
  * Created on: 10-Nov-2020
- * updated on:30-Dec-20
+ * updated on: 12-Jan-21
  */
 public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browsers", groups= {"pilot"}, enabled= true, 
@@ -40,6 +40,12 @@ public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 		//		Steps.verfiySearchFunction();
 		//		Reporter.writeSummary("TC-05_Header-SearchBlog,Verifying the Search Blog loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		// Ends
+		//added on 13-Jan-21
+		Steps.verifyHeaderResources();
+		Reporter.writeSummary("TC-04_Header-Resources,Verifying the Resources page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Steps.verifyunpluggedBanner();
+		Reporter.writeSummary("TC-05_Header-Resources,Verifying the Unplugged page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		//Ends
 		Steps.verifyHeaderPhilosophy();
 		Reporter.writeSummary("TC-06_Header-Philosophy,Verifying the Philosophy page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderAbout();

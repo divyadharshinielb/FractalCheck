@@ -12,11 +12,11 @@ import com.wv.auto.framework.utils.TimeManager;
  * Purpose: https://originfractal.com/ - Verifying page loading time
  * Created by: Vigneshwaran R
  * Created on: 10-Nov-2020
- * Updated on: 30-Dec-20
+ * Updated on: 13-Jan-21
  */
 public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By cookiesBtn=By.xpath("//a[text()='Accept']");//Updated on 26-Nov-20
-//	private By btnUnderstand=By.xpath("//button[text()='I Understand']"); //Added on 26-Nov-20
+	//	private By btnUnderstand=By.xpath("//button[text()='I Understand']"); //Added on 26-Nov-20
 	private By headerLogo=By.xpath("//*[@class='logo']");
 	private By newsSlider=By.xpath("//*[@id='normal-slidedown']");//Added on 26-Nov-20
 	private By btnCancelnewsSlider=By.xpath("//*[@id='normal-slidedown']//button[text()='Cancel']");//Added on 26-Nov-20
@@ -25,9 +25,11 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By headerPricing	= By.xpath("(//UL[@class='navigation clearfix']//a)[2]");
 	private By headerTrailSign	= By.xpath("(//UL[@class='navigation clearfix']//a)[3]");
 	private By headerBlog		= By.xpath("(//UL[@class='navigation clearfix']//a)[4]");
+	private By headerResources	= By.xpath("(//UL[@class='navigation clearfix']//a)[4]");// Added ON 13-Jan-20
 	private By headerPhilosophy	= By.xpath("(//UL[@class='navigation clearfix']//a)[5]");
 	private By headerAboutUs	= By.xpath("(//UL[@class='navigation clearfix']//a)[6]");
 	private By headerContact	= By.xpath("(//UL[@class='navigation clearfix']//a)[7]");
+	private By unpluggedBanner	= By.xpath("//a[@href='https://originfractal.com/unplugged']");// Added ON 13-Jan-20
 	//Home page
 	private By postedBlog1		= By.xpath("((//*[@class='kc-list-item-3'])[1]//a)[text()='Read more ']");//Updated on 18-Dec-20
 	private By postedBlog2		= By.xpath("((//*[@class='kc-list-item-3'])[2]//a)[text()='Read more ']");//Updated on 18-Dec-20
@@ -60,7 +62,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", area);
-		
+
 	}
 
 	/* Function Name: goToURL()
@@ -120,10 +122,28 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 		return clickAndcheckLoading(headerBlog,getLabel("blogUrl"));
 	}
 
+	//Added 0n 13-Jan-21
+	/* Function Name: verifyHeaderResources()
+	 * Purpose: Verify the page loading time
+	 */
+	public boolean verifyHeaderResources(){
+		return clickAndcheckLoading(headerResources,getLabel("resourceUrl"));
+	}
+
+	/* Function Name: verifyunpluggedBanner()
+	 * Purpose: Verify the page loading time
+	 */
+	public boolean verifyunpluggedBanner(){
+		moveElementFocus(unpluggedBanner);
+		return clickAndcheckLoadingOtherTab(unpluggedBanner,getLabel("unpluggedUrl"));
+	}
+	//Ends
+	
 	/* Function Name: verfiySearchFunction()
 	 * Purpose: Search and Verify the page loading time
 	 */
 	public boolean verfiySearchFunction() {
+		
 		wait(3);//Added on 14-Dec-12
 		enterData("Fractal",search);
 		driver.findElement(search).sendKeys(Keys.RETURN);

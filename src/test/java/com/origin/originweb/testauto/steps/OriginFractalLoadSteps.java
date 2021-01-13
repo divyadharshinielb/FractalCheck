@@ -8,6 +8,7 @@ import com.origin.originweb.testauto.pages.OriginFractalLoadPage;
  * Purpose: https://originFractal.com/ - Verifying page loading test -Step level codes
  * Created by: Vigneshwaran R
  * Created on: 10-Nov-2020
+ * Updated on: 13-Jan-21
  */
 public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 	OriginFractalLoadPage loadPage = null;
@@ -119,6 +120,35 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			ClickHome(); 
 		}
 	}
+	//Added on 13-Jan-20
+	/* Function Name: verifyHeaderResources()
+	 * Purpose: Verify the page loading time
+	 */
+	public void verifyHeaderResources() {
+		result="FAILED";
+		try{
+			if(loadPage.verifyHeaderResources()==true) {
+				result="PASSED";
+			}
+		}catch (Exception e) {
+			result="FAILED";
+			ClickHome(); 
+		}}
+	
+	/* Function Name: verifyunpluggedBanner()
+	 * Purpose: Verify the page loading time
+	 */
+	public void verifyunpluggedBanner() {
+		result="FAILED";
+		try{
+			if(loadPage.verifyunpluggedBanner()==true) {
+				result="PASSED";
+			}
+		}catch (Exception e) {
+			result="FAILED";
+			ClickHome(); 
+		}}
+	//Ends
 
 	/* Function Name: verfiySearchFunction()
 	 * Purpose: Search and Verify the page loading time
