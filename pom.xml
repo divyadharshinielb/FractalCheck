@@ -43,7 +43,12 @@
 			<exclusions>
 				<exclusion>
 					<groupId>org.testng</groupId>
-					<artifactId>testng</artifactId>
+					<artifactId>testng1</artifactId>
+				</exclusion>
+				
+				<exclusion>
+					<groupId>org.testng</groupId>
+					<artifactId>testng2</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -139,7 +144,8 @@
 					</properties>
 					<!-- End of reportNG addition -->
 					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>testng1.xml</suiteXmlFile>
+						<suiteXmlFile>testng2.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
