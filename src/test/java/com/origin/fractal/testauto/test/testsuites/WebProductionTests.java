@@ -38,8 +38,9 @@ public class WebProductionTests extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_071,Verify the login page with valid user name and invalid password," +  loginSteps.getResult() );
 		loginSteps.rememberMe();
 		Reporter.writeSummary("TCID_072,Verify the Remember me function," +  loginSteps.getResult() );
+		/*commenting as per subashini input(Register link,social login is not present due to Audit) 19-1-2021
 		loginSteps.registerFunction();
-		Reporter.writeSummary("TCID_074,Verification of Register link  function," +  loginSteps.getResult() );
+		Reporter.writeSummary("TCID_074,Verification of Register link  function," +  loginSteps.getResult() );*/
 		loginSteps.verifypasswordField();
 		Reporter.writeSummary("TCID_065,Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult());	
 		login(driver);
