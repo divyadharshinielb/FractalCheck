@@ -139,7 +139,7 @@
 					</properties>
 					<!-- End of reportNG addition -->
 					<suiteXmlFiles>
-						<suiteXmlFile>singletestng.xml</suiteXmlFile>
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
