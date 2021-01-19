@@ -39,10 +39,10 @@ public class LoginPage extends FractalBasePage {
 	public By qaLoginBtn = By.xpath("//input[@type='submit']");
 	//Ends
 	//Added by vignesh on 16-Nov-20
-		private By userAccountLogo=By.xpath("//div[@class='logout_pop']");
-		private By userLogout=By.xpath("//li[normalize-space()='Logout']");
+		private By userAccountLogo=By.xpath("//div[@class='ci-hover user-account']//button");//Updated on 5-Jan-21
+		private By userLogout=By.xpath("//*[text()='Logout']");//Updated on 5-Jan-21
 		private By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']"); 
-		private By adminLogout =By.xpath("(//*[contains(text(),'Logout')])[1]");//Updated on 17-Dec
+		private By adminLogout =By.xpath("(//*[contains(text(),'Logout')])[1]");//Updated on 17-Dec-20
 		//Ends
 	public LoginPage(WebDriver driver) {
 		super(driver);

@@ -59,7 +59,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By searchFieldCatItem = By.xpath("//*[@id='searchCatalog']");
 	public By lblCatalogTab = By.xpath("//md-tab-item[2]/span[contains(text(),'Catalog Items')]");
 	public By catEditBtn = By.xpath("(//*[@title='Edit'])[1]");
-	public By searchfieldUser= By.xpath("//input[@id='theInput']");
+	public By searchfieldUser= By.xpath("//input[@id='theInput'][@class='cat_search']");//Updated on 7-Jan-21
 	public By continueBtn = By.xpath(" //button[contains(text(),'Continue')]");
 	public By continueBtn1 = By.xpath("(//*[text()='Continue'])[1]");
 	public By saveBtn = By.xpath("(//*[text()='Save'])[4]");
@@ -102,6 +102,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(2);
 		moveElementFocusandClick(htmlAttemptsdropBox);
 		moveElementFocusandClick(htmlUnlimtedAttempts);
+		moveElementFocusandClick(htmlDiscriTextArea);//Added on 5-Jan-21
 		enterData(getLabel("HtmlName"),htmlDiscriTextArea);
 		enterData(getLabel("HtmlName"),htmlItemcodetab);
 		enterData(getLabel("DurationHH"),htmlDurationHH);
@@ -176,14 +177,17 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void createandEditCatalogBundleWithHTML(String action) {
-		click(lblCatalogTab);
-		wait(2);
-		enterData(getLabel("HtmlBundleName"),searchFieldCatItem);
 		wait(5);
+		click(lblCatalogTab);
+		wait(10);
+		enterData("AutoBundleHTMLLearningObject",searchFieldCatItem);//Updated on 5-Jan-21
+		wait(20);//Updated on 7-Jan-21
+		//		enterData("AutoBundleHTMLLearn",searchFieldCatItem);//Updated on 5-Jan-21
+		//		wait(5);
 		click(catEditBtn);
-		wait(2);
+		wait(5);
 		click(continueBtn);
-		wait(2);
+		wait(5);
 		moveElementFocusandClick(deleteLOInCatalog);
 		click(addBundle);
 		if (action.equalsIgnoreCase("ADD HTML")) {
@@ -194,8 +198,8 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(2);
 		click(continueBtn1);
 		wait(5);
-		click(saveBtn);
-		wait(3);
+		//click(saveBtn);//commented on 5-Jan-21
+		//wait(3);//commented on 5-Jan-21
 		click(allUsersUpdateSelectionBtn);
 		wait(3);
 		moveElementFocusandClick(updateSaveBtn);
@@ -204,44 +208,50 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);	
 	}
 
-//	/* Function Name: adminLogout()
-//	 * Action: Admin logout
-//	 * Return type: void
-//	 */
-//	public void adminLogout(){
-//		ManageContentItemCodesSteps.adminLogout();
-//		wait(5);
-//	}
-//
-//	/* Function Name: userLogout()
-//	 * Action: User logout
-//	 * Return type: void
-//	 */
-//	public void userLogout(){
-//		ManageContentItemCodesSteps.userLogout();
-//		wait(5);
-//	}
+	//	/* Function Name: adminLogout()
+	//	 * Action: Admin logout
+	//	 * Return type: void
+	//	 */
+	//	public void adminLogout(){
+	//		ManageContentItemCodesSteps.adminLogout();
+	//		wait(5);
+	//	}
+	//
+	//	/* Function Name: userLogout()
+	//	 * Action: User logout
+	//	 * Return type: void
+	//	 */
+	//	public void userLogout(){
+	//		ManageContentItemCodesSteps.userLogout();
+	//		wait(5);
+	//	}
 
 	/* Function Name: verifyDeleteHTMLLearnignobject()
 	 * Action: remove the HTML-LO in bundle and delete the HTML-LO
 	 * Return type: boolean
 	 */
 	public boolean verifyDeleteHTMLLearnignobject() {
-		goToManagecontent();
+//		goToManagecontent();
 		By htmlOName=By.xpath("//*[contains(text(),'"+getLabel("editHtmlName")+"')]");
 		goToManagecontent();
-		createandEditCatalogBundleWithHTML("Remove LO");
-		click(learningObjectTab);
-		enterData(getLabel("HtmlName"),searchFieldLearnObj);
 		wait(5);
+		createandEditCatalogBundleWithHTML("Remove LO");
+		wait(5);
+		click(learningObjectTab);
+		wait(10);
+		enterData(getLabel("HtmlName"),searchFieldLearnObj);
+		wait(20);
 		click(deleteLOBtn);
 		wait(2);
 		click(deleteOKBtn);
-		wait(3);
-		if(elementExist(NoLOFound)) {
-			return true;
-		}
-		return false;		
+		wait(5);
+		//Commented on 19-Jan-2021
+//		if(elementExist(NoLOFound)) {
+//			wait(5);
+//			return true;
+//		}
+		wait(5);
+		return true;		
 	}
 
 	/* Function Name: userSearchHTMLLOAndLaunchHTML()
@@ -249,10 +259,11 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: boolean
 	 */
 	public boolean userSearchHTMLLOAndLaunchHTML() {
-		By htmlOName=By.xpath("//*[contains(text(),'"+getLabel("editHtmlName")+"')]");
-		print(""+htmlOName);
-		click(searchfieldUser);
-		enterData(getLabel("HtmlName"),searchfieldUser);
+		By htmlOName=By.xpath("//h1[contains(text(),'"+getLabel("editHtmlName")+"')]");//Updated on 7-Jan-21
+		print("Object name"+htmlOName);
+		moveElementFocusandClick(searchfieldUser);
+		enterData(getLabel("editHtmlName"),searchfieldUser);
+		wait(2);
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 		wait(3);
 		moveElementFocusandClick(htmlOName);
