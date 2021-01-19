@@ -8,7 +8,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 /* File/Class name: InstructorBellNotificationPage.java
  * Created by: Vignesh 
  * Created on: 06-Apr-2020
- * Updated Date: 15-July-20
+ * Updated Date: 19-Jan-21
  * Purpose: Check Instructor side Bell notification 
  * 
  */
@@ -35,8 +35,8 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By eventSession=By.xpath("//*[@id='session_title']/i");
 	public By eventInstructor=By.xpath("//div[@class='col-lg-12 col-md-6 col-sm-6 col-xs-6 padding-t-0 padding-b-0 padding-l-5 padding-r-20 padding-l-10']//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required']");
 	public By selectedInstructor=By.xpath("(//*[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open'])[1]//span");
-	public By selectEventInstructor1=By.xpath("(//*[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open'])[1]//li[text()='Instructor WVF 9']");//("//li[@class='option selected focus']");
-	public By selectEventInstructor2=By.xpath("(//*[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open'])[1]//li[text()='QA TESTER Tester']");//("//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open']//li[@class='option'][1]");
+	public By selectEventInstructor1=By.xpath("//li[text()='Instructor WVI 2']");//up dated on 19-Jan-21
+	public By selectEventInstructor2=By.xpath("(//li[text()='QA TESTER Tester'])[2]");//("//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open']//li[@class='option'][1]");
 	public By closeXIcon=By.xpath("//*[contains(@class, 'close')]");
 	public By changeTimeZone=By.xpath("//*[@class='elearninglabel margin-b-20']//md-input-container/div");
 	public By clickCETTime=By.xpath("//li[contains(text(), 'CET European Central Time (GMT+1:00)')]");
@@ -56,7 +56,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public String rescheduledNotification="rescheduled to";
 	public String instructorEmailID="winfoundation1990@gmail.com";
 	public String instructorPassword="Welcome@123&";
-	public String instructor1EmailID="guest18009.user@winvinayafoundation.org";
+	public String instructor1EmailID="guestOl2.user@winvinayafoundation.org";
 	public String instructor1Password="Welcome@123&";
 	public String instructor2EmailID="fractalqaautomation@gmail.com";
 	public String instructor2Password="Welcome@123&";
