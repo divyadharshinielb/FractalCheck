@@ -398,6 +398,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 			Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login," +instbellnotiSteps.getResult() );
 			//ends
 			Reporter.writeSummary("FR1-2017_InstrBell_TC-001,Verify the text No notifications found," +instbellnotiSteps.getResult() );
+			instbellnotiSteps.instLogout();//Added on 20-Jan-21
 			siteAdminLogin(driver);
 			instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",instbellnotiPage.classroomName);
 			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
