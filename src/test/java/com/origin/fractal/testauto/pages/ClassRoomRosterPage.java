@@ -46,15 +46,15 @@ public class ClassRoomRosterPage extends FractalBasePage{
 		click(classRoomList);
 		wait(5);
 		click(eventList);
-		wait(10);
+		wait(13);//waiting time updated
 		moveElementFocusandClick(eventRosterTab);
 //		wait(2);
 //		moveElementFocusandClick(sessionAttendance);
-		wait(10);
+		wait(13);//waiting time updated
 		moveElementFocusandClick(userModuleAssignment);
-		wait(2);
+		wait(5);//waiting time updated
 		moveElementFocusandClick(userSubmitedAssignment);
-		wait(10);
+		wait(13);//waiting time updated
 		moveElementFocusandClick(assignmentStatus);
 		wait(2);
 		elementExist(assignmentEvalution);
@@ -99,9 +99,9 @@ public class ClassRoomRosterPage extends FractalBasePage{
 		moveElementFocusandClick(userSubmitedAssignment);
 		wait(5);
 		moveElementFocusandClick(assignmentStatus);
-		wait(5);//Updated on 8-Jan-21
+		wait(10);//Updated on 8-Feb-21
 		moveElementFocusandClick(assignmentEvalution);
-		wait(5);//Updated on 8-Jan-21
+		wait(10);//Updated on 8-Feb-21
 		enterData("50",inputAssignmentScore);
 		wait(2);
 		click(backToAssignmentDetails);
