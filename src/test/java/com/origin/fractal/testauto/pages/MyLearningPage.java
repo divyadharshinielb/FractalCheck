@@ -117,13 +117,14 @@ public class MyLearningPage extends FractalBasePage {
 		wait(5);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement Element= driver.findElement(clickCatalog);
-		js.executeScript("arguments[0].scrollIntoView();", Element);
+		js.executeScript("arguments[0].scrollIntoView();", lblAll);
 		wait(2);
 		click(clickCatalog);
 		/***/
 		verifyPartialLabelText("lblUpdatedOn", lblCatlogCategory);
 	//	verifyPartialLabelText("lbloverview", lbloverview);
-		verifyPartialLabelText("lblValidtill", lblValidity);
+		if(elementExist(lblValidity)) {
+		verifyPartialLabelText("lblValidtill", lblValidity);}
 		verifyPartialLabelText("lblDuration", lblLanguage);
 	}
 
