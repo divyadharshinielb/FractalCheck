@@ -116,8 +116,8 @@ public class MyLearningPage extends FractalBasePage {
 		/**added here 1/30/2019**/
 		wait(5);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement Element= driver.findElement(clickCatalog);
-		js.executeScript("arguments[0].scrollIntoView();", lblAll);
+		WebElement Element= driver.findElement(lblAll);
+		js.executeScript("arguments[0].scrollIntoView();",Element);
 		wait(2);
 		click(clickCatalog);
 		/***/
