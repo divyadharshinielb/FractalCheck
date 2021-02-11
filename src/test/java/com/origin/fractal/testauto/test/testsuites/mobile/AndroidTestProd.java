@@ -41,11 +41,11 @@ public class AndroidTestProd extends FractalBaseAppTest{
 		Reporter.writeSummary("TCID_078,Verifying whether the user can able to logout successfully on clicking the logout button, " +  mAMnuSteps.getResult() );
 		
 	}
-	@Test(groups = { "LoginPage0" }, enabled = true, description = "Combined mobile test")
+	//groups - LoginPage0
+	@Test(groups = { "pilot" }, enabled = true, description = "Combined mobile test")
 	public void LoginPage() {
 		System.out.println("TCID_002,003,004,005,006: Verification of Login Page");
 		appDriver = AppFactory.getAndroidApp();
-
 		MALoginSteps maLoginSteps = new MALoginSteps(appDriver);
 		MASelectInstanceSteps mASIS = new MASelectInstanceSteps(appDriver);
 		wait(5);
