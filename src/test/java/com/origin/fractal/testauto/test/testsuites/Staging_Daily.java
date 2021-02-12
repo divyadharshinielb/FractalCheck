@@ -21,7 +21,9 @@ import com.origin.fractal.testauto.steps.LoginSteps;
 import com.origin.fractal.testauto.steps.MenuSteps;
 import com.origin.fractal.testauto.steps.MyLearningSteps;
 import com.origin.fractal.testauto.steps.RenewButtonSteps;
+import com.origin.fractal.testauto.steps.UserCronSteps;
 import com.origin.fractal.testauto.steps.UserPaginationSteps;
+import com.origin.fractal.testauto.steps.VenueSteps;
 import com.origin.fractal.testauto.steps.VideoTesterSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
@@ -61,21 +63,28 @@ public class Staging_Daily extends FractalBaseWebTest {
 
 		HomeSteps homeSteps = new HomeSteps(driver);
 		//TCID_37:Checking whether the dash board contains the heading Learning in Progress
-	    homeSteps.verifyContinueText();//newui
+		homeSteps.verifyResumeLearningText();//newui
+		Reporter.writeSummary("TCID_HOME_037,  Verify  whether the dash board contains the heading Resume Learning, " +  homeSteps.getResult() );
+		//TCID_37:Checking whether the dash board contains the heading Learning in Progress
+		homeSteps.verifyContinueText();//newui
 		Reporter.writeSummary("TCID_HOME_041,  Verify Continue button is displayed, " + homeSteps.getResult() );
-	    homeSteps.clickContinueBtnRetToHome();//newui
+		homeSteps.clickContinueBtnRetToHome();//newui
 		//TCID_02: Verify  to My Home page data
 		homeSteps.verifyHomePageData();//newui
 		Reporter.writeSummary("TCID_HOME_ 002,  Verify the existence of Home page elements, " + homeSteps.getResult() );
-	//	homeSteps.verifyViewAllPage(); //newui
+		//	homeSteps.verifyViewAllPage(); //newui
 		Reporter.writeSummary("TCID_HOME_013, Verify View All page elements, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_HOME_035, Verify whether view all page elements and whether all the data are shown under the heading updates when view all button is clicked, " + homeSteps.getResult() );
 		//TCID_60:The page should be moving upwards when ^ button is clicked
 		homeSteps.verifyTopArrBtn();//newui
 		Reporter.writeSummary("TCID_HOME_060, The page should be moving upwards when ^ button is clicked, " + homeSteps.getResult() );
 		//Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon. 
+		//Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon. 
+		homeSteps.verifyBellNotification();//newui
+		Reporter.writeSummary("TCID_HOME_070, Verify whether All the Notifications are getting listed on clicking the more button, " + homeSteps.getResult() ); 
+
 		homeSteps.clickLogout();//newui
-	
+
 	}
 
 	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
@@ -88,12 +97,14 @@ public class Staging_Daily extends FractalBaseWebTest {
 		// dhanu homeSteps.verifySubHeaders();//newui
 		Reporter.writeSummary("TCID_HOME_031,  Verify navigation to Home page, " + homeSteps.getResult() );
 		//TCID_15: Verify the functionality of "^" symbol
-        //homeSteps.verifyTopArrBtn();//newui
+		//homeSteps.verifyTopArrBtn();//newui
 		Reporter.writeSummary("TCID_HOME_015,  Verify the functionality of ^ > < symbol, " + homeSteps.getResult() );
 		Reporter.writeSummary("TCID_HOME_080, Verify the function of  Wish list icon, " +  homeSteps.getResult() );
 		//TCID_79:Verify the function of  Cart  icon
 		homeSteps.verifyCartItemBtn();//newui
 		Reporter.writeSummary("TCID_HOME_079,  Verify the function of  Cart  icon, " + homeSteps.getResult() );
+		homeSteps.verifyMyLearningPage();//newui
+		Reporter.writeSummary("TCID_HOME_003,   Verify Home page is Land after logging to app, " +  homeSteps.getResult());
 		homeSteps.clickLogout(); 
 
 	}
@@ -117,28 +128,28 @@ public class Staging_Daily extends FractalBaseWebTest {
 		//TCID_45:The courses should be shown under the topic Recently Added when the link courses is clicked
 		homeSteps.verifyResourceFilterWhatsNew();//newui
 		Reporter.writeSummary("TCID_HOME_046,  Verify The resources should be shown under the What's New Added when the link resources is clicked, " +   homeSteps.getResult() );
-    	//TCID_44:The Learning paths should be shown under the topic Recently Added when the link Learning paths is clicked
+		//TCID_44:The Learning paths should be shown under the topic Recently Added when the link Learning paths is clicked
 		homeSteps.verifyLearnPathFilterWhatsNew();//newui
 		Reporter.writeSummary("TCID_HOME_044,  Verify The Learning paths should be shown under the What's New Added when the link Learning paths is clicked, " +   homeSteps.getResult() );
 		homeSteps.verifyPodcastFilterWhatsNew();//newui
 		Reporter.writeSummary("TCID_HOME_New_01,  Verify The Podcast should be shown under the What's New Added when the link Podcast is clicked, " +   homeSteps.getResult() );
 		//TCID_47:The data should be shown under the topic Recommended content when All is clicked
-  
-	    homeSteps.clickLogout();
-	
+
+		homeSteps.clickLogout();
+
 	}
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "")
 	public void GoogleAndFacebook(String row, String strBrowserName) {
-			driver = BrowserFactory.getBrowser(strBrowserName);
-			LoginSteps loginSteps = new LoginSteps(driver);
-			login(driver);
-			HomeSteps homeSteps = new HomeSteps(driver);
-			ForgotPasswordSteps fpassSteps = new ForgotPasswordSteps(driver);
-			homeSteps.clickLogout();
-	    	loginSteps.googleBtn();
-	    	Reporter.writeSummary("TCID_SocialLogin_001, Verify the google login page function, " +  loginSteps.getResult() );
-			loginSteps.facebookButton();
-	    	Reporter.writeSummary("TCID_SocialLogin_002, Verify the face book login page function, " +  loginSteps.getResult() );
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		LoginSteps loginSteps = new LoginSteps(driver);
+		login(driver);
+		HomeSteps homeSteps = new HomeSteps(driver);
+		ForgotPasswordSteps fpassSteps = new ForgotPasswordSteps(driver);
+		homeSteps.clickLogout();
+		loginSteps.googleBtn();
+		Reporter.writeSummary("TCID_SocialLogin_001, Verify the google login page function, " +  loginSteps.getResult() );
+		loginSteps.facebookButton();
+		Reporter.writeSummary("TCID_SocialLogin_002, Verify the face book login page function, " +  loginSteps.getResult() );
 	}
 	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "")
@@ -148,6 +159,27 @@ public class Staging_Daily extends FractalBaseWebTest {
 		login(driver);
 		downloadContentSteps.verifyAudio();
 		Reporter.writeSummary("FR1-2773_DownloadContent_TC-002,In User Login Verify Download option visible in the Content Player Page for audio once enabled by admin," +downloadContentSteps.getResult());
+	}
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+			description = "")
+	public void DownloadContent(String row, String strBrowserName) throws IOException {
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		VenueSteps venueSteps = new VenueSteps(driver);
+		MenuSteps menuSteps = new MenuSteps(driver);
+		DownloadContentSteps downloadContentSteps = new DownloadContentSteps(driver);
+
+		loginToContentAdmin(driver);
+		venueSteps.clickHomeMenu();
+		menuSteps.gotoManageContents();
+		UserCronSteps userCronSteps = new UserCronSteps(driver);
+		userCronSteps.addLearningObjectBtn();
+		downloadContentSteps.videoCreation();
+		downloadContentSteps.imageCreation();
+		downloadContentSteps.downloableOption();
+		Reporter.writeSummary("FR1-2773_DownloadContent_TC-001,Verify the User able to enable the download option in the creation of Video Learning Object," +downloadContentSteps.getResult());
+
+
+
 	}
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 1 ,
 			description = "video testing")
@@ -169,12 +201,12 @@ public class Staging_Daily extends FractalBaseWebTest {
 		Reporter.writeSummary("FR1-2496_Renew_TC-01,Verify the presence of renew button in search page," + renew.getResult() );
 		renew.inprogressRenewbtnCheck();
 		Reporter.writeSummary("FR1-2496_Renew_TC-02,Verify renew button in InProgress Page," + renew.getResult() );
-	/*	renew.completedRenewbtnCheck();
+		/*	renew.completedRenewbtnCheck();
 		Reporter.writeSummary("FR1-2496_Renew_TC-03,Verify renew button in  Completed page," + renew.getResult() );
 		renew.whatsnewRenewBtnCheck();
 		Reporter.writeSummary("FR1-2777_Renew_TC-01,Verify renew button in  WhatsNew and Dashboard page," + renew.getResult() );
-		*/renew.categoryRenewBtnCheck();
-		Reporter.writeSummary("FR1-2777_Renew_TC-02,Verify renew button after selecting category," + renew.getResult() );
+		 */renew.categoryRenewBtnCheck();
+		 Reporter.writeSummary("FR1-2777_Renew_TC-02,Verify renew button after selecting category," + renew.getResult() );
 	}
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,priority=0)
 	public void CourseCompletionMail (String row, String strBrowserName) throws Exception {
@@ -242,8 +274,8 @@ public class Staging_Daily extends FractalBaseWebTest {
 		//TCID_: Verify Global Search with double and tab Space
 		globalSteps.GlobalSearchwithDoubleandTabspace(); // 15/4/2020
 		Reporter.writeSummary("TCI_Global_17,Verify Global Search with double and tab Space,"+globalSteps.getResult());
-		
-		}
+
+	}
 	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_1,4,11,12: "
 			+ "Verify navigation to My Learning page, " + "1: verify COmpletion Status(% Coverage)"
 			+ "4: Verify all links(All, Bundles, Courses, Learning Paths and resources)"
@@ -264,7 +296,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		//TCID_4: Verify all links(All, Bundles, Courses, Learning Paths and resources)
 		mLSteps.verifySubMenu();//newui
 		mLSteps.verifyComplStatus();//newui
-	    mLSteps.verifyCatalogDetails();//newui
+		mLSteps.verifyCatalogDetails();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
 		mLSteps.multiplecategorycheck();
 		Reporter.writeSummary("TCID_MY_LEARNNEW__001, Verify MultipleCategory in My Learning page," +  mLSteps.getResult() );
@@ -276,7 +308,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 	public void testMyLearningPage1(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
-		
+
 		// Test moves to Home page
 		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.clickOnMyLearning();
@@ -346,7 +378,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		mLSteps.verifyCourseContents();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__018,Verify course Details after clicking, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
-     	mLSteps.clickLogout();
+		mLSteps.clickLogout();
 	}
 	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description ="")
 	public void testMyLearningPageClassroom(String row, String strBrowserName) {
@@ -358,31 +390,32 @@ public class Staging_Daily extends FractalBaseWebTest {
 		HomeSteps homeSteps = new HomeSteps(driver);
 		homeSteps.clickOnMyLearning();
 		wait(5);
-	MyLearningSteps mLSteps = new MyLearningSteps(driver);
-	mLSteps.verifyClassroomDetails();
-	mLSteps.verifyDetailsBtn();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
-	//mLSteps.verifyAssignedClassroom();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
-	//mLSteps.verifyEventDisplayClassroomObject();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
-	Reporter.writeSummary("TC_MY_LEARN_:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
-	mLSteps.verifyChooseEventBtn();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
-	//mLSteps.verifyClassrooomLabels();//newui
-	Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
-}
-		
-		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,priority =0,
-				description = "")
-		public void InstructorBellNotification (String row, String strBrowserName) throws Exception {
-			driver = BrowserFactory.getBrowser(strBrowserName);
-			InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
-			InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-			siteAdminLogin(driver);//Updated on 3-Dec-20
-			//Added by vignesh 26-Sep-20 This for Roster test 
-			ClassRoomRosterSteps classroomRoster=new ClassRoomRosterSteps(driver);
-			instbellnotiSteps.gotoClassRoom();//Updated on 3-Dec-20
+		MyLearningSteps mLSteps = new MyLearningSteps(driver);
+		mLSteps.verifyClassroomDetails();
+		mLSteps.verifyDetailsBtn();//newui
+		Reporter.writeSummary("TC_MY_LEARN_:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
+		//mLSteps.verifyAssignedClassroom();//newui
+		Reporter.writeSummary("TC_MY_LEARN_:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
+		//mLSteps.verifyEventDisplayClassroomObject();//newui
+		Reporter.writeSummary("TC_MY_LEARN_:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TC_MY_LEARN_:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
+		mLSteps.verifyChooseEventBtn();//newui
+		Reporter.writeSummary("TC_MY_LEARN_:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
+		//mLSteps.verifyClassrooomLabels();//newui
+		Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
+	}
+
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,priority =0,
+			description = "")
+	public void InstructorBellNotification (String row, String strBrowserName) throws Exception {
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
+		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
+		siteAdminLogin(driver);//Updated on 3-Dec-20
+		//Added by vignesh 26-Sep-20 This for Roster test 
+		ClassRoomRosterSteps classroomRoster=new ClassRoomRosterSteps(driver);
+		/*comment by divya as it does not come under daily build
+		 * instbellnotiSteps.gotoClassRoom();//Updated on 3-Dec-20
 			classroomRoster.verifyClassroomRoster();
 			Reporter.writeSummary("FR-145_Scoring-ClassRoomRoster_TC-001, Admin can manage the roster.," +classroomRoster.getResult() );
 			Reporter.writeSummary("FR-2365_ClassRoomRoster_TC-001, Classroom admin roster page fixes," +classroomRoster.getResult() );
@@ -390,155 +423,159 @@ public class Staging_Daily extends FractalBaseWebTest {
 			Reporter.writeSummary("FR-531_Event_TC-001, Verify admin manages assignments," +classroomRoster.getResult() );
 			classroomRoster.verifyAssignmentScore();
 			Reporter.writeSummary("FR-147_Scoring_TC-001, Admin can give scores to the assignment.," +classroomRoster.getResult() );
-			//ends		
-			instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
-			loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
-			instbellnotiSteps.verifyEmptyNotification(); 
-			//Added on 15-Sep-20
-			Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login," +instbellnotiSteps.getResult() );
-			//ends
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-001,Verify the text No notifications found," +instbellnotiSteps.getResult() );
-			instbellnotiSteps.instLogout();//Added on 20-Jan-21
-			siteAdminLogin(driver);
-			instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",instbellnotiPage.classroomName);
-			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-			instbellnotiSteps.verifyInviteNotification();	 
-			instbellnotiSteps.instLogout();
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-002,Verify the instructor1 able to get invite notification (admin invites instructor1)," +instbellnotiSteps.getResult() );
-			siteAdminLogin(driver);
-			instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2",instbellnotiPage.classroomName);
-			loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password);
-			instbellnotiSteps.verifyInviteNotification();
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-003,Verify the instructor2 able to get invite notification (admin invites instructor2)," +instbellnotiSteps.getResult() );
-			instbellnotiSteps.instLogout();
-			siteAdminLogin(driver);
-			instbellnotiSteps.adminRescheduledEvent("CETTime",instbellnotiPage.classroomName);
-			loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password); 
-			instbellnotiSteps.verifyRescheduledNotification();
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-004,Verify the instructor gets reschedule notification (admin changes the timezone)," +instbellnotiSteps.getResult() );
-			instbellnotiSteps.verifyandclickMoreBtn();
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-005,Verify the instructor sees and clicks MORE (when more than 3 notifications)," +instbellnotiSteps.getResult() );
-			instbellnotiSteps.verifyNotificationViewallPage();
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-006,Verify when instructor clicks MORE CTA it lands on View more notifications page," +instbellnotiSteps.getResult() );
-			instbellnotiSteps.verifyBreadcrumbMoreNotification();
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-007,Verify the instructor sees all notifications page and breadcrumb," +instbellnotiSteps.getResult() );
-			instbellnotiSteps.verifyLastNoticationmatch();
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-008,Verify the notification details are matching with view all notifications page," +instbellnotiSteps.getResult() );
-			instbellnotiSteps.verifyClickNotification();
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-009,Verify the click notification details should redirect to Event page," +instbellnotiSteps.getResult() );
-			instbellnotiSteps.verifyclickHomeaction();
-			Reporter.writeSummary("FR1-2017_InstrBell_TC-010,Verify click Back or Home in breadcrumb- it should redirect to dashboard page," +instbellnotiSteps.getResult() );
-		}
-		public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
-			public int number=0;
+			//ends	
+		 */
+		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
+		loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
+		instbellnotiSteps.verifyEmptyNotification(); 
+		//Added on 15-Sep-20
+		//commented by divya as it does not come in daily build
+		//Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login," +instbellnotiSteps.getResult() );
 
-			/*
-			 * Test NG for Test Instructor Actions - Same day and same time events check and Calendar actions for Traditional and
-			 * Virtual classrooms
-			 */	
-			@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 )
-			public void TestInstructorcalendarActions(String row, String strBrowserName)throws IOException  {
-				ClassroomEventPage.EventType = "Traditional Classroom";
-				TestInstructorCalendar(row,strBrowserName);
-				ClassroomEventPage.EventType="Virtual Classroom";
-				TestInstructorCalendar(row,strBrowserName);
-			}
+		//ends
 
-			/*
-			 * Test event same day and same time action & Test Instructor calendar actions
-			 */
-			public void TestInstructorCalendar(String row, String strBrowserName) throws IOException {
-				driver = BrowserFactory.getBrowser(strBrowserName);
-				//		MenuSteps menuSteps = new MenuSteps(driver);
-				ClassroomEventPage eventPage= new ClassroomEventPage(driver);
-				InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-				InstructorCalendarModuleSteps InstructorModuleSteps=new InstructorCalendarModuleSteps(driver);
-				InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
-				siteAdminLogin(driver);
-				//		menuSteps.clickMenu();
-				//		menuSteps.gotoClassroomCreation();
-				instbellnotiSteps.gotoClassRoom();
-				InstructorModuleSteps.deleteOldEventAndAddNewEvent();
-				//		InstructorModuleSteps.verifyAdminSeeInstructorWarningMessage();
-				//		Reporter.writeSummary("FR1-2382_InstrEvent_TC-0"+(++number)+",Verify the Admin gets the warning message when he creates "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
-				instbellnotiSteps.adminLogout();
-				loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-				InstructorModuleSteps.verifyAdminInviteAndInstructorAcceptevent();
-				Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin invites the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-				instbellnotiSteps.instLogout();
-				siteAdminLogin(driver);
-				instbellnotiSteps.adminRescheduledEvent("ISTTime",eventPage.classRoomName);
-				loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-				InstructorModuleSteps.verifyRescheduleTimeZoneInInstructorSide();
-				Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin Reschedules the event for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-				instbellnotiSteps.instLogout();
-				siteAdminLogin(driver);
-				instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2",eventPage.classRoomName);
-				loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-				InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-				Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin changes the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-				instbellnotiSteps.instLogout();
-				siteAdminLogin(driver);
-				instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",eventPage.classRoomName);
-				loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-				InstructorModuleSteps.instructorRejectEvent();
-				InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-				Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Instructor rejects a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-				instbellnotiSteps.instLogout();
-				siteAdminLogin(driver);
-				//		menuSteps.clickMenu();
-				//		menuSteps.gotoClassroomCreation();
-				instbellnotiSteps.gotoClassRoom();
-				InstructorModuleSteps.adminDeleteEvent();
-				instbellnotiSteps.adminLogout();
-				loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-				InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-				Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-				instbellnotiSteps.instLogout();
-				driver.close();
-			}
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-001,Verify the text No notifications found," +instbellnotiSteps.getResult() );
+		instbellnotiSteps.instLogout();//Added on 20-Jan-21
+		siteAdminLogin(driver);
+		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",instbellnotiPage.classroomName);
+		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+		instbellnotiSteps.verifyInviteNotification();	 
+		instbellnotiSteps.instLogout();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-002,Verify the instructor1 able to get invite notification (admin invites instructor1)," +instbellnotiSteps.getResult() );
+		siteAdminLogin(driver);
+		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2",instbellnotiPage.classroomName);
+		loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password);
+		instbellnotiSteps.verifyInviteNotification();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-003,Verify the instructor2 able to get invite notification (admin invites instructor2)," +instbellnotiSteps.getResult() );
+		instbellnotiSteps.instLogout();
+		siteAdminLogin(driver);
+		instbellnotiSteps.adminRescheduledEvent("CETTime",instbellnotiPage.classroomName);
+		loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password); 
+		instbellnotiSteps.verifyRescheduledNotification();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-004,Verify the instructor gets reschedule notification (admin changes the timezone)," +instbellnotiSteps.getResult() );
+		instbellnotiSteps.verifyandclickMoreBtn();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-005,Verify the instructor sees and clicks MORE (when more than 3 notifications)," +instbellnotiSteps.getResult() );
+		instbellnotiSteps.verifyNotificationViewallPage();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-006,Verify when instructor clicks MORE CTA it lands on View more notifications page," +instbellnotiSteps.getResult() );
+		instbellnotiSteps.verifyBreadcrumbMoreNotification();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-007,Verify the instructor sees all notifications page and breadcrumb," +instbellnotiSteps.getResult() );
+		instbellnotiSteps.verifyLastNoticationmatch();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-008,Verify the notification details are matching with view all notifications page," +instbellnotiSteps.getResult() );
+		instbellnotiSteps.verifyClickNotification();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-009,Verify the click notification details should redirect to Event page," +instbellnotiSteps.getResult() );
+		instbellnotiSteps.verifyclickHomeaction();
+		Reporter.writeSummary("FR1-2017_InstrBell_TC-010,Verify click Back or Home in breadcrumb- it should redirect to dashboard page," +instbellnotiSteps.getResult() );
+	}
+	public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
+		public int number=0;
+
+		/*
+		 * Test NG for Test Instructor Actions - Same day and same time events check and Calendar actions for Traditional and
+		 * Virtual classrooms
+		 */	
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 )
+		public void TestInstructorcalendarActions(String row, String strBrowserName)throws IOException  {
+			ClassroomEventPage.EventType = "Traditional Classroom";
+			TestInstructorCalendar(row,strBrowserName);
+			ClassroomEventPage.EventType="Virtual Classroom";
+			TestInstructorCalendar(row,strBrowserName);
 		}
-		@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
-				// description="Verify categories are available as expected" )
-				description = "")
-		public void testInstructorPage(String row, String strBrowserName) {
+
+		/*
+		 * Test event same day and same time action & Test Instructor calendar actions
+		 */
+		public void TestInstructorCalendar(String row, String strBrowserName) throws IOException {
 			driver = BrowserFactory.getBrowser(strBrowserName);
-			loginToInstructor(driver);
-			InstructorModuleSteps instructorModuleSteps = new InstructorModuleSteps(driver);
-			instructorModuleSteps.verifyDashboardSubHeaders();
-			Reporter.writeSummary("TCID_Instructor_001,the below labels should be able to present in the Instructor Dashboard: TotalEvents NextEven Skills  Updates Invites & Reminders,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyEventSectionLabels();
-			Reporter.writeSummary("TCID_Instructor_002,Verify whether the below labels are present in the Event Section: Upcoming In Progress Completed,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyButtons();
-			Reporter.writeSummary("TCID_Instructor_003,Verify whether the below buttons are present under invites&Reminders: Accept Reject Request to Reschedule,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyPopupButtons();
-			Reporter.writeSummary("TCID_Instructor_004,Verify whether the Request to Reschedule popup shown while clicking Request to Reschedule button.,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyNextEventSectionViewAll();
-			Reporter.writeSummary("TCID_Instructor_005,Verify whether the View All link is shown in NextEvent Section.,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyInvitesReminderViewAll();
-			Reporter.writeSummary("TCID_Instructor_006,Verify whether the View All link is shown in Invites & Reminders Section.,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyEventsPageLabels();
-			Reporter.writeSummary("TCID_Instructor_007,Verify whether the below labels are present in the Event Section: Upcoming In Progress Completed,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyEventsInvitesClick();
-			Reporter.writeSummary("TCID_Instructor_016,verify whether the events inside the invites section redirect to event details page while clicking events,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyLabelsInsideEventDetailsPage();
-			Reporter.writeSummary("TCID_Instructor_008,Verify whether the below labels are present in the Event details page:Pre-EventSession Post-Event Reference Terms&Conditions,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyInprogressEvent();
-			Reporter.writeSummary("TCID_Instructor_009,Verify whether the below labels are present in the Inprogress Event details page:Pre-Event Session Post-Event Reference Terms&Conditions,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyUpcomingEvent();
-			Reporter.writeSummary("TCID_Instructor_010,Verify whether the below labels are present in the Upcoming Event details page:Pre-Event Session Post-Event Reference Terms&Conditions,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyCompletedEvent();
-			Reporter.writeSummary("TCID_Instructor_011,Verify whether the below labels are present in the Completed Event details page:Pre-Event Session Post-Event Reference Terms&Conditions,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyActivitiesAndRosterTab();
-			Reporter.writeSummary("TCID_Instructor_012,Verify whether the below tabs are present in the Completed and Inprogress Event details page:Activities and materials Roster,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifySkillsetList();
-			Reporter.writeSummary("TCID_Instructor_013,Verify whether the  labels are present in the Skill drop-down,"+  instructorModuleSteps.getResult() );
-	   // 	instructorModuleSteps.verifyEvalutionDueDateReachingEvent();
-			Reporter.writeSummary("TCID_Instructor_014,Verify whether the view details buttons  are present in the Evalution Due Date Reaching Event.,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyReviewButton();
-			Reporter.writeSummary("TCID_Instructor_015,Verify whether the Review buttons  are present in the INVITES AND REMAINDERS page while we clicking view all button,"+  instructorModuleSteps.getResult() );
-			instructorModuleSteps.verifyReviewInsideLabels();
-		    Reporter.writeSummary("TCID_Instructor_017,Verify whether the  below labels are present in the Review details page:ALL REVIEW COMPLETED REVIEW PENDING Description,"+  instructorModuleSteps.getResult() );
-		
+			//		MenuSteps menuSteps = new MenuSteps(driver);
+			ClassroomEventPage eventPage= new ClassroomEventPage(driver);
+			InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
+			InstructorCalendarModuleSteps InstructorModuleSteps=new InstructorCalendarModuleSteps(driver);
+			InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
+			siteAdminLogin(driver);
+			//		menuSteps.clickMenu();
+			//		menuSteps.gotoClassroomCreation();
+			instbellnotiSteps.gotoClassRoom();
+			InstructorModuleSteps.deleteOldEventAndAddNewEvent();
+			//		InstructorModuleSteps.verifyAdminSeeInstructorWarningMessage();
+			//		Reporter.writeSummary("FR1-2382_InstrEvent_TC-0"+(++number)+",Verify the Admin gets the warning message when he creates "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
+			instbellnotiSteps.adminLogout();
+			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+			InstructorModuleSteps.verifyAdminInviteAndInstructorAcceptevent();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin invites the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+			instbellnotiSteps.instLogout();
+			siteAdminLogin(driver);
+			instbellnotiSteps.adminRescheduledEvent("ISTTime",eventPage.classRoomName);
+			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+			InstructorModuleSteps.verifyRescheduleTimeZoneInInstructorSide();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin Reschedules the event for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+			instbellnotiSteps.instLogout();
+			siteAdminLogin(driver);
+			instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2",eventPage.classRoomName);
+			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+			InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin changes the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+			instbellnotiSteps.instLogout();
+			siteAdminLogin(driver);
+			instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",eventPage.classRoomName);
+			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+			InstructorModuleSteps.instructorRejectEvent();
+			InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Instructor rejects a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+			instbellnotiSteps.instLogout();
+			siteAdminLogin(driver);
+			//		menuSteps.clickMenu();
+			//		menuSteps.gotoClassroomCreation();
+			instbellnotiSteps.gotoClassRoom();
+			InstructorModuleSteps.adminDeleteEvent();
+			instbellnotiSteps.adminLogout();
+			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+			InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+			instbellnotiSteps.instLogout();
+			driver.close();
 		}
+	}
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+			// description="Verify categories are available as expected" )
+			description = "")
+	public void testInstructorPage(String row, String strBrowserName) {
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		loginToInstructor(driver);
+		InstructorModuleSteps instructorModuleSteps = new InstructorModuleSteps(driver);
+		instructorModuleSteps.verifyDashboardSubHeaders();
+		Reporter.writeSummary("TCID_Instructor_001,the below labels should be able to present in the Instructor Dashboard: TotalEvents NextEven Skills  Updates Invites & Reminders,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyEventSectionLabels();
+		Reporter.writeSummary("TCID_Instructor_002,Verify whether the below labels are present in the Event Section: Upcoming In Progress Completed,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyButtons();
+		Reporter.writeSummary("TCID_Instructor_003,Verify whether the below buttons are present under invites&Reminders: Accept Reject Request to Reschedule,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyPopupButtons();
+		Reporter.writeSummary("TCID_Instructor_004,Verify whether the Request to Reschedule popup shown while clicking Request to Reschedule button.,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyNextEventSectionViewAll();
+		Reporter.writeSummary("TCID_Instructor_005,Verify whether the View All link is shown in NextEvent Section.,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyInvitesReminderViewAll();
+		Reporter.writeSummary("TCID_Instructor_006,Verify whether the View All link is shown in Invites & Reminders Section.,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyEventsPageLabels();
+		Reporter.writeSummary("TCID_Instructor_007,Verify whether the below labels are present in the Event Section: Upcoming In Progress Completed,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyEventsInvitesClick();
+		Reporter.writeSummary("TCID_Instructor_016,verify whether the events inside the invites section redirect to event details page while clicking events,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyLabelsInsideEventDetailsPage();
+		Reporter.writeSummary("TCID_Instructor_008,Verify whether the below labels are present in the Event details page:Pre-EventSession Post-Event Reference Terms&Conditions,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyInprogressEvent();
+		Reporter.writeSummary("TCID_Instructor_009,Verify whether the below labels are present in the Inprogress Event details page:Pre-Event Session Post-Event Reference Terms&Conditions,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyUpcomingEvent();
+		Reporter.writeSummary("TCID_Instructor_010,Verify whether the below labels are present in the Upcoming Event details page:Pre-Event Session Post-Event Reference Terms&Conditions,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyCompletedEvent();
+		Reporter.writeSummary("TCID_Instructor_011,Verify whether the below labels are present in the Completed Event details page:Pre-Event Session Post-Event Reference Terms&Conditions,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyActivitiesAndRosterTab();
+		Reporter.writeSummary("TCID_Instructor_012,Verify whether the below tabs are present in the Completed and Inprogress Event details page:Activities and materials Roster,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifySkillsetList();
+		Reporter.writeSummary("TCID_Instructor_013,Verify whether the  labels are present in the Skill drop-down,"+  instructorModuleSteps.getResult() );
+		// 	instructorModuleSteps.verifyEvalutionDueDateReachingEvent();
+		Reporter.writeSummary("TCID_Instructor_014,Verify whether the view details buttons  are present in the Evalution Due Date Reaching Event.,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyReviewButton();
+		Reporter.writeSummary("TCID_Instructor_015,Verify whether the Review buttons  are present in the INVITES AND REMAINDERS page while we clicking view all button,"+  instructorModuleSteps.getResult() );
+		instructorModuleSteps.verifyReviewInsideLabels();
+		Reporter.writeSummary("TCID_Instructor_017,Verify whether the  below labels are present in the Review details page:ALL REVIEW COMPLETED REVIEW PENDING Description,"+  instructorModuleSteps.getResult() );
+
+	}
 }
