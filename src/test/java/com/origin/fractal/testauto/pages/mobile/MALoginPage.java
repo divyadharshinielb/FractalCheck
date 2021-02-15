@@ -182,6 +182,7 @@ public class MALoginPage extends FractalAppPage {
 			}
 		}
 		public void verifySplashScreen() {
+			wait(5);
 			elementExist(animSplashScreen);
 		}	
 		public void verifyLogoutWithNoBtn() {
