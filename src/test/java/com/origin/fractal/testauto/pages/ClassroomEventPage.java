@@ -746,7 +746,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	public By eventRegStartDate=By.xpath("(//span[contains(@class,'md-calendar-date-selection-indicator')])[1]");
 	public By eventRegEndDate=By.xpath("(//span[contains(@class,'md-calendar-date-selection-indicator')])[3]");
 	public By eventInstructor=By.xpath("//div[@class='col-lg-6 col-md-6 col-sm-6 col-xs-6 padding-lr-20 padding-t-20 padding-b-20 margin-b-15 border']//div[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required']");
-	public By selectEventInstructor1=By.xpath("(//li[text()='Instructor WVI 2'])"); // Updated on 20-Jan-21
+	public By selectEventInstructor1=By.xpath("(//li[text()='Instructor WV 2'])"); // Updated on 20-Jan-21
 	public By deleteBtn = By.xpath("//*[@title='Delete']");//body[@id='target']//div//div//div[1]/div[1]/div[1]//i[ @title='Delete']
 	public By deleteConformBtn=By.xpath("//*[contains(@class, 'md-confirm-button')]");
 	public By worningMsg=By.xpath("//div[@class='text-danger font-size-12 padding-l-5 ng-binding ng-scope']");
