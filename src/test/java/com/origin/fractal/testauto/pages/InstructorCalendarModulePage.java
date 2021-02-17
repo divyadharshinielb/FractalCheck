@@ -79,8 +79,8 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 		click(instructorBurgerBtn);
 		wait(2);
 		click(instructorCalendar);
-		//Waiting time increased on 4Sep20
-		wait(3);
+		//Waiting time increased on15-Feb
+		wait(8);
 		//ends
 	}
 
@@ -93,15 +93,15 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 */	
 	public boolean verifyAdminInviteAndInstructorAcceptevent() {
 		By UpcomingDetailsInEventTab=By.xpath("//p[contains(@class,'ins_ins_ins_ins_name ins_classroom_invite_name ins_ins_ins_event_circle_upcoming')][text()='"+eventPage.eventSessionName+"']");
-		By inviteDetailsInEventTab=By.xpath("//*[@class='ins_ins_ins_event_circle_invite ins_ins_ins_ins_name ins_classroom_invite_name'][text()='"+eventPage.eventSessionName+"']");
+		By inviteDetailsInEventTab=By.xpath("//*[text()='"+eventPage.eventSessionName+"']");
 		click(searchIconEventInEventTab);
 		enterData(eventPage.eventSessionName,searchDataInEventTab);
 		//Waiting time increased on 4Sep20
 		wait(5);
 		//ends
-		moveElementFocus(inviteDetailsInEventTab);
+//		moveElementFocus(inviteDetailsInEventTab);
 		/* To check and accept the event invite*/
-		if(getAttributeValue(inviteDotOnSameDay,"title").contains(eventPage.classRoomName) && elementExist(inviteDetailsInEventTab) ) 
+		if(getAttributeValue(inviteDotOnSameDay,"title").contains(eventPage.classRoomName) || elementExist(inviteDetailsInEventTab) ) 
 		{
 			click(inviteDetailsInEventTab);
 			wait(3);

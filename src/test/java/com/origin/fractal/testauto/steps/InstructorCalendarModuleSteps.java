@@ -40,6 +40,7 @@ public class InstructorCalendarModuleSteps extends FractalBaseStep {
 	public void adminDeleteEvent() {
 		try {
 			InstructorModule.adminDeleteEvent();
+			wait(3);//Added on 16-Feb-21
 		}catch(Exception e){
 			result="FAILED";
 		}
