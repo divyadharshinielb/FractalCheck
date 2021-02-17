@@ -113,7 +113,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		wait(2);
 		click(lblSelectVenue);
 		wait(5);
-		scrollToElement(classroomvenuedropdown);
+		//scrollToElement(classroomvenuedropdown);
 		wait(5);
 		click(classroomvenuedropdown);
 		//click(lblVirtualClassroom);

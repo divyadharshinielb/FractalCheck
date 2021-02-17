@@ -104,7 +104,7 @@ public class Staging_Weekly extends FractalBaseWebTest{
 	}
 	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups= {"pilot"}, enabled= true, description="")
 	public void ClassroomCreation(String row, String strBrowserName) throws Exception {
-		driver = BrowserFactory.getBrowser(strBrowserName);
+		/*driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
 		MenuSteps menuSteps = new MenuSteps(driver);
 		DeleteEventandClassroomSteps delevnt = new DeleteEventandClassroomSteps(driver);
@@ -150,6 +150,7 @@ public class Staging_Weekly extends FractalBaseWebTest{
 		delevnt.instructorLogin();
 		Reporter.writeSummary("TCID_DELNOTI_012, Check for the notification for classroom deletion , "+  delevnt.getResult() );
 		
+		*/
 	}
 	@Test(dataProviderClass = DataManager.class,dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "TCID_009:Dynamic payment configurations should appear in the User purchase page.")
 
