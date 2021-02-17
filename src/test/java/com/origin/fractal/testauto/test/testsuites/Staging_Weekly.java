@@ -59,7 +59,7 @@ public class Staging_Weekly extends FractalBaseWebTest{
 			Reporter.writeSummary("TCID_017, Verify Groups name in the reports., " +  reportSteps.getResult() );
 			
 	   }
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class,dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "")
 	public void CatalogUpdatePhase2(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -79,10 +79,9 @@ public class Staging_Weekly extends FractalBaseWebTest{
 		Reporter.writeSummary("Catalog_TC_004, Verify the in-progress and all-user radio button while updation of catalog item , " +  catalogUpdateSteps.getResult() );
 
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class,dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "")
 	public void CatalogUpdatePhase1(String row, String strBrowserName) throws IOException {
-		driver = BrowserFactory.getBrowser(strBrowserName);
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		CatalogUpdateSteps catalogUpdateSteps = new CatalogUpdateSteps(driver);
 		VenueSteps venueSteps = new VenueSteps(driver);
@@ -169,7 +168,7 @@ public class Staging_Weekly extends FractalBaseWebTest{
 			login(driver);
 			HomeSteps homeSteps = new HomeSteps(driver);
 		}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void testLoginSearchLink(String row, String strBrowserName) {
 		
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -179,7 +178,7 @@ public class Staging_Weekly extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_LOGIN_075, Verify the function of  Search link , " +  loginSteps.getResult() );
 	}
 	//Added by Manju Priya A on Jan_21_19
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "TCID_71: verification of Forgot Password Page"
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "TCID_71: verification of Forgot Password Page"
 			+ "TCID_73: Verification of Forgot Password function")
 	public void forgotPassword(String row, String strBrowserName) {
 			driver = BrowserFactory.getBrowser(strBrowserName);
