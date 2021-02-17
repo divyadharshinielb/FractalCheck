@@ -20,7 +20,7 @@ public class CatalogUpdatePage extends FractalBasePage {
 	private By catalogTitleTextArea= By.xpath("//textarea[@id='catalogItemName']");
 	private By continueBtn= By.xpath("//button[contains(text(),'Continue')]");
 	private By lblSaveBtn= By.xpath("//span[contains(text(),'Save')]");
-	private By saveBtn= By.xpath("//button//span[contains(text(),'Save')]");
+	private By saveBtn= By.xpath("//button//span[contains(text(),'Continue')]");
 	private By closeBtn= By.xpath("//i[@data-icon='9']");
 	private By lblNewUsers= By.xpath("//label[contains(text(),'New users')]");
 	private By lblInprogressUsers= By.xpath("//label[contains(text(),'In-progress users')]");
@@ -39,6 +39,7 @@ public class CatalogUpdatePage extends FractalBasePage {
 	private By expandBtn= By.xpath("//i[@title='Expand Modules']");
 	private By catalogFilter= By.xpath("//div//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required']");
 	private By alertMsg= By.xpath("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[15]/div[1]");
+	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
 	public CatalogUpdatePage(WebDriver driver) {
 		super(driver);
 	}
@@ -70,15 +71,18 @@ public class CatalogUpdatePage extends FractalBasePage {
 		click(By.xpath("//span[contains(text(),'bundles')]"));
 		wait(5);
 		enterData("Assigned_catalog_update_for_auttomation_testing",searchText);
-		wait(20);
+		wait(30);
+		click(By.xpath("//span[contains(text(),'bundles')]"));
+		wait(5);
 		click(editIcon);
 		wait(5);
 		enterData("Assigned_catalog_update_for_auttomation_testing1",catalogTitleTextArea);
-		wait(2);
+		wait(5);
 		click(continueBtn);
-		wait(2);
+		wait(5);
 		click(saveBtn);
 		wait(5);
+		click(By.xpath("//body/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[3]/span[1]/div[2]/button[1]"));
 		verifyText("New users",lblNewUsers);
 		verifyText("In-progress users",lblInprogressUsers);
 		verifyText("All users",lblAllUsers); 
@@ -103,6 +107,10 @@ public class CatalogUpdatePage extends FractalBasePage {
 	 * Covers:It redirects to the user login page
 	 */
 	public void userLogIn() {
+		wait(5);
+		if(elementExist(prelogin)) {
+		click(prelogin);
+		}
 		wait(5);
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		wait(5);
@@ -152,7 +160,7 @@ public class CatalogUpdatePage extends FractalBasePage {
 		wait(5);
 		catalogTab();
 		wait(5);
-		enterData("Auto_Bundle Check HTML Learning object",searchText);
+		enterData("Auto_Bundle_Check_HTML_Learningobject",searchText);
 		wait(10);
 		click(editIcon);
 		wait(5);
@@ -162,9 +170,9 @@ public class CatalogUpdatePage extends FractalBasePage {
 		wait(5);
 		click(expandBtn);
 		wait(5);
-		click(catalogFilter);
+	/*	click(catalogFilter);
 		wait(5);
 		click(lblSaveBtn);
 		wait(5);
-	}
+	*/}
 }

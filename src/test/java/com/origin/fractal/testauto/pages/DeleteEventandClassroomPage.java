@@ -107,6 +107,10 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		wait(2);
 		enterData(getLabel("description"),lblDescription);
 		wait(2);
+		WebElement element = driver.findElement(lblSelectVenue); 
+		Actions actions = new Actions(driver); 
+		actions.moveToElement(element);
+		wait(2);
 		click(lblSelectVenue);
 		wait(5);
 		scrollToElement(classroomvenuedropdown);
@@ -114,10 +118,10 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(classroomvenuedropdown);
 		//click(lblVirtualClassroom);
 		wait(5);
-		WebElement element = driver.findElement(instructorselectdropdown); 
-		Actions actions = new Actions(driver); 
-		actions.moveToElement(element);
-		actions.perform();
+		WebElement element1 = driver.findElement(instructorselectdropdown); 
+		Actions actions1 = new Actions(driver); 
+		actions1.moveToElement(element1);
+		actions1.perform();
 		wait(2);
 		click(classroomskillsetselect);
 		wait(2);

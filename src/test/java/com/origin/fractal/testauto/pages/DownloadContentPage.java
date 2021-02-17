@@ -18,7 +18,7 @@ private By lblDownloadText= By.xpath("//h6[contains(text(),'If checked, a DOWNLO
 private By closeBtn= By.xpath("//div[@id='addObject']//i[contains(@class,'text-right font-size-35')]");
 private By documentBtn= By.xpath("//span[contains(text(),'Document')]");
 private By lblMM= By.xpath("//input[@placeholder='MM']");
-private By imageBtn= By.xpath("//span[contains(text(),'Image')]");
+private By imageBtn= By.xpath("//button//span[contains(text(),'Image')]");
 private By linkRadioBtn= By.xpath("//label[contains(text(),'Link')]");
 private By videoUrlTextField= By.xpath("//input[@ng-model='video.url']");
 private By lblItemCode= By.xpath("//input[@name='item_code']");
