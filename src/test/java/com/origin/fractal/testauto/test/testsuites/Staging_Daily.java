@@ -414,8 +414,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		siteAdminLogin(driver);//Updated on 3-Dec-20
 		//Added by vignesh 26-Sep-20 This for Roster test 
 		ClassRoomRosterSteps classroomRoster=new ClassRoomRosterSteps(driver);
-		/*comment by divya as it does not come under daily build
-		 * instbellnotiSteps.gotoClassRoom();//Updated on 3-Dec-20
+		 instbellnotiSteps.gotoClassRoom();//Updated on 3-Dec-20
 			classroomRoster.verifyClassroomRoster();
 			Reporter.writeSummary("FR-145_Scoring-ClassRoomRoster_TC-001, Admin can manage the roster.," +classroomRoster.getResult() );
 			Reporter.writeSummary("FR-2365_ClassRoomRoster_TC-001, Classroom admin roster page fixes," +classroomRoster.getResult() );
@@ -424,13 +423,11 @@ public class Staging_Daily extends FractalBaseWebTest {
 			classroomRoster.verifyAssignmentScore();
 			Reporter.writeSummary("FR-147_Scoring_TC-001, Admin can give scores to the assignment.," +classroomRoster.getResult() );
 			//ends	
-		 */
 		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
 		instbellnotiSteps.verifyEmptyNotification(); 
 		//Added on 15-Sep-20
-		//commented by divya as it does not come in daily build
-		//Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login," +instbellnotiSteps.getResult() );
+		Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login," +instbellnotiSteps.getResult() );
 
 		//ends
 
