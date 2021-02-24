@@ -110,9 +110,8 @@ public class Staging_Monthly_Classroom_Venue_Bulid3 extends FractalBaseWebTest {
       cSteps.classroomPageInformation();
         Reporter.writeSummary("TCID_CLASS_028, Verify the user is able to view the Classroom details of a  Classroom," +  cSteps.getResult() );
 	}
-        
-		@Test(dataProviderClass = DataManager.class, groups = { "pilot"}, enabled = true,description="")
-    	public void testClassroomCreation(String row, String strBrowserName) throws IOException {
+@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups= {"pilot"}, enabled= true, description="")
+   public void testClassroomCreation(String row, String strBrowserName) throws IOException {
     	
     		driver = BrowserFactory.getBrowser(strBrowserName);
     		loginToContentAdmin(driver);
