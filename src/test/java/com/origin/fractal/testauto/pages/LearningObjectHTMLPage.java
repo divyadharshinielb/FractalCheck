@@ -12,7 +12,7 @@ import com.origin.fractal.testauto.steps.ManageContentSteps;
  * Purpose: Check to HTML Learning object -FR1-2207
  * Created by: Vignesh
  * Created on: 18/Jun/20
- * Updated on: 17/Nov/20 - Last update few xpaths and waiting time increased....
+ * Updated on: 25-Feb-21
  */
 public class LearningObjectHTMLPage extends FractalBasePage {
 	//	MenuPage menuPage = null;
@@ -25,7 +25,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By htmlLangdropbox=By.xpath("//span[text()='Select Language']");
 	public By htmlLangEnglish=By.xpath("(//*[@class='list']//li[text()='English'])[3]");
 	public By htmlSelectCatagory=By.xpath("//input[contains(@placeholder,'Select Category')]");
-	public By htmlGenaralCatagory=By.xpath("(//*[@class='ng-binding ng-scope'][contains(text(),'General')])[3]");
+	public By htmlGenaralCatagory=By.xpath("//span[@class='ng-binding ng-scope'][normalize-space()='General']");//Updated on 25-Feb-21
 	public By htmlFile=By.xpath("//input[@id='htmlFile']");
 	public By htmlAttemptsdropBox=By.xpath("//div[contains(@class,'nice-select select-attempt ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required')]");
 	public By htmlUnlimtedAttempts=By.xpath("//li[contains(text(),'Unlimited')]");
@@ -40,7 +40,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By NoLOFound = By.xpath("//*[text()='No records found']");
 	public By htmlPopupWindow = By.xpath("//*[contains(@class, 'md-dialog-content')]");
 	public By htmlPopupWindowCloseXBtn = By.xpath("//*[contains(@class, 'dripicons-cross')]");
-	public By htmlLOFilter = By.xpath("//a[contains(text(),'Html')]");
+	public By htmlLOFilter = By.xpath("//a[contains(text(),'html')]");//Updated on 25-Feb-21
 	public By htmlLOSearchCatalogAddModule=By.xpath("(//input[@placeholder='Search'])[4]");
 	public By deleteLOInCatalog=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[4]/div[1]/div/div/div)[1]//div[3]//i)[1]");
 	public By searchResultAddModle=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[5])/div/div/div/div)[1]");
@@ -92,9 +92,9 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		By htmlOName=By.xpath("//*[text()='"+getLabel("HtmlName")+"']");
 		goToManagecontent();
 		ManageContentSteps.clickOnCreateLobjButton();
-		wait(3);
+		wait(10);//Updated on 25-Feb-21
 		moveElementFocusandClick(btnHtml);
-		wait(3);
+		wait(10);//Updated on 25-Feb-21
 		enterData("AutoLOHTMLLearningObject",htmlTitleTextArea);
 		click(htmlSelectCatagory);
 		moveElementFocusandClick(htmlGenaralCatagory);
@@ -164,7 +164,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: bool
 	 */
 	public boolean verifyFilterAndSearchHtmlLO() {
-		By htmlOName=By.xpath("//*[text()='"+getLabel("HtmlName")+"']");
+			By htmlOName=By.xpath("//*[text()='"+getLabel("HtmlName")+"']");
 		By editedhtmlOName=By.xpath("//*[text()='"+getLabel("editHtmlName")+"']");
 		click(htmlLOFilter);
 		wait(2);
@@ -195,7 +195,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(2);
 		click(addBundle);
 		if (action.equalsIgnoreCase("ADD HTML")) {
-			enterData(getLabel("editHtmlName"),htmlLOSearchCatalogAddModule);
+			enterData(getLabel("HtmlName"),htmlLOSearchCatalogAddModule);
 			wait(2);
 		}
 		click(searchResultAddModle);
@@ -264,7 +264,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: boolean
 	 */
 	public boolean userSearchHTMLLOAndLaunchHTML() {
-		By htmlOName=By.xpath("//*[@title='"+getLabel("editHtmlName")+"']");//Updated on 4-Dec-20
+		By htmlOName=By.xpath("//*[@title='"+getLabel("HtmlName")+"']");//Updated on 4-Dec-20
 		print(""+htmlOName);
 		click(searchfieldUser);
 		wait(5);
