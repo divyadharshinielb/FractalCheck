@@ -164,7 +164,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: bool
 	 */
 	public boolean verifyFilterAndSearchHtmlLO() {
-			By htmlOName=By.xpath("//*[text()='"+getLabel("HtmlName")+"']");
+		By htmlOName=By.xpath("//*[text()='"+getLabel("HtmlName")+"']");
 		By editedhtmlOName=By.xpath("//*[text()='"+getLabel("editHtmlName")+"']");
 		click(htmlLOFilter);
 		wait(2);
@@ -202,9 +202,8 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(3);
 		click(continueBtn1);
 		wait(5);
-		//		commented on 4-Dec-20
-		//		click(saveBtn);
-		//		wait(3);
+		click(saveBtn);
+		wait(3);
 		if(elementExist(allUsersUpdateSelectionBtn)) {
 			click(allUsersUpdateSelectionBtn);
 			wait(3);
@@ -250,7 +249,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		enterData(getLabel("HtmlName"),searchFieldLearnObj);
 		wait(10);
 		moveElementFocusandClick(deleteLOBtn);
-		wait(3);
+		wait(5);
 		moveElementFocusandClick(deleteOKBtn);
 		wait(5);
 		return true;
