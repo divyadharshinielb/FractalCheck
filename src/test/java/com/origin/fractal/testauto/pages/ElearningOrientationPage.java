@@ -22,7 +22,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	private By lblOritationLandScape= By.xpath("//*[text()='Landscape']");
 	private By lblOritationPortrait= By.xpath("//*[text()='Portrait']");
 	private By closeXBtn= By.xpath("//button[@class='close']");
-	private By eLearningitemFilter= By.xpath("//a[contains(text(),'eLearning')]");
+	private By eLearningitemFilter= By.xpath("//a[contains(text(),'elearning')]");//Updated on 24-Feb-2021
 	private By eLearningScromPackage= By.xpath("//*[text()='Scorm']");
 	private By eLearningXapiPackage= By.xpath("//*[text()='Xapi']");
 	private By AutoOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[12]//input)[1]");
@@ -35,7 +35,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	private By updateBtn = By.xpath("//*[text()='Update']");
 	private By newVersionReqNoBtn = By.xpath("//*[text()='No']");
 	private By updateagainNoBtn = By.xpath("//*[text()='No']");
-
+	private By continueBtn = By.xpath("//button[contains(text(),'Continue')]");//Added on 24-Feb-21
 	public ElearningOrientationPage(WebDriver driver) {
 		super(driver);
 		ManageContentSteps = new ManageContentSteps(driver);
@@ -116,6 +116,12 @@ public class ElearningOrientationPage extends FractalBasePage {
 		wait(3);
 		click(editBtn);
 		wait(10);
+		//Added on 24-Feb-21
+		if (elementExist(continueBtn)) {
+			click (continueBtn);
+			wait(5);
+		}
+		//ends
 	}
 
 	/* Method name: editLOandselectUploadFilePackageType()

@@ -41,9 +41,9 @@ public class WebTestLearningObjectHTML extends FractalBaseWebTest{
 		HTMLSteps.userSearchHTMLLOAndLaunchHTML();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-005,Verify that Users able to see the HTML Learning Object in Bundle Catalog item," +HTMLSteps.getResult());
 		login.logOutUser();
-		wait(3);
+//		wait(3);
 		siteAdminLogin(driver); 
-		wait(5);
+//		wait(5);
 		HTMLSteps.verifyDeleteHTMLLearnignobject();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-006,Verify that Site admin is able to Delete HTML Learning object," +HTMLSteps.getResult());
 	}
