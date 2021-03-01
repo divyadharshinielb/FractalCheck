@@ -101,6 +101,7 @@ public class LoginPage extends FractalBasePage {
 		enterData("wintestersbassvikianu01@gmail.com",tbUserName);
 		enterData("Welcome@123&",tbPassword);
 		click(btnLogin1);
+		wait(3);
 	}
 	//Ends
 	public void loginPageVerification() {

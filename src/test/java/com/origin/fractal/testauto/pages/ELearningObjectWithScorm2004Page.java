@@ -22,8 +22,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
 	public By searchFieldCatItem = By.xpath("//*[@id='searchCatalog']");
 	public By lblCatalogTab = By.xpath("(//*[contains(text(),'Catalog Items')])[1]");
-	public By filterELearning = By.xpath("//a[contains(text(),'eLearning')]");
-	public By btnElearning = By.xpath(".//button/span[contains(text(),'eLearning')]");
+	public By filterELearning = By.xpath("//a[contains(text(),'elearning')]");//Updated on 25-Feb-2021
+	public By btnElearning = By.xpath("//button//*[text()='eLearning']");//Updated on 25-Feb-2021
 	public By eLeatningTitleTextArea=By.xpath("//*[@name='elearningName']");
 	public By lblscormOption=By.xpath("//label[contains(text(),'Scorm')]");
 	public By uploadPackage=By.xpath("//input[@id='elearningFile']");
@@ -40,7 +40,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public By btnCancel = By.xpath(".//button[contains(text(),'Cancel')]");
 	public By updateBtn = By.xpath("//*[text()='Update']");
 	public By newVersionReqNoBtn = By.xpath("//*[text()='No']");
-	public By updateagainNoBtn = By.xpath("//*[text()='No']");
+	public By updateagainNoBtn = By.xpath("//span[normalize-space()='No']");//Updated on 26-Feb-21
 	public By searchfieldUser= By.xpath("//input[@id='theInput']");
 	public By continueBtn = By.xpath(" //button[contains(text(),'Continue')]");
 	public By continueBtn1 = By.xpath("(//*[text()='Continue'])[1]");
@@ -50,6 +50,11 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public By catEditBtn = By.xpath("(//*[@title='Edit'])[1]");
 	public By btnSave = By.xpath(".//button[contains(text(),'Save')]");
 	public By closeModel = By.xpath(".//button[contains(@class,'close')]");
+	//Added on 25-Feb-21
+	public By genaralCatagory=By.xpath("//span[@class='ng-binding ng-scope'][normalize-space()='General']");
+	public By durationHH = By.xpath("//input[contains(@placeholder,'HH')]");
+	public By durationMM = By.xpath("//input[contains(@placeholder,'MM')]");
+	public By btnCreateLobj = By.xpath("//button[normalize-space()='Add Learning Object']");//Updated on 26-Feb-21
 
 	public ELearningObjectWithScorm2004Page(WebDriver driver) {
 		super(driver);
@@ -89,13 +94,15 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		By scormLOName=By.xpath("//*[text()='"+getLabel("eLearningName")+"']");
 		ManageContentItemCodesSteps.goToManagecontent();
 		wait(10);
-		ManageContentSteps.clickOnCreateLobjButton();
+		//		ManageContentSteps.clickOnCreateLobjButton();
+		wait(10);//Added on 26-Feb-21
+		moveElementFocusandClick(btnCreateLobj);
 		wait(10);
 		moveElementFocusandClick(btnElearning);
 		wait(5);
 		enterData(getLabel("eLearningName"),eLeatningTitleTextArea);
 		click(LearningObjectHTMLPage.htmlSelectCatagory);
-		moveElementFocusandClick(LearningObjectHTMLPage.htmlGenaralCatagory);
+		moveElementFocusandClick(genaralCatagory);// Updated on 25-Feb-21
 		//		click(LearningObjectHTMLPage.htmlLangdropbox);//commented on 22-Sep-20
 		//		click(LearningObjectHTMLPage.htmlLangEnglish);
 		click(lblscormOption);
@@ -107,8 +114,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		enterData(getLabel("eLearningName"),discriTextArea);//Added on 25-Nov-20
 		moveElementFocus(LearningObjectHTMLPage.htmlItemcodetab);//Added on 25-Nov-20
 		enterData(getLabel("eLearningName"),LearningObjectHTMLPage.htmlItemcodetab);
-		enterData(LearningObjectHTMLPage.getLabel("DurationHH"),LearningObjectHTMLPage.htmlDurationHH);
-		enterData(LearningObjectHTMLPage.getLabel("DurationMM"),LearningObjectHTMLPage.htmlDurationMM);
+		enterData("00",durationHH);// Updated on 25-Feb-21
+		enterData("30",durationMM);// Updated on 25-Feb-21
 		wait(10);// Updated pn 26-Nov-20
 		click(btnSave);
 		wait(50);
@@ -143,9 +150,12 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		//ends
 		click(updateBtn);
 		wait(2);
-		click(newVersionReqNoBtn);
-		wait(3);
-		click(updateagainNoBtn);
+		if (elementExist(newVersionReqNoBtn)) {
+			click(newVersionReqNoBtn);
+			wait(3);
+			click(updateagainNoBtn);
+			wait(5);
+		}
 		wait(5);
 		if(elementExist(editscormLOName)) {
 			return true;
@@ -176,12 +186,12 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		click(addBundle);
 		wait(5);
 		if (action.equalsIgnoreCase("Add scorm2004")) {
-			enterData(getLabel("editeLearningName"),LearningObjectHTMLPage.htmlLOSearchCatalogAddModule);
+			enterData(getLabel("eLearningName"),LearningObjectHTMLPage.htmlLOSearchCatalogAddModule);
 			wait(5);
 		}
 		click(LearningObjectHTMLPage.searchResultAddModle);
-		//		wait();
-		//		click(continueBtn1);
+		wait(3);
+		click(continueBtn1);
 		wait(2);
 		click(saveBtn);
 		wait(5);
@@ -198,7 +208,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: boolean
 	 */
 	public boolean verifyPreviewscorm2004(){
-		By scormLOName=By.xpath("//*[text()='"+getLabel("editeLearningName")+"']");
+		By scormLOName=By.xpath("//*[text()='"+getLabel("eLearningName")+"']");
 		enterData(getLabel("eLearningName"),searchFieldLearnObj);
 		wait(5);
 		click(scormLOName);
@@ -216,7 +226,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: boolean
 	 */
 	public boolean userSearchElearningobjectWithscorm2004AndLaunch() {
-		By scormlO=By.xpath("(//*[contains(text(),'"+getLabel("editeLearningName")+"')])[1]");
+		By scormlO=By.xpath("(//*[contains(text(),'"+getLabel("eLearningName")+"')])[2]"); //Updated on 26-Feb-21
 		wait(10);
 		click(searchfieldUser);
 		enterData(getLabel("eLearningName"),searchfieldUser);

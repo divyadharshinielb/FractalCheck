@@ -104,7 +104,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 		//		click(adminAccountIcon);
 		//		wait(2);
 		//		click(roleLeaner);
-		wait(5);
+		wait(10);
 		click(userMyLearningTab);
 		wait(10);
 		return compareStrings(getText(userMyLearningbox2), existOrder1) && compareStrings(getText(userMyLearningbox1), existOrder2) && compareStrings(getText(userMyLearningbox3), existOrder3);

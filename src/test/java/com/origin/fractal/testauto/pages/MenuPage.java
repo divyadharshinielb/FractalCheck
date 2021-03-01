@@ -43,6 +43,7 @@ public class MenuPage extends FractalBasePage{
 	public void clickMenu() {
 		wait(10);
 		click(btnMenu);
+		wait(3);//Added on 26-Feb-21
 	}
 	public void gotoManageContents() {
 		click(manageContents); 
