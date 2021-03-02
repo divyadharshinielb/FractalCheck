@@ -243,7 +243,9 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	    	 click(By.id("com.originkonnect.app:id/back_white"));
 	     }
 	     wait(5);
-	    click(By.id("com.originkonnect.app:id/empty_space_top"));
+	     if(elementExist(By.id("com.originkonnect.app:id/empty_space_top"))){
+	 	    click(By.id("com.originkonnect.app:id/empty_space_top"));
+	 	    }
 	    }
 	    if(elementExist(By.id("com.originkonnect.app:id/empty_space_top"))){
 	    click(By.id("com.originkonnect.app:id/empty_space_top"));
