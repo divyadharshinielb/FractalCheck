@@ -236,12 +236,20 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	}
 	
 	public void clickMenu() {
-		wait(15);
-		if(elementExist(btnLater)){
-			click(getObj(btnLater));
-		}
-		wait(10);
-		click(getObj(btnMenu));
+		wait(10);//com.originkonnect.app:id/r1
+	    if(elementExist(By.id("com.originkonnect.app:id/back_white"))||elementExist(By.id("com.originkonnect.app:id/r1"))) {
+	     if(elementExist(By.id("com.originkonnect.app:id/back_white"))) {
+	    	 wait(2);
+	    	 click(By.id("com.originkonnect.app:id/back_white"));
+	     }
+	     wait(5);
+	    click(By.id("com.originkonnect.app:id/empty_space_top"));
+	    }
+	    if(elementExist(By.id("com.originkonnect.app:id/empty_space_top"))){
+	    click(By.id("com.originkonnect.app:id/empty_space_top"));
+	    }
+        wait(20);
+	    click(getObj(btnMenu));
 		wait(5);
 	}
 	
