@@ -24,7 +24,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By htmlLangdropbox=By.xpath("//span[text()='Select Language']");
 	public By htmlLangEnglish=By.xpath("(//*[@class='list']//li[text()='English'])[3]");
 	public By htmlSelectCatagory=By.xpath("//input[contains(@placeholder,'Select Category')]");
-	public By htmlGenaralCatagory=By.xpath("(//*[@class='ng-binding ng-scope'][contains(text(),'General')])[3]");
+	public By htmlGenaralCatagory=By.xpath("//span[@class='ng-binding ng-scope'][normalize-space()='Tech']");//Updated on 2-Mar-21
 	public By htmlFile=By.xpath("//input[@id='htmlFile']");
 	public By htmlAttemptsdropBox=By.xpath("//div[contains(@class,'nice-select select-attempt ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required')]");
 	public By htmlUnlimtedAttempts=By.xpath("//li[contains(text(),'Unlimited')]");
@@ -39,7 +39,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By NoLOFound = By.xpath("//*[text()='No records found']");
 	public By htmlPopupWindow = By.xpath("//*[contains(@class, 'md-dialog-content')]");
 	public By htmlPopupWindowCloseXBtn = By.xpath("//*[contains(@class, 'dripicons-cross')]");
-	public By htmlLOFilter = By.xpath("//a[contains(text(),'Html')]");
+	public By htmlLOFilter = By.xpath("//a[contains(text(),'html')]");//Updated on 17-Feb-2021
 	public By htmlLOSearchCatalogAddModule=By.xpath("(//input[@placeholder='Search'])[4]");
 	public By deleteLOInCatalog=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[4]/div[1]/div/div/div)[1]//div[3]//i)[1]");
 	public By searchResultAddModle=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[5])/div/div/div/div)[1]");
@@ -102,12 +102,14 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(2);
 		moveElementFocusandClick(htmlAttemptsdropBox);
 		moveElementFocusandClick(htmlUnlimtedAttempts);
-		moveElementFocusandClick(htmlDiscriTextArea);//Added on 5-Jan-21
+//		commented on 20-Jan-21
+		//moveElementFocusandClick(htmlDiscriTextArea);//Added on 5-Jan-21
+		//Endds
 		enterData(getLabel("HtmlName"),htmlDiscriTextArea);
 		enterData(getLabel("HtmlName"),htmlItemcodetab);
 		enterData(getLabel("DurationHH"),htmlDurationHH);
 		enterData(getLabel("DurationMM"),htmlDurationMM);
-		wait(2);
+		wait(10);//Updated on 22-Feb-2021
 		click(btnSave);
 		wait(5);
 		if(elementExist(sucessfullyNotification)) {
@@ -198,8 +200,8 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(2);
 		click(continueBtn1);
 		wait(5);
-		//click(saveBtn);//commented on 5-Jan-21
-		//wait(3);//commented on 5-Jan-21
+		click(saveBtn);
+		wait(3);
 		click(allUsersUpdateSelectionBtn);
 		wait(3);
 		moveElementFocusandClick(updateSaveBtn);
@@ -239,7 +241,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);
 		click(learningObjectTab);
 		wait(10);
-		enterData(getLabel("HtmlName"),searchFieldLearnObj);
+		enterData(getLabel("editHtmlName"),searchFieldLearnObj);
 		wait(20);
 		click(deleteLOBtn);
 		wait(2);

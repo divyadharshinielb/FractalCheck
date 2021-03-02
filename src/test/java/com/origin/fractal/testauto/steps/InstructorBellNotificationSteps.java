@@ -21,8 +21,11 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void instLogout() {
-		instbellnoti.instLogout();
+		try{instbellnoti.instLogout();
 		wait(5);
+	}catch(Exception e) {
+		print("Logout issue");
+	}
 	}
 
 	/* Function name: adminLogout()
@@ -30,8 +33,11 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminLogout() {
-		instbellnoti.adminLogout();
+		try{instbellnoti.adminLogout();
 		wait(5);
+		}catch(Exception e) {
+			print("Logout issue");
+		}
 	}
 
 	/* Function name: verifyEmptyNotification()
@@ -191,4 +197,19 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 		instbellnoti.editEvent(Searchclassroom,"prerequisite",Instnumber,changezone);
 		adminLogout();
 	}
+	
+	/* Added on 3-Dec-20
+	 * Function name: gotoClassRoom()
+	 * Action: goto Class Room
+	 * Return Type: void
+	 */
+	public void gotoClassRoom() {
+		result="PASSED";
+		try{instbellnoti.goToclassroom();
+		wait(10);
+		}catch(Exception e){
+			result="FAILED";
+		}
+	}
+	//Ends
 }

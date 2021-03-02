@@ -7,10 +7,10 @@ import com.origin.fractal.testauto.pages.LeaderBoardPointPage;
 
 /*
  * File/Class name: LeaderBoardPointSteps.java
- * Purpose: Checking the User leader board points - Step level code 
+ * Purpose: Checking the FR1-3599 - User leader board points & FR1-3786 Learner board - Step level code 
  * Created by: Vignesh 
  * Created on: 4-Jan-2021
- * Updated on 7-Jan-21
+ * Updated on 20-Feb-21
  */
 public class LeaderBoardPointSteps extends FractalBaseStep {
 	LeaderBoardPointPage page=null;
@@ -89,5 +89,125 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 			result="FAILED";
 		}
 	}
-}
 
+	/*Added on 15-Feb-21 and Updated on 16-Feb-21
+	 * Function Name: CheckDurationFilter
+	 * Purpose: verify User is able to check the overall, Weekly and monthly point
+	 */
+	public void  checkDurationFilter() {
+		try {result="FAILED";
+		if(page.checkDurationFilter()==true)
+			result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}
+	}
+
+	/* Function Name: CheckDurationFilter
+	 * Purpose: verify User is able to check the overall, Weekly and monthly point
+	 */
+	public void verifyArrow() {
+		try {result="FAILED";
+		if(page.verifyArrow()==true)
+			result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}
+	}
+
+	/* Function Name: verifyCertiPopUp
+	 * Purpose: verify certification in popup
+	 */
+	public void verifyCertiPopUp() {
+		try {result="FAILED";
+		if(page.verifyCertiPopUp()==true)
+			result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}
+	}
+
+	/* Function Name: verifyCertiDetails
+	 * Purpose: verify certification Details
+	 */
+	public void verifyCertiDetails() {
+		try {result="FAILED";
+		if(page.verifyCertiDetails()==true)
+			result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}
+	}
+
+	/* Function Name: verifyProfileCTA
+	 * Purpose: verify profile CTA Link
+	 */
+	public void verifyProfileCTA() {
+		try {result="FAILED";
+		if(page.verifyProfileCTA()==true)
+			result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}	}
+
+	// Added on 18-Feb-2021 and updated on 20-Feb-2021
+	/* Function Name: verifyLearnerBoard
+	 * Purpose:check the Leanerboard point in dashboard page
+	 */
+	public void verifyLearnerBoard() {
+		try {result="FAILED";
+		page.verifyLearnerBoard();
+		result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}	}
+
+	/* Function Name: verifyUserLearnerPoint
+	 * Purpose: verify User current score (new)
+	 */
+	public void verifyUserLearnerPoint() {
+		try {result="FAILED";
+		if(page.verifyUserLearnerPoint()==true)
+			result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}	
+	}
+
+	/* Function Name: verifyUserLearnerBoard
+	 * Purpose: verify User current score (new)
+	 */
+	public void verifyUserLearnerBoard() {
+		try {result="FAILED";
+		page.verifyUserLearnerBoard();
+		result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}	
+	}
+
+	/* Function Name: verifyLearnerBoardShare
+	 * Purpose: verify Learner Board Share social media
+	 */
+	public void verifyLearnerBoardShare() {
+		try {result="FAILED";
+		if(page.verifyLearnerBoardShare()==true)
+			result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}	
+	}
+
+	/* Function Name: verifyNumberofUsdersListed
+	 * Purpose: verify Number of Usders Listed
+	 */
+	public void verifyNumberofUsdersListed() {
+		try {result="FAILED";
+		if(page.verifyNumberofUsdersListed()==true)
+			result="PASSED";
+		}catch(Exception e) {
+			result="FAILED";
+		}	
+	}
+	//Ends
+}
