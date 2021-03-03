@@ -68,7 +68,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Action: remove the HTML-LO in bundle and delete the HTML-LO
 	 */
 	public void verifyDeleteELearnignobjectWithscorm2004() {
-		By scormLOName=By.xpath("//*[contains(text(),'"+getLabel("eLearningName")+"')]");
+		By scormLOName=By.xpath("//*[contains(text(),'"+getLabel("editeLearningName")+"')]");
 		//		ManageContentItemCodesSteps.goToManagecontent();
 		//commented on 7-Sep-20
 		createandEditCatalogBundleWithscorm2004("Remove LO");
@@ -77,7 +77,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		wait(2);
 		click(filterELearning);
 		wait(5);
-		enterData(getLabel("eLearningName"),searchFieldLearnObj);
+		enterData(getLabel("editeLearningName"),searchFieldLearnObj);
 		wait(5);
 		click(deleteLOBtn);
 		wait(2);
@@ -186,7 +186,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		click(addBundle);
 		wait(5);
 		if (action.equalsIgnoreCase("Add scorm2004")) {
-			enterData(getLabel("eLearningName"),LearningObjectHTMLPage.htmlLOSearchCatalogAddModule);
+			enterData(getLabel("editeLearningName"),LearningObjectHTMLPage.htmlLOSearchCatalogAddModule);
 			wait(5);
 		}
 		click(LearningObjectHTMLPage.searchResultAddModle);
@@ -208,7 +208,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: boolean
 	 */
 	public boolean verifyPreviewscorm2004(){
-		By scormLOName=By.xpath("//*[text()='"+getLabel("eLearningName")+"']");
+		By scormLOName=By.xpath("//*[text()='"+getLabel("editeLearningName")+"']");
 		enterData(getLabel("eLearningName"),searchFieldLearnObj);
 		wait(5);
 		click(scormLOName);
@@ -226,10 +226,10 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: boolean
 	 */
 	public boolean userSearchElearningobjectWithscorm2004AndLaunch() {
-		By scormlO=By.xpath("(//*[contains(text(),'"+getLabel("eLearningName")+"')])[2]"); //Updated on 26-Feb-21
+		By scormlO=By.xpath("(//*[contains(text(),'"+getLabel("editeLearningName")+"')])[2]"); //Updated on 26-Feb-21
 		wait(10);
 		click(searchfieldUser);
-		enterData(getLabel("eLearningName"),searchfieldUser);
+		enterData(getLabel("editeLearningName"),searchfieldUser);
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 		wait(3);
 		moveElementFocusandClick(scormlO);

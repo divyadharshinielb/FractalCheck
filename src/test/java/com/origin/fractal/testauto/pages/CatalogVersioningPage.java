@@ -163,8 +163,8 @@ public class CatalogVersioningPage extends FractalBasePage {
 			}
 			wait(3);
 			click(continueBtn1);
-			//			wait(3);
-			//			click(saveBtn);
+						wait(3);
+						click(saveBtn);
 			wait(5);
 			//If user enrolled the catalog item 
 			if(elementExist(allUsersUpdateSelectionBtn)) {
@@ -191,9 +191,9 @@ public class CatalogVersioningPage extends FractalBasePage {
 //		ManageContentItemCodesSteps.goToManagecontent();
 		editCatalogToIncludeLearningObject(action,catalog);
 		click(learningObjectTab);
-		wait(5);
+		wait(10);//Updated on 3-Mar-21
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
-		wait(5);
+		wait(10);//Updated on 3-Mar-21
 		moveElementFocusandClick(versionCount);
 		wait(5);
 		moveElementFocusandClick(versionDelete);
