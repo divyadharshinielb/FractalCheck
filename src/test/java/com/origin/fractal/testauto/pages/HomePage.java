@@ -119,7 +119,7 @@ public class HomePage extends FractalBasePage {
     private By poSecondCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
     /*************/
     private By viewAll=By.xpath("//a[contains(text(),'VIEW ALL')]");
-    
+    public By percentLabel = By.xpath("//*[contains(@class,'CircularProgressbar ')]");
     public HomePage(WebDriver driver) {
 		super(driver);
 		pageName ="HomePage"; 
@@ -151,7 +151,13 @@ public class HomePage extends FractalBasePage {
 			}
 	}
 	public void verifyResumeLearningText() {
+		if(elementExist(lblResumeLearning)) {
 		verifyLabel("lblLrnInProg",lblResumeLearning);
+		}
+		else
+		{
+			elementExist(percentLabel);
+		}
 	}
 	public void verifyComplStatus() {
 			verifyComplPercent(lblCompl);
