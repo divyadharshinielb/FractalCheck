@@ -245,8 +245,8 @@ public class MyLearningPage extends FractalBasePage {
 		}
 	}
 	public void verifyCourseContents() {
-		if(elementExist(lblCourses)) {
-			wait(5);
+	/*	if(elementExist(lblCourses)) {
+			wait(10);
 			WebElement element = driver.findElement(lblCourses); Actions 
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();
@@ -254,13 +254,13 @@ public class MyLearningPage extends FractalBasePage {
 		click(lblCourses);
 		wait(5);
 		WebElement element1 = driver.findElement(clickCatalog); Actions 
-		actions1 = new Actions(driver); actions.moveToElement(element1);
+		actions1 = new Actions(driver); actions1.moveToElement(element1);
 		actions1.perform();
 		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
-		}
-		}
+	*/	}
+		
 
 	public void verifyLaunch() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
