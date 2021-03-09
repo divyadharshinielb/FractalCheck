@@ -146,7 +146,8 @@ click(lblRcntAdded_Courses);
 public void clickOnTopArrBtn() {
 wait(5);
 if(elementExist(btnTopArr)) {
-click(btnTopArr);
+wait(2);
+//click(btnTopArr);
 }
 wait(5);
 }
