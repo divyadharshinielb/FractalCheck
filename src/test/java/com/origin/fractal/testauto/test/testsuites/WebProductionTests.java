@@ -101,7 +101,7 @@ public class WebProductionTests extends FractalBaseWebTest {
 	 Reporter.writeSummary("TCID_084,Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());  
 	 homeSteps.clickLogout();
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,
 			description = "video testing")
 	public void verifyvideo(String row, String strBrowserName) throws InterruptedException {
 		driver = BrowserFactory.getBrowser(strBrowserName);

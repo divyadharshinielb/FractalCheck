@@ -13,10 +13,26 @@ public class MyLearningStepsNewUI extends FractalBaseStep {
 		fBPage = page;
 	}
 	public void verifySubMenu() {
+		result ="Passed";
+		   try {
 		page.verifySubMenu();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 	public void verifyCatalogname() {
+		result ="Passed";
+		   try {
 		page.verifyCatalogname();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
 	}
 
 }
