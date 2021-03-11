@@ -151,6 +151,7 @@ public class UserPaginationPage extends FractalBasePage{
 	 */
 	public void categoryLoadMoreWithFilter() {
 		elementExist(btnbundle);
+		wait(2);
 		click(userBundles);
 		usercountCheck(categoryRepeatdiv1,categoryRepeatdiv2);
 		click(onlymylearnBtn);
@@ -164,8 +165,10 @@ public class UserPaginationPage extends FractalBasePage{
 	 *cause:Check pagination for whats new section
 	 */
 	public void whatsnewLoadMore() {
+		wait(5);
 		click(homeIcon);
 		wait(10);
+		if(elementExist(viewallBtn)) {
 		WebElement Element = driver.findElement(viewallBtn);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", Element);
@@ -173,6 +176,7 @@ public class UserPaginationPage extends FractalBasePage{
 		click(gridicon);
 		wait(2);
 		usercountCheck(whatsnewRepeatdiv1,whatsnewRepeatdiv2);
+		}
 	}
 	/*
 	 *function:whatsnewWithFilter() 
@@ -194,7 +198,9 @@ public class UserPaginationPage extends FractalBasePage{
 		enterData("a",searchLbl);
 		driver.findElement(searchLbl).sendKeys(Keys.ENTER);
 		scrollToElement(scrollIcon);
+		if(elementExist(loadmoreBtn)) {
 		verifyText("LOAD MORE",loadmoreBtn);
+		}
 	}
 }
 
