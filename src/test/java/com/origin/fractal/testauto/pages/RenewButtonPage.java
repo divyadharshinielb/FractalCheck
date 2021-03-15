@@ -20,15 +20,15 @@ public class RenewButtonPage extends FractalBasePage{
 	public By gridView = By.xpath("//i[@class='icon-list font-16']");
 	public By completedLbl = By.xpath("//li[text()='COMPLETED']");
 	public By whatsNewViewAll = By.xpath("//a[contains(text(),'VIEW ALL')]");//a[contains(text(),'VIEW ALL')]/..
-	public By whatsNewDueDateLbl = By.xpath("//a[contains(text(),'Automation_Renew')]/../../../../p[contains(@class,'due_date myfont')]");
-	public By whatsNewRenewBtn = By.xpath("//a[contains(text(),'Automation_Renew')]/../../../div/div/div/a/button");
-	public By catalogTitle = By.xpath("//a[contains(text(),'Automation_Renew')]/..");
+	public By whatsNewDueDateLbl = By.xpath("//a[contains(text(),'automation_renew')]/../../../../p[contains(@class,'due_date myfont')]");
+	public By whatsNewRenewBtn = By.xpath("//a[contains(text(),'automation_renew')]/../../../div/div/div/a/button");
+	public By catalogTitle = By.xpath("//a[contains(text(),'automation_renew')]/..");
 	public By homeLogo = By.xpath("//img[@class='logo-height']");
 	public By categoryBtn = By.xpath("//a[contains(text(),'CATEGORIES')]");
 	public By generalLbl = By.xpath("//a[contains(text(),'Technology')]");
 	public By gridIcon = By.xpath("//i[@class='icon-list font-16']");
-	public By gridDudeDateLbl = By.xpath("//a[contains(text(),'Automation_Renew')]/../../../p[contains(text(),'DUE DATE IS OVER')]");
-	public By gridRenewBtn = By.xpath("//a[contains(text(),'Automation_Renew')]/../../../../../div/p/a/button[contains(text(),'RENEW')]");
+	public By gridDudeDateLbl = By.xpath("//a[contains(text(),'automation_renew')]/../../../p[contains(text(),'DUE DATE IS OVER')]");
+	public By gridRenewBtn = By.xpath("//a[contains(text(),'automation_renew')]/../../../../../div/p/a/button[contains(text(),'RENEW')]");
 	public By renewCompletedBtn = By.xpath("//a[contains(text(),'Renew Check1')]/..");
 	public By completedDueDateLbl = By.xpath("//a[contains(text(),'Renew Check1')]/../../../p[contains(text(),'DUE DATE IS OVER')]");
 	public By expiredLbl = By.xpath("//a[contains(text(),'Renew Check1')]/../../../../p[contains(text(),'EXPIRED')]");

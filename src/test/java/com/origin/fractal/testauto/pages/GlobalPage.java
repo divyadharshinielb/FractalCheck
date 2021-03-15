@@ -125,12 +125,22 @@ public class GlobalPage extends FractalBasePage{
 			enterData("vlab",Search);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			wait(5);
+			if(elementExist(verificationText)) {
 			verifyText("vLab",verificationText);
+			}
+			else {
+				print("vlab is not there");
+			}
 			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
 			enterData("vlabs",Search);;
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
-			verifyText("vLab",verificationText);
+			if(elementExist(verificationText)) {
+				verifyText("vLab",verificationText);
+				}
+				else {
+					print("vlab is not there");
+				}
 			
 		}
 		//Added by Dhanushiya
@@ -139,8 +149,11 @@ public class GlobalPage extends FractalBasePage{
 			enterData("assessment",Search);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			wait(5);
+			if(elementExist(verificationText)) {
 			verifyText("Assessment",verificationText);
 			wait(5);
+			}
+			else {print("assessment is not there");}
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
 			enterData("assessment",Search);;
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
@@ -249,8 +262,14 @@ public class GlobalPage extends FractalBasePage{
 			enterData("classroom*&",Search);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			wait(5);
+			
+			if(elementExist(verificationText)) {
 			verifyText("Classroom",verificationText);
 			wait(5);
+			}
+			else {
+				print("No classroom found");
+			}
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
 			enterData("***images",Search);;
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
@@ -277,12 +296,19 @@ public class GlobalPage extends FractalBasePage{
 			enterData("automation  learningpath",Search);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			wait(5);
+			if(elementExist(automationLearningpath)) {
 			verifyText("Automation Learningpath",automationLearningpath);
 			wait(5);
+			}
+			else {print("No learning path present");}
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
 			enterData(" automation    learningpath",Search);
 			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
-			verifyText("Automation Learningpath",automationLearningpath);	
+			if(elementExist(automationLearningpath)) {
+				verifyText("Automation Learningpath",automationLearningpath);
+				wait(5);
+				}
+				else {print("No learning path present");}
 		}
 	}
