@@ -201,6 +201,7 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(lblCompleted);
 		wait(2);
+		if(elementExist(lblCompeletdEvent)) {
 		click(lblCompeletdEvent);
 		verifyText("Pre - Event",lblPreEvent);
 		wait(2);
@@ -213,13 +214,16 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("References",lblInprogressReference);
 		wait(2);
 		verifyText("Terms & Conditions",lblInprogressTermsAndConditions);
-	}
+		}
+		}
 	public void verifyActivitiesAndRosterTab(){
 		wait(2);
+		if(elementExist(By.xpath("//li[contains(text(),'Activities & Materials')]"))) {
 		WebElement element= driver.findElement(By.xpath("//li[contains(text(),'Activities & Materials')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		verifyText("ACTIVITIES & MATERIALS",lblActivitiesText);
 		verifyText("ROSTER",lblRosterText);
+		}
 	}
 	public void verifySkillsetList() {
 		WebElement element= driver.findElement(By.xpath("//i[contains(text(),';')]"));
