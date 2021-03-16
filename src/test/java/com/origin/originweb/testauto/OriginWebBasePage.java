@@ -8,8 +8,8 @@ import com.wv.auto.framework.BasePage;
 import com.wv.auto.framework.utils.TimeManager;
 
 public abstract class OriginWebBasePage extends BasePage {
-	int time10Sec = 15;//Updated on 3-Dec-20
-	int time20Sec = 20;//Updated on 3-Dec-20
+	int time10Sec = 30;//Updated on 16-Mar-21
+	int time20Sec = 60;//Updated on 16-Mar-21
 	boolean flag;
 	double preMilliseconds;
 	double milliseconds;
