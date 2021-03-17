@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class ClassroomEventPage extends FractalBasePage{
 
-	private By FirstListItem = By.xpath(".//a[contains(text(),'checking for classroom1')]");//a[contains(text(), 'Automation classroom')]//span[contains(text(),'Added on')]
+	private By FirstListItem = By.xpath(".//a[contains(text(),'Checking_for_classroom1')]");//a[contains(text(), 'Automation classroom')]//span[contains(text(),'Added on')]
 	private By btnAddEvent = By.xpath(".//button[contains(text(),'Add Event')]");//.//h4[contains(text(),'Events')]/../../*//button[contains(text(),'Add Event')]
 	private By eventPageTitle = By.xpath(".//h4[contains(text(),'New Event')]");
 	private By btnContinue = By.xpath(".//button[contains(text(),'Continue')]");//button[contains(text(),'Continue')]
@@ -116,7 +116,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 	public void clickOnClassroomItem() {
 		wait(5);
-		enterData("checking_for_classroom1",searchClassroom);
+		enterData("Checking_for_classroom1",searchClassroom);
 		wait(15);
 		click(FirstListItem);
 	}
