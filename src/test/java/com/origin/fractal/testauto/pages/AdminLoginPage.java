@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalUtils;
 public class AdminLoginPage extends FractalBasePage {
 	private By tbUserNameNewUI = By.xpath("//input[@name='username']");
 	private By tbPasswordNewUI = By.xpath("//input[@name='password']");
-	private By btnLoginNewUI = By.xpath("//input[@value='Login']");
+	private By btnLoginNewUI = By.xpath("//input[@value='LOGIN']"); 
 	private By tbUserName = By.xpath(".//input[@id='uname']");//*[@name='uname']
 	private By tbPassword = By.xpath(".//*[@name='userpassword']");//*[@name='userpassword']
 	private By btnLogin = By.xpath(".//*[@id='login_btn']");//*[@id='login_btn']
@@ -53,9 +53,9 @@ public class AdminLoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void loginToContentAdmin() throws IOException{
-		enterData("qacontentadmin",tbUserName);//contentadmin@origin.com
-	    enterData("qacontentadmin",tbPassword);//P@ssw0rd
-	    click(btnLogin1);
+		enterData("qacontentadmin",tbUserNameNewUI);//contentadmin@origin.com
+	    enterData("qacontentadmin",tbPasswordNewUI);//P@ssw0rd
+	    click(btnLoginNewUI);
 	    wait(5);
 	}
 	public void doLogin1() throws IOException {

@@ -26,7 +26,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 	private By rolenameinput = By.xpath("//label[contains(text(),'Role name')]/../input");
 	private By errormsg = By.xpath("//div[@class='text-danger ng-scope']");
 	private By guestuseroption = By.xpath("//li[contains(text(),'Guest User')]");
-	private By learnadminoption = By.xpath("//li[contains(text(),'Learning Adminstrator')]");
+	private By learnadminoption = By.xpath("//li[contains(text(),'Learning Administrator')]");
 	private By managecontentlbl = By.xpath("//label[contains(text(),'Manage Content')]");
 	private By manageuserlbl = By.xpath("//label[contains(text(),'Manage Users')]");
 	private By managereportlbl = By.xpath("//label[contains(text(),'Manage Reports')]");
@@ -40,18 +40,18 @@ public class CustomizationRolesPage extends FractalBasePage{
 	private By searchUsers = By.xpath("//input[@id='searchAllUsersName']");	
 	private By clickroles = By.xpath("//input[@type='search']");
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");  //*[@id='dLabel']/span
-	private By directuserlbl = By.xpath("//span[text()[normalize-space()='Automation directuser']]");
+	private By directuserlbl = By.xpath("//span[text()[normalize-space()='Automation Directuser']]");
 	private By circleicon = By.xpath("//div[@class='gototopCircle']");
-	private By roledeleteicon = By.xpath("//span[@class='close ui-select-match-close']/../../../span[5]/span/span[@class='close ui-select-match-close']");
-	private By editusericon = By.xpath("//i[@class='icon text-right text-gray font-size-18 pointer']");
+	private By roledeleteicon = By.xpath("//span[@class='close ui-select-match-close']/../../../span/span/span/span[contains(text(),'Automationrolecheck')]/../../span[contains(@class,'close ui-select-match-close')]");//span[@class='close ui-select-match-close']/../../../span[5]/span/span[@class='close ui-select-match-close']
+	private By editusericon = By.xpath("//span[text()[normalize-space()='Automation Directuser']]/../../../../div/div/i[contains(@title,'Edit')]");//div/i[@class='icon text-right text-gray font-size-18 pointer']
 	private By roleaddbtn = By.xpath("//span[contains(text(),'Automationrolecheck')]");
 	private By manageroledeleteicon = By.xpath("//span[contains(text(),'Automationrolecheck')]/../../../../div[4]/i[3]");
 	private By manageroleokbtn = By.xpath("//span[contains(text(),'OK')]/..");
 	private By adminprofile = By.xpath("//span[@class='loggeduserbg ng-binding']");
 	private By adminLogout = By.xpath("//a[contains(text(),'Logout')]");
 	private By automationrolebtn = By.xpath("//button[contains(text(),'Automationrolecheck')]");
-	private By automationuserdiv = By.xpath("//span[text()[normalize-space()='Automation directuser']]");
-	private By manageuserediticon = By.xpath("//i[@class='icon text-right text-gray font-size-18 pointer']");
+	private By automationuserdiv = By.xpath("//span[text()[normalize-space()='Automation Directuser']]");
+	private By manageuserediticon = By.xpath("//span[text()[normalize-space()='Automation Directuser']]/../../../../div/div/i[contains(@title,'Edit')]");
 	private By btnHome = By.xpath("//span[contains(text(),'Home')]");
 	public CustomizationRolesPage(WebDriver driver) {
 		super(driver);
@@ -71,7 +71,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 		click(btnMenu);
 		wait(10);
 		js.executeScript("window.scrollBy(0,1000)");
-		click(settingsIcon);
+		//click(settingsIcon);
 		wait(5);
 
 	}
@@ -80,7 +80,8 @@ public class CustomizationRolesPage extends FractalBasePage{
 	 * cause: Click manageroles icon and check for manage role header
 	 */
 	public void clickManageroles() {
-	//	click(settingsIcon);
+		wait(5);
+		click(settingsIcon);
 		wait(5);
 		click(settingsSelection);
 		wait(10);
@@ -123,21 +124,25 @@ public class CustomizationRolesPage extends FractalBasePage{
 		elementExist(errormsg);
 		verifyText("The Role name should be in alphabets",errormsg);
 		click(closeicon);
+		wait(2);
 	}
 	/*
 	 * function - roleCreationwithLearningadmin()
 	 * cause - Creation of custom role with Learning admin as parent role
 	 */
 	public void roleCreationwithLearningadmin() {
+		wait(2);
 		click(addrolebtn);
 		enterData(getLabel("rolename"),rolenameinput);
 		wait(5);
 		click(selectrolefield);
-		wait(2);
+		wait(5);
 		elementExist(learnadminoption);
-		wait(2);
+		wait(5);
 		elementExist(guestuseroption);
+		wait(5);
 		click(learnadminoption);
+		wait(5);
 		click(managecontentlbl);
 		click(manageuserlbl);
 		click(managereportlbl);
@@ -145,7 +150,9 @@ public class CustomizationRolesPage extends FractalBasePage{
 		click(submitbtn);
 		elementExist(newrolelbl);
 		elementExist(backrolebtn);
+		wait(5);
 		click(backrolebtn);
+		wait(5);
 	}
 	/*
 	 * function - RoleCreationwithGuestuser()
@@ -174,14 +181,18 @@ public class CustomizationRolesPage extends FractalBasePage{
 	public void roleMappingToDirectUser() {
 		wait(5);
 		click(btnMenu);
+		wait(2);
 		click(manageuserlist);
+		wait(2);
 		click(searchUsers);
-		enterData("Automation Directuser",searchUsers);
-		wait(5);
-		click(directuserlbl);
+		wait(7);
+		enterData("automation",searchUsers);
+		wait(10);
+		//click(directuserlbl);
 		wait(2);
 		click(editusericon);
-		wait(2);
+		//click(editusericon);
+		wait(7);
 		click(clickroles);
 		wait(2);
 		click(roleaddbtn);
@@ -221,6 +232,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 	 * cause - Delete the custom role after unassigning the role 
 	 */
 	public void deleteUnassignedRole() {
+		wait(2);
 		scrollToElement(learnercustomrole);
 		elementExist(learnercustomrole);
 		wait(2);
@@ -247,17 +259,21 @@ public class CustomizationRolesPage extends FractalBasePage{
 	public void unassignRole() {
 
 		click(btnMenu);
-		click(manageuserlist);
-		click(searchUsers);
-		enterData("Automation Directuser",searchUsers);
 		wait(5);
-		click(automationuserdiv);
+		click(manageuserlist);
+		wait(7);
+		click(searchUsers);
+		wait(2);
+		enterData("Automation Directuser",searchUsers);
+		wait(10);
+	//	click(automationuserdiv);
 		wait(2);
 		click(manageuserediticon);
-		wait(2);
+		wait(5);
 		click(roledeleteicon);
-		wait(2);
+		wait(5);
 		click(submitbtn);
+		wait(2);
 
 	}
 }
