@@ -32,7 +32,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By venueDropdown = By.xpath("//form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/md-input-container[1]/div[1]/span[1]");
 	private By linkDropdown = By.xpath(".//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-t-15 ng-scope')]//span[contains(@class,'current')][contains(text(),'Select')]");
 	//private By selectVenue = By.xpath(".//li[contains(text(),'Origin Learning Solutions')]");//commented by vignesh on 21-sep
-	private By selectVenue = By.xpath(".//li[contains(text(),'Learning')]");//Updated on 21-Sep-20 by vignesh 
+	private By selectVenue = By.xpath(".//li[contains(text(),'Origin Learning Solutions')]");//Updated on 21-Sep-20 by vignesh 
 	private By venueAlertMsg = By.xpath(".//h4[contains(text(),'Venue')]/../md-input-container/div[contains(@class,'text-danger')]");
 	private By linkAlertMsg = By.xpath("//div[contains(text(),'Provider selection required')]");
 	private By selectLink = By.xpath(".//li[contains(text(),'Zoom Origin')]");
