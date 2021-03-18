@@ -10,7 +10,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 public class ClassroomPage extends FractalBasePage {
 	private By searchField = By.xpath("//input[@id='searchClassroom']");
 	private By dropDown1 = By.xpath("//div[@class='select-background learningobjectslist float-left select-180']");
-	private By dropDown = By.xpath("//li[contains(text(),'content admin')]");//li[contains(text(),'LMS Admin')]
+	private By dropDown = By.xpath("//li[contains(text(),'SiteAdmin QA')]");//li[contains(text(),'LMS Admin')]
 	private By categoriesDropDown1 = By.xpath("//li[contains(text(),'Created By All')]");
 	private By categoriesDropDown2=By.xpath("//li[contains(text(),'Content Admin')]");
 	private By categoriesDropDown = By.xpath("//li[contains(text(),'All Categories')]");
@@ -233,7 +233,7 @@ public class ClassroomPage extends FractalBasePage {
 		click(mandatoryOkBtn);
 		wait(5);
 		verifyText("Classroom Title must be 4 or more characters",classroomTitleCautionText);
-		wait(5);
+		wait(10);
 		click(closeBtn);
 		wait(5);
 	}
