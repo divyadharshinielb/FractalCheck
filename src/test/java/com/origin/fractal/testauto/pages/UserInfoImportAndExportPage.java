@@ -10,7 +10,7 @@ import com.origin.fractal.testauto.steps.MenuSteps;
  * Purpose: The Admin able to Import/Export the xlsx file (FR1-2356)
  * Created by: Vigneshwaran R
  * Created on: 20-Oct-2020
- * Updated on: 03-Nov-2020
+ * Updated on: 18-Mar-21
  */
 public class UserInfoImportAndExportPage extends FractalBasePage{
 	public MenuSteps MenuSteps= null;
@@ -36,7 +36,7 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 	private By inputName=By.xpath("//input[@id='searchAllUsersName']");
 	//	private By errorMessageFileUploaded= By.xpath("(//*[contains(text(),'Upload Error!')])[2]");
 	private By businessAdmin= By.xpath("//li[text()='OLTest']");// Updated on 9-Nov-20
-	private By ZeroExportUsers= By.xpath("(//*[text()='Export Users(0)'])[1]");
+	private By ExportUsers= By.xpath("(//*[contains(text(),'Export Users')])[1]"); // Updated on 18-Mar-21
 	private By btnExportsubmit= By.xpath("//button[@type='submit'][text()='EXPORT']");
 	private String importedUserName="AutoTest";
 	private String fileLocallocation="C:\\sample file\\UserInfoFile.xlsx";
@@ -76,13 +76,13 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 	public boolean verifyUploadTemplate() {
 		click(lblDirectUser);
 		wait(2);
-		click(lblLearingHistory);
-		wait(2);
+		//		click(lblLearingHistory);//Updated on 18-Mar-21
+		//		wait(2);
 		isClickable(btnBrowseFile);
 		driver.findElement(uploadFile).sendKeys(fileLocallocation);
 		wait(3);
 		elementExist(uploadedFile);
-		wait(2);
+		wait(10);
 		click(btnImportSubmit);
 		wait(7);
 		return elementExist(lblSuccessfulMsg);
@@ -98,11 +98,11 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 		wait(3);
 		click(lblDirectUser);
 		wait(2);
-		click(lblLearingHistory);
-		wait(2);
+		//		click(lblLearingHistory);//Updated on 18-Mar-21
+		//		wait(2);
 		isClickable(btnBrowseFile);
 		driver.findElement(uploadFile).sendKeys(invalidFile);
-		wait(3);
+		wait(5);
 		return elementExist(fileMismatchedText);
 	}
 
@@ -125,18 +125,16 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 	 * purpose: check admin is able to Export the template is NOT active while zero users found
 	 */
 	public boolean verifyBtnExportTemplate() {
-		click(lblBusinessUser);
+		click(lblDirectUser);//Updated on 18-Mar-21
 		wait(3);
-		click(userDropBox);
-		wait(2);
-		moveElementFocusandClick(businessAdmin);
-		wait(3);
-		if (elementExist(ZeroExportUsers) ) {
+		//		click(userDropBox);//Updated on 18-Mar-21
+		//		wait(2);
+		//moveElementFocusandClick(businessAdmin);//Updated on 18-Mar-21
+		wait(10);//Updated on 18-Mar-21
+		if (elementExist(ExportUsers) ) {
 			if(isClickable(btnExportsubmit)==true) {
-				return false;
-			}
-			else
 				return true;
+			}
 		}
 		return false;
 	}
