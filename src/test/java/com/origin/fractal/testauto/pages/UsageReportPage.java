@@ -9,7 +9,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  * Purpose: Check FR1-3400 usage report for Learning objects & FR1-3401 User report count view
  * Created by: Vignesh R
  * Created on: 23-Nov-2020
- * Updated Date:2-Dec-2020
+ * Updated Date:18-Mar-21
  */
 public class UsageReportPage extends FractalBasePage{
 	private MenuPage menu = null;
@@ -21,7 +21,7 @@ public class UsageReportPage extends FractalBasePage{
 	private By searchTextArea = By.xpath("(//input[@type='search'])[3]");
 	private By selectSearchedItem = By.xpath("//md-virtual-repeat-container[@role='presentation']//li[1]");
 	private By btnGenerate = By.xpath("(//button[text()='Generate'])[4]");
-	private By btnExportReport = By.xpath("(//button[text()='Export report'])[2]");
+	private By btnExportReport = By.xpath("(//button[text()='Export report'])");//Updated on 18-Mar-21
 	private By txtLearningObject = By.xpath("//*[@ng-if='userListView && !contentLoading']//*[contains(text(),'Learning Object')]");
 	private By txtViewCount = By.xpath("//*[@ng-if='userListView && !contentLoading']//*[contains(text(),'View count')]");
 	private By viewLearningObjectList = By.xpath("(//*[@class='col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-lr-0 padding-tb-20 border-bottom ng-scope'][@ng-if=\"data.report_show=='yes'\"])[1]");
@@ -90,7 +90,7 @@ public class UsageReportPage extends FractalBasePage{
 		click(selectOption);
 		moveElementFocusandClick(selectAllItemOption);
 		moveElementFocusandClick(searchTextArea);
-		enterData("Catalog",searchTextArea);
+		enterData("sample",searchTextArea);//updated on 18-Mar-21
 		click(selectSearchedItem);
 		wait(2);
 		click(btnGenerate);

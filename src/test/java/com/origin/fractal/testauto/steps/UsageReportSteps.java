@@ -8,7 +8,7 @@ import com.origin.fractal.testauto.pages.UsageReportPage;
  * Purpose: Check FR1-3400 usage report for Learning objects & FR1-3401 User report count view -steplevel code
  * Created by: Vignesh R
  * Created on: 23-Nov-2020
- * Updated Date:2-Dec-2020
+ * Updated Date:18-Mar-21
  */
 public class UsageReportSteps extends FractalBaseStep {
 	private UsageReportPage usagePage= null;
@@ -20,10 +20,11 @@ public class UsageReportSteps extends FractalBaseStep {
 	 * Action: goto report and click usage tab
 	 */
 	public void gotoUsageReport() {
-		result = "PASSED";
+		result = "FAILED";
 		try{
 			usagePage.changeAdminRole();//Added on 2-Dec-20
 			usagePage.gotoUsageReport();
+			result = "PASSED";
 		}catch(Exception e) {
 			result = "FAILED";
 		}
@@ -33,9 +34,10 @@ public class UsageReportSteps extends FractalBaseStep {
 	 * Action: Verify all catalog item option
 	 */
 	public void verifyAllItemOption() {
-		result = "PASSED";
+		result = "FAILED";
 		try{
 			usagePage.verifyAllItemOption();
+			result = "PASSED";
 		}catch(Exception e) {
 			result = "FAILED";
 		}
@@ -45,8 +47,9 @@ public class UsageReportSteps extends FractalBaseStep {
 	 * Action: check export report button is clickable
 	 */
 	public void verifyExportBtnUsageReport() {
-		result = "PASSED";
+		result = "FAILED";
 		try{usagePage.verifyExportBtnUsageReport();
+		result = "PASSED";
 		}catch(Exception e) {
 			result = "FAILED";
 		}
@@ -83,8 +86,9 @@ public class UsageReportSteps extends FractalBaseStep {
 	 * Action: Verify view count column in user report
 	 */
 	public void verifyUserReport() {
-		result = "PASSED";
+		result = "FAILED";
 		try{usagePage.verifyUserReport();
+		result = "PASSED";
 		}catch(Exception e) {
 			result = "FAILED";
 		}
@@ -107,8 +111,9 @@ public class UsageReportSteps extends FractalBaseStep {
 	 * Action: check export report button is clickable
 	 */
 	public void verifyExportBtnUserReport() {
-		result = "PASSED";
+		result = "FAILED";
 		try{usagePage.verifyExportBtnUserReport();
+		result = "PASSED";
 		}catch(Exception e) {
 			result = "FAILED";
 		}
