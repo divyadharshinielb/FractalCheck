@@ -12,7 +12,7 @@ import com.origin.fractal.testauto.steps.ManageContentSteps;
  * Purpose: Check to HTML Learning object -FR1-2207
  * Created by: Vignesh
  * Created on: 18/Jun/20
- * Updated on: 31/July/20
+ * Updated on: 17-Mar-21
  */
 public class LearningObjectHTMLPage extends FractalBasePage {
 	//	MenuPage menuPage = null;
@@ -114,9 +114,9 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);
 		if(elementExist(sucessfullyNotification)) {
 			click(backToLOBtn);
-			wait(2);
-			click(closeModel);
-			wait(2);
+			wait(5);//updated on 17-Mar-21
+//			click(closeModel);
+//			wait(2);
 			if(elementExist(htmlOName)) {
 				click(htmlOName);
 				wait(2);
