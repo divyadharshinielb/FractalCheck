@@ -52,7 +52,7 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 	 */
 	public void verifyScormOrientation() {
 		try {result="FAILED";
-		if(elearningOrientation.verifyAutoOrientation("eLearningWithScorm")==true | elearningOrientation.verifyLandScapeOrientation("eLearningWithScorm")==true |
+		if(elearningOrientation.verifyAutoOrientation("eLearningWithScorm")==true || elearningOrientation.verifyLandScapeOrientation("eLearningWithScorm")==true ||
 				elearningOrientation.verifyPortraitOrientation("eLearningWithScorm")==true) {
 			result="PASSED";
 			elearningOrientation.clickCloseXbutton();
@@ -68,7 +68,7 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 	 */
 	public void verifyXapiOrientation() {
 		try {result="FAILED";
-		if(elearningOrientation.verifyAutoOrientation("eLearningWithXapi")==true | elearningOrientation.verifyLandScapeOrientation("eLearningWithXapi")==true |
+		if(elearningOrientation.verifyAutoOrientation("eLearningWithXapi")==true || elearningOrientation.verifyLandScapeOrientation("eLearningWithXapi")==true ||
 				elearningOrientation.verifyPortraitOrientation("eLearningWithXapi")==true) {
 			result="PASSED";
 		}
@@ -77,6 +77,19 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 		}
 	}
 	
-	
+	//Added on 22Sep20
+		/* Method name: preRequisite()
+		 * Desc: preRequisite- Click Portrait orientation and Update the Learning Object
+		 */
+		public void preRequisite() {
+			try {result="FAILED";
+			elearningOrientation.preRequisite("eLearningWithScorm");
+			wait(3);
+//			elearningOrientation.preRequisite("eLearningWithXapi");//Updated on 3-Dec-20
+			}catch(Exception e) {
+				result="FAILED";
+			}
+		}
+		//Ends
 
 }
