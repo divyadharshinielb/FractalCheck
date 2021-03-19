@@ -47,7 +47,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	private By htmlLangdropbox=By.xpath("//span[text()='Select Language']");
 	private By htmlLangEnglish=By.xpath("(//*[@class='list']//li[text()='English'])[3]");
 	private By htmlSelectCatagory=By.xpath("//input[contains(@placeholder,'Select Category')]");
-	private By htmlGenaralCatagory=By.xpath("(//*[@class='ng-binding ng-scope'][contains(text(),'General')])[3]");
+	private By htmlGenaralCatagory=By.xpath("(//*[@class='ng-binding ng-scope'][contains(text(),'Tech')])[3]");//Updated on 19-Mar-21
 	private By htmlFile=By.xpath("//input[@id='htmlFile']");
 	private By htmlAttemptsdropBox=By.xpath("//div[contains(@class,'nice-select select-attempt ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required')]");
 	private By htmlUnlimtedAttempts=By.xpath("//li[contains(text(),'Unlimited')]");
