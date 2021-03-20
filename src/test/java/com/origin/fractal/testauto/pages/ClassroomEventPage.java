@@ -770,7 +770,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	public By firstRowClassRoomList = By.xpath("(//*[@ng-click='viewObject(classroom_list)'])[1]");
 	public By selectzoomLink = By.xpath("(.//li[contains(text(),'Zoom')])[1]");
 	public By calendarUpcomingDate = By.xpath("(//*[@class='md-calendar-date'])[4]");//(//*[@class='md-calendar-date-selection-indicator'])[3]
-	public By selectTimeAMPM=By.xpath("//select[@name='starttime_zone']");
+	public By selectTimeAMPM=By.xpath("//select[@class='custm_time ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required']");
 	public By eventRegStartDate=By.xpath("(//span[contains(@class,'md-calendar-date-selection-indicator')])[1]");
 	public By eventRegEndDate=By.xpath("(//span[contains(@class,'md-calendar-date-selection-indicator')])[3]");
 	public By eventInstructor=By.xpath("//div[@class='col-lg-6 col-md-6 col-sm-6 col-xs-6 padding-lr-20 padding-t-20 padding-b-20 margin-b-15 border']//div[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required']");
@@ -843,8 +843,10 @@ public class ClassroomEventPage extends FractalBasePage{
 				enterData(eventTimeHour,lblCalendarHour);
 				moveElementFocusandClick(lblCalendarMinute);
 				enterData(eventTimeMins,lblCalendarMinute);
-				click(selectTimeAMPM);
+		moveElementFocus(selectTimeAMPM);
+		wait(2);
 				click(selectPM);
+				wait(2);
 				click(eventInstructor);
 				wait(1);
 				moveElementFocusandClick(selectEventInstructor1);

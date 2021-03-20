@@ -29,8 +29,8 @@ public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
 	 */	
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 )
 	public void TestInstructorcalendarActions(String row, String strBrowserName)throws IOException  {
-//		ClassroomEventPage.EventType = "Traditional Classroom";
-//		TestInstructorCalendar(row,strBrowserName);
+		ClassroomEventPage.EventType = "Traditional Classroom";
+		TestInstructorCalendar(row,strBrowserName);
 		ClassroomEventPage.EventType="Virtual Classroom";
 		TestInstructorCalendar(row,strBrowserName);
 	}

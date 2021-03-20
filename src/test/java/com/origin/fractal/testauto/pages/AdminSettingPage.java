@@ -25,7 +25,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By categoryName = By.xpath("//input[@ng-model='category.name']");
 	private By categoryDescription = By.xpath("//*[@ng-model='category.description']");
 	private By categoryCreateBtn = By.xpath("//*[text()='Create'][@type='submit']");
-	private String cateName = "createCategoriescheck";
+	private String cateName = "createCategotyitem";
 	private String cateDescri = "CreateDescription";
 	private By createdCategory=By.xpath("//*[contains(text(),'"+cateName+"')]");// updated on 20-Nov-20
 	private By deleteCategory=By.xpath("(//*[@title='Delete'])[1]");
