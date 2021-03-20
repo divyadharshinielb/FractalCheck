@@ -96,7 +96,7 @@ public class AdminVideoAndAudioTestPage  extends FractalBasePage{
 		click(audioPlay);
 		wait(3);
 		print("Audio is Playing...");
-		return  elementExist(audioPause) | elementExist(audioReplay) | elementExist(audioPlay) ;
+		return  elementExist(audioPause) || elementExist(audioReplay) || elementExist(audioPlay) ;
 	}
 
 
