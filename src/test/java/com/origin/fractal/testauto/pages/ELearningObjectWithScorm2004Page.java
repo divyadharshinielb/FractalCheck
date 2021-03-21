@@ -117,7 +117,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		if(elementExist(LearningObjectHTMLPage.sucessfullyNotification)) {
 			click(LearningObjectHTMLPage.backToLOBtn);
 			wait(2);
-			click(closeModel);
+//			click(closeModel);
 			wait(2);
 			if(elementExist(scormLOName)) {
 				return true;
@@ -161,6 +161,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void createandEditCatalogBundleWithscorm2004(String action) {
+		ManageContentItemCodesPage.goToManagecontent();
 		wait(5);
 		click(lblCatalogTab);
 		//Waiting time increased on 7-Sep-20

@@ -110,8 +110,8 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		if(elementExist(sucessfullyNotification)) {
 			click(backToLOBtn);
 			wait(2);
-			click(closeModel);
-			wait(2);
+//			click(closeModel);
+//			wait(2);
 			if(elementExist(htmlOName)) {
 				click(htmlOName);
 				wait(2);

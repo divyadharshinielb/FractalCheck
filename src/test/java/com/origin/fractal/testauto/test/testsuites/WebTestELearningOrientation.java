@@ -20,7 +20,7 @@ public class WebTestELearningOrientation extends FractalBaseWebTest{
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1)
 	public void TestELearningOrientation(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		siteAdminLogin(driver); 	
+		siteAdminLoginwithcookies(driver); 	
 		ElearningOrientationSteps eLearningOrientation= new ElearningOrientationSteps(driver);
 		eLearningOrientation.verifyELearningOrientation();
 		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-001, Verify the admin able to see orientation Modes Auto/Landscape/Portrait in elearning," +  eLearningOrientation.getResult()); 

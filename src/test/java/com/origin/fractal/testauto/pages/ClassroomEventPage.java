@@ -917,8 +917,8 @@ wait(5);
 		public By selectPM=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
 		public static String EventType=null;
 		
-		public String classRoomName = "Automation instructor Module classroom";
-		public String eventSessionName = "Automation instructor Module classroom";
+		public String classRoomName = "Auto_instr_Module";
+		public String eventSessionName = "Auto_instr_Module";
 		public String eventTimeHour = "11";
 		public String eventTimeMins = "15";
 		public String maxParticipants= "10";
