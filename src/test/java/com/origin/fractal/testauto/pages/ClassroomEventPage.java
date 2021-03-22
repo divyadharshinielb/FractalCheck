@@ -770,7 +770,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	public By firstRowClassRoomList = By.xpath("(//*[@ng-click='viewObject(classroom_list)'])[1]");
 	public By selectzoomLink = By.xpath("(.//li[contains(text(),'Zoom')])[1]");
 	public By calendarUpcomingDate = By.xpath("(//*[@class='md-calendar-date'])[4]");//(//*[@class='md-calendar-date-selection-indicator'])[3]
-	public By selectTimeAMPM=By.xpath("//select[@name='starttime_zone']");
+	public By selectTimeAMPM=By.xpath("//select[@class='custm_time ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required']");
 	public By eventRegStartDate=By.xpath("(//span[contains(@class,'md-calendar-date-selection-indicator')])[1]");
 	public By eventRegEndDate=By.xpath("(//span[contains(@class,'md-calendar-date-selection-indicator')])[3]");
 	public By eventInstructor=By.xpath("//div[@class='col-lg-6 col-md-6 col-sm-6 col-xs-6 padding-lr-20 padding-t-20 padding-b-20 margin-b-15 border']//div[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required']");
@@ -784,8 +784,8 @@ public class ClassroomEventPage extends FractalBasePage{
 	public By selectPM=By.xpath("//select[@name='starttime_zone']//*[@value='PM']");
 	public static String EventType=null;
 
-	public String classRoomName = "Automation instructor Module classroom";
-	public String eventSessionName = "Automation instructor Module classroom";
+	public String classRoomName = "Auto_instr_Module";
+	public String eventSessionName = "Auto_instr_Module";
 	public String eventTimeHour = "11";
 	public String eventTimeMins = "15";
 	public String maxParticipants= "10";
@@ -806,83 +806,75 @@ public class ClassroomEventPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void classroomEventCreation() {
-		click(btnAddEvent);
-		wait(3);
-		if(EventType.equalsIgnoreCase("Virtual Classroom")) {
-			click(lblVirtualClassroom);
-			wait(2);
-			click(linkDropdown);
-			wait(2); 
-			click(selectzoomLink);
-			wait(2);
-		}
-		else if (EventType.equalsIgnoreCase("Traditional Classroom")) {
-			click(lblTraditionalClassroom);
-			wait(2);
-			click(venueDropdown);
-			wait(2);
-			click(selectVenue);
-			wait(2);
-		}
-		else {
-			click(lblTraditionalClassroom);
-			click(venueDropdown);
-			click(selectVenue);
-		}
-		click(timezoneDropdown);
-		wait(1);
-		moveElementFocusandClick(clickCETTime);
-		click(lblSession);
-		click(lblSelectCalendar);
-		wait(1);
-		moveElementFocusandClick(dropdownSelectCalendar);
-		moveElementFocusandClick(lblCalendarHour);
-		enterData(eventTimeHour,lblCalendarHour);
-		moveElementFocusandClick(lblCalendarMinute);
-		enterData(eventTimeMins,lblCalendarMinute);
+		//added on 4Sep20
+				try{ wait(5);
+				//ends
+				click(btnAddEvent);
+				wait(5);
+				if(EventType.equalsIgnoreCase("Virtual Classroom")) {
+					click(lblVirtualClassroom);
+					wait(2);
+					click(linkDropdown);
+					wait(2);
+					click(selectzoomLink);
+					wait(2);
+				}
+				else if (EventType.equalsIgnoreCase("Traditional Classroom")) {
+					click(lblTraditionalClassroom);
+					wait(2);
+					click(venueDropdown);
+					wait(2);
+					click(selectVenue);
+					wait(2);
+				}
+				else {
+					click(lblTraditionalClassroom);
+					click(venueDropdown);
+					click(selectVenue);
+				}
+				click(timezoneDropdown);
+				wait(1);
+				moveElementFocusandClick(clickCETTime);
+				click(lblSession);
+				click(lblSelectCalendar);
+				wait(1);
+				moveElementFocusandClick(dropdownSelectCalendar);
+				moveElementFocusandClick(lblCalendarHour);
+				enterData(eventTimeHour,lblCalendarHour);
+				moveElementFocusandClick(lblCalendarMinute);
+				enterData(eventTimeMins,lblCalendarMinute);
+		moveElementFocus(selectTimeAMPM);
 		wait(2);
-		WebElement element= driver.findElement(By.xpath("//select[@name='starttime_zone']"));
-		Actions builder= new Actions(driver);
-		builder.moveToElement(element).click(element).perform();
-		wait(2);
-		element= driver.findElement(By.xpath("//select[@name='starttime_zone']//option"));
-		builder.moveToElement(element).perform();
-		builder= new Actions(driver);
-		builder.sendKeys(Keys.DOWN).build().perform();
-		builder.sendKeys(Keys.DOWN).build().perform();
-		// 24-July-20: This piece of code for- earlier AM/PM design, So please don't delete
-		//		element= driver.findElement(By.xpath("//select[@name='starttime_zone']//option"));
-		//		builder= new Actions(driver);
-		//		builder.moveToElement(element).click(element).perform();
-		//		click(selectPM);
-		//		wait(1);
-		//		moveElementFocusandClick(By.xpath("//select[@name='starttime_zone']//option[@value='PM']"));
-		wait(3);
-		click(eventInstructor);
-		wait(1);
-		moveElementFocusandClick(selectEventInstructor1);
-		click(btnContinue);
-		wait(1);
-		click(inpMaxParticipants);
-		enterData(maxParticipants,inpMaxParticipants);
-		click(inpMinParticipants);
-		enterData(minParticipants,inpMinParticipants);
-		click(lblCalenderClickStart);
-		wait(3);
-		moveElementFocusandClick(eventRegStartDate);
-		//wait(1);
-		moveElementFocusandClick(lblCalenderClickLast);
-		//wait(1);
-		moveElementFocusandClick(eventRegStartDate);
-		//wait(1);
-		moveElementFocusandClick(lblCalenderClickCancellation);
-		//wait(1);
-		moveElementFocusandClick(eventRegStartDate);
-		//wait(1);
-		click(btnSave);
-		wait(15);
-		click(closeModel);
-		wait(2);
+				click(selectPM);
+				wait(2);
+				click(eventInstructor);
+				wait(1);
+				moveElementFocusandClick(selectEventInstructor1);
+				click(btnContinue);
+				wait(3);
+				click(inpMaxParticipants);
+				enterData(maxParticipants,inpMaxParticipants);
+				click(inpMinParticipants);
+				enterData(minParticipants,inpMinParticipants);
+				click(lblCalenderClickStart);
+				wait(3);
+				moveElementFocusandClick(eventRegStartDate);
+				wait(1);
+				moveElementFocusandClick(lblCalenderClickLast);
+				wait(1);
+				moveElementFocusandClick(eventRegStartDate);
+				wait(1);
+				moveElementFocusandClick(lblCalenderClickCancellation);
+				wait(1);
+				moveElementFocusandClick(eventRegStartDate);
+				wait(3);
+				click(btnSave);
+				wait(10);
+				click(closeModel);
+				wait(5);
+				}catch(Exception e) {
+					print("FAILED: Classroom creation is take more waiting time");
+				}
 	}
 
 	/* Function name: deleteEvent()

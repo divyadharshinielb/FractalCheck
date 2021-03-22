@@ -69,7 +69,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		createandEditCatalogBundleWithscorm2004("Remove LO");
 		click(LearningObjectHTMLPage.learningObjectTab);
 		wait(2);
-		click(filterELearning);
+//		click(filterELearning);
 		wait(5);
 		enterData(getLabel("eLearningName"),searchFieldLearnObj);
 		wait(5);
@@ -115,8 +115,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		if(elementExist(LearningObjectHTMLPage.sucessfullyNotification)) {
 			click(LearningObjectHTMLPage.backToLOBtn);
 			wait(2);
-			click(closeModel);
-			wait(2);
+//			click(closeModel);
+//			wait(2);
 			if(elementExist(scormLOName)) {
 				return true;
 			}
@@ -129,6 +129,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: bool
 	 */
 	public boolean verifyEditAndCancelELearningObjectWithscorm2004() {
+		ManageContentItemCodesSteps.goToManagecontent();
 		By editscormLOName=By.xpath("//*[text()='"+getLabel("editeLearningName")+"']");
 		wait(2);
 		click(editBtn);

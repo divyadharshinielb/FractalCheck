@@ -77,7 +77,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningObjectWithScorm2004" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" />
-			<!-- <class
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogVersioning" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" />
@@ -87,7 +87,7 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
-			<class
+		<!-- 	<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
 			 -->
 		</classes>

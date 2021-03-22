@@ -46,9 +46,9 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By allNotificationPage=By.xpath("//span[text()='NOTIFICATIONS']");
 	public By eventDetailsPage=By.xpath("//span[text()='Event Details']");
 	public By instAccountLogo=By.xpath("//*[@class='ci-hover user-account']");
-	public By instLogout=By.xpath("(//*[contains(@class,'popupunderline')]//li)[3]");// Updated on 4/Jun/20
+	public By instLogout=By.xpath("//*[text()='Logout']");// Updated on 19-mar-21
 	public By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']"); 
-	public By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]/div[7]"); // Updated on 25-Jan-21
+	public By adminLogout =By.xpath("(//*[contains(text(),'Logout')])[1]"); // Updated on 19-mar-21
 	Actions actions;
 	WebElement element;
 	public String classroomName="AUTO INSTRUCTOR BELL NOTIFICATION";
