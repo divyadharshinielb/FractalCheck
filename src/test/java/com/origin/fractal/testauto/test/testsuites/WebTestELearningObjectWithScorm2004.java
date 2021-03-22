@@ -18,7 +18,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Updated on: 21/Aug/20
  */
 public class WebTestELearningObjectWithScorm2004 extends FractalBaseWebTest{
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=1)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
 	public void Testscorme2004(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLoginwithcookies(driver);
