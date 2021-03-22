@@ -150,6 +150,7 @@ public class UserPaginationPage extends FractalBasePage{
 	 *cause:Check pagination for category with filter
 	 */
 	public void categoryLoadMoreWithFilter() {
+		if(elementExist(btnbundle)) {
 		elementExist(btnbundle);
 		click(userBundles);
 		usercountCheck(categoryRepeatdiv1,categoryRepeatdiv2);
@@ -158,6 +159,8 @@ public class UserPaginationPage extends FractalBasePage{
 		click(userLearnpath);
 		wait(5);
 		usercountCheck(categoryRepeatdiv1,categoryRepeatdiv2);
+		}
+		else {print("There are no catalog items present in the general category at the moment");}
 	}
 	/*
 	 *function:whatsnewLoadMore() 

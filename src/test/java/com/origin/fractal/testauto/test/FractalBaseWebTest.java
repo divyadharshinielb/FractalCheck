@@ -95,4 +95,12 @@ public class FractalBaseWebTest extends FractalBaseTest {
 				wait(5);
 			}
 		//Ends
+			//added by mahesh
+			protected void preLogin(WebDriver driver) throws IOException {
+				print("Inside testLogin");
+				AdminLoginSteps adminloginSteps = new AdminLoginSteps(driver);
+				print("Inside testLogin - Page Opened");
+				adminloginSteps.preLogin();
+				wait(5);
+			}
 }
