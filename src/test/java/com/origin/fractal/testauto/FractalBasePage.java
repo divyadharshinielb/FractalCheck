@@ -20,8 +20,8 @@ private By btnCategory = By.xpath(".//*[@id='header']/*//button");
 private By btnBellIcon = By.xpath(".//div[@class='jss1']//div//span[@class='jss4']");//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 private By viewAll = By.xpath(".//p[contains(text(),'MORE')]");//*[@id='notification-dropdown']/div[2]/div[2]/a
 private By settings = By.xpath(".//li[contains(text(),'Settings')]");
-private By lblHome= By.xpath(".//span[contains(text(),'Home')]");
-private By btnContinue = By.xpath(".//span[@class='continue_button']");//button[contains(text(),'CONTINUE')]
+private By lblHome= By.xpath("//img[contains(@class,'logo-height')]");
+private By btnContinue = By.xpath(".//div[@class='resume_container']");//button[contains(text(),'CONTINUE')]
 private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
 private By btnTopArr = By.xpath(".//img[@class='scrollup-image']");//i[contains(@class,'icon topArr')]
 
@@ -40,7 +40,7 @@ private By lblcontents = By.xpath(".//div/ng-include/div/*//h3[contains(text(),'
 private String lblNavBtn=".//div/h2[contains(text(),'Recently Added')]/../../following-sibling::div/*//div/slick/ul/li[";
 
 private By cartItemBtn=By.xpath(".//div[@class='jss32']//div//img[@class='cp']");//div/ng-include//div/span//../div/i[contains(@data-icon,'Q')]
-private By wishListBtn=By.xpath(".//div[@class='jss34']//div//img[@class='cp']");//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]
+private By wishListBtn=By.xpath("//div[@class='jss48']//div//button//span//img");//div/ng-include//div/div[1]/div/span//../div/i[contains(@class,'text-right font-size-23 text-icon-bcbcbc')]
 private By logoImg=By.xpath("//img[@class='logo-height']");//div/ng-include//div/img   
 private By logOut=By.xpath("//li[contains(text(),'Logout')]");//a[@class='pointer padding-l-15']
 private By btnLoadMore = By.xpath(".//div/ng-include/*//div/button[contains(text(),'Load More')]");
@@ -544,7 +544,7 @@ return status;
 
 
 public void verifyWishListBtn() {
-	WebElement element = driver.findElement( By.xpath(".//div[@class='jss34']//div//img[@class='cp']")); Actions
+	WebElement element = driver.findElement( By.xpath("//div[@class='jss48']//div//button//span//img")); Actions
 	actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
 wait(2);
@@ -564,10 +564,12 @@ System.out.println("logoImg is clicked");
 
 }
 public void verifyCartItemBtn() {
+	if(elementExist(cartItemBtn)) {
 	WebElement element = driver.findElement( By.xpath("//div[@class='jss32']//div//img[@class='cp']")); Actions
 	actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
 click(cartItemBtn);
+	}
 }
 
 public void verifyCartItemBtn1() {
