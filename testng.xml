@@ -51,9 +51,6 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" />
-			<!--<class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
-				/> -->
-
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" />
 			<class
@@ -62,7 +59,6 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
-
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUsageReport" />
 			<class
@@ -77,6 +73,14 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningObjectWithScorm2004" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" />
 			<!-- <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogVersioning" />
 			<class
