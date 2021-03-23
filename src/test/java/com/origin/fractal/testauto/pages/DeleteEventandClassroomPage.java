@@ -164,6 +164,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	 * Covers: Creation of a event
 	 */
 	public void eventCreation() {
+		wait(2);
 		click(FirstListItem);
 		click(btnAddEvent);
 		wait(2); 
@@ -265,7 +266,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	public void instructorLogin() {
 		wait(5);
 		click(lblProfile);
-		wait(2);
+		wait(5);
 		click(instructorroleBtn);
 		wait(7);
 		click(instBellIcon);
