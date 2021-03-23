@@ -56,6 +56,7 @@ public class CatalogUpdatePage extends FractalBasePage {
 	 * Covers:It redirects to the editCatalog page
 	 */
 	public void editCatalog() {
+		wait(5);
 		enterData("Catalogupdate_for_automation_testing",searchText);
 		wait(10);
 		click(editIcon);
