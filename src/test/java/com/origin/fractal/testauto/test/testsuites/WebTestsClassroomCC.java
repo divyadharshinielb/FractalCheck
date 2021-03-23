@@ -13,11 +13,11 @@ import com.wv.auto.framework.utils.Reporter;
 
 public class WebTestsClassroomCC extends FractalBaseWebTest {
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, priority = 1,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, priority=0,
 			description = "TC_Admin_Classroom_CC_ 001 - 015 ")
 	public void testClassroom(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		loginToContentAdmin(driver);
+		siteAdminLoginwithcookies(driver); //Updated on 3-Dec-20
 		ClassroomCCSteps ClassroomSteps = new ClassroomCCSteps(driver);
 			
 		ClassroomSteps.GotoClassroom();
@@ -26,14 +26,15 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 //		ClassroomSteps.CClblAllsession();
 		ClassroomSteps.GotoEditClassroom();
 //		ClassroomSteps.EditCClblAllsession();
-		Reporter.writeSummary("Admin_CompletionCriteria_TC-001,Select/Unselect Participation all sessions in criteria (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
+//		Reporter.writeSummary("Admin_CompletionCriteria_TC-001,Select/Unselect Participation all sessions in criteria (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
+		Reporter.writeSummary("Admin_CompletionCriteria_TC-001,Select/Unselect the completeion criteria (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
 
 		ClassroomSteps.CClblAssDuedate();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.EditCClblAssDuedate();
 		Reporter.writeSummary("Admin_CompletionCriteria_TC-002,Select/Unselect Assignment Due date in criteria (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
 		
-		ClassroomSteps.GotoEditClassroom();
+//		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.CClblQualifyPrecentage();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.EditCClblQualifyPrecentage();
@@ -93,7 +94,7 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 	//	ClassroomSteps.verifyEditCCsessionLabels();
 	//	Reporter.writeSummary("Admin_CompletionCriteria_TC-0012a,Verify the text in CC -All Sessions (on Add/Edit_classroom), " +  ClassroomSteps.getResult() );
       /*end here*/
-		ClassroomSteps.GotoEditClassroom();
+//		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyCCAssDuedateLabels();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCAssDuedateLabels();
@@ -104,7 +105,7 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 		ClassroomSteps.verifyEditCCQualifyPrecentageLabels();
 		Reporter.writeSummary("Admin_CompletionCriteria_TC-013,Verify the text in CC-qualification percentage (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
 		
-		ClassroomSteps.GotoEditClassroom();
+//		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyCCFeedbackDuedateLabels();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCFeedbackDuedateLabels();
@@ -115,7 +116,7 @@ public class WebTestsClassroomCC extends FractalBaseWebTest {
 		ClassroomSteps.verifyEditCCManualCompletionLabels();
 		Reporter.writeSummary("Admin_CompletionCriteria_TC-015,Verify the text in CC-Manual Submission (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
 
-		ClassroomSteps.Clicklogout();
+//		ClassroomSteps.Clicklogout();
 //		Reporter.writeSummary("TC_Admin_Add_Classroom_013,Click Cancel button & Logout, " +  ClassroomSteps.getResult() ); //commented on 25-Nov-20
 	}
 }

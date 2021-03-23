@@ -279,12 +279,10 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 	// Overall CC text
 	public void verifyCCTexts() {
-		System.out.println("Result boolean1 : "+ page.booleanresult); //booleanresult
+		System.out.println("Result boolean : "+ page.booleanresult); //booleanresult
 		try {
 			page.verifyCCTexts();
-			
-		
-			if (page.booleanresult == true) {    //added by mahesh due to boolean result showing false so in report it showing FAILED
+			if (page.booleanresult == true) {
 				result ="PASSED";
 
 			}
@@ -305,10 +303,9 @@ public class ClassroomCCSteps extends FractalBaseStep {
 	}
 
 	public void verifyEditCCTexts() {
-		System.out.println("Result boolean2 : "+ page.booleanresult); //booleanresult
+		System.out.println("Result boolean : "+ page.booleanresult); //booleanresult
 		try {
 			page.verifyEditCCTexts();
-			result ="PASSED";
 			if (page.booleanresult == true) {
 				result ="PASSED";
 
