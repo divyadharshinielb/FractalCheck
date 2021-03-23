@@ -105,6 +105,8 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 			click(acceptBtn);
 			wait(2);
 			click(acceptOKBtn);
+			wait(3);
+			driver.navigate().refresh();
 			//click(closeIcon); //QADEV - It looks like there is close button
 			wait(3);
 			gotoInstructorCalendar();

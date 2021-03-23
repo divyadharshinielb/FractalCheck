@@ -35,7 +35,7 @@ public class UsageReportPage extends FractalBasePage{
 	private int mostUsedItemCount= 0;
 	private By closeXBtn= By.xpath("//*[@id='close']");
 	private By userAccountIcon = By.xpath("//button[@class='jss29 jss3 jss5 jss8 circle-hover']");
-	private By adminRole = By.xpath("//*[text()='Learning Adminstrator']"); // Updated on 2-Dec-20
+	private By adminRole = By.xpath("//*[text()='Automationrolecheck']"); // Updated on 2-Dec-20
 	//Added on 2-Dec-20
 	private By usersReportTab = By.xpath("//md-tab-item[@role='tab']//span[@class='text-uppercase padding-lr-10 ng-scope'][normalize-space()='Users']");
 	private By lblUsername = By.xpath("//ng-include[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/md-autocomplete[1]/md-autocomplete-wrap[1]/input[1]");

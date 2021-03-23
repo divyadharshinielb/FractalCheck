@@ -929,7 +929,7 @@ wait(5);
 			moveElementFocusandClick(searchClassRoomName);
 			clear(searchClassRoomName);
 			enterData(classRoomName,searchClassRoomName);
-			wait(5);
+			wait(10);
 			click(firstRowClassRoomList);
 			wait(5);
 		}

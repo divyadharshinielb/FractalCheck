@@ -43,12 +43,13 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 	 * Purpose: Verify the Drag And Drop the item and change the order
 	 */
 	public boolean verifyDragAndDrop() {
-		menuPage.gotoManageUsers();
 		wait(5);
+		menuPage.gotoManageUsers();
+		wait(10);
 		enterData(userName,allUserSearchArea);
 		wait(5);
 		moveElementFocusandClick(assignContentIcon);
-		wait(5);
+		wait(10);
 		click(expandModules);
 		wait(2);
 		click(expandModulesSearchResult);

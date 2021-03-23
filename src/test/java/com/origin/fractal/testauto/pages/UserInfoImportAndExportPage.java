@@ -75,7 +75,7 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 	public boolean verifyUploadTemplate() {
 		click(lblDirectUser);
 		wait(2);
-		click(lblLearingHistory);
+//		click(lblLearingHistory);
 		wait(2);
 		isClickable(btnBrowseFile);
 		driver.findElement(uploadFile).sendKeys(fileLocallocation);

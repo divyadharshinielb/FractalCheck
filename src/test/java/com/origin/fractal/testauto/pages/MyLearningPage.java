@@ -493,7 +493,7 @@ public class MyLearningPage extends FractalBasePage {
 			 }
 
 				//Added by vignesh on 27-Nov-20
-				private By viewCertiBtn=By.xpath("(//*[contains(@class, 'certifycheck3')]/a)");//Updated on 9-Oct-20
+				private By viewCertiBtn=By.xpath("(//*[contains(@class, 'certifycheck3')]/a)[2]");//Updated on 9-Oct-20
 
 				private By certificateModule = By.xpath("//*[@class='cert_rect']");
 				private By txtCongratulations = By.xpath("//*[@class='cert_font'][contains(text(),'Congratulations')]");
@@ -503,9 +503,9 @@ public class MyLearningPage extends FractalBasePage {
 				private By ratingStars = By.xpath("(//*[@class='my-masonry-grid_column'])[1]//*[@class='overlay']//*[@class='star']//*[@class='dv-star-rating']");
 				private By ratingDonebtn = By.xpath("(//*[@class='my-masonry-grid_column'])[1]//*[@class='overlay']//button[text()='DONE']");
 				//				private By completedItem= By.xpath("(//*[@class='my-masonry-grid_column'])[1]");
-				private By completedItem= By.xpath	("//*[@class='mylearn']/div/div/a");
+				private By completedItem= By.xpath	("(//*[text()='CourseComp_Podcast7'])[1]");
 				private By tabMyLearning = By.xpath("//*[@href='/mylearning']");//Added on 9_oct-20
-				private By certificationIcon= By.xpath("(//*[@class='detail_icon_Certify'])");
+				private By certificationIcon= By.xpath("//*[@class='detail_Certify']");
 
 				/* Function Name: verifyCertificateModule()
 				 * Action: Verifying certificate module
@@ -523,7 +523,8 @@ public class MyLearningPage extends FractalBasePage {
 //					}
 					moveElementFocusandClick(completedItem);
 					wait(10);
-					if(elementExist(certificationIcon) && elementExist(viewCertiBtn)) {
+					if(elementExist(certificationIcon) || elementExist(viewCertiBtn)) {
+						print("aaa");
 						moveElementFocusandClick(viewCertiBtn);
 						wait(5);
 						if(elementExist(certificateModule) && elementExist(txtCongratulations) 
