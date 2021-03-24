@@ -308,6 +308,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	 */
 
 	public void accepteventDelete() {
+		wait(2);
 		click(FirstListItem);
 		wait(2);
 		click(publisheventbtn);
