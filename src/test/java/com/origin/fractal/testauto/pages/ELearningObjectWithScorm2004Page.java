@@ -63,24 +63,20 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Action: remove the HTML-LO in bundle and delete the HTML-LO
 	 * Return type: boolean
 	 */
-	public boolean verifyDeleteELearnignobjectWithscorm2004() {
+	public void verifyDeleteELearnignobjectWithscorm2004() {
 		By scormLOName=By.xpath("//*[contains(text(),'"+getLabel("eLearningName")+"')]");
 		ManageContentItemCodesSteps.goToManagecontent();
 		createandEditCatalogBundleWithscorm2004("Remove LO");
 		click(LearningObjectHTMLPage.learningObjectTab);
 		wait(2);
-		click(filterELearning);
+//		click(filterELearning);
 		wait(5);
-		enterData(getLabel("eLearningName"),searchFieldLearnObj);
+		enterData(getLabel("editeLearningName"),searchFieldLearnObj);
 		wait(5);
 		click(deleteLOBtn);
 		wait(2);
 		click(deleteOKBtn);
-		wait(3);
-		if(elementExist(NoLOFound)) {
-			return true;
-		}
-		return false;		
+		wait(3);	
 	}
 
 	/* Function Name: verifyCreateELearningObjectWithscorm2004()
@@ -115,8 +111,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		if(elementExist(LearningObjectHTMLPage.sucessfullyNotification)) {
 			click(LearningObjectHTMLPage.backToLOBtn);
 			wait(2);
-			click(closeModel);
-			wait(2);
+//			click(closeModel);
+//			wait(2);
 			if(elementExist(scormLOName)) {
 				return true;
 			}
@@ -129,8 +125,9 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: bool
 	 */
 	public boolean verifyEditAndCancelELearningObjectWithscorm2004() {
+//		ManageContentItemCodesSteps.goToManagecontent();
 		By editscormLOName=By.xpath("//*[text()='"+getLabel("editeLearningName")+"']");
-		wait(2);
+		wait(5);
 		click(editBtn);
 		wait(2);
 		click(btnCancel);
@@ -218,7 +215,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 		wait(3);
 		moveElementFocusandClick(scormlO);
-		wait(3);
+		wait(5);
 		driver.switchTo().frame(0);
 		wait(2);
 		click(LearningObjectHTMLPage.launchBtn);

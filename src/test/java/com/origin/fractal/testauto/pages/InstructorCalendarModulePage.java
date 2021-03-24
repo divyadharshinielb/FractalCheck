@@ -47,7 +47,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	public void deleteOldEventAndAddNewEvent() {
 		try {
 			eventPage.clickClassroom();
-			eventPage.deleteEvent();
+//			eventPage.deleteEvent();
 			eventPage.classroomEventCreation();
 		}
 		catch(Exception e) {
@@ -75,6 +75,7 @@ public class InstructorCalendarModulePage extends FractalBasePage  {
 	 * Desc: goto Instructor Calendar 
 	 */	
 	public void gotoInstructorCalendar() {
+		wait(5);
 		click(instructorBurgerBtn);
 		wait(2);
 		click(instructorCalendar);

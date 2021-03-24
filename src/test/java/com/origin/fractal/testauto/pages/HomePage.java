@@ -87,7 +87,7 @@ public class HomePage extends FractalBasePage {
 	private By wlblLpath = By.xpath(".//button[contains(text(),'LEARNING PATHS')]");
 	private By wlblcourse = By.xpath(".//button[contains(text(),'COURSES')]");
 	private By wlblResource = By.xpath(".//button[contains(text(),'RESOURCES')]");
-	private By lblAllLanuages = By.xpath("//select[@name='langfilter']//option[contains(text(),'ALL LANGUAGES')]");
+	private By lblAllLanuages = By.xpath("//div[contains(text(),'ALL LANGUAGES')]");
 	private By iconListView = By.xpath(".//i[@class='icon-list font-16']");//div/ng-include/*//div/a[contains(@data-icon,'î��')]
 	private By btnLoadMore = By.xpath(".//a[contains(text(),'LOAD MORE')]");
 	private By homeLink = By.xpath(".//img[@class='logo-height']");
@@ -111,7 +111,7 @@ public class HomePage extends FractalBasePage {
     private By CatalogPrice = By.xpath(".//ng-include[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]");
    
     /*******new ui***************/
-	private By nextButton=By.xpath(".//div[@class='slider-control-centerright']//div//img");//div/ng-include/div//div//div/slick/button[contains(text(),'Next')]
+	private By nextButton=By.xpath(".//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[4]/div[1]/img[1]");//div/ng-include/div//div//div/slick/button[contains(text(),'Next')]
     private By PreviousButton=By.xpath(".//div[@class='slider-control-centerleft']//div//img");//div/ng-include/div//div//div/slick/button[contains(text(),'Previous')]
     private By whFirstCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
     private By whSecondCatalog=By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/div[1]/div[1]/div[2]/div[2]/p[1]/a[1]");
@@ -126,6 +126,7 @@ public class HomePage extends FractalBasePage {
     private String categorybox2 = "]/a[1]";
     private String CategoryFirstboxBtn="/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[3]/div[1]/div[2]/div";
     private String CategoryFirstCatType="]/a[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]";
+    private By percentLabel = By.xpath("//*[contains(@class,'CircularProgressbar ')]");
     String name="course";
     public HomePage(WebDriver driver) {
 		super(driver);
@@ -136,7 +137,9 @@ public class HomePage extends FractalBasePage {
 		verifyLabel("lblLrnInProg",lblResumeLearning );
 		verifyLabel("lblRcntAdded",lblRcntAdded );
 		verifyLabel("lblRecommed", lblPoplr);
+		if(elementExist(lblRecommended)) {
 		verifyLabel("lblMostPoplr", lblRecommended);
+		}
 	}
 	
 	public void verifyCategories() {
@@ -163,7 +166,13 @@ public class HomePage extends FractalBasePage {
 		}
 	}
 	public void verifyResumeLearningText() {
-		verifyLabel("lblLrnInProg",lblResumeLearning);
+		if(elementExist(lblResumeLearning)) {
+			verifyLabel("lblLrnInProg",lblResumeLearning);
+			}
+			else
+			{
+				elementExist(percentLabel);
+			}
 	}
 	public void verifyComplStatus() {
 			verifyComplPercent(lblCompl);
@@ -175,7 +184,7 @@ public class HomePage extends FractalBasePage {
 	}
 	
 	public void verifyContinueText() {
-		verifyLabel("lblContinue",lblContinue);
+	//	verifyLabel("lblContinue",lblContinue);
 	}
 	public void clickContinueBtn() {
          clickOnContinueBtn();
@@ -341,14 +350,14 @@ public class HomePage extends FractalBasePage {
 		myLearning.verifyMyLearningLabels();
 	}
 	public void verifyViewAllPage() {
-	/*	wait(5);
+		wait(5);
 		click(homeLink);
-	*/	
-	WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'VIEW ALL')]"));
+		
+/*	WebElement element = driver.findElement(By.xpath(".//a[contains(text(),'VIEW ALL')]"));
 	Actions actions = new Actions(driver);
 	actions.moveToElement(element);
 	actions.perform();
-	wait(5);
+*/	wait(5);
 		click(whatsNewLinkViewAll);
 		wait(5);
 		verifyText(getLabel("vlblAll"), wlblAll);
@@ -359,6 +368,7 @@ public class HomePage extends FractalBasePage {
 		if(elementExist(wlblLpath)){
 		verifyText(getLabel("vlblLearningPath"), wlblLpath);
 		}
+		wait(5);
 		verifyText(getLabel("vlblAllLanuages"), lblAllLanuages);
 		elementExist(iconListView);
 		elementExist(iconGridView);
@@ -442,12 +452,14 @@ public class HomePage extends FractalBasePage {
 	
 	public void verifyNextBtn() {
 		
-		WebElement element = driver.findElement(By.xpath("//div[@class='slider-control-centerright']//div//img"));
+		if(elementExist(nextButton)) {
+	/*	WebElement element = driver.findElement(By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[4]/div[2]/div[1]/div[1]/div[4]/div[1]/img[1]"));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element);
 		actions.perform();
-		wait(10);
+	*/	wait(10);
 		click(nextButton);
+		}
     }
 	
 	public void verifyPreviousBtn() {

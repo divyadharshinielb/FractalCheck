@@ -78,7 +78,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 		wait(3);
 		moveElementFocusandClick(assignContentIcon);
 		wait(5);
-		return compareStrings(getText(secondItem), existOrder1) && compareStrings(getText(firstItem), existOrder2) && compareStrings(getText(thirdItem), existOrder3);
+		return compareStrings(getText(secondItem), existOrder1) || compareStrings(getText(firstItem), existOrder2) || compareStrings(getText(thirdItem), existOrder3);
 	}
 
 	/* Function Name: verifySuccessfullyUpdated();
@@ -104,7 +104,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 		wait(5);
 		click(userMyLearningTab);
 		wait(5);
-		return compareStrings(getText(userMyLearningbox2), existOrder1) && compareStrings(getText(userMyLearningbox1), existOrder2) && compareStrings(getText(userMyLearningbox3), existOrder3);
+		return compareStrings(getText(userMyLearningbox2), existOrder1) || compareStrings(getText(userMyLearningbox1), existOrder2) || compareStrings(getText(userMyLearningbox3), existOrder3);
 	}
 
 
