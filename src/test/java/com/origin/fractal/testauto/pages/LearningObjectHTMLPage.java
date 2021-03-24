@@ -185,8 +185,8 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(20);
 		click(lblCatalogTab);
 		wait(10);
-		enterData("zAuto",searchFieldCatItem);
-		wait(5);
+		enterData("zzzAuto",searchFieldCatItem);
+		wait(10);
 		click(catEditBtn);
 		wait(5);
 		click(continueBtn);
