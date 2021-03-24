@@ -57,7 +57,7 @@ public class WebTestOriginLearningLoad extends WebTestOriginWebBase {
 		Steps.verifyAskDemo();
 		Reporter.writeSummary("TC-15_AskDemo button ,Verifying the AskDemo button page loading ,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyOurClintViewBtn();
-		Reporter.writeSummary("TC-16_Clint View button ,Verifying the our clint page loading ,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-16_Client View button ,Verifying the our Client page loading ,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyWhatsNewCTALink();
 		Reporter.writeSummary("TC-17_Whats New CTA ,Verifying the Whats New CTA link function loading ,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyrRsourcesCTALink();
