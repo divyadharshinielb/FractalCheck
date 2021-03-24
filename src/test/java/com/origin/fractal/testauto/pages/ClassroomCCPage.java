@@ -127,7 +127,7 @@ public class ClassroomCCPage extends FractalBasePage {
 		wait(3);
 //		click(lblCCQualifyPrecentage);
 //		wait(3);
-		clear(EditclassInputCCQualifyPrecentage);//Updated on 7-Dec-20
+//		clear(EditclassInputCCQualifyPrecentage);//Updated on 7-Dec-20
 		enterData("35",EditclassInputCCQualifyPrecentage);
 		wait(3);
 		click(EditclassCancelbtn);
