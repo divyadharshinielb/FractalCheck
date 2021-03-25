@@ -108,7 +108,7 @@ public void linkFieldsCheck() {
 	wait(5);
 	isClickable(saveBtn);
 	click(saveBtn);
-	wait(7);
+	wait(10);
 	elementExist(tickmark);
 	elementExist(backToLOBtn);
 	verifyText("'Auto_VideoFormatCheck' has been added successfully",videoCreateMsg);

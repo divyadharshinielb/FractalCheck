@@ -41,9 +41,9 @@ public class CatalogItemPage extends FractalBasePage {
 	private By priceclick = By.xpath("//span[contains(text(),'Price category')]");
 	private By pricefreeclick = By.xpath("//ul[contains(@class,'list')]/li[contains(text(),'Free')]");
 	private By plusbutton = By.xpath("//i[contains(@class,'icon pointer dripicons-plus icon-circle-fill font-size-30 expand_menu_list map_content padding-t-0 tp-50')]");
-	private By asscontent = By.xpath("//span[contains(text(),'Sample Audio')]"); //div[contains(@class,'ng-scrollbars padding-b-20 ng-isolate-scope mCustomScrollbar _mCS_14')]/div/div[1]/div/div[1]/div[contains(@class,'whole')]/div[contains(@class,'col-lg-12 col-md-12 col-xs-12 col-sm-12 border-tb margin-r-10 padding-tb-15 padding-lr-0')]
+	private By asscontent = By.xpath("//body/div[5]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[2]/div[2]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]"); //div[contains(@class,'ng-scrollbars padding-b-20 ng-isolate-scope mCustomScrollbar _mCS_14')]/div/div[1]/div/div[1]/div[contains(@class,'whole')]/div[contains(@class,'col-lg-12 col-md-12 col-xs-12 col-sm-12 border-tb margin-r-10 padding-tb-15 padding-lr-0')]
 	private By btnsave = By.xpath("//button[contains(text(),'Save')]");
-	private By deletecoursebtn = By.xpath("//span[contains(text(),'CatalogItemwithDueDate')]/../../../*/div[3]/i");
+	private By deletecoursebtn = By.xpath("//span[contains(text(),'CatalogItemwithDueDate')]/../../../*/div/i[contains(@title,'Delete')]");
 	private By deletecourseokbtn = By.xpath("//span[contains(text(),'OK')]/..");
 	private By closebtn = By.xpath("//button[contains(@class,'close padding-t-20')]/i ");
 	private By catalogSearch = By.xpath("//input[@id='quoteSearch']");
@@ -194,7 +194,7 @@ public class CatalogItemPage extends FractalBasePage {
 		click(validityDays);
 		enterData("5",validityDays);
 		wait(3);
-		click(continuebtn1);
+		click(continuebtn2);
 		elementExist(duedateError);
 		verifyText("Please select any content",selectcontentError);
 		verifyText("Due date should not be greater than validity",duedateError);
@@ -232,6 +232,7 @@ public class CatalogItemPage extends FractalBasePage {
 		click(plusbutton);
 		wait(2);
 		enterData("Sample Audio",catalogSearch);
+		wait(2);
 		click(asscontent);
 		wait(3);
 	}
