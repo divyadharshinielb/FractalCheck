@@ -26,10 +26,8 @@ public class WebTestLearningObjectHTML extends FractalBaseWebTest{
 		LearningObjectHTMLSteps HTMLSteps= new LearningObjectHTMLSteps(driver);
 		HTMLSteps.verifyCreateHtmlLearningObject();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-001,Verify that Site admin is able to Create HTML Learning object," +HTMLSteps.getResult());
-		//commented on 25-Feb-21 HTML LO edit is NOT working
-				HTMLSteps.verifyEditAndCancelHTMLLearningObject();
-				Reporter.writeSummary("FR1-2207_HTMLLO_TC-002,Verify that Site admin is able to click cancel and Edit the HTML Learning object," +HTMLSteps.getResult());
-		//ends
+		HTMLSteps.verifyEditAndCancelHTMLLearningObject();
+		Reporter.writeSummary("FR1-2207_HTMLLO_TC-002,Verify that Site admin is able to click cancel and Edit the HTML Learning object," +HTMLSteps.getResult());
 		HTMLSteps.verifyFilterAndSearchHtmlLO();	
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-003,Verify that Site admin is able to filter and search the HTML Learning object," +HTMLSteps.getResult());
 		login.adminLogout();		
@@ -41,9 +39,9 @@ public class WebTestLearningObjectHTML extends FractalBaseWebTest{
 		HTMLSteps.userSearchHTMLLOAndLaunchHTML();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-005,Verify that Users able to see the HTML Learning Object in Bundle Catalog item," +HTMLSteps.getResult());
 		login.logOutUser();
-//		wait(3);
+		wait(5);
 		siteAdminLogin(driver); 
-//		wait(5);
+		wait(5);
 		HTMLSteps.verifyDeleteHTMLLearnignobject();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-006,Verify that Site admin is able to Delete HTML Learning object," +HTMLSteps.getResult());
 	}

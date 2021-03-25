@@ -40,7 +40,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	public By btnCancel = By.xpath(".//button[contains(text(),'Cancel')]");
 	public By updateBtn = By.xpath("//*[text()='Update']");
 	public By newVersionReqNoBtn = By.xpath("//*[text()='No']");
-	public By updateagainNoBtn = By.xpath("//span[normalize-space()='No']");//Updated on 26-Feb-21
+	public By updateagainNoBtn = By.xpath("//button[normalize-space()='No']");//Updated on 24-Mar-21
 	public By searchfieldUser= By.xpath("//input[@id='theInput']");
 	public By continueBtn = By.xpath(" //button[contains(text(),'Continue')]");
 	public By continueBtn1 = By.xpath("(//*[text()='Continue'])[1]");
@@ -152,7 +152,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		wait(2);
 		if (elementExist(newVersionReqNoBtn)) {
 			click(newVersionReqNoBtn);
-			wait(3);
+			wait(5);
 			click(updateagainNoBtn);
 			wait(5);
 		}
@@ -249,6 +249,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 			driver.switchTo().parentFrame();
 			wait(3);
 			click(LearningObjectHTMLPage.closeXBtn);
+			wait(5);
 			return true;
 		}
 		return false;
