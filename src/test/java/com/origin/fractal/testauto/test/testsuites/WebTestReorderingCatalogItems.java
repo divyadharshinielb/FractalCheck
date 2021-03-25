@@ -31,12 +31,11 @@ public class WebTestReorderingCatalogItems extends FractalBaseWebTest {
 		Reporter.writeSummary("FR1-2771_Reordering_TC-003,Verify the notification successful Pop-up Message after updating order of the catalog item," +reorder.getResult());
 		wait(5);
 		bellSteps.adminLogout();
-		//Add the comment on 27-Feb-2021 Due to the subscription bug
-		//		wait(5);
-		//		doLoginUser(driver);
-		//		reorder.verifyReorderUserMyLearning();
-		//		Reporter.writeSummary("FR1-2771_Reordering_TC-004,Verify the user is able to see the latest order items in My Learning tab," +reorder.getResult());
-		//Ends
+		wait(5);
+		doLoginUser(driver);
+		reorder.verifyReorderUserMyLearning();
+		Reporter.writeSummary("FR1-2771_Reordering_TC-004,Verify the user is able to see the latest order items in My Learning tab," +reorder.getResult());
+
 	}	
 
 }

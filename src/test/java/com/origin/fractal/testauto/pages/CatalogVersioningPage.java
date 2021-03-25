@@ -59,7 +59,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	private By htmlDurationHH = By.xpath("//input[contains(@placeholder,'HH')]");
 	private By htmlDurationMM = By.xpath("//input[contains(@placeholder,'MM')]");
 	private By updateBtn = By.xpath("//*[@type='submit'][text()='Update']");// updated on 23-Oct-20
-
+	int value=0;
 	public CatalogVersioningPage(WebDriver driver) {
 		super(driver);
 		ManageContentSteps= new ManageContentSteps(driver);
@@ -133,7 +133,9 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 */
 	public boolean editCatalogToIncludeLearningObject(String action, String catalog) {
 		try{
-			ManageContentItemCodesSteps.goToManagecontent();
+			if(value==0) {
+				ManageContentItemCodesSteps.goToManagecontent();
+			}
 			wait(5);
 			click(lblCatalogTab);
 			wait(10);//Updated on 16Nov20
@@ -142,7 +144,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 			moveElementFocusandClick(catEditBtn);
 			wait(5);
 			click(continueBtn);
-			wait(2);
+			wait(5);
 			moveElementFocusandClick(deleteLOInCatalog);
 			click(addmodule);
 			if (action.equalsIgnoreCase("ADD") && catalog.equalsIgnoreCase("Ver")) {
@@ -163,8 +165,8 @@ public class CatalogVersioningPage extends FractalBasePage {
 			}
 			wait(3);
 			click(continueBtn1);
-						wait(3);
-						click(saveBtn);
+			wait(3);
+			click(saveBtn);
 			wait(5);
 			//If user enrolled the catalog item 
 			if(elementExist(allUsersUpdateSelectionBtn)) {
@@ -188,7 +190,8 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void deleteVersionLearningObject(String action, String catalog) {
-//		ManageContentItemCodesSteps.goToManagecontent();
+		//		ManageContentItemCodesSteps.goToManagecontent();
+		value=1;
 		editCatalogToIncludeLearningObject(action,catalog);
 		click(learningObjectTab);
 		wait(10);//Updated on 3-Mar-21

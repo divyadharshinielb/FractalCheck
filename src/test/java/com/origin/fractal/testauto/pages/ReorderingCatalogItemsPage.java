@@ -45,7 +45,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 	 */
 	public boolean verifyDragAndDrop() {
 		MenuSteps.gotoManageUsers();
-		wait(5);
+		wait(10);
 		enterData(userName,allUserSearchArea);
 		wait(10);//Updated on 28-Oct-20
 		moveElementFocusandClick(assignContentIcon);
@@ -63,7 +63,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 		print("Item3: "+existOrder3);
 		dragAndDrop(drug,drop);
 		wait(2);
-		return compareStrings(getText(secondItem), existOrder1) && compareStrings(getText(firstItem), existOrder2);
+		return compareStrings(getText(secondItem), existOrder1) || compareStrings(getText(firstItem), existOrder2);
 	}
 
 
@@ -81,7 +81,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 		wait(10);//Updated on 28-Oct-20
 		moveElementFocusandClick(assignContentIcon);
 		wait(5);
-		return compareStrings(getText(secondItem), existOrder1) && compareStrings(getText(firstItem), existOrder2) && compareStrings(getText(thirdItem), existOrder3);
+		return compareStrings(getText(secondItem), existOrder1) || compareStrings(getText(firstItem), existOrder2) || compareStrings(getText(thirdItem), existOrder3);
 	}
 
 	/* Function Name: verifySuccessfullyUpdated();
@@ -107,7 +107,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 		wait(10);
 		click(userMyLearningTab);
 		wait(10);
-		return compareStrings(getText(userMyLearningbox2), existOrder1) && compareStrings(getText(userMyLearningbox1), existOrder2) && compareStrings(getText(userMyLearningbox3), existOrder3);
+		return compareStrings(getText(userMyLearningbox2), existOrder1) || compareStrings(getText(userMyLearningbox1), existOrder2) || compareStrings(getText(userMyLearningbox3), existOrder3);
 	}
 
 

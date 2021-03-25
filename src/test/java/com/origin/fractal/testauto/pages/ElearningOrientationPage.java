@@ -25,9 +25,9 @@ public class ElearningOrientationPage extends FractalBasePage {
 	private By eLearningitemFilter= By.xpath("//a[contains(text(),'elearning')]");//Updated on 24-Feb-2021
 	private By eLearningScromPackage= By.xpath("//*[text()='Scorm']");
 	private By eLearningXapiPackage= By.xpath("//*[text()='Xapi']");
-	private By AutoOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[12]//input)[1]");
-	private By LandScapeOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[12]//input)[2]");
-	private By PortraitOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[12]//input)[3]");
+	private By AutoOrientationSelected =By.xpath("//input[@value='AUTO']");
+	private By LandScapeOrientationSelected =By.xpath("//input[@value='LANDSCAPE']");
+	private By PortraitOrientationSelected =By.xpath("//input[@value='PORTRAIT']");
 	private By editBtn = By.xpath("(*//i[@role='button'])[2]");
 	private By uploadPackage= By.xpath("//label[contains(@class,'btn btn-tertiary btn-file')]/input");
 	private By defaultOrientationSelected =By.xpath("(//div[@class='mCSB_container'])[3]/div[9]/div/div[2]/input");
@@ -87,8 +87,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public boolean verifyOrientationSelection() {
 		wait(3);
-		if (elementExist(lblOritationAuto) && elementExist(lblOritationLandScape) && 
-				elementExist(lblOritationPortrait)) {
+		if (elementExist(lblOritationAuto) || elementExist(lblOritationLandScape) || elementExist(lblOritationPortrait)) {
 			click(lblOritationAuto);
 			wait(2);
 			click(lblOritationLandScape);
@@ -112,7 +111,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 		wait(5); 
 		enterData(getLabel(Name),searchFieldLearnObj);	
 		wait(10);
-		click(eLearningitemFilter); //Added on 4-Dec-20
+//		click(eLearningitemFilter); //Added on 4-Dec-20
 		wait(3);
 		click(editBtn);
 		wait(10);
@@ -153,6 +152,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: Update the Learning Object
 	 */
 	public void updateAnElearning() {
+		wait(2);
 		click(updateBtn);
 		wait(2);
 		click(newVersionReqNoBtn);
