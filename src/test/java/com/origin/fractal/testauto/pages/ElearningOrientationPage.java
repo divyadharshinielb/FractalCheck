@@ -25,9 +25,9 @@ public class ElearningOrientationPage extends FractalBasePage {
 	private By eLearningitemFilter= By.xpath("//a[contains(text(),'elearning')]");//Updated on 24-Feb-2021
 	private By eLearningScromPackage= By.xpath("//*[text()='Scorm']");
 	private By eLearningXapiPackage= By.xpath("//*[text()='Xapi']");
-	private By AutoOrientationSelected =By.xpath("//input[@value='AUTO']");
-	private By LandScapeOrientationSelected =By.xpath("//input[@value='LANDSCAPE']");
-	private By PortraitOrientationSelected =By.xpath("//input[@value='PORTRAIT']");
+	private By AutoOrientationSelected =By.xpath("//*[@class='rad ng-valid ng-not-empty ng-dirty ng-touched ng-valid-parse'][@value='AUTO']");
+	private By LandScapeOrientationSelected =By.xpath("//*[@class='rad ng-valid ng-not-empty ng-dirty ng-touched ng-valid-parse'][@value='LANDSCAPE']");
+	private By PortraitOrientationSelected =By.xpath("//*[@class='rad ng-pristine ng-untouched ng-valid ng-not-empty'][@value='PORTRAIT']");
 	private By editBtn = By.xpath("(*//i[@role='button'])[2]");
 	private By uploadPackage= By.xpath("//label[contains(@class,'btn btn-tertiary btn-file')]/input");
 	private By defaultOrientationSelected =By.xpath("(//div[@class='mCSB_container'])[3]/div[9]/div/div[2]/input");
@@ -72,12 +72,12 @@ public class ElearningOrientationPage extends FractalBasePage {
 	public boolean verifyELearningOrientation() {
 		gotoAddELearning();
 		moveElementFocus(lblOritationPortrait);
-		if(getObj(defaultOrientationSelected).isSelected()==true) {
+//		if(getObj(defaultOrientationSelected).isSelected()==true) {
 			if (elementExist(lblOritation) && elementExist(lblOritationAuto) && elementExist(lblOritationLandScape) && 
 					elementExist(lblOritationPortrait)) {
 				return true;
 			}
-		}
+//		}
 		return false;
 	}
 
@@ -203,7 +203,8 @@ public class ElearningOrientationPage extends FractalBasePage {
 		try{
 			wait(3);
 			selectAuto(Name);
-			if(getObj(AutoOrientationSelected).isSelected()==true) {
+//			if(getObj(AutoOrientationSelected).isSelected()==true) {
+			if(elementExist(lblOritationAuto)) {
 				return true;
 			}
 			return false;
@@ -221,7 +222,8 @@ public class ElearningOrientationPage extends FractalBasePage {
 		try{
 			wait(3);
 			selectLandscape(Name);
-			if(getObj(LandScapeOrientationSelected).isSelected()==true) {
+//			if(getObj(LandScapeOrientationSelected).isSelected()==true) {
+			if(elementExist(lblOritationLandScape)) {
 				return true;
 			}
 			return false;
@@ -239,7 +241,8 @@ public class ElearningOrientationPage extends FractalBasePage {
 		try{
 			wait(3);
 			selectPortrait(Name);
-			if(getObj(PortraitOrientationSelected).isSelected()==true ) {
+//			if(getObj(PortraitOrientationSelected).isSelected()==true ) {
+			if(elementExist(lblOritationPortrait)) {
 				return true;
 			}
 			return false;
@@ -256,6 +259,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public void preRequisite(String Name) {
 		clickeLearningItemFilter(Name);
+		wait(30);
 		if(getObj(PortraitOrientationSelected).isSelected()==true) {
 			click(closeXBtn);
 			wait(3);
