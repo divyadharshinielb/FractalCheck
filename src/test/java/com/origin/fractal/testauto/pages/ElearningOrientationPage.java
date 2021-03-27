@@ -259,7 +259,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public void preRequisite(String Name) {
 		clickeLearningItemFilter(Name);
-		wait(30);
+		wait(10);
 		if(getObj(PortraitOrientationSelected).isSelected()==true) {
 			click(closeXBtn);
 			wait(3);
