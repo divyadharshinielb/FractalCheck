@@ -76,7 +76,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 		ManageContentItemCodesSteps.goToManagecontent();
 		wait(3);
 		ManageContentSteps.clickOnCreateLobjButton();
-		wait(5);
+		wait(7);
 		moveElementFocusandClick(btnHtml);
 		wait(2);
 		enterData(getLabel("learningObjectName"),htmlTitleTextArea);
@@ -94,7 +94,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 		enterData(learningPage.getLabel("DurationMM"),htmlDurationMM);
 		wait(10);
 		click(btnSave);
-		wait(10);
+		wait(20);
 		if(elementExist(learningPage.sucessfullyNotification)) {
 			click(learningPage.backToLOBtn);
 			wait(3);
@@ -140,9 +140,9 @@ public class CatalogVersioningPage extends FractalBasePage {
 			click(lblCatalogTab);
 			wait(10);//Updated on 16Nov20
 			enterData(getLabel("catalogNameBundle"),searchFieldCatItem);
-			wait(10);
+			wait(15);
 			moveElementFocusandClick(catEditBtn);
-			wait(5);
+			wait(10);
 			click(continueBtn);
 			wait(5);
 			moveElementFocusandClick(deleteLOInCatalog);
@@ -151,9 +151,9 @@ public class CatalogVersioningPage extends FractalBasePage {
 				enterData(getLabel("learningObjectName"),LOSearchCatalogAddModule);
 				wait(2);
 				click(searchResultAddModle);
-				wait(2);
+				wait(5);
 				enterData(getLabel("learningObjectNameVersion"),LOSearchCatalogAddModule);
-				wait(2);
+				wait(5);
 				click(searchResultAddModle);
 			}
 			else {
@@ -215,7 +215,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 		click(learningObjectTab);
 		wait(5);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
-		wait(5);
+		wait(10);
 		if(verifyNonExistense(versionCount)) {
 			click(deleteLOBtn);
 			wait(2);
@@ -231,8 +231,9 @@ public class CatalogVersioningPage extends FractalBasePage {
 	public boolean verifyAssignedCatalogDetails() {
 		//		ManageContentItemCodesSteps.goToManagecontent();
 		click(learningObjectTab);
+		wait(10);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
-		wait(2);
+		wait(10);
 		click(editBtn);
 		wait(3);
 		if(elementExist(versioingAlertLO)) {
