@@ -44,11 +44,11 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By deleteLOInCatalog=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[4]/div[1]/div/div/div)[1]//div[3]//i)[1]");
 	public By searchResultAddModle=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[5])/div/div/div/div)[1]");
 	public By allUsersUpdateSelectionBtn=By.xpath("(//*[@id='item_completion'])[2]");
-	public By updateSaveBtn=By.xpath("//button[@ng-click='versionSubmitNoUser()']");
+	public By updateSaveBtn=By.xpath("(//*[text()='Save'])[2]");
 	public By launchBtn = By.xpath("//button[contains(text(),'Launch')]");
 	public By closeXBtn= By.xpath("//*[@id='close']");
 	ArrayList<String> winHandles;
-	public By btnSave = By.xpath("//button[normalize-space()='Save']");
+	public By btnSave = By.xpath(".//button[contains(text(),'Save')]");
 	public By closeModel = By.xpath(".//button[contains(@class,'close')]");
 	public By editBtn = By.xpath("(//i[@role='button'])[1]");
 	public By btnCancel = By.xpath(".//button[contains(text(),'Cancel')]");
@@ -111,7 +111,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		enterData(getLabel("DurationMM"),htmlDurationMM);
 		wait(10);//Updated on 22-Feb-2021
 		click(btnSave);
-		wait(20);
+		wait(5);
 		if(elementExist(sucessfullyNotification)) {
 			click(backToLOBtn);
 			wait(2);

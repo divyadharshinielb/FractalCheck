@@ -49,7 +49,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	private By socialFB=By.xpath("//*[text()='FACEBOOK']");
 	private By sociallinkedIn=By.xpath("//*[text()='LINKEDIN']");
 	private By socialPopupClose=By.xpath("//*[@class='drip_icon flt-rr hnd_cursor cross_button_lb']");
-	private By loadmoreBtn=By.xpath("//*[text()='LOAD MORE']");
+	private By loadmoreBtn=By.xpath("//*[@class='loadmore loadmore_lb_points']//a");
 	int learnerPoint; boolean result=false; int list=1;
 	private boolean resultFlag=false;
 	String certiValue;
@@ -259,7 +259,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	}
 
 	/* Function Name: verifyNumberofUsdersListed
-	 * Purpose: verify Number of Usders Listed
+	 * Purpose: verify Number of Users Listed
 	 */
 	public boolean verifyNumberofUsdersListed() {
 		for(list=1; list<=25; list++) {
@@ -268,18 +268,15 @@ public class LeaderBoardPointPage extends FractalBasePage {
 			}
 			else {
 				result=false;
-				break;
 			}
 		}
 		if(elementExist(loadmoreBtn)) {
-			moveElementFocusandClick(loadmoreBtn);
-			if(elementExist(By.xpath("(//*[@class='font_lbpoints_flex_lb lbpoints point_row '])[26]"))==true) {
-				result=true;
-			}
-			else
-				result=false;
+			result=true;
+
 		}
-		else result=true;
+		else {
+			result=true;
+		}
 		return result;
 	}
 	//ends
