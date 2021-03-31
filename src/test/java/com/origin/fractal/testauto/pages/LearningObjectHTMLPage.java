@@ -12,7 +12,7 @@ import com.origin.fractal.testauto.steps.ManageContentSteps;
  * Purpose: Check to HTML Learning object -FR1-2207
  * Created by: Vignesh
  * Created on: 18/Jun/20
- * Updated on: 17-Mar-21
+ * Updated on: 31/July/20
  */
 public class LearningObjectHTMLPage extends FractalBasePage {
 	//	MenuPage menuPage = null;
@@ -44,11 +44,11 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By deleteLOInCatalog=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[4]/div[1]/div/div/div)[1]//div[3]//i)[1]");
 	public By searchResultAddModle=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[5])/div/div/div/div)[1]");
 	public By allUsersUpdateSelectionBtn=By.xpath("(//*[@id='item_completion'])[2]");
-	public By updateSaveBtn=By.xpath("(//*[text()='Save'])[2]");
+	public By updateSaveBtn=By.xpath("//button[@ng-click='versionSubmitNoUser()']");
 	public By launchBtn = By.xpath("//button[contains(text(),'Launch')]");
 	public By closeXBtn= By.xpath("//*[@id='close']");
 	ArrayList<String> winHandles;
-	public By btnSave = By.xpath(".//button[contains(text(),'Save')]");
+	public By btnSave = By.xpath("//button[normalize-space()='Save']");
 	public By closeModel = By.xpath(".//button[contains(@class,'close')]");
 	public By editBtn = By.xpath("(//i[@role='button'])[1]");
 	public By btnCancel = By.xpath(".//button[contains(text(),'Cancel')]");
@@ -111,10 +111,10 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		enterData(getLabel("DurationMM"),htmlDurationMM);
 		wait(10);//Updated on 22-Feb-2021
 		click(btnSave);
-		wait(5);
+		wait(20);
 		if(elementExist(sucessfullyNotification)) {
 			click(backToLOBtn);
-			wait(5);//updated on 17-Mar-21
+			wait(2);
 //			click(closeModel);
 //			wait(2);
 			if(elementExist(htmlOName)) {

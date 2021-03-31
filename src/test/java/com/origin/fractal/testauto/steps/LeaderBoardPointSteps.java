@@ -202,11 +202,11 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 * Purpose: verify Number of Usders Listed
 	 */
 	public void verifyNumberofUsdersListed() {
-		try {result="PASSED";
+		try {result="FAILED";
 		if(page.verifyNumberofUsdersListed()==true)
 			result="PASSED";
 		}catch(Exception e) {
-			result="PASSED";
+			result="FAILED";
 		}	
 	}
 	//Ends

@@ -27,10 +27,8 @@ public class WebTestLearningObjectHTML extends FractalBaseWebTest{
 		LearningObjectHTMLSteps HTMLSteps= new LearningObjectHTMLSteps(driver);
 		HTMLSteps.verifyCreateHtmlLearningObject();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-001,Verify the Site admin is able to Create HTML Learning object," +HTMLSteps.getResult());
-		//Edit HTML LO - issue - Bug Id FR1-3988. So we commented the test cases  
-				HTMLSteps.verifyEditAndCancelHTMLLearningObject();
-				Reporter.writeSummary("FR1-2207_HTMLLO_TC-002,Verify the Site admin is able to click cancel and Edit the HTML Learning object," +HTMLSteps.getResult());
-		//Ended
+		HTMLSteps.verifyEditAndCancelHTMLLearningObject();
+		Reporter.writeSummary("FR1-2207_HTMLLO_TC-002,Verify the Site admin is able to click cancel and Edit the HTML Learning object," +HTMLSteps.getResult());
 		HTMLSteps.verifyFilterAndSearchHtmlLO();	
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-003,Verify the Site admin is able to filter and search the HTML Learning object," +HTMLSteps.getResult());
 		HTMLSteps.createandEditCatalogBundleWithHTML("ADD HTML");
