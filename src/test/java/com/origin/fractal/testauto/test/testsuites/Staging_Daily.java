@@ -16,6 +16,7 @@ import com.origin.fractal.testauto.steps.GlobalSteps;
 import com.origin.fractal.testauto.steps.HomeSteps;
 import com.origin.fractal.testauto.steps.InstructorBellNotificationSteps;
 import com.origin.fractal.testauto.steps.InstructorCalendarModuleSteps;
+import com.origin.fractal.testauto.steps.InstructorCalendarModuleStepsNew;
 import com.origin.fractal.testauto.steps.InstructorModuleSteps;
 import com.origin.fractal.testauto.steps.LoginSteps;
 import com.origin.fractal.testauto.steps.MenuSteps;
@@ -489,55 +490,42 @@ public class Staging_Daily extends FractalBaseWebTest {
 		/*
 		 * Test event same day and same time action & Test Instructor calendar actions
 		 */
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 )
 		public void TestInstructorCalendar(String row, String strBrowserName) throws IOException {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			//		MenuSteps menuSteps = new MenuSteps(driver);
 			ClassroomEventPage eventPage= new ClassroomEventPage(driver);
 			InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-			InstructorCalendarModuleSteps InstructorModuleSteps=new InstructorCalendarModuleSteps(driver);
+			InstructorCalendarModuleStepsNew InstructorModuleSteps=new InstructorCalendarModuleStepsNew(driver);
 			InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
+			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+			InstructorModuleSteps.verifyTradInviteNotification();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-001,Verify the invite notification (blue dot) on the Instructor calendar (Traditional)," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.verifyVirInviteNotification();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-002,Verify the invite notification (blue dot) on the Instructor calendar (Virtual)," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.verifyTredAcceptedEnvent();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-003,Verify the accepted notification (Green dot) on the Instructor calendar (Traditional)," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.verifyVirAcceptedEnvent();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-004,Verify the accepted notification (Green dot) on the Instructor calendar (Virtual)," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.verifyTredInviteAccepts();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-005,Verify the instructor is able to accepts the invite notification (Traditional)," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.verifyTredInviteReject();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-006,Verify the instructor is able to Reject the invite notification (Traditional)," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.verifyVirInviteAccepts();		
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-007,Verify the instructor is able to accepts the invite notification (Virtual)," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.verifyTredInviteReject();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-008,Verify the instructor is able to Reject the invite notification (Virtual)," +InstructorModuleSteps.getResult());
+			instbellnotiSteps.instLogout();
 			siteAdminLogin(driver);
-			//		menuSteps.clickMenu();
-			//		menuSteps.gotoClassroomCreation();
-			instbellnotiSteps.gotoClassRoom();
-			InstructorModuleSteps.deleteOldEventAndAddNewEvent();
-			//		InstructorModuleSteps.verifyAdminSeeInstructorWarningMessage();
-			//		Reporter.writeSummary("FR1-2382_InstrEvent_TC-0"+(++number)+",Verify the Admin gets the warning message when he creates "+ClassroomEventPage.EventType+ " event on the same day & time," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.adminRescheduledEvent("Tred");
+			InstructorModuleSteps.adminRescheduledEvent("Vir");
 			instbellnotiSteps.adminLogout();
 			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-			InstructorModuleSteps.verifyAdminInviteAndInstructorAcceptevent();
-			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin invites the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.verifyResucheduleTimeZoneTre();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-009,Verify the instructor is able to see the reschedules the event (Traditional)," +InstructorModuleSteps.getResult());
+			InstructorModuleSteps.verifyResucheduleTimeZoneVir();
+			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-010,Verify the instructor is able to see the reschedules the event (Virtual)," +InstructorModuleSteps.getResult());
 			instbellnotiSteps.instLogout();
-			siteAdminLogin(driver);
-			instbellnotiSteps.adminRescheduledEvent("ISTTime",eventPage.classRoomName);
-			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-			InstructorModuleSteps.verifyRescheduleTimeZoneInInstructorSide();
-			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin Reschedules the event for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-			instbellnotiSteps.instLogout();
-			siteAdminLogin(driver);
-			instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2",eventPage.classRoomName);
-			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-			InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin changes the Instructor for a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-			instbellnotiSteps.instLogout();
-			siteAdminLogin(driver);
-			instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",eventPage.classRoomName);
-			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-			InstructorModuleSteps.instructorRejectEvent();
-			InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Instructor rejects a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-			instbellnotiSteps.instLogout();
-			siteAdminLogin(driver);
-			//		menuSteps.clickMenu();
-			//		menuSteps.gotoClassroomCreation();
-			instbellnotiSteps.gotoClassRoom();
-			InstructorModuleSteps.adminDeleteEvent();
-			instbellnotiSteps.adminLogout();
-			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
-			InstructorModuleSteps.verifyAdminReAssignOrDeletetheEvent();
-			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-0"+(++number)+",Verify the Admin deletes a "+ClassroomEventPage.EventType+" event," +InstructorModuleSteps.getResult());
-			instbellnotiSteps.instLogout();
-			driver.close();
 		}
 	}
 	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
