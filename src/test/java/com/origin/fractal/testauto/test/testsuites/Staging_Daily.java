@@ -473,20 +473,6 @@ public class Staging_Daily extends FractalBaseWebTest {
 		Reporter.writeSummary("FR1-2017_InstrBell_TC-010,Verify click Back or Home in breadcrumb- it should redirect to dashboard page," +instbellnotiSteps.getResult() );
 	}
 	public class WebTestInstructorCalendarModule extends FractalBaseWebTest {
-		public int number=0;
-
-		/*
-		 * Test NG for Test Instructor Actions - Same day and same time events check and Calendar actions for Traditional and
-		 * Virtual classrooms
-		 */	
-		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 )
-		public void TestInstructorcalendarActions(String row, String strBrowserName)throws IOException  {
-			ClassroomEventPage.EventType = "Traditional Classroom";
-			TestInstructorCalendar(row,strBrowserName);
-			ClassroomEventPage.EventType="Virtual Classroom";
-			TestInstructorCalendar(row,strBrowserName);
-		}
-
 		/*
 		 * Test event same day and same time action & Test Instructor calendar actions
 		 */

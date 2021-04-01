@@ -60,7 +60,7 @@ public class InstructorCalendarModulePageNew extends FractalBasePage  {
 	private By instTime1 = By.xpath("(//*[contains(@class,'ins_ins_time_zone')])[3]");
 	private By instTime2 = By.xpath("(//*[contains(@class,'ins_ins_time_zone')])[4]");
 	String temp, flag=null;
-	String eventSessionName="DoNOTDistrip_Auto_InstrCalendar";
+	String eventSessionName="Auto_InstrCalendar_DoNotDelete";
 	public InstructorCalendarModulePageNew(WebDriver driver) {
 		super(driver);
 	}
@@ -126,7 +126,7 @@ public class InstructorCalendarModulePageNew extends FractalBasePage  {
 	 * Desc: Instructor Calendar Event- Green dot on calendar
 	 */	
 	public boolean verifyTredAcceptedEnvent() {
-		By inviteDetailsInEventTab=By.xpath("(//*[contains(@class,'dot background dot_ins_event_upcoming')][contains(@title,'DoNOTDistrip_Auto_InstrCalendar')])[1]");
+		By inviteDetailsInEventTab=By.xpath("(//*[contains(@class,'dot background dot_ins_event_upcoming')][contains(@title,'"+eventSessionName+"')])[1]");
 		if(elementExist(inviteDetailsInEventTab)) 
 		{
 			return true;
@@ -140,7 +140,7 @@ public class InstructorCalendarModulePageNew extends FractalBasePage  {
 	 * Desc: Instructor Calendar Event- Green dot on calendar
 	 */	
 	public boolean verifyVirAcceptedEnvent() {
-		By inviteDetailsInEventTab=By.xpath("(//*[contains(@class,'dot background dot_ins_event_upcoming')][contains(@title,'DoNOTDistrip_Auto_InstrCalendar')])[2]");
+		By inviteDetailsInEventTab=By.xpath("(//*[contains(@class,'dot background dot_ins_event_upcoming')][contains(@title,'"+eventSessionName+"')])[2]");
 		if(elementExist(inviteDetailsInEventTab)) 
 		{
 			return true;
@@ -203,7 +203,7 @@ public class InstructorCalendarModulePageNew extends FractalBasePage  {
 	 */
 	public void editEvent(String check) {
 		wait(10);
-		enterData("DoNOTDistrip_Auto_InstrCalendar",searchClassRoomName);
+		enterData(eventSessionName,searchClassRoomName);
 		wait(20);
 		click(classRoomList);
 		wait(20);
