@@ -150,27 +150,27 @@ public class Staging_Monthly_Classroom_Venue_Bulid3 extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLogin(driver); //Updated on 3-Dec-20
 		ClassroomCCSteps ClassroomSteps = new ClassroomCCSteps(driver);
-
+			
 		ClassroomSteps.GotoClassroom();
-		//		Reporter.writeSummary("TC_Admin_ 001,Admin Login and open the classroom, " +  ClassroomSteps.getResult() );//commented on 25-Nov-20
+//		Reporter.writeSummary("TC_Admin_ 001,Admin Login and open the classroom, " +  ClassroomSteps.getResult() );//commented on 25-Nov-20
 
-		//		ClassroomSteps.CClblAllsession();
+//		ClassroomSteps.CClblAllsession();
 		ClassroomSteps.GotoEditClassroom();
-		//		ClassroomSteps.EditCClblAllsession();
-		//		Reporter.writeSummary("Admin_CompletionCriteria_TC-001,Select/Unselect Participation all sessions in criteria (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
+//		ClassroomSteps.EditCClblAllsession();
+//		Reporter.writeSummary("Admin_CompletionCriteria_TC-001,Select/Unselect Participation all sessions in criteria (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
 		Reporter.writeSummary("Admin_CompletionCriteria_TC-001,Select/Unselect the completeion criteria (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
 
 		ClassroomSteps.CClblAssDuedate();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.EditCClblAssDuedate();
 		Reporter.writeSummary("Admin_CompletionCriteria_TC-002,Select/Unselect Assignment Due date in criteria (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
-
-		//		ClassroomSteps.GotoEditClassroom();
+		
+//		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.CClblQualifyPrecentage();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.EditCClblQualifyPrecentage();
 		Reporter.writeSummary("Admin_CompletionCriteria_TC-003,Select/Unselect Qualifying Score in criteria (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
-
+		
 		ClassroomSteps.CClblQualifySinglePrecentage();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.EditCClblQualifySinglePrecentage();
@@ -213,7 +213,7 @@ public class Staging_Monthly_Classroom_Venue_Bulid3 extends FractalBaseWebTest {
 
 		//Overall Completion Criteria text
 		/*currently this functionality is not there start here*/
-		/*	ClassroomSteps.verifyCCTexts(); 
+	/*	ClassroomSteps.verifyCCTexts(); 
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCTexts(); 
 		Reporter.writeSummary("Admin_CompletionCriteria_TC-0012,Verify ALL the Completion Criteria texts (on Add/Edit_classroom), " +  ClassroomSteps.getResult() );
@@ -225,7 +225,7 @@ public class Staging_Monthly_Classroom_Venue_Bulid3 extends FractalBaseWebTest {
 	//	ClassroomSteps.verifyEditCCsessionLabels();
 	//	Reporter.writeSummary("Admin_CompletionCriteria_TC-0012a,Verify the text in CC -All Sessions (on Add/Edit_classroom), " +  ClassroomSteps.getResult() );
       /*end here*/
-		//		ClassroomSteps.GotoEditClassroom();
+//		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyCCAssDuedateLabels();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCAssDuedateLabels();
@@ -235,8 +235,8 @@ public class Staging_Monthly_Classroom_Venue_Bulid3 extends FractalBaseWebTest {
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCQualifyPrecentageLabels();
 		Reporter.writeSummary("Admin_CompletionCriteria_TC-013,Verify the text in CC-qualification percentage (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
-
-		//		ClassroomSteps.GotoEditClassroom();
+		
+//		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyCCFeedbackDuedateLabels();
 		ClassroomSteps.GotoEditClassroom();
 		ClassroomSteps.verifyEditCCFeedbackDuedateLabels();
@@ -247,8 +247,8 @@ public class Staging_Monthly_Classroom_Venue_Bulid3 extends FractalBaseWebTest {
 		ClassroomSteps.verifyEditCCManualCompletionLabels();
 		Reporter.writeSummary("Admin_CompletionCriteria_TC-015,Verify the text in CC-Manual Submission (on Add/Edit_classroom)," +  ClassroomSteps.getResult() );
 
-		//		ClassroomSteps.Clicklogout();
-		//		Reporter.writeSummary("TC_Admin_Add_Classroom_013,Click Cancel button & Logout, " +  ClassroomSteps.getResult() ); //commented on 25-Nov-20
+//		ClassroomSteps.Clicklogout();
+//		Reporter.writeSummary("TC_Admin_Add_Classroom_013,Click Cancel button & Logout, " +  ClassroomSteps.getResult() ); //commented on 25-Nov-20
 	}
 }
 
