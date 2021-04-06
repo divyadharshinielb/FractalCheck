@@ -81,7 +81,8 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
 				<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" />
-			<!-- <class
+				
+			 <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogVersioning" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" />
@@ -93,7 +94,11 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
-			 -->
+			 
+			 
+			 
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUserSubscription"/>
 		</classes>
 
 	</test> <!-- Test -->
