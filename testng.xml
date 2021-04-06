@@ -98,6 +98,10 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUsageReport" />
+				
+				
+				<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUserSubscription"/>
 		</classes>
 
 	</test> <!-- Test -->
