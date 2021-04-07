@@ -38,10 +38,10 @@ public class WebTestLearningObjectHTML extends FractalBaseWebTest{
 		LeaderBoardPointSteps Steps= new LeaderBoardPointSteps(driver);
 		Steps.verifyLearnerBoard();
 		Reporter.writeSummary("FR1-3786_LearnerBoard_TC-001,Verify the Learnerboard points is present on the user dashboard page," +Steps.getResult());
-		Steps.verifyLeaderBoard();
-		Reporter.writeSummary("FR1-3599_LeaderBoard_TC-001,Verify the Leaderboard points is present on the user dashboard page," +Steps.getResult());
 		Steps.verifyUserLearnerBoard();
 		Reporter.writeSummary("FR1-3786_LearnerBoard_TC-002,Verify the user is able to see the Learnerboard details," +Steps.getResult());
+		Steps.verifyLeaderBoard();
+		Reporter.writeSummary("FR1-3599_LeaderBoard_TC-001,Verify the Leaderboard points is present on the user dashboard page," +Steps.getResult());
 		Steps.verifyLeaderBoardPage();
 		Reporter.writeSummary("FR1-3599_LeaderBoard_TC-002,Verify the Leaderboard points is clickable and landing on the Leaderboard page," +Steps.getResult());
 		Steps.verifyUserNameInList();
