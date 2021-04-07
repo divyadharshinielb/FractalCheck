@@ -15,7 +15,7 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 	//Learning Object  
 	private By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
 	private By searchFieldCatItem = By.xpath("//*[@id='searchCatalog']");
-	private By editBtn = By.xpath("(*//i[@role='button'])[2]");
+	private By editBtn = By.xpath("(//i[@role='button'])[2]");
 	private By catEditBtn = By.xpath("(//*[@role='button'])[152]");
 	//private By closeXBtn = By.xpath("//i[contains(@class, 'font-size-35')]");
 	private By itemcodetab = By.xpath("//input[@type='text'][@name='item_code']");
@@ -50,13 +50,13 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 	// LO Update alert Msg/Notification
 	private By saveNewVersionBtn = By.xpath("//*[@class='md-title ng-binding']");
 	private By updateAlertMsgEditlearnObject1 =  By.xpath("//div[@class = 'col-lg-12 col-sm-12 col-md-12 col-xs-12 height-400']//div[2]");	//*[@id="target"]/div[3]/div/div/div[2]/md-dialog-content/div/div[1]/div/div[2]
-	private By updateAlertMsgEditlearnObject2 =  By.xpath("//*[@class='padding-t-20 text-743917 font-size-25 ng-pristine ng-untouched ng-valid ng-binding ng-not-empty']");
+	private By updateAlertMsgEditlearnObject2 =  By.xpath("//*[@class ='mCSB_container']//div[2]");
 
-	private By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']");// Updated on 21-Sep-20
-	private By adminLogout =By.xpath("//*[@class='dropdown-menu menu-myaccount']//*[contains(text(),'Logout')]");// Updated on 21-Sep-20
-	private By userAccountLogo =By.xpath("//div[@class='logout_pop']");
-	private By userLogout =By.xpath("//*[text()='Logout']");
-	//Catalog
+    private By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']");// Updated on 21-Sep-20
+    private By adminLogout =By.xpath("//*[@class='dropdown-menu menu-myaccount']//*[contains(text(),'Logout')]");// Updated on 21-Sep-20
+    private By userAccountLogo =By.xpath("//div[@class='logout_pop']");
+    private By userLogout =By.xpath("//*[text()='Logout']");
+    //Catalog
 	private By catalogItem= By.xpath("//span[contains(text(),'Catalog Items')]");
 	private By catItemTitle1 = By.xpath("//*[text()='AutoTC_Itemcode_Bundle']");
 	private By catItemTitle2 = By.xpath("//*[text()='AutoTC_Itemcode_LearnPath']");
@@ -88,7 +88,7 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 	private By continueBtn1 = By.xpath("(//*[text()='Continue'])[1]");
 	private By saveBtn = By.xpath("(//*[text()='Save'])[1]");
 	private By backcatalogBtn = By.xpath(" //button[contains(text(),'Back to Catalog Items')]");
-	final int waitingSec =3;
+	final int waitingSec =2;
 	public boolean [] boolVerifyAdminLOResult = new boolean[7];
 	public boolean [] boolVerifyUserLOResult = new boolean[7];
 	public boolean [] editboolVerifyAdminLOResult = new boolean[7]; 
@@ -114,10 +114,9 @@ public class ManageContentItemCodesPage extends FractalBasePage {
 		pageName = "ManageContentItemCodePage";
 	}
 	public void goToManagecontent() {
-		wait(10);//Added on 20-Nov-20
 		menusteps.clickMenu();
 		menusteps.gotoManageContents();
-		wait(5);//Updated by 21-09-2020
+		wait(waitingSec);
 	}
 	//Learning Objects Itemcode verification - Admin side
 	public void verifyAdminLearnObjItemcodes() {

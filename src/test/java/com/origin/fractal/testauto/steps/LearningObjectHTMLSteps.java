@@ -73,12 +73,9 @@ public class LearningObjectHTMLSteps extends FractalBaseStep {
 		try{result="FAILED";
 		HTMLPage.createandEditCatalogBundleWithHTML(action);
 		result="PASSED";
-		HTMLPage.adminLogout();//added on 21-Sep-20
 		}
 		catch(Exception e) {
 			result="FAILED";
-			HTMLPage.adminLogout();//added on 21-Sep-20
-			
 		}
 	}
 

@@ -24,7 +24,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By htmlLangdropbox=By.xpath("//span[text()='Select Language']");
 	public By htmlLangEnglish=By.xpath("(//*[@class='list']//li[text()='English'])[3]");
 	public By htmlSelectCatagory=By.xpath("//input[contains(@placeholder,'Select Category')]");
-	public By htmlGenaralCatagory=By.xpath("//span[@class='ng-binding ng-scope'][normalize-space()='General']");
+	public By htmlGenaralCatagory=By.xpath("//span[@class='ng-binding ng-scope'][normalize-space()='General']");//Updated on 2-Mar-21
 	public By htmlFile=By.xpath("//input[@id='htmlFile']");
 	public By htmlAttemptsdropBox=By.xpath("//div[contains(@class,'nice-select select-attempt ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required')]");
 	public By htmlUnlimtedAttempts=By.xpath("//li[contains(text(),'Unlimited')]");
