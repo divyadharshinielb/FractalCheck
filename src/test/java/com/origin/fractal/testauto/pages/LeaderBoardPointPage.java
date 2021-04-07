@@ -39,7 +39,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	private By certiDetails = By.xpath("//*[@class='certify_detail']");
 	private By certiNumDetails = By.xpath("//*[@class='certify_num']");
 	private By certiProfile=By.xpath("//*[@class='profile_img_points']");
-	String accountURL="https://qadev.originfractal.com/myaccount";
+	String accountURL="https://staging-origin.originfractal.com/myaccount";
 	//Leanerboard
 	String leanerboardURL="https://staging-origin.originfractal.com/learnerdashboard";
 	private By dashboardPoint=By.xpath("//*[@class='yellowCard']");
