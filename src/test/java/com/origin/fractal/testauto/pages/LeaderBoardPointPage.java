@@ -22,7 +22,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	private By leaderList=By.xpath("(//*[@class='username-lead'])[1]");//Updated on 19-Jan-2021
 	private By popup=By.xpath("//*[@class='hover_pop_leader']");
 	private By btnPopUpClose=By.xpath("//*[@class='drip_icon flt-rr hnd_cursor cross_button']");
-	private String exceptedURL="https://qadev.originfractal.com/leaderboard";
+	private String exceptedURL="https://automation-origin.originfractal.com/leaderboard";
 	private By homeLogo=By.xpath("//*[@class='log_logo']//a");
 	private String userName= "auto direct user"; //Updated on 17-Feb-2021
 	private int scoredPoint, newScoredPoint;
@@ -39,17 +39,18 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	private By certiDetails = By.xpath("//*[@class='certify_detail']");
 	private By certiNumDetails = By.xpath("//*[@class='certify_num']");
 	private By certiProfile=By.xpath("//*[@class='profile_img_points']");
-	String accountURL="https://qadev.originfractal.com/myaccount";
+	String accountURL="https://automation-origin.originfractal.com/myaccount";
 	//Leanerboard
-	private By dashboardPoint=By.xpath("//*[@class='yellow_leader']//*[@class='pnr_leader']");
-	private By learnerboard=By.xpath("//*[@class='over-rank-detail']");
-	private By learnerboardPoint=By.xpath("//*[@class='k_leader']");
+	String leanerboardURL="https://automation-origin.originfractal.com/learnerdashboard";
+	private By dashboardPoint=By.xpath("//*[@class='yellowCard']");
+	private By learnerboardCetifi=By.xpath("//*[@class='badge_certi']");
+	private By learnerboardPoint=By.xpath("(//*[@class='rank_point d-flex']//span)[2]");
+	private By learnerboardProfile=By.xpath("//*[text()='Profile']");
+	private By learnerboardtab1=By.xpath("(//*[@class='learnProgrSec'])[1]");
+	private By learnerboardtab2=By.xpath("(//*[@class='learnProgrSec'])[2]");
 	private By socialShare=By.xpath("//a[text()='SHARE']");
-	private By socialPopup=By.xpath("//*[@class='hover_pop_leader_share']");
-	private By socialFB=By.xpath("//*[text()='FACEBOOK']");
-	private By sociallinkedIn=By.xpath("//*[text()='LINKEDIN']");
-	private By socialPopupClose=By.xpath("//*[@class='drip_icon flt-rr hnd_cursor cross_button_lb']");
-	private By loadmoreBtn=By.xpath("//*[text()='LOAD MORE']");
+
+	private By loadmoreBtn=By.xpath("//*[@class='loadmore loadmore_lb_points']//a");
 	int learnerPoint; boolean result=false; int list=1;
 	private boolean resultFlag=false;
 	String certiValue;
@@ -123,8 +124,8 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	public boolean verifyUserPointInList() {
 		wait(3);
 		//Commented on 19-Feb-21
-		//		moveElementFocusandClick(homeLogo);
-		//		wait(10);
+		moveElementFocusandClick(homeLogo);
+		wait(10);
 		//Ends
 		moveElementFocusandClick(leaderBoard);
 		wait(5);
@@ -203,6 +204,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	 * Purpose: verify profile CTA Link
 	 */
 	public boolean verifyProfileCTA() {
+		wait(10);
 		click(certiProfile);
 		wait(3);
 		return compareStrings(accountURL,driver.getCurrentUrl());
@@ -214,11 +216,15 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	 */
 	public void verifyLearnerBoard() {
 		wait(5);
-		elementExist(leaderBoard);
-		elementExist(txtYourLeaderBoard);
-		elementExist(txtRankLeaderBoard);
-		elementExist(txtPointLeaderBoard);
-		learnerPoint=Integer.valueOf(getText(dashboardPoint));
+		driver.navigate().to(leanerboardURL);
+		wait(5);
+		elementExist(dashboardPoint);
+		elementExist(learnerboardCetifi);
+		elementExist(learnerboardProfile);
+		elementExist(learnerboardPoint);
+		elementExist(learnerboardtab1);
+		elementExist(learnerboardtab2);
+		learnerPoint=Integer.valueOf(getText(learnerboardPoint));
 	}
 
 	/* Function Name: verifyUserLearnerPoint
@@ -226,9 +232,9 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	 */
 	public boolean verifyUserLearnerPoint() {
 		wait(3);
-		moveElementFocusandClick(homeLogo);
-		wait(10);
-		if(Integer.valueOf(getText(dashboardPoint))>learnerPoint) {
+		driver.navigate().to(leanerboardURL);
+		wait(5);
+		if(Integer.valueOf(getText(learnerboardPoint))>learnerPoint) {
 			return true;
 		}
 		return false; 
@@ -239,8 +245,9 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	 */
 	public void verifyUserLearnerBoard() {
 		wait(3);
-		elementExist(learnerboard);
+		elementExist(dashboardPoint);
 		elementExist(learnerboardPoint);
+		moveElementFocusandClick(homeLogo);
 	}
 
 	/* Function Name: verifyLearnerBoardShare
@@ -259,27 +266,24 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	}
 
 	/* Function Name: verifyNumberofUsdersListed
-	 * Purpose: verify Number of Usders Listed
+	 * Purpose: verify Number of Users Listed
 	 */
 	public boolean verifyNumberofUsdersListed() {
-		for(list=1; list<=25; list++) {
+		for(list=1; list<=10; list++) {
 			if(elementExist(By.xpath("(//*[@class='font_lbpoints_flex_lb lbpoints point_row '])["+list+"]"))==true) {
 				result=true;
 			}
 			else {
 				result=false;
-				break;
 			}
 		}
 		if(elementExist(loadmoreBtn)) {
-			moveElementFocusandClick(loadmoreBtn);
-			if(elementExist(By.xpath("(//*[@class='font_lbpoints_flex_lb lbpoints point_row '])[26]"))==true) {
-				result=true;
-			}
-			else
-				result=false;
+			result=true;
+
 		}
-		else result=true;
+		else {
+			result=true;
+		}
 		return result;
 	}
 	//ends
