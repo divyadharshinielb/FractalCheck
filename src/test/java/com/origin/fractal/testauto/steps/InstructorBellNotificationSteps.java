@@ -8,24 +8,42 @@ import com.origin.fractal.testauto.pages.InstructorBellNotificationPage;
 /* File/class name: InstructorBellNotificationSteps.java
  * Developed By: Vigneshwaran R
  * created on: 5-Jun-20
- * Updated Date: 15-July-20
+ * Updated Date: 25-Nov-20
  */
 public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	InstructorBellNotificationPage instbellnoti;
+
 	public InstructorBellNotificationSteps(WebDriver driver) {
 		instbellnoti = new InstructorBellNotificationPage(driver);
 	}
 
+
+	/* Added on 3-Dec-20
+	 * Function name: gotoClassRoom()
+	 * Action: goto Class Room
+	 * Return Type: void
+	 */
+	public void gotoClassRoom() {
+		result="PASSED";
+		try{instbellnoti.goToclassroom();
+		wait(10);
+		}catch(Exception e){
+			result="FAILED";
+		}
+	}
+	//Ends
+	
 	/* Function name: instLogout()
 	 * Action: Instructor logout
 	 * Return Type: void
 	 */
 	public void instLogout() {
+		result="PASSED";
 		try{instbellnoti.instLogout();
-		wait(5);
-	}catch(Exception e) {
-		print("Logout issue");
-	}
+		wait(10);
+		}catch(Exception e){
+			result="FAILED";
+		}
 	}
 
 	/* Function name: adminLogout()
@@ -33,10 +51,11 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminLogout() {
+		result="PASSED";
 		try{instbellnoti.adminLogout();
-		wait(5);
-		}catch(Exception e) {
-			print("Logout issue");
+		wait(10);
+		}catch(Exception e){
+			result="FAILED";
 		}
 	}
 
@@ -166,8 +185,9 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminCheckAndInvitesInstructor(String Instnumber, String Searchclassroom) {
+		result="PASSED";
 		try{
-			instbellnoti.goToclassroom();
+			gotoClassRoom(); //Updated on 3-Dec-20
 			instbellnoti.editEvent(Searchclassroom,"editInstructor",Instnumber,"");
 			adminLogout();
 		}catch(Exception e) {
@@ -180,7 +200,8 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminRescheduledEvent(String changezone, String Searchclassroom){
-		try{instbellnoti.goToclassroom();
+		result="PASSED";
+		try{gotoClassRoom(); //Updated on 3-Dec-20
 		instbellnoti.editEvent(Searchclassroom,"editTimeZone","",changezone);
 		adminLogout();
 		}catch(Exception e) { 
@@ -193,23 +214,12 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void prerequisite(String Instnumber,String changezone, String Searchclassroom) {
-//		instbellnoti.goToclassroom();
+		result="PASSED";
+		try {	gotoClassRoom(); //Updated on 3-Dec-20
 		instbellnoti.editEvent(Searchclassroom,"prerequisite",Instnumber,changezone);
 		adminLogout();
-	}
-	
-	/* Added on 3-Dec-20
-	 * Function name: gotoClassRoom()
-	 * Action: goto Class Room
-	 * Return Type: void
-	 */
-	public void gotoClassRoom() {
-		result="PASSED";
-		try{instbellnoti.goToclassroom();
-		wait(10);
 		}catch(Exception e){
 			result="FAILED";
 		}
 	}
-	//Ends
 }
