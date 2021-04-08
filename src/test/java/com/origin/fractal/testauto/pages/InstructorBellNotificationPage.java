@@ -8,12 +8,12 @@ import com.origin.fractal.testauto.FractalBasePage;
 /* File/Class name: InstructorBellNotificationPage.java
  * Created by: Vignesh 
  * Created on: 06-Apr-2020
- * Updated Date: 15-July-20
- * Purpose: Check Instructor side Bell notification
+ * Updated Date: 19-Jan-21
+ * Purpose: Check Instructor side Bell notification 
+ * 
  */
 public class InstructorBellNotificationPage extends FractalBasePage{
 	LoginPage loginpage;
-	ClassroomSettingsInstructorPage classroomSettingsPage;
 	public By instBellIcon = By.xpath("//*[contains(@class, 'click-hover')]");
 	public By notificationNotFound = By.xpath("//ul[contains(@class,'popupunderline')]//li//div//p");
 	public By spanNotification = By.xpath("(//*[@role=\"menuitem\"])[1]/div/p");
@@ -21,8 +21,8 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By breadcrumbHome= By.xpath("//button[text()='Home']");
 	public By breadcrumbMoreNotification = By.xpath("//*[contains(@class, 'breadcrumbs')]/div[2]/button");
 	public By lblDashboard=By.xpath("//span[text()='Dashboard']");
-	public By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[contains(@title,'Menu')]");
-	public By classroomBtn = By.xpath("//span[contains(text(),'classroom')]");
+	public By btnMenu = By.xpath("(//div[@class='menu-icon'][@title='Menu'])[1]");//updated on 10-Dec-20
+	public By classroomBtn = By.xpath("//*[@ng-if=\"(user_role=='COADMIN' && manage_classroom) || (user_role=='CUADMIN' && manage_classroom)\"]/a");
 	public By searchClassRoomName=By.xpath("//input[@id='searchClassroom']");
 	public By editIcon=By.xpath("(//*[@title='Edit'])[1]");
 	public By addInstructor=By.xpath("//div[@name='trainer_list']//div//input[@class='ui-select-search input-xs ng-pristine ng-untouched ng-valid ng-empty']");
@@ -31,12 +31,12 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By btnUpdate=By.xpath("//button[text()='Update']");
 	public By btnBackToList=By.xpath("//button[text()='Back To Classroom List']");
 	public By classRoomList=By.xpath("(//*[contains(@class, 'border-tb')])[1]");
-	public By eventList=By.xpath("(//*[@ng-click=\"viewEventDetails($event,event_list,'all')\"])[1]");
+	public By eventList=By.xpath("(//*[@ng-click=\"viewEventDetails($event,event_list,'all')\"])[1]");//updated on 10-Dec-20
 	public By eventSession=By.xpath("//*[@id='session_title']/i");
 	public By eventInstructor=By.xpath("//div[@class='col-lg-12 col-md-6 col-sm-6 col-xs-6 padding-t-0 padding-b-0 padding-l-5 padding-r-20 padding-l-10']//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required']");
 	public By selectedInstructor=By.xpath("(//*[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open'])[1]//span");
-	public By selectEventInstructor1=By.xpath("(//*[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open'])[1]//li[text()='Instructor WVF 1']");//("//li[@class='option selected focus']");
-	public By selectEventInstructor2=By.xpath("(//*[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open'])[1]//li[text()='QA TESTER Tester']");//("//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open']//li[@class='option'][1]");
+	public By selectEventInstructor1=By.xpath("(//li[text()='Instructor WV 2'])[2]");//updated on 20-Jan-21
+	public By selectEventInstructor2=By.xpath("(//li[text()='QA TESTER Tester'])[2]");//updated on 20-Jan-21
 	public By closeXIcon=By.xpath("//*[contains(@class, 'close')]");
 	public By changeTimeZone=By.xpath("//*[@class='elearninglabel margin-b-20']//md-input-container/div");
 	public By clickCETTime=By.xpath("//li[contains(text(), 'CET European Central Time (GMT+1:00)')]");
@@ -45,26 +45,25 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By allNotificationPage=By.xpath("//span[text()='NOTIFICATIONS']");
 	public By eventDetailsPage=By.xpath("//span[text()='Event Details']");
 	public By instAccountLogo=By.xpath("//*[@class='ci-hover user-account']");
-	public By instLogout=By.xpath("//li[normalize-space()='Logout']");
-	public By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']"); 
-	public By adminLogout =By.xpath("//a[normalize-space()='Logout']");
+	public By instLogout=By.xpath("(//*[contains(@class,'popupunderline')]//li[text()='Logout'])");// Updated on 4/Jun/20
+	public By adminAccountLogo =By.xpath("//*[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 border-header-shadow padding-lr-0 main-header']//a[@class='color-primary text-decoration-none']"); //updated on 16-Feb-2021
+	public By adminLogout =By.xpath("//*[@ng-click='logOut()']");//Updated on 16-Feb-21
 	Actions actions;
 	WebElement element;
-	public String classroomName="AUTO INSTRUCTOR BELL NOTIFICATION";
+	public String classroomName="AUTO_INSTRUCTOR_BELL NOTIFI";
 	public String emptyNotification="No notifications found";
 	public String inviteNotification="Hi! Please indicate your availability";
 	public String rescheduledNotification="rescheduled to";
-	public String instructorEmailID="xxyz08614@gmail.com";
+	public String instructorEmailID="winfoundation1990@gmail.com";
 	public String instructorPassword="Welcome@123&";
-	public String instructor1EmailID="guestOl1.user@winvinayafoundation.org";
-	public String instructor1Password="Welcome@123";
+	public String instructor1EmailID="origin.wv2@gmail.com";
+	public String instructor1Password="Welcome@123&";
 	public String instructor2EmailID="fractalqaautomation@gmail.com";
 	public String instructor2Password="Welcome@123&";
 
 	public InstructorBellNotificationPage(WebDriver driver) {
 		super(driver);
 		loginpage= new LoginPage(driver);
-		classroomSettingsPage=new ClassroomSettingsInstructorPage(driver);
 		pageName="InstructorBellNotification";
 	}
 
@@ -73,6 +72,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void instLogout() {
+		wait(2);
 		element=driver.findElement(instAccountLogo);
 		actions=new Actions(driver);
 		actions.moveToElement(element).click().perform();
@@ -87,6 +87,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void adminLogout() {
+		wait(2);
 		element = driver.findElement(adminAccountLogo); 
 		actions = new Actions(driver); 
 		actions.moveToElement(element).click().perform();
@@ -101,10 +102,19 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void goToclassroom() {
-		click(btnMenu);
-		wait(3);
-		click(classroomBtn);
-		wait(2);
+//		//2-Dec-20: waiting time increased - 5 to 10
+//		wait(10);
+//		//ends
+		if(driver.findElement(btnMenu).isDisplayed()==true) {
+			click(btnMenu);
+			//4-Sep-20: waiting time increased - 2 to 5
+			wait(4);//Updated on 24/Dec/20
+			//ends
+			click(classroomBtn);
+			//4-Sep-20: waiting time increased - 5 to 10
+			wait(5);
+			//ends
+		}
 	}
 
 
@@ -113,6 +123,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void selectInstructor(String instructor) {
+		wait(5);
 		click(eventSession);
 		wait(2);
 		moveElementFocusandClick(eventInstructor);
@@ -163,12 +174,21 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void editEvent(String searchclassroom, String edit,String instructor,String timeZone) {
+		//waiting time added on 4-Sep-20
+		wait(10);
+		//ends
 		enterData(searchclassroom,searchClassRoomName);
-		wait(5);
+		//4-sep-20: waiting time increased - 15 to 20 
+		wait(20);
+		//ends
 		click(classRoomList);
-		wait(5);
+		//4-sep-20: waiting time increased - 15 to 20 
+		wait(20);
+		//ends
 		click(editIcon);
-		wait(5);
+		//4-sep-20: waiting time increased - 15 to 20 
+		wait(20);
+		//ends
 		switch (edit) {
 		case "editInstructor": 
 			selectInstructor(instructor);
@@ -186,7 +206,9 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		click(btnUpdate);
 		wait(10);
 		click(closeXIcon);
-		wait(1);
+		//Waiting time increased on 4Sep20
+		wait(5);
+		//Ends
 	}
 
 	/* Function name: clickInstBellIcon()
@@ -194,14 +216,12 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: void
 	 */
 	public void clickInstBellIcon() {
-		//Wating time added on 3-Sep-20
-		wait(2);
-		//ends
+		wait(5);
 		element=driver.findElement(instBellIcon); 
 		actions=new Actions(driver);
 		actions.moveToElement(element).perform();
 		click(instBellIcon);
-		wait(2);
+		wait(5);
 	}
 
 	/* Function name: verifyEmptyNotification()
@@ -323,9 +343,6 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	 * Return Type: boolean
 	 */
 	public boolean verifyclickHomeaction() {
-		//Wating time added on 3-Sep-20
-		wait(2);
-		//ends
 		click(breadcrumbHome);
 		wait(5);
 		if(elementExist(lblDashboard)){
@@ -335,20 +352,4 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		print("FAILED: After clicked home, the page NOT redirect to Dashboard page.");
 		return false;
 	}
-
-	/*Added on 16-Sep-20
-	 * Function name: VerifyEventCancellationNotification()
-	 * Action: instructor side - Verify cancelled notification in bell icon
-	 * Return Type: boolean
-	 */
-	public boolean VerifyEventCancellationNotification(By Notification) {
-		clickInstBellIcon();
-		if(elementExist(Notification)) {
-			print("PASSED: The instructor got event cancellation notification.");
-			return true;
-		}
-		print("FAILED: The instructor Not got event cancellation notification.");
-		return false;
-	}
-	//Ends
 }

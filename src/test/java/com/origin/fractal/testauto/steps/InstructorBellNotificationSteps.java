@@ -1,34 +1,47 @@
 package com.origin.fractal.testauto.steps;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBaseStep;
-import com.origin.fractal.testauto.pages.ClassroomSettingsInstructorPage;
 import com.origin.fractal.testauto.pages.InstructorBellNotificationPage;
 
 /* File/class name: InstructorBellNotificationSteps.java
  * Developed By: Vigneshwaran R
  * created on: 5-Jun-20
- * Updated Date: 15-July-20
+ * Updated Date: 25-Nov-20
  */
 public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	InstructorBellNotificationPage instbellnoti;
-	ClassroomSettingsInstructorPage classroomSettingsPage;
+
 	public InstructorBellNotificationSteps(WebDriver driver) {
 		instbellnoti = new InstructorBellNotificationPage(driver);
-		classroomSettingsPage=new ClassroomSettingsInstructorPage(driver);
 	}
 
+
+	/* Added on 3-Dec-20
+	 * Function name: gotoClassRoom()
+	 * Action: goto Class Room
+	 * Return Type: void
+	 */
+	public void gotoClassRoom() {
+		result="PASSED";
+		try{instbellnoti.goToclassroom();
+		wait(10);
+		}catch(Exception e){
+			result="FAILED";
+		}
+	}
+	//Ends
+	
 	/* Function name: instLogout()
 	 * Action: Instructor logout
 	 * Return Type: void
 	 */
 	public void instLogout() {
+		result="PASSED";
 		try{instbellnoti.instLogout();
-		wait(5);
-		}
-		catch(Exception e) {
+		wait(10);
+		}catch(Exception e){
 			result="FAILED";
 		}
 	}
@@ -38,10 +51,10 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminLogout() {
+		result="PASSED";
 		try{instbellnoti.adminLogout();
-		wait(5);
-		}
-		catch(Exception e) {
+		wait(10);
+		}catch(Exception e){
 			result="FAILED";
 		}
 	}
@@ -172,8 +185,9 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminCheckAndInvitesInstructor(String Instnumber, String Searchclassroom) {
+		result="PASSED";
 		try{
-			instbellnoti.goToclassroom();
+			gotoClassRoom(); //Updated on 3-Dec-20
 			instbellnoti.editEvent(Searchclassroom,"editInstructor",Instnumber,"");
 			adminLogout();
 		}catch(Exception e) {
@@ -186,7 +200,8 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void adminRescheduledEvent(String changezone, String Searchclassroom){
-		try{instbellnoti.goToclassroom();
+		result="PASSED";
+		try{gotoClassRoom(); //Updated on 3-Dec-20
 		instbellnoti.editEvent(Searchclassroom,"editTimeZone","",changezone);
 		adminLogout();
 		}catch(Exception e) { 
@@ -199,32 +214,12 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 	 * Return Type: void
 	 */
 	public void prerequisite(String Instnumber,String changezone, String Searchclassroom) {
-		//Added on 16-Sep-20
-		result="FAILED";
-		//ends
-		try{instbellnoti.goToclassroom();
+		result="PASSED";
+		try {	gotoClassRoom(); //Updated on 3-Dec-20
 		instbellnoti.editEvent(Searchclassroom,"prerequisite",Instnumber,changezone);
 		adminLogout();
-		//Added on 16-Sep-20
-		result="PASSED";
-		//end
-		}
-		catch(Exception e) {
+		}catch(Exception e){
 			result="FAILED";
 		}
 	}
-
-	/*Added on 16-Sep-20
-	 * Function name: VerifyEventCancellationNotification()
-	 * Action: instructor side - Verify cancelled notification in bell icon
-	 */
-	public void VerifyEventCancellationNotification(By location) {
-		result="FAILED";
-		try {	instbellnoti.VerifyEventCancellationNotification(location);
-		result="PASSED";
-		}		catch(Exception e) {
-			result="FAILED";
-		}
-	}
-	//Ends
 }
