@@ -40,7 +40,7 @@ public class ClassroomCCPage extends FractalBasePage {
 	private By HeaderAClogo= By.xpath("//span[contains(@class,'loggeduserbg ng-binding')]");
 	private By logout= By.xpath("//html/body/div/div/div/ng-include/div/div/div[2]/div/div/ul/div/div[3]");
 	public boolean booleanresult;
-
+	public By searchClassRoomName=By.xpath("//input[@id='searchClassroom']");
 	public ClassroomCCPage(WebDriver driver) 
 	{
 		super(driver);
@@ -57,6 +57,8 @@ public class ClassroomCCPage extends FractalBasePage {
 
 	public void GotoEditClassroom() 
 	{
+		wait(10);
+		enterData("AUTO_INSTR_BELL_NOTIFI_DoNotDelete",searchClassRoomName);
 		wait(10);
 		click(EditClassroomicon);
 		wait(10);

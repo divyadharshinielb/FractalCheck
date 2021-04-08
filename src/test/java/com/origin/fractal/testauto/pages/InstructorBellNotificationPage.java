@@ -50,7 +50,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By adminLogout =By.xpath("//*[@ng-click='logOut()']");//Updated on 16-Feb-21
 	Actions actions;
 	WebElement element;
-	public String classroomName="AUTO_INSTRUCTOR_BELL NOTIFI";
+	public String classroomName="AUTO_INSTR_BELL_NOTIFI_DoNotDelete";
 	public String emptyNotification="No notifications found";
 	public String inviteNotification="Hi! Please indicate your availability";
 	public String rescheduledNotification="rescheduled to";

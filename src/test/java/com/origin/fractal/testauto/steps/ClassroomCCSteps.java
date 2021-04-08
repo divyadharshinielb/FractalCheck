@@ -20,7 +20,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -32,7 +32,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -44,7 +44,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -56,7 +56,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -68,7 +68,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -80,7 +80,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -92,7 +92,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -104,7 +104,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -116,7 +116,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -128,7 +128,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -141,7 +141,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -153,7 +153,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -165,7 +165,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -177,7 +177,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -189,7 +189,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -201,7 +201,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -213,7 +213,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -225,7 +225,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -237,7 +237,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -249,7 +249,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -261,7 +261,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -272,7 +272,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -296,7 +296,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 
@@ -321,7 +321,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 
@@ -346,7 +346,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}	}
 
@@ -369,7 +369,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}	}
 
@@ -391,7 +391,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}		}
 
@@ -413,7 +413,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}		}
 
@@ -434,7 +434,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}	}
 
@@ -455,7 +455,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}	}
 
@@ -477,7 +477,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -499,7 +499,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -524,7 +524,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -548,7 +548,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -561,7 +561,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -574,7 +574,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}
@@ -586,7 +586,7 @@ public class ClassroomCCSteps extends FractalBaseStep {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();   
+			   
 			result="FAILED";
 		}
 	}

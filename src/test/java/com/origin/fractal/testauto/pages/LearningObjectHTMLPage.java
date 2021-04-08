@@ -182,7 +182,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);
 		click(lblCatalogTab);
 		wait(10);
-		enterData("AutoBundleHTMLLearningObject",searchFieldCatItem);//Updated on 5-Jan-21
+		enterData("zAutoBundleHTMLLearningObject",searchFieldCatItem);//Updated on 5-Jan-21
 		wait(20);//Updated on 7-Jan-21
 		//		enterData("AutoBundleHTMLLearn",searchFieldCatItem);//Updated on 5-Jan-21
 		//		wait(5);
