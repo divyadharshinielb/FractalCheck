@@ -81,7 +81,7 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModuleNew" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningOrientation" />
 			<class
