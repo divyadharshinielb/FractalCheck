@@ -32,7 +32,7 @@ public class WebTestInstructorCalendarModuleNew extends FractalBaseWebTest {
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
 		InstructorCalendarModuleStepsNew InstructorModuleSteps=new InstructorCalendarModuleStepsNew(driver);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
-		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+		loginInstructorwithCookies(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		InstructorModuleSteps.verifyTradInviteNotification();
 		Reporter.writeSummary("FR1-2164_InstrCalendar_TC-001,Verify the invite notification (blue dot) on the Instructor calendar (Traditional)," +InstructorModuleSteps.getResult());
 		InstructorModuleSteps.verifyVirInviteNotification();

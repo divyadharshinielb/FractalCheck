@@ -76,7 +76,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		click(deleteLOBtn);
 		wait(2);
 		click(deleteOKBtn);
-		wait(5);//Updated on 16-Nov-20
+		wait(10);//Updated on 16-Nov-20
 		if(elementExist(scormLOName)) {
 			return false;
 		}
@@ -219,14 +219,14 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: boolean
 	 */
 	public boolean userSearchElearningobjectWithscorm2004AndLaunch() {
-		By scormlO=By.xpath("(//*[contains(text(),'"+getLabel("editeLearningName")+"')])[3]");
+		By scormlO=By.xpath("(//*[contains(text(),'"+getLabel("editeLearningName")+"')])[2]");
 		click(searchfieldUser);
-		enterData(getLabel("eLearningName"),searchfieldUser);
+		enterData(getLabel("editeLearningName"),searchfieldUser);
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 		wait(3);
 		moveElementFocusandClick(scormlO);
 		wait(5);
-		driver.switchTo().frame(0);
+		driver.switchTo().frame(1);
 		wait(2);
 		click(LearningObjectHTMLPage.launchBtn);
 		wait(2);

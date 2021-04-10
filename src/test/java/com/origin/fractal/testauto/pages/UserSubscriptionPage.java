@@ -41,8 +41,8 @@ public class UserSubscriptionPage extends FractalBasePage {
 	 * Purpose: Admin is enabling the subscription
 	 */
 	public void subscriptionStateChange() {
-		wait(5);
-		moveElementFocusandClick(btnSettings);
+		wait(20);
+		moveElementFocus(btnSettings);
 		wait(3);
 		moveElementFocusandClick(btnWhiteLabel);
 		wait(5);

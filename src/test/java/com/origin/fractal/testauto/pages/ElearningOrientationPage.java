@@ -24,12 +24,12 @@ public class ElearningOrientationPage extends FractalBasePage {
 	private By eLearningitemFilter= By.xpath("//a[contains(text(),'eLearning')]");
 	private By eLearningScromPackage= By.xpath("//*[text()='Scorm']");
 	private By eLearningXapiPackage= By.xpath("//*[text()='Xapi']");
-	private By AutoOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[12]//input)[1]");
-	private By LandScapeOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[12]//input)[2]");
-	private By PortraitOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[12]//input)[3]");
+	private By AutoOrientationSelected =By.xpath("(((//div[@class='mCSB_container']))[2]//input)[6]");
+	private By LandScapeOrientationSelected =By.xpath("(((//div[@class='mCSB_container']))[2]//input)[7]");
+	private By PortraitOrientationSelected =By.xpath("(((//div[@class='mCSB_container']))[2]//input)[8]");
 	private By editBtn = By.xpath("(*//i[@role='button'])[2]");
 	private By uploadPackage= By.xpath("//label[contains(@class,'btn btn-tertiary btn-file')]/input");
-	private By defaultOrientationSelected =By.xpath("(//div[@class='mCSB_container'])[3]/div[9]/div/div[2]/input");
+	private By defaultOrientationSelected =By.xpath("(//div[@class='mCSB_container'])[2]/div[9]/div/div[2]/input");
 	private By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
 	private By updateBtn = By.xpath("//*[text()='Update']");
 	private By newVersionReqNoBtn = By.xpath("//*[text()='No']");
@@ -105,7 +105,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public void clickeLearningItemFilter(String Name) {
 		wait(5);
-		click(eLearningitemFilter);
+//		click(eLearningitemFilter);
 		wait(5);
 		enterData(getLabel(Name),searchFieldLearnObj);	
 		wait(10);

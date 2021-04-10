@@ -158,8 +158,8 @@ public class CatalogVersioningPage extends FractalBasePage {
 				click(searchResultAddModle);
 			}
 			wait(3);
-//			click(continueBtn1);
-//			wait(3);
+			//			click(continueBtn1);
+			//			wait(3);
 			click(saveBtn);
 			wait(3);
 			//If user enrolled the catalog item 
@@ -184,7 +184,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void deleteVersionLearningObject(String action, String catalog) {
-		//		learningPage.goToManagecontent();
+		//				learningPage.goToManagecontent();
 		editCatalogToIncludeLearningObject(action,catalog);
 		click(learningObjectTab);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
@@ -207,12 +207,11 @@ public class CatalogVersioningPage extends FractalBasePage {
 		click(learningObjectTab);
 		enterData(getLabel("learningObjectNameVersion"),searchFieldLearnObj);
 		wait(5);
-		if(verifyNonExistense(versionCount)) {
-			click(deleteLOBtn);
-			wait(2);
-			click(deleteOKBtn);
-			wait(3);
-		}
+		click(deleteLOBtn);
+		wait(2);
+		click(deleteOKBtn);
+		wait(3);
+
 	}
 
 	/* Function Name: verifyAssignedCatalogDetails()

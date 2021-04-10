@@ -62,6 +62,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By socialLogin=By.xpath("(//*[contains(text(),'Enable/Disable Social Login')])[1]");
 	private By SaveBtn=By.xpath("//*[text()='Save'][@type='submit']");
 	private By updatedText=By.xpath("//*[contains(text(),'successfully')]");
+	private By closeBtn=By.xpath("(//*[@class='aside-dialog']//div)[2]//i");
 	public AdminSettingPage(WebDriver driver) {
 		super(driver);
 	}
@@ -70,8 +71,8 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: Create and delete the Category
 	 */
 	public void verifyCreateandDeleteCategory() throws InterruptedException {
-		wait(5);
-		//		moveElementFocus(btnSettings);
+		wait(20);
+		moveElementFocus(btnSettings);
 		moveElementFocusandClick(categorySettings);
 		click(addCategoryBtn);
 		wait(3);
@@ -81,6 +82,10 @@ public class AdminSettingPage extends FractalBasePage  {
 		wait(5);
 		click(categoryCreateBtn);
 		wait(3);
+		if(elementExist(closeBtn)) {
+			click(closeBtn);
+			wait(3);
+		}
 		if(elementExist(createdCategory)==true) {
 			moveElementFocusandClick(deleteCategory);
 			wait(2);
@@ -165,16 +170,18 @@ public class AdminSettingPage extends FractalBasePage  {
 		wait(3);
 		enterData(lang,languageName);
 		wait(2);
-		click(selectLanguage);
-		wait(2);
-		click(categoryCreateBtn);
-		wait(3);
-		if(elementExist(selectLanguage)==true) {
-			click(deleteCategory);
-			wait(2);
-			click(deleteOKBtn);
-			wait(5);
-		}
+		//		click(selectLanguage);
+		//		wait(2);
+		//		click(categoryCreateBtn);
+		//		wait(3);
+		//		if(elementExist(selectLanguage)==true) {
+		//			click(deleteCategory);
+		//			wait(2);
+		//			click(deleteOKBtn);
+		//			wait(5);
+		//				}
+		click(closeBtn);
+		wait(5);
 	}
 
 	/* Function: verifyNotificationSettings()
@@ -190,12 +197,12 @@ public class AdminSettingPage extends FractalBasePage  {
 		moveElementFocusandClick(mailNotificationSettings);
 	}
 
-	
+
 	/* 08-Apr-2021 The following are NOT covered as the following are the latest features -
 	Masking email ID 
 	Favicon
 	Dynamic change of image
-	*/
+	 */
 	/* Function: verifyWhiteLabel()
 	 * Purpose: verify the White label settings
 	 */

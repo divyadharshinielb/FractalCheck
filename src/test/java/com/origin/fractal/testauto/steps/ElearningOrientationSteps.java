@@ -85,7 +85,7 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 			try {result="FAILED";
 			elearningOrientation.preRequisite("eLearningWithScorm");
 			wait(3);
-			elearningOrientation.preRequisite("eLearningWithXapi");
+//			elearningOrientation.preRequisite("eLearningWithXapi");
 			}catch(Exception e) {
 				result="FAILED";
 			}

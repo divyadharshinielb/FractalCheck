@@ -29,7 +29,7 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-		siteAdminLogin(driver);//Updated on 3-Dec-20
+		siteAdminLoginwithcookies(driver);//Updated on 3-Dec-20
 		//Added by vignesh 26-Sep-20 This for Roster test 
 		ClassRoomRosterSteps classroomRoster=new ClassRoomRosterSteps(driver);
 		instbellnotiSteps.gotoClassRoom();//Updated on 3-Dec-20
