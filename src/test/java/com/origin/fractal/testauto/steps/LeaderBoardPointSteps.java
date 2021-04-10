@@ -144,7 +144,7 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 */
 	public void verifyProfileCTA() {
 		try {result="FAILED";
-		if(page.verifyProfileCTA()==true)
+		page.verifyProfileCTA();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";

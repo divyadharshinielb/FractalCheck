@@ -190,6 +190,12 @@ public class AdminSettingPage extends FractalBasePage  {
 		moveElementFocusandClick(mailNotificationSettings);
 	}
 
+	
+	/* 08-Apr-2021 The following are NOT covered as the following are the latest features -
+	Masking email ID 
+	Favicon
+	Dynamic change of image
+	*/
 	/* Function: verifyWhiteLabel()
 	 * Purpose: verify the White label settings
 	 */

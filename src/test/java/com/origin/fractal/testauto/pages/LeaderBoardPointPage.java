@@ -69,7 +69,12 @@ public class LeaderBoardPointPage extends FractalBasePage {
 		//		elementExist(txtRankLeaderBoard);
 		//		elementExist(txtPointLeaderBoard);
 		//Ends
-		click(leaderBoard);
+		if(elementExist(leaderBoard)) {
+			click(leaderBoard);
+		}
+		else {
+			driver.navigate().to("https://automation-origin.originfractal.com/leaderboard");
+		}
 	}
 
 	/* Function Name: verifyLeaderBoardPage
@@ -110,7 +115,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	 */
 	public boolean verifyUserNameInList() {
 		for(int path=1; path<=10; path++) {
-			if(getText(By.xpath("//*[@class='font_lbpoints_flex_lb lbpoints point_row ']["+path+"]/div/div[2]/div")).equalsIgnoreCase(userName)) {
+			if(getText(By.xpath("//*[contains(@class,'font_lbpoints_flex_lb lbpoints point_row ')]["+path+"]/div/div[2]/div")).equalsIgnoreCase(userName)) {
 				scoredPoint=Integer.valueOf(driver.findElement(By.xpath("//*[@class='font_lbpoints_flex_lb lbpoints point_row ']["+path+"]/div/div[3]/span")).getText());
 				print("Current user score is = "+ scoredPoint);
 				return true;
@@ -127,10 +132,15 @@ public class LeaderBoardPointPage extends FractalBasePage {
 		moveElementFocusandClick(homeLogo);
 		wait(10);
 		//Ends
-		moveElementFocusandClick(leaderBoard);
+		if(elementExist(leaderBoard)) {
+			click(leaderBoard);
+		}
+		else {
+			driver.navigate().to("https://automation-origin.originfractal.com/leaderboard");
+		}
 		wait(5);
 		for(int path=1; path<=10; path++) {
-			if(getText(By.xpath("//*[@class='font_lbpoints_flex_lb lbpoints point_row ']["+path+"]/div/div[2]/div")).equalsIgnoreCase(userName)) {
+			if(getText(By.xpath("//*[contains(@class,'font_lbpoints_flex_lb lbpoints point_row ')]["+path+"]/div/div[2]/div")).equalsIgnoreCase(userName)) {
 				newScoredPoint=Integer.valueOf(driver.findElement(By.xpath("//*[@class='font_lbpoints_flex_lb lbpoints point_row ']["+path+"]/div/div[3]/span")).getText());
 				print("Current user score is = "+ newScoredPoint);
 				if(newScoredPoint>scoredPoint) {
@@ -205,7 +215,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	 */
 	public boolean verifyProfileCTA() {
 		wait(10);
-		click(certiProfile);
+		moveElementFocusandClick(certiProfile);
 		wait(3);
 		return compareStrings(accountURL,driver.getCurrentUrl());
 	}

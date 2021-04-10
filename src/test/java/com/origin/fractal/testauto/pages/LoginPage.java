@@ -43,7 +43,7 @@ public class LoginPage extends FractalBasePage {
 	private By userAccountLogo=By.xpath("(//*[@class='logout_pop']//div)[1]");//Updated on 25-Nov-20
 	private By userLogout=By.xpath("//*[@role='menu']//li[text()='Logout']");
 	private By adminAccountLogo =By.xpath("//*[@class='loggeduserbg ng-binding']"); 
-	private By adminLogout =By.xpath("//*[contains(@class, 'Logout-wrapper')]//*[contains(text(),'Logout')]");
+	private By adminLogout =By.xpath("//a[contains(text(),'Logout')]");
 	//Ends
 	public LoginPage(WebDriver driver) {
 		super(driver);

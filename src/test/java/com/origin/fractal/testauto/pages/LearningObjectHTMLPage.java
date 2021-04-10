@@ -179,6 +179,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: void
 	 */
 	public void createandEditCatalogBundleWithHTML(String action) {
+//		goToManagecontent();
 		wait(5);
 		click(lblCatalogTab);
 		wait(10);
@@ -198,8 +199,8 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		}
 		click(searchResultAddModle);
 		wait(2);
-		click(continueBtn1);
-		wait(5);
+//		click(continueBtn1);
+//		wait(5);
 		click(saveBtn);
 		wait(3);
 		click(allUsersUpdateSelectionBtn);
@@ -238,15 +239,15 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		goToManagecontent();
 		wait(5);
 		createandEditCatalogBundleWithHTML("Remove LO");
-		wait(5);
+		wait(10);
 		click(learningObjectTab);
 		wait(10);
 		enterData(getLabel("editHtmlName"),searchFieldLearnObj);
 		wait(20);
 		click(deleteLOBtn);
-		wait(2);
-		click(deleteOKBtn);
 		wait(5);
+		click(deleteOKBtn);
+		wait(10);
 		//Commented on 19-Jan-2021
 //		if(elementExist(NoLOFound)) {
 //			wait(5);
@@ -270,8 +271,9 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(3);
 		moveElementFocusandClick(htmlOName);
 		wait(3);
-		driver.switchTo().frame(0);
-		click(launchBtn);
+		driver.switchTo().frame(1);
+		wait(3);
+		moveElementFocusandClick(launchBtn);
 		wait(2);
 		winHandles = new ArrayList<String>(driver.getWindowHandles());
 		if(winHandles.size()==2) {
