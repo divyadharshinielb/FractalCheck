@@ -20,7 +20,7 @@ public class InstructorCalendarModulePageNew extends FractalBasePage  {
 
 	InstructorBellNotificationSteps instbellnotiSteps;
 	public By instructorBurgerBtn=By.xpath("//button[@class='sidenav---sidenav-toggle---1KRjR']");
-	public By instructorCalendar=By.xpath("//div[@id='sidebar']//div[3]");
+	public By instructorCalendar=By.xpath("//div[normalize-space()='Calendar']");
 	public By todayinCalender=By.xpath("//*[@class='e-cell e-today']");
 	public By inviteDotOnSameDay=By.xpath("//*[contains(@class,' e-focused-date e-today')]//*[@class='dot background dot_ins_event_invite']");
 	public By searchIconEventInEventTab=By.xpath("//*[contains(@class, 'ins_cat_search')]");
@@ -73,7 +73,7 @@ public class InstructorCalendarModulePageNew extends FractalBasePage  {
 	public void gotoInstructorCalendar() {
 		wait(3);
 		click(instructorBurgerBtn);
-		wait(2);
+		wait(5);
 		click(instructorCalendar);
 		//Waiting time increased on15-Feb
 		wait(8);

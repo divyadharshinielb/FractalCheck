@@ -67,7 +67,7 @@ public class ReorderingCatalogItemsSteps extends FractalBaseStep  {
 	public void verifyReorderUserMyLearning(){
 		result="FAILED";
 		try {
-			if(reorder.verifyReorderUserMyLearning()==true) {
+			reorder.verifyReorderUserMyLearning(); {
 				result="PASSED";
 			}}
 		catch(Exception e) {

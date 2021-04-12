@@ -90,7 +90,7 @@ public class UsageReportPage extends FractalBasePage{
 		click(selectOption);
 		moveElementFocusandClick(selectAllItemOption);
 		moveElementFocusandClick(searchTextArea);
-		enterData("sample",searchTextArea);//updated on 18-Mar-21
+		enterData("a",searchTextArea);//updated on 18-Mar-21
 		click(selectSearchedItem);
 		wait(2);
 		click(btnGenerate);

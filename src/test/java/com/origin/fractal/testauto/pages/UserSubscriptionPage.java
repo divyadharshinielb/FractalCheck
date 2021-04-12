@@ -22,7 +22,7 @@ public class UserSubscriptionPage extends FractalBasePage {
 	private By btnSubscrip=By.xpath("//a[text()='SUBSCRIBE']");
 	private By userAccountLogo=By.xpath("//div[@class='ci-hover user-account']//button");
 	private By lblSubscrip=By.xpath("//*[text()='Subscription']");
-	private By btnTryNow=By.xpath("//*[text()=' TRY NOW']");
+	private By btnTryNow=By.xpath("//button[normalize-space()='TRY NOW']");
 	private By ctaTearmsAndCondition=By.xpath("//*[@id=\"modal-ready\"]/div[2]/ul/li[3]/div/div/a[2]");
 	private By popupTearmsAndCondition=By.xpath("//*[@class='kc-row-container  kc-container']");
 	private By btnCloseTearmsAndCondition=By.xpath("//*[@class='close-modal']");

@@ -54,7 +54,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public String emptyNotification="No notifications found";
 	public String inviteNotification="Hi! Please indicate your availability";
 	public String rescheduledNotification="rescheduled to";
-	public String instructorEmailID="winfoundation1990@gmail.com";
+	public String instructorEmailID="xxyz08614@gmail.com";
 	public String instructorPassword="Welcome@123&";
 	public String instructor1EmailID="origin.wv2@gmail.com";
 	public String instructor1Password="Welcome@123&";

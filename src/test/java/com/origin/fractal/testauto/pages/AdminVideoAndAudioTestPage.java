@@ -27,7 +27,7 @@ public class AdminVideoAndAudioTestPage  extends FractalBasePage{
 	private By audioPlay= By.xpath("//*[@class='mejs__button mejs__playpause-button mejs__play']");
 	private By audioReplay= By.xpath("//*[@class='mejs__button mejs__playpause-button mejs__replay']");
 	private By audioPause= By.xpath("//*[@class='mejs__button mejs__playpause-button mejs__pause']");
-	private String podcastName="zzzAuto_AdminPodcastAudioTest";//Updated on 17-Dec
+	private String podcastName="Auto_AdminPodcastAudioTest";//Updated on 17-Dec
 	public By closePopup= By.xpath("//*[@class='md-icon-button margin-r-0 md-button md-ink-ripple']");
 	public By videoClosePopup= By.xpath("//*[@class='icon dripicons-cross icon30 font-size-30 ng-scope']");
 	//Ends

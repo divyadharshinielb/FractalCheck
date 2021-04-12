@@ -35,7 +35,7 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 	private By inputName=By.xpath("//input[@id='searchAllUsersName']");
 	//	private By errorMessageFileUploaded= By.xpath("(//*[contains(text(),'Upload Error!')])[2]");
 	private By businessAdmin= By.xpath("//li[text()='Anish ']");
-	private By ZeroExportUsers= By.xpath("(//*[text()='Export Users(0)'])[1]");
+	private By ZeroExportUsers= By.xpath("(//*[contains(text(),'Export Users')])[1]");
 	private By btnExportsubmit= By.xpath("//button[@type='submit'][text()='EXPORT']");
 	private String importedUserName="AutoTest";
 	private String fileLocallocation="C:\\sample file\\UserInfoFile.xlsx";

@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  * Purpose: Test on Admin setting side (Automation dashboard tasks)
  */
 public class AdminSettingPage extends FractalBasePage  {
-//	private By btnMenu = By.xpath("(//ng-include[@id='header1']/*//div[contains(@title,'Menu')])[1]");
+	//	private By btnMenu = By.xpath("(//ng-include[@id='header1']/*//div[contains(@title,'Menu')])[1]");
 	private By btnSettings=By.xpath("//div[@class='icon dripicons-gear']");
 	private By classroomSettings = By.xpath ("//li[@class='settings']//a[@href='#classroom/settings']");
 	private By lblVenueTab = By.xpath ("(//*[text()='Venue'])[1]");
@@ -62,6 +62,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By socialLogin=By.xpath("(//*[contains(text(),'Enable/Disable Social Login')])[1]");
 	private By SaveBtn=By.xpath("//*[text()='Save'][@type='submit']");
 	private By updatedText=By.xpath("//*[contains(text(),'successfully')]");
+	private By closeBtn=By.xpath("(//*[@class='aside-dialog']//div)[2]//i");
 	public AdminSettingPage(WebDriver driver) {
 		super(driver);
 	}
@@ -81,6 +82,10 @@ public class AdminSettingPage extends FractalBasePage  {
 		wait(5);
 		click(categoryCreateBtn);
 		wait(3);
+		if(elementExist(closeBtn)) {
+			click(closeBtn);
+			wait(3);
+		}
 		if(elementExist(createdCategory)==true) {
 			moveElementFocusandClick(deleteCategory);
 			wait(2);
@@ -95,7 +100,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	 */
 	public void checkClassroomSettings() {
 		wait(5);
-//		moveElementFocus(btnSettings);
+		//		moveElementFocus(btnSettings);
 		moveElementFocusandClick(classroomSettings);
 		elementExist(lblVenueTab);
 		click(lblVenueTab);
@@ -115,7 +120,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: Add and delete the Manage Roles
 	 */
 	public void verifyAddandDeleteManageRole() {
-//		moveElementFocus(btnSettings);
+		//		moveElementFocus(btnSettings);
 		moveElementFocusandClick(manageRole);
 		click(addManageRoleBtn);
 		wait(3);
@@ -165,16 +170,18 @@ public class AdminSettingPage extends FractalBasePage  {
 		wait(3);
 		enterData(lang,languageName);
 		wait(2);
-		click(selectLanguage);
-		wait(2);
-		click(categoryCreateBtn);
-		wait(3);
-		if(elementExist(selectLanguage)==true) {
-			click(deleteCategory);
-			wait(2);
-			click(deleteOKBtn);
-			wait(5);
-		}
+//		click(selectLanguage);
+//		wait(2);
+//		click(categoryCreateBtn);
+//		wait(3);
+//		if(elementExist(selectLanguage)==true) {
+//			click(deleteCategory);
+//			wait(2);
+//			click(deleteOKBtn);
+//			wait(5);
+//		}
+		click(closeBtn);
+		wait(5);
 	}
 
 	/* Function: verifyNotificationSettings()
@@ -189,7 +196,11 @@ public class AdminSettingPage extends FractalBasePage  {
 		elementExist(mailNotificationSettings);
 		moveElementFocusandClick(mailNotificationSettings);
 	}
-
+	/* 08-Apr-2021 The following are NOT covered as the following are the latest features -
+	Masking email ID 
+	Favicon
+	Dynamic change of image
+	 */
 	/* Function: verifyWhiteLabel()
 	 * Purpose: verify the White label settings
 	 */
@@ -204,7 +215,7 @@ public class AdminSettingPage extends FractalBasePage  {
 		click(popupNotificationSettings);
 		wait(5);
 		click(SaveBtn);
-		wait(1);
-	 elementExist(updatedText);
+		//		wait(1);
+		//	 elementExist(updatedText);
 	}
 }

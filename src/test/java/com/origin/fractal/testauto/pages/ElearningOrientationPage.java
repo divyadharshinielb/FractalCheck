@@ -10,7 +10,7 @@ import com.origin.fractal.testauto.steps.ManageContentSteps;
  * File/Class name: ElearningOrientationPage.java
  * Created by: Vignesh 
  * Created on: 10-July-2020
- * Updated on: 17-Dec-2020
+ * Updated on: 14-July-2020
  * Purpose: To check FR1-2539 - e-learning Orientation
  */
 public class ElearningOrientationPage extends FractalBasePage {
@@ -22,21 +22,20 @@ public class ElearningOrientationPage extends FractalBasePage {
 	private By lblOritationLandScape= By.xpath("//*[text()='Landscape']");
 	private By lblOritationPortrait= By.xpath("//*[text()='Portrait']");
 	private By closeXBtn= By.xpath("//button[@class='close']");
-	private By eLearningitemFilter= By.xpath("//a[contains(text(),'eLearning')]");
+	private By eLearningitemFilter= By.xpath("//a[contains(text(),'elearning')]");//Updated on 24-Feb-2021
 	private By eLearningScromPackage= By.xpath("//*[text()='Scorm']");
 	private By eLearningXapiPackage= By.xpath("//*[text()='Xapi']");
-	private By AutoOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[7]//input)[1]");//Updated on 19-Mar-21
-	private By LandScapeOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[7]//input)[2]");//Updated on 19-Mar-21
-	private By PortraitOrientationSelected =By.xpath("((//div[@class='mCSB_container'])/div[7]//input)[3]");//Updated on 19-Mar-21
-	private By editBtn = By.xpath("//*[contains(@id,'tab-content')]/div[1]/ng-include[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[5]/i[1]");//updated on 19-Mar-21
+	private By AutoOrientationSelected =By.xpath("//*[@class='rad ng-valid ng-not-empty ng-dirty ng-touched ng-valid-parse'][@value='AUTO']");
+	private By LandScapeOrientationSelected =By.xpath("//*[@class='rad ng-valid ng-not-empty ng-dirty ng-touched ng-valid-parse'][@value='LANDSCAPE']");
+	private By PortraitOrientationSelected =By.xpath("//*[@class='rad ng-pristine ng-untouched ng-valid ng-not-empty'][@value='PORTRAIT']");
+	private By editBtn = By.xpath("(*//i[@role='button'])[2]");
 	private By uploadPackage= By.xpath("//label[contains(@class,'btn btn-tertiary btn-file')]/input");
-	private By defaultOrientationSelected =By.xpath("(//div[@class='mCSB_container'])[2]/div[7]/div/div[2]//input");//Updated on 19-Mar-21
+	private By defaultOrientationSelected =By.xpath("(//div[@class='mCSB_container'])[3]/div[9]/div/div[2]/input");
 	private By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
-	private By searchFieldCatItem = By.xpath("//*[@id='searchCatalog']");
 	private By updateBtn = By.xpath("//*[text()='Update']");
 	private By newVersionReqNoBtn = By.xpath("//*[text()='No']");
 	private By updateagainNoBtn = By.xpath("//*[text()='No']");
-	private By btnContinue = By.xpath("//button[contains(text(),'Continue')]"); // Continue button
+	private By continueBtn = By.xpath("//button[contains(text(),'Continue')]");//Added on 24-Feb-21
 	public ElearningOrientationPage(WebDriver driver) {
 		super(driver);
 		ManageContentSteps = new ManageContentSteps(driver);
@@ -50,10 +49,11 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */	
 	public void gotoAddELearning() { 
 		ManageContentItemCodesSteps.goToManagecontent();
+		wait(3);
 		ManageContentSteps.clickOnCreateLobjButton();
-		wait(2);
+		wait(10);
 		moveElementFocusandClick(btnElearning);
-		wait(2);
+		wait(10);
 	}
 
 	/* Method name: clickCloseXbutton()
@@ -72,12 +72,12 @@ public class ElearningOrientationPage extends FractalBasePage {
 	public boolean verifyELearningOrientation() {
 		gotoAddELearning();
 		moveElementFocus(lblOritationPortrait);
-		if(getObj(defaultOrientationSelected).isSelected()==true) {
+//		if(getObj(defaultOrientationSelected).isSelected()==true) {
 			if (elementExist(lblOritation) && elementExist(lblOritationAuto) && elementExist(lblOritationLandScape) && 
 					elementExist(lblOritationPortrait)) {
 				return true;
 			}
-		}
+//		}
 		return false;
 	}
 
@@ -86,8 +86,8 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: Verify the Orientation radio button action in e-learning object
 	 */
 	public boolean verifyOrientationSelection() {
-		if (elementExist(lblOritationAuto) && elementExist(lblOritationLandScape) && 
-				elementExist(lblOritationPortrait)) {
+		wait(3);
+		if (elementExist(lblOritationAuto) || elementExist(lblOritationLandScape) || elementExist(lblOritationPortrait)) {
 			click(lblOritationAuto);
 			wait(2);
 			click(lblOritationLandScape);
@@ -106,18 +106,21 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: click on elearning item type filter and search a name
 	 */
 	public void clickeLearningItemFilter(String Name) {
-		wait(5);
-		clear(searchFieldLearnObj);
-		wait(10);
+//		wait(5); commented on 4-Dec-20
+//		click(eLearningitemFilter); commented on 4-Dec-20
+		wait(5); 
 		enterData(getLabel(Name),searchFieldLearnObj);	
 		wait(10);
+//		click(eLearningitemFilter); //Added on 4-Dec-20
+		wait(3);
 		click(editBtn);
-		wait(5);
-		//Added on 17-Dec-20
-		if(elementExist(btnContinue)==true) {
-			moveElementFocusandClick(btnContinue);
+		wait(10);
+		//Added on 24-Feb-21
+		if (elementExist(continueBtn)) {
+			click (continueBtn);
+			wait(5);
 		}
-		//Ends
+		//ends
 	}
 
 	/* Method name: editLOandselectUploadFilePackageType()
@@ -126,7 +129,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public void editLOandselectUploadFilePackageType(String Package) {
 		click(editBtn);
-		wait(3);
+		wait(5);
 		if(Package.equalsIgnoreCase("scorm1.2")) {
 			click(eLearningScromPackage);
 			wait(2);
@@ -149,12 +152,13 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 * Desc: Update the Learning Object
 	 */
 	public void updateAnElearning() {
+		wait(2);
 		click(updateBtn);
 		wait(2);
 		click(newVersionReqNoBtn);
 		wait(3);
 		click(updateagainNoBtn);
-		wait(2);
+		wait(3);
 	}
 
 	/* Method name: selectAuto()
@@ -175,6 +179,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public void selectLandscape(String Name) {
 		moveElementFocusandClick(lblOritationLandScape);
+		wait(2);
 		updateAnElearning();
 		clickeLearningItemFilter(Name);
 	}
@@ -185,6 +190,7 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public void selectPortrait(String Name) {
 		moveElementFocusandClick(lblOritationPortrait);
+		wait(2);
 		updateAnElearning();
 		clickeLearningItemFilter(Name);
 	}
@@ -195,8 +201,10 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public boolean verifyAutoOrientation(String Name) {
 		try{
+			wait(3);
 			selectAuto(Name);
-			if(getObj(AutoOrientationSelected).isSelected()==true) {
+//			if(getObj(AutoOrientationSelected).isSelected()==true) {
+			if(elementExist(lblOritationAuto)) {
 				return true;
 			}
 			return false;
@@ -212,8 +220,10 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public boolean verifyLandScapeOrientation(String Name) {
 		try{
+			wait(3);
 			selectLandscape(Name);
-			if(getObj(LandScapeOrientationSelected).isSelected()==true) {
+//			if(getObj(LandScapeOrientationSelected).isSelected()==true) {
+			if(elementExist(lblOritationLandScape)) {
 				return true;
 			}
 			return false;
@@ -229,8 +239,10 @@ public class ElearningOrientationPage extends FractalBasePage {
 	 */
 	public boolean verifyPortraitOrientation(String Name) {
 		try{
+			wait(3);
 			selectPortrait(Name);
-			if(getObj(PortraitOrientationSelected).isSelected()==true ) {
+//			if(getObj(PortraitOrientationSelected).isSelected()==true ) {
+			if(elementExist(lblOritationPortrait)) {
 				return true;
 			}
 			return false;
@@ -239,22 +251,24 @@ public class ElearningOrientationPage extends FractalBasePage {
 			return false;
 		}
 	}
-	
+
 	//Added on 22Sep20
-		/* Method name: preRequisite()
-		 * Return type: void
-		 * Desc: preRequisite- Click Portrait orientation and Update the Learning Object
-		 */
-		public void preRequisite(String Name) {
-			clickeLearningItemFilter(Name);
-			if(getObj(PortraitOrientationSelected).isSelected()==true) {
-				click(closeXBtn);
-				wait(3);
-			}
-			else {
-				moveElementFocusandClick(lblOritationPortrait);
-				updateAnElearning();
-			}
+	/* Method name: preRequisite()
+	 * Return type: void
+	 * Desc: preRequisite- Click Portrait orientation and Update the Learning Object
+	 */
+	public void preRequisite(String Name) {
+		clickeLearningItemFilter(Name);
+		wait(10);
+		if(getObj(PortraitOrientationSelected).isSelected()==true) {
+			click(closeXBtn);
+			wait(3);
 		}
-		//Ends
+		else {
+			moveElementFocusandClick(lblOritationPortrait);
+			updateAnElearning();
+		}
+	}
+	//Ends
+
 }

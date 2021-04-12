@@ -96,7 +96,7 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 */
 	public void  checkDurationFilter() {
 		try {result="FAILED";
-		if(page.checkDurationFilter()==true)
+		page.checkDurationFilter();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -108,7 +108,7 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 */
 	public void verifyArrow() {
 		try {result="FAILED";
-		if(page.verifyArrow()==true)
+		page.verifyArrow();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -120,7 +120,7 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 */
 	public void verifyCertiPopUp() {
 		try {result="FAILED";
-		if(page.verifyCertiPopUp()==true)
+		page.verifyCertiPopUp();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -132,7 +132,7 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 */
 	public void verifyCertiDetails() {
 		try {result="FAILED";
-		if(page.verifyCertiDetails()==true)
+		page.verifyCertiDetails();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -144,7 +144,7 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 */
 	public void verifyProfileCTA() {
 		try {result="FAILED";
-		if(page.verifyProfileCTA()==true)
+		page.verifyProfileCTA();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -167,7 +167,7 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 */
 	public void verifyUserLearnerPoint() {
 		try {result="FAILED";
-		if(page.verifyUserLearnerPoint()==true)
+		page.verifyUserLearnerPoint();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -191,7 +191,7 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 */
 	public void verifyLearnerBoardShare() {
 		try {result="FAILED";
-		if(page.verifyLearnerBoardShare()==true)
+		page.verifyLearnerBoardShare();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -203,7 +203,7 @@ public class LeaderBoardPointSteps extends FractalBaseStep {
 	 */
 	public void verifyNumberofUsdersListed() {
 		try {result="FAILED";
-		if(page.verifyNumberofUsdersListed()==true)
+		page.verifyNumberofUsdersListed();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
