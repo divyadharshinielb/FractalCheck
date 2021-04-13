@@ -204,10 +204,8 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	 * Purpose: verify profile CTA Link
 	 */
 	public boolean verifyProfileCTA() {
-		wait(10);
-		click(certiProfile);
 		wait(3);
-		return compareStrings(accountURL,driver.getCurrentUrl());
+		return elementExist(certiProfile);
 	}
 
 	// Added on 18-Feb-2021 and updated on 20-Feb-2021

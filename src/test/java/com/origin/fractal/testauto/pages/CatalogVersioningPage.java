@@ -220,7 +220,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 			click(deleteLOBtn);
 			wait(2);
 			click(deleteOKBtn);
-			wait(3);
+			wait(5);
 		}
 	}
 

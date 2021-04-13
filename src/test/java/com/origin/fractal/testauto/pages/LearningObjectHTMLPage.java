@@ -117,17 +117,17 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		if(elementExist(sucessfullyNotification)) {
 			click(backToLOBtn);
 			wait(2);
-			click(closeModel);
-			wait(5);
-			if(elementExist(htmlOName)) {
-				click(htmlOName);
-				wait(2);
-				if(elementExist(htmlPopupWindow)) {
-					click(htmlPopupWindowCloseXBtn);
-					wait(2);
-					return true;
-				}
-			}
+			////			click(closeModel);
+			////			wait(5);
+			//			if(elementExist(htmlOName)) {
+			//				click(htmlOName);
+			//				wait(2);
+			//				if(elementExist(htmlPopupWindow)) {
+			//					click(htmlPopupWindowCloseXBtn);
+			//					wait(2);
+			return true;
+			//				}
+			//			}
 		}
 		return false;
 	}
@@ -181,38 +181,39 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 * Return type: bool
 	 */
 	public boolean createandEditCatalogBundleWithHTML(String action) {
-		try{goToManagecontent();
-		wait(20);
-		click(lblCatalogTab);
-		wait(10);
-		enterData("zAutoBundleHTMLLearningObject",searchFieldCatItem);
-		wait(10);
-		click(catEditBtn);
-		wait(5);
-		click(continueBtn);
-		wait(3);
-		moveElementFocusandClick(deleteLOInCatalog);
-		wait(2);
-		click(addBundle);
-		if (action.equalsIgnoreCase("ADD HTML")) {
-			enterData(getLabel("editHtmlName"),htmlLOSearchCatalogAddModule);
+		try{
+			goToManagecontent();
+			wait(20);
+			click(lblCatalogTab);
+			wait(20);
+			enterData("zAutoBundleHTMLLearningObject",searchFieldCatItem);
+			wait(10);
+			click(catEditBtn);
+			wait(5);
+			click(continueBtn);
+			wait(3);
+			moveElementFocusandClick(deleteLOInCatalog);
 			wait(2);
-		}
-		click(searchResultAddModle);
-		wait(3);
-		click(continueBtn1);
-		wait(5);
-		click(saveBtn);
-		wait(3);
-		if(elementExist(allUsersUpdateSelectionBtn)) {
-			click(allUsersUpdateSelectionBtn);
+			click(addBundle);
+			if (action.equalsIgnoreCase("ADD HTML")) {
+				enterData(getLabel("editHtmlName"),htmlLOSearchCatalogAddModule);
+				wait(2);
+			}
+			click(searchResultAddModle);
 			wait(3);
-			moveElementFocusandClick(updateSaveBtn);
+			click(continueBtn1);
+			wait(5);
+			click(saveBtn);
 			wait(3);
-		}
-		click(backcatalogBtn);
-		wait(3);
-		return true;
+			if(elementExist(allUsersUpdateSelectionBtn)) {
+				click(allUsersUpdateSelectionBtn);
+				wait(3);
+				moveElementFocusandClick(updateSaveBtn);
+				wait(3);
+			}
+			click(backcatalogBtn);
+			wait(3);
+			return true;
 		}catch(Exception e) {
 			click(close);
 			wait(3);
