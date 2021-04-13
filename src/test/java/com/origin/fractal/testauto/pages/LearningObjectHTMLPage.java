@@ -198,8 +198,8 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		}
 		click(searchResultAddModle);
 		wait(2);
-//		click(continueBtn1);
-//		wait(5);
+		click(continueBtn1);
+		wait(5);
 		click(saveBtn);
 		wait(3);
 		click(allUsersUpdateSelectionBtn);
