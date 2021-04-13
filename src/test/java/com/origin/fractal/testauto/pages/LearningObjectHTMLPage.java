@@ -43,7 +43,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By htmlLOSearchCatalogAddModule=By.xpath("(//input[@placeholder='Search'])[4]");
 	public By deleteLOInCatalog=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[4]/div[1]/div/div/div)[1]//div[3]//i)[1]");
 	public By searchResultAddModle=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[5])/div/div/div/div)[1]");
-	public By allUsersUpdateSelectionBtn=By.xpath("(//*[@id='item_completion'])[2]");
+	public By allUsersUpdateSelectionBtn=By.xpath("//label[normalize-space()='All users']");
 	public By updateSaveBtn=By.xpath("(//*[text()='Save'])[2]");
 	public By launchBtn = By.xpath("//button[contains(text(),'Launch')]");
 	public By closeXBtn= By.xpath("//*[@id='close']");

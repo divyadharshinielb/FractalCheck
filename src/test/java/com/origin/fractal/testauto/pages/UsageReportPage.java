@@ -91,7 +91,7 @@ public class UsageReportPage extends FractalBasePage{
 		click(selectOption);
 		moveElementFocusandClick(selectAllItemOption);
 		moveElementFocusandClick(searchTextArea);
-		enterData("CheckAutomation",searchTextArea);
+		enterData("a",searchTextArea);
 		click(selectSearchedItem);
 		wait(2);
 		click(btnGenerate);

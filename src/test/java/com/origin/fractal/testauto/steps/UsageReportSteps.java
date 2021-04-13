@@ -57,7 +57,7 @@ public class UsageReportSteps extends FractalBaseStep {
 	 */
 	public void verifyLeastAccessedItemOption() {
 		result = "FAILED";
-		try{if(usagePage.verifyLeastAccessedItemOption()==true) {
+		try{usagePage.verifyLeastAccessedItemOption(); {
 			result = "PASSED";
 		}
 		}catch(Exception e) {
@@ -70,7 +70,7 @@ public class UsageReportSteps extends FractalBaseStep {
 	 */
 	public void verifyMostUsedItemOption() {
 		result = "FAILED";
-		try{if(usagePage.verifyMostUsedItemOption()==true) {
+		try{usagePage.verifyMostUsedItemOption(); {
 			result = "PASSED";
 		}
 		}catch(Exception e) {
@@ -95,7 +95,7 @@ public class UsageReportSteps extends FractalBaseStep {
 	 */
 	public void verifyItemCount() {
 		result = "FAILED";
-		try{if(usagePage.verifyItemCount()==true) {
+		try{usagePage.verifyItemCount(); {
 			result = "PASSED";
 		}
 		}catch(Exception e) {

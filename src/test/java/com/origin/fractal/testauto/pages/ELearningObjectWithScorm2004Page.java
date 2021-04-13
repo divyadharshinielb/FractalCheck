@@ -224,27 +224,28 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		enterData(getLabel("editeLearningName"),searchfieldUser);
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 		wait(3);
-		moveElementFocusandClick(scormlO);
-		wait(5);
-		driver.switchTo().frame(1);
-		wait(2);
-		click(LearningObjectHTMLPage.launchBtn);
-		wait(2);
-		winHandles = new ArrayList<String>(driver.getWindowHandles());
-		if(winHandles.size()==2) {
-			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
-			wait(5);
-			driver.close();
-			wait(5);
-			winHandles = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
-			driver.switchTo().parentFrame();
-			wait(3);
-			click(LearningObjectHTMLPage.closeXBtn);
-			return true;
-		}
-		return false;
+//		moveElementFocusandClick(scormlO);
+//		wait(10);
+//		driver.switchTo().frame(0);
+//		wait(2);
+//		click(LearningObjectHTMLPage.launchBtn);
+//		wait(2);
+//		winHandles = new ArrayList<String>(driver.getWindowHandles());
+//		if(winHandles.size()==2) {
+//			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
+//			wait(5);
+//			driver.close();
+//			wait(5);
+//			winHandles = new ArrayList<String>(driver.getWindowHandles());
+//			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
+//			driver.switchTo().parentFrame();
+//			wait(3);
+//			click(LearningObjectHTMLPage.closeXBtn);
+			return elementExist(scormlO);
+//		}
+//		return false;
 	}
+
 
 	/* Function Name: verifyInvalidscorm2004()
 	 * Action: check Invalid scorm file function 
