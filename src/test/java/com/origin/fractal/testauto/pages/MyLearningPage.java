@@ -524,8 +524,7 @@ public class MyLearningPage extends FractalBasePage {
 					moveElementFocusandClick(completedItem);
 					wait(10);
 					if(elementExist(certificationIcon) || elementExist(viewCertiBtn)) {
-						print("aaa");
-						moveElementFocusandClick(viewCertiBtn);
+												moveElementFocusandClick(viewCertiBtn);
 						wait(5);
 						if(elementExist(certificateModule) && elementExist(txtCongratulations) 
 								&& elementExist(txtUserFirstName) && elementExist(certifDownloadBtn)) {

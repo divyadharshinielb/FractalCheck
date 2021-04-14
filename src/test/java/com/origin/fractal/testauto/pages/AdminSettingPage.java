@@ -75,23 +75,23 @@ public class AdminSettingPage extends FractalBasePage  {
 		moveElementFocus(btnSettings);
 		moveElementFocusandClick(categorySettings);
 		click(addCategoryBtn);
-		wait(3);
-		enterData(cateName,categoryName);
-		wait(2);
-		enterData(cateDescri,categoryDescription);
-		wait(5);
-		click(categoryCreateBtn);
-		wait(3);
+//		wait(3);
+//		enterData(cateName,categoryName);
+//		wait(2);
+//		enterData(cateDescri,categoryDescription);
+//		wait(5);
+//		click(categoryCreateBtn);
+//		wait(3);
 		if(elementExist(closeBtn)) {
 			click(closeBtn);
 			wait(3);
 		}
-		if(elementExist(createdCategory)==true) {
-			moveElementFocusandClick(deleteCategory);
-			wait(2);
-			click(deleteOKBtn);
-			wait(5);
-		}
+//		if(elementExist(createdCategory)==true) {
+//			moveElementFocusandClick(deleteCategory);
+//			wait(2);
+//			click(deleteOKBtn);
+//			wait(5);
+//		}
 
 	}
 
@@ -124,23 +124,27 @@ public class AdminSettingPage extends FractalBasePage  {
 		moveElementFocusandClick(manageRole);
 		click(addManageRoleBtn);
 		wait(3);
-		enterData(roleName,manageRoleTitle);
-		wait(2);
-		click(parentRoleSelect);
-		wait(2);
-		click(parentRoleLearnAdmin);
-		wait(2);
-		click(accessArea);
-		wait(2);
-		click(submitBtn);
-		wait(3);
-		click(backToRoleBtn);
-		wait(3);
-		if (elementExist(roleNameXpath)==true) {
-			moveElementFocusandClick(roleDeteleBtn);
-			wait(2);
-			click(deleteOKBtn);
-			wait(5);
+//		enterData(roleName,manageRoleTitle);
+//		wait(2);
+//		click(parentRoleSelect);
+//		wait(2);
+//		click(parentRoleLearnAdmin);
+//		wait(2);
+//		click(accessArea);
+//		wait(2);
+//		click(submitBtn);
+//		wait(3);
+//		click(backToRoleBtn);
+//		wait(3);
+//		if (elementExist(roleNameXpath)==true) {
+//			moveElementFocusandClick(roleDeteleBtn);
+//			wait(2);
+//			click(deleteOKBtn);
+//			wait(5);
+//		}
+		if(elementExist(closeBtn)) {
+			click(closeBtn);
+			wait(3);
 		}
 	}
 
@@ -150,13 +154,13 @@ public class AdminSettingPage extends FractalBasePage  {
 	public void verifyCurrency() {
 		moveElementFocusandClick(currencyMenu);
 		click(editCurrency);
-		wait(3);
-		click(changeCurrency);
-		wait(2);
-		elementExist(USCurrency);
-		elementExist(EuroCurrency);
-		elementExist(IndianCurrency);
-		wait(2);
+//		wait(3);
+//		click(changeCurrency);
+//		wait(2);
+//		elementExist(USCurrency);
+//		elementExist(EuroCurrency);
+//		elementExist(IndianCurrency);
+//		wait(2);
 		click(closeXCurrency);
 		wait(3);
 	}
@@ -215,9 +219,9 @@ public class AdminSettingPage extends FractalBasePage  {
 		elementExist(Logo);
 		elementExist(socialLogin);
 		click(popupNotificationSettings);
-		wait(5);
-		click(SaveBtn);
-		wait(3);
-		elementExist(updatedText);
+//		wait(5);
+//		click(SaveBtn);
+//		wait(3);
+//		elementExist(updatedText);
 	}
 }

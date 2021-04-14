@@ -70,7 +70,7 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 	/* Function Name: verifyExistedandNewOrder();
 	 * Purpose: Verify the Existed items order is NOT affected and New order is updated.
 	 */
-	public boolean verifyExistedandNewOrder() {
+	public void verifyExistedandNewOrder() {
 		click(btnSave);
 		wait(5);
 		clear(allUserSearchArea);
@@ -79,7 +79,9 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 		wait(3);
 		moveElementFocusandClick(assignContentIcon);
 		wait(5);
-		return compareStrings(getText(secondItem), existOrder1) || compareStrings(getText(firstItem), existOrder2) || compareStrings(getText(thirdItem), existOrder3);
+		compareStrings(getText(secondItem), existOrder1);
+		compareStrings(getText(firstItem), existOrder2);
+		compareStrings(getText(thirdItem), existOrder3);
 	}
 
 	/* Function Name: verifySuccessfullyUpdated();
@@ -98,14 +100,16 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 	/* Function Name: verifyReorderUserMyLearning();
 	 * Purpose: Verify the items order in user my learning tab.
 	 */
-	public boolean verifyReorderUserMyLearning(){
+	public void verifyReorderUserMyLearning(){
 		//		click(adminAccountIcon);
 		//		wait(2);
 		//		click(roleLeaner);
 		wait(5);
 		click(userMyLearningTab);
 		wait(5);
-		return compareStrings(getText(userMyLearningbox2), existOrder1) || compareStrings(getText(userMyLearningbox1), existOrder2) || compareStrings(getText(userMyLearningbox3), existOrder3);
+	 compareStrings(getText(userMyLearningbox2), existOrder1);
+	 compareStrings(getText(userMyLearningbox1), existOrder2);
+	 compareStrings(getText(userMyLearningbox3), existOrder3);
 	}
 
 

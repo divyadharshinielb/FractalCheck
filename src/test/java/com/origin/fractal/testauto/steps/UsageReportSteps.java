@@ -22,7 +22,7 @@ public class UsageReportSteps extends FractalBaseStep {
 	public void gotoUsageReport() {
 		result = "PASSED";
 		try{
-			usagePage.changeAdminRole();//Added on 2-Dec-20
+//			usagePage.changeAdminRole();//Added on 2-Dec-20
 			usagePage.gotoUsageReport();
 		}catch(Exception e) {
 			result = "FAILED";
