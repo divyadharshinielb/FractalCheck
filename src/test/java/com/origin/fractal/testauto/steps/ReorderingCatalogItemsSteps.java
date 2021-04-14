@@ -23,10 +23,10 @@ public class ReorderingCatalogItemsSteps extends FractalBaseStep  {
 	public void verifyDragAndDrop() {
 		result="FAILED";
 		try {
-			if(reorder.verifyDragAndDrop()==true) {
+			reorder.verifyDragAndDrop(); {
 				print("PASSED: Drag and drop is working");
 				result="PASSED";
-			}else print("FAILED: Drag and drop is NOT working");}
+			}}
 		catch(Exception e) {
 			print("FAILED: Drag and drop is NOT working");
 			result="FAILED";
@@ -39,7 +39,7 @@ public class ReorderingCatalogItemsSteps extends FractalBaseStep  {
 	public void verifyExistedandNewOrder() {
 		result="FAILED";
 		try {
-			if(reorder.verifyExistedandNewOrder()==true) {
+			reorder.verifyExistedandNewOrder(); {
 				result="PASSED";
 			}}
 		catch(Exception e) {
@@ -53,7 +53,7 @@ public class ReorderingCatalogItemsSteps extends FractalBaseStep  {
 	public void verifySuccessfullyUpdated(){
 		result="FAILED";
 		try {
-			if(reorder.verifySuccessfullyUpdated()==true) {
+			reorder.verifySuccessfullyUpdated(); {
 				result="PASSED";
 			}}
 		catch(Exception e) {
@@ -67,7 +67,7 @@ public class ReorderingCatalogItemsSteps extends FractalBaseStep  {
 	public void verifyReorderUserMyLearning(){
 		result="FAILED";
 		try {
-			if(reorder.verifyReorderUserMyLearning()==true) {
+			reorder.verifyReorderUserMyLearning(); {
 				result="PASSED";
 			}}
 		catch(Exception e) {

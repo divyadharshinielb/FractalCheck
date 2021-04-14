@@ -100,14 +100,16 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 	/* Function Name: verifyReorderUserMyLearning();
 	 * Purpose: Verify the items order in user my learning tab.
 	 */
-	public boolean verifyReorderUserMyLearning(){
+	public void verifyReorderUserMyLearning(){
 		//		click(adminAccountIcon);
 		//		wait(2);
 		//		click(roleLeaner);
 		wait(10);
 		click(userMyLearningTab);
 		wait(10);
-		return compareStrings(getText(userMyLearningbox2), existOrder1) || compareStrings(getText(userMyLearningbox1), existOrder2) || compareStrings(getText(userMyLearningbox3), existOrder3);
+		compareStrings(getText(userMyLearningbox2), existOrder1);
+		compareStrings(getText(userMyLearningbox1), existOrder2);
+		compareStrings(getText(userMyLearningbox3), existOrder3);
 	}
 
 
