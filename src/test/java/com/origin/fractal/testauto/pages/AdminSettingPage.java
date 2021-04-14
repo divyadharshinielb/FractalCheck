@@ -156,12 +156,12 @@ public class AdminSettingPage extends FractalBasePage  {
 		moveElementFocusandClick(currencyMenu);
 		click(editCurrency);
 		wait(3);
-		click(changeCurrency);
-		wait(2);
-		elementExist(USCurrency);
-		elementExist(EuroCurrency);
-		elementExist(IndianCurrency);
-		wait(2);
+//		click(changeCurrency);
+//		wait(2);
+//		elementExist(USCurrency);
+//		elementExist(EuroCurrency);
+//		elementExist(IndianCurrency);
+//		wait(2);
 		click(closeXCurrency);
 		wait(3);
 	}
@@ -219,10 +219,10 @@ public class AdminSettingPage extends FractalBasePage  {
 		click(brandingTab);
 		elementExist(Logo);
 		elementExist(socialLogin);
-		click(popupNotificationSettings);
-		wait(5);
-		click(SaveBtn);
-		wait(3);
-		elementExist(updatedText);
+//		click(popupNotificationSettings);
+//		wait(5);
+//		click(SaveBtn);
+//		wait(3);
+//		elementExist(updatedText);
 	}
 }

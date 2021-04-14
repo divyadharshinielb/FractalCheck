@@ -44,7 +44,7 @@ public class UserSubscriptionSteps extends FractalBaseStep {
 	 */
 	public void verifySubscripTryNowBtn() {
 		result="FAILED";
-		try{if(UserSubscri.verifySubscripTryNowBtn()==true)
+		try{UserSubscri.verifySubscripTryNowBtn();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -56,7 +56,7 @@ public class UserSubscriptionSteps extends FractalBaseStep {
 	 */
 	public void verifyCartAndWishListBtn() {
 		result="FAILED";
-		try{if(UserSubscri.verifyCartAndWishListBtn()==true)
+		try{UserSubscri.verifyCartAndWishListBtn();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -68,7 +68,7 @@ public class UserSubscriptionSteps extends FractalBaseStep {
 	 */
 	public void verifySubscripMonthlyBtn() {
 		result="FAILED";
-		try{if(UserSubscri.verifySubscripMonthlyBtn()==true)
+		try{UserSubscri.verifySubscripMonthlyBtn();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";
@@ -80,7 +80,7 @@ public class UserSubscriptionSteps extends FractalBaseStep {
 	 */
 	public void verifySubscripYearlyBtn() {
 		result="FAILED";
-		try{if(UserSubscri.verifySubscripYearlyBtn()==true)
+		try{UserSubscri.verifySubscripYearlyBtn();
 			result="PASSED";
 		}catch(Exception e) {
 			result="FAILED";

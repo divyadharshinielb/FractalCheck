@@ -220,7 +220,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 			click(deleteLOBtn);
 			wait(2);
 			click(deleteOKBtn);
-			wait(5);
+			wait(10);
 		}
 	}
 
@@ -243,7 +243,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 			return true;
 		}
 		click(closeModel);
-		wait(2);
+		wait(5);
 		return false;
 	}
 

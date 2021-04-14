@@ -20,7 +20,7 @@ public class WebTestUsageReport extends FractalBaseWebTest {
 		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
 	public void TestUsageReport(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		login(driver);
+		siteAdminLogin(driver);
 		UsageReportSteps usageReport = new UsageReportSteps(driver);
 		usageReport.gotoUsageReport();
 		usageReport.verifyAllItemOption();

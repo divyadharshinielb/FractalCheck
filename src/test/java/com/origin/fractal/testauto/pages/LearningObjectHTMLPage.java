@@ -186,7 +186,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 			wait(20);
 			click(lblCatalogTab);
 			wait(20);
-			enterData("zAutoBundleHTMLLearningObject",searchFieldCatItem);
+			enterData("zAutoBundleCatalogItem",searchFieldCatItem);
 			wait(10);
 			click(catEditBtn);
 			wait(5);

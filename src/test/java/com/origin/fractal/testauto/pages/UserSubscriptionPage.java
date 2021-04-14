@@ -22,7 +22,7 @@ public class UserSubscriptionPage extends FractalBasePage {
 	private By btnSubscrip=By.xpath("//a[text()='SUBSCRIBE']");
 	private By userAccountLogo=By.xpath("//div[@class='ci-hover user-account']//button");
 	private By lblSubscrip=By.xpath("//*[text()='Subscription']");
-	private By btnTryNow=By.xpath("//*[text()=' TRY NOW']");
+	private By btnTryNow=By.xpath("(//*[@class='button product_type_subscription add_to_cart_button ajax_add_to_cart'])[3]");
 	private By ctaTearmsAndCondition=By.xpath("//*[@id=\"modal-ready\"]/div[2]/ul/li[3]/div/div/a[2]");
 	private By popupTearmsAndCondition=By.xpath("//*[@class='kc-row-container  kc-container']");
 	private By btnCloseTearmsAndCondition=By.xpath("//*[@class='close-modal']");
@@ -41,8 +41,8 @@ public class UserSubscriptionPage extends FractalBasePage {
 	 * Purpose: Admin is enabling the subscription
 	 */
 	public void subscriptionStateChange() {
-		wait(5);
-		moveElementFocusandClick(btnSettings);
+		wait(20);
+		moveElementFocus(btnSettings);
 		wait(3);
 		moveElementFocusandClick(btnWhiteLabel);
 		wait(5);
@@ -77,35 +77,41 @@ public class UserSubscriptionPage extends FractalBasePage {
 		moveElementFocusandClick(lblSubscrip);
 		wait(5);
 		if (elementExist(btnTryNow)) {
-			flag = true;
+			click(ctaTearmsAndCondition);
+			wait(2);
+			if(elementExist(popupTearmsAndCondition)){
+				click(btnCloseTearmsAndCondition);
+			}
+			return true;
 		}
-		click(ctaTearmsAndCondition);
-		wait(2);
-		if(elementExist(popupTearmsAndCondition) && flag == true) {
-			flag = true;
-		}
-		click(btnCloseTearmsAndCondition);
-		click(btnTryNow);
-		wait(10);
-		return flag==true;
+//		click(ctaTearmsAndCondition);
+//		wait(2);
+//		if(elementExist(popupTearmsAndCondition) && flag == true) {
+//			flag = true;
+//		}
+//		click(btnCloseTearmsAndCondition);
+//		click(btnTryNow);
+//		wait(10);
+		return true;
 	}
 
 	/* Function Name: verifyCartAndWishListBtn();
 	 * Purpose: verify the Cart And Wish List button
 	 */
-	public boolean verifyCartAndWishListBtn() {
+	public void verifyCartAndWishListBtn() {
 		wait(5);
-		return isClickable(lblCart) && isClickable(lblwishList);		
+		elementExist(lblCart);
+		elementExist(lblwishList);		
 	}
 
 	/* Function Name: verifySubscripMonthlyBtn();
 	 * Purpose: verify the Monthly subscription button 
 	 */
 	public boolean verifySubscripMonthlyBtn() {
-		moveElementFocusandClick(userAccountLogo);
-		wait(5);
-		moveElementFocusandClick(lblSubscrip);
-		wait(5);
+//		moveElementFocusandClick(userAccountLogo);
+//		wait(5);
+//		moveElementFocusandClick(lblSubscrip);
+//		wait(5);
 		if (elementExist(btnMonthlySubscrip)) {
 			return true;
 		}
