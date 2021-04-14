@@ -90,7 +90,7 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 	/* Method: verifyInvalidUploadTemplate();
 	 * purpose: check admin is able to upload the template (invalid xlsx file)
 	 */
-	public boolean verifyInvalidUploadTemplate() {
+	public void verifyInvalidUploadTemplate() {
 		click(btnOKSuccessfulMsg);
 		wait(3);
 		click(btnImport);
@@ -102,7 +102,7 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 		isClickable(btnBrowseFile);
 		driver.findElement(uploadFile).sendKeys(invalidFile);
 		wait(3);
-		return elementExist(fileMismatchedText);
+		elementExist(fileMismatchedText);
 	}
 
 	/* Method: verifyExportTemplate();

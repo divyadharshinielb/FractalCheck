@@ -28,12 +28,12 @@ public class WebTestUserSubscription extends FractalBaseWebTest {
 		login1(driver);
 		userSubscrip.verifyCartAndWishListBtn();
 		Reporter.writeSummary("FR1-3520_UserSubscription_TC-002,Verify the cart and wishlist option is clickable in free subscription plan," +userSubscrip.getResult());
-			userSubscrip.verifySubscripTryNowBtn();
-		Reporter.writeSummary("FR1-3520_UserSubscription_TC-003,Verify the Try Now option in free-Subscription Plan and terms and condetion popup," +userSubscrip.getResult());
 		userSubscrip.verifySubscripMonthlyBtn();
-		Reporter.writeSummary("FR1-3520_UserSubscription_TC-004,Verify the monthly Subscription Plan and checkout page," +userSubscrip.getResult());
+		Reporter.writeSummary("FR1-3520_UserSubscription_TC-003,Verify the monthly Subscription Plan and checkout page," +userSubscrip.getResult());
 		userSubscrip.verifySubscripYearlyBtn();
-		Reporter.writeSummary("FR1-3520_UserSubscription_TC-005,Verify the yearly Subscription Plan and checkout page," +userSubscrip.getResult());
+		Reporter.writeSummary("FR1-3520_UserSubscription_TC-004,Verify the yearly Subscription Plan and checkout page," +userSubscrip.getResult());
+		userSubscrip.verifySubscripTryNowBtn();
+		Reporter.writeSummary("FR1-3520_UserSubscription_TC-005,Verify the Try Now option in free-Subscription Plan and terms and condetion popup," +userSubscrip.getResult());
 	}
 
 }

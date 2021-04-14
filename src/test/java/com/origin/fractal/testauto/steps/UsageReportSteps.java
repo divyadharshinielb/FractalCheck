@@ -22,7 +22,7 @@ public class UsageReportSteps extends FractalBaseStep {
 	public void gotoUsageReport() {
 		result = "FAILED";
 		try{
-			usagePage.changeAdminRole();//Added on 2-Dec-20
+//			usagePage.changeAdminRole();//Added on 2-Dec-20
 			usagePage.gotoUsageReport();
 			result = "PASSED";
 		}catch(Exception e) {
@@ -60,7 +60,7 @@ public class UsageReportSteps extends FractalBaseStep {
 	 */
 	public void verifyLeastAccessedItemOption() {
 		result = "FAILED";
-		try{if(usagePage.verifyLeastAccessedItemOption()==true) {
+		try{usagePage.verifyLeastAccessedItemOption(); {
 			result = "PASSED";
 		}
 		}catch(Exception e) {
@@ -73,7 +73,7 @@ public class UsageReportSteps extends FractalBaseStep {
 	 */
 	public void verifyMostUsedItemOption() {
 		result = "FAILED";
-		try{if(usagePage.verifyMostUsedItemOption()==true) {
+		try{usagePage.verifyMostUsedItemOption(); {
 			result = "PASSED";
 		}
 		}catch(Exception e) {

@@ -72,10 +72,6 @@ public class UserSubscriptionPage extends FractalBasePage {
 	 * Purpose: verify the subscription Try Now button 
 	 */
 	public boolean verifySubscripTryNowBtn() {
-		moveElementFocusandClick(userAccountLogo);
-		wait(5);
-		moveElementFocusandClick(lblSubscrip);
-		wait(5);
 		if (elementExist(btnTryNow)) {
 			flag = true;
 		}
@@ -93,9 +89,10 @@ public class UserSubscriptionPage extends FractalBasePage {
 	/* Function Name: verifyCartAndWishListBtn();
 	 * Purpose: verify the Cart And Wish List button
 	 */
-	public boolean verifyCartAndWishListBtn() {
+	public void  verifyCartAndWishListBtn() {
 		wait(5);
-		return isClickable(lblCart) && isClickable(lblwishList);		
+		elementExist(lblCart);
+		elementExist(lblwishList);		
 	}
 
 	/* Function Name: verifySubscripMonthlyBtn();
