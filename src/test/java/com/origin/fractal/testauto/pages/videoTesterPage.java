@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 public class videoTesterPage extends FractalBasePage{
 	private By searchfieldUser= By.xpath("//input[@id='theInput']");
 	private By Iblvideo=By.xpath("//a[contains(text(),'Financial News Insights')]");//h1[contains(text(),'Video 1')]//*[text()='Sample video'])[3]
-	private By videoPlayer=By.xpath("//*[@class=\"vjs-big-play-button\"]");//*[@class=\"vjs-big-play-button\"]
+	private By videoPlayer=By.xpath("//*[@class='vjs-big-play-button']");//*[@class=\"vjs-big-play-button\"]
 	private By play= By.xpath("//*[@title=\"Play\"]");
 	private By pause= By.xpath("//*[@title=\"Pause\"]");
 	private By replay= By.xpath("//*[@title=\"Replay\"]");
@@ -37,7 +37,7 @@ public class videoTesterPage extends FractalBasePage{
 			wait(5);
 			click(btnLaunch);
 		wait(10);
-		driver.switchTo().frame(0);
+		driver.switchTo().frame("ifram");
 		wait(10);
 		click(videoPlayer);
 		print("Video is playing.");
