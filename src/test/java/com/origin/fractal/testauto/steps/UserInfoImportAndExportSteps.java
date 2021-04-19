@@ -23,7 +23,7 @@ public class UserInfoImportAndExportSteps extends FractalBaseStep {
 	public void verifyDownloadTemplate() {
 		result="FAILED";
 		try{
-			if(importPage.verifyDownloadTemplate()==true) {
+			importPage.verifyDownloadTemplate(); {
 				result="PASSED";
 			}
 		}catch(Exception e) {
@@ -37,7 +37,7 @@ public class UserInfoImportAndExportSteps extends FractalBaseStep {
 	public void verifyUserRadioBtn() {
 		result="FAILED";
 		try{
-			if(importPage.verifyUserRadioBtn()==true) {
+			importPage.verifyUserRadioBtn(); {
 				result="PASSED";
 			}
 		}catch(Exception e) {
@@ -51,7 +51,7 @@ public class UserInfoImportAndExportSteps extends FractalBaseStep {
 	public void verifyUploadTemplate() {
 		result="FAILED";
 		try{
-			if(importPage.verifyUploadTemplate()==true) {
+			importPage.verifyUploadTemplate(); {
 				result="PASSED";
 			}
 		}catch(Exception e) {
@@ -65,7 +65,7 @@ public class UserInfoImportAndExportSteps extends FractalBaseStep {
 	public void verifyInvalidUploadTemplate() {
 		result="FAILED";
 		try{
-			if(importPage.verifyInvalidUploadTemplate()==true) {
+			importPage.verifyInvalidUploadTemplate(); {
 				result="PASSED";
 			}
 		}catch(Exception e) {
@@ -79,7 +79,7 @@ public class UserInfoImportAndExportSteps extends FractalBaseStep {
 	public void verifyExportTemplate() {
 		result="FAILED";
 		try{
-			if(importPage.verifyExportTemplate()==true) {
+			importPage.verifyExportTemplate(); {
 				result="PASSED";
 			}
 		}catch(Exception e) {
@@ -93,7 +93,7 @@ public class UserInfoImportAndExportSteps extends FractalBaseStep {
 	public void verifyBtnExportTemplate() {
 		result="FAILED";
 		try{
-			if(importPage.verifyBtnExportTemplate()==true) {
+			importPage.verifyBtnExportTemplate(); {
 				result="PASSED";
 			}
 		}catch(Exception e) {

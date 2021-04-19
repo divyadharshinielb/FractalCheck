@@ -60,40 +60,48 @@
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestUsageReport" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestDefaultGroupSettings" />
+				name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" />
+
+
+
+
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModuleNew" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningOrientation" />
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" />
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestELearningObjectWithScorm2004" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" />
-				<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" />
-			<!-- <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogVersioning" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserInfoImportAndExport" />
 			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestDefaultGroupSettings" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUsageReport" />
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" />
-			<class
-				name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" />
-			 -->
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUserSubscription" />
+		<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestPricingPlan" />
+		
 		</classes>
 
 	</test> <!-- Test -->

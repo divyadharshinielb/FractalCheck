@@ -12,7 +12,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  */
 public class ReorderingCatalogItemsPage extends FractalBasePage{
 	MenuPage menuPage = null;
-	private String userName = "wintestersbassvikianu06@gmail.com";
+	private String userName = "wintestersbassvikianu01@gmail.com";
 	private By allUserSearchArea=By.xpath("//*[@id='searchAllUsersName']");
 	private By assignContentIcon=By.xpath("//*[@title='Assign Content']");
 	private By expandModules=By.xpath("//*[contains(text(),'Add Content')]");
@@ -97,15 +97,17 @@ public class ReorderingCatalogItemsPage extends FractalBasePage{
 	/* Function Name: verifyReorderUserMyLearning();
 	 * Purpose: Verify the items order in user my learning tab.
 	 */
-	public boolean verifyReorderUserMyLearning(){
+	public void verifyReorderUserMyLearning(){
 		//		click(adminAccountIcon);
 		//		wait(2);
 		//		click(roleLeaner);
 		wait(5);
 		click(userMyLearningTab);
 		wait(5);
-		return compareStrings(getText(userMyLearningbox2), existOrder1) || compareStrings(getText(userMyLearningbox1), existOrder2) || compareStrings(getText(userMyLearningbox3), existOrder3);
-	}
+		compareStrings(getText(userMyLearningbox2), existOrder1);
+		compareStrings(getText(userMyLearningbox1), existOrder2);
+		compareStrings(getText(userMyLearningbox3), existOrder3);
+		}
 
 
 

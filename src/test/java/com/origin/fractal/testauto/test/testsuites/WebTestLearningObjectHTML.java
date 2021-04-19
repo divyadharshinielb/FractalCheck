@@ -27,10 +27,8 @@ public class WebTestLearningObjectHTML extends FractalBaseWebTest{
 		LearningObjectHTMLSteps HTMLSteps= new LearningObjectHTMLSteps(driver);
 		HTMLSteps.verifyCreateHtmlLearningObject();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-001,Verify the Site admin is able to Create HTML Learning object," +HTMLSteps.getResult());
-		//Edit HTML LO - issue - Bug Id FR1-3988. So we commented the test cases  
-				HTMLSteps.verifyEditAndCancelHTMLLearningObject();
-				Reporter.writeSummary("FR1-2207_HTMLLO_TC-002,Verify the Site admin is able to click cancel and Edit the HTML Learning object," +HTMLSteps.getResult());
-		//Ended
+		HTMLSteps.verifyEditAndCancelHTMLLearningObject();
+		Reporter.writeSummary("FR1-2207_HTMLLO_TC-002,Verify the Site admin is able to click cancel and Edit the HTML Learning object," +HTMLSteps.getResult());
 		HTMLSteps.verifyFilterAndSearchHtmlLO();	
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-003,Verify the Site admin is able to filter and search the HTML Learning object," +HTMLSteps.getResult());
 		HTMLSteps.createandEditCatalogBundleWithHTML("ADD HTML");
@@ -40,10 +38,10 @@ public class WebTestLearningObjectHTML extends FractalBaseWebTest{
 		LeaderBoardPointSteps Steps= new LeaderBoardPointSteps(driver);
 		Steps.verifyLearnerBoard();
 		Reporter.writeSummary("FR1-3786_LearnerBoard_TC-001,Verify the Learnerboard points is present on the user dashboard page," +Steps.getResult());
-		Steps.verifyLeaderBoard();
-		Reporter.writeSummary("FR1-3599_LeaderBoard_TC-001,Verify the Leaderboard points is present on the user dashboard page," +Steps.getResult());
 		Steps.verifyUserLearnerBoard();
 		Reporter.writeSummary("FR1-3786_LearnerBoard_TC-002,Verify the user is able to see the Learnerboard details," +Steps.getResult());
+		Steps.verifyLeaderBoard();
+		Reporter.writeSummary("FR1-3599_LeaderBoard_TC-001,Verify the Leaderboard points is present on the user dashboard page," +Steps.getResult());
 		Steps.verifyLeaderBoardPage();
 		Reporter.writeSummary("FR1-3599_LeaderBoard_TC-002,Verify the Leaderboard points is clickable and landing on the Leaderboard page," +Steps.getResult());
 		Steps.verifyUserNameInList();

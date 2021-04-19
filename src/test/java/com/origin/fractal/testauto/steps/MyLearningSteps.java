@@ -380,7 +380,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		 */
 		public void verifyCertification(){
 			try {result="FAILED";
-			if(page.verifyCertificateModule() ==true) {
+			page.verifyCertificateModule(); {
 				result="PASSED";
 			}}catch(Exception e) {
 				result="FAILED";

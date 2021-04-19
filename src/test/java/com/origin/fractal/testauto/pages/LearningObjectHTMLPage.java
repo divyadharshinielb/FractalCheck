@@ -12,7 +12,7 @@ import com.origin.fractal.testauto.steps.ManageContentSteps;
  * Purpose: Check to HTML Learning object -FR1-2207
  * Created by: Vignesh
  * Created on: 18/Jun/20
- * Updated on: 17-Mar-21
+ * Updated on: 31/July/20
  */
 public class LearningObjectHTMLPage extends FractalBasePage {
 	//	MenuPage menuPage = null;
@@ -24,7 +24,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By htmlLangdropbox=By.xpath("//span[text()='Select Language']");
 	public By htmlLangEnglish=By.xpath("(//*[@class='list']//li[text()='English'])[3]");
 	public By htmlSelectCatagory=By.xpath("//input[contains(@placeholder,'Select Category')]");
-	public By htmlGenaralCatagory=By.xpath("//span[@class='ng-binding ng-scope'][normalize-space()='Tech']");//Updated on 2-Mar-21
+	public By htmlGenaralCatagory=By.xpath("//span[@class='ng-binding ng-scope'][normalize-space()='General']");//Updated on 2-Mar-21
 	public By htmlFile=By.xpath("//input[@id='htmlFile']");
 	public By htmlAttemptsdropBox=By.xpath("//div[contains(@class,'nice-select select-attempt ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required')]");
 	public By htmlUnlimtedAttempts=By.xpath("//li[contains(text(),'Unlimited')]");
@@ -43,7 +43,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	public By htmlLOSearchCatalogAddModule=By.xpath("(//input[@placeholder='Search'])[4]");
 	public By deleteLOInCatalog=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[4]/div[1]/div/div/div)[1]//div[3]//i)[1]");
 	public By searchResultAddModle=By.xpath("(((//*[@class='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'])[5])/div/div/div/div)[1]");
-	public By allUsersUpdateSelectionBtn=By.xpath("(//*[@id='item_completion'])[2]");
+	public By allUsersUpdateSelectionBtn=By.xpath("//label[normalize-space()='All users']");
 	public By updateSaveBtn=By.xpath("(//*[text()='Save'])[2]");
 	public By launchBtn = By.xpath("//button[contains(text(),'Launch')]");
 	public By closeXBtn= By.xpath("//*[@id='close']");
@@ -114,7 +114,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);
 		if(elementExist(sucessfullyNotification)) {
 			click(backToLOBtn);
-			wait(5);//updated on 17-Mar-21
+			wait(2);
 //			click(closeModel);
 //			wait(2);
 			if(elementExist(htmlOName)) {
@@ -182,7 +182,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);
 		click(lblCatalogTab);
 		wait(10);
-		enterData("AutoBundleHTMLLearningObject",searchFieldCatItem);//Updated on 5-Jan-21
+		enterData("zAutoBundleCatalogItem",searchFieldCatItem);//Updated on 5-Jan-21
 		wait(20);//Updated on 7-Jan-21
 		//		enterData("AutoBundleHTMLLearn",searchFieldCatItem);//Updated on 5-Jan-21
 		//		wait(5);
@@ -270,7 +270,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(3);
 		moveElementFocusandClick(htmlOName);
 		wait(3);
-		driver.switchTo().frame(0);
+		driver.switchTo().frame(1);
 		click(launchBtn);
 		wait(2);
 		winHandles = new ArrayList<String>(driver.getWindowHandles());

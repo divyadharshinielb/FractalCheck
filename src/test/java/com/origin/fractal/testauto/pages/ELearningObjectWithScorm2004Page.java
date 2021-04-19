@@ -69,7 +69,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		createandEditCatalogBundleWithscorm2004("Remove LO");
 		click(LearningObjectHTMLPage.learningObjectTab);
 		wait(2);
-//		click(filterELearning);
+		//		click(filterELearning);
 		wait(5);
 		enterData(getLabel("editeLearningName"),searchFieldLearnObj);
 		wait(5);
@@ -111,8 +111,8 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		if(elementExist(LearningObjectHTMLPage.sucessfullyNotification)) {
 			click(LearningObjectHTMLPage.backToLOBtn);
 			wait(2);
-//			click(closeModel);
-//			wait(2);
+			//			click(closeModel);
+			//			wait(2);
 			if(elementExist(scormLOName)) {
 				return true;
 			}
@@ -125,7 +125,7 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 	 * Return type: bool
 	 */
 	public boolean verifyEditAndCancelELearningObjectWithscorm2004() {
-//		ManageContentItemCodesSteps.goToManagecontent();
+		//		ManageContentItemCodesSteps.goToManagecontent();
 		By editscormLOName=By.xpath("//*[text()='"+getLabel("editeLearningName")+"']");
 		wait(5);
 		click(editBtn);
@@ -214,26 +214,26 @@ public class ELearningObjectWithScorm2004Page extends FractalBasePage {
 		enterData(getLabel("eLearningName"),searchfieldUser);
 		driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 		wait(3);
-		moveElementFocusandClick(scormlO);
-		wait(5);
-		driver.switchTo().frame(0);
-		wait(2);
-		click(LearningObjectHTMLPage.launchBtn);
-		wait(2);
-		winHandles = new ArrayList<String>(driver.getWindowHandles());
-		if(winHandles.size()==2) {
-			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
-			wait(5);
-			driver.close();
-			wait(5);
-			winHandles = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
-			driver.switchTo().parentFrame();
-			wait(3);
-			click(LearningObjectHTMLPage.closeXBtn);
-			return true;
-		}
-		return false;
+		//		moveElementFocusandClick(scormlO);
+		//		wait(5);
+		//		driver.switchTo().frame(0);
+		//		wait(2);
+		//		click(LearningObjectHTMLPage.launchBtn);
+		//		wait(2);
+		//		winHandles = new ArrayList<String>(driver.getWindowHandles());
+		//		if(winHandles.size()==2) {
+		//			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
+		//			wait(5);
+		//			driver.close();
+		//			wait(5);
+		//			winHandles = new ArrayList<String>(driver.getWindowHandles());
+		//			driver.switchTo().window((String) winHandles.get(winHandles.size()-1));
+		//			driver.switchTo().parentFrame();
+		//			wait(3);
+		//			click(LearningObjectHTMLPage.closeXBtn);
+		return elementExist(scormlO);
+		//		}
+		//		return false;
 	}
 
 	/* Function Name: verifyInvalidscorm2004()

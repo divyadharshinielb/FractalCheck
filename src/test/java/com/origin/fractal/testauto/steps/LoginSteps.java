@@ -170,21 +170,21 @@ public class LoginSteps extends FractalBaseStep {
 	}
 	public void siteAdminLogin() {
 		try {page.siteAdminLogin();
-	}catch(Exception e) {
-		print("Login issue found");
-	}
+		}catch(Exception e) {
+			print("Login issue found");
+		}
 	}
 	public void loginInstructorwithCookies(String instUserID,String instPassword) {
 		try {page.loginInstructorwithCookies(instUserID,instPassword);
-	}catch(Exception e) {
-		print("Login issue found");
-	}
+		}catch(Exception e) {
+			print("Login issue found");
+		}
 	}
 	public void loginInstructor(String instUserID,String instPassword) {
 		try {page.loginInstructor(instUserID,instPassword);
-	}catch(Exception e) {
-		print("Login issue found");
-	}
+		}catch(Exception e) {
+			print("Login issue found");
+		}
 	}
 	//Ends
 	//Added by vignesh (WVI) on 16-Nov-20

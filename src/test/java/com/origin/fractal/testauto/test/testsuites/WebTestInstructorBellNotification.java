@@ -16,18 +16,9 @@ import com.wv.auto.framework.utils.Reporter;
  * Number of Test cases covered: 10
  * Developed By: Vigneshwaran R
  * created Date: 4-June-20
- * Updated Date: 15-July-20
+ * Updated Date: 25-Nov-20
  */
 public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, priority =0)
-	public void InstructorBellNotificationPrerequiredsite (String row, String strBrowserName) throws Exception {
-		driver = BrowserFactory.getBrowser(strBrowserName);
-		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
-		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-		siteAdminLogin(driver);
-		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
-	}
-
 	/*
 	 * Test NG for Instructor side bell notifications
 	 */
@@ -37,7 +28,7 @@ public class WebTestInstructorBellNotification  extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-		siteAdminLogin(driver);//Updated on 3-Dec-20
+		siteAdminLoginwithcookies(driver);//Updated on 3-Dec-20
 		//Added by vignesh 26-Sep-20 This for Roster test 
 		ClassRoomRosterSteps classroomRoster=new ClassRoomRosterSteps(driver);
 		instbellnotiSteps.gotoClassRoom();//Updated on 3-Dec-20

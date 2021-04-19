@@ -35,7 +35,7 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 	private By inputName=By.xpath("//input[@id='searchAllUsersName']");
 	//	private By errorMessageFileUploaded= By.xpath("(//*[contains(text(),'Upload Error!')])[2]");
 	private By businessAdmin= By.xpath("//li[text()='Anish ']");
-	private By ZeroExportUsers= By.xpath("(//*[text()='Export Users(0)'])[1]");
+	private By ZeroExportUsers= By.xpath("(//*[contains(text(),'Export Users')])[1]");
 	private By btnExportsubmit= By.xpath("//button[@type='submit'][text()='EXPORT']");
 	private String importedUserName="AutoTest";
 	private String fileLocallocation="C:\\sample file\\UserInfoFile.xlsx";
@@ -90,7 +90,7 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 	/* Method: verifyInvalidUploadTemplate();
 	 * purpose: check admin is able to upload the template (invalid xlsx file)
 	 */
-	public boolean verifyInvalidUploadTemplate() {
+	public void verifyInvalidUploadTemplate() {
 		click(btnOKSuccessfulMsg);
 		wait(3);
 		click(btnImport);
@@ -102,7 +102,7 @@ public class UserInfoImportAndExportPage extends FractalBasePage{
 		isClickable(btnBrowseFile);
 		driver.findElement(uploadFile).sendKeys(invalidFile);
 		wait(3);
-		return elementExist(fileMismatchedText);
+		elementExist(fileMismatchedText);
 	}
 
 	/* Method: verifyExportTemplate();
