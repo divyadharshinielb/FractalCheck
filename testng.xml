@@ -99,6 +99,9 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUserSubscription" />
+		<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestPricingPlan" />
+		
 		</classes>
 
 	</test> <!-- Test -->
