@@ -71,6 +71,9 @@
 				name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" />
 			<class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" />
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestPricingPlan" />
+				
 			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestAdaptIntegration" 
 				/> -->
 
