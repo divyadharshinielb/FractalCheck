@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.origin.fractal.testauto.steps.AdminLoginSteps;
+import com.origin.fractal.testauto.steps.HelpFractalSteps;
 import com.origin.fractal.testauto.steps.LoginSteps;
 
 
@@ -94,4 +95,20 @@ public class FractalBaseWebTest extends FractalBaseTest {
 			wait(5);	
 		}
 		//Ends
+		//added by mahesh
+				protected void preLogin(WebDriver driver) throws IOException {
+					print("Inside testLogin");
+					AdminLoginSteps adminloginSteps = new AdminLoginSteps(driver);
+					print("Inside testLogin - Page Opened");
+					adminloginSteps.preLogin();
+					wait(5);
+				}
+				/*
+				 * function: helpLink()
+				 * covers: It covers navigation of helpLink() function in HelpFractalStep
+				 */
+				public void helpLink(WebDriver driver) {
+					HelpFractalSteps helpStep = new HelpFractalSteps(driver);
+					helpStep.helpLink();
+				}
 }

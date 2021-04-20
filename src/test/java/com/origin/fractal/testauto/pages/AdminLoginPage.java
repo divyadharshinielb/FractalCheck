@@ -152,4 +152,7 @@ public class AdminLoginPage extends FractalBasePage {
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
 	}
+	public void preLogin() throws IOException{
+		
+	}
 }

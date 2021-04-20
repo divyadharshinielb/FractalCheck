@@ -145,4 +145,7 @@ public class AdminLoginSteps extends FractalBaseStep {
 		result="FAILED";
 		  }
 	}
+	public void preLogin() throws IOException {
+		page.preLogin();
+	}
 }
