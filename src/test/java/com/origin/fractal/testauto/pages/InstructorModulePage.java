@@ -284,9 +284,9 @@ public class InstructorModulePage extends FractalBasePage {
 		WebElement element1= driver.findElement(By.xpath("//div[contains(@class,'maindiv insdash container')]//div[2]//a[1]//div[1]//div[4]//button[1]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
 		wait(2);
-		click(By.xpath("//div[contains(@class,'maindiv insdash container')]//div[2]//a[1]//div[1]//div[4]//button[1]"));
+	/*	click(By.xpath("//div[contains(@class,'maindiv insdash container')]//div[2]//a[1]//div[1]//div[4]//button[1]"));
 		wait(2);
-		/*		verifyText("ALL",lblAll);
+				verifyText("ALL",lblAll);
 		wait(2);
 		verifyText("REVIEW COMPLETED",lblReviewCompleted);
 		wait(2);
