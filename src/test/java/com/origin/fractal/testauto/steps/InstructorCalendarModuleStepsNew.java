@@ -25,11 +25,14 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 	 * Desc: Instructor Calendar Event- Invite notification 
 	 */	
 	public void verifyTradInviteNotification() {
-		try {result="FAILED";
+		try {
+			result="FAILED";
 		InstructorModule.gotoInstructorCalendar();
 		if(InstructorModule.verifyTradInviteNotification()==true) {
 			result="PASSED";
-		}}
+		}
+		System.out.println("checking...."+result);
+		}
 		catch(Exception e){
 			result="FAILED";
 		}
@@ -40,10 +43,13 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 	 * Desc: Instructor Calendar Event- Invite notification 
 	 */	
 	public void verifyVirInviteNotification() {
-		try {result="FAILED";
+		try {
+			result="FAILED";
 		if(InstructorModule.verifyVirInviteNotification()==true) {
 			result="PASSED";
-		}}
+		}
+		System.out.println("checking...."+result);
+		}
 		catch(Exception e){
 			result="FAILED";
 		}
@@ -58,7 +64,9 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 		try {result="FAILED";
 		if(InstructorModule.verifyTredAcceptedEnvent()==true) {
 			result="PASSED";
-		}}
+		}
+		System.out.println("checking...."+result);
+		}
 		catch(Exception e){
 			result="FAILED";
 		}
@@ -70,10 +78,14 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 	 * Desc: Instructor Calendar Event- Green dot on calendar
 	 */	
 	public void verifyVirAcceptedEnvent() {
-		try {result="FAILED";
+		
+		try {
+			result="FAILED";
 		if(InstructorModule.verifyVirAcceptedEnvent()==true) {
 			result="PASSED";
-		}}
+		}
+		System.out.println("checking...."+result);
+		}
 		catch(Exception e){
 			result="FAILED";
 		}
@@ -88,7 +100,9 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 		try {result="FAILED";
 		if(InstructorModule.verifyTredInviteAccepts()==true) {
 			result="PASSED";
-		}}
+		}
+		System.out.println("checking...."+result);
+		}
 		catch(Exception e){
 			result="FAILED";
 		}
@@ -100,10 +114,14 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 	 * Desc: Instructor Calendar Event- Invite accepts 
 	 */	
 	public void verifyVirInviteAccepts() {
-		try {result="FAILED";
+	
+		try {
+			result="FAILED";
 		if(InstructorModule.verifyVirInviteAccepts()==true) {
 			result="PASSED";
-		}}
+		}
+		System.out.println("checking...."+result);
+		}
 		catch(Exception e){
 			result="FAILED";
 		}
@@ -118,7 +136,9 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 		try {result="FAILED";
 		if(InstructorModule.verifyTredInviteReject()==true) {
 			result="PASSED";
-		}}
+		}
+		System.out.println("checking...."+result);
+		}
 		catch(Exception e){
 			result="FAILED";
 		}	
@@ -131,9 +151,11 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 	 * Return Type: void
 	 */
 	public void adminRescheduledEvent(String Check){
-		result="PASSED";
-		try{bell.gotoClassRoom(); 
+		
+		try{result="PASSED";
+			bell.gotoClassRoom(); 
 		InstructorModule.editEvent(Check);
+		System.out.println("checking...."+result);
 		}catch(Exception e) { 
 			result="FAILED";
 		}
@@ -148,7 +170,9 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 		try {result="FAILED";
 		if(InstructorModule.verifyResucheduleTimeZoneTre()==true) {
 			result="PASSED";
-		}}
+		}
+		System.out.println("checking...."+result);
+		}
 		catch(Exception e){
 			result="FAILED";
 		}	
@@ -164,7 +188,9 @@ public class InstructorCalendarModuleStepsNew extends FractalBaseStep {
 		try {result="FAILED";
 		if(InstructorModule.verifyResucheduleTimeZoneVir()==true) {
 			result="PASSED";
-		}}
+		}
+		System.out.println("checking...."+result);
+		}
 		catch(Exception e){
 			result="FAILED";
 		}	

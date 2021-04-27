@@ -14,8 +14,8 @@ public class InstructorModulePage extends FractalBasePage {
 	private By lblInvitesRemindersText= By.xpath("//h2[contains(text(),'Invites & Reminders')]");
 	private By lblSkillsText= By.xpath("//span[contains(text(),'Skills')]");
 	private By lblUpcomingLabel= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[2]");//p[contains(text(),'upcoming')]
-	private By lblInprogressLabel= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[1]");//p[contains(text(),'In Progress')]
-	private By lblCompletedLabel= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[3]");//p[contains(text(),'Completed')]
+	private By lblInprogressLabel= By.xpath("//li[@id='react-tabs-0']");//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[1]//p[contains(text(),'In Progress')]
+	private By lblCompletedLabel= By.xpath("//li[@id='react-tabs-8']");//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[3]//p[contains(text(),'Completed')]
 	private By btnAccept= By.xpath("//button[@class='Buttonstyle button btn btn-success margin-r-0 margin-tb-5']");//li[@class='slider-slide slide-visible']//button[@class='btn btn-success margin-r-0 margin-tb-5'][contains(text(),'ACCEPT')]
 	private By btnCancel= By.xpath("//button[@class='Buttonstyle button btn btn-warning margin-r-0 margin-tb-5']");//li[@class='slider-slide slide-visible']//button[@class='btn btn-warning margin-r-0 margin-tb-5 btn-reject-effect'][contains(text(),'REJECT')]
 	private By btnReschedule= By.xpath("//button[@class='view view-btn-color Buttonstyle button btn margin-r-0 margin-tb-5 style:width=250px']");//li[@class='slider-slide slide-visible']//button[contains(text(),'Request to reschedule')]
@@ -34,12 +34,12 @@ public class InstructorModulePage extends FractalBasePage {
 	private By lblInprogressPostEvent= By.xpath("//span[contains(text(),'Post-event')]");
 	private By lblInprogressReference= By.xpath("//span[contains(text(),'References')]");
 	private By lblInprogressTermsAndConditions= By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']");//p[contains(text(),'Terms & Conditions')]
-	private By lblCompeletdEvent= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/a[1]/div[1]");//div[contains(@class,'ins_eve_div')]
+	private By lblCompeletdEvent= By.xpath("//h1[contains(text(),'Completed_Classroom')]");//div[contains(@class,'ins_eve_div')]
 	private By dashBoardIcon= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]");
 	private By eventTab= By.xpath("//i[contains(text(),';')]");
 	private By lblInprogress= By.xpath("//li[@id='react-tabs-0']");
 	private By lblUpcoming= By.xpath("//li[@id='react-tabs-2']");
-	private By lblCompleted= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[3]");//li[@id='react-tabs-4']
+	private By lblCompleted= By.xpath("//li[@id='react-tabs-4']");//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[1]/ul[1]/li[3]//li[@id='react-tabs-4']
 	private String SkillSetBox1 ="//select[@name='skillfilter']//option";
     private String SkillSetBox2 ="]";
     private By lblActivitiesText= By.xpath("//li[contains(text(),'Activities & Materials')]");
@@ -130,7 +130,7 @@ public class InstructorModulePage extends FractalBasePage {
 		click(lblEventInsideClick);
     }
 	public void verifyLabelsInsideEventDetailsPage(){
-		WebElement element = driver.findElement(By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']"));
+		WebElement element = driver.findElement(lblTermsAndConditions);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		verifyText("Pre - Event",lblPreEvent);
@@ -203,7 +203,7 @@ public class InstructorModulePage extends FractalBasePage {
 	}
 	public void verifyActivitiesAndRosterTab(){
 		wait(2);
-		WebElement element= driver.findElement(By.xpath("//li[contains(text(),'Activities & Materials')]"));
+		WebElement element= driver.findElement(lblRosterText);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		verifyText("ACTIVITIES & MATERIALS",lblActivitiesText);
 		verifyText("ROSTER",lblRosterText);
