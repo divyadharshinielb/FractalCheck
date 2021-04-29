@@ -20,7 +20,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	private By classroomvenuedropdown = By.xpath("//li[contains(text(),'Origin Learning Solutions')]");
 	private By classroomskillsetdropdown = By.xpath("//span[text()[normalize-space()='Classroom Management.']]");
 	private By classroomskillsetselect = By.xpath("//input[@placeholder='Select']");
-	private By classroominstructorselect = By.xpath("//li[contains(text(),'Automation directuser')]");
+	private By classroominstructorselect = By.xpath("//li[contains(text(),'automation direct user')]");
 	private By lblSelect =By.xpath("//md-input-container[@class='flex']//span[@class='current'][contains(text(),'Select')]");
 	private By lblSelectVenue= By.xpath("//form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[7]/div[2]/div[1]/md-input-container[1]/div[1]/span[1]");
 	private By lblDescription=By.xpath("//textarea[@name='classroom_description']");
@@ -68,7 +68,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]"); 
 	private By publisheventbtn = By.xpath("//i[contains(@title,'Publish')]");
 	private By afterpublisheventdeletebtn = By.xpath("//i[contains(@title,'Delete')]");
-	private By categoryoption = By.xpath("//div[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//li[@class='option'][contains(text(),'Financial Management')]");
+	private By categoryoption = By.xpath("//div[@class='nice-select ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required open']//li[@class='option'][contains(text(),'Technology')]");
 	private By session_name = By.xpath("//input[contains(@name,'session_name')]");
 	private By sessiondesc = By.xpath("//textarea[contains(@name,'session_description')]"); 
 	private By classhourlbl = By.xpath("//input[contains(@placeholder,'hh')]");
@@ -134,9 +134,9 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		scrollToElement(session_name);
 		wait(5);
 		enterData(getLabel("title"), session_name);
-		wait(4);
+		wait(6);
 		enterData(getLabel("title"),sessiondesc);
-		wait(4); 
+		wait(6); 
 		enterData(getLabel("durationhr"),classhourlbl);
 		wait(4);
 		enterData(getLabel("durationmin"),classminutelbl);
@@ -194,13 +194,13 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		wait(5);
 		enterData(getLabel("durationmin"),lblCalendarMinute);
 		wait(5);
-		click(lbldurationsel);
-		wait(2);
-		click(lblPM);
-		wait(2);
 		click(dropdownSelectInstructor);
 		click(dropdownSelectInstructor1);
+		wait(6);
+		click(lbldurationsel);
 		wait(5);
+		click(lblPM);
+		wait(4);
 		click(btnContinue);
 		wait(2);
 		enterData(getLabel("participants"),inpMaxParticipants);

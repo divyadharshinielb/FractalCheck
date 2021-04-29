@@ -125,12 +125,14 @@ public class GlobalPage extends FractalBasePage{
 			enterData("vlab",Search);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			wait(5);
+			if (elementExist(verificationText)) {
 			verifyText("vLab",verificationText);
 			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
 			enterData("vlabs",Search);;
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			verifyText("vLab",verificationText);
+			}
 			
 		}
 		//Added by Dhanushiya
@@ -252,9 +254,11 @@ public class GlobalPage extends FractalBasePage{
 			verifyText("Classroom",verificationText);
 			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
-			enterData("***images",Search);;
+			enterData("***images",Search);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+		if(elementExist(verificationText)) {
 			verifyText("Image",verificationText);	
+		}
 			
 		}
 		//Added by Dhanushiya
@@ -275,12 +279,14 @@ public class GlobalPage extends FractalBasePage{
 		public void GlobalSearchwithDoubleandTabspace() {
 			wait(5);
 			enterData("automation  learningpath",Search);
-			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
+			wait(2);
+		driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			wait(5);
 			verifyText("Automation Learningpath",automationLearningpath);
 			wait(5);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).clear();
-			enterData(" automation    learningpath",Search);;
+			enterData(" automation    learningpath",Search);
+			wait(2);
 			driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 			verifyText("Automation Learningpath",automationLearningpath);	
 		}

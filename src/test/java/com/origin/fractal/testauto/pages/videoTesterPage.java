@@ -69,10 +69,10 @@ public class videoTesterPage extends FractalBasePage{
 			click(manageContenticon);
 			wait(2);
 			click(tabCatalogItem);
-			wait(2);
-			WebElement element = driver.findElement(bundleClick);
+			wait(6);
+		/*	WebElement element = driver.findElement(bundleClick);
 			actions1.moveToElement(element).perform();
-			click(bundleClick);
+		*/	click(bundleClick);
 				WebElement element1 = driver.findElement(videoClick);
 				actions1.moveToElement(element1).perform();
 				click(videoClick);
@@ -83,7 +83,7 @@ public class videoTesterPage extends FractalBasePage{
 				print("Video is playing.");
 				wait(20);
 				if(elementExist(adminPause)) {
-					element = driver.findElement(adminPause);
+					element1 = driver.findElement(adminPause);
 					actions1 = new Actions(driver); 
 					actions1.moveToElement(element1).perform();
 					click(adminPause);

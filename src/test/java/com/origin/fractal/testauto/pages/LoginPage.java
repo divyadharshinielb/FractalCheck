@@ -185,9 +185,9 @@ public class LoginPage extends FractalBasePage {
 		click(btnCookies);
 		}
 		   wait(5);
-		   click(By.xpath("//div[@class='ci-hover']//button[@class='jss29 jss3 jss5 jss8 circle-hover']"));
+		   click(By.xpath("//button//span[@class='jss4']//img[@class='logout-height']"));
 		   wait(5);
-		   click(By.xpath("//button[@class='role-button']"));
+		   click(By.xpath("//button[contains(text(),'Instructor')]"));
 }
 	
 	//Added by vignesh(WVI) on 8-April-20
@@ -242,6 +242,26 @@ public class LoginPage extends FractalBasePage {
 				moveElementFocusandClick(userLogout);
 				wait(5);
 			} 
+			private By googleButton = By.xpath("//div[@class='login-with-google']");
+			private By facebookButton = By.xpath("//div[@class='login-with-facebook']");
+			private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
+			public void googleBtn() {
+				wait(5);
+				if(elementExist(prelogin)) {
+					click(prelogin);
+				}
+				wait(2);
+				elementExist(googleButton);
+				wait(5);
+				click(googleButton);
+
+			}
+			public void facebookButton() {
+				wait(5);
+				elementExist(facebookButton);
+				wait(5);
+				click(facebookButton);
+			}
 			
 			/* Function name: adminLogout()
 			 * Action: Do Log out admin page

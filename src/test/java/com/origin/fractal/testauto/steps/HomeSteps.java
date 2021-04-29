@@ -190,6 +190,17 @@ public class HomeSteps extends FractalBaseStep {
 			result="FAILED";
 		   }		
 	}
+	public void verifyPodcastFilterWhatsNew(){
+		result ="PASSED";
+		   try {
+			   page.verifyPodcastFilterWhatsNew();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
      public void verifyAllFilterRecommAdded(){
 		 result ="Passed";
 		   try {

@@ -21,6 +21,17 @@ public class NotificationSteps extends FractalBaseStep{
 	public void verifyPurchaseMailTemplate() {
 		page.verifyPurchaseMailTemplate();
 	}
+	public void verifyUnAssignTemplate() {
+		result ="PASSED";
+		try {
+			page.verifyUnAssignTemplate();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}	
+	}
 	public void verifyCourseCompletionTemplate() {
 		page.verifyCourseCompletionTemplate();
 	}

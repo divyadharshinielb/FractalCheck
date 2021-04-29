@@ -186,6 +186,28 @@ public class LoginSteps extends FractalBaseStep {
 			print("Login issue found");
 		}
 	}
+	public void googleBtn() {
+		result ="PASSED";
+		try {
+			page.googleBtn();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+	}
+	public void facebookButton() {
+		result ="PASSED";
+		try {
+			page.facebookButton();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="FAILED";
+		}
+	}
 	//Ends
 	//Added by vignesh (WVI) on 16-Nov-20
 	public void logOutUser() {

@@ -52,6 +52,10 @@ public class VenuePage extends FractalBasePage{
 		click(lblLogout);
 	}
 	public void clickMenu() {	
+		wait(5);
+		WebElement element1 = driver.findElement(settingsIcon);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
+		wait(2);
 		click(settingsIcon);
 		wait(2);
 		WebElement element = driver.findElement( By.xpath("//div[@class='icon-Classroom-settings icon']")); Actions
@@ -74,7 +78,8 @@ public class VenuePage extends FractalBasePage{
 		wait(5);
 	}
 	public void validVenueName() {
-		enterData("Automation Sample",venueName);
+		wait(5);
+	//	enterData("Automation Sample",venueName);
 	}
 	public void countrySelection() {
 		click(selectCountry);

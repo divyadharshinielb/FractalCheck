@@ -77,6 +77,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By lblCalendarHour=By.xpath("//div[contains(@class,'col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-lr-0 display_inFlex11111111 margin-b-20')]//div[1]//input[1]");
 	private By lblCalendarMinute=By.xpath("//div[contains(@class,'expand-collapse-content')]//div[1]//input[2]");
 	private By lblPm=By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
+	private By lblSelectPm=By.xpath("//option[contains(@value,'PM')]");
 	private By insDropdoenAlertMshg = By.xpath("//h4[@id='session_title']/../../*//div[contains(text(),'Instructor selection required')]");
 	private By lblPostAssessment = By.id("postassignment_title");
 	private By lblAddPostAssessment = By.xpath("//button[@id='post_addAssignment']");
@@ -106,7 +107,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	private By inpReminderEval = By.xpath("//input[@name='remainder_evaluation']");
 	private By btnRefUpload = By.xpath("//input[@id='reference']/../../label");
 	private By lblTermsConditions = By.xpath("//h4[contains(text(),'Terms & Conditions')]");
-	private By lblCompletionCriteria = By.id("completion_criteria_checkbox");
+	private By lblCompletionCriteria =By.xpath("//label[@id='completion_criteria_checkbox']");
 	private By lblClose = By.xpath("//button[@class='close padding-t-20']//i[@class='icon text-right font-size-35 padding-r-30 padding-t-10']");
 
 	/*private By eventPageTitle = By.xpath("");
@@ -494,21 +495,29 @@ public class ClassroomEventPage extends FractalBasePage{
 		enterData("10",lblCalendarHour);
 		wait(5);
 		enterData("50",lblCalendarMinute);
-		click(lblPm);
+		wait(2);
 		click(dropdownSelectInstructor);
 		click(dropdownSelectInstructor1);
-		WebElement element1 = driver.findElement(By.xpath("//span[contains(text(),'Date')]")); Actions
-			actions1 = new Actions(driver); actions1.moveToElement(element1);
-			actions1.perform();
+		wait(2);
+	/*	WebElement element1 = driver.findElement(By.xpath("lblSelectCalendar")); Actions//span[contains(text(),'Date')]
+		actions1 = new Actions(driver); actions1.moveToElement(element1);
+		actions1.perform();
+	*/	wait(2);
 		click(lblSelectCalendar);
 		wait(2);
 		click(dropdownSelectCalendar);
+		wait(2);
+		click(lblPm);
+		wait(2);
+		click(lblSelectPm);
+		
 		//h4[contains(text(),'Pre-event Activities')]
 		/*enterData("10",lblCalendarHour);
 		enterData("50",lblCalendarMinute);
 		click(lblPm);*/
 		wait(2);
 		click(btnContinue);
+		wait(2);
 		verifyText("Auto update waiting list on cancellation",lblCompletionCriteria);
 	}
 	public void fillFirstPage() {
@@ -591,7 +600,7 @@ public class ClassroomEventPage extends FractalBasePage{
 	}
 
 	private By btnSave = By.xpath(".//button[contains(@value,'Create')]");
-	private By maxParticipantErr = By.xpath(".//div[@id='max_participants_err']");
+	private By maxParticipantErr = By.id("max_participants_err");
 	private By minParticipantErr = By.id("min_participants_err");
 	private By startDateRegistErr = By.id("startdate_registration_err");
 	private By lastDateRegistErr = By.id("lastdate_registration_err");
@@ -650,6 +659,9 @@ public class ClassroomEventPage extends FractalBasePage{
 	wait(5);
 	enterData("10",lblCalendarHour);
 	enterData("50",lblCalendarMinute);
+	wait(2);
+	click(lblSelectPm);
+	wait(2);
 	click(lblPm);
 	wait(2);
 	WebElement element2 = driver.findElement(By.xpath("//h4[contains(@id,'session_title')]")); Actions
