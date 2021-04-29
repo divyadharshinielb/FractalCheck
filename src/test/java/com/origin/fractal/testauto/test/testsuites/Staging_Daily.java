@@ -37,7 +37,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 			new Object[] { "1", "chrome" }
 		};
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
 	public void paginationUser(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
@@ -54,7 +54,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		Reporter.writeSummary("FR1-2498_UserPage_TC-005,Verify pagination for Global search, " +  userstep.getResult() );
 
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TC_Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
@@ -88,7 +88,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "TC_nnnn Verify Home Page has Learning in progress text, completion status, Continue text and button, recently"
 					+ "added courses and arrow button at the top")
 	public void testHomePageVerifyRcntAddedCourseNavigation(String row, String strBrowserName) {
@@ -110,7 +110,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify filter in Home Page works for Recently Added and Recommeded Sections")
 	public void testHomePageVerifyFiltersRcntRecommended(String row, String strBrowserName) {
@@ -139,7 +139,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		homeSteps.clickLogout();
 
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "")
 	public void GoogleAndFacebook(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		LoginSteps loginSteps = new LoginSteps(driver);
@@ -152,7 +152,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		loginSteps.facebookButton();
 		Reporter.writeSummary("TCID_SocialLogin_002, Verify the face book login page function, " +  loginSteps.getResult() );
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "")
 	public void verifyvideo(String row, String strBrowserName) throws InterruptedException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -161,7 +161,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		downloadContentSteps.verifyAudio();
 		Reporter.writeSummary("FR1-2773_DownloadContent_TC-002,In User Login Verify Download option visible in the Content Player Page for audio once enabled by admin," +downloadContentSteps.getResult());
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "")
 	public void DownloadContent(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -182,7 +182,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 
 
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, priority = 1 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 1 ,
 			description = "video testing")
 	public void verifyAdminvideo(String row, String strBrowserName) throws InterruptedException, IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -193,7 +193,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		VideoTesterSteps.verifyAdminVideoTester();
 		Reporter.writeSummary("TCID_Video, Verify the Admin video gets launched succesfully," +  VideoTesterSteps.getResult() );
 	}
-	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups= {"pilot"}, enabled= false, description="")
+	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups= {"pilot"}, enabled= true, description="")
 	public void renewButtonCheck(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
@@ -209,7 +209,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		 */renew.categoryRenewBtnCheck();
 		 Reporter.writeSummary("FR1-2777_Renew_TC-02,Verify renew button after selecting category," + renew.getResult() );
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,priority=0)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,priority=0)
 	public void CourseCompletionMail (String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
@@ -221,8 +221,9 @@ public class Staging_Daily extends FractalBaseWebTest {
 	 * 04-Mar-2021  divya commenting
 	 * commenting as global search results in blank page
 	 * 11-03-2021 uncommenting
-	 * */
-	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups = { "pilot", "Home" }, enabled = false,
+	 *
+	 */
+	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "TCID_Verify Global Search with catalog Items and Learning Objects")
 	public void GlobalSearchUsingCatalogandLearningObjects(String row, String strBrowserName) {
@@ -283,7 +284,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 
 	}
 	 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_1,4,11,12: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_1,4,11,12: "
 			+ "Verify navigation to My Learning page, " + "1: verify COmpletion Status(% Coverage)"
 			+ "4: Verify all links(All, Bundles, Courses, Learning Paths and resources)"
 			+ "11: Verify learning item page is opened when any of the particular course catalog item is clicked"
@@ -312,7 +313,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		mLSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_16,20,21,22: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_16,20,21,22: "
 			+ "16:Verify course name" + "20:Verify All filter" + "21:Verify Bundle filter" + "22:Verify Course filter")
 	public void testMyLearningPage1(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -338,7 +339,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_25,5,8,14,6,7: "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_25,5,8,14,6,7: "
 			+ "25: Verify Tickmark for completed catalog item" + "5: Verify Category dropdown and Grid and List mode"
 			+ "8: Verify Category items" + "14: Verify Rating for completed catalog item"
 			+ "6,7: verify the Grid and List view items and functionality")
@@ -367,7 +368,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		mLSteps.clickLogout();
 	}
 
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description = "TCID_17,18,23,27 : "
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description = "TCID_17,18,23,27 : "
 			+ "17: Verify Bundle Details after clicking" + "18: Verify course Details after clicking"
 			+ "23: Verify the learnig objeck launch" + "27: Verify the top arrow button")
 	public void testMyLearningPage3(String row, String strBrowserName) {
@@ -389,7 +390,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		homeSteps.clickOnMyLearning();
 		mLSteps.clickLogout();
 	}
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description ="")
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description ="")
 	public void testMyLearningPageClassroom(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -414,7 +415,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,priority =0,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled=true,priority =0,
 			description = "")
 	public void InstructorBellNotification (String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -484,7 +485,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 			InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
 			InstructorCalendarModuleStepsNew InstructorModuleSteps=new InstructorCalendarModuleStepsNew(driver);
 			InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
-			loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
+			loginInstructorwithCookies(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 			InstructorModuleSteps.verifyTradInviteNotification();
 			Reporter.writeSummary("FR1-2164_InstrCalendar_TC-001,Verify the invite notification (blue dot) on the Instructor calendar (Traditional)," +InstructorModuleSteps.getResult());
 			InstructorModuleSteps.verifyVirInviteNotification();
@@ -514,7 +515,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 			instbellnotiSteps.instLogout();
 		}
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "")
 	public void testInstructorPage(String row, String strBrowserName) {
