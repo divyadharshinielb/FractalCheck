@@ -48,7 +48,7 @@
 				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" 
 				/> -->
 			<class
-				name="com.origin.fractal.testauto.test.testsuites.Qadevs_Daily" />
+				name="com.origin.fractal.testauto.test.testsuites.Qadev_Daily" />
 			<!-- <class
 				name="com.origin.fractal.testauto.test.testsuites.WebTestUsageReport" /> -->
 
