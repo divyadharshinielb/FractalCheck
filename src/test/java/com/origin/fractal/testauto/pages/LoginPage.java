@@ -58,8 +58,10 @@ public class LoginPage extends FractalBasePage {
 		enterData("AutoDU@123",tbPassword);
 		click(btnLogin);
 		wait(2);
+		if(elementExist(btnCookies)) {
 		click(btnCookies);
 		wait(5);
+		}
 	}
 	public void loginToContentAdmin() {
 		enterData("contentadmin@origin.com",tbUserName);

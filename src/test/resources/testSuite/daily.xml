@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="50" name="Test">
+		<classes>
+			<!-- <class name="com.origin.fractal.testauto.test.testsuites.WebTestUserPagination" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsHome" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsMyLearning" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestGlobalSearch" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsDownloadContent" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorBellNotification" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorCalendarModule" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestRenewButton" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestVideoTester" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsLogin" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestAdminPagination" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestCustomizationRoles" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogItemCreation" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestLanguageDefault" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestDeleteEventandClassroom" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestInstructorModule" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestRolesManagement" 
+				/><class name="com.origin.fractal.testauto.test.testsuites.WebTestManageContentItemCode" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestDocumentValidation" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestSettingsAdmin" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomEvents" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestReportsAdmin" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsVenueCreation" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestClassroomCreation1" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestNotification" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsAccount" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsSettings" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestVideoFractal" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestContentImportExport" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogUpdate" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestLearningObjectHTML" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestELearningOrientation" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestELearningObjectWithScorm2004" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestCatalogVersioning" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestReorderingCatalogItems" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestUserInfoImportAndExport" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestDefaultGroupSettings" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestAdminSetting" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestAdminVideoandAudioTest" 
+				/> <class name="com.origin.fractal.testauto.test.testsuites.WebTestsClassroomCC" 
+				/> -->
+			<class
+				name="com.origin.fractal.testauto.test.testsuites.Qadevs_Daily" />
+			<!-- <class
+				name="com.origin.fractal.testauto.test.testsuites.WebTestUsageReport" /> -->
+
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
