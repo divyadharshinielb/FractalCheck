@@ -42,7 +42,8 @@ public class ClassRoomRosterPage extends FractalBasePage{
 	 */
 	public boolean verifyClassroomRoster() {
 		enterData("Auto_Roster_Check",searchClassRoomName);
-		wait(10);
+		print("Entered Classroom name");
+		wait(15);
 		click(classRoomList);
 		wait(5);
 		click(eventList);
@@ -92,15 +93,24 @@ public class ClassRoomRosterPage extends FractalBasePage{
 	 */
 	public boolean verifyAssignmentScore() {
 		wait(2);
-		try{click(eventRosterTab);
+		try{
+			elementExist(eventRosterTab);
+			print("CheckkkkkkNOWWWWWWWWWWWWwwwwwww");
+			wait(6);
+			click(eventRosterTab);
 		wait(20);//Updated on 8-Jan-21
+		
 		moveElementFocusandClick(userModuleAssignment);
+		elementExist(userModuleAssignment);
 		wait(20);//Updated on 6-Jan-21
 		moveElementFocusandClick(userSubmitedAssignment);
+		elementExist(userSubmitedAssignment);
 		wait(5);
 		moveElementFocusandClick(assignmentStatus);
+		elementExist(assignmentStatus);
 		wait(10);//Updated on 8-Feb-21
 		moveElementFocusandClick(assignmentEvalution);
+		elementExist(assignmentEvalution);
 		wait(10);//Updated on 8-Feb-21
 		enterData("50",inputAssignmentScore);
 		wait(2);

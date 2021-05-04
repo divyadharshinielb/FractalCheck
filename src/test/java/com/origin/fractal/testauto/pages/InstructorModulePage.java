@@ -273,7 +273,7 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("REVIEW",reviewButton);
 	}
 	public void verifyReviewInsideLabels() {
-		wait(2);
+		wait(5);
 		WebElement element2= driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element2);
 		wait(2);

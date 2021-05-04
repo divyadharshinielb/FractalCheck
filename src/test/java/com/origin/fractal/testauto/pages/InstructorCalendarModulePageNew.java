@@ -113,6 +113,9 @@ public class InstructorCalendarModulePageNew extends FractalBasePage  {
 	 */	
 	public boolean verifyVirInviteNotification() {
 		By inviteDetailsInEventTab=By.xpath("//*[text()='"+eventSessionName+"']");
+		if(elementExist(inviteDetailsInEventTab)) {		
+			print("true");
+		}
 		if(getAttributeValue(calendarVirEventinvite,"title").contains(eventSessionName)  ||  elementExist(inviteDetailsInEventTab) ) 
 		{
 			return true;
