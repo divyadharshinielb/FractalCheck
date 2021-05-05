@@ -3,5 +3,10 @@
 <suite name="Suite">
 	<test thread-count="50" name="Test">
 		<classes>
-		<class
+			
+			<class
 				name="com.origin.fractal.testauto.test.testsuites.Automation_Daily" />
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
