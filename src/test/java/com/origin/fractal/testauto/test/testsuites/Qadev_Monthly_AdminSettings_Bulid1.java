@@ -157,7 +157,7 @@ public class Qadev_Monthly_AdminSettings_Bulid1 extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_RolesManagement_013, Verify Business user with Instructor role, " +  rolesmngmtsteps.getResult() );
 		
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void checkOverallTestNGResult(String row, String strBrowserName) {
 		print("Number of Test cases Failed ="+ FractalBaseStep.overallTestNGResult );
 		if(FractalBaseStep.overallTestNGResult > 0) {
