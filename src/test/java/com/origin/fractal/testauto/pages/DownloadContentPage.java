@@ -65,10 +65,10 @@ public DownloadContentPage(WebDriver driver) {
 	wait(5);
 	click(imageBtn);
 	wait(5);
-	WebElement element = driver.findElement(lblMM); Actions
+/*	WebElement element = driver.findElement(lblMM); Actions
 	actions = new Actions(driver); actions.moveToElement(element);
 	actions.perform();
-	elementExist(lblDownload);
+*/	elementExist(lblDownload);
 	wait(2);
 	click(closeBtn);
 	}

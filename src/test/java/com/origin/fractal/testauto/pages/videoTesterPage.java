@@ -23,6 +23,7 @@ public class videoTesterPage extends FractalBasePage{
 	private By videoClick= By.xpath("//h3[@title='Auto_MP4']");
 	private By homeLink=By.xpath("//a[contains(text(),'Catalog Items')]");
 	private By closeBtn=By.xpath("//i[@class='icon dripicons-cross icon30 font-size-30 ng-scope']");
+	private By searchCatalog=By.xpath("//input[@id='searchCatalog']");
 	public videoTesterPage(WebDriver driver) {
 		super(driver);
 	}
@@ -70,9 +71,11 @@ public class videoTesterPage extends FractalBasePage{
 			wait(2);
 			click(tabCatalogItem);
 			wait(6);
-		/*	WebElement element = driver.findElement(bundleClick);
+			enterData("Auto_Bundle", searchCatalog);
+			wait(10);
+			WebElement element = driver.findElement(bundleClick);
 			actions1.moveToElement(element).perform();
-		*/	click(bundleClick);
+			click(bundleClick);
 				WebElement element1 = driver.findElement(videoClick);
 				actions1.moveToElement(element1).perform();
 				click(videoClick);

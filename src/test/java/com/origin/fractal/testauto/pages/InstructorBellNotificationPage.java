@@ -30,7 +30,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By btnContinue=By.xpath("//button[text()='Continue']");
 	public By btnUpdate=By.xpath("//button[text()='Update']");
 	public By btnBackToList=By.xpath("//button[text()='Back To Classroom List']");
-	public By classRoomList=By.xpath("(//*[contains(@class, 'border-tb')])[1]");
+	public By classRoomList=By.xpath("//a[contains(text(),'AUTO_INSTR_BELL_NOTIFI_DoNotDelete')]/..");
 	public By eventList=By.xpath("(//*[@ng-click=\"viewEventDetails($event,event_list,'all')\"])[1]");//updated on 10-Dec-20
 	public By eventSession=By.xpath("//*[@id='session_title']/i");
 	public By eventInstructor=By.xpath("//div[@class='col-lg-12 col-md-6 col-sm-6 col-xs-6 padding-t-0 padding-b-0 padding-l-5 padding-r-20 padding-l-10']//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required']");
@@ -204,7 +204,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		click(btnContinue);
 		wait(2);
 		click(btnUpdate);
-		wait(10);
+		wait(15);
 		click(closeXIcon);
 		//Waiting time increased on 4Sep20
 		wait(5);
