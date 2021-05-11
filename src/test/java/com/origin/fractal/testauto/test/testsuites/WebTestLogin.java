@@ -5,10 +5,13 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;
+import com.origin.fractal.testauto.FractalBaseStep;
 import com.origin.fractal.testauto.steps.LoginSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
+
+import jxl.common.Assert;
 
 /* File Name: WebTestLogin.java
  * Purpose: check login
@@ -28,5 +31,12 @@ public class WebTestLogin extends FractalBaseWebTest {
 		steps.verifyLogin();
 		Reporter.writeSummary("TC-01,Verify the Admin/User Login is working," +steps.getResult() );
 		
+	}
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	public void checkOverallTestNGResult(String row, String strBrowserName) {
+		print("Number of Test cases Failed ="+ FractalBaseStep.overallTestNGResult );
+		if(FractalBaseStep.overallTestNGResult > 0) {
+			Assert.verify(false);
+		}
 	}
 }
