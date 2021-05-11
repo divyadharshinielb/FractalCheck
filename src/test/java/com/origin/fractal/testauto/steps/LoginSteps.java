@@ -144,13 +144,15 @@ public class LoginSteps extends FractalBaseStep {
 	 * Return type: void
 	 */
 	public void verifyLogin() {
-		try{result="FAILED";
-		page.verifyLogin();
-		result="PASSED";
-		}catch (Exception e) {
+		   try {
+		   page.verifyLogin();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
 			result="FAILED";
 			print("Login is NOT working");
-		}
+		   }
 	}
 	public void verifyAdminLogin() {
 		result="PASSED";
