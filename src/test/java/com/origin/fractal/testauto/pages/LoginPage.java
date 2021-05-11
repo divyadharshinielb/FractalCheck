@@ -50,14 +50,15 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 	}
 	public void verifyLogin() {
-		if (elementExist(lblUser)) {
+	//comment added by mahesh on 11/5/2021	
+	//	if (elementExist(lblUser)) {
 		wait(5);
 		click(lblUser);
-	}
-	else{
+//	}
+//	else{
 		wait(2);
 		elementExist(lblSubscriptionPage);
-	}
+//	}
 	}
 	public void verifyAdminLogin() {
 		elementExist(lblAdmin);
