@@ -64,8 +64,9 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("Invites & Reminders", lblInvitesRemindersText);
 		verifyText("Skills", lblSkillsText);
 	}
-	public void verifyEventSectionLabels(){
-		wait(2);
+	public void verifyEventSectionLabels() throws Exception {
+		
+	wait(2);
 		if(elementExist(nextEventViewAll)) {
 			click(nextEventViewAll);
 			wait(2);
@@ -73,7 +74,15 @@ public class InstructorModulePage extends FractalBasePage {
 			verifyText("IN PROGRESS",lblInprogressLabel);
 			verifyText("COMPLETED",lblCompletedLabel);
 		}
-	}
+		
+		else {
+			throw new Exception( );
+
+		}
+
+		
+		}
+	
 	public void verifyButtons() {
 		wait(2);
 		click(dashBoardIcon);
@@ -87,7 +96,7 @@ public class InstructorModulePage extends FractalBasePage {
 			verifyText("Request To Reschedule",btnReschedule );
 		}
 	}
-	public void verifyPopupButtons() {
+	public void verifyPopupButtons() throws Exception {
 		if(elementExist(btnReschedule)) {
 			click(btnReschedule);
 			wait(2);
@@ -100,6 +109,10 @@ public class InstructorModulePage extends FractalBasePage {
 			verifyText("Are you sure you want to Reject the Event Invite",lblRejectPopupText);
 			wait(2);
 			click(lblcloseBtn);
+		}
+		else {
+			throw new Exception( );
+
 		}
 	}
 	public void verifyNextEventSectionViewAll() {
@@ -135,7 +148,7 @@ public class InstructorModulePage extends FractalBasePage {
 		click(lblEventInsideClick);
 		}
 	}
-	public void verifyLabelsInsideEventDetailsPage(){
+	public void verifyLabelsInsideEventDetailsPage() throws Exception{
 		wait(2);
 		if (elementExist(lblSessions)) {
 		WebElement element = driver.findElement(By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']"));
@@ -150,6 +163,10 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("References",lblReference);
 		wait(2);
 		verifyText("Terms & Conditions",lblTermsAndConditions);
+		}
+		else {
+			throw new Exception( );
+
 		}
 
 	}
@@ -216,13 +233,17 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("Terms & Conditions",lblInprogressTermsAndConditions);
 		}
 		}
-	public void verifyActivitiesAndRosterTab(){
+	public void verifyActivitiesAndRosterTab() throws Exception{
 		wait(2);
 		if(elementExist(By.xpath("//li[contains(text(),'Activities & Materials')]"))) {
 		WebElement element= driver.findElement(By.xpath("//li[contains(text(),'Activities & Materials')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		verifyText("ACTIVITIES & MATERIALS",lblActivitiesText);
 		verifyText("ROSTER",lblRosterText);
+		}
+		else {
+			throw new Exception( );
+
 		}
 	}
 	public void verifySkillsetList() {

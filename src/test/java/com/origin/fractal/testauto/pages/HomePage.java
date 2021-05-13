@@ -144,11 +144,17 @@ public class HomePage extends FractalBasePage {
 		wait(10);
 	//	clickOnBellIcon();
 	//	verifyLabel("lblNotification",lblNotification );
-		if(elementExist(Check)) {
+	/*	commenting this code as else condition is not provided and adding code without if condition so that it fails if the element is not there.
+	 * 
+	 * if(elementExist(Check)) {
 			String ntnIntroGST=getText(Check);
 			verifyText(ntnIntroGST,Check );
 			clickOnViewAll();
-			}
+			}*/
+		elementExist(Check);
+		String ntnIntroGST=getText(Check);
+		verifyText(ntnIntroGST,Check );
+		clickOnViewAll();
 	}
 	public void verifyResumeLearningText() {
 		if(elementExist(lblResumeLearning)) {
@@ -157,6 +163,7 @@ public class HomePage extends FractalBasePage {
 		else
 		{
 			elementExist(percentLabel);
+			click(percentLabel);
 		}
 	}
 	public void verifyComplStatus() {
@@ -170,6 +177,8 @@ public class HomePage extends FractalBasePage {
 	
 	public void verifyContinueText() {
 		//verifyLabel("lblContinue",lblContinue);
+		//divya uncommenting verifyLabel functionality on 12-5-2021
+		verifyLabel("lblContinue",lblContinue);
 	}
 	public void clickContinueBtn() {
          clickOnContinueBtn();

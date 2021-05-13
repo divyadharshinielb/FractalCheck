@@ -77,6 +77,7 @@ public class MyLearningPage extends FractalBasePage {
 		super(driver);
 		pageName = "MyLearningPage";
 	}
+	
 
 	public void verifyMyLearningPage() {
 		verifyLabel("lblOvCoStatus", lblOvCoStatus);
@@ -215,7 +216,7 @@ public class MyLearningPage extends FractalBasePage {
 		wait(2);
 	}
 
-	public void verifyRatings() {
+	public void verifyRatings() throws Exception {
 /*		click(lblCompleted);
 		wait(2);
 		click(btnGrid);
@@ -224,6 +225,10 @@ public class MyLearningPage extends FractalBasePage {
 	*/	wait(2);
 	if(elementExist(boxButton)) {
 		verifyCompletedCatalog(lblStar,lblCatalogTick);
+	}
+	else {
+		throw new Exception( );
+
 	}
 	}
 
@@ -244,8 +249,8 @@ public class MyLearningPage extends FractalBasePage {
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
 		}
 	}
-	public void verifyCourseContents() {
-	/*	if(elementExist(lblCourses)) {
+	public void verifyCourseContents() throws Exception {
+		if(elementExist(lblCourses)) {
 			wait(10);
 			WebElement element = driver.findElement(lblCourses); Actions 
 			actions = new Actions(driver); actions.moveToElement(element);
@@ -259,7 +264,12 @@ public class MyLearningPage extends FractalBasePage {
 		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
-	*/	}
+		}
+	else {
+		throw new Exception( );
+
+	}
+		}
 		
 
 	public void verifyLaunch() {
@@ -420,7 +430,7 @@ public class MyLearningPage extends FractalBasePage {
 			  click(lblCancel);
 			  }
 			  
-			  public void verifyChooseEventBtn(){
+			  public void verifyChooseEventBtn() throws Exception{
 				  if(elementExist(lblEventCalendarText)) {
 			  verifyText("CHOOSE EVENT",lblEventCalendarText);
 			  wait(2);
@@ -431,6 +441,11 @@ public class MyLearningPage extends FractalBasePage {
 			  click(breadcrumLink);
 			  scrollBar();
 				  }
+				  else {
+						throw new Exception( );
+
+					}
+				  
 			}
 		    public void scrollBar() {
 		   /* WebElement element = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom 1')]")); Actions

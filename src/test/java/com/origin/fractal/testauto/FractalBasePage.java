@@ -148,6 +148,8 @@ wait(5);
 if(elementExist(btnTopArr)) {
 wait(2);
 //click(btnTopArr);
+//divya uncommenting on 12th  May2021
+click(btnTopArr);
 }
 wait(5);
 }
@@ -570,8 +572,11 @@ click(logoImg);
 System.out.println("logoImg is clicked");
 
 }
-public void verifyCartItemBtn() {
-elementExist(cartItemBtn);
+public void verifyCartItemBtn() throws Exception {
+if(elementExist(cartItemBtn)) {print("THe cart item button is there");}
+else {
+	throw new Exception();
+}
 }
 
 public void verifyCartItemBtn1() {

@@ -26,7 +26,7 @@ public class VideoTesterSteps extends FractalBaseStep{
 	public void verifyAdminVideoTester(){
 	result ="PASSED";
 	   try {
-	//	page.verifyAdminVideoTester();
+		page.verifyAdminVideoTester();
 	   }
 	   catch(Exception e)
 	   {
