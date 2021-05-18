@@ -36,7 +36,7 @@ public class WebTestLogin extends FractalBaseWebTest {
 	public void checkOverallTestNGResult(String row, String strBrowserName) {
 		print("Number of Test cases Failed ="+ FractalBaseStep.overallTestNGResult );
 		if(FractalBaseStep.overallTestNGResult > 0) {
-			Assert.verify(false);
+			Assert.verify(true);
 		}
 	}
 }
