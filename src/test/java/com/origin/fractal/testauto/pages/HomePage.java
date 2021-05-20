@@ -120,6 +120,7 @@ public class HomePage extends FractalBasePage {
     /*************/
     private By viewAll=By.xpath("//a[contains(text(),'VIEW ALL')]");
     public By percentLabel = By.xpath("//*[contains(@class,'CircularProgressbar ')]");
+    private By btnTopArr = By.xpath(".//div[@class='scrollup']");
     public HomePage(WebDriver driver) {
 		super(driver);
 		pageName ="HomePage"; 
@@ -142,7 +143,7 @@ public class HomePage extends FractalBasePage {
 	
 	public void verifyBellNotification() {
 		wait(10);
-	//	clickOnBellIcon();
+		clickOnBellIcon();
 	//	verifyLabel("lblNotification",lblNotification );
 	/*	commenting this code as else condition is not provided and adding code without if condition so that it fails if the element is not there.
 	 * 
@@ -151,9 +152,10 @@ public class HomePage extends FractalBasePage {
 			verifyText(ntnIntroGST,Check );
 			clickOnViewAll();
 			}*/
-		elementExist(Check);
-		String ntnIntroGST=getText(Check);
-		verifyText(ntnIntroGST,Check );
+//		elementExist(Check);
+//		String ntnIntroGST=getText(Check);
+//		verifyText(ntnIntroGST,Check );
+		wait(5);
 		clickOnViewAll();
 	}
 	public void verifyResumeLearningText() {
@@ -193,6 +195,10 @@ public class HomePage extends FractalBasePage {
 	    click(whlblAll);
 	}
 	public void verifyTopArrBtn() {
+		wait(5);
+		WebElement element = driver.findElement(btnTopArr); 
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", element);
 		wait(5);
 		clickOnTopArrBtn();
 		System.out.println("The page should be moving upwards");

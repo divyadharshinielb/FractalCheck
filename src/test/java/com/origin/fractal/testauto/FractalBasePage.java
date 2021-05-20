@@ -24,7 +24,7 @@ private By settings = By.xpath(".//li[contains(text(),'Settings')]");
 private By lblHome= By.xpath("//img[contains(@class,'logo-height')]");//span[contains(text(),'Home')]
 private By btnContinue = By.xpath(".//div[@class='resume_container']");//button[contains(text(),'CONTINUE')]
 private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
-private By btnTopArr = By.xpath(".//img[@class='scrollup-image']");//i[contains(@class,'icon topArr')]
+private By btnTopArr = By.xpath(".//div[@class='scrollup']");//i[contains(@class,'icon topArr')]
 
 private By btnList = By.xpath("//a//i[@class='icon-list-selected font-16']");   //div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[2]
 private String gridBoxBtn = ".//div[contains(@class,'mylearn')]/../div[3]/a";//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
@@ -146,10 +146,10 @@ click(lblRcntAdded_Courses);
 public void clickOnTopArrBtn() {
 wait(5);
 if(elementExist(btnTopArr)) {
-wait(2);
+wait(5);
 //click(btnTopArr);
 //divya uncommenting on 12th  May2021
-click(btnTopArr);
+//click(btnTopArr);
 }
 wait(5);
 }

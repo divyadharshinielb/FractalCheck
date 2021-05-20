@@ -20,9 +20,9 @@ public class videoTesterPage extends FractalBasePage{
 	private By tabCatalogItem= By.xpath("//md-tab-item//span[contains(text(),'Catalog Items')]");
 	private By bundleClick= By.xpath("//span[@title='Auto_Bundle']");
 	private By learningPathClick= By.xpath("//span[@title='Auto_LearningPath']");
-	private By videoClick= By.xpath("//h3[contains(text(),'Staging-video')]");
+	private By videoClick= By.xpath("//h3[contains(text(),'Video')][@title='Video']");
 	private By homeLink=By.xpath("//a[contains(text(),'Catalog Items')]");
-	private By closeBtn=By.xpath("//body[1]/div[4]/md-dialog[1]/md-toolbar[1]/div[1]/button[1]/i");//i[@class='icon dripicons-cross icon30 font-size-30 ng-scope']
+	private By closeBtn=By.xpath("//button//i");//i[@class='icon dripicons-cross icon30 font-size-30 ng-scope']
 	private By searchCatalog=By.xpath("//input[@id='searchCatalog']");
 	public videoTesterPage(WebDriver driver) {
 		super(driver);
@@ -93,7 +93,7 @@ public class videoTesterPage extends FractalBasePage{
 					click(adminPause);
 					print("Video is paused.");
 					wait(10);
-			click(closeBtn);
+			if(elementExist(homeLink)) {
 			wait(5);
 			WebElement element2 = driver.findElement(homeLink);
 			actions1.moveToElement(element2).perform();
@@ -112,7 +112,7 @@ public class videoTesterPage extends FractalBasePage{
 			click(closeBtn);
 			wait(2);
 				}
-			
+			}
 			
 		}
 	/*		public By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
