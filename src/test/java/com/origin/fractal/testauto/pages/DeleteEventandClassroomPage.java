@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -22,7 +23,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	private By classroomskillsetselect = By.xpath("//input[@placeholder='Select']");
 	private By classroominstructorselect = By.xpath("//li[contains(text(),'Automation Directuser')]");
 	private By lblSelect =By.xpath("//md-input-container[@class='flex']//span[@class='current'][contains(text(),'Select')]");
-	private By lblSelectVenue= By.xpath("//form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[7]/div[2]/div[1]/md-input-container[1]/div[1]/span[1]");
+	private By lblSelectVenue= By.xpath("//body/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[7]/div[2]/div[1]/md-input-container[1]/div[1]");
 	private By lblDescription=By.xpath("//textarea[@name='classroom_description']");
 	private By FirstListItem = By.xpath(".//span[contains(text(),'Added on')]/../..");
 	private By btnAddEvent = By.xpath(".//button[contains(text(),'Add Event')]");
@@ -106,13 +107,17 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(categoryoption);
 		wait(2);
 		enterData(getLabel("description"),lblDescription);
-		wait(2);
+		wait(5);
 		WebElement element = driver.findElement(lblSelectVenue); 
-		Actions actions = new Actions(driver); 
-		actions.moveToElement(element);
-		wait(2);
+//		Actions actions = new Actions(driver); 
+//		actions.moveToElement(element);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("arguments[0].scrollIntoView();", element);
+		wait(5);
 		click(lblSelectVenue);
 		wait(5);
+		WebElement element2 = driver.findElement(classroomvenuedropdown); 
+		 js.executeScript("arguments[0].scrollIntoView();", element2);
 		//scrollToElement(classroomvenuedropdown);
 		wait(5);
 		click(classroomvenuedropdown);
@@ -223,6 +228,10 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		wait(3);
 		click(startDateSelecting);
 		wait(2);
+		WebElement element3 = driver.findElement(lblCalenderClickCancellation); 
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", element3);
+		 wait(5);
 		click(lblCalenderClickCancellation);
 		wait(3);
 		click(lastDateSelectingCancellation);
