@@ -57,7 +57,7 @@ public class AdminLoginPage extends FractalBasePage {
 		click(prelogin);
 		}
 		wait(6);
-		enterData("siteadmin@origin.com",tbUserNameNewUI);//contentadmin@origin.com
+		enterData("staging_siteadmin@origin.com",tbUserNameNewUI);//siteadmin@origin.com//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPasswordNewUI);//Admin@123
 	    wait(10);
 	    click(btnLoginNewUI);
