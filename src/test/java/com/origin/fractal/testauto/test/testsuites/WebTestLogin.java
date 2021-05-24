@@ -32,7 +32,7 @@ public class WebTestLogin extends FractalBaseWebTest {
 		Reporter.writeSummary("TC-01,Verify the Admin/User Login is working," +steps.getResult() );
 		
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
 	public void checkOverallTestNGResult(String row, String strBrowserName) {
 		print("Number of Test cases Failed ="+ FractalBaseStep.overallTestNGResult );
 		if(FractalBaseStep.overallTestNGResult > 0) {

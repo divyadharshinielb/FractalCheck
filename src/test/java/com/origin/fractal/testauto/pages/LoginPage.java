@@ -26,7 +26,7 @@ public class LoginPage extends FractalBasePage {
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
 	private By registerLoginBtn=By.xpath("//div[@class='padding-bp-12 text-center padding-t-5']//a[@class='text-D98040']");
 	private By lblUser = By.xpath("//img[@class='logout-height']");
-	private By lblAdmin = By.xpath("//span[@title='Origin']");
+	private By lblAdmin = By.xpath("//span[@title='Staging']");
 	private By lblAdminLogout = By.xpath("//a[@href='#'][contains(text(),'Logout')]");
 	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
 	private By lblSubscriptionPage= By.xpath("//p[@class='choose-right-plan']");
