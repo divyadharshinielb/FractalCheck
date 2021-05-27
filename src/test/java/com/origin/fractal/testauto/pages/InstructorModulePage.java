@@ -176,9 +176,9 @@ public class InstructorModulePage extends FractalBasePage {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		click(eventTab);
-		wait(2);
+		wait(10);
 		click(lblInprogress);
-		wait(2);
+		wait(15);
 		/*	click(lblInprogressEvent);
 		verifyText("Pre - Event",lblPreEvent);
 		wait(2);
@@ -193,11 +193,11 @@ public class InstructorModulePage extends FractalBasePage {
 	public void verifyUpcomingEvent(){
 		WebElement element = driver.findElement(By.xpath("//i[contains(text(),';')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		wait(2);
+		wait(5);
 		click(eventTab);
-		wait(2);
+		wait(10);
 		click(lblUpcoming);
-		wait(2);
+		wait(15);
 		if (elementExist(lblUpcomingEvent)) {
 			click(lblUpcomingEvent);
 			verifyText("Pre - Event",lblPreEvent);
@@ -214,11 +214,11 @@ public class InstructorModulePage extends FractalBasePage {
 	public void verifyCompletedEvent() {
 		WebElement element= driver.findElement(By.xpath("//i[contains(text(),';')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		wait(2);
+		wait(5);
 		click(eventTab);
-		wait(2);
+		wait(10);
 		click(lblCompleted);
-		wait(2);
+		wait(15);
 		if(elementExist(lblCompeletdEvent)) {
 		click(lblCompeletdEvent);
 		verifyText("Pre - Event",lblPreEvent);
