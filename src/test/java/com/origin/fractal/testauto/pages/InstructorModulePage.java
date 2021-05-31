@@ -37,6 +37,7 @@ public class InstructorModulePage extends FractalBasePage {
 	private By lblCompeletdEvent= By.xpath("//p[text()='Classroom']");//div[contains(@class,'ins_eve_div')]
 	private By dashBoardIcon= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]//i");
 	private By eventTab= By.xpath("//i[contains(text(),';')]");
+	private By lblNorecords= By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]");
 	private By lblInprogress= By.xpath("//li[@id='react-tabs-0']");
 	private By lblUpcoming= By.xpath("//li[@id='react-tabs-2']");
 	private By lblCompleted= By.xpath("//li[@id='react-tabs-4']");//li[@id='react-tabs-4']
@@ -67,7 +68,7 @@ public class InstructorModulePage extends FractalBasePage {
 	public void verifyEventSectionLabels() throws Exception {
 		
 	wait(2);
-		if(elementExist(nextEventViewAll)) {
+		if(elementExist(nextEventViewAll)){
 			click(nextEventViewAll);
 			wait(2);
 			verifyText("UPCOMING",lblUpcomingLabel);
@@ -75,13 +76,14 @@ public class InstructorModulePage extends FractalBasePage {
 			verifyText("COMPLETED",lblCompletedLabel);
 		}
 		
+		else if(elementExist(lblNorecords)) {
+			
+        System.out.println("No records found");
+		}
 		else {
 			throw new Exception( );
-
 		}
-
-		
-		}
+	}
 	
 	public void verifyButtons() {
 		wait(2);
@@ -165,6 +167,10 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		verifyText("Terms & Conditions",lblTermsAndConditions);
 		}
+		else if(elementExist(lblNorecords)) {
+			
+	        System.out.println("No records found");
+			}
 		else {
 			throw new Exception( );
 
@@ -172,8 +178,8 @@ public class InstructorModulePage extends FractalBasePage {
 
 	}
 	public void verifyInprogressEvent() {
-		WebElement element = driver.findElement(By.xpath("//i[contains(text(),';')]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+//		WebElement element = driver.findElement(By.xpath("//i[contains(text(),';')]"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		click(eventTab);
 		wait(10);
@@ -191,9 +197,9 @@ public class InstructorModulePage extends FractalBasePage {
 		verifyText("Terms & Conditions",lblInprogressTermsAndConditions);
 		 */}
 	public void verifyUpcomingEvent(){
-		WebElement element = driver.findElement(By.xpath("//i[contains(text(),';')]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		wait(5);
+//		WebElement element = driver.findElement(By.xpath("//i[contains(text(),';')]"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+//		wait(5);
 		click(eventTab);
 		wait(10);
 		click(lblUpcoming);
@@ -212,8 +218,8 @@ public class InstructorModulePage extends FractalBasePage {
 		//		verifyText("Terms & Conditions",lblInprogressTermsAndConditions);
 	}
 	public void verifyCompletedEvent() {
-		WebElement element= driver.findElement(By.xpath("//i[contains(text(),';')]"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+//		WebElement element= driver.findElement(By.xpath("//i[contains(text(),';')]"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(5);
 		click(eventTab);
 		wait(10);
