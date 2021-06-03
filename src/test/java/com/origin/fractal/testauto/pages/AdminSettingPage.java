@@ -63,6 +63,8 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By SaveBtn=By.xpath("//*[text()='Save'][@type='submit']");
 	private By updatedText=By.xpath("//*[contains(text(),'successfully')]");
 	private By closeBtn=By.xpath("(//*[@class='aside-dialog']//div)[2]//i");
+	public By categoryClick = By.xpath("//span[contains(text(),'createCategories')]");
+	public By deleteCategoryIcon = By.xpath("//span[contains(text(),'createCategories')]/../../../../div/i[contains(@title,'Delete')]");
 	public AdminSettingPage(WebDriver driver) {
 		super(driver);
 	}
@@ -70,7 +72,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	/* Function: verifyCreateandDeleteCategory()
 	 * Purpose: Create and delete the Category
 	 */
-	public void verifyCreateandDeleteCategory() throws InterruptedException {
+/*	public void verifyCreateandDeleteCategory() throws InterruptedException {
 		wait(5);
 		moveElementFocus(btnSettings);
 		moveElementFocusandClick(categorySettings);
@@ -93,6 +95,35 @@ public class AdminSettingPage extends FractalBasePage  {
 //			wait(5);
 //		}
 
+	}*/
+	public boolean verifyCreateandDeleteCategory() throws InterruptedException {
+		wait(20);
+		moveElementFocus(btnSettings);
+		moveElementFocusandClick(categorySettings);
+		click(addCategoryBtn);
+		wait(3);
+		enterData(cateName,categoryName);
+		wait(2);
+		enterData(cateDescri,categoryDescription);
+		wait(5);
+		click(categoryCreateBtn);
+		wait(3);
+	if	(elementExist(categoryClick)) {
+		print("Category is successfully created");
+		elementExist(deleteCategoryIcon);
+		click(deleteCategoryIcon);
+		wait(2);
+		elementExist(deleteOKBtn);
+		wait(2);
+		click(deleteOKBtn);
+		wait(2);
+		return true;
+	}
+	else {
+		return false;
+	}
+		
+	
 	}
 
 	/* Function: checkClassroomSettings()
