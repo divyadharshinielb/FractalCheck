@@ -24,5 +24,20 @@ public class ReportSteps extends FractalBaseStep{
 		   };
 			
 	}
+	/* Method: contentReport();
+	 * purpose: admin able to launch the reports page
+	 */
+	public void contentReport() {
+		 result ="PASSED";
+		   try {
+		     page.contentReport();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   };
+			
+	}
 
 }

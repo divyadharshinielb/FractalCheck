@@ -18,6 +18,12 @@ public class ReportPage extends FractalBasePage{
 	 private By lblGroupNameContent = By.xpath("//ng-include[1]/div[1]/div[5]/div[3]/div[2]/div[1]/div[9]");
 	 private By lblCatalogName = By.xpath("//ng-include[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/md-autocomplete[1]/md-autocomplete-wrap[1]/input[1]");
 	 private By btnGenerate1 = By.xpath("//ng-include[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div/button");
+	 private By lblSelectContent = By.xpath("//span[contains(text(),'Select Content')]");
+	 private By lblResource = By.xpath("//li[contains(text(),'Course')]");
+	 private By lblSearchField = By.xpath("//input[@id='input-4']");
+	 private By txtResourceName = By.xpath("//span[contains(text(),'Auto_HTMLTag_Course')]");
+	 private By generateBtn = By.xpath("//body/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/md-tabs[1]/md-tabs-content-wrapper[1]/md-tab-content[1]/div[1]/ng-include[1]/div[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/button[1]");
+	 private By btnExportbtn = By.xpath("//body/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/md-tabs[1]/md-tabs-content-wrapper[1]/md-tab-content[1]/div[1]/ng-include[1]/div[1]/div[5]/div[1]/div[1]/div[3]/div[1]/div[1]");
 	 public ReportPage(WebDriver driver) {
 		super(driver);
 	}
@@ -61,4 +67,28 @@ public class ReportPage extends FractalBasePage{
 			String lblGroupNameContent1=getText(lblGroupNameContent);
 			verifyText(lblGroupNameContent1,lblGroupNameContent);*/
 		}
+	 /* Method: contentReport();
+		 * purpose: admin able to download the admin reports page
+		 */
+    public void contentReport() {
+    	wait(2);
+    	click(btnReports);
+		wait(5);
+		System.out.println("checking.....");
+		click(lblSelectContent);
+		wait(5);
+		System.out.println("checking.....");
+		click(lblResource);
+		wait(5);
+		System.out.println("checking.....");
+		enterData("Auto_HTMLTag_Course",lblSearchField);
+		wait(5);
+		click(txtResourceName);
+		wait(10);
+		click(generateBtn);
+		wait(15);
+		click(btnExportbtn);
+		wait(10);
+		
+}
 }
