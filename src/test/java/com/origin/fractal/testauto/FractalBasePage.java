@@ -32,10 +32,10 @@ private String gridLblName ="]/*//a";//]/*//h3 //dd ]/div[1]/div[1]/div[2]/p[1]/
 
 private String  listBoxBtn= ".//div/ng-include[1]/div[1]/div[1]/div[3]/ng-include[1]/div[1]/div[3]/div";
 private String  listLblName="]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3";
-private By catalogName = By.xpath("//div[@class='cdescrip font-24 tecap']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../div/h3
-private By catalogType = By.xpath(".//div//p[@class='cname margin-t-15']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../p
+private By catalogName = By.xpath("//span[@class='three-line-clamp']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../div/h3
+private By catalogType = By.xpath(".//p[@class='cname margin-t-15']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../p
 private By catalogCourseCount = By.xpath(".//div//span[@class='obj_count padding-l-15 font-12']");//div/ng-include/*//div/span[contains(text(),'Updated on')]/../div[last()]/h3
-private By catalogValidity = By.xpath("//div[text()='Validity:']");//div/ng-include/div/*//div/span[contains(text(),'Valid till:')]/span
+private By catalogValidity = By.xpath("//span[@class='fdcolor pl-1']");//div/ng-include/div/*//div/span[contains(text(),'Valid till:')]/span
 private By btnGrid = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[1]");
 private By lblcontents = By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/..");
 private String lblNavBtn=".//div/h2[contains(text(),'Recently Added')]/../../following-sibling::div/*//div/slick/ul/li[";

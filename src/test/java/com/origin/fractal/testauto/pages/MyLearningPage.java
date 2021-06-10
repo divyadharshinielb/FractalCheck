@@ -25,7 +25,7 @@ public class MyLearningPage extends FractalBasePage {
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
-	private By clickCatalog = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]/div[2]/p[1]/a[1]");//Updated on Nov-22-18
+	private By clickCatalog = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");//Updated on Nov-22-18
 
 	private By lblCatlogCategory = By.xpath(".//div[contains(@class,'container pl-0 bgcolor')]//div[contains(@class,'category')]//div[1]");//div[contains(text(),'Category :')]
 	private By lblLanguage = By.xpath(".//div[contains(@class,'category')]//div[2]");//div[contains(text(),'Language :')]
@@ -35,21 +35,21 @@ public class MyLearningPage extends FractalBasePage {
 	private String lblFilterLink = ".//div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../a";
 	private String boxBtn = ".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a";
 	private String boxCatType = "]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h6[1]/span[2]";
-	private By boxButton = By.xpath(".//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]/div[1]/div[1]");//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
+	private By boxButton = By.xpath("./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]/div[1]/div[1]");//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
 	/************Newui***************/
 	private By lblCatnameInside = By.xpath(".//span[@class='three-line-clamp']");//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3
 	private By bundleCnt = By.xpath("./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");////Updated Nov-22-18
 	private By lblcourseName = By.xpath(".//span[@class='three-line-clamp']");//Updated Nov-22-18//h1[@class='masonry-bundlename ellipsis padding-t-5']
 	private By lblDuration = By.xpath(".//div/*//span[contains(text(),'Duration')]");
 	private By lblTick = By.xpath(".//button[@class='pl-30 launch_btn www']//img");//round-progress-wrapper
-	private By lblCompleted = By.xpath("//li[contains(text(),'COMPLETED')]");
+	private By lblCompleted = By.xpath("//li[@id='react-tabs-2']");
 
 	private By lblCategory = By.xpath(".//a[contains(text(),'CATEGORIES')]");//a[contains(text(),'CATEGORIES')]
    
 	private String categoryList = "../html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]//div//ul//li";//*[@id='header']/*//button[contains(text(),'Category')]/../../div/ul/li
     
-	private By lblStar= By.xpath(".//div//div[@class='dv-star-rating']");//div/ng-include/div/*//div/ng-include/div/*//div/ul
-	private By lblCatalogTick= By.xpath(".//a[1]//div[1]//div[1]//div[1]//div[1]//div[1]//a[1]//div[1]//img");//div/ng-include/div/*//div/ng-include/div/*//div/ul/../../div/*//div[contains(@class,'round-progress-wrapper')]
+	private By lblStar= By.xpath("./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/label[4]/i[1]");//div/ng-include/div/*//div/ng-include/div/*//div/ul
+	private By lblCatalogTick= By.xpath("./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/img[1]");//div/ng-include/div/*//div/ng-include/div/*//div/ul/../../div/*//div[contains(@class,'round-progress-wrapper')]
 	/*********************/	
 	private String lobjpath1 = ".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/div[";
 	private String lobjpath2 = "]/*//span";
@@ -199,10 +199,11 @@ public class MyLearningPage extends FractalBasePage {
 		System.out.println("true");
 	}
 	public void verifyListView() {
+	/*	wait(2);
 		click(lblAll);
 		wait(5);
 	//	listView();
-		System.out.println("true");
+	*/	System.out.println("true");
 	}
 	public void verifyCategory() {
 		wait(5);
@@ -217,13 +218,16 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyRatings() throws Exception {
-/*		click(lblCompleted);
 		wait(2);
+		click(lblCompleted);
+	/*	wait(2);
 		click(btnGrid);
 		wait(2);
 		click(boxButton);
-	*/	wait(2);
-	if(elementExist(boxButton)) {
+		wait(5);
+	*/if(elementExist(boxButton)) {
+		click(boxButton);
+		wait(2);
 		verifyCompletedCatalog(lblStar,lblCatalogTick);
 	}
 	else {
@@ -235,16 +239,11 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyBundleContents() {
 		if(elementExist(lblBundles)) {
 			wait(5);
-			WebElement element = driver.findElement(lblBundles); Actions 
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-			wait(5);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("javascript:window.scrollBy(250,350)");
+			wait(10);
 		click(lblBundles);
 		wait(5);
-		WebElement element1 = driver.findElement(clickCatalog); Actions 
-		actions1 = new Actions(driver); actions.moveToElement(element1);
-		actions1.perform();
-		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
 		}
@@ -252,16 +251,11 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyCourseContents() throws Exception {
 		if(elementExist(lblCourses)) {
 			wait(10);
-			WebElement element = driver.findElement(lblCourses); Actions 
-			actions = new Actions(driver); actions.moveToElement(element);
-			actions.perform();
-			wait(5);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("javascript:window.scrollBy(250,350)");
+	        wait(5);
 		click(lblCourses);
 		wait(5);
-		WebElement element1 = driver.findElement(clickCatalog); Actions 
-		actions1 = new Actions(driver); actions1.moveToElement(element1);
-		actions1.perform();
-		wait(2);
 		click(clickCatalog);
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
 		}
