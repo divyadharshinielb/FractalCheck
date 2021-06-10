@@ -13,7 +13,7 @@ public class LoginPage extends FractalBasePage {
 	private By btnLogin1 = By.xpath(".//button[@id='login_btn']");
 	private By logoSymbol = By.id("logo");
 	private By rememberMe=By.xpath(".//label[@class='font-size-14']");
-	private By lblProfile = By.xpath(".//div[@class='user-profile-letter']");
+	private By lblProfile = By.xpath(".//img[@class='logout-height']");
 	private By logOutButton = By.xpath(".//li[contains(text(),'Logout')]");
 	private By registerButton = By.xpath(".//a[@class='reg_btn font-size-18 reg']");
 	private By forgotpassword = By.xpath(".//a[@class='font-size-14 fgt-btn']");
@@ -25,7 +25,7 @@ public class LoginPage extends FractalBasePage {
 	String[]  passWord={ "","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
 	private By registerLoginBtn=By.xpath("//div[@class='padding-bp-12 text-center padding-t-5']//a[@class='text-D98040']");
-	private By lblUser = By.xpath("//img[@class='logout-height']");
+	private By lblUser = By.xpath("//div[@class='user-profile-letter']");
 	private By lblAdmin = By.xpath("//span[@title='Staging']");
 	private By lblAdminLogout = By.xpath("//a[@href='#'][contains(text(),'Logout')]");
 	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
