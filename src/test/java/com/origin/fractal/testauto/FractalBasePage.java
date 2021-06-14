@@ -13,7 +13,7 @@ public abstract class FractalBasePage extends BasePage {
 	protected FractalVerifier verifier;
 
 	private By lblMyLearning = By.xpath("//a[contains(text(),'MY LEARNING')]");
-	private By lblProfile = By.xpath(".//img[@class='logout-height']");//For new Ui.//*[@id='dLabel']/span
+	private By lblProfile = By.xpath("//div[@class='logout-height user-letter']");//For new Ui.//*[@id='dLabel']/span
 	private By lblMyAccount = By.xpath("//ul/*/li[contains(text(), 'My Account')]"); //img[@class='pl-2 padding-r-10 pt-1']
 	private By btnCategory = By.xpath(".//*[@id='header']/*//button");
 	private By btnBellIcon = By.xpath(".//div[contains(@class,'pad-hover-67 notify-box')]//span[@class='jss4']");//For new UI.//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
