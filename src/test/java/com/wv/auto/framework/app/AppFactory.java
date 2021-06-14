@@ -21,7 +21,7 @@ public class AppFactory {
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("deviceName", "emulator-5554"); // CVH7N15B05003054 , emulator-5554
-		capabilities.setCapability("platformVersion", "8"); // 6.0.1, 8.1.0 , 6.0
+		capabilities.setCapability("platformVersion", "8.1"); // 6.0.1, 8.1.0 , 6.0
 		System.out.println(new File(fratalApkFile).getAbsolutePath());
 		capabilities.setCapability("app", new File(fratalApkFile).getAbsolutePath());
 		capabilities.setCapability("noReset", "true");
