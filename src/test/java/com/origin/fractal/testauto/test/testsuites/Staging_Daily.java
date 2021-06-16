@@ -67,9 +67,9 @@ public class Staging_Daily extends FractalBaseWebTest {
 		homeSteps.verifyResumeLearningText();//newui
 		Reporter.writeSummary("TCID_HOME_037,  Verify  whether the dash board contains the heading Resume Learning, " +  homeSteps.getResult() );
 		//TCID_37:Checking whether the dash board contains the heading Learning in Progress
-		homeSteps.verifyContinueText();//newui
-		Reporter.writeSummary("TCID_HOME_041,  Verify Continue button is displayed, " + homeSteps.getResult() );
-		homeSteps.clickContinueBtnRetToHome();//newui
+//		homeSteps.verifyContinueText();//newui
+//		Reporter.writeSummary("TCID_HOME_041,  Verify Continue button is displayed, " + homeSteps.getResult() );
+//		homeSteps.clickContinueBtnRetToHome();//newui
 		//TCID_02: Verify  to My Home page data
 		homeSteps.verifyHomePageData();//newui
 		Reporter.writeSummary("TCID_HOME_ 002,  Verify the existence of Home page elements, " + homeSteps.getResult() );
@@ -477,7 +477,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		/*
 		 * Test event same day and same time action & Test Instructor calendar actions
 		 */
-		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 )
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, priority = 0 )
 		public void TestInstructorCalendar(String row, String strBrowserName) throws IOException {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			//		MenuSteps menuSteps = new MenuSteps(driver);
