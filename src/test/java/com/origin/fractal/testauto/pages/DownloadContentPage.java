@@ -25,9 +25,9 @@ private By lblItemCode= By.xpath("//input[@name='item_code']");
 
 private By searchText= By.xpath("//input[@id='theInput']");
 private By audioCatalog= By.xpath("//a[@class='a-link']");
-private By audioLearningObject= By.xpath("//div[contains(text(),'AutoTC_Itemcode_Video')]");
 private By resumeLearning= By.xpath("//span[@class='vid clearfix']");
-private By downloadIcon= By.xpath("//body/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/img[1]");
+private By audioLearningObject= By.xpath("//h1[contains(text(),'AutoTC_Itemcode_Bundle')]");
+private By downloadIcon= By.xpath("//div[@id='loname']/../div/div/div[2]/span[1]");
 
 public DownloadContentPage(WebDriver driver) {
 		super(driver);
@@ -101,24 +101,12 @@ public DownloadContentPage(WebDriver driver) {
 		wait(5);
 		enterData("AutoTC_Itemcode_Bundle",searchText);
 		wait(2);
-		Actions builder = new Actions(driver);        
-		builder.sendKeys(Keys.ENTER);
-	//	click(resumeLearning);
+		driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 		wait(5);
-	//	click(audioCatalog);
-		wait(5);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WebElement Element = driver.findElement(audioLearningObject);
-		js.executeScript("arguments[0].scrollIntoView();", Element);
-//		WebElement element = driver.findElement(audioLearningObject); Actions
-//		actions = new Actions(driver); actions.moveToElement(element);
-//		actions.perform();
-		wait(2);
 		click(audioLearningObject);
 		wait(10);
-		driver.switchTo().frame(0);
 		click(downloadIcon);
-		driver.switchTo().defaultContent();
+		print("download clicked");
 		wait(5);
 		
 	}

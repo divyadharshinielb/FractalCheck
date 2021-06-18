@@ -306,9 +306,7 @@ public class MyLearningPage extends FractalBasePage {
     private By lblTraditionalClass=By.xpath(".//button[contains(text(),'TRADITIONAL CLASS')]");
     private By lblCancel=By.xpath("  //button[contains(text(),'CANCEL')]");
     private By lblRegisterText=By.xpath("//p[contains(@class,'margin-tb-50 destext myfont text_center line-ht')]//p[1]");
-    private By lblEventCalendarText=By.xpath("//button[contains(@class,'margin-t-10')]");
     private By btnCancelRegistration=By.xpath(".//button[contains(text(),'CANCEL REGISTRATION')]");
-    private By lblAssignedClassroom2=By.xpath("//h1[contains(text(),'checking for classroomevent')]");//h1[contains(text(),'App_notification_check')]
     private By lblAssignedClassroom3=By.xpath(" //h1[contains(text(),'checking for classroom1')]");
     private By lblPreeventActivities=By.xpath("//span[contains(text(),'Pre-event Activities')]");
     private By lblReference=By.xpath(" //span[contains(text(),'Reference')]");
@@ -317,7 +315,12 @@ public class MyLearningPage extends FractalBasePage {
     private By breadcrumLink=By.xpath("//a[text()='Automation Learningpath']");
     private By registrationCancelText=By.xpath("//p[@class='f-s-20 margin-tb-10 heading2text myfont text_center boldText']");
     private By btnNO=By.xpath("//button[contains(text(),'NO')]");
-	 public void  verifyClassroomDetails() {
+    private By classroomParent=By.xpath("//h1[contains(text(),'classroom')]/../../..");
+    private By lblEventCalendarText=By.xpath("//button[contains(text(),'CANCEL REGISTRATION')]");
+    private By lblAssignedClassroom2=By.xpath("//h1[contains(text(),'classroom')]");
+    private By privacyText=By.xpath("//a[contains(text(),'Privacy')]");
+    
+    public void  verifyClassroomDetails() {
 				wait(5);
 				click(globalSearch);
 				wait(10);	
@@ -361,24 +364,20 @@ public class MyLearningPage extends FractalBasePage {
 				}
 		  
 			public void	verifyClassrooomLabels(){
-				wait(2);
-				WebElement element = driver.findElement(By.xpath("//a[text()='Automation_Learningpath']"));
-				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+				scrollToElement(lblAssignedClassroom2);
 				wait(5);
-				wait(2);
-				  click(breadcrumLink);
-				  wait(2);
-				  WebElement element1 = driver.findElement(lblAssignedClassroom2);
-					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
-					wait(5);
-			click(lblAssignedClassroom2);
-			//  verifyText("Pre-event Activities",lblPreeventActivities);
-			if(elementExist(lblReference)) {
-			  verifyText("Reference",lblReference);
-			}
-			//  verifyText("Post-event Activities",lblPosteventActivities);
-			if(elementExist(lblTermsCondition)) {
-			  verifyText("Terms & Conditions",lblTermsCondition);
+				click(lblAssignedClassroom2);
+				wait(5);
+				scrollToElement(privacyText);
+				//  verifyText("Pre-event Activities",lblPreeventActivities);
+				if(elementExist(lblReference)) {
+				  verifyText("Reference",lblReference);
+				}
+				//  verifyText("Post-event Activities",lblPosteventActivities);
+				if(elementExist(lblTermsCondition)) {
+				  verifyText("Terms & Conditions",lblTermsCondition);
+				}
+				wait(5);
 			}
 			  
 		/*	  click(btnCancelRegistration);
@@ -425,16 +424,12 @@ public class MyLearningPage extends FractalBasePage {
 			  }
 			  
 			  public void verifyChooseEventBtn() throws Exception{
+				  scrollToElement(classroomParent);
+				  wait(2);
 				  if(elementExist(lblEventCalendarText)) {
-			  verifyText("CHOOSE EVENT",lblEventCalendarText);
-			  wait(2);
-			  WebElement element = driver.findElement( By.xpath("//a[text()='Automation Learningpath']")); Actions
-				actions = new Actions(driver); actions.moveToElement(element);
-				actions.perform();
-				 wait(2);
-			  click(breadcrumLink);
-			  scrollBar();
-				  }
+			  	  verifyText("CANCEL REGISTRATION",lblEventCalendarText);
+				  wait(2);
+				  }  
 				  else {
 						throw new Exception( );
 
