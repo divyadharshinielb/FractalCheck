@@ -297,7 +297,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By classroomlblDate=By.xpath("//p[contains(@class,'timebox-li margin-b-7')]");
 	private By classroomlblTime=By.xpath("//div[contains(@class,'margin-t-0')]//p[2]");
     private By classroomlblLocation=By.xpath("//div[contains(@class,'display-box')]");
-    private By lblAssignedClassroom=By.xpath("//h3[contains(text(),'checking_for_classroom1')]");
+    private By lblAssignedClassroom=By.xpath("//h3[contains(text(),'Checking_for_classroom1')]");
     private By classroomlblEvent=By.xpath("//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[1]");
     private By classroomlblEventDate=By.xpath("//div[contains(@class,'col-lg-2 col-md-2 col-sm-2 col-xs-2 height-115 event-bg')]");
     private By classroomlblEventTime=By.xpath("//div[contains(@class,'display-box')]//div[contains(@class,'padding-t-5')]");
@@ -307,7 +307,7 @@ public class MyLearningPage extends FractalBasePage {
     private By lblCancel=By.xpath("  //button[contains(text(),'CANCEL')]");
     private By lblRegisterText=By.xpath("//p[contains(@class,'margin-tb-50 destext myfont text_center line-ht')]//p[1]");
     private By btnCancelRegistration=By.xpath(".//button[contains(text(),'CANCEL REGISTRATION')]");
-    private By lblAssignedClassroom3=By.xpath(" //h1[contains(text(),'checking for classroom1')]");
+    private By lblAssignedClassroom3=By.xpath(" //h1[contains(text(),'Checking for classroom1')]");
     private By lblPreeventActivities=By.xpath("//span[contains(text(),'Pre-event Activities')]");
     private By lblReference=By.xpath(" //span[contains(text(),'Reference')]");
     private By lblPosteventActivities=By.xpath("//span[contains(text(),'Post-event Activities')]");
@@ -339,7 +339,7 @@ public class MyLearningPage extends FractalBasePage {
 			  wait(5);
 		    }
 			  public void	verifyAssignedClassroom(){
-				  scrollBar();
+			  scrollBar();
 				  wait(5);
 				 verifyText("checking_for_classroom1",lblAssignedClassroom);
 					}
@@ -378,20 +378,6 @@ public class MyLearningPage extends FractalBasePage {
 				  verifyText("Terms & Conditions",lblTermsCondition);
 				}
 				wait(5);
-			}
-			  
-		/*	  click(btnCancelRegistration);
-			  verifyText("Are you sure you want to cancel your registration?",registrationCancelText);
-			  click(btnNO);
-		*/	  wait(2);
-		WebElement element2 = driver.findElement(By.xpath("//a[text()='Automation Learningpath']"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element2);
-		wait(5);
-			  click(breadcrumLink);
-			  scrollBar();
-			  wait(5);
-			  click(lbldetails);
-			  wait(5);
 			}
 //			  Checking whether the Event is displayed under classroom object
 			  public void verifyEventDisplayClassroomObject(){
@@ -440,9 +426,10 @@ public class MyLearningPage extends FractalBasePage {
 		   /* WebElement element = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom 1')]")); Actions
 			actions = new Actions(driver); actions.moveToElement(element);
 			actions.perform();*/
-			WebElement element = driver.findElement(By.xpath("//h1[contains(text(),'checking_for_classroom1')]"));
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-			wait(5);
+			WebElement element = driver.findElement(By.xpath("//h3[contains(text(),'Checking_for_classroom1')]"));
+			Actions a = new Actions(driver);
+		      a.moveToElement(element);
+		      a.perform();
 		    }
 		    public void multiplecategorycheck() {
 		    	  //code to search for a catalog in search bar and check for multiplecategories
@@ -550,6 +537,4 @@ public class MyLearningPage extends FractalBasePage {
 					return false;
 				}
 				//Ends
-
-
 }

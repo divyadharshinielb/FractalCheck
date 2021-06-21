@@ -411,7 +411,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		Reporter.writeSummary("TC_MY_LEARN_:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
 		mLSteps.verifyChooseEventBtn();//newui
 		Reporter.writeSummary("TC_MY_LEARN_:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
-		//mLSteps.verifyClassrooomLabels();//newui
+		mLSteps.verifyClassrooomLabels();//newui
 		Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
 	}
 
