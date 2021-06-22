@@ -68,7 +68,7 @@ public class MyLearningSteps extends FractalBaseStep {
 			result="FAILED";
 		}
 	}public void multiplecategorycheck() {
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.multiplecategorycheck();
 		}
@@ -79,7 +79,7 @@ public class MyLearningSteps extends FractalBaseStep {
 		}
 	}	
 	public void multiplecategoryhomepage() {
-		result ="Passed";
+		result ="PASSED";
 		try {
 			page.multiplecategoryhomepage();
 		}
