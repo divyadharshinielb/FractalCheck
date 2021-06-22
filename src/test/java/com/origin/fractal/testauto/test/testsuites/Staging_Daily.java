@@ -435,7 +435,8 @@ public class Staging_Daily extends FractalBaseWebTest {
 			//ends	
 		instbellnotiSteps.prerequisite("instructor2","ISTTime",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructorEmailID,instbellnotiPage.instructorPassword);
-		instbellnotiSteps.verifyEmptyNotification(); 
+	//commented by mahesh on 22-06-2021
+	/*	instbellnotiSteps.verifyEmptyNotification(); 
 		//Added on 15-Sep-20
 		Reporter.writeSummary("FR-111_InstrLogin,Verify the Instructor login," +instbellnotiSteps.getResult() );
 
@@ -454,7 +455,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password);
 		instbellnotiSteps.verifyInviteNotification();
 		Reporter.writeSummary("FR1-2017_InstrBell_TC-003,Verify the instructor2 able to get invite notification (admin invites instructor2)," +instbellnotiSteps.getResult() );
-		instbellnotiSteps.instLogout();
+	*/	instbellnotiSteps.instLogout();
 		siteAdminLogin(driver);
 		instbellnotiSteps.adminRescheduledEvent("CETTime",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password); 
