@@ -21,14 +21,15 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By newsSlider=By.xpath("//*[@id='normal-slidedown']");//Added on 26-Nov-20
 	private By btnCancelnewsSlider=By.xpath("//*[@id='normal-slidedown']//button[text()='Cancel']");//Added on 26-Nov-20
 	// Heading 
-	private By headerFeature	= By.xpath("(//UL[@class='navigation clearfix']//a)[1]");
-	private By headerPricing	= By.xpath("(//UL[@class='navigation clearfix']//a)[2]");
-	private By headerTrailSign	= By.xpath("(//UL[@class='navigation clearfix']//a)[3]");
+	private By headerSolution	= By.xpath("(//UL[@class='navigation clearfix']//a)[1]");
+	private By headerFeature	= By.xpath("(//UL[@class='navigation clearfix']//a)[2]");
+	private By headerPricing	= By.xpath("(//UL[@class='navigation clearfix']//a)[3]");
+	private By headerTrailSign	= By.xpath("(//UL[@class='navigation clearfix']//a)[4]");
 	private By headerBlog		= By.xpath("(//UL[@class='navigation clearfix']//a)[4]");
-	private By headerResources	= By.xpath("(//UL[@class='navigation clearfix']//a)[4]");// Added ON 13-Jan-20
-	private By headerPhilosophy	= By.xpath("(//UL[@class='navigation clearfix']//a)[5]");
-	private By headerAboutUs	= By.xpath("(//UL[@class='navigation clearfix']//a)[6]");
-	private By headerContact	= By.xpath("(//UL[@class='navigation clearfix']//a)[7]");
+	private By headerResources	= By.xpath("(//UL[@class='navigation clearfix']//a)[5]");// Added ON 13-Jan-20
+	private By headerPhilosophy	= By.xpath("(//UL[@class='navigation clearfix']//a)[6]");
+	private By headerAboutUs	= By.xpath("(//UL[@class='navigation clearfix']//a)[7]");
+	private By headerContact	= By.xpath("(//UL[@class='navigation clearfix']//a)[8]");
 	private By unpluggedBanner	= By.xpath("//a[@href='https://originfractal.com/unplugged']");// Added ON 13-Jan-20
 	//Home page
 	private By postedBlog1		= By.xpath("((//*[@class='kc-list-item-3'])[1]//a)[text()='Read more ']");//Updated on 18-Dec-20
@@ -92,6 +93,12 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	 */
 	public boolean verifyHomeLogo() {
 		return clickAndcheckLoading(headerLogo,getLabel("webUrl"));
+	}
+	/* Function Name: verifyHeaderSolution()
+	 * Purpose: Verify the page loading time
+	 */
+	public boolean verifyHeaderSolution() {
+		return clickAndcheckLoading(headerSolution,getLabel("soutionUrl"));
 	}
 
 	/* Function Name: verifyHeaderFeature()

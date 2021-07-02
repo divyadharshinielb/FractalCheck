@@ -26,10 +26,12 @@ public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 		OriginFractalLoadSteps Steps=new OriginFractalLoadSteps(driver);
 		goToUrl(driver);
 		Reporter.writeSummary("Url-Navigation,Open the URL ,"+TimeManager.getTimeDiffFromPrevEventInSecs().intern()+","+Steps.getResult());
+		Steps.verifyHeaderSolution();
+		Reporter.writeSummary("TC-01_Header-Solution,Verifying the solution page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderFeature();
-		Reporter.writeSummary("TC-01_Header-Feature,Verifying the feature page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-02_Header-Feature,Verifying the feature page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderPricing();
-		Reporter.writeSummary("TC-02_Header-Pricing,Verifying the pricing page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("TC-03_Header-Pricing,Verifying the pricing page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		//30-Dec-20: popup is NOT clickable in TrailsignUp sheet
 		//		Steps.verifyHeaderTrail();
 		//		Reporter.writeSummary("TC-03_Header-TrialSignUp,Verifying the trail sign Up page loading time,"+TimeManager.seconds+"," +  Steps.getResult());

@@ -61,6 +61,20 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		}
 	}
 
+	/* Function Name: verifyHeaderSolution()
+	 * Purpose: Verify the page loading time
+	 */
+	public void verifyHeaderSolution() {
+		result="FAILED";
+		try{
+			if(loadPage.verifyHeaderSolution()==true) {
+				result="PASSED";
+			}
+		}catch (Exception e) {
+			result="FAILED";
+			ClickHome(); 
+		}
+	}
 	/* Function Name: verifyHeaderFeature()
 	 * Purpose: Verify the page loading time
 	 */
