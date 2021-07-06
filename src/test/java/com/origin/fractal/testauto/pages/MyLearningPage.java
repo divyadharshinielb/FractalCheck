@@ -25,6 +25,8 @@ public class MyLearningPage extends FractalBasePage {
 	
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
+	private By enrolledText = By.xpath("//span[@class='enroll_now_btn']");
+	private By expiredText = By.xpath("//p[@class='myexpired myfont']");
 	private By clickCatalog = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");//Updated on Nov-22-18
     private By clickCatalogBundle2= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/a[1]/div[1]/div[1]");
     private By clickCatalogBundle3= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[3]/a[1]/div[1]/div[1]");
@@ -245,8 +247,14 @@ public class MyLearningPage extends FractalBasePage {
 			wait(10);
 		click(lblBundles);
 		wait(5);
-		if(elementExist(clickCatalog)) {
+		if(elementExist(expiredText)) {
 		click(clickCatalog);
+		wait(5);
+		click(enrolledText);
+		wait(5);
+		}
+		else if(elementExist(clickCatalog)) {
+			click(clickCatalog);
 		}
 	  else if(elementExist(clickCatalogBundle2)) {
 			click(clickCatalogBundle2);
@@ -264,8 +272,14 @@ public class MyLearningPage extends FractalBasePage {
 	        js.executeScript("javascript:window.scrollBy(250,350)");
 	        wait(5);
 		click(lblCourses);
-		if(elementExist(clickCatalog)) {
+		if(elementExist(expiredText)) {
 			click(clickCatalog);
+			wait(5);
+			click(enrolledText);
+			wait(5);
+			}
+			else if(elementExist(clickCatalog)) {
+				click(clickCatalog);
 			}
 		  else if(elementExist(clickCatalogBundle2)) {
 				click(clickCatalogBundle2);
