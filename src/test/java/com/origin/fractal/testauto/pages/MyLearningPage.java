@@ -26,7 +26,8 @@ public class MyLearningPage extends FractalBasePage {
 	
 	private By lblCompl = By.className("react-sweet-progress-symbol");
 	private By clickCatalog = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");//Updated on Nov-22-18
-
+    private By clickCatalogBundle2= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/a[1]/div[1]/div[1]");
+    private By clickCatalogBundle3= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[3]/a[1]/div[1]/div[1]");
 	private By lblCatlogCategory = By.xpath(".//div[contains(@class,'container pl-0 bgcolor')]//div[contains(@class,'category')]//div[1]");//div[contains(text(),'Category :')]
 	private By lblLanguage = By.xpath(".//div[contains(@class,'category')]//div[2]");//div[contains(text(),'Language :')]
 	private By lblValidity = By.xpath("//div[text()='Validity:']");
@@ -244,7 +245,15 @@ public class MyLearningPage extends FractalBasePage {
 			wait(10);
 		click(lblBundles);
 		wait(5);
+		if(elementExist(clickCatalog)) {
 		click(clickCatalog);
+		}
+	  else if(elementExist(clickCatalogBundle2)) {
+			click(clickCatalogBundle2);
+		}
+		else {
+			click(clickCatalogBundle3);
+		}
 		verifyCatalogDeatils("lblBundleName","lblBundleType","lblNoOfBundleContents","lblBundleValidity");
 		}
 	}
@@ -255,8 +264,15 @@ public class MyLearningPage extends FractalBasePage {
 	        js.executeScript("javascript:window.scrollBy(250,350)");
 	        wait(5);
 		click(lblCourses);
-		wait(5);
-		click(clickCatalog);
+		if(elementExist(clickCatalog)) {
+			click(clickCatalog);
+			}
+		  else if(elementExist(clickCatalogBundle2)) {
+				click(clickCatalogBundle2);
+			}
+			else {
+				click(clickCatalogBundle3);
+			}
 		verifyCatalogDeatils("lblCourseName","lblCourseType","lblNoOfCourseContents","lblCourseValidity");
 		}
 	else {
