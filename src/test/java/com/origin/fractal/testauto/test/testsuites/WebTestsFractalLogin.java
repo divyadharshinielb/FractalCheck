@@ -65,12 +65,12 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 		runningIndex++;
 		verifyInstanceLogin();
 		driver.quit();
-		
-		driver = BrowserFactory.getBrowser(strBrowserName);
-		fractalInstance = "FractalWvfInstance"; 
-		runningIndex++;
-		verifyInstanceLogin();
-		driver.quit();
+		/* instance has not there i have commented the scripts 07-07-2021 by mahesh
+//		driver = BrowserFactory.getBrowser(strBrowserName);
+//		fractalInstance = "FractalWvfInstance"; 
+//		runningIndex++;
+//		verifyInstanceLogin();
+//		driver.quit();
 		
 
 		driver = BrowserFactory.getBrowser(strBrowserName);
