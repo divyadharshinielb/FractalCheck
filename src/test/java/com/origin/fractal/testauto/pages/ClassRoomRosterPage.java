@@ -51,18 +51,18 @@ public class ClassRoomRosterPage extends FractalBasePage{
 		moveElementFocusandClick(eventRosterTab);
 //		wait(2);
 //		moveElementFocusandClick(sessionAttendance);
-		wait(13);//waiting time updated
+		wait(15);//waiting time updated
 		moveElementFocusandClick(userModuleAssignment);
-		wait(5);//waiting time updated
+		wait(10);//waiting time updated
 		moveElementFocusandClick(userSubmitedAssignment);
 		wait(13);//waiting time updated
 		moveElementFocusandClick(assignmentStatus);
-		wait(2);
+		wait(5);
 		elementExist(assignmentEvalution);
 		elementExist(assignmentReject);
 		elementExist(btnDone);
 		click(backToAssignmentDetails);
-		wait(3);
+		wait(5);
 		return elementExist(backToClassRoom);
 	}
 
