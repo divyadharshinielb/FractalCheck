@@ -83,7 +83,8 @@ public class CatalogUpdatePage extends FractalBasePage {
 		wait(5);
 		click(lblSaveBtn);
 		wait(5);
-		click(By.xpath("//body/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[3]/span[1]/div[2]/button[1]"));
+		/*not in a use*/
+	//	click(By.xpath("//body/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[3]/span[1]/div[2]/button[1]"));
 		verifyText("New users",lblNewUsers);
 		verifyText("In-progress users",lblInprogressUsers);
 		verifyText("All users",lblAllUsers); 
