@@ -144,6 +144,8 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		wait(5);
 		enterData(getLabel("title"), session_name);
 		wait(4);
+		scrollToElement(sessiondesc);
+		wait(3);
 		enterData(getLabel("title"),sessiondesc);
 		wait(4); 
 		enterData(getLabel("durationhr"),classhourlbl);
