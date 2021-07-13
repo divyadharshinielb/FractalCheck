@@ -34,7 +34,7 @@ public class CatalogUpdatePage extends FractalBasePage {
 	private By updatedCatalogName= By.xpath("//a[@class='a-link'][@href='/mylearningdetails/e8e36185-eda6-d2f7-7ccc-73c353d64843']");
 	private By lblMylearning= By.xpath("//a[@href='/mylearning'][contains(text(),'MY LEARNING')]");
 	private By lblDelete= By.xpath("//i[contains(@class,'icon float-right padding-r-10 delete_highlight text-bcbcbc cursor-pointer')]");
-	private By lblUserProfileIcon= By.xpath("//img[@class='logout-height']");
+	private By lblUserProfileIcon= By.xpath("//div[@class='user-profile-letter']");
 	private By lblUserLogout= By.xpath("//li[@role='menuitem'][contains(text(),'Logout')]");
 	private By expandBtn= By.xpath("//i[@title='Expand Modules']");
 	private By catalogFilter= By.xpath("//div//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required']");
