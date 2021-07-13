@@ -63,7 +63,8 @@ public class WebTestCatalogUpdate extends FractalBaseWebTest{
 		catalogUpdateSteps.catalogTab();
 		catalogUpdateSteps.editCatalog();
 		catalogUpdateSteps.updateEditCatalog();
-		catalogUpdateSteps.radioBtnchecked();
+	    /* already this code has included in updateEditCatalog function 13-04-2021*/
+	//	catalogUpdateSteps.radioBtnchecked();
 		Reporter.writeSummary("Catalog_TC_005, Verify the in-progress New user and all-user radio button while updation of catalog item , " +  catalogUpdateSteps.getResult() );
 		catalogUpdateSteps.UpdateDetailsUserPart();
 		Reporter.writeSummary("Catalog_TC_006, Verify the catalog title is updated in user part , " +  catalogUpdateSteps.getResult() );
