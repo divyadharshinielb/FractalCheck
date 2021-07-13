@@ -11,7 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  * Created on: 02-June-2020
  */
 public class CustomizationRolesPage extends FractalBasePage{
-	private By btnMenu = By.xpath("//ng-include[@id='header1']/*//div[contains(@title,'Menu')]");
+	private By btnMenu = By.xpath("(//div[@class='menu-icon'][@title='Menu'])[1]");
 	private By settingsIcon =By.xpath("//div[@class='icon dripicons-gear']");
 	private By settingsSelection = By.xpath("//li[@title='Manage Roles']//div[1]");
 	private By managerolebreadcrumb = By.xpath("(//span[text()='Manage Roles'])[2]");
@@ -103,6 +103,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 		elementExist(closebtn);
 		elementExist(submitbtn);
 		elementExist(closeicon);
+		click(closeicon);
 
 	}
 	/*
@@ -180,13 +181,15 @@ public class CustomizationRolesPage extends FractalBasePage{
 	 */
 	public void roleMappingToDirectUser() {
 		wait(5);
+		elementExist(btnMenu);
+		wait(2);
 		click(btnMenu);
 		wait(2);
 		click(manageuserlist);
 		wait(2);
 		click(searchUsers);
 		wait(7);
-		enterData("automation",searchUsers);
+		enterData("Automation Directuser",searchUsers);
 		wait(10);
 		//click(directuserlbl);
 		wait(2);
