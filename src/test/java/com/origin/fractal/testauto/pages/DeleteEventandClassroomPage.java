@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -79,8 +80,8 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 	private By termsandconditionbtn = By.xpath("//h4[contains(text(),'Terms & Conditions')]");
 	private By notifytext = By.xpath("//div[contains(@class,'margin-t-30')]//div[1]//div[3]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[2]//h1[1]");
 	private By lblstarttime = By.xpath("//div[contains(text(),'Start Time')]");
-	private By lbldurationsel = By.xpath("//select[contains(@name,'starttime_zone')]");
-	private By lblPM = By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");
+	private By lbldurationsel = By.xpath("//body/div[3]/div[1]/div[1]/div[1]/md-dialog-content[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/select[1]");//select[@name='starttime_zone']//select[contains(@name,'starttime_zone')]
+	private By lblPM = By.xpath("//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]");//select[contains(@name,'starttime_zone')]//option[contains(@value,'PM')]
 	private By venueoption = By.xpath(".//li[contains(text(),'Origin Learning Solutions')]");
 	private By instructorselectdropdown = By.xpath("//div[@class='select-background form-group margin-all-0 cus_mar_b_30 select-180 padding-l-20']//span[@class='current'][contains(text(),'Select')]");
 	private By instructornotification = By.xpath("//p[contains(@class,'mb-0 mt-0')]");
@@ -106,17 +107,24 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(categoryoption);
 		wait(2);
 		enterData(getLabel("description"),lblDescription);
-		wait(2);
+		wait(5);
+		WebElement element = driver.findElement(lblSelectVenue);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("arguments[0].scrollIntoView();", element);
+		wait(5);
 		click(lblSelectVenue);
 		wait(5);
 		scrollToElement(classroomvenuedropdown);
 		wait(5);
+		WebElement element2 = driver.findElement(classroomvenuedropdown); 
+		Actions actions2 = new Actions(driver); 
+		actions2.moveToElement(element2);
 		click(classroomvenuedropdown);
 		//click(lblVirtualClassroom);
 		wait(5);
-		WebElement element = driver.findElement(instructorselectdropdown); 
+		WebElement element1 = driver.findElement(instructorselectdropdown); 
 		Actions actions = new Actions(driver); 
-		actions.moveToElement(element);
+		actions.moveToElement(element1);
 		actions.perform();
 		wait(2);
 		click(classroomskillsetselect);
@@ -130,11 +138,13 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(classroominstructorselect);
 		wait(4);
 		click(continueBtn);
-		wait(5);
+		wait(10);
 		scrollToElement(session_name);
 		wait(5);
 		enterData(getLabel("title"), session_name);
 		wait(6);
+		scrollToElement(sessiondesc);
+		wait(3);
 		enterData(getLabel("title"),sessiondesc);
 		wait(6); 
 		enterData(getLabel("durationhr"),classhourlbl);
@@ -193,14 +203,16 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		scrollToElement(lblstarttime);
 		wait(5);
 		enterData(getLabel("durationmin"),lblCalendarMinute);
-		wait(5);
+		wait(2);
+		scrollToElement(lbldurationsel);
+		wait(10);
+		click(lbldurationsel);
+		wait(6);
+		click(lblPM);
+		wait(4);
 		click(dropdownSelectInstructor);
 		click(dropdownSelectInstructor1);
 		wait(6);
-		click(lbldurationsel);
-		wait(5);
-		click(lblPM);
-		wait(4);
 		click(btnContinue);
 		wait(2);
 		enterData(getLabel("participants"),inpMaxParticipants);
