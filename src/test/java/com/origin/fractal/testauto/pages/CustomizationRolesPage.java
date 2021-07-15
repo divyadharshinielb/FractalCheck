@@ -225,6 +225,9 @@ public class CustomizationRolesPage extends FractalBasePage{
 	public void adminLogout() {
 		//wait time is given as user updated message occurs after updating roles
 		wait(10);
+		scrollToElement(adminprofile);
+		wait(2);
+		elementExist(adminprofile);
 		click(adminprofile);
 		wait(5);
 		click(adminLogout);
