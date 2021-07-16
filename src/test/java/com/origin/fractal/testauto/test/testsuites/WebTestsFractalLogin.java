@@ -101,13 +101,13 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 		verifyInstanceLogin();
 		driver.quit();
 		
-	//  Due to page not loading i am commenting the function.once fix i will resume	
-	/*	driver = BrowserFactory.getBrowser(strBrowserName);
+	//  divya uncommented ehsoldKonnectInstance	
+		driver = BrowserFactory.getBrowser(strBrowserName);
 	    fractalInstance = "FractalEHSOldKonnectInstance";
 		runningIndex++;
 		verifyInstanceLogin1();
 		driver.quit();
-	*/	
+	
 		
 		
 		if(overallResult > 0) {
