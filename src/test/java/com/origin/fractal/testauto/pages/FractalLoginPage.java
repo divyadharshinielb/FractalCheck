@@ -18,7 +18,7 @@ public class FractalLoginPage extends FractalBasePage {
 	// private By signInWith=By.xpath("//*[text()='Sign in with']");
 	// private By loginDiv = By.xpath("//html/body/div/div/main/div/div/div/div[2]/div/div[2]");
 	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
-	private By lblUser = By.xpath("//img[@class='logout-height']");
+	private By lblUser = By.xpath("//div[@class='user-profile-letter']");//img[@class='logout-height']
 	private By btnLoginNewUI1 = By.xpath("//button[@class='fm-btn']");
 	private By lblUser1= By.xpath("//img[@id='userAvatar']");
 	private By lblSubscriptionPage= By.xpath("//p[@class='choose-right-plan']");
