@@ -110,9 +110,9 @@ public class ElearningOrientationPage extends FractalBasePage {
 //		click(eLearningitemFilter); commented on 4-Dec-20
 		wait(5); 
 		enterData(getLabel(Name),searchFieldLearnObj);	
-		wait(10);
-//		click(eLearningitemFilter); //Added on 4-Dec-20
-		wait(3);
+		wait(15);
+		click(By.xpath("//a[contains(text(),'elearning')]")); //Added on 4-Dec-20
+		wait(5);
 		click(editBtn);
 		wait(10);
 		//Added on 24-Feb-21

@@ -83,6 +83,7 @@ public class ElearningOrientationSteps extends FractalBaseStep  {
 		 */
 		public void preRequisite() {
 			try {result="FAILED";
+			wait(5);
 			elearningOrientation.preRequisite("eLearningWithScorm");
 			wait(3);
 //			elearningOrientation.preRequisite("eLearningWithXapi");//Updated on 3-Dec-20
