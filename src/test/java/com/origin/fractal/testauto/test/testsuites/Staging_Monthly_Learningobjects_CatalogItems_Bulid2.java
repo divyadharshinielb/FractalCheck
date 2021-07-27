@@ -211,7 +211,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = false,priority=0)
 	public void TestCatalogVersioning(String row, String strBrowserName) throws IOException{
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		siteAdminLogin(driver); 
+	/*	siteAdminLogin(driver); 
 		LoginSteps login= new LoginSteps(driver);
 		CatalogVersioningSteps steps = new CatalogVersioningSteps(driver);
 		steps.createLearningObject();
