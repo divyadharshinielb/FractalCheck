@@ -138,11 +138,11 @@ public class DocumentValidationPage extends FractalBasePage {
 	 * cause: Document creation - Till Language selection 
 	 */
 	public void documentTillLanguageSelect() {
-		wait(5);
+		wait(10);
 		addLearningObjectBtn();
 		wait(5);
 		click(documentBtn);
-		wait(7);
+		wait(10);
 		enterData("Document_Check1",documentInputField);
 		wait(2);
 		click(selectCategory);
@@ -163,9 +163,11 @@ public class DocumentValidationPage extends FractalBasePage {
 	public void documentTillDuration() {
 		wait(2);
 		elementExist(lblpages);
+		wait(7);
+		elementExist(lblDescription);
 		wait(2);
 		enterData("abc",lblDescription);
-		wait(2);
+		wait(7);
 		enterData("Document123",lblItemCode);
 		wait(2);
 		scrollToElement(lblHH);
@@ -199,11 +201,13 @@ public class DocumentValidationPage extends FractalBasePage {
 	 */
 	public void documentDelete() {
 		enterData("Document_Check1",searchLO);
-		wait(10);
+		wait(15);
 		click(deleteIcon);
+		wait(5);
+		elementExist(deletecourseokbtn);
 		wait(2);
 		click(deletecourseokbtn);
-		wait(2);
+		wait(10);
 
 	}
 	/*
