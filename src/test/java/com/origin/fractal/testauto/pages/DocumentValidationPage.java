@@ -430,7 +430,7 @@ public class DocumentValidationPage extends FractalBasePage {
 		verifyText(" No items found",noItemMsg);
 		click(closebtn);
 		wait(2);
-		
+		deleteDocumentAfterMap();
 	}
 
 	/*

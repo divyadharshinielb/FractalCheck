@@ -230,7 +230,7 @@ public class CatalogItemPage extends FractalBasePage {
 	//	click(btnsave);
 		wait(5);
 		click(closebtn);
-		wait(5);
+		wait(10);
 		click(deletecoursebtn);
 		wait(5);
 		click(deletecourseokbtn);
