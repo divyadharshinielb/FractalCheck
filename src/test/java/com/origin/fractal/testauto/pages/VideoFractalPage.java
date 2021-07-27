@@ -106,7 +106,6 @@ public void linkFieldsCheck() {
 	wait(2);
 	enterData("https://www.youtube.com/watch?v=DLX62G4lc44",urlField);
 	wait(5);
-	isClickable(saveBtn);
 	click(saveBtn);
 	wait(10);
 	elementExist(tickmark);
@@ -114,13 +113,11 @@ public void linkFieldsCheck() {
 	verifyText("'Auto_VideoFormatCheck' has been added successfully",videoCreateMsg);
 	verifyText("Back To Learning Objects",backToLOBtn);
 	click(backToLOBtn);
-	wait(3);
-	click(closeBtn);
 	wait(5);
 	enterData("Auto_VideoFormatCheck",searchLO);
-	wait(5);
+	wait(10);
 	click(deleteIcon);
-	wait(2);
+	wait(5);
 	click(okBtn);
 }
 /*
@@ -141,7 +138,7 @@ public void createVideoWithMP4() {
 	elementExist(downloadableBtn);
 	wait(10);
 	click(saveBtn);
-	wait(10);
+	wait(15);
 	elementExist(tickmark);
 	elementExist(backToLOBtn);
 	verifyText("'Auto_VideoFormatCheck' has been added successfully",videoCreateMsg);
