@@ -54,7 +54,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		Reporter.writeSummary("FR1-2770_CatalogitemTC_02,Creation of Learningpath(Both) with duedate validation.,"+catalogsteps.getResult() );
 
 		//creation of resource
-		catalogsteps.addResource();
+	catalogsteps.addResource();
 		catalogsteps.catalogTitle();
 		catalogsteps.catalogCreation();
 		catalogsteps.catalogSecondPage();
@@ -107,7 +107,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		 */
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = false,priority=0)
 	public void TestELearningOrientation(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLogin(driver); 	
@@ -123,7 +123,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		//		eLearningOrientation.verifyXapiOrientation();
 		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-004, Verify the admin able to select the orientation Auto/Landscape/Portrait and save the elearning with Xapi package," +  eLearningOrientation.getResult()); 
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = false,priority=0)
 	public void Testscorme2004(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLogin(driver);
@@ -151,7 +151,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-007,Verify that Site admin is able Delete an eLearning object with Scorm 2004," +scorm2004.getResult());
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = false,priority=0)
 	public void TestHTMLlearningObjectCreation(String row, String strBrowserName) throws IOException{
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLogin(driver); 
@@ -208,7 +208,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-006,Verify the Site admin is able to Delete HTML Learning object," +HTMLSteps.getResult());
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = false,priority=0)
 	public void TestCatalogVersioning(String row, String strBrowserName) throws IOException{
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLogin(driver); 
@@ -228,9 +228,10 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		Reporter.writeSummary("FR1-2772_LearnObjVersion_TC-005,Verify the admin is able to delete the Learning object (Ver1)," +steps.getResult());
 		steps.deleteLearningObject("","Ver2");
 		Reporter.writeSummary("FR1-2772_LearnObjVersion_TC-006,Verify the admin is able to delete the Learning object (Ver2)," +steps.getResult());
+	*/
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, priority = 0 ,
 			description = "")
 	public void TestReOrdering (String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -251,7 +252,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		Reporter.writeSummary("FR1-2771_Reordering_TC-004,Verify the user is able to see the latest order items in My Learning tab," +reorder.getResult());
 	}	
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 ,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, priority = 0 ,
 			description = "Admin video and audio player testing")
 	public void verifyvideo(String row, String strBrowserName) throws InterruptedException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -263,7 +264,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		Reporter.writeSummary("FR-17_Admin_PodcastAudioPlayer_TC-001, Verify WebApp - Able to play audio files (MP3) and do podcasts.," +  AdminVideoTestSteps.getResult()); 
 	}
 
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true,
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false,
 			description=""
 			)
 	public void testVideo(String row, String strBrowserName) throws IOException {
