@@ -42,7 +42,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	private By deleteLOBtn = By.xpath("(//*[@role='tabpanel']/div/ng-include/div/div[3]/div/div[1]/div/div/div[5]/i)[2]");//updated on 10-Sep-20
 	private By deleteOKBtn = By.xpath("//*[contains(@class, 'md-confirm-button')]");
 	private By searchFieldLearnObj = By.xpath("//input[@id='searchObject']");
-	private By editBtn = By.xpath("//*[contains(@id,'tab-content-')]/div/ng-include/div/div[3]/div/div[1]/div/div/div[5]/i[1]");
+	private By editBtn = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div[1]/md-tabs[1]/md-tabs-content-wrapper[1]/md-tab-content[1]/div[1]/ng-include[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[4]/i[1]");//*[contains(@id,'tab-content-')]/div/ng-include/div/div[3]/div/div[1]/div/div/div[5]/i[1]
 	private By versioingAlertLO= By.xpath("//*[contains(@class, 'catinnerName')]");
 	private By versioingAlertLOClose= By.xpath("//*[contains(@class, 'dialogBtn')]//*[@class='closeBtn']");
 	private By btnHtml = By.xpath(".//button/span[contains(text(),'HTML')]");
@@ -109,7 +109,7 @@ public class CatalogVersioningPage extends FractalBasePage {
 	 */
 	public void createVersioningLearningObject() {
 		enterData(getLabel("learningObjectName"),searchFieldLearnObj);
-		wait(5);
+		wait(10);
 		click(editBtn);
 		wait(3);		
 		enterData(getLabel("learningObjectNameVersion"),htmlTitleTextArea);

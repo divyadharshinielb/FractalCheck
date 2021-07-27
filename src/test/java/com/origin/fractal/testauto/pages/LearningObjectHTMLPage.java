@@ -145,12 +145,12 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);
 		click(editBtn);
 		wait(5);
-		enterData("AutoLOHTMLLearningObjectEdit",htmlTitleTextArea);
-		wait(5);
+		enterData("AutoLOHTMLLearningObjectEdit1",htmlTitleTextArea);
+		wait(8);
 		click(updateBtn);
-		wait(2);
+		wait(8);
 		click(newVersionReqNoBtn);
-		wait(3);
+		wait(5);
 		click(updateagainNoBtn);
 		wait(10);//Updated on 4-Dec-20
 		if(elementExist(editedhtmlOName)) {

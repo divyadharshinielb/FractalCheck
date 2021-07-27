@@ -13,7 +13,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  * Updated on 20-Feb-21
  */
 public class LeaderBoardPointPage extends FractalBasePage {
-	private By leaderBoard=By.xpath("//*[@class='d-leader height_leader']");
+	private By leaderBoard=By.xpath("//a[@href='/leaderboard']");
 	private By txtYourLeaderBoard=By.xpath("//*[@class='d-leader height_leader']//*[text()='YOUR']");
 	private By txtRankLeaderBoard=By.xpath("//*[@class='d-leader height_leader']//*[text()='RANK']");
 	private By txtPointLeaderBoard=By.xpath("//*[@class='d-leader height_leader']//*[text()='POINTS']");
@@ -22,7 +22,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 	private By leaderList=By.xpath("(//*[@class='username-lead'])[1]");//Updated on 19-Jan-2021
 	private By popup=By.xpath("//*[@class='hover_pop_leader']");
 	private By btnPopUpClose=By.xpath("//*[@class='drip_icon flt-rr hnd_cursor cross_button']");
-	private String exceptedURL="https://staging-origin.originfractal.com/leaderboard";
+	private String exceptedURL="https://staging-origin.originfractal.com/dashboard";
 	private By homeLogo=By.xpath("//*[@class='log_logo']//a");
 	private String userName= "auto direct user"; //Updated on 17-Feb-2021
 	private int scoredPoint, newScoredPoint;
@@ -69,6 +69,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 		//		elementExist(txtRankLeaderBoard);
 		//		elementExist(txtPointLeaderBoard);
 		//Ends
+		wait(5);
 		click(leaderBoard);
 	}
 
@@ -245,7 +246,7 @@ public class LeaderBoardPointPage extends FractalBasePage {
 		wait(3);
 		elementExist(dashboardPoint);
 		elementExist(learnerboardPoint);
-		moveElementFocusandClick(homeLogo);
+	//	moveElementFocusandClick(homeLogo);
 	}
 
 	/* Function Name: verifyLearnerBoardShare
