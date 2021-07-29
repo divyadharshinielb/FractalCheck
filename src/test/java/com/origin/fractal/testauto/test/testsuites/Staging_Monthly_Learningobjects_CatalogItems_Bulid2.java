@@ -123,22 +123,22 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		//		eLearningOrientation.verifyXapiOrientation();
 		Reporter.writeSummary("FR1-2539_eLearnOrient_TC-004, Verify the admin able to select the orientation Auto/Landscape/Portrait and save the elearning with Xapi package," +  eLearningOrientation.getResult()); 
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = false,priority=0)
 	public void Testscorme2004(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
-		siteAdminLogin(driver);
+	/*	siteAdminLogin(driver);
 		LoginSteps login= new LoginSteps(driver);
 		ELearningObjectWithScorm2004Steps scorm2004= new ELearningObjectWithScorm2004Steps(driver);
-		scorm2004.verifyCreateELearningObjectWithscorm2004();
+	//	scorm2004.verifyCreateELearningObjectWithscorm2004();
 		Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-001,Verify that Site admin is able to Create an eLearning object with Scorm 2004," +scorm2004.getResult());
-		scorm2004.verifyEditAndCancelELearningObjectWithscorm2004();
+	//	scorm2004.verifyEditAndCancelELearningObjectWithscorm2004();
 		Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-002,Verify that Site admin is able to click Cancel and Edit the eLearning object with Scorm 2004," +scorm2004.getResult());
-		scorm2004.verifyPreviewscorm2004();
+	//	scorm2004.verifyPreviewscorm2004();
 		Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-003,Verify that Site admin is able to Preview the eLearning object with Scorm 2004," +scorm2004.getResult());
-		scorm2004.verifyInvalidscorm2004();
+	//	scorm2004.verifyInvalidscorm2004();
 		Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-004,Verify that Site admin is Not able to Upload the invalid Scorm file," +scorm2004.getResult());
-		login.adminLogout();		
-		siteAdminLogin(driver);
+	//	login.adminLogout();	
+	//	siteAdminLogin(driver);
 		scorm2004.createandEditCatalogBundleWitheLearningWithscorm2004("Add scorm2004");
 		Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-005,Verify that Site admin is able to map the eLearning Object with Scorm 2004 to Bundle Catalog item," +scorm2004.getResult());
 		login.adminLogout();
@@ -149,15 +149,16 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		siteAdminLogin(driver); 
 		scorm2004.verifyDeleteELearnignobjectWithscorm2004();
 		Reporter.writeSummary("FR1-2364_eLearnScorm2004_TC-007,Verify that Site admin is able Delete an eLearning object with Scorm 2004," +scorm2004.getResult());
+	*/
 	}
 
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = true,priority=0)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot"}, enabled = false,priority=0)
 	public void TestHTMLlearningObjectCreation(String row, String strBrowserName) throws IOException{
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		siteAdminLogin(driver); 
 		LoginSteps login = new LoginSteps(driver);
 		LearningObjectHTMLSteps HTMLSteps= new LearningObjectHTMLSteps(driver);
-		HTMLSteps.verifyCreateHtmlLearningObject();
+	/*	HTMLSteps.verifyCreateHtmlLearningObject();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-001,Verify the Site admin is able to Create HTML Learning object," +HTMLSteps.getResult());
 		HTMLSteps.verifyEditAndCancelHTMLLearningObject();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-002,Verify the Site admin is able to click cancel and Edit the HTML Learning object," +HTMLSteps.getResult());
@@ -165,7 +166,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-003,Verify the Site admin is able to filter and search the HTML Learning object," +HTMLSteps.getResult());
 		HTMLSteps.createandEditCatalogBundleWithHTML("ADD HTML");
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-004,Verify the Site admin is able to map the HTML Learning Object to Bundle Catalog item," +HTMLSteps.getResult());
-		login.adminLogout();
+		login.adminLogout();*/
 		login1(driver);
 		LeaderBoardPointSteps Steps= new LeaderBoardPointSteps(driver);
 		Steps.verifyLearnerBoard();
@@ -192,9 +193,9 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 		Reporter.writeSummary("FR1-3599_LeaderBoard (phase-2)_TC-004,Verify the user is able to see the certification details in leaderboard page," +Steps.getResult());
 		Steps.verifyProfileCTA();
 		Reporter.writeSummary("FR1-3599_LeaderBoard (phase-2)_TC-005,Verify the URL is navicate to account page when user clicks on profile CTA link," +Steps.getResult());
-		HTMLSteps.userSearchHTMLLOAndLaunchHTML();
+	//	HTMLSteps.userSearchHTMLLOAndLaunchHTML();
 		Reporter.writeSummary("FR1-2207_HTMLLO_TC-005,Verify the User is able to see the HTML Learning Object in Bundle Catalog item," +HTMLSteps.getResult());
-		Steps.verifyUserLearnerPoint();
+	//	Steps.verifyUserLearnerPoint();
 		Reporter.writeSummary("FR1-3786_LearnerBoard_TC-003,Verify the learnerboard point is updated when the user completes the Learning object," +Steps.getResult());
 		Steps.verifyUserPointInList();
 		Reporter.writeSummary("FR1-3599_LeaderBoard_TC-006,Verify the leaderboard point is updated when the user completes the Learning object," +Steps.getResult());
