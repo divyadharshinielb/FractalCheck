@@ -82,6 +82,7 @@ public class CatalogItemPage extends FractalBasePage {
 	 * cause: Click addcatalog item  icon 
 	 */
 	public void clickCatalogitem() {
+		wait(5);
 		click(clkcatalogitem);
 		wait(5);
 	}

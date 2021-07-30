@@ -144,11 +144,11 @@ public void createVideoWithMP4() {
 	verifyText("'Auto_VideoFormatCheck' has been added successfully",videoCreateMsg);
 	verifyText("Back To Learning Objects",backToLOBtn);
 	click(backToLOBtn);
-	wait(3);
-	click(closeBtn);
+	wait(6);
+	//click(closeBtn);
 	wait(2);
 	enterData("Auto_VideoFormatCheck",searchLO);
-	wait(5);
+	wait(15);
 	click(deleteIcon);
 	wait(2);
 	click(okBtn);
