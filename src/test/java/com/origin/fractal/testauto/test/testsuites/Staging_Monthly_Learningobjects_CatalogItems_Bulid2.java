@@ -30,7 +30,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 			new Object[] { "1", "chrome" }
 		};
 	}
-	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups= {"pilot"}, enabled= true, description="")
+	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups= {"pilot"}, enabled= false, description="")
 	public void testCatalogCreation(String row, String strBrowserName) throws IOException {
 
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -79,7 +79,7 @@ public class Staging_Monthly_Learningobjects_CatalogItems_Bulid2 extends Fractal
 				Reporter.writeSummary("FR1-2770_CatalogitemTC_07,Check for bell notification for due date., "+catalogsteps.getResult() );
 		 */	
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
 	public void documentValidation(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
