@@ -208,6 +208,9 @@ public class DocumentValidationPage extends FractalBasePage {
 		wait(2);
 		click(deletecourseokbtn);
 		wait(10);
+		enterData("Document_Check1",searchLO);
+		wait(15);
+		elementExist(deleteIcon);
 
 	}
 	/*

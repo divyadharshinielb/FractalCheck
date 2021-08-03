@@ -137,24 +137,9 @@ public class VenuePage extends FractalBasePage{
 		wait(5);
 		elementExist(blankVenue);
 		}
-	public void invalidBuildingName() {
-//		WebElement element1 = driver.findElement(By.xpath("//input[@id='input_3']")); Actions
-//		actions = new Actions(driver); actions.moveToElement(element1);
-//		actions.perform();
-//		wait(10);
-//		if(elementExist(selectCountry)) {
-//		click(selectCountry);
-//		wait(5);
-//		click(selectIndia);
-//		wait(5);
-//		click(selectCity);
-//		click(selectChennai);
-//		enterData("No.39",buildingNo);
-//		}
-//		WebElement element = driver.findElement(By.name("streetName"));
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-//		}
+	public void invalidBuildingName() {		
 		wait(5);
+		scrollToElement(By.xpath("//i[contains(@class,'text-right font-size-35')]"));
 		click(By.xpath("//i[contains(@class,'text-right font-size-35')]"));
 		wait(5);
 		click(addVenue);

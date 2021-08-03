@@ -274,7 +274,7 @@ public class RolesManagementPage extends FractalBasePage {
 		}
 		public void businessAdminRole() {
 			click(searchfielduser);
-			enterData("Staging origin", searchfielduser);
+			enterData("Staging Business Admin", searchfielduser);
 			wait(5);
 			verifyText("Staging origin",businessAdmin);
 			wait(5);

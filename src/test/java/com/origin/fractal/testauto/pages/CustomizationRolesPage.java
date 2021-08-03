@@ -82,7 +82,7 @@ public class CustomizationRolesPage extends FractalBasePage{
 	public void clickManageroles() {
 		wait(5);
 		click(settingsIcon);
-		wait(5);
+		wait(10);
 		click(settingsSelection);
 		wait(10);
 		verifyText(getLabel("manageroles"),managerolebreadcrumb);
@@ -111,9 +111,14 @@ public class CustomizationRolesPage extends FractalBasePage{
 	 * cause - Validation with special character and numbers in custom role
 	 */
 	public void roleNameValidation() {
+		wait(8);
+		click(addrolebtn);
+		wait(2);
+		elementExist(rolenamefield);
+		wait(2);
 		enterData("!@#$%**", rolenameinput);
 		click(selectrolefield);
-		wait(2);
+		wait(5);
 		click(learnadminoption);
 		click(managecontentlbl);
 		click(submitbtn);
@@ -191,8 +196,10 @@ public class CustomizationRolesPage extends FractalBasePage{
 		wait(7);
 		enterData("Automation Directuser",searchUsers);
 		wait(10);
-		//click(directuserlbl);
-		wait(2);
+		clear(searchUsers);
+		wait(8);
+		enterData("Automation Direct",searchUsers);
+		wait(10);
 		click(editusericon);
 		//click(editusericon);
 		wait(7);

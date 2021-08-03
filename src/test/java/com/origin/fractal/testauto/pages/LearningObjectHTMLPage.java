@@ -51,7 +51,7 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	ArrayList<String> winHandles;
 	public By btnSave = By.xpath(".//button[contains(text(),'Save')]");
 	public By closeModel = By.xpath(".//button[contains(@class,'close')]");
-	public By editBtn = By.xpath("(//i[@role='button'])[1]");
+	public By editBtn = By.xpath("//i[@data-template-url1='editObj.html']");
 	public By btnCancel = By.xpath(".//button[contains(text(),'Cancel')]");
 	public By updateBtn = By.xpath("//*[text()='Update']");
 	public By newVersionReqNoBtn = By.xpath("//*[text()='No']");
@@ -138,7 +138,13 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 	 */
 	public boolean verifyEditAndCancelHTMLLearningObject() {
 		By editedhtmlOName=By.xpath("//*[text()='"+getLabel("editHtmlName")+"']");
-		wait(2);
+		wait(10);
+		goToManagecontent();
+		ManageContentSteps.clickOnCreateLobjButton();
+		wait(10);//Updated on 25-Feb-21
+		moveElementFocusandClick(btnHtml);
+		print("CheckkkkDivyaaa");
+		elementExist(editBtn);
 		click(editBtn);
 		wait(10);//Updated on 16-Nov-20
 		click(btnCancel);
@@ -147,8 +153,11 @@ public class LearningObjectHTMLPage extends FractalBasePage {
 		wait(5);
 		enterData("AutoLOHTMLLearningObjectEdit1",htmlTitleTextArea);
 		wait(8);
+		elementExist(updateBtn);
 		click(updateBtn);
 		wait(8);
+		elementExist(newVersionReqNoBtn);
+		wait(10);
 		click(newVersionReqNoBtn);
 		wait(5);
 		click(updateagainNoBtn);

@@ -150,8 +150,11 @@ public void createVideoWithMP4() {
 	enterData("Auto_VideoFormatCheck",searchLO);
 	wait(15);
 	click(deleteIcon);
+	wait(10);
+	elementExist(okBtn);
 	wait(2);
 	click(okBtn);
+	wait(5);
 }
 }
 
