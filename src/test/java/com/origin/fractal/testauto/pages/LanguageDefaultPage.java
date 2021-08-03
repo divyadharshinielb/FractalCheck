@@ -119,14 +119,14 @@ public class LanguageDefaultPage extends FractalBasePage{
 	 */
 
 	public void catalogitemLanguageCheck() {
-		wait(2);
+		wait(5);
 		click(catalogitemlbl);
-		wait(2);
+		wait(5);
 		if(elementExist(allLanguageLbl)==true)
 		{
 			verifyText("All Languages",allLanguageLbl);
 			click(addcatalogitembtn);
-			wait(2);
+			wait(5);
 			click(bundlelbl);
 			wait(2);
 			elementExist(selectLanguage);
@@ -139,6 +139,7 @@ public class LanguageDefaultPage extends FractalBasePage{
 			click(closebtncatalog);
 		}
 		else if(elementExist(contentlanguageselect)==true) {
+			wait(6);
 			verifyText("English",contentlanguageselect);
 			click(addcatalogitembtn);
 			wait(2);

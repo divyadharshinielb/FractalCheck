@@ -285,7 +285,7 @@ public class RolesManagementPage extends FractalBasePage {
 			    actions = new Actions(driver); actions.moveToElement(element);
 			    actions.perform();*/
 			click(searchfielduser);
-			enterData("Site", searchfielduser);
+			enterData("Staging siteadmin", searchfielduser);
 			wait(7);
 			verifyText("Site Admin",siteAdmin);
 			wait(5);
