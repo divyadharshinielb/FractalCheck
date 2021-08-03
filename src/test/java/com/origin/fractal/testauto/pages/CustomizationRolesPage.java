@@ -196,9 +196,6 @@ public class CustomizationRolesPage extends FractalBasePage{
 		wait(7);
 		enterData("Automation Directuser",searchUsers);
 		wait(10);
-		clear(searchUsers);
-		wait(8);
-		enterData("Automation Direct",searchUsers);
 		wait(10);
 		click(editusericon);
 		//click(editusericon);
