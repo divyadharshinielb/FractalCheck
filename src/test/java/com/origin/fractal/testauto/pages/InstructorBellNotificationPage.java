@@ -16,7 +16,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	LoginPage loginpage;
 	public By instBellIcon = By.xpath("//*[contains(@class, 'click-hover')]");
 	public By notificationNotFound = By.xpath("//ul[contains(@class,'popupunderline')]//li//div//p");
-	public By spanNotification = By.xpath("(//*[@role=\"menuitem\"])[1]/div/p");
+	public By spanNotification = By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/div[1]/p[1]");//(//*[@role=\"menuitem\"])[1]/div/p
 	public By IblMoreNotification = By.xpath("//p[text()='MORE']");
 	public By breadcrumbHome= By.xpath("//button[text()='Home']");
 	public By breadcrumbMoreNotification = By.xpath("//*[contains(@class, 'breadcrumbs')]/div[2]/button");

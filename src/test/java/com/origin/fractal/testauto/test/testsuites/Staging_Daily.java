@@ -421,10 +421,10 @@ public class Staging_Daily extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		InstructorBellNotificationSteps instbellnotiSteps=new InstructorBellNotificationSteps(driver);
 		InstructorBellNotificationPage instbellnotiPage=new InstructorBellNotificationPage(driver);
-		siteAdminLogin(driver);//Updated on 3-Dec-20
+	//	siteAdminLogin(driver);//Updated on 3-Dec-20
 		//Added by vignesh 26-Sep-20 This for Roster test 
 		ClassRoomRosterSteps classroomRoster=new ClassRoomRosterSteps(driver);
-		 instbellnotiSteps.gotoClassRoom();//Updated on 3-Dec-20
+		/* instbellnotiSteps.gotoClassRoom();//Updated on 3-Dec-20
 			classroomRoster.verifyClassroomRoster();
 			Reporter.writeSummary("FR-145_Scoring-ClassRoomRoster_TC-001, Admin can manage the roster.," +classroomRoster.getResult() );
 			Reporter.writeSummary("FR-2365_ClassRoomRoster_TC-001, Classroom admin roster page fixes," +classroomRoster.getResult() );
@@ -442,14 +442,14 @@ public class Staging_Daily extends FractalBaseWebTest {
 		//ends
 
 		Reporter.writeSummary("FR1-2017_InstrBell_TC-001,Verify the text No notifications found," +instbellnotiSteps.getResult() );
-		instbellnotiSteps.instLogout();//Added on 20-Jan-21
-		siteAdminLogin(driver);
+		instbellnotiSteps.instLogout();//Added on 20-Jan-21*/
+	//	siteAdminLogin(driver);
 		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor1",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructor1EmailID,instbellnotiPage.instructor1Password);
 		instbellnotiSteps.verifyInviteNotification();	 
 		instbellnotiSteps.instLogout();
 		Reporter.writeSummary("FR1-2017_InstrBell_TC-002,Verify the instructor1 able to get invite notification (admin invites instructor1)," +instbellnotiSteps.getResult() );
-		siteAdminLogin(driver);
+	//	siteAdminLogin(driver);
 		instbellnotiSteps.adminCheckAndInvitesInstructor("instructor2",instbellnotiPage.classroomName);
 		loginInstructor(driver,instbellnotiPage.instructor2EmailID,instbellnotiPage.instructor2Password);
 		instbellnotiSteps.verifyInviteNotification();

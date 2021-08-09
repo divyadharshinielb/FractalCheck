@@ -3,6 +3,9 @@ package com.origin.fractal.testauto.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.JavascriptExecutor;
 
 import com.origin.fractal.testauto.FractalBasePage;
 
@@ -28,7 +31,8 @@ public class LoginPage extends FractalBasePage {
 	private By searchLink=By.xpath(".//input[contains(@id,'theInput')]");
 	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
 	//ADDED by vignesh(wvi) on 8/Apr/20
-
+	Actions actions;
+	WebElement element;
 	public By qaLoginBtn = By.xpath("//input[@type='submit']");
 	//Ends
 
@@ -249,7 +253,10 @@ public class LoginPage extends FractalBasePage {
 		wait(10); //Updated on 9-Dec-20
 		enterData("siteadmin@origin.com",tbUserName);
 		enterData("P@ssw0rd",tbPassword);
-		wait(3);
+		wait(5);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(5);
 		click(qaLoginBtn);	
 		wait(10);//Updated on 9-Dec-20
 	}
@@ -278,6 +285,9 @@ public class LoginPage extends FractalBasePage {
 		wait(3);
 		enterData(instPassword,tbPassword);
 		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(2);
 		click(btnLogin);
 		wait(10);
 	} 
