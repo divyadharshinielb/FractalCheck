@@ -35,7 +35,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 	public By eventSession=By.xpath("//*[@id='session_title']/i");
 	public By eventInstructor=By.xpath("//div[@class='col-lg-12 col-md-6 col-sm-6 col-xs-6 padding-t-0 padding-b-0 padding-l-5 padding-r-20 padding-l-10']//div[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required']");
 	public By selectedInstructor=By.xpath("(//*[@class='nice-select ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-valid-required open'])[1]//span");
-	public By selectEventInstructor1=By.xpath("//li[text()='Staging Instructor']");//(//li[text()='Instructor WV 2'])[2]//updated on 20-Jan-21
+	public By selectEventInstructor1=By.xpath("//select[@id='select_Instructor']/../div/ul/li[@data-value='13']");//li[text()='Staging Instructor']//(//li[text()='Instructor WV 2'])[2]//updated on 20-Jan-21
 	public By selectEventInstructor2=By.xpath("(//li[text()='QA TESTER Tester'])[2]");//updated on 20-Jan-21
 	public By closeXIcon=By.xpath("//*[contains(@class, 'close')]");
 	public By changeTimeZone=By.xpath("//*[@class='elearninglabel margin-b-20']//md-input-container/div");
@@ -126,6 +126,7 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		wait(5);
 		click(eventSession);
 		wait(2);
+		print(instructor);
 		moveElementFocusandClick(eventInstructor);
 		wait(2);
 		if (instructor.equalsIgnoreCase("instructor2")) {
@@ -137,7 +138,12 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 		else if (instructor.equalsIgnoreCase("instructor1")) {
 			print("entered in else");
 			print("dfasdf" +instructor);
-			moveElementFocusandClick(selectEventInstructor1);
+			elementExist(selectEventInstructor1);
+			wait(10);
+			//moveElementFocusandClick(selectEventInstructor1);
+			click(selectEventInstructor1);
+			wait(4);
+			elementExist(selectEventInstructor1);
 			print("dfasdf" +instructor);
 		}
 	}
@@ -354,7 +360,9 @@ public class InstructorBellNotificationPage extends FractalBasePage{
 			print("PASSED: After clicked home, the page redirect to Dashboard page.");
 			return true;
 		}
+		else {
 		print("FAILED: After clicked home, the page NOT redirect to Dashboard page.");
 		return false;
+		}
 	}
 }
