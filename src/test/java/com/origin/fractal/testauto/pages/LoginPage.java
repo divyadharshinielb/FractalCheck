@@ -2,6 +2,7 @@ package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
 
 import com.origin.fractal.testauto.FractalBasePage;
 
@@ -46,6 +47,9 @@ public class LoginPage extends FractalBasePage {
 		wait(6);
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,1000)");
+	    wait(2);
 		click(btnLogin);
 		wait(5);
 	}
@@ -77,6 +81,9 @@ public class LoginPage extends FractalBasePage {
 		enterData("staging_siteadmin@origin.com",tbUserName);//siteadmin@origin.com//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPassword);//contentadmin@origin.com
 	    wait(5);
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,1000)");
+	    wait(2);
 	    click(btnLogin);
 	    wait(10);
 	}
