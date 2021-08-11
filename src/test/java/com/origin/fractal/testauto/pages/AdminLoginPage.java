@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.pages;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
@@ -60,6 +61,9 @@ public class AdminLoginPage extends FractalBasePage {
 		enterData("staging_siteadmin@origin.com",tbUserNameNewUI);//siteadmin@origin.com//contentadmin@origin.com
 	    enterData("P@ssw0rd",tbPasswordNewUI);//Admin@123
 	    wait(10);
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,1000)");
+	    wait(5);
 	    click(btnLoginNewUI);
 	    wait(15);
 	}

@@ -57,6 +57,8 @@ public class LoginPage extends FractalBasePage {
 		}
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,1000)");
 		click(btnLogin1);
 		wait(5);
 	}
