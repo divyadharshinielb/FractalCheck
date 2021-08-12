@@ -57,8 +57,10 @@ public class LoginPage extends FractalBasePage {
 		}
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
+		wait(2);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("window.scrollBy(0,1000)");
+	    wait(5);
 		click(btnLogin1);
 		wait(5);
 	}
@@ -69,6 +71,9 @@ public class LoginPage extends FractalBasePage {
 		}
 		enterData("automation_directuser@originlearning.com",tbUserName);//manjupriya.s@originlearning.com
 		enterData("AutoDU@123",tbPassword);//5dd53f63cb8b2
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,1000)");
+	    wait(5);
 		click(btnLogin1);
 		wait(2);
 //		if(elementExist(btnCookies)) {
@@ -86,6 +91,9 @@ public class LoginPage extends FractalBasePage {
 			}
 		enterData("contentadmin@origin.com",tbUserName);
 		enterData("P@ssw0rd",tbPassword);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,1000)");
+	    wait(5);
 		click(btnLogin1);
 		wait(5);
 	}
@@ -96,6 +104,9 @@ public class LoginPage extends FractalBasePage {
 		}
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,1000)");
+	    wait(5);
 		click(btnLogin1);
 	}
 	//Added by vignesh on 5-Nov-20 & updated on 23-Nov-20

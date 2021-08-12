@@ -189,6 +189,7 @@ public class InstructorBellNotificationSteps extends FractalBaseStep  {
 		try{
 			gotoClassRoom(); //Updated on 3-Dec-20
 			instbellnoti.editEvent(Searchclassroom,"editInstructor",Instnumber,"");
+		    wait(5);
 			adminLogout();
 		}catch(Exception e) {
 			result="FAILED";
