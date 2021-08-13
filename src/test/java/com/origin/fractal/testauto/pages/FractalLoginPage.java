@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.pages;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -48,6 +49,8 @@ public class FractalLoginPage extends FractalBasePage {
 		WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(tbUserNameNewUI));
 		enterData(getLabel("Username"), tbUserNameNewUI);
 		enterData(getLabel("Password"), tbPasswordNewUI);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,1000)");
 		click(btnLoginNewUI);
 		wait(5);
 		if (elementExist(lblUser)) { 
@@ -70,6 +73,10 @@ public class FractalLoginPage extends FractalBasePage {
 		WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(tbUserNameNewUI));
 		enterData(getLabel("Username"), tbUserNameNewUI);
 		enterData(getLabel("Password"), tbPasswordNewUI);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("window.scrollBy(0,1000)");
+			click(btnLoginNewUI);
+			wait(3);
 		click(btnLoginNewUI1);
 		wait(5);
 		click(lblUser1);
