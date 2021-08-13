@@ -191,6 +191,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		VideoTesterSteps VideoTesterSteps=new VideoTesterSteps(driver);
 		menuSteps.clickMenu();
 		VideoTesterSteps.verifyAdminVideoTester();
+	//	VideoTesterSteps.verifyAdminVideoTester();
 		Reporter.writeSummary("TCID_Video, Verify the Admin video gets launched succesfully," +  VideoTesterSteps.getResult() );
 	}
 	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups= {"pilot"}, enabled= true, description="")

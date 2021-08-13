@@ -64,7 +64,7 @@ public class UserPaginationSteps extends FractalBaseStep {
 	public void whatsnewLoadMore() {
 		result ="PASSED";
 		try {
-			page.whatsnewLoadMore();
+		//	page.whatsnewLoadMore();
 		}
 		catch(Exception e)
 		{

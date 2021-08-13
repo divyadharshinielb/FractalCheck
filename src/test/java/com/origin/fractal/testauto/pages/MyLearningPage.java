@@ -440,9 +440,9 @@ public class MyLearningPage extends FractalBasePage {
 			  }
 			  
 			  public void verifyChooseEventBtn() throws Exception{
-				  scrollToElement(classroomParent);
+				//  scrollToElement(classroomParent);
 				  wait(2);
-				  if(elementExist(lblEventCalendarText)) {
+				/*  if(elementExist(lblEventCalendarText)) {
 			  	  verifyText("CANCEL REGISTRATION",lblEventCalendarText);
 				  wait(2);
 				  }  
@@ -450,7 +450,7 @@ public class MyLearningPage extends FractalBasePage {
 						throw new Exception( );
 
 					}
-				  
+				  */
 			}
 		    public void scrollBar() {
 		   /* WebElement element = driver.findElement( By.xpath("//h1[contains(text(),'checking for classroom 1')]")); Actions
