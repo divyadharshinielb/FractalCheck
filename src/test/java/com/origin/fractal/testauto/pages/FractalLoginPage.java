@@ -73,8 +73,7 @@ public class FractalLoginPage extends FractalBasePage {
 		WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(tbUserNameNewUI));
 		enterData(getLabel("Username"), tbUserNameNewUI);
 		enterData(getLabel("Password"), tbPasswordNewUI);
-			click(btnLoginNewUI);
-			wait(3);
+		wait(3);
 		click(btnLoginNewUI1);
 		wait(5);
 		click(lblUser1);
