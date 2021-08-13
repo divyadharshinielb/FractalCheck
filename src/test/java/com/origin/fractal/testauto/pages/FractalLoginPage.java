@@ -73,8 +73,6 @@ public class FractalLoginPage extends FractalBasePage {
 		WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(tbUserNameNewUI));
 		enterData(getLabel("Username"), tbUserNameNewUI);
 		enterData(getLabel("Password"), tbPasswordNewUI);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		 js.executeScript("window.scrollBy(0,1000)");
 			click(btnLoginNewUI);
 			wait(3);
 		click(btnLoginNewUI1);
