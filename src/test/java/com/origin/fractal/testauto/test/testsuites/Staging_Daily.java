@@ -190,9 +190,8 @@ public class Staging_Daily extends FractalBaseWebTest {
 		MenuSteps menuSteps = new MenuSteps(driver);
 		VideoTesterSteps VideoTesterSteps=new VideoTesterSteps(driver);
 		menuSteps.clickMenu();
-		VideoTesterSteps.verifyAdminVideoTester();
 	//	VideoTesterSteps.verifyAdminVideoTester();
-		Reporter.writeSummary("TCID_Video, Verify the Admin video gets launched succesfully," +  VideoTesterSteps.getResult() );
+	Reporter.writeSummary("TCID_Video, Verify the Admin video gets launched succesfully," +  VideoTesterSteps.getResult() );
 	}
 	@Test(dataProviderClass = DataManager.class,dataProvider="browers", groups= {"pilot"}, enabled= true, description="")
 	public void renewButtonCheck(String row, String strBrowserName) throws Exception {
