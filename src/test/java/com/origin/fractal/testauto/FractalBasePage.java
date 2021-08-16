@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -502,6 +503,9 @@ public abstract class FractalBasePage extends BasePage {
 		
 		public void verifyMyLearningPage() {
 			wait(5);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,250)", "");
+			wait(3);
 			click(lblMyLearning);
 			System.out.println("MyLearning page is displayed");
 		}

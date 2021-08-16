@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
@@ -36,6 +37,10 @@ public class LoginPage extends FractalBasePage {
 	public void doLogin() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
+		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);
 		wait(5);
 	}
@@ -65,6 +70,10 @@ public class LoginPage extends FractalBasePage {
 		wait(10);
 		click(rememberMe);
 		wait(10);
+		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);
 		wait(20);
 		click(lblProfile);
@@ -73,12 +82,19 @@ public class LoginPage extends FractalBasePage {
 		wait(5);
 		click(rememberMe);
 		wait(5);
+		wait(3);
+		JavascriptExecutor js1 = (JavascriptExecutor) driver;
+		js1.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);
 		wait(10);
 		click(lblProfile);
 		wait(10);
 		click(logOutButton);
 		wait(10);
+		JavascriptExecutor js2 = (JavascriptExecutor) driver;
+		js2.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);	
 		elementExist(blankPassword);
 		}
@@ -102,6 +118,10 @@ public class LoginPage extends FractalBasePage {
 	public void blankPasswordVerification() {
 		enterData (userName[1],tbUserName);
 		enterData (passWord[0],tbPassword);
+		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);
 		wait(5);
 		elementExist(blankPassword);
@@ -110,6 +130,10 @@ public class LoginPage extends FractalBasePage {
 	public void blankUserName() {
 		enterData (userName[0],tbUserName);
 		enterData (passWord[1],tbPassword);
+		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);
 		wait(5);
 		elementExist(blankUserName);
@@ -117,6 +141,10 @@ public class LoginPage extends FractalBasePage {
 	public void mandatoryField() {
 		enterData (userName[0],tbUserName);
 		enterData (passWord[0],tbPassword);
+		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);
 		wait(5);
 		elementExist(blankUserName);
@@ -124,6 +152,10 @@ public class LoginPage extends FractalBasePage {
 	public void inValid() {
 		enterData (userName[2],tbUserName);
 		enterData (passWord[2],tbPassword);
+		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);
 		wait(5);
 		elementExist(inValid);
@@ -132,6 +164,10 @@ public class LoginPage extends FractalBasePage {
 	public void inValidPassword() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("Origin",tbPassword);
+		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);
 		wait(5);
 		elementExist(inValid);
@@ -143,6 +179,10 @@ public class LoginPage extends FractalBasePage {
 	public void bothBlank() {
 		enterData (userName[0],tbUserName);
 		enterData (passWord[0],tbPassword);
+		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		click(btnLogin);
 		wait(5);
 		elementExist(blankPassword);

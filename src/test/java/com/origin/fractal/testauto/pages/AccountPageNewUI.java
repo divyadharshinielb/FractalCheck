@@ -118,6 +118,9 @@ public class AccountPageNewUI  extends FractalBasePage{
 			
 			
 			wait(5);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,1000)");
+			wait(3);
 			click(btnSave);
 			status=elementExist(lNameError);
 			status=elementExist(fNameErrorOnlyLetters);
@@ -153,10 +156,10 @@ public class AccountPageNewUI  extends FractalBasePage{
 		enterData("P@ssw0rd1",inpConfirmPass);
 		wait(5);
 		WebElement element = driver.findElement(By.xpath("//input[contains(@value,'Save')]")); 
-		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-		Actions actions = new Actions(driver); actions.moveToElement(element);
-		actions.perform();
-		}
+		wait(3);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(3);
 		wait(5);
 		click(btnSave);
 		wait(5);
@@ -178,8 +181,8 @@ public class AccountPageNewUI  extends FractalBasePage{
 		wait(5);
 		WebElement element2 = driver.findElement(By.xpath("//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]")); 
 		if(BrowserFactory.getOS().equalsIgnoreCase("win")) {
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].scrollIntoView();", element2);
+			JavascriptExecutor js1 = (JavascriptExecutor) driver;
+			js1.executeScript("arguments[0].scrollIntoView();", element2);
 		}
 		wait(5);
 		click(lblProfile);
