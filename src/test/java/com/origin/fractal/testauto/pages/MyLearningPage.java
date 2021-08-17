@@ -153,6 +153,10 @@ public class MyLearningPage extends FractalBasePage {
 	}
 
 	public void verifyBundleFilter() {
+		wait(2);
+		WebElement element = driver.findElement(lblAll);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		wait(2);
 		click(lblAll);
 		wait(5);
 		if(elementExist(lblBundles)) {

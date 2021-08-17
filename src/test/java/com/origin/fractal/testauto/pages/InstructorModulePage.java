@@ -89,6 +89,9 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(dashBoardIcon);
 		wait(2);
+		WebElement element = driver.findElement(invitesReminderViewallBtn);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		wait(2);
 		click(invitesReminderViewallBtn);
 		wait(2);
 		if(elementExist(btnAccept)) {
@@ -132,8 +135,13 @@ public class InstructorModulePage extends FractalBasePage {
 		wait(2);
 		click(dashBoardIcon);
 		wait(2);
+		if (elementExist(invitesReminderViewallBtn)) {
+		WebElement element = driver.findElement(invitesReminderViewallBtn);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		wait(2);
 		click(invitesReminderViewallBtn);
-	}
+		}
+		}
 	public void verifyEventsPageLabels() {
 		click(eventTab);
 		wait(2);
@@ -290,6 +298,9 @@ public class InstructorModulePage extends FractalBasePage {
 		click(sessionDetailsBtn);
 	}
 	public void verifyReviewButton() {
+		wait(2);
+		WebElement element = driver.findElement(invitesReminderViewallBtn);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		click(dashBoardIcon);
 		wait(2);

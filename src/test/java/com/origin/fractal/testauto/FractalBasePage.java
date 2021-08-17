@@ -61,6 +61,9 @@ verifier = new FractalVerifier(driver);
 // Actions common across all pages
 public void clickOnMyLearning() {
 	wait(5);
+	WebElement element = driver.findElement(lblMyLearning);
+	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	wait(2);
 click(lblMyLearning);
 }
 
@@ -592,6 +595,9 @@ public void verifyCartItemBtn1() {
 
 public void clickLogout() {
 wait(5);
+WebElement element = driver.findElement(lblProfile);
+((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+wait(2);
 click(lblProfile);
 wait(5);
 click(logOut);
