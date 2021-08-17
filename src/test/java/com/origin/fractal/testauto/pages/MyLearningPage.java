@@ -535,7 +535,7 @@ public class MyLearningPage extends FractalBasePage {
 				private By ratingStars = By.xpath("(//*[@class='my-masonry-grid_column'])[1]//*[@class='overlay']//*[@class='star']//*[@class='dv-star-rating']");
 				private By ratingDonebtn = By.xpath("(//*[@class='my-masonry-grid_column'])[1]//*[@class='overlay']//button[text()='DONE']");
 				//				private By completedItem= By.xpath("(//*[@class='my-masonry-grid_column'])[1]");
-				private By completedItem= By.xpath	("//*[@title='LP FF']");//Updated on 12-Mar-21
+				private By completedItem= By.xpath	("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]/div[1]/div//p//a");//Updated on 12-Mar-21
 				private By tabMyLearning = By.xpath("//*[@href='/mylearning']");//Added on 9_oct-20
 				private By certificationIcon= By.xpath("(//*[@class='detail_icon_Certify'])");
 
@@ -554,7 +554,12 @@ public class MyLearningPage extends FractalBasePage {
 //						click(ratingDonebtn);
 //						wait(3);
 //					}
-					moveElementFocusandClick(completedItem);
+					click(By.xpath("//button[contains(text(),'BUNDLES')]"));
+					wait(6);
+					WebElement element = driver.findElement(completedItem);
+					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+					wait(2);
+					click(completedItem);
 					wait(10);
 					if(elementExist(certificationIcon) && elementExist(viewCertiBtn)) {
 						moveElementFocusandClick(viewCertiBtn);

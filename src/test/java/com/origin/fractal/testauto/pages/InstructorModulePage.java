@@ -121,10 +121,7 @@ public class InstructorModulePage extends FractalBasePage {
 //		}
 	}
 	public void verifyNextEventSectionViewAll() {
-		WebElement element = driver.findElement(dashBoardIcon);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		wait(2);
-		click(dashBoardIcon);
+	//	click(dashBoardIcon);
 		wait(2);
 		if(elementExist(nextEventViewAll)) {
 			wait(5);
