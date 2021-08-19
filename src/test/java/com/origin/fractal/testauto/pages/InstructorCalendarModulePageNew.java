@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -129,7 +130,10 @@ public class InstructorCalendarModulePageNew extends FractalBasePage  {
 	 * Desc: Instructor Calendar Event- Green dot on calendar
 	 */	
 	public boolean verifyTredAcceptedEnvent() {
-		By inviteDetailsInEventTab=By.xpath("(//*[contains(@class,'dot background dot_ins_event_upcoming')][contains(@title,'"+eventSessionName+"')])[1]");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		wait(2);
+		By inviteDetailsInEventTab=By.xpath("(//*[contains(@class,'dot background dot_ins_event_upcoming')][contains(@title,'"+eventSessionName+"')])[1]");	
 		if(elementExist(inviteDetailsInEventTab)) 
 		{
 			return true;
@@ -143,7 +147,11 @@ public class InstructorCalendarModulePageNew extends FractalBasePage  {
 	 * Desc: Instructor Calendar Event- Green dot on calendar
 	 */	
 	public boolean verifyVirAcceptedEnvent() {
+		wait(2);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
 		By inviteDetailsInEventTab=By.xpath("(//*[contains(@class,'dot background dot_ins_event_upcoming')][contains(@title,'"+eventSessionName+"')])[2]");
+
 		if(elementExist(inviteDetailsInEventTab)) 
 		{
 			return true;

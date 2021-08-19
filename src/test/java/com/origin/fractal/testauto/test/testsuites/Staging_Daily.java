@@ -478,7 +478,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 		/*
 		 * Test event same day and same time action & Test Instructor calendar actions
 		 */
-		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true, priority = 0 )
+		@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false, priority = 0 )
 		public void TestInstructorCalendar(String row, String strBrowserName) throws IOException {
 			driver = BrowserFactory.getBrowser(strBrowserName);
 			//		MenuSteps menuSteps = new MenuSteps(driver);
