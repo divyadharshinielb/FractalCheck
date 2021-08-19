@@ -34,7 +34,7 @@ public class InstructorModulePage extends FractalBasePage {
 	private By lblInprogressPostEvent= By.xpath("//span[contains(text(),'Post-event')]");
 	private By lblInprogressReference= By.xpath("//span[contains(text(),'References')]");
 	private By lblInprogressTermsAndConditions= By.xpath("//p[@class='font-size-16 font-weight-bolder evnt_std_clr line-height-15']");//p[contains(text(),'Terms & Conditions')]
-	private By lblCompeletdEvent= By.xpath("//p[text()='Classroom']");//div[contains(@class,'ins_eve_div')]
+	private By lblCompeletdEvent= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/a[1]/div[1]/div[1]/div[1]/div[2]/h1[1]");//div[contains(@class,'ins_eve_div')]
 	private By dashBoardIcon= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]//i");
 	private By eventTab= By.xpath("//i[contains(text(),';')]");
 	private By lblNorecords= By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]");
@@ -49,7 +49,7 @@ public class InstructorModulePage extends FractalBasePage {
 	private By sessionDetailsBtn= By.xpath("//div[4]//dl[1]//div[1]//div[2]//div[1]//div[1]//div[1]//div[3]//p[1]//button[1]");
 	private By invitesReminderViewallBtn= By.xpath("//h2[contains(text(),'Invites & Reminders')]//a[contains(text(),'View all')]");//h2[contains(text(),'Invites & Reminders')]//a[@class='filter-link cursor-pointer font-size-14 text-capitalize margin-r-0'][contains(text(),'View all')]
 	private By breadCrumLink= By.xpath("//button[contains(@class,'btn btn active cp pl-0')]//a[1]");
-	private By reviewButton= By.xpath("//a[@class='ins_rev_button']");
+	private By reviewButton= By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[3]/a[1]/div[1]/div[4]/button[1]/a[1]");//a[@class='ins_rev_button']
 	private By nextEventViewAll= By.xpath("//a[@href='/instructor/events']");
 	private By lblAll= By.xpath(" //button[contains(text(),'ALL')]");
 	private By lblReviewCompleted= By.xpath("//button[contains(text(),'REVIEW COMPLETED')]");
@@ -231,7 +231,12 @@ public class InstructorModulePage extends FractalBasePage {
 		click(lblCompleted);
 		wait(15);
 		if(elementExist(lblCompeletdEvent)) {
+		wait(2);
+		WebElement element = driver.findElement(lblCompeletdEvent);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		wait(2);
 		click(lblCompeletdEvent);
+		wait(2);
 		verifyText("Pre - Event",lblPreEvent);
 		wait(2);
 		scrollToElement(lblInprogressTermsAndConditions);
@@ -250,11 +255,12 @@ public class InstructorModulePage extends FractalBasePage {
 		if(elementExist(By.xpath("//li[contains(text(),'Activities & Materials')]"))) {
 		WebElement element= driver.findElement(By.xpath("//li[contains(text(),'Activities & Materials')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		wait(2);
 		verifyText("ACTIVITIES & MATERIALS",lblActivitiesText);
 		verifyText("ROSTER",lblRosterText);
 		}
 		else {
-			throw new Exception( );
+						throw new Exception( );
 
 		}
 	}
@@ -295,15 +301,22 @@ public class InstructorModulePage extends FractalBasePage {
 		click(sessionDetailsBtn);
 	}
 	public void verifyReviewButton() {
-		wait(2);
+		wait(5);
+		click(dashBoardIcon);
+		wait(5);
 		WebElement element = driver.findElement(invitesReminderViewallBtn);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
-		click(dashBoardIcon);
-		wait(2);
+		if(elementExist(invitesReminderViewallBtn)) {
 		click(invitesReminderViewallBtn);
+		}
+		else {
+		
+			System.out.println("invitesReminderViewallBtn not working");
+			
+		}
 		wait(2);
-		WebElement element1= driver.findElement(By.xpath("//a[@class='ins_rev_button']"));
+		WebElement element1= driver.findElement(reviewButton);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
 		wait(2);
 		verifyText("REVIEW",reviewButton);
@@ -314,6 +327,9 @@ public class InstructorModulePage extends FractalBasePage {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element2);
 		wait(2);
 		click(dashBoardIcon);
+		wait(5);
+		WebElement element = driver.findElement(invitesReminderViewallBtn);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		wait(2);
 		click(invitesReminderViewallBtn);
 		wait(2);
