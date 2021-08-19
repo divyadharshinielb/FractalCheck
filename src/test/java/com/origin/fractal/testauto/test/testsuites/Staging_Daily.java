@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.origin.fractal.testauto.DataManager;
 import com.origin.fractal.testauto.pages.ClassroomEventPage;
 import com.origin.fractal.testauto.pages.InstructorBellNotificationPage;
+import com.origin.fractal.testauto.steps.AdaptIntegrationSteps;
 import com.origin.fractal.testauto.steps.ClassRoomRosterSteps;
 import com.origin.fractal.testauto.steps.DownloadContentSteps;
 import com.origin.fractal.testauto.steps.ForgotPasswordSteps;
@@ -556,6 +557,17 @@ public class Staging_Daily extends FractalBaseWebTest {
 		Reporter.writeSummary("TCID_Instructor_015,Verify whether the Review buttons  are present in the INVITES AND REMAINDERS page while we clicking view all button,"+  instructorModuleSteps.getResult() );
 		instructorModuleSteps.verifyReviewInsideLabels();
 		Reporter.writeSummary("TCID_Instructor_017,Verify whether the  below labels are present in the Review details page:ALL REVIEW COMPLETED REVIEW PENDING Description,"+  instructorModuleSteps.getResult() );
+
+	}
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
+	public void adaptCheck(String row, String strBrowserName) throws Exception {
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		loginToContentAdmin(driver);
+		AdaptIntegrationSteps adaptStep = new AdaptIntegrationSteps(driver);
+		adaptStep.iconVerification();
+		Reporter.writeSummary("Adapt_TC_001,Verify the LAUNCH and Continue button is clickable or not, " +  adaptStep.getResult() );
+
+
 
 	}
 }
