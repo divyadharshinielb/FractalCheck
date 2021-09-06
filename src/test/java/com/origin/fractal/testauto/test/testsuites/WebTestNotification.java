@@ -2,6 +2,7 @@ package com.origin.fractal.testauto.test.testsuites;
 
 import java.io.IOException;
 
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -12,6 +13,13 @@ import com.origin.fractal.testauto.steps.NotificationSteps;
 import com.origin.fractal.testauto.test.FractalBaseWebTest;
 import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
+/*
+ * File: WebTestNotification.java
+ * Purpose: The Admin able to check all templates
+ * Number of Test cases: 07
+ * Created by: Mahesh.G
+ * Updated on: 30-Sep-2021
+ */
 public class WebTestNotification extends FractalBaseWebTest{
 	
 	
@@ -33,13 +41,26 @@ public class WebTestNotification extends FractalBaseWebTest{
 		Reporter.writeSummary("EmailTem_003, Verify whether Un assign template is working fine , " +  notificationSteps.getResult() );
 		notificationSteps.verifyUsersForgotPasswordMail();
 		Reporter.writeSummary("EmailTem_004, Verify whether users forgot password template is working fine , " +  notificationSteps.getResult() );
-	/*	notificationSteps.verifyTemplateForValidityExpired();
+		notificationSteps.verifyTemplateForValidityExpired();
 		Reporter.writeSummary("EmailTem_005, Verify whether template for validity expired template is working fine , " +  notificationSteps.getResult() );
         notificationSteps.verifyContentAssignment();
         Reporter.writeSummary("EmailTem_006,Verify whethercontent assignment template is working fine , " +  notificationSteps.getResult() );
         notificationSteps.verifyBusinessUserRegistration();
         Reporter.writeSummary("EmailTem_007, Verify whether business user template is working fine , " +  notificationSteps.getResult() );
-   */ }
+   
+		notificationSteps.verifyAccessEnable();
+		Reporter.writeSummary("EmailTem_008, Verify whether AccessEnable template is working fine , " +  notificationSteps.getResult() );
+		notificationSteps.verifyBusinessAdminDirectUser();
+		Reporter.writeSummary("EmailTem_009, Verify whether BusinessAdminDirectUser template is working fine , " +  notificationSteps.getResult() );
+		notificationSteps.VerifyInstructorConfirmation();
+		Reporter.writeSummary("EmailTem_010, Verify whether InstructorConfirmation template is working fine , " +  notificationSteps.getResult() );
+	    notificationSteps.verifyInstructorEventNotification();
+	    Reporter.writeSummary("EmailTem_011, Verify whether InstructorEventNotification template is working fine , " +  notificationSteps.getResult() );
+	    notificationSteps.verifyUserRegistrationForInstructor();
+	    Reporter.writeSummary("EmailTem_012, Verify whether UserRegistrationForInstructor template is working fine , " +  notificationSteps.getResult() );
+	    notificationSteps.verifyRemainderEvent();
+	    Reporter.writeSummary("EmailTem_013, Verify whether RemainderEvent template is working fine , " +  notificationSteps.getResult() );
+	    }
 
 
 	
