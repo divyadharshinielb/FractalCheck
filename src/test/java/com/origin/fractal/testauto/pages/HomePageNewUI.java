@@ -20,6 +20,7 @@ public class HomePageNewUI extends FractalBasePage {
 	private By contactsPage = By.xpath(".//span[contains(text(),'contact us')]");//edited by dhanushiya
 	private By lblHome = By.xpath("//span[contains(text(),'Home')]");
 	private By supportLink = By.xpath(".//body/div[@id='root']/div[@id='page-container']/footer[@id='footer']/div[1]/div[1]/div[1]/div[3]/div[1]/p[1]/a[4]");//a[contains(text(),'| Support')]//div[contains(@class,'text-right col-lg-12 col-md-12 col-xs-12 col-sm-12')]/../div/p/a[4]
+	private By carosalBtn = By.xpath(".//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[2]//div/ul[@class='control-dots']");
 	MyLearningPage myLearning = new MyLearningPage(driver);
     public HomePageNewUI(WebDriver driver) {
 		super(driver);
@@ -71,6 +72,13 @@ public class HomePageNewUI extends FractalBasePage {
 			//edit by divya based on reviewing testcases
 			commonFunction();
 			click(supportLink);
+			}
+			public void CarosalImgCheck()
+			{
+				wait(2);
+				elementExist(carosalBtn);
+				wait(3);
+				click(carosalBtn);
 			}
 	}
 	

@@ -55,16 +55,16 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		login(driver);
 		HomeStepsNewUI homeSteps = new HomeStepsNewUI(driver);
 		homeSteps.verifyResumeLearningLabeltext();
-		Reporter.writeSummary("TCID_010,Verify whether clicking the Continue button is navigating to that particular catalog item page., " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_010,Verify whether clicking the RESUME LEARNING link in the Dashboard page is navigating to that particular catalog item page., " + homeSteps.getResult() );
 		homeSteps.verifyMyLearningPage();
-		Reporter.writeSummary("TCID_003,Verify My Learning page is displayed after logging to app, " +  homeSteps.getResult());
+		Reporter.writeSummary("TCID_003,Verify the My Learning tab in the Dashboard page, " +  homeSteps.getResult());
 		MyLearningStepsNewUI mLSteps = new MyLearningStepsNewUI(driver);
 		mLSteps.verifySubMenu();
-		Reporter.writeSummary("TCID_004,Verify all links(All Bundles Courses Learning Paths and resources), " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_004,Verify all links(All Bundles Courses Learning Paths and resources)in the Dashboard page, " +  mLSteps.getResult() );
 		mLSteps.verifyCatalogname();
-		Reporter.writeSummary("TCID_011,Verify learning item page is opened when any of the particular course catalog item is clicked, " +  mLSteps.getResult() );
+		Reporter.writeSummary("TCID_011,Verify learning item page is opened when any of the particular course catalog item is clicked in the Dashboard page, " +  mLSteps.getResult() );
 		homeSteps.verifyFooterLinks();
-		Reporter.writeSummary("TCID_034,Verify Privacy Terms and Contact links, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_034,Verify Privacy Terms and Contact links in the Dashboard page, " + homeSteps.getResult() );
 	}
 	
 
@@ -77,9 +77,12 @@ public class WebTestNewUI extends FractalBaseWebTest {
    public void testMyAccountPage(String row, String strBrowserName) {
 	 driver = BrowserFactory.getBrowser(strBrowserName); 
 	 Reporter.setBrowserAppOS(strBrowserName);
-	 login(driver);
-	 AccountStepsNewUI accountSteps = new AccountStepsNewUI(driver);              
 	 HomeSteps homeSteps = new HomeSteps(driver);
+	 login(driver);
+	 Reporter.writeSummary("TCID_Log,Verify Loging is working fine, " +  homeSteps.getResult());
+	 homeSteps.CarosalImgCheck();
+	 Reporter.writeSummary("TCID_Img,Verify the carosal image in dashboard page, " +  homeSteps.getResult());
+	 AccountStepsNewUI accountSteps = new AccountStepsNewUI(driver);              
 	 accountSteps.clickOnMyAccount();
 	 wait(10);
 	 accountSteps.verifyAccountPageLabels();                                                                                                 
@@ -99,7 +102,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 	 homeSteps.verifyBellNotification();
 	 Reporter.writeSummary("TCID_069,Verify the Notifications page is getting displayed on clicking the Bell icon on the top right of the page next to profile icon, " + homeSteps.getResult() );
 	 homeSteps.verifyLogoImg();
-	 Reporter.writeSummary("TCID_084,Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());  
+	 Reporter.writeSummary("TCID_084,Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());    
 	 homeSteps.clickLogout();
 	}
 	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,
@@ -110,7 +113,7 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		login(driver);
 		VideoTesterSteps VideoTesterSteps=new VideoTesterSteps(driver);
 		VideoTesterSteps.verifyVideoTester(); //15/4/2020
-		Reporter.writeSummary("TCID_100, Verify the video gets launched succesfully," +  VideoTesterSteps.getResult() );
+		Reporter.writeSummary("TCID_100, Verify the video is launching successfully," +  VideoTesterSteps.getResult() );
 	
 	}
  }

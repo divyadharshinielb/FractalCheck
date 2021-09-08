@@ -498,6 +498,18 @@ public class HomeSteps extends FractalBaseStep {
 		
 	}
 
+	public void CarosalImgCheck() {
+		result ="Passed";
+		   try {
+	        	page.CarosalImgCheck();
+		   }
+		   catch(Exception e)
+		   {
+			e.printStackTrace();   
+			result="FAILED";
+		   }
+	}
+
 	
 
 }
