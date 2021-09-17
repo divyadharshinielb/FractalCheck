@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,7 +42,7 @@ public class MenuPage extends FractalBasePage{
 		click(lblLogout);
 	}
 	public void clickMenu() {
-		wait(10);
+		wait(15);
 		click(btnMenu);
 		wait(3);//Added on 26-Feb-21
 	}
@@ -116,8 +117,12 @@ public class MenuPage extends FractalBasePage{
 		
 	}
 	public void gotoNotification() {
+		WebElement element = driver.findElement(btnSettings);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element);
+		actions.perform();
 		click(btnSettings);
-		wait(10);
+		wait(15);
 		click(btnNotification);
 		wait(10);
 	}

@@ -227,8 +227,8 @@ public class LoginPage extends FractalBasePage {
 		driver.findElement(By.id("theInput")).sendKeys(Keys.ENTER);
 
 	}
-	private By googleButton = By.xpath("//div[@class='login-with-google']");
-	private By facebookButton = By.xpath("//div[@class='login-with-facebook']");
+	private By googleButton = By.xpath("//div[contains(text(),'Google')]");//div[@class='login-with-google']
+	private By facebookButton = By.xpath("//div[contains(text(),'Facebook')]");//div[@class='login-with-facebook']
 
 	public void googleBtn() {
 		wait(5);

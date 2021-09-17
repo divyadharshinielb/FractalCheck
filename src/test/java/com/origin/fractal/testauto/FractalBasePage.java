@@ -18,13 +18,13 @@ private By lblMyLearning = By.xpath("//a[contains(text(),'MY LEARNING')]");
 private By lblProfile = By.xpath(".//button[@class='jss29 jss3 jss5 jss8 circle-hover']//span[@class='jss4']");//*[@id='dLabel']/span
 private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
 private By btnCategory = By.xpath(".//*[@id='header']/*//button");
-private By btnBellIcon = By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/div[3]/div[1]/div[1]");//div[@class='jss1']//div//span[@class='jss4']//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
+private By btnBellIcon = By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[3]/div[1]/div[1]/button[1]/span[1]/*[1]");//div[@class='jss1']//div//span[@class='jss4']//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 private By viewAll = By.xpath(".//p[contains(text(),'MORE')]");//*[@id='notification-dropdown']/div[2]/div[2]/a
 private By settings = By.xpath(".//li[contains(text(),'Settings')]");
 private By lblHome= By.xpath("//img[contains(@class,'logo-height')]");//span[contains(text(),'Home')]
 private By btnContinue = By.xpath(".//div[@class='resume_container']");//button[contains(text(),'CONTINUE')]
 private By lblRcntAdded_Courses = By.xpath(".//div[@class='col-lg-12 col-sm-12 col-md-12 col-xs-12 padding-b-20 padding-lr-120 bg_grey padding-t-80']//span[@class='ng-binding ng-scope'][contains(text(),'courses')]");
-private By btnTopArr = By.xpath(".//div[@class='scrollup']");//i[contains(@class,'icon topArr')]
+private By btnTopArr = By.xpath(".//img[@class='scrollup-image scroll_img']");//i[contains(@class,'icon topArr')]
 
 private By btnList = By.xpath("//a//i[@class='icon-list-selected font-16']");   //div/ng-include/*//div/ng-include/div/*//div/a[contains(text(),'ALL')]/../div/a[2]
 private String gridBoxBtn = ".//div[contains(@class,'mylearn')]/../div[3]/a";//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div
@@ -82,7 +82,7 @@ click(btnCategory);
 }
 
 public void clickOnBellIcon() {
-	wait(5);
+	wait(10);
 click(btnBellIcon);
 }
 
