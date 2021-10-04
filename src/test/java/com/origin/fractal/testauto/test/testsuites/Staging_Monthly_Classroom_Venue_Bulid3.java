@@ -31,12 +31,12 @@ public class Staging_Monthly_Classroom_Venue_Bulid3 extends FractalBaseWebTest {
 			Reporter.writeSummary("Venue_002, Verify the Venue page., " +  venueSteps.getResult() );
 			venueSteps.countrySelection();
 			Reporter.writeSummary("Venue_006, Verify the country-selection in Add Venue page, " +  venueSteps.getResult() );
+			venueSteps.validVenueName();	
+			Reporter.writeSummary("Venue_004, Verify Venue creation with valid name, " +  venueSteps.getResult() );
 			venueSteps.citySelection();
 			Reporter.writeSummary("Venue_007, Verify  that  City should be enabled  after selecting the Country," +  venueSteps.getResult() );
 			venueSteps.validBuildingName();
 			Reporter.writeSummary("Venue_008, Verify Venue with valid Building Block name., " +  venueSteps.getResult() );
-			venueSteps.validVenueName();	
-			Reporter.writeSummary("Venue_004, Verify Venue creation with valid name, " +  venueSteps.getResult() );
 			venueSteps.validStreetName();
 			Reporter.writeSummary("Venue_010, Verify Venue creation with valid street name," +  venueSteps.getResult() );
 			venueSteps.mandatoryCheck();
