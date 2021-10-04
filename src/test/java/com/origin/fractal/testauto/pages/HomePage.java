@@ -120,7 +120,7 @@ public class HomePage extends FractalBasePage {
     /*************/
     private By viewAll=By.xpath("//a[contains(text(),'VIEW ALL')]");
     public By percentLabel = By.xpath("//*[contains(@class,'CircularProgressbar ')]");
-    private By btnTopArr = By.xpath(".//div[@class='scrollup']");
+    private By btnTopArr = By.xpath(".//div[@class='scrollup scrollup_down']");
     public HomePage(WebDriver driver) {
 		super(driver);
 		pageName ="HomePage"; 

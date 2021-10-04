@@ -18,8 +18,9 @@ private By lblMyLearning = By.xpath("//a[contains(text(),'MY LEARNING')]");
 private By lblProfile = By.xpath(".//button[@class='jss29 jss3 jss5 jss8 circle-hover']//span[@class='jss4']");//*[@id='dLabel']/span
 private By lblMyAccount = By.xpath(".//img[@class='pl-2 padding-r-10 pt-1']");
 private By btnCategory = By.xpath(".//*[@id='header']/*//button");
-private By btnBellIcon = By.xpath("//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[3]/div[1]/div[1]/button[1]/span[1]/*[1]");//div[@class='jss1']//div//span[@class='jss4']//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
+private By btnBellIcon = By.xpath("//div[@class='c-hover  pad-hover-67 notify-box']/button");//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[3]/div[1]/div[1]/button[1]/span[1]/*[1]//div[@class='jss1']//div//span[@class='jss4']//*[@id='header']/*//div[@class='dropdown-container']/*//span[contains(@class,'bell-bubble')]
 private By viewAll = By.xpath(".//p[contains(text(),'MORE')]");//*[@id='notification-dropdown']/div[2]/div[2]/a
+private By noNotifyTxt = By.xpath("//p[contains(text(),'No notifications found')]");
 private By settings = By.xpath(".//li[contains(text(),'Settings')]");
 private By lblHome= By.xpath("//img[contains(@class,'logo-height')]");//span[contains(text(),'Home')]
 private By btnContinue = By.xpath(".//div[@class='resume_container']");//button[contains(text(),'CONTINUE')]
@@ -88,8 +89,13 @@ click(btnBellIcon);
 
 public void clickOnViewAll() {
 wait(5);
+if(elementExist(viewAll)) {
 click(viewAll);
-
+}
+else {
+	wait(5);
+	verifyText("No notifications found",noNotifyTxt);
+}
 }
 
 public void clickOnsettings() {
@@ -217,7 +223,8 @@ wholeObjPath = objPath1+"["+i+objpath2;
 actualFilType=getText(By.xpath(wholeObjPath));
 if(actualFilType.equalsIgnoreCase(expType)){
 status=true;
-}else {
+}
+else {
 status=false;
 }
 }
@@ -227,7 +234,6 @@ return status;
 public void gridView() {
 verifyGridViewItems();
 wait(5);
-print("THIS FUNCTION OVERRRRUUUU");
 click(btnList);
 }
 public void listView() {
