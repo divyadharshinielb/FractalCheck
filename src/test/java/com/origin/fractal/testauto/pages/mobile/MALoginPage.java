@@ -36,8 +36,9 @@ public class MALoginPage extends FractalAppPage {
     private By pageTitle = By.id("\\com.originkonnect.app:id/action");//Added by Manju Priya A on Dec-27-18
     private By animSplashScreen = By.id("com.originkonnect.app:id/animation_view");//Added by Manju Priya A on Dec-31-18-copy id from my code
     private By clickAllow = By.xpath("");//Added by Manju Priya A on Jan_11_19 for ios
-
-	public MALoginPage(AppiumDriver<MobileElement> appDriver) {
+    private By btnLater = By.id("com.originkonnect.app:id/close_btn");
+    private By btnMenu = By.id("com.originkonnect.app:id/action_bar_back");
+    public MALoginPage(AppiumDriver<MobileElement> appDriver) {
 		super(appDriver);
 		this.setLocators();	
 	}
@@ -77,6 +78,19 @@ public class MALoginPage extends FractalAppPage {
 		typeIntoElement("I8Ay+$Pvkg3p9",getObj(tbPassword));//AutoDU@123
 		wait(5);
 		click(getObj(btnLogin));
+		wait(5);
+		if(elementExist(btnLater))
+		{click(btnLater);
+			if(elementExist(btnLater))
+				{
+				click(btnLater);
+				}
+			else{
+				elementExist(btnMenu);
+			}}
+		else {
+			elementExist(btnMenu);
+		}
 		//Added bY Manju Priya A on Jan_11_19
 		if(platform.equalsIgnoreCase("ios")) {
 			if(elementExist(clickAllow)) {
