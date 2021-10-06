@@ -92,7 +92,7 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	private By  insideLpathBackBtn= By.id("");
 	private By  resourceCatalogTitle= By.id("");
 	private By  courseCatalogTitle= By.id("//XCUIElementTypeImage[contains(@name,'course_White')]/../XCUIElementTypeStaticText[1]");
-	private By btnLater = By.name("LATER");
+	private By  btnLater = By.id("com.originkonnect.app:id/close_btn"); //By.name("LATER");
 	
 	public MAMyLearningInProPage(AppiumDriver<MobileElement> appDriver) {
 		super(appDriver);
@@ -236,7 +236,27 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	}
 	
 	public void clickMenu() {
-		wait(10);//com.originkonnect.app:id/r1
+		wait(10);
+		print("Checkknow");
+		wait(5);
+		if(elementExist(btnLater))
+		{
+			print("Checkknow11111111");
+			click(btnLater);
+			if(elementExist(btnLater))
+				{
+				print("Checkknow222222222");
+				click(btnLater);
+				}
+			else{
+				print("Checkknow33333");
+				elementExist(btnMenu);
+			}}
+		else {
+			print("Checkknow44444444444");
+			elementExist(btnMenu);
+		}
+		
 	    if(elementExist(By.id("com.originkonnect.app:id/back_white"))||elementExist(By.id("com.originkonnect.app:id/r1"))) {
 	     if(elementExist(By.id("com.originkonnect.app:id/back_white"))) {
 	    	 wait(2);
@@ -251,18 +271,8 @@ public class MAMyLearningInProPage extends FractalAppPage {
 	    click(By.id("com.originkonnect.app:id/empty_space_top"));
 	    }
         wait(20);
-        if(elementExist(btnLater))
-		{click(btnLater);
-			if(elementExist(btnLater))
-				{
-				click(btnLater);
-				}
-			else{
-				elementExist(btnMenu);
-			}}
-		else {
-			elementExist(btnMenu);
-		}
+        print("Checkknow5555555");
+        elementExist(btnMenu);
 	    click(getObj(btnMenu));
 		wait(5);
 	}
