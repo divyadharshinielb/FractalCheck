@@ -79,7 +79,8 @@ public class WebTestNewUI extends FractalBaseWebTest {
 	 Reporter.setBrowserAppOS(strBrowserName);
 	 HomeSteps homeSteps = new HomeSteps(driver);
 	 login(driver);
-	 Reporter.writeSummary("TCID_Log,Verify Loging is working fine, " +  homeSteps.getResult());
+	 //commenting this testcase as this is a repition
+	// Reporter.writeSummary("TCID_Log,Verify Loging is working fine, " +  homeSteps.getResult());
 	 homeSteps.CarosalImgCheck();
 	 Reporter.writeSummary("TCID_Img,Verify the carosal image in dashboard page, " +  homeSteps.getResult());
 	 AccountStepsNewUI accountSteps = new AccountStepsNewUI(driver);              
