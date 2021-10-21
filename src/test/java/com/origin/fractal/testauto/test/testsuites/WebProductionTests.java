@@ -76,9 +76,11 @@ public class WebProductionTests extends FractalBaseWebTest {
    public void testMyAccountPage(String row, String strBrowserName) {
 	 driver = BrowserFactory.getBrowser(strBrowserName); 
 	 Reporter.setBrowserAppOS(strBrowserName);
-	 login(driver);
-	 AccountStepsNewUI accountSteps = new AccountStepsNewUI(driver);              
 	 HomeSteps homeSteps = new HomeSteps(driver);
+	 login(driver);
+	 homeSteps.CarosalImgCheck();
+	 Reporter.writeSummary("TCID_Img,Verify the carosal image in dashboard page, " +  homeSteps.getResult());
+	 AccountStepsNewUI accountSteps = new AccountStepsNewUI(driver);              
 	 accountSteps.clickOnMyAccount();
 	 wait(10);
  accountSteps.verifyAccountPageLabels();                                                                                                 

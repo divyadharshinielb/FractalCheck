@@ -108,6 +108,8 @@ public class HomePage extends FractalBasePage {
     private By mFourthCatalog=By.xpath("//ng-include[1]/div[1]/div[1]/div[7]/div[2]/div[1]/div[1]/slick[1]/div[1]/div[1]/div[4]/div[1]/div[2]/h3[1]");
     private String reBox1=".//ng-include[1]/div[1]/div[2]/div";
     private String reBox2="]/div[1]/div[1]/div[2]/h3[1]";
+    private By detailBtn = By.xpath("//li[@class='slide'][1]/div/a/div/div/div/a/button[contains(text(),'DETAILS')]");
+    private By carosalBtn = By.xpath(".//body/div[@id='root']/div[@id='page-container']/main[@id='content-wrap']/div[1]/div[1]/div[2]/div[2]//div/ul[@class='control-dots']");
     
     public HomePage(WebDriver driver) {
 		super(driver);
@@ -445,5 +447,16 @@ public class HomePage extends FractalBasePage {
 		int itemCount = getItemsCount(reboxBtn,reboxCatType);
    	 System.out.println("---------"+itemCount);
 		
+	}
+	
+	public void CarosalImgCheck()
+	{
+		elementExist(detailBtn);
+//		click(detailBtn);
+//		wait(2);
+//		wait(2);
+		elementExist(carosalBtn);
+//		wait(3);
+//		click(carosalBtn);
 	}
 }
