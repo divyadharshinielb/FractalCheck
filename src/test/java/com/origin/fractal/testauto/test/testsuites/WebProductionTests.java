@@ -54,9 +54,9 @@ public class WebProductionTests extends FractalBaseWebTest {
 		login(driver);
 		HomeStepsNewUI homeSteps = new HomeStepsNewUI(driver);
 		homeSteps.verifyResumeLearningLabeltext();
-		Reporter.writeSummary("TCID_010,Verify My Learning page details on clicking from Home Page, " + homeSteps.getResult() );
+		Reporter.writeSummary("TCID_010,Verify whether clicking the Continue button is navigating to that particular catalog item page, " + homeSteps.getResult() );
 		homeSteps.verifyMyLearningPage();
-		Reporter.writeSummary("TCID_003,Verify My Learning page is displayed after logging to app, " +  homeSteps.getResult());
+		Reporter.writeSummary("TCID_003,Verify the My Learning tab in the Dashboard page, " +  homeSteps.getResult());
 		MyLearningStepsNewUI mLSteps = new MyLearningStepsNewUI(driver);
 		mLSteps.verifySubMenu();
 		Reporter.writeSummary("TCID_004,Verify all links(All Bundles Courses Learning Paths and resources), " +  mLSteps.getResult() );
@@ -103,7 +103,7 @@ public class WebProductionTests extends FractalBaseWebTest {
 	 Reporter.writeSummary("TCID_084,Verify the functionality of the Logo displayed on the top left corner of the page., " +  homeSteps.getResult());  
 	 homeSteps.clickLogout();
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,
 			description = "video testing")
 	public void verifyvideo(String row, String strBrowserName) throws InterruptedException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -111,8 +111,8 @@ public class WebProductionTests extends FractalBaseWebTest {
 		login(driver);
 		VideoTesterSteps VideoTesterSteps=new VideoTesterSteps(driver);
 		//commented this testcase as the video required is not present in production server
-	/*	VideoTesterSteps.verifyVideoTester(); //15/4/2020
+		VideoTesterSteps.verifyVideoTester(); //15/4/2020
 		Reporter.writeSummary("TCID_100,Verify the video gets launched succesfully," +  VideoTesterSteps.getResult() );
-	*/
+	
 	}
  }

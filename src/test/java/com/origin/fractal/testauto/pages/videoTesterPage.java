@@ -10,13 +10,13 @@ import com.origin.fractal.testauto.FractalBasePage;
 
 public class videoTesterPage extends FractalBasePage{
 	private By searchfieldUser= By.xpath("//input[@id='theInput']");
-	private By Iblvideo=By.xpath("//h1[contains(text(),'Prod-Video1')]");//h1[contains(text(),'Video 1')]//*[text()='Sample video'])[3]
+	private By Iblvideo=By.xpath("//h1[contains(@title,'Resource -- Independent')]");//h1[contains(text(),'Prod-Video1')]//h1[contains(text(),'Video 1')]//*[text()='Sample video'])[3]
 	private By videoPlayer=By.xpath("//*[@class=\"vjs-big-play-button\"]");//*[@class=\"vjs-big-play-button\"]
 	private By play= By.xpath("//*[@title=\"Play\"]");
 	private By pause= By.xpath("//*[@title=\"Pause\"]");
 	private By replay= By.xpath("//*[@title=\"Replay\"]");
 	private By mylearningRadioBtn=By.xpath("//div[contains(@class,'text-right')]//div[1]//label[1]");
-	
+	private By btnLaunch=By.xpath("//span[contains(text(),'Launch')]");
 	public videoTesterPage(WebDriver driver) {
 		super(driver);
 	}
@@ -27,7 +27,7 @@ public class videoTesterPage extends FractalBasePage{
 			enterData("video", searchfieldUser);//AutoTC_Itemcode_VideoVideo
 			driver.findElement(searchfieldUser).sendKeys(Keys.RETURN);
 			wait(6);
-			click(By.xpath("//button[contains(text(),'COURSES')]"));//button[contains(text(),'PODCASTS')]
+			click(By.xpath("//button[contains(text(),'RESOURCES')]"));//button[contains(text(),'PODCASTS')]
 			wait(5);
 			click(mylearningRadioBtn);
 			wait(5);
@@ -35,7 +35,8 @@ public class videoTesterPage extends FractalBasePage{
 			actions.moveToElement(element).perform();
 			click(Iblvideo);
 		wait(10);
-		driver.switchTo().frame(0);
+		click(btnLaunch);
+		driver.switchTo().frame("ifram");
 		wait(10);
 		click(videoPlayer);
 		print("Video is playing.");
