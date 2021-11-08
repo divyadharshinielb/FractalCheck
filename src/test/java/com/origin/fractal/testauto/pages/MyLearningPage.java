@@ -27,7 +27,7 @@ public class MyLearningPage extends FractalBasePage {
 	private String boxBtn = ".//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div";
 	private String boxCatType = "]/*//p";
 	private By boxButton = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/*//p[contains(text(),'Category')]/../../../../../div");
-	private By lblCatnameInside = By.xpath("//span[@class='three-line-clamp']");//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3
+	private By lblCatnameInside = By.xpath("//span[@class='three-line-clamp fontz-siz']");//*[@id='ngview']/div/ng-include/*//div/span[contains(text(),'Updated on')]/../*//h3
 
 	private By bundleCnt = By.xpath(".//div/ng-include/*//div/ng-include/div/*//div/p[contains(text(),'Valid till:')]");////Updated Nov-22-18
 	private By lblcourseName = By.xpath(".//div/ng-include/div/*//h3[contains(text(),'Content')]/../../div/*//h3");//Updated Nov-22-18
