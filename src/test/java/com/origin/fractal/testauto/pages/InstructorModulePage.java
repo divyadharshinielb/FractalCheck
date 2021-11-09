@@ -60,6 +60,7 @@ public class InstructorModulePage extends FractalBasePage {
 		pageName ="InstructorModulePage"; 
 	}
 	public void verifyDashboardSubHeaders() {
+		wait(7);
 		verifyText("Total Events",lblTotalEventsText );
 		verifyText("Updates",lblUpdatesText );
 		verifyText("Invites & Reminders", lblInvitesRemindersText);
@@ -252,6 +253,7 @@ public class InstructorModulePage extends FractalBasePage {
 		}
 	public void verifyActivitiesAndRosterTab() throws Exception{
 		wait(2);
+		scrollToElement(By.xpath("//li[contains(text(),'Activities & Materials')]"));
 		if(elementExist(By.xpath("//li[contains(text(),'Activities & Materials')]"))) {
 		WebElement element= driver.findElement(By.xpath("//li[contains(text(),'Activities & Materials')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);

@@ -71,7 +71,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By lblhome = By.xpath("//img[contains(@class,'logo-height')]");
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");//*[@id='dLabel']/span
 	private By multiplecategorycatalog = By.xpath("//a[contains(text(),'checkmultiplechoice')]");
-	private By categorypopupbtn = By.xpath("//span[@class='r-border mtop-5']");
+	private By categorypopupbtn = By.xpath("//span[@class='r-border mtoptab']");
 //	private By categorypopuptext = By.xpath("//div[contains(text(),'Automation Test, Project Lead, Project Management, Functional Testing, Time Management, Project, General, Technology')]");
 	private By viewallbtn = By.xpath("//a[contains(text(),'VIEW ALL')]");
 	private By listviewhome = By.xpath("//i[@class='icon-list font-16']");
@@ -525,7 +525,7 @@ public class MyLearningPage extends FractalBasePage {
 			 }
 
 				//Added by vignesh on 30-Nov-20
-				private By viewCertiBtn=By.xpath("(//*[contains(@class, 'certifycheck3')]/a)");//Updated on 9-Oct-20
+				private By viewCertiBtn=By.xpath("(//*[@class='certify_Check'])");//Updated on 9-Oct-20
 
 				private By certificateModule = By.xpath("//*[@class='cert_rect']");
 				private By txtCongratulations = By.xpath("//*[@class='cert_font'][contains(text(),'Congratulations')]");
@@ -537,7 +537,7 @@ public class MyLearningPage extends FractalBasePage {
 				//				private By completedItem= By.xpath("(//*[@class='my-masonry-grid_column'])[1]");
 				private By completedItem= By.xpath	("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]/div[1]/div//p//a");//Updated on 12-Mar-21
 				private By tabMyLearning = By.xpath("//*[@href='/mylearning']");//Added on 9_oct-20
-				private By certificationIcon= By.xpath("(//*[@class='detail_icon_Certify'])");
+				private By certificationIcon= By.xpath("(//*[@class='detail_Certify'])");
 
 				/* Function Name: verifyCertificateModule()
 				 * Action: Verifying certificate module

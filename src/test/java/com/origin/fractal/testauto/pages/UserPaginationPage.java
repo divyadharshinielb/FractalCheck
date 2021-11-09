@@ -197,8 +197,9 @@ public class UserPaginationPage extends FractalBasePage{
 		wait(10);
 		enterData("a",searchLbl);
 		driver.findElement(searchLbl).sendKeys(Keys.ENTER);
-		scrollToElement(loadmoreBtn);
+
 		if(elementExist(loadmoreBtn)) {
+			scrollToElement(loadmoreBtn);
 		verifyText("LOAD MORE",loadmoreBtn);
 		}
 	}

@@ -83,6 +83,7 @@ public class LoginPage extends FractalBasePage {
 		click(By.xpath("//div[@class='user-profile-letter']"));//img[@class='logout-height']
 		wait(5);
 		click(By.xpath("//button[contains(text(),'Instructor')]"));//button[@class='role-button']
+		wait(5);
 	}
 	public void loginToContentAdmin() {
 		wait(5);
