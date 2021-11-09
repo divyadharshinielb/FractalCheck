@@ -190,7 +190,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		wait(10);
 		click(selectTimezone);
 		click(lblSession);
-		wait(10);
+		wait(5);
 		click(lblSelectCalendar);
 		wait(5);
 		click(dropdownSelectCalendar);
