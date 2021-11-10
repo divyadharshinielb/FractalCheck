@@ -554,7 +554,9 @@ public class MyLearningPage extends FractalBasePage {
 //						click(ratingDonebtn);
 //						wait(3);
 //					}
-					click(By.xpath("//button[contains(text(),'BUNDLES')]"));
+					print("Check");
+					elementExist(By.xpath("//button[contains(text(),'RESOURCES')]"));
+					click(By.xpath("//button[contains(text(),'RESOURCES')]/.."));
 					wait(6);
 					WebElement element = driver.findElement(completedItem);
 					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);

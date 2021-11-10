@@ -26,7 +26,7 @@ private By lblItemCode= By.xpath("//input[@name='item_code']");
 private By searchText= By.xpath("//input[@id='theInput']");
 private By audioCatalog= By.xpath("//a[@class='a-link']");
 private By resumeLearning= By.xpath("//span[@class='vid clearfix']");
-private By audioLearningObject= By.xpath("//h1[contains(text(),'AutoTC_Itemcode_Bundle')]");
+private By audioLearningObject= By.xpath("//h1[contains(@title,'AutoTC_Itemcode_Bundle')]");
 private By downloadIcon= By.xpath("//div[@id='loname']/../div/div/div[2]/span[1]");
 
 public DownloadContentPage(WebDriver driver) {
@@ -104,6 +104,9 @@ public DownloadContentPage(WebDriver driver) {
 		driver.findElement(By.xpath(".//input[contains(@class,'cat_search')]")).sendKeys(Keys.ENTER);
 		wait(5);
 		click(audioLearningObject);
+		wait(10);
+		scrollToElement(By.xpath("//div[contains(text(),'Audio')]"));
+		click(By.xpath("//div[contains(@class,'masonry-bundlename ellipsis cp conte-nam ')]"));
 		wait(10);
 		click(downloadIcon);
 		print("download clicked");
