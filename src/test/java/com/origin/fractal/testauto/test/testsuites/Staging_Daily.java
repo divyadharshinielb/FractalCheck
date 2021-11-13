@@ -199,7 +199,8 @@ public class Staging_Daily extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
 		RenewButtonSteps renew = new RenewButtonSteps(driver);
-	//commenting this as renew button is not present in user part/*	renew.searchpageRenewButton();
+	//commenting this as renew button is not present in user part
+		/*	renew.searchpageRenewButton();
 		Reporter.writeSummary("FR1-2496_Renew_TC-01,Verify the presence of renew button in search page," + renew.getResult() );
 		renew.inprogressRenewbtnCheck();
 		Reporter.writeSummary("FR1-2496_Renew_TC-02,Verify renew button in InProgress Page," + renew.getResult() );
