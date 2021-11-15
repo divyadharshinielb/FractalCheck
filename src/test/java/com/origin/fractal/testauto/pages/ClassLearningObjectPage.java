@@ -11,6 +11,7 @@ import com.origin.fractal.testauto.FractalBasePage;
  * Created by: DivyaDharshini R
  * Created on: 05-03-2021
  * Updated on: 25-03-2021
+ * Edited based on FR1-4627 - 13/11/2021
  */
 public class ClassLearningObjectPage extends FractalBasePage {
 	DocumentValidationPage page;
@@ -20,7 +21,7 @@ public class ClassLearningObjectPage extends FractalBasePage {
 	public By categoryError = By.xpath("//div[contains(text(),'Category should not be empty')]");
 	public By languageError = By.xpath("//div[contains(text(),'Language should not be empty')]");
 	public By descError = By.xpath("//div[contains(text(),'Description should not be empty')]");
-	public By linkError = By.xpath("//div[contains(text(),'Link Code should not be empty')]");
+	public By linkError = By.xpath("//div[contains(text(),'Link should not be empty')]");
 	public By itemCodeError = By.xpath("//div[contains(text(),'Item Code should not be empty')]");
 	public By durationError = By.xpath("//div[contains(text(),'Duration should not be empty')]");
 	public By closeBtn = By.xpath("//body/div[@id='addObject']/div[1]/div[1]/div[1]/button[1]/i[1]");
@@ -37,7 +38,7 @@ public class ClassLearningObjectPage extends FractalBasePage {
 	public By lblMinute = By.xpath("//input[contains(@placeholder,'MM')]");
 	public By invalidLinkError = By.xpath("//div[contains(text(),'Invaild Link')]");
 	public By backToLOBtn = By.xpath("//button[contains(text(),'Back to Learning Objects')]");
-	public By deleteIcon = By.xpath("//div[contains(text(),'ClassLOCHECKEdit')]/../../../div/i[2]");
+	public By deleteIcon = By.xpath("//div[contains(text(),'ClassLOCHECKEdit')]/../../../div[6]/i");
 	public By searchBar = By.xpath("//input[@id='searchObject']");
 	public By editIcon = By.xpath("//div[contains(text(),'ClassLOCHECK')]/../../../div/i[contains(@data-template-url1,'editObj.html')]");
 	public By updateBtn = By.xpath("//button[contains(text(),'Update')]");
@@ -46,6 +47,9 @@ public class ClassLearningObjectPage extends FractalBasePage {
 	public By catalogItem = By.xpath("//a[contains(text(),'Automation_Timeline')]/..");
 	public By greenIcon = By.xpath("//i[contains(@class,'icon-r_green_arrow font-36 cp')]");
 	public By classLo = By.xpath("//div[contains(text(),'Automation_ClassLO')]");
+	public By noBtn = By.xpath("//button/span[contains(text(),'No')]");
+	public By noLOBtn = By.xpath("//button[contains(text(),'No')]");
+	public By linkInputCheck = By.xpath("//input[contains(@ng-model,'class.link')]");
 	public ClassLearningObjectPage(WebDriver driver) {
 		super(driver);
 
@@ -65,7 +69,7 @@ public class ClassLearningObjectPage extends FractalBasePage {
 		verifyText("Category should not be empty",categoryError);
 		verifyText("Language should not be empty",languageError);
 		verifyText("Description should not be empty",descError);
-		verifyText("Link Code should not be empty",linkError);
+		verifyText("Link should not be empty",linkError);
 		verifyText("Item Code should not be empty",itemCodeError);
 		verifyText("Duration should not be empty",durationError);
 		click(closeBtn);
@@ -88,13 +92,15 @@ public class ClassLearningObjectPage extends FractalBasePage {
 		click(selectLanguageBtn);
 		wait(2);
 		click(selectLanguageOption);
-		enterData("httpsfs",linkInput);
-		enterData("asdfasdf",descInput);
-		enterData("itemCodeInput",itemCodeInput);
+		enterData("google.com",linkInput);
+		wait(2);
+		enterData("Description for Class Lo",descInput);
+		enterData("Class123",itemCodeInput);
 		enterData("00",lblHour);
 		enterData("30",lblMinute);
 		click(saveBtn);
-		verifyText("Invalid Link",invalidLinkError);
+		//uncomment this line on checking with saras mam
+	//	verifyText("Invalid Link",invalidLinkError);
 		//click(closeBtn);
 	}
 	/*
@@ -104,11 +110,6 @@ public class ClassLearningObjectPage extends FractalBasePage {
 	public void classLOCreation() {
 		wait(2);
 		classLOInvalidLinkValidation();
-		clear(linkInput);
-		enterData("https://google.com",linkInput);
-		wait(2);
-		click(saveBtn);
-		wait(2);
 		elementExist(backToLOBtn);
 		wait(2);
 		click(closeBtn);
@@ -118,23 +119,32 @@ public class ClassLearningObjectPage extends FractalBasePage {
 	 * Function name:editAndDeleteClassLO()
 	 * Covers:It covers edit and delete of a class LO 
 	 */
-	public void editAndDeleteClassLO() {
+	public void editAndDeleteClassLO() throws Exception {
 		enterData("ClassLOCHECK",searchBar);
 		wait(5);
 		click(editIcon);
 		wait(2);
-		clear(titleInput);
+		//clear(titleInput);
 		enterData("ClassLOCHECKEdit",titleInput);
-		clear(linkInput);
-		enterData("https://google.com",linkInput);
-
-		click(updateBtn);
-		wait(2);
-		enterData("ClassLOCHECKEdit",searchBar);
-		wait(5);
-		click(deleteIcon);
-		wait(5);
-		click(okBtn);
+		//clear(linkInput);
+		elementExist(linkInput);
+		//getText(By.xpath("//input[contains(@ng-model,'class.link')]"));
+		String linkvalue = getAttributeValuePassword(linkInputCheck);
+		if(verifyText("http://google.com",linkvalue)== true) {
+			print("The https value is appended to the link");
+			click(updateBtn);
+			wait(2);
+			click(noBtn);
+			click(noLOBtn);
+			enterData("ClassLOCHECKEdit",searchBar);
+			wait(10);
+			click(deleteIcon);
+			wait(5);
+			click(okBtn);	
+		}
+		else {
+			throw new Exception();
+		}
 	}
 	/*
 	 * Function name:userPartClassLO()
