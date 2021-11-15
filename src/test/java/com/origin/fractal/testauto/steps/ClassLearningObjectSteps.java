@@ -10,6 +10,7 @@ import com.origin.fractal.testauto.pages.ClassLearningObjectPage;
  * Created by: DivyaDharshini R
  * Created on: 05-03-2021
  * Updated on: 25-03-2021
+ * Edited based on FR1-4627 - 13/11/2021
  */
 public class ClassLearningObjectSteps extends FractalBaseStep {
 	private ClassLearningObjectPage page;

@@ -17,6 +17,7 @@ import com.wv.auto.framework.utils.Reporter;
  * Created by: DivyaDharshini R
  * Created on: 05-03-2021
  * updated on: 25-03-2021
+ * edited based on FR1-4627 - 13/11/2021
  */
 public class WebTestClassLearningObject extends FractalBaseWebTest {
 	//edited by divya from here
@@ -46,7 +47,7 @@ public class WebTestClassLearningObject extends FractalBaseWebTest {
 		CustomizationRolesSteps rolestep = new CustomizationRolesSteps(driver);
 		classSteps.classLOEmptyFieldValidation();
 		Reporter.writeSummary("FR1-3774_TCID_class_01,Verify the empty field validation of class , " +  classSteps.getResult() );
-		classSteps.classLOInvalidLinkValidation();
+		//classSteps.classLOInvalidLinkValidation();
 		Reporter.writeSummary("FR1-3774_TCID_class_02,Verify the invalid link of class , " +  classSteps.getResult() );
 		classSteps.classLOCreation();
 		Reporter.writeSummary("FR1-3774_TCID_class_03,Verify the creation of Class LO  , " +  classSteps.getResult() );
@@ -54,8 +55,8 @@ public class WebTestClassLearningObject extends FractalBaseWebTest {
 		Reporter.writeSummary("FR1-3774_TCID_class_04,Verify Edit and Delete of Class LO  , " +  classSteps.getResult() );
 		rolestep.adminLogout();
 		//userpart
-		login(driver);
+	/*	login(driver);
 		classSteps.userPartClassLO();
 		Reporter.writeSummary("FR1-3774_TCID_class_05,Verify the presence of Class LO in User part , " +  classSteps.getResult() );
-	}
+	*/}
 }
