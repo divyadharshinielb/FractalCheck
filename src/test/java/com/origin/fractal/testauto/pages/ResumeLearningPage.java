@@ -20,6 +20,7 @@ public class ResumeLearningPage extends FractalBasePage {
 	private By lblResource = By.xpath("//span[@class='avg_rat fs16']");
 	private By resourceCount = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]");
 	private By lblClose = By.xpath("//body/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/span[4]/img[1]");
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	public ResumeLearningPage(WebDriver driver) {
 		super(driver);
 		pageName ="ResumeLearningPage"; 
@@ -32,8 +33,8 @@ public class ResumeLearningPage extends FractalBasePage {
 	{
 		wait(5);
 		 WebElement p=driver.findElement(ResumeCatalogText);
-		String s= p.getText();
-		verifyText(s,ResumeCatalogText);
+		String catalogText= p.getText();
+		verifyText(catalogText,ResumeCatalogText);
 		wait(10);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
@@ -42,8 +43,8 @@ public class ResumeLearningPage extends FractalBasePage {
 		if(elementExist(ResumeInsideCatalogText)) {
 		wait(5);
 		WebElement p1=driver.findElement(ResumeInsideCatalogText);
-		String s1= p1.getText();
-		verifyText(s1,ResumeInsideCatalogText);
+		String insideCatalogText= p1.getText();
+		verifyText(insideCatalogText,ResumeInsideCatalogText);
 		wait(15);
 		}
 		else {
@@ -62,7 +63,6 @@ public class ResumeLearningPage extends FractalBasePage {
 	click(ResumeCatalogText);
 	if(elementExist(ResumeInsideCatalogText)) {
 	wait(5);
-	JavascriptExecutor js = (JavascriptExecutor) driver;
 	js.executeScript("window.scrollBy(0,500)");
 	verifyText("Resources",lblResource);
 	}
