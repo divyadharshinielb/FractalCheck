@@ -71,7 +71,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By lblhome = By.xpath("//img[contains(@class,'logo-height')]");
 	private By lblProfile = By.xpath(".//div[contains(@class,'logout_pop')]/*//button[contains(@class,'circle-hover')]");//*[@id='dLabel']/span
 	private By multiplecategorycatalog = By.xpath("//a[contains(text(),'checkmultiplechoice')]");
-	private By categorypopupbtn = By.xpath("//span[@class='r-border mtoptab']");
+	private By categorypopupbtn = By.xpath("//span[@class='r-border mtoptab round_tab']");
 //	private By categorypopuptext = By.xpath("//div[contains(text(),'Automation Test, Project Lead, Project Management, Functional Testing, Time Management, Project, General, Technology')]");
 	private By viewallbtn = By.xpath("//a[contains(text(),'VIEW ALL')]");
 	private By listviewhome = By.xpath("//i[@class='icon-list font-16']");
