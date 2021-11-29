@@ -525,7 +525,7 @@ public class MyLearningPage extends FractalBasePage {
 			 }
 
 				//Added by vignesh on 30-Nov-20
-				private By viewCertiBtn=By.xpath("(//*[@class='certify_Check'])");//Updated on 9-Oct-20
+				private By viewCertiBtn=By.xpath("(//*[@class='certify_Check icon_certification'])");//Updated on 9-Oct-20
 
 				private By certificateModule = By.xpath("//*[@class='cert_rect']");
 				private By txtCongratulations = By.xpath("//*[@class='cert_font'][contains(text(),'Congratulations')]");
