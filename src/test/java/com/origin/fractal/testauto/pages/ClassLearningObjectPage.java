@@ -4,6 +4,9 @@ package com.origin.fractal.testauto.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.origin.fractal.testauto.FractalBasePage;
 /* File Name: ClassLearningObjectPage.java
  * Purpose: FR1-3774 - Class Learning object creation and deletion
@@ -50,6 +53,7 @@ public class ClassLearningObjectPage extends FractalBasePage {
 	public By noBtn = By.xpath("//button/span[contains(text(),'No')]");
 	public By noLOBtn = By.xpath("//button[contains(text(),'No')]");
 	public By linkInputCheck = By.xpath("//input[contains(@ng-model,'class.link')]");
+	public By noRecordsDiv = By.xpath("//div[contains(text(),'No records found')]");
 	public ClassLearningObjectPage(WebDriver driver) {
 		super(driver);
 
@@ -137,14 +141,24 @@ public class ClassLearningObjectPage extends FractalBasePage {
 			click(noBtn);
 			click(noLOBtn);
 			enterData("ClassLOCHECKEdit",searchBar);
-			wait(10);
+			//wait(10);
+			explicitWait(10,deleteIcon);
 			click(deleteIcon);
 			wait(5);
 			click(okBtn);	
+			wait(5);
+			enterData("ClassLOCHECKEdit",searchBar);
+			explicitWait(10,noRecordsDiv);
+			verifyText("No records found",noRecordsDiv);
 		}
 		else {
 			throw new Exception();
 		}
+	}
+	public void explicitWait(int sec,By element) {
+		WebDriverWait wait = new WebDriverWait (driver, sec);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+		
 	}
 	/*
 	 * Function name:userPartClassLO()
