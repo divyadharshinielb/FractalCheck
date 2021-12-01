@@ -117,7 +117,10 @@ public class CatalogUpdatePage extends FractalBasePage {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		wait(5);
 		enterData("AutoDU@123",tbPassword);
-		wait(5);
+		wait(10);
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("window.scrollBy(0,1000)");
+		    wait(5);
 		click(btnLogin);
 	}
 	/*
