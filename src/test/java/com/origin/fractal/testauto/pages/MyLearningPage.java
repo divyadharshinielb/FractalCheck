@@ -44,7 +44,7 @@ public class MyLearningPage extends FractalBasePage {
 	private By bundleCnt = By.xpath("./html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]/div[1]/div[1]");////Updated Nov-22-18
 	private By lblcourseName = By.xpath(".//span[@class='three-line-clamp']");//Updated Nov-22-18//h1[@class='masonry-bundlename ellipsis padding-t-5']
 	private By lblDuration = By.xpath(".//div/*//span[contains(text(),'Duration')]");
-	private By lblTick = By.xpath(".//button[@class='pl-30 launch_btn www']//img");//round-progress-wrapper
+	private By lblTick = By.xpath("//span[contains(text(),'Completed')]/../div/img");//button[@class='pl-30 launch_btn www']//img    //round-progress-wrapper
 	private By lblCompleted = By.xpath("//li[@id='react-tabs-2']");
 
 	private By lblCategory = By.xpath(".//a[contains(text(),'CATEGORIES')]");//a[contains(text(),'CATEGORIES')]
@@ -194,7 +194,7 @@ public class MyLearningPage extends FractalBasePage {
 		if(elementExist(boxButton)) {
 			wait(2);
 			click(boxButton);
-			//	click(lblDuration);
+			wait(5);
 		  elementExist(lblTick);
 		}
 	}
