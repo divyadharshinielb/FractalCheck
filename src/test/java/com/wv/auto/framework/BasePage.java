@@ -148,7 +148,10 @@ public int getNumber(String data){
 	public void click(By objLoc) {
 		click(getObj(objLoc));
 	}
-
+	public void fileUpload(By obj,String location) {
+		WebElement object = driver.findElement(obj);
+		object.sendKeys(location);
+	}
 	public void click(WebElement obj) {
 		//JavascriptExecutor executor = (JavascriptExecutor)driver;
 	//	executor.executeScript("arguments[0].click();", obj);
