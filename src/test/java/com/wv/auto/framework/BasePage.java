@@ -501,6 +501,13 @@ public int getNumber(String data){
 		String value = driver.findElement(objLoc).getAttribute("text");
 		return value;
 	}
+	public void waitE(int timeInSec,By objLoc) throws InterruptedException {
+		int msec = timeInSec * 1000;
+		Thread.sleep(msec);
+	WebDriverWait wait = new WebDriverWait(driver,30);
+	wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
+	}
+	
 	public boolean verifyText(String expText, String actText) {
 		return compareStrings(expText, actText);
 	}
