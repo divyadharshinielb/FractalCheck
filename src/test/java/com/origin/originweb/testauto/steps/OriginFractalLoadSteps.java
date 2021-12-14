@@ -61,13 +61,41 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 		}
 	}
 
-	/* Function Name: verifyHeaderSolution()
+	/* Function Name: verifyHeaderSolutionSub1()
 	 * Purpose: Verify the page loading time
 	 */
-	public void verifyHeaderSolution() {
+	public void verifyHeaderSolutionSub1() {
 		result="FAILED";
 		try{
-			if(loadPage.verifyHeaderSolution()==true) {
+			if(loadPage.verifyHeaderSolutionSub1()==true) {
+				result="PASSED";
+			}
+		}catch (Exception e) {
+			result="FAILED";
+			ClickHome(); 
+		}
+	}
+	/* Function Name: verifyHeaderSolutionSub2()
+	 * Purpose: Verify the page loading time
+	 */
+	public void verifyHeaderSolutionSub2() {
+		result="FAILED";
+		try{
+			if(loadPage.verifyHeaderSolutionSub2()==true) {
+				result="PASSED";
+			}
+		}catch (Exception e) {
+			result="FAILED";
+			ClickHome(); 
+		}
+	}
+	/* Function Name: verifyHeaderSolutionSub3()
+	 * Purpose: Verify the page loading time
+	 */
+	public void verifyHeaderSolutionSub3() {
+		result="FAILED";
+		try{
+			if(loadPage.verifyHeaderSolutionSub3()==true) {
 				result="PASSED";
 			}
 		}catch (Exception e) {
@@ -193,7 +221,20 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			ClickHome(); 
 		}
 	}
-
+	/* Function Name: verifyHeaderCareer()
+	 * Purpose: Verify the page loading time
+	 */
+	public void verifyHeaderCareer() {
+		result="FAILED";
+		try{
+			if(loadPage.verifyHeaderCareer()==true) {
+				result="PASSED";
+			}
+		}catch (Exception e) {
+			result="FAILED";
+			ClickHome(); 
+		}
+	}
 	/* Function Name: verifyHeaderAbout()
 	 * Purpose: Verify the page loading time
 	 */
@@ -364,6 +405,20 @@ public class OriginFractalLoadSteps extends OriginFractalWebSteps{
 			ClickHome(); 
 		}
 	}
-
+	/* Function Name: verifyBlog()
+	 * Purpose: Verify the page loading time
+	 */
+	public void verifyBlog() {
+		result="FAILED";
+		try{
+			if(loadPage.verifyBlog()==true) {
+				result="PASSED";
+			}
+		}catch (Exception e) {
+			result="FAILED";
+			ClickHome(); 
+		}
+	}
+	
 
 }

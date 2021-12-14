@@ -25,9 +25,13 @@ public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		OriginFractalLoadSteps Steps=new OriginFractalLoadSteps(driver);
 		goToUrl(driver);
-		Reporter.writeSummary("Url-Navigation,Open the URL ,"+TimeManager.getTimeDiffFromPrevEventInSecs().intern()+","+Steps.getResult());
-		Steps.verifyHeaderSolution();
-		Reporter.writeSummary("TC-01_Header-Solution,Verifying the solution page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Reporter.writeSummary("Url-Navigation,Open the URL(https://originfractal.com/) ,"+TimeManager.getTimeDiffFromPrevEventInSecs().intern()+","+Steps.getResult());
+		Steps.verifyHeaderSolutionSub1();
+		Reporter.writeSummary("TC-01_Header-Solution,Verifying the Fractal LXP for L&D under solution page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Steps.verifyHeaderSolutionSub2();
+		Reporter.writeSummary("TC-20_Header-Solution,Verifying the Fractal LXP for Sales Leaders under solution page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Steps.verifyHeaderSolutionSub3();
+		Reporter.writeSummary("TC-21_Header-Solution,Verifying the Fractal LXP for Customer Support under solution page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderFeature();
 		Reporter.writeSummary("TC-02_Header-Feature,Verifying the feature page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderPricing();
@@ -43,13 +47,15 @@ public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 		//		Reporter.writeSummary("TC-05_Header-SearchBlog,Verifying the Search Blog loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		// Ends
 		//added on 13-Jan-21
-		Steps.verifyHeaderResources();
+    	Steps.verifyHeaderResources();
 		Reporter.writeSummary("TC-04_Header-Resources,Verifying the Resources page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyunpluggedBanner();
 		Reporter.writeSummary("TC-05_Header-Resources,Verifying the Unplugged page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		//Ends
 		Steps.verifyHeaderPhilosophy();
 		Reporter.writeSummary("TC-06_Header-Philosophy,Verifying the Philosophy page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Steps.verifyHeaderCareer();
+		Reporter.writeSummary("TC-22_Header-Career,Verifying the career page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderAbout();
 		Reporter.writeSummary("TC-07_Header-About-Us,Verifying the About-Us page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderContact();
@@ -74,5 +80,7 @@ public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 		Reporter.writeSummary("TC-17_ PlayStore Link,Verifying the play store link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyiOSAppStore();
 		Reporter.writeSummary("TC-18_ Appstore Link ,Verifying the app store link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+	//	Steps.verifyBlog();
+	//	Reporter.writeSummary("TC-19_ Blog Link ,Verifying the blog link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 	}
 }

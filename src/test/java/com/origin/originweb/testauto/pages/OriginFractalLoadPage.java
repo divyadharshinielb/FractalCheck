@@ -21,15 +21,21 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By newsSlider=By.xpath("//*[@id='normal-slidedown']");//Added on 26-Nov-20
 	private By btnCancelnewsSlider=By.xpath("//*[@id='normal-slidedown']//button[text()='Cancel']");//Added on 26-Nov-20
 	// Heading 
-	private By headerSolution	= By.xpath("(//UL[@class='navigation clearfix']//a)[1]");
-	private By headerFeature	= By.xpath("(//UL[@class='navigation clearfix']//a)[2]");
-	private By headerPricing	= By.xpath("(//UL[@class='navigation clearfix']//a)[3]");
-	private By headerTrailSign	= By.xpath("(//UL[@class='navigation clearfix']//a)[4]");
+	private By headerSolution     = By.xpath("//a[contains(text(),'Solutions')]");
+	private By headerSolutionSub1 = By.xpath("(//UL[@class='navigation clearfix']//a)[1]");
+	private By headerSolutionSub2 = By.xpath("(//UL[@class='navigation clearfix']//a)[2]");
+	private By headerSolutionSub3 = By.xpath("(//UL[@class='navigation clearfix']//a)[3]");
+	private By headerProduct     = By.xpath("//a[contains(text(),'Product')]");
+	private By headerFeature     = By.xpath("//header/div[1]/div[1]/div[2]/div[1]/nav[1]/div[2]/ul[1]/li[2]/ul[1]/li[1]/a[1]");
+	private By headerPricing	= By.xpath("//header/div[1]/div[1]/div[2]/div[1]/nav[1]/div[2]/ul[1]/li[2]/ul[1]/li[2]/a[1]");
+	private By headerTrailSign	= By.xpath("//header/div[1]/div[1]/div[2]/div[1]/nav[1]/div[2]/ul[1]/li[2]/ul[1]/li[3]/a[1]");
 	private By headerBlog		= By.xpath("(//UL[@class='navigation clearfix']//a)[4]");
 	private By headerResources	= By.xpath("(//UL[@class='navigation clearfix']//a)[5]");// Added ON 13-Jan-20
-	private By headerPhilosophy	= By.xpath("(//UL[@class='navigation clearfix']//a)[6]");
+	private By headerPhilosophy	= By.xpath("//header/div[1]/div[1]/div[2]/div[1]/nav[1]/div[2]/ul[1]/li[4]/ul[1]/li[2]/a[1]");
+	private By headerCareer 	= By.xpath("//header/div[1]/div[1]/div[2]/div[1]/nav[1]/div[2]/ul[1]/li[4]/ul[1]/li[3]/a[1]");
+	private By headerAboutUs1	= By.xpath("//a[contains(text(),'About Us')]");
 	private By headerAboutUs	= By.xpath("(//UL[@class='navigation clearfix']//a)[7]");
-	private By headerContact	= By.xpath("(//UL[@class='navigation clearfix']//a)[8]");
+	private By headerContact	= By.xpath("//header/div[1]/div[1]/div[2]/div[1]/nav[1]/div[2]/ul[1]/li[4]/ul[1]/li[4]/a[1]");
 	private By unpluggedBanner	= By.xpath("//a[@href='https://originfractal.com/unplugged']");// Added ON 13-Jan-20
 	//Home page
 	private By postedBlog1		= By.xpath("((//*[@class='kc-list-item-3'])[1]//a)[text()='Read more ']");//Updated on 18-Dec-20
@@ -49,6 +55,8 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	private By linkAppAndroid	= By.xpath("(//*[@class='social-app']//a)[1]");
 	private By linkAppiOS		= By.xpath("(//*[@class='social-app']//a)[2]");
 	private By popUp		= By.xpath("//*[@class='fractal-ent']");
+//	private By blog		= By.xpath("//footer[@id='Footer']");
+	private By linkblog		= By.xpath("//a[contains(text(),'Blog')]");
 	public OriginFractalLoadPage(WebDriver driver) {
 		super(driver);
 		pageName="originFractal";
@@ -100,14 +108,34 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	public boolean verifyHeaderSolution() {
 		return clickAndcheckLoading(headerSolution,getLabel("soutionUrl"));
 	}
-
+	/* Function Name: verifyHeaderSolutionSub1()
+	 * Purpose: Verify the page loading time
+	 */
+public boolean verifyHeaderSolutionSub1() {
+	click(headerSolution);
+	return clickAndcheckLoading(headerSolutionSub1,getLabel("soutionUrl"));
+}
+/* Function Name: verifyHeaderSolutionSub2()
+ * Purpose: Verify the page loading time
+ */
+public boolean verifyHeaderSolutionSub2() {
+	click(headerSolution);
+	return clickAndcheckLoading(headerSolutionSub2,getLabel("soutionUrlSub1"));
+}
+/* Function Name: verifyHeaderSolutionSub3()
+ * Purpose: Verify the page loading time
+ */
+public boolean verifyHeaderSolutionSub3() {
+	click(headerSolution);
+	return clickAndcheckLoading(headerSolutionSub3,getLabel("soutionUrlSub2"));
+}
 	/* Function Name: verifyHeaderFeature()
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderFeature() {
+		click(headerProduct);
 		return clickAndcheckLoading(headerFeature,getLabel("fraturesUrl"));
 	}
-
 	/* Function Name: verifyHeaderPricing()
 	 * Purpose: Verify the page loading time
 	 */
@@ -161,6 +189,7 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	 * Purpose: Verify the page loading time
 	 */
 	public boolean verifyHeaderPhilosophy() {
+		click(headerAboutUs1);
 		return clickAndcheckLoading(headerPhilosophy,getLabel("philosophyUrl"));
 	}	
 
@@ -169,6 +198,13 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	 */
 	public boolean verifyHeaderAbout() {
 		return clickAndcheckLoading(headerAboutUs,getLabel("aboutUsUrl"));
+	}
+	/* Function Name: verifyHeaderCareer()
+	 * Purpose: Verify the page loading time
+	 */
+	public boolean verifyHeaderCareer() {
+		click(headerAboutUs1);
+		return clickAndcheckLoading(headerCareer,getLabel("careerUrl"));
 	}
 
 	/* Function Name: verifyHeaderContact()
@@ -248,4 +284,12 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 		moveElementFocus(linkAppiOS);
 		return clickAndcheckLoadingOtherTab(linkAppiOS,getLabel("appStoreUrl"));
 	}
+	/* Function Name: verifyBlog()
+	 * Purpose: Verify the page loading time
+	 */
+	public boolean verifyBlog(){
+		moveElementFocus(linkblog);
+		return clickAndcheckLoadingOtherTab(linkblog,getLabel("blogUrl"));
+	}
+	
 }
