@@ -16,15 +16,41 @@ public class MAMenuOptionsSteps extends FractalBaseStep{//extends by Jan_16_19
 	}
 
 	public void validateCategoryPresence() {
-		page.validateCategoryPresence();
+		result = "Passed";
+		try
+		{
+			page.validateCategoryPresence();
+		}
+		catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void clickOnCategory() {
-		page.clickOnCategory();
+		result = "Passed";
+		try
+		{
+			page.clickOnCategory();
+		}
+		catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
 	}
 	
 	public void clickOnLogout() {
-		page.clickOnLogout();
+	//	page.clickOnLogout();
+		result = "Passed";
+		try
+		{
+			page.clickOnLogout();
+		}
+		catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
 	}
 	//Jan_19_19
 	public void verifyMenusFunctionality() {
@@ -50,15 +76,37 @@ public class MAMenuOptionsSteps extends FractalBaseStep{//extends by Jan_16_19
 		}
 	}
 	public void clickOnMyAccount() {
-		page.clickOnMyAccount();
+		result = "Passed";
+		try {
+			page.clickOnMyAccount();
+		}
+		catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
 	}
 
 	public void closeMenu() {
-		page.closeMenu();
+		result = "Passed";
+		try {
+			page.closeMenu();
+		}
+		catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
+		
 		
 	}
 	//Added By Manju on Jan_11_19
 	public void clickOnMyLearning() {
-		page.clickOnMyLearning();
+		result = "Passed";
+		try {
+			page.clickOnMyLearning();
+		}
+		catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
 	}
 }
