@@ -518,7 +518,7 @@ public class Staging_Daily extends FractalBaseWebTest {
 			instbellnotiSteps.instLogout();
 		}
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "")
 	public void testInstructorPage(String row, String strBrowserName) {
