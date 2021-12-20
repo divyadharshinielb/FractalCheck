@@ -226,8 +226,10 @@ public class HomePage extends FractalBasePage {
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Bundle");
 	}
 	public void verifyCourseFilterWhatsNew() {
-		wait(2);
-		click(whlblAll);
+		wait(5);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)", "");
+		wait(5);
 		click(whlblCourses);
 		verifyFilterTypeRcntAdded(rboxBtn,rboxCatType,"Course");
 		
