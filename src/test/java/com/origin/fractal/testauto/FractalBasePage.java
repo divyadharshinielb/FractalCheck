@@ -92,9 +92,13 @@ wait(5);
 if(elementExist(viewAll)) {
 click(viewAll);
 }
-else {
+else if(elementExist(noNotifyTxt)) {
 	wait(5);
 	verifyText("No notifications found",noNotifyTxt);
+}
+else {
+	wait(2);
+	System.out.println("More button not found");
 }
 }
 
