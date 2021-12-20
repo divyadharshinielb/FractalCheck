@@ -192,9 +192,12 @@ public class MyLearningPage extends FractalBasePage {
 	public void verifyTickmark() {
 		click(lblCompleted);
 		if(elementExist(boxButton)) {
-			wait(2);
-			click(boxButton);
 			wait(5);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,550)", "");
+			wait(4);
+			click(boxButton);
+			//	click(lblDuration);
 		  elementExist(lblTick);
 		}
 	}
@@ -258,6 +261,9 @@ public class MyLearningPage extends FractalBasePage {
 		wait(5);
 		}
 		else if(elementExist(clickCatalog)) {
+			wait(5);
+			js.executeScript("window.scrollBy(0,550)", "");
+			wait(4);
 			click(clickCatalog);
 		}
 	  else if(elementExist(clickCatalogBundle2)) {
@@ -283,6 +289,9 @@ public class MyLearningPage extends FractalBasePage {
 			wait(5);
 			}
 			else if(elementExist(clickCatalog)) {
+			    wait(5);
+				js.executeScript("window.scrollBy(0,550)", "");
+				wait(4);
 				click(clickCatalog);
 			}
 		  else if(elementExist(clickCatalogBundle2)) {
