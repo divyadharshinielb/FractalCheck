@@ -70,13 +70,13 @@ public class CatalogUpdatePage extends FractalBasePage {
 	 */
 	public void updateEditCatalog() {
 		click(By.xpath("//span[contains(text(),'bundles')]"));
-		wait(5);
+		wait(6);
 		enterData("Assigned_catalog_update_for_auttomation_testing",searchText);
-		wait(30);
+		wait(10);
 		click(By.xpath("//span[contains(text(),'bundles')]"));
-		wait(5);
+		wait(6);
 		click(editIcon);
-		wait(5);
+		wait(6);
 		enterData("Assigned_catalog_update_for_auttomation_testing1",catalogTitleTextArea);
 		wait(5);
 		click(continueBtn);
