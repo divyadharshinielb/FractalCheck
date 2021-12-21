@@ -197,14 +197,18 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		wait(5);
 		scrollToElement(termsandconditionbtn);
 		wait(5);
-		scrollToElement(lblstarttime);
+		WebElement element1=driver.findElement(lblstarttime);
+		Actions actions1= new Actions(driver);
+		actions1.moveToElement(element1).perform();
 		wait(5);
 		enterData(getLabel("durationhr"), lblCalendarHour);
 		wait(5);
 		scrollToElement(termsandconditionbtn);
-		wait(5);
+		wait(6);
 		scrollToElement(lblstarttime);
 		wait(5);
+		actions1.moveToElement(element1).perform();
+		wait(2);
 		enterData(getLabel("durationmin"),lblCalendarMinute);
 		wait(5);
 		click(lbldurationsel);
@@ -212,6 +216,7 @@ public class DeleteEventandClassroomPage extends FractalBasePage {
 		click(lblPM);
 		wait(2);
 		click(dropdownSelectInstructor);
+		wait(2);
 		click(dropdownSelectInstructor1);
 		wait(5);
 		click(btnContinue);
