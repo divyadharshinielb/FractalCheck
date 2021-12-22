@@ -15,11 +15,12 @@ import com.origin.fractal.testauto.FractalBasePage;
  */
 
 public class ResumeLearningPage extends FractalBasePage {
-	private By ResumeCatalogText = By.xpath("//span[@class='vid clearfix']");//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[2]/div[2]/div[1]/span[1]
+	private By ResumeCatalogText = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/a[1]/div[1]/div[2]/div[2]/div[1]/span[1]");//html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[2]/div[2]/div[1]/span[1]
 	private By ResumeInsideCatalogText = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/span[1]");
 	private By lblResource = By.xpath("//span[@class='avg_rat fs16']");
 	private By resourceCount = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]");
 	private By lblClose = By.xpath("//body/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/span[4]/img[1]");
+	private By WhatsNewTxt = By.xpath("/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]");
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	public ResumeLearningPage(WebDriver driver) {
 		super(driver);
@@ -31,23 +32,23 @@ public class ResumeLearningPage extends FractalBasePage {
 	 */
 	public void CompareResumeCatalogText() throws InterruptedException 
 	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,700)", "");
 		WebElement p=driver.findElement(ResumeCatalogText);
 		String catalogText= p.getText();
         System.out.println(""+catalogText);
-		waitE(3,ResumeCatalogText);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,500)");
-		waitE(3,ResumeCatalogText);
+		waitE(ResumeCatalogText,3);
+		waitE(ResumeCatalogText,3);
 		click(ResumeCatalogText);
-		waitE(3,ResumeInsideCatalogText);
+		waitE(ResumeInsideCatalogText,3);
 		if(elementExist(ResumeInsideCatalogText)) {
-		wait(5);
+		waitE(ResumeInsideCatalogText,3);
 		WebElement p1=driver.findElement(ResumeInsideCatalogText);
 		String insideCatalogText= p1.getText();
 		verifyText(insideCatalogText,ResumeInsideCatalogText);
 		}
 		else {
-			wait(2);
+			waitE(lblClose,2);
 			click(lblClose);
 		}
 				
@@ -56,17 +57,16 @@ public class ResumeLearningPage extends FractalBasePage {
 	 *function:verifyResumeCatalogLabel() 
 	 *cause: Verifying Resumecatalolabel page
 	 */
-	public void verifyResumeCatalogLabel() 
+	public void verifyResumeCatalogLabel() throws InterruptedException 
 	{
-	wait(10);
 //	click(ResumeCatalogText);
 	if(elementExist(ResumeInsideCatalogText)) {
-	wait(5);
+	waitE(lblResource,5);
 	js.executeScript("window.scrollBy(0,500)");
 	verifyText("Resources",lblResource);
 	}
 	else {
-		wait(2);
+		waitE(lblClose,2);
 		click(lblClose);
 	}
 	}
@@ -74,17 +74,16 @@ public class ResumeLearningPage extends FractalBasePage {
 	 *function:verifyResumeCount() 
 	 *cause: verfying Resume catalog resource count
 	 */
-	public void verifyResumeCount() {
-		wait(5);
+	public void verifyResumeCount() throws InterruptedException {
 	//	click(ResumeCatalogText);
 		if(elementExist(ResumeInsideCatalogText)) {
-		wait(5);
+		waitE(resourceCount,5);
 		 WebElement p=driver.findElement(resourceCount);
 		String s= p.getText();
 		verifyText(s,resourceCount);
 	}
 	else {
-		wait(2);
+		waitE(lblClose,2);
 		click(lblClose);
 	}
 	

@@ -501,10 +501,8 @@ public int getNumber(String data){
 		String value = driver.findElement(objLoc).getAttribute("text");
 		return value;
 	}
-	public void waitE(int timeInSec,By objLoc) throws InterruptedException {
-		int msec = timeInSec * 1000;
-		Thread.sleep(msec);
-	WebDriverWait wait = new WebDriverWait(driver,30);
+	public void waitE(By objLoc,int timeInSec) throws InterruptedException {
+	WebDriverWait wait = new WebDriverWait(driver,timeInSec);
 	wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
 	}
 	
