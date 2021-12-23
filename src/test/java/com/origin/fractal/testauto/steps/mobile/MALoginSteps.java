@@ -17,14 +17,35 @@ public class MALoginSteps extends FractalBaseStep{//extends by Jan_16_19
 	}
 
 	public void doLogin() {
-		page.doLogin();
+		result = "Passed";
+		try{
+			page.doLogin();
+		}catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
+		
 	}
 	public void clickForgetPassword() {
-		page.clickForgetPassword();
+		result = "Passed";
+		try{
+			page.clickForgetPassword();
+		}catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
+		
 	}
 	//**********added by mahesh from here **********//
 	public void clickYesBtn() {
-		page.clickYesBtn();
+		result = "Passed";
+		try{
+			page.clickYesBtn();
+		}catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
+		
 	}
 	public void blankPasswordVerification() {
 		result = "Passed";
@@ -65,7 +86,14 @@ public class MALoginSteps extends FractalBaseStep{//extends by Jan_16_19
 	}
 
 	public void clickOnLogout() {
-		page.clickOnLogout();
+		result = "Passed";
+		try{
+			page.clickOnLogout();
+		}catch(Exception e) {
+			result = "FAILED";
+			e.printStackTrace();
+		}
+		
 	}
 	//**********added by mahesh till here **********//
 
