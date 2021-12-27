@@ -37,18 +37,16 @@ public class ResumeLearningPage extends FractalBasePage {
 		WebElement p=driver.findElement(ResumeCatalogText);
 		String catalogText= p.getText();
         System.out.println(""+catalogText);
-		waitE(ResumeCatalogText,3);
-		waitE(ResumeCatalogText,3);
+		waitE(ResumeCatalogText,15);
 		click(ResumeCatalogText);
-		waitE(ResumeInsideCatalogText,3);
+		waitE(ResumeInsideCatalogText,15);
 		if(elementExist(ResumeInsideCatalogText)) {
-		waitE(ResumeInsideCatalogText,3);
 		WebElement p1=driver.findElement(ResumeInsideCatalogText);
 		String insideCatalogText= p1.getText();
 		verifyText(insideCatalogText,ResumeInsideCatalogText);
 		}
 		else {
-			waitE(lblClose,2);
+			waitE(lblClose,15);
 			click(lblClose);
 		}
 				
@@ -61,12 +59,12 @@ public class ResumeLearningPage extends FractalBasePage {
 	{
 //	click(ResumeCatalogText);
 	if(elementExist(ResumeInsideCatalogText)) {
-	waitE(lblResource,5);
+	waitE(lblResource,15);
 	js.executeScript("window.scrollBy(0,500)");
 	verifyText("Resources",lblResource);
 	}
 	else {
-		waitE(lblClose,2);
+		waitE(lblClose,15);
 		click(lblClose);
 	}
 	}
@@ -77,13 +75,13 @@ public class ResumeLearningPage extends FractalBasePage {
 	public void verifyResumeCount() throws InterruptedException {
 	//	click(ResumeCatalogText);
 		if(elementExist(ResumeInsideCatalogText)) {
-		waitE(resourceCount,5);
+		waitE(resourceCount,15);
 		 WebElement p=driver.findElement(resourceCount);
 		String s= p.getText();
 		verifyText(s,resourceCount);
 	}
 	else {
-		waitE(lblClose,2);
+		waitE(lblClose,15);
 		click(lblClose);
 	}
 	

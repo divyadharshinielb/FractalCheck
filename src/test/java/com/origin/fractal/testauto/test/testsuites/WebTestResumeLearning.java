@@ -32,7 +32,7 @@ public class WebTestResumeLearning extends FractalBaseWebTest {
 	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			// description="Verify categories are available as expected" )
 			description = "")
-	public void testResumeLearning(String row, String strBrowserName) {
+	public void testResumeLearning(String row, String strBrowserName) throws InterruptedException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
 

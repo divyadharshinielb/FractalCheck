@@ -14,7 +14,7 @@ public class LoginSteps extends FractalBaseStep {
 		fBPage = page;
 	}
 
-	public void doLogin() {
+	public void doLogin() throws InterruptedException {
 		page.doLogin();
 	}
 	public void loginPageVerification() {

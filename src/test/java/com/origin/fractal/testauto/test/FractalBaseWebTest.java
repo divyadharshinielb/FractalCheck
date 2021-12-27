@@ -13,7 +13,7 @@ import com.origin.fractal.testauto.steps.LoginSteps;
 
 public class FractalBaseWebTest extends FractalBaseTest {
 	
-	protected void login(WebDriver driver) {
+	protected void login(WebDriver driver) throws InterruptedException {
 		print("Inside testLogin");
 		LoginSteps loginSteps = new LoginSteps(driver);
 		print("Inside testLogin - Page Opened");

@@ -53,20 +53,17 @@ public class LoginPage extends FractalBasePage {
 		goTo(baseUrl);
 
 	}
-	public void doLogin() {
+	public void doLogin() throws InterruptedException {
 		if(elementExist(btnCookies)) {
 			click(btnCookies);
 		}
-		wait(5);
-
+		waitE(tbUserName,15);
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
-		wait(5);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,250)");
-		wait(5);
+		waitE(btnLogin,15);
 		click(btnLogin);
-		wait(2);
 	}
 	//Added by vignesh on 5-Nov-20
 	public void doLoginUser() {
