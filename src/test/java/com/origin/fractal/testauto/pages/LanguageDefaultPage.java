@@ -186,6 +186,8 @@ public class LanguageDefaultPage extends FractalBasePage{
 	 */
 
 	public void inprogressEnglishCheck() {
+		scrollToElement(lblMyLearning);
+		wait(2);
 		click(lblMyLearning);
 		wait(2);
 		Languagecheck();
@@ -223,14 +225,14 @@ public class LanguageDefaultPage extends FractalBasePage{
 			elementExist(engmylearningdropdown);
 		}
 		else if((elementExist(alllanguagewhatsnewdropdown)==true)){
-		//	scrollToElement(alllanguagewhatsnewdropdown);
+			scrollToElement(alllanguagewhatsnewdropdown);
 			wait(2);
 			elementExist(alllanguagewhatsnewdropdown);
 			wait(2);
 			verifyText("ALL LANGUAGES",alllanguagewhatsnewdropdown);
-			wait(2);
+			wait(5);
 			click(alllanguagewhatsnewdropdown);
-			wait(2);
+			wait(5);
 			elementExist(alllanguagedropdownoption);
 		}
 

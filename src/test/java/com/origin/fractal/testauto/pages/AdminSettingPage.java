@@ -1,6 +1,7 @@
 package com.origin.fractal.testauto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
@@ -15,7 +16,7 @@ import com.origin.fractal.testauto.FractalBasePage;
 public class AdminSettingPage extends FractalBasePage  {
 	//	private By btnMenu = By.xpath("(//ng-include[@id='header1']/*//div[contains(@title,'Menu')])[1]");
 	private By btnSettings=By.xpath("//div[@class='icon dripicons-gear']");
-	private By classroomSettings = By.xpath ("//li[@class='settings']//a[@href='#classroom/settings']");
+	private By classroomSettings = By.xpath ("//body/div[1]/div[1]/div[2]/div[1]/ng-include[1]/div[2]/ul[1]/li[9]/ul[1]/div[1]/div[1]/li[11]/a[1]/div[1]");//li[@class='settings']//a[@href='#classroom/settings']
 	private By lblVenueTab = By.xpath ("(//*[text()='Venue'])[1]");
 	private By btnAddVenue = By.xpath ("(//*[text()='Add Venue'])[1]");
 	private By lblInstructors = By.xpath ("(//*[text()='Instructors'])[1]");
@@ -67,6 +68,7 @@ public class AdminSettingPage extends FractalBasePage  {
 	private By closeBtn=By.xpath("(//*[@class='aside-dialog']//div)[2]//i");
 	public By categoryClick = By.xpath("//span[contains(text(),'createCategories')]");
 	public By deleteCategoryIcon = By.xpath("//span[contains(text(),'createCategories')]/../../../../div/i[contains(@title,'Delete')]");
+	public By classRoomBtn =By.xpath("//span[contains (text(),'classroom')]");
 	public AdminSettingPage(WebDriver driver) {
 		super(driver);
 	}
@@ -132,12 +134,24 @@ public class AdminSettingPage extends FractalBasePage  {
 	 * Purpose: check the Admin classroom settings
 	 */
 	public void checkClassroomSettings() {
-		wait(5);
-		//		moveElementFocus(btnSettings);
+//		wait(10);
+//		System.out.println("sujith"+classRoomBtn);
+//		scrollToElement(classRoomBtn);
+//		wait(5);
+//		click(classRoomBtn);
+//		wait(5);
+//				moveElementFocus(btnSettings);
+//				wait(2);
+//				click(btnSettings);
+//				wait(2);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,750)", "");
+		wait(2);
 		moveElementFocusandClick(classroomSettings);
+		wait(2);
 		elementExist(lblVenueTab);
 		click(lblVenueTab);
-		wait(2);
+		wait(5);
 		elementExist(btnAddVenue);
 		elementExist(lblInstructors);
 		click(lblInstructors);

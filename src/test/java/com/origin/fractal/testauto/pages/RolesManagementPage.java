@@ -37,7 +37,7 @@ public class RolesManagementPage extends FractalBasePage {
 	    private By instructorDirectUser = By.xpath("//div[contains(text(),'Direct User')]");
 	    private By businessAdmin = By.xpath("//div[contains(text(),'Business User')]/../../*/div/*/span");
 	    private By businessAdminBusinessUser = By.xpath("//div[contains(text(),'Business User')]");
-	    private By siteAdmin = By.xpath("//div[contains(text(),'Site Administraor')]");
+	    private By siteAdmin = By.xpath("//span[contains(text(),'Staging SiteAdmin')]");
 	    private By siteAdminDirectUser = By.xpath("//div[contains(text(),'Direct User')]");
 	    private By directUser = By.xpath("//div[contains(text(),'Direct User')]");
 	    private By directInstructorUser = By.xpath("//div[contains(text(),'Instructor')]");
@@ -73,9 +73,12 @@ public class RolesManagementPage extends FractalBasePage {
 	public void DirectuserwithLearningadminandinsrole() {
 		enterData("automation_directuser@originlearning.com",tbUserName);
 		enterData("AutoDU@123",tbPassword);
-		wait(2);
+		wait(5);
+		  JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("window.scrollBy(0,1000)");
+		    wait(5);
 		click(btnLogin);
-		wait(2);
+		wait(5);
 		elementExist(mylearningcheck);
 		wait(5);
 		click(mylearningcheck);
@@ -184,6 +187,10 @@ public class RolesManagementPage extends FractalBasePage {
 			wait(2);
 			enterData("siteadmin@origin.com",tbUserName);
 			enterData("P@ssw0rd",tbPassword);
+			wait(2);
+			  JavascriptExecutor js = (JavascriptExecutor) driver;
+			    js.executeScript("window.scrollBy(0,1000)");
+			    wait(5);
 			click(btnLogin);
 			wait(5);
 			elementExist(btnMenu);
@@ -287,7 +294,7 @@ public class RolesManagementPage extends FractalBasePage {
 			click(searchfielduser);
 			enterData("Staging siteadmin", searchfielduser);
 			wait(7);
-			verifyText("Site Admin",siteAdmin);
+			verifyText("Staging SiteAdmin",siteAdmin);
 			wait(5);
 			if(elementExist(siteAdminDirectUser)){
 			verifyText("Direct User",siteAdminDirectUser);
@@ -319,11 +326,12 @@ public class RolesManagementPage extends FractalBasePage {
 		public void editclassroomcheck() {
 			wait(5);
 			click(classroomediticon);
-			wait(2);
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			WebElement Element= driver.findElement(editselectSingleInstructor);
-			js.executeScript("arguments[0].scrollIntoView();", Element);
 			wait(5);
+			scrollToElement(editselectSingleInstructor);
+//			JavascriptExecutor js = (JavascriptExecutor) driver;
+//			WebElement Element= driver.findElement(editselectSingleInstructor);
+//			js.executeScript("arguments[0].scrollIntoView();", Element);
+			wait(6);
 			click(editselectSingleInstructor);
 			elementExist(insdropdown1);
 			elementExist(insdropdown2);
