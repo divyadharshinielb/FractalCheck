@@ -66,7 +66,7 @@ public class Staging_Monthly_AdminSettings_Bulid1 extends FractalBaseWebTest{
 		Reporter.writeSummary("TC_CustomRole009,  Deletion of the created custom role after unassigning and logout of admin.,"+ rolestep.getResult() );
 
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
 	public void paginationAdmin(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		AdminPaginationSteps adminstep = new AdminPaginationSteps(driver);
@@ -84,7 +84,7 @@ public class Staging_Monthly_AdminSettings_Bulid1 extends FractalBaseWebTest{
 		//wait(10); //added wait as it takes time to load
 	
 	}
-	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= true, description="")
+	@Test(dataProvider = "browers", groups= {"pilot"}, enabled= false, description="")
 	public void LanguageCheck(String row, String strBrowserName) throws Exception {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
@@ -157,14 +157,14 @@ public class Staging_Monthly_AdminSettings_Bulid1 extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_RolesManagement_013, Verify Business user with Instructor role, " +  rolesmngmtsteps.getResult() );
 		
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = true, description = "Login Page")
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "Phase1.0" }, enabled = false, description = "Login Page")
 	public void checkOverallTestNGResult(String row, String strBrowserName) {
 		print("Number of Test cases Failed ="+ FractalBaseStep.overallTestNGResult );
 		if(FractalBaseStep.overallTestNGResult > 0) {
 			Assert.verify(false);
 		}
 	}
-	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = true,priority=0)
+	@Test(dataProviderClass=DataManager.class, dataProvider = "browers", groups = { "pilot" }, enabled = false,priority=0)
 	public void AdminSetting(String row, String strBrowserName) throws InterruptedException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		AdminSettingSteps adminsettings=new AdminSettingSteps(driver);
@@ -185,7 +185,7 @@ public class Staging_Monthly_AdminSettings_Bulid1 extends FractalBaseWebTest{
 		Reporter.writeSummary("OKA32-4_Admin_White labeling_TC-001, Verify Admin is able to configure the branding details in white labeling," +  adminsettings.getResult());	
 		
 	}
-	@Test(dataProviderClass = DataManager.class,dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "TCID_009:Dynamic payment configurations should appear in the User purchase page.")
+	@Test(dataProviderClass = DataManager.class,dataProvider = "browers", groups= {"pilot"}, enabled= false, description = "TCID_009:Dynamic payment configurations should appear in the User purchase page.")
 
 	public void WebTestSettingsAdminPaymentConfig(String row, String strBrowserName) throws IOException {
 			driver = BrowserFactory.getBrowser(strBrowserName);
