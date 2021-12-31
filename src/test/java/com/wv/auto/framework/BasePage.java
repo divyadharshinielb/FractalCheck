@@ -148,9 +148,13 @@ public int getNumber(String data){
 	public void click(By objLoc) {
 		click(getObj(objLoc));
 	}
-
+	public void fileUpload(By obj,String location) {
+		WebElement object = driver.findElement(obj);
+		object.sendKeys(location);
+	}
 	public void click(WebElement obj) {
-	
+		//JavascriptExecutor executor = (JavascriptExecutor)driver;
+	//	executor.executeScript("arguments[0].click();", obj);
 		obj.click();
 		print("CLICKED : " + obj.toString());
 	}
@@ -299,11 +303,8 @@ public int getNumber(String data){
 	
 	//This function will get the particular text from the repeating tag(i.e.,The particular text in repeating div) and returns an array
 	public String[] getCatalogTypes(String objpath, String objpathType) {
-		print("HDHDHDHDHHDHD" +objpath);
-		print("hdhdhhd" +objpathType);
 		//.//div[contains(@class,'mylearn')]/../div[3]/a
 		int length = getItemsCount(By.xpath(objpath));
-		print("ddddddd"+length);
 		String wholeObjPath = "";
 		String actualCatalogType="";
 		String[] catlogType = new String[length-1];
@@ -500,6 +501,11 @@ public int getNumber(String data){
 		String value = driver.findElement(objLoc).getAttribute("text");
 		return value;
 	}
+	public void waitE(By objLoc,int timeInSec) throws InterruptedException {
+	WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+	wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
+	}
+	
 	public boolean verifyText(String expText, String actText) {
 		return compareStrings(expText, actText);
 	}
@@ -548,8 +554,7 @@ public int getNumber(String data){
 			String actText = obj.getText();
 			return compareStringsIgnorecase(expText, actText);
 		}
-		//End- vignesh 
-		
+		//End- vignesh
 		//Starts here - Vignesh (Wvi) on 16/May/20
 		/*
 		 * Method name: moveElementFocusandClick()
@@ -592,7 +597,7 @@ public int getNumber(String data){
 			wait(2);
 		}
 		// Ends here - Vignesh (Wvi) on 16/May/20
-			 
+		
 		//Added by Vignesh on 04/Dec/19
 		public boolean isClickable(By locater)      
 		{
@@ -616,7 +621,7 @@ public int getNumber(String data){
 			chooseFile.sendKeys(filePath);
 		}
 		//Ends- vignesh on 29/Jan/20
-	
+		
 		/* Method name: dragAndDrop()
 		 * Created by: Vignesh
 		 * Created date: 12/Sep/2020
@@ -642,7 +647,4 @@ public int getNumber(String data){
 			}
 		}
 		//ends
-
-	
-		
 }
