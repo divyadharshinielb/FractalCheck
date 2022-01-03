@@ -3,6 +3,7 @@ package com.origin.fractal.testauto.pages;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import com.origin.fractal.testauto.FractalBasePage;
@@ -54,6 +55,7 @@ public class AdminLoginPage extends FractalBasePage {
 	public void loginToContentAdmin() throws IOException{
 	   //click(btnLogin1);
 		//updating the credentials of siteadmin as settings icon is present only for siteadmin
+		try {	
 		if(elementExist(btnCookies)) {
 			click(btnCookies);
 			}
@@ -62,9 +64,14 @@ public class AdminLoginPage extends FractalBasePage {
 		enterData("automation_siteadmin@origin.com",tbUserNameNewUI);
 		enterData("AutoSA@123",tbPasswordNewUI);
 			//    print("ddiffufifuifiufiu");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)", "");
 			    wait(5);
 	    click(btnLoginNewUI);
 	    wait(5);
+		}catch(Exception e) {
+			print("Login Page is not working");
+		}
 	/*    click(By.xpath("//span[@class='loggeduserbg ng-binding']"));
 	    wait(2);
 	    click(By.xpath("//button[contains(text(),'siteadmin')]"));

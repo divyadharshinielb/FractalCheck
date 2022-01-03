@@ -24,31 +24,28 @@ public AzureADPage(WebDriver driver) {
 /* Method: enableSSO();
  * purpose:verify enableSSO page
  */
-	public void enableSSO() {
+	public void enableSSO() throws InterruptedException {
 		WebElement element = driver.findElement(lblSocialLogin); 
 		Actions actions = new Actions(driver); 
 		actions.moveToElement(element);
 		actions.perform();
-		wait(6);
+		waitE(lblSocialLogin,15);
 		click(lblSSOSwitch);
-		wait(5);
 		WebElement element1 = driver.findElement(lblPrivacy); 
 		Actions actions1 = new Actions(driver); 
 		actions1.moveToElement(element1);
 		actions1.perform();
-		wait(6);
+		waitE(lblPrivacy,15);
 		click(btnSave);
-		wait(6);
 	}
 	/* Method: verifySSOBtn();
 	 * purpose:verify SSOBtn
 	 */
-	public void verifySSOBtn() {
+	public void verifySSOBtn() throws InterruptedException {
 		wait(6);
 		if(elementExist(ssoBtn)) {
-			wait(5);
 			click(ssoBtn);
-			wait(10);
+			waitE(ssoBtn,15);
 		}
 		else {
 			print("SSO button is in disbale mode");
