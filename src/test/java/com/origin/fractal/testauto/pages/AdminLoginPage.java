@@ -12,7 +12,7 @@ import com.origin.fractal.testauto.FractalUtils;
 public class AdminLoginPage extends FractalBasePage {
 	private By tbUserNameNewUI = By.xpath("//input[@name='username']");
 	private By tbPasswordNewUI = By.xpath("//input[@name='password']");
-	private By btnLoginNewUI = By.xpath("//input[@value='LOGIN']");
+	private By btnLoginNewUI = By.xpath("//input[@type='submit']");
 	private By tbUserName = By.xpath(".//input[@id='uname']");//*[@name='uname']
 	private By tbPassword = By.xpath(".//*[@name='userpassword']");//*[@name='userpassword']
 	private By btnLogin = By.xpath(".//*[@id='login_btn']");//*[@id='login_btn']
@@ -29,14 +29,14 @@ public class AdminLoginPage extends FractalBasePage {
 	String[]  userName= {"", "admin@originfractal.com ","saraswathi@originlearning.com","saraswathi@originlearning.com"};
 	String[]  passWord= {"","originfractal","","originfractal"};
 	private By searchLink=By.xpath(".//ng-include[2]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]");
-	private By prelogin = By.xpath("//a[contains(text(),'LOGIN')]");
+	private By btnCookies = By.xpath("//button[@id='CookieAccept']");
 	public AdminLoginPage(WebDriver driver) throws IOException {
 		super(driver);
 		pageName ="LoginPage"; 
 		// Go to Home Page
 //*******************************added by mahesh 08/04/2019****************************//	
 	//	String baseUrl=getGobal("webtesturl");
-		String baseUrl = "https://staging-origin.originfractal.com/home"; //https://dev-huron.originfractal.com;
+		String baseUrl = "https://automation-origin.originfractal.com/login"; //https://dev-huron.originfractal.com;
 		goTo(baseUrl);
 		
 	}
@@ -52,20 +52,31 @@ public class AdminLoginPage extends FractalBasePage {
 		click(btnLoginNewUI);
 		wait(5);
 	}
-	public void loginToContentAdmin() {
+	public void loginToContentAdmin() throws IOException{
+	   //click(btnLogin1);
+		//updating the credentials of siteadmin as settings icon is present only for siteadmin
+		try {	
+		if(elementExist(btnCookies)) {
+			click(btnCookies);
+			}
 		wait(5);
-		if(elementExist(prelogin)) {
-		click(prelogin);
-		}
-		wait(6);
-		enterData("staging_siteadmin@origin.com",tbUserNameNewUI);//siteadmin@origin.com//contentadmin@origin.com
-	    enterData("P@ssw0rd",tbPasswordNewUI);//Admin@123
-	    wait(10);
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("window.scrollBy(0,1000)");
-	    wait(5);
+	
+		enterData("automation_siteadmin@origin.com",tbUserNameNewUI);
+		enterData("AutoSA@123",tbPasswordNewUI);
+			//    print("ddiffufifuifiufiu");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)", "");
+			    wait(5);
 	    click(btnLoginNewUI);
-	    wait(15);
+	    wait(5);
+		}catch(Exception e) {
+			print("Login Page is not working");
+		}
+	/*    click(By.xpath("//span[@class='loggeduserbg ng-binding']"));
+	    wait(2);
+	    click(By.xpath("//button[contains(text(),'siteadmin')]"));
+	    wait(5);*/
+	  //  click(By.xpath(""));
 	}
 	public void doLogin1() throws IOException {
 		enterData(getGobal("user"),tbUserName);
@@ -147,5 +158,8 @@ public class AdminLoginPage extends FractalBasePage {
 	}
 	public void verifySearchLink() {
 		enterData ("abcdef",searchLink);
+	}
+	public void preLogin() throws IOException{
+		
 	}
 }
