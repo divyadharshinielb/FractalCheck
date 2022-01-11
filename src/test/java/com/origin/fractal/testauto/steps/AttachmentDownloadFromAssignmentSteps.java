@@ -6,10 +6,10 @@ import com.origin.fractal.testauto.FractalBaseStep;
 import com.origin.fractal.testauto.pages.AttachmentDownloadFromAssignmentPage;
 
 /*
- * File/class Name:CatalogUpdateSteps.java
- * covers:This page covers all steps functions of CatalogUpdatePage 
- * Name of developer:Mahesh G
- * Completed date:25/6/2020
+ * File/class Name:AttachmentDownloadFromAssignmentSteps.java
+ * covers:This page covers all steps functions of AttachmentDownloadFromAssignmentPage 
+ * Name of developer:A Mohudum Kamil
+ * Completed date:11/01/2022
  */
 
 public class AttachmentDownloadFromAssignmentSteps extends FractalBaseStep {

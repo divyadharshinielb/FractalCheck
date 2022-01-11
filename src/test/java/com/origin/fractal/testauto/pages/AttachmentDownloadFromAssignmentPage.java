@@ -10,10 +10,10 @@ import java.util.concurrent.TimeUnit;
 //Importing I/O classes
 import java.io.*;
 /*
- * File/class Name:CatalogUpdatePage.java
- * covers:This page covers all basic functions and Xpath of the CatalogUpdatePage 
- * Name of developer:Mahesh G
- * Completed date:25/6/2020
+ * File/class Name:AttachmentDownloadFromAssignmentPage.java
+ * covers:This page covers all basic functions and Xpath of the Page 
+ * Name of developer:A Mohudum Kamil
+ * Completed date:11/01/2022
  */
 public class AttachmentDownloadFromAssignmentPage extends FractalBasePage {
 	private By lblCatalogTab = By.xpath("//md-tab-item//span[contains(text(),'Catalog Items')]");

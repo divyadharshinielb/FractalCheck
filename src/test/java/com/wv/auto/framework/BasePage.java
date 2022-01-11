@@ -506,6 +506,11 @@ public int getNumber(String data){
 	wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
 	}
 	
+	public void waitEvOEL(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
+	}
+	
 	public boolean verifyText(String expText, String actText) {
 		return compareStrings(expText, actText);
 	}

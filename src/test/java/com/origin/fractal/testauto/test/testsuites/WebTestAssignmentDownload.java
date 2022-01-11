@@ -14,10 +14,10 @@ import com.wv.auto.framework.BrowserFactory;
 import com.wv.auto.framework.utils.Reporter;
 
 /*
- * File/class Name:WebTestCatalogUpdate.java
- * covers:This page covers all Test files functions of CatalogUpdatePage and CatalogUpdatestep 
- * Name of developer:Mahesh G
- * Completed date:25/6/2020
+ * File/class Name:WebTestAssignmentDownload.java
+ * covers:This page covers all Test files functions of AttachmentDownloadFromAssignmentPage and AttachmentDownloadFromAssignmentstep 
+ * Name of developer:A Mohudum Kamil
+ * Completed date:11/01/2022
  */
 public class WebTestAssignmentDownload extends FractalBaseWebTest{
 	@DataProvider
