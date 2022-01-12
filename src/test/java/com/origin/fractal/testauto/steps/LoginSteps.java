@@ -15,7 +15,15 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void doLogin() {
-		page.doLogin();
+		try {
+			page.doLogin();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();   
+			result="Could not open login page";
+		}
+
 	}
 	public void loginPageVerification() {
 		result ="PASSED";

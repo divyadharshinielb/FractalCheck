@@ -148,7 +148,10 @@ public int getNumber(String data){
 	public void click(By objLoc) {
 		click(getObj(objLoc));
 	}
-
+	public void fileUpload(By obj,String location) {
+		WebElement object = driver.findElement(obj);
+		object.sendKeys(location);
+	}
 	public void click(WebElement obj) {
 		//JavascriptExecutor executor = (JavascriptExecutor)driver;
 	//	executor.executeScript("arguments[0].click();", obj);
@@ -498,6 +501,26 @@ public int getNumber(String data){
 		String value = driver.findElement(objLoc).getAttribute("text");
 		return value;
 	}
+	public void waitE(By objLoc,int timeInSec) throws InterruptedException {
+	WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+	wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
+	}
+
+	public void waitEeTBC(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.elementToBeClickable(objLoc));
+	}	
+	
+	public void waitEpOEL(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.presenceOfElementLocated(objLoc));
+	}
+	
+	public void waitEvOEL(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
+	}
+	
 	public boolean verifyText(String expText, String actText) {
 		return compareStrings(expText, actText);
 	}
