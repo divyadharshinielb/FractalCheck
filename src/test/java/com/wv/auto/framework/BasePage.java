@@ -505,6 +505,16 @@ public int getNumber(String data){
 	WebDriverWait wait = new WebDriverWait(driver,timeInSec);
 	wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
 	}
+
+	public void waitEeTBC(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.elementToBeClickable(objLoc));
+	}	
+	
+	public void waitEpOEL(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.presenceOfElementLocated(objLoc));
+	}
 	
 	public void waitEvOEL(By objLoc,int timeInSec) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
