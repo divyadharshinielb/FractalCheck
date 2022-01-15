@@ -11,7 +11,7 @@ import com.origin.originweb.testauto.OriginFractalWebBasePage;
  * Created on: 10-Nov-2020
  */
 public class OriginFractalLoadPage extends OriginFractalWebBasePage {
-	private By cookiesBtn=By.xpath("//*[@id='euCookieAcceptWP']");
+	private By cookiesBtn=By.xpath("//button[@id='onesignal-slidedown-cancel-button']");//*[@id='euCookieAcceptWP']
 	private By headerLogo=By.xpath("//*[@class='logo']");
 	// Heading 
 	private By headerFeature	= By.xpath("(//UL[@class='navigation clearfix']//a)[1]");
