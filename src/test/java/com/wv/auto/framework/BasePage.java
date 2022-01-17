@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -73,6 +74,11 @@ public abstract class  BasePage {
 				+ " is entered in input Element" + inpElement.toString());
 
 	}
+	//added by divya
+	public void waitE(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
+		}
 
 	public boolean verifyTitle(String expTitle) {
 		return compareStrings(expTitle, driver.getTitle());

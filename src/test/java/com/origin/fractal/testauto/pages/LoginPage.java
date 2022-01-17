@@ -39,7 +39,7 @@ public class LoginPage extends FractalBasePage {
 		goTo(baseUrl);
 		
 	}
-	public void doLogin() {
+	public void doLogin() throws InterruptedException {
 		wait(10);
 		if (elementExist(prelogin)) {
 		click(prelogin);
@@ -49,18 +49,18 @@ public class LoginPage extends FractalBasePage {
 		enterData("AutoDU@123",tbPassword);
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("window.scrollBy(0,1000)");
-	    wait(2);
+	    waitE(btnLogin,5);
 		click(btnLogin);
 		wait(5);
 	}
-	public void verifyLogin() {
+	public void verifyLogin() throws InterruptedException {
 	//comment added by mahesh on 11/5/2021	
 	//	if (elementExist(lblUser)) {
-		wait(5);
+		waitE(lblUser,7);
 		click(lblUser);
 //	}
 //	else{
-		wait(2);
+		waitE(lblSubscriptionPage,2);
 		elementExist(lblSubscriptionPage);
 //	}
 	}
