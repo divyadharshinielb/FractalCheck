@@ -49,19 +49,19 @@ public class LoginPage extends FractalBasePage {
 		enterData("AutoDU@123",tbPassword);
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("window.scrollBy(0,1000)");
-	    waitE(btnLogin,5);
+	    waitE(btnLogin,15);
 		click(btnLogin);
 		wait(5);
 	}
 	public void verifyLogin() throws InterruptedException {
 	//comment added by mahesh on 11/5/2021	
 	//	if (elementExist(lblUser)) {
-		waitE(lblUser,7);
+		waitE(lblUser,15);
 		click(lblUser);
 //	}
 //	else{
-		waitE(lblSubscriptionPage,2);
-		elementExist(lblSubscriptionPage);
+		waitE(logOutButton,15);
+		elementExist(logOutButton);
 //	}
 	}
 	public void verifyAdminLogin() {

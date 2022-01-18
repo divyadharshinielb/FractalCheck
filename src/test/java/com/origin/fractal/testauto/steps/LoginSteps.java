@@ -15,7 +15,12 @@ public class LoginSteps extends FractalBaseStep {
 	}
 
 	public void doLogin() {
-		page.doLogin();
+		try {
+			page.doLogin();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void loginToContentAdmin() {
 		page.loginToContentAdmin();
