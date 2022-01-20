@@ -81,6 +81,7 @@ private String strFileName = "";
 
 	    }
 		click(downloadLink);
+		verifyDownloadAttachment();
 	}
 	/* Function name:verifyDownloadAttachment()
 	 * Covers:edit assignment inside catalog item

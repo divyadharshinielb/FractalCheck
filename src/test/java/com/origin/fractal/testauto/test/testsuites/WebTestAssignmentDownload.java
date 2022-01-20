@@ -43,8 +43,7 @@ public class WebTestAssignmentDownload extends FractalBaseWebTest{
 		attachmentDownloadSteps.viewCatalog();
 		attachmentDownloadSteps.viewAssignment();
 		attachmentDownloadSteps.downloadAttachment();
-		attachmentDownloadSteps.verifyDownloadAttachment();
-		Reporter.writeSummary("Assignment_Download_TC_001, Verify the download of assignment's attachment , " +  attachmentDownloadSteps.getResult() );
+		Reporter.writeSummary("Assignment_Download_FR1-4572, Verify the download of assignment's attachment , " +  attachmentDownloadSteps.getResult() );
 
 	}
 }
