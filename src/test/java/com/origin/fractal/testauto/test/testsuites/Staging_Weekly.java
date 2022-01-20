@@ -197,7 +197,7 @@ public class Staging_Weekly extends FractalBaseWebTest{
 		
 	}
 	
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	@Test(dataProviderClass = DataManager.class,dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
 			description = "")
 	public void DownloadAssignment(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
