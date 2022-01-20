@@ -477,6 +477,26 @@ public abstract class  BasePage {
 		String value = driver.findElement(objLoc).getAttribute("text");
 		return value;
 	}
+	public void waitE(By objLoc,int timeInSec) throws InterruptedException {
+	WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+	wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
+	}
+
+	public void waitEeTBC(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.elementToBeClickable(objLoc));
+	}	
+	
+	public void waitEpOEL(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.presenceOfElementLocated(objLoc));
+	}
+	
+	public void waitEvOEL(By objLoc,int timeInSec) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver,timeInSec);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(objLoc));
+	}
+	
 	public boolean verifyText(String expText, String actText) {
 		return compareStrings(expText, actText);
 	}
