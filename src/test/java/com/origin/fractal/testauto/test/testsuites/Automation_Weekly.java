@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
 import com.origin.fractal.testauto.DataManager;
+import com.origin.fractal.testauto.steps.AttachmentDownloadFromAssignmentSteps;
 import com.origin.fractal.testauto.steps.CatalogUpdateSteps;
 import com.origin.fractal.testauto.steps.DeleteEventandClassroomSteps;
 import com.origin.fractal.testauto.steps.ForgotPasswordSteps;
@@ -195,4 +196,22 @@ public class Automation_Weekly extends FractalBaseWebTest{
 		Reporter.writeSummary("TCID_LOGIN_073, Verification of Forgot Password function, " +  fpassSteps.getResult() );
 		
 	}
+	
+	@Test(dataProviderClass = DataManager.class,dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+			description = "")
+	public void DownloadAssignment(String row, String strBrowserName) throws IOException {
+		driver = BrowserFactory.getBrowser(strBrowserName);
+		AttachmentDownloadFromAssignmentSteps attachmentDownloadSteps = new AttachmentDownloadFromAssignmentSteps(driver);
+		VenueSteps venueSteps = new VenueSteps(driver);
+		MenuSteps menuSteps = new MenuSteps(driver);
+		loginToContentAdmin(driver);
+		venueSteps.clickHomeMenu();
+		menuSteps.gotoManageContents();
+		attachmentDownloadSteps.catalogTab();
+		attachmentDownloadSteps.viewCatalog();
+		attachmentDownloadSteps.viewAssignment();
+		attachmentDownloadSteps.downloadAttachment();
+		Reporter.writeSummary("Assignment_Download_FR1-4572, Verify the download of assignment's attachment , " +  attachmentDownloadSteps.getResult() );
+
+	}	
 }
