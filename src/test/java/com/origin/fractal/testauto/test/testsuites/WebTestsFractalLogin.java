@@ -101,13 +101,13 @@ public class WebTestsFractalLogin extends FractalBaseWebTest {
 		verifyInstanceLogin();
 		driver.quit();
 		
-	//  divya uncommented ehsoldKonnectInstance	
-		driver = BrowserFactory.getBrowser(strBrowserName);
+	//  mahesh commented ehsoldKonnectInstance - 21-01-2022 
+	/*	driver = BrowserFactory.getBrowser(strBrowserName);
 	    fractalInstance = "FractalEHSOldKonnectInstance";
 		runningIndex++;
 		verifyInstanceLogin1();
 		driver.quit();
-	
+	*/
 		
 		
 		if(overallResult > 0) {
