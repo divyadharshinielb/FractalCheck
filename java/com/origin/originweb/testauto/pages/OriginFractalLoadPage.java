@@ -31,8 +31,8 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	//Footer
 	private By lblHome			= By.xpath("(//*[@class='widgets_wrapper']//a)[1]");
 	private By lblLXPLearner	= By.xpath("(//*[@class='widgets_wrapper']//a)[7]");
-	private By lblLXPEnterPrises= By.xpath("(//*[@class='widgets_wrapper']//a)[8]");
-	private By lblLXPDomainExp  = By.xpath("(//*[@class='widgets_wrapper']//a)[9]");
+	private By lblLXPEnterPrises= By.xpath("(//a[contains(text(),'Origin Fractal LXP for Enterprises')]");
+	private By lblLXPDomainExp  = By.xpath("//a[contains(text(),'Origin Fractal LXP for Domain Experts')]");
 	private By txtLearner		= By.xpath("//h2//strong[text()='Learner']");
 	private By txtEnterPrise	= By.xpath("//h2//strong[text()='Enterprise']");
 	private By txtDomain		= By.xpath("//h2//strong[text()='Domain Expert or']");
@@ -195,6 +195,6 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	 */
 	public boolean verifyiOSAppStore(){
 		moveElementFocus(linkAppiOS);
-		return clickAndcheckLoadingOtherTab(linkAppiOS,getLabel("appStoreUrl"));
+		return clickAndcheckLoading(linkAppiOS,getLabel("appStoreUrl"));
 	}
 }
