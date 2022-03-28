@@ -47,8 +47,8 @@ public class OriginFractalLoadPage extends OriginFractalWebBasePage {
 	//Footer
 	private By lblHome			= By.xpath("(//*[@class='widgets_wrapper']//a)[1]");
 	private By lblLXPLearner	= By.xpath("(//*[@class='widgets_wrapper']//a)[7]");
-	private By lblLXPEnterPrises= By.xpath("(//a[contains(text(),'Origin Fractal LXP for Enterprises')]");
-	private By lblLXPDomainExp  = By.xpath("//a[contains(text(),'Origin Fractal LXP for Domain Experts')]");
+	private By lblLXPEnterPrises1= By.xpath("(//a[contains(text(),'Origin Fractal LXP for Enterprises')]");
+	private By lblLXPDomainExp1  = By.xpath("//a[contains(text(),'Origin Fractal LXP for Domain Experts')]");
 	private By txtLearner		= By.xpath("//h2//strong[text()='Learner']");
 	private By txtEnterPrise	= By.xpath("//h2//strong[text()='Enterprise']");
 	private By txtDomain		= By.xpath("//h2//strong[text()='Domain Expert or']");
@@ -261,7 +261,7 @@ public boolean verifyHeaderSolutionSub3() {
 	 */
 	public boolean verifylblLxpEnterprises(){
 		moveElementFocus(lblLXPEnterPrises);
-		return clickAndcheckLoading(lblLXPEnterPrises,txtEnterPrise);
+		return clickAndcheckLoading(lblLXPEnterPrises1,txtEnterPrise);
 	}
 
 	/* Function Name: verifylblLxpDomain()
@@ -269,7 +269,7 @@ public boolean verifyHeaderSolutionSub3() {
 	 */
 	public boolean verifylblLxpDomain() {
 		moveElementFocus(lblLXPDomainExp);
-		return clickAndcheckLoading(lblLXPDomainExp,txtDomain);
+		return clickAndcheckLoading(lblLXPDomainExp1,txtDomain);
 	}
 
 	/* Function Name: verifyAndroidPlayStore()
