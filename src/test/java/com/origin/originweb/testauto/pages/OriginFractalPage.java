@@ -31,8 +31,8 @@ public class OriginFractalPage extends OriginFractalWebBasePage {
 	private By btnPhysicalClassroomsKnowMore= By.xpath("(//*[@class='elementor-button-wrapper']//a)[1]");
 	private By btnDigitalTransformationKnowMore	= By.xpath("(//*[@class='elementor-button-wrapper']//a)[2]");
 	private By btnPrepareYourStudentsKnowMore = By.xpath("(//*[@class='elementor-button-wrapper']//a)[3]");
-	private By footerOriginFractal = By.xpath("(//*[@class='f_credit']/a)[1]");
-	private By footerOriginLearning	= By.xpath("(//*[@class='f_credit']/a)[2]");
+	private By footerOriginFractal = By.xpath("//*[@class='f_credit']/a[@href='https://originfractal.com/']");
+	private By footerOriginLearning	= By.xpath("//*[@class='f_credit']/a[@href='https://originlearning.com/']");
 	private By txtTalkToUs	= By.xpath("(//*[@class='hp_link']//*[text()='Talk to us'])[1]");
 	private By appStore	= By.xpath("(//*[@class='elementor-widget-container'])[52]//a");
 	private By playStore	= By.xpath("(//*[@class='elementor-widget-container'])[53]//a");
