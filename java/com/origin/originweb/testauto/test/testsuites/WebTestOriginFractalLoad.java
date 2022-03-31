@@ -57,8 +57,8 @@ public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 	//	Steps.verifyHeaderCareer();
 	//	Reporter.writeSummary("TC-22_Header-Career,Verifying the career page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		// commented the testcase clicking about us does not changing the url
-		Steps.verifyHeaderAbout();
-		Reporter.writeSummary("TC-07_Header-About-Us,Verifying the About-Us page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+	//	Steps.verifyHeaderAbout();
+	//	Reporter.writeSummary("TC-07_Header-About-Us,Verifying the About-Us page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
     	Steps.verifyHeaderContact();
 		Reporter.writeSummary("TC-08_Header-Contact-Us,Verifying the contact page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHomeLogo();
