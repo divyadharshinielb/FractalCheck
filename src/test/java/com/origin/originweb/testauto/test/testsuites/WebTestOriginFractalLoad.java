@@ -56,8 +56,9 @@ public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 		Reporter.writeSummary("TC-06_Header-Philosophy,Verifying the Philosophy page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderCareer();
 		Reporter.writeSummary("TC-22_Header-Career,Verifying the career page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
-		Steps.verifyHeaderAbout();
-		Reporter.writeSummary("TC-07_Header-About-Us,Verifying the About-Us page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+	//	Commenting as per latest update - About us text is not present in header section now
+	//	Steps.verifyHeaderAbout();
+	//	Reporter.writeSummary("TC-07_Header-About-Us,Verifying the About-Us page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderContact();
 		Reporter.writeSummary("TC-08_Header-Contact-Us,Verifying the contact page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHomeLogo();
@@ -80,7 +81,7 @@ public class WebTestOriginFractalLoad extends WebTestOriginFractalWebBase {
 		Reporter.writeSummary("TC-17_ PlayStore Link,Verifying the play store link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyiOSAppStore();
 		Reporter.writeSummary("TC-18_ Appstore Link ,Verifying the app store link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
-	//	Steps.verifyBlog();
-	//	Reporter.writeSummary("TC-19_ Blog Link ,Verifying the blog link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Steps.verifyBlog();
+		Reporter.writeSummary("TC-19_ Blog Link ,Verifying the blog link loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 	}
 }
