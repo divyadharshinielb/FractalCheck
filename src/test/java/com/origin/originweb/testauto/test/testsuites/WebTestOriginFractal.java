@@ -25,10 +25,10 @@ public class WebTestOriginFractal extends WebTestOriginFractalWebBase {
 		OriginFractalSteps Steps=new OriginFractalSteps(driver);
 		goToUrl(driver);
 		Reporter.writeSummary("Url-Navigation,Open the URL ,"+TimeManager.getTimeDiffFromPrevEventInSecs().intern()+","+Steps.getResult());
-		Steps.verifyHeaderPlatform();
-		Reporter.writeSummary("TC-01_Header-Platform,Verifying the Platform page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderOPM();
 		Reporter.writeSummary("TC-02_Header-OPM,Verifying the OPM page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
+		Steps.verifyHeaderPlatform();
+		Reporter.writeSummary("TC-01_Header-Platform,Verifying the Platform page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyHeaderPhilosophy();
 		Reporter.writeSummary("TC-03_Header-Philosophy,Verifying the Philosophy page loading time,"+TimeManager.seconds+"," +  Steps.getResult());
 		Steps.verifyFutureWork();
