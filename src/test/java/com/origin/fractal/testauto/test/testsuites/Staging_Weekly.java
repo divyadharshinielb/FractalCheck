@@ -23,7 +23,7 @@ import com.wv.auto.framework.utils.Reporter;
 public class Staging_Weekly extends FractalBaseWebTest{
 	
 	@Test(dataProviderClass = DataManager.class,dataProvider = "browers", groups= {"pilot"}, enabled= true, description = "")
-
+/* giving demo to team*/
 	public void WebTestEmailNotification(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		loginToContentAdmin(driver);
