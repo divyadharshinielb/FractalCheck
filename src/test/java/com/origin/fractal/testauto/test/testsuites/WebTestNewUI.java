@@ -41,9 +41,9 @@ public class WebTestNewUI extends FractalBaseWebTest {
 		//Reporter.writeSummary("TCID_074, Verification of Register link  function," +  loginSteps.getResult() );
 		loginSteps.verifypasswordField();
 		Reporter.writeSummary("TCID_065,Verify whether the entered password is displayed in encrypted format in the Change password field, " +  loginSteps.getResult());	
-		login(driver);
-		Reporter.writeSummary("TCID_028,Verify the login page with valid username and valid password.," +  loginSteps.getResult() );    
-		homeSteps.clickLogout();
+		//login(driver);
+		//Reporter.writeSummary("TCID_028,Verify the login page with valid username and valid password.," +  loginSteps.getResult() );    
+		//homeSteps.clickLogout();
 	}
 
 
@@ -52,7 +52,9 @@ public class WebTestNewUI extends FractalBaseWebTest {
 
 	public void testMyLearningPage0(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
+		LoginSteps loginSteps = new LoginSteps(driver);
 		login(driver);
+		Reporter.writeSummary("TCID_028,Verify the login page with valid username and valid password.," +  loginSteps.getResult() ); 
 		HomeStepsNewUI homeSteps = new HomeStepsNewUI(driver);
 		homeSteps.verifyResumeLearningLabeltext();
 		Reporter.writeSummary("TCID_010,Verify whether clicking the RESUME LEARNING link in the Dashboard page is navigating to that particular catalog item page., " + homeSteps.getResult() );
