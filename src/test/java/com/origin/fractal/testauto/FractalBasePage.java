@@ -532,8 +532,9 @@ public abstract class FractalBasePage extends BasePage {
 		public void clickLogout() {
 			wait(5);
 			click(lblProfile);
-			wait(5);
+			wait(15);
 			click(logOut);
+			wait(5);
 			
 		}
 		public int getItemsCount( String objBox,String objBoxtype) {
