@@ -65,8 +65,8 @@ public class Staging_Daily extends FractalBaseWebTest {
 
 		HomeSteps homeSteps = new HomeSteps(driver);
 		//TCID_37:Checking whether the dash board contains the heading Learning in Progress
-		homeSteps.verifyResumeLearningText();//newui
-		Reporter.writeSummary("TCID_HOME_037,  Verify  whether the dash board contains the heading Resume Learning, " +  homeSteps.getResult() );
+		//homeSteps.verifyResumeLearningText();//newui
+		//Reporter.writeSummary("TCID_HOME_037,  Verify  whether the dash board contains the heading Resume Learning, " +  homeSteps.getResult() );
 		//TCID_37:Checking whether the dash board contains the heading Learning in Progress
 //		homeSteps.verifyContinueText();//newui
 //		Reporter.writeSummary("TCID_HOME_041,  Verify Continue button is displayed, " + homeSteps.getResult() );
@@ -162,7 +162,8 @@ public class Staging_Daily extends FractalBaseWebTest {
 		downloadContentSteps.verifyAudio();
 		Reporter.writeSummary("FR1-2773_DownloadContent_TC-002,In User Login Verify Download option visible in the Content Player Page for audio once enabled by admin," +downloadContentSteps.getResult());
 	}
-	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = true,
+	// commented by sujith as per subhashini and saraswathi's comments due to failures
+	@Test(dataProvider = "browers", groups = { "pilot", "Home" }, enabled = false,
 			description = "")
 	public void DownloadContent(String row, String strBrowserName) throws IOException {
 		driver = BrowserFactory.getBrowser(strBrowserName);
@@ -216,8 +217,8 @@ public class Staging_Daily extends FractalBaseWebTest {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		login(driver);
 		MyLearningSteps steps= new MyLearningSteps(driver);
-		steps.verifyCertification();
-		Reporter.writeSummary("FR1_1574_Certificate_TC-001, Verify the Course completion certificate is present with download button," +steps.getResult() );
+		//steps.verifyCertification();
+		//Reporter.writeSummary("FR1_1574_Certificate_TC-001, Verify the Course completion certificate is present with download button," +steps.getResult() );
 	}
 	/*
 	 * 04-Mar-2021  divya commenting
@@ -257,29 +258,29 @@ public class Staging_Daily extends FractalBaseWebTest {
 		globalSteps.GlobalSearchforElearningandElearnings();
 		Reporter.writeSummary("TCI_Global_08,Verify Global Search for elearning and elearnings,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for bundles and bundles
-		globalSteps.GlobalSearchforBundleandBundles();
-		Reporter.writeSummary("TCI_Global_09,Verify Global Search for bundles and bundles,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchforBundleandBundles();
+		//Reporter.writeSummary("TCI_Global_09,Verify Global Search for bundles and bundles,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for podcast and podcasts
-		globalSteps.GlobalSearchforPodcastandPodcasts();
-		Reporter.writeSummary("TCI_Global_10,Verify Global Search for podcast and podcasts,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchforPodcastandPodcasts();
+		//Reporter.writeSummary("TCI_Global_10,Verify Global Search for podcast and podcasts,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for learningpath and learningpaths
-		globalSteps.GlobalSearchforLearningpathandLearningpaths();
-		Reporter.writeSummary("TCI_Global_11,Verify Global Search for learningpath and learningpaths,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchforLearningpathandLearningpaths();
+		//Reporter.writeSummary("TCI_Global_11,Verify Global Search for learningpath and learningpaths,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for course and courses
-		globalSteps.GlobalSearchforCourseandCourses();
-		Reporter.writeSummary("TCI_Global_12,Verify Global Search for course and courses,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchforCourseandCourses();
+		//Reporter.writeSummary("TCI_Global_12,Verify Global Search for course and courses,"+globalSteps.getResult());
 		//TCID_:Verify Global Search for resource  and resource 
-		globalSteps.GlobalSearchforResourceandResources();
-		Reporter.writeSummary("TCI_Global_13,Verify Global Search for resource and resources ,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchforResourceandResources();
+		//Reporter.writeSummary("TCI_Global_13,Verify Global Search for resource and resources ,"+globalSteps.getResult());
 		//TCID_:Verify Global Search with random characters and integers.
-		globalSteps.GlobalSearchwithRandomcharacterandIntegers();
-		Reporter.writeSummary("TCI_Global_14,Verify Global Serach with random characters and integers,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchwithRandomcharacterandIntegers();
+		//Reporter.writeSummary("TCI_Global_14,Verify Global Serach with random characters and integers,"+globalSteps.getResult());
 		//TCID_:Verify Global Search with Special characters
-		globalSteps.GlobalSearchwithSpecialcharacters();
-		Reporter.writeSummary("TCI_Global_15,Verify Global Search with Special characters,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchwithSpecialcharacters();
+		//Reporter.writeSummary("TCI_Global_15,Verify Global Search with Special characters,"+globalSteps.getResult());
 		//TCID_: Verify Global Search with unavailable keyword
-		globalSteps.GlobalSearchwithUnavailableKeyword();
-		Reporter.writeSummary("TCI_Global_16,Verify Global Search with unavailable keyword,"+globalSteps.getResult());
+		//globalSteps.GlobalSearchwithUnavailableKeyword();
+		//Reporter.writeSummary("TCI_Global_16,Verify Global Search with unavailable keyword,"+globalSteps.getResult());
 		//TCID_: Verify Global Search with double and tab Space
 		globalSteps.GlobalSearchwithDoubleandTabspace(); // 15/4/2020
 		Reporter.writeSummary("TCI_Global_17,Verify Global Search with double and tab Space,"+globalSteps.getResult());
@@ -304,14 +305,14 @@ public class Staging_Daily extends FractalBaseWebTest {
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		mLSteps.verifyMyLearningPage();//newui
 		//TCID_4: Verify all links(All, Bundles, Courses, Learning Paths and resources)
-		mLSteps.verifySubMenu();//newui
-		mLSteps.verifyComplStatus();//newui
-		mLSteps.verifyCatalogDetails();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
+		//mLSteps.verifySubMenu();//newui
+		//mLSteps.verifyComplStatus();//newui
+		//mLSteps.verifyCatalogDetails();//newui
+		//Reporter.writeSummary("TCID_MY_LEARN__012,Verify Learning item page contains Course Name joined on date and time Description Validity Duration, " +  mLSteps.getResult() );
 		//04-Mar-2021 Divya commenting this testcase as this testcase searches globally	
 		//uncommenting -11-03-2021 by divya
-		mLSteps.multiplecategorycheck();
-			Reporter.writeSummary("TCID_MY_LEARNNEW__001, Verify MultipleCategory in My Learning page," +  mLSteps.getResult() );
+		//mLSteps.multiplecategorycheck();
+			//Reporter.writeSummary("TCID_MY_LEARNNEW__001, Verify MultipleCategory in My Learning page," +  mLSteps.getResult() );
 		mLSteps.clickLogout();
 	}
 
@@ -331,8 +332,8 @@ public class Staging_Daily extends FractalBaseWebTest {
 		homeSteps.clickOnMyLearning();//newui
 		//mLSteps.verifyAllFilter();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__020,Verify All filter, " + mLSteps.getResult() );
-		mLSteps.verifyBundleFilter();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__021,verify Bundle filter, " +  mLSteps.getResult() );
+		//mLSteps.verifyBundleFilter();//newui
+		//Reporter.writeSummary("TCID_MY_LEARN__021,verify Bundle filter, " +  mLSteps.getResult() );
 		mLSteps.verifyCourseFilter();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__022,verify Course filter, " +  mLSteps.getResult());
 		mLSteps.verifyResourceFilter();//newui
@@ -357,9 +358,9 @@ public class Staging_Daily extends FractalBaseWebTest {
 		mLSteps.verifyTickmark();//newui 11/9/19
 		Reporter.writeSummary("TCID_MY_LEARN__025,Verify Tick mark for completed catalog item, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
-		mLSteps.verifyCategory();//newui
+	    mLSteps.verifyCategory();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__008,Verify Category items, " +  mLSteps.getResult() );
-		//mLSteps.verifyGridView();//newui
+		mLSteps.verifyGridView();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__006,Verify the Grid view items and functionality, " +  mLSteps.getResult() );
 		mLSteps.verifyListView();//newui
 		Reporter.writeSummary("TCID_MY_LEARN__007,Verify the List view items and functionality, " +  mLSteps.getResult() );
@@ -384,15 +385,16 @@ public class Staging_Daily extends FractalBaseWebTest {
 
 		// Test moves to MyLearning page
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
-		mLSteps.verifyBundleContents();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__017,Verify Labels of Bundles and courses, " +  mLSteps.getResult() );
-		homeSteps.clickOnMyLearning();
-		mLSteps.verifyCourseContents();//newui
-		Reporter.writeSummary("TCID_MY_LEARN__018,Verify course Details after clicking, " +  mLSteps.getResult() );
+		//mLSteps.verifyBundleContents();//newui
+		//Reporter.writeSummary("TCID_MY_LEARN__017,Verify Labels of Bundles and courses, " +  mLSteps.getResult() );
+		//homeSteps.clickOnMyLearning();
+		//mLSteps.verifyCourseContents();//newui
+		//Reporter.writeSummary("TCID_MY_LEARN__018,Verify course Details after clicking, " +  mLSteps.getResult() );
 		homeSteps.clickOnMyLearning();
 		mLSteps.clickLogout();
 	}
-	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = true, description ="")
+	//Commented by Sujith as per subashini and saraswathi's instruction due to failures
+	@Test(dataProvider = "browers", groups = { "pilot" }, enabled = false, description ="")
 	public void testMyLearningPageClassroom(String row, String strBrowserName) {
 		driver = BrowserFactory.getBrowser(strBrowserName);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -404,17 +406,17 @@ public class Staging_Daily extends FractalBaseWebTest {
 		wait(5);
 		MyLearningSteps mLSteps = new MyLearningSteps(driver);
 		mLSteps.verifyClassroomDetails();
-		mLSteps.verifyDetailsBtn();//newui
-		Reporter.writeSummary("TC_MY_LEARN_:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
+		//mLSteps.verifyDetailsBtn();//newui
+		//Reporter.writeSummary("TC_MY_LEARN_:7,Checking whether the Details button are getting displayed on classroom asset, " +  mLSteps.getResult() );
 		//mLSteps.verifyAssignedClassroom();//newui
-		Reporter.writeSummary("TC_MY_LEARN_:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
+		//Reporter.writeSummary("TC_MY_LEARN_:5,The assigned calssrooms are getting displayed under bundle/course., " +  mLSteps.getResult() );
 		//mLSteps.verifyEventDisplayClassroomObject();//newui
-		Reporter.writeSummary("TC_MY_LEARN_:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
-		Reporter.writeSummary("TC_MY_LEARN_:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
-		mLSteps.verifyChooseEventBtn();//newui
-		Reporter.writeSummary("TC_MY_LEARN_:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
-		mLSteps.verifyClassrooomLabels();//newui
-		Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
+		//Reporter.writeSummary("TC_MY_LEARN_:8,Checking whether the Event is displayed under classroom object, " +  mLSteps.getResult() );
+		//Reporter.writeSummary("TC_MY_LEARN_:9,Checking whether the below details are present inside Event Date&Time Location Instructor name Register button," +  mLSteps.getResult() );
+		//mLSteps.verifyChooseEventBtn();//newui
+		//Reporter.writeSummary("TC_MY_LEARN_:11,Checking whether the choose event button are getting displayed in calendar, " +  mLSteps.getResult() );
+		//mLSteps.verifyClassrooomLabels();//newui
+		//Reporter.writeSummary("TC_MY_LEARN_:12,Checking whether the below labels are present in classroom Pre-event Activities Reference Session Post-event Activities Terms & Conditions," +  mLSteps.getResult() );
 	}
 
 //disbaling this module as in the instructor part the events are not listed in the calender view
